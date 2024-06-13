@@ -1,0 +1,501 @@
+department,type,state,processed_date,user,amount,category,source_id,opened_at,number,short_description,ci
+Customer Support,,Processed,2023-04-29 04:20:00,Shelley Groden,1158,Travel,,2023-04-23 04:20:00,EXP00000000,Travel related hardware asset,Dell Latitude 7420
+Product Management,,Declined,,Mamie Mcintee,1988,Services,BME-72243876,2023-12-23 01:44:00,EXP00000001,Registered new service hardware asset,Virtual Private Network Service
+Customer Support,,Pending,,Marianne Earman,5424,Assets,DKA-86353102,2023-06-02 19:47:00,EXP00000002,Asset Acquisition: High-Performance Dell Optiplex 7090,Dell Optiplex 7090
+IT,,Processed,2023-04-05 00:44:00,Vernon Engelman,7724,Assets,DGP-68065803,2023-03-07 00:44:00,EXP00000003,Automatically recorded entry for new assets acquisition,Dell Latitude 7410
+Customer Support,,Processed,2023-07-27 11:03:00,Mabel Weeden,7603,Assets,ZTI-08993736,2023-06-27 11:03:00,EXP00000004,Automatically created asset registration,Dell Latitude 7450
+Sales,,Processed,2024-01-17 00:53:00,Melody Saddat,1092,Services,OJK-26689608,2024-01-13 00:53:00,EXP00000005,IT Service Hardware Asset - Server,Dell PowerEdge R740
+Customer Support,,Processed,2023-11-19 11:13:00,Marcie Shulz,4984,Travel,,2023-10-30 11:13:00,EXP00000006,Automated expense report for travel-related asset,Travel Bag
+Customer Support,,Processed,2024-01-02 21:07:00,Sue Haakinson,3122,Miscellaneous,,2023-12-21 21:07:00,EXP00000007,Hardware asset entry for Miscellaneous device,Miscellaneous Device 001
+Customer Support,,Declined,,Owen Sparacino,5597,Assets,QBU-75536985,2023-07-31 17:37:00,EXP00000008,Acquisition of new network servers for IT department,Dell PowerEdge R940
+Development,,Processed,2023-08-21 11:44:00,Cyril Behen,3189,Assets,AGD-13424214,2023-08-09 11:44:00,EXP00000009,Automated asset register entry,Company Car Honda Civic 2020
+Sales,,Processed,2023-08-21 09:06:00,Essie Vaill,430,Services,BFL-52039523,2023-08-20 09:06:00,EXP00000010,Automatically generated expense line for creation of service asset,Cloud Service AWS
+Customer Support,,Processed,2023-12-11 01:35:00,Carmel Overfelt,3975,Assets,SGX-83481202,2023-11-27 01:35:00,EXP00000011,Automatically generated asset line for Dell Precision 5540,Dell Precision 5540
+Customer Support,,Submitted,,Marcie Shulz,333,Services,NMP-92834429,2023-11-23 22:38:00,EXP00000012,Services Hardware Provisioned,Cisco_AS5350_Universal_Gateway
+IT,,Pending,,Sadie Rowlett,2809,Miscellaneous,,2024-02-21 04:31:00,EXP00000013,Miscellaneous hardware asset added into the system,Wireless Bluetooth Headset
+Customer Support,,Declined,,Viola Mcsorley,5726,Travel,,2023-12-19 07:54:00,EXP00000014,Travel related hardware assets configuration,HP Elitebook 840 Travel Edition
+Customer Support,,Processed,2023-10-11 23:29:00,Petra Mcnichol,2137,Miscellaneous,,2023-10-02 23:29:00,EXP00000015,Automatically logged asset for Miscellaneous item,Dell Precision Workstation
+Customer Support,,Processed,2023-03-21 20:26:00,Viola Mcsorley,1482,Travel,,2023-03-16 20:26:00,EXP00000016,Travel expense for provision of mobile hardware asset,Dell Latitude 7420
+Sales,,Processed,2024-04-16 23:27:00,Savannah Loffier,857,Services,CKM-21083369,2024-04-11 23:27:00,EXP00000017,Service-wide asset integration,Service Platform 1.0
+Customer Support,,Submitted,,Valerie Pou,862,Services,QMX-77472925,2024-04-18 17:16:00,EXP00000018,Newly provisioned service asset,Cloud Database Service
+Customer Support,,Processed,2023-08-30 14:21:00,Sal Pindell,3261,Miscellaneous,,2023-08-18 14:21:00,EXP00000019,Automatically generated expense line for creation of Miscellaneous asset,Miscellaneous Office Equipment
+Customer Support,,Declined,,Sean Bonnet,3291,Assets,VYC-04119195,2024-03-25 15:19:00,EXP00000020,New server rack addition to Assets,Dell PowerEdge R940
+Customer Support,,Submitted,,Sean Bonnet,4970,Travel,,2023-03-21 15:22:00,EXP00000021,Expense entry for travel related hardware asset,Travel Gear Pro Suitcase
+IT,,Processed,2023-09-30 03:51:00,Virgil Chinni,1084,Miscellaneous,,2023-09-26 03:51:00,EXP00000022,Procurement of miscellaneous hardware asset,Dell Optiplex 3020
+IT,,Processed,2023-10-24 03:14:00,Vernon Engelman,584,Services,NDZ-66775376,2023-10-20 03:14:00,EXP00000023,Provision of IT services asset,Cisco Network Services
+HR,,Submitted,,Rosalie Krigger,8228,Assets,JQB-00237924,2023-11-01 08:00:00,EXP00000024,Asset registration for IT hardware,Dell Latitude 7400
+Development,,Pending,,Ramon Amaral,2570,Travel,,2023-02-11 19:29:00,EXP00000025,Travel equipment asset registration,Travel Suitcase Model 5
+Customer Support,,Submitted,,Ofelia Sheffler,743,Services,KFG-86181297,2024-01-30 07:38:00,EXP00000026,Automatically generated service asset,Virtual Private Network Service
+Customer Support,,Pending,,Sal Pindell,1012,Services,JGH-20905813,2023-12-14 19:30:00,EXP00000027,Infrastructure service configuration for deployment of assets,Cloud Server Service
+Sales,,Processed,2024-02-11 13:55:00,Howard Johnson,717,Services,DDF-71201058,2024-02-08 13:55:00,EXP00000028,ServiceNow Services hardware asset,Cloud Management Server
+Customer Support,,Processed,2024-04-15 02:27:00,Viola Mcsorley,8180,Assets,SSV-53746400,2024-03-16 02:27:00,EXP00000029,Addition of new asset to the inventory,Dell Latitude 5410
+Customer Support,,Processed,2024-01-19 06:09:00,Misty Ericksen,1495,Services,FAW-92733948,2024-01-13 06:09:00,EXP00000030,Automatically generated service asset,Web Hosting Services
+Customer Support,,Processed,2023-04-24 02:54:00,Lynda Caraway,1058,Services,RFN-53108165,2023-04-19 02:54:00,EXP00000031,Installation of cloud services for IT assets,AWS Cloud Service
+Finance,,Processed,2023-06-02 19:22:00,Fausto Marks,5497,Travel,,2023-05-12 19:22:00,EXP00000032,Allocation of travel essentials as hardware assets,Travel Kit 01
+Development,,Processed,2024-01-24 18:00:00,Ramon Amaral,1691,Miscellaneous,,2024-01-17 18:00:00,EXP00000033,Miscellaneous hardware asset allocation,Monitor Dell 24
+Development,,Processed,2024-01-24 10:28:00,Ramon Amaral,2854,Assets,ZXC-33787279,2024-01-13 10:28:00,EXP00000034,18.4 inch gaming laptop asset,Alienware Area-51m
+Customer Support,,Processed,2023-06-15 11:41:00,Janice Twiet,1497,Services,VLM-47835397,2023-06-08 11:41:00,EXP00000035,Automatic service configuration entry for asset,Cloud Computing Service
+Sales,,Processed,2023-08-08 07:03:00,Cristina Sharper,964,Services,ENX-82776262,2023-08-05 07:03:00,EXP00000036,Deployment of new asset within Services,Microsoft Azure SQL Database
+IT,,Pending,,Helene Iberg,4135,Miscellaneous,,2023-03-26 19:35:00,EXP00000037,New miscellaneous hardware asset added,HP Elitebook 840 G7
+Customer Support,,Processed,2023-04-03 08:24:00,Owen Sparacino,270,Miscellaneous,,2023-04-01 08:24:00,EXP00000038,Acquisition of Miscellaneous Hardware Asset,DJI Drone Phantom 4
+Customer Support,,Processed,2023-05-18 21:08:00,Geri Forness,5591,Assets,UXJ-76163464,2023-04-27 21:08:00,EXP00000039,Dell Latitude 5500 laptop asset,Dell Latitude 5500
+Customer Support,,Pending,,Sal Pindell,1749,Services,PLK-73146731,2024-01-23 19:55:00,EXP00000040,Provisioning of new Cloud Service,AWS EC2 Instance
+Customer Support,,Processed,2023-06-23 06:09:00,Lynda Caraway,5189,Travel,,2023-06-03 06:09:00,EXP00000041,Travel related asset,Business Trip Laptop
+Sales,,Pending,,Carolina Kinlaw,6310,Assets,TZY-74638805,2023-07-06 22:21:00,EXP00000042,Automatically generated asset entry for IT department,Dell Latitude 7490
+Customer Support,,Processed,2024-01-05 12:07:00,Misty Ericksen,2220,Miscellaneous,,2023-12-26 12:07:00,EXP00000043,Randomly generated ancillary hardware,Logitech Wireless Mouse
+Customer Support,,Processed,2023-10-15 09:03:00,Georgette Bandyk,1299,Services,TKS-55613616,2023-10-11 09:03:00,EXP00000044,Automated service asset creation,Database Service Host Server
+Customer Support,,Processed,2024-02-20 04:36:00,Valerie Pou,878,Miscellaneous,,2024-02-15 04:36:00,EXP00000045,Auto-generated miscellaneous hardware asset,Wireless Mouse MX Master
+Sales,,Processed,2023-03-31 05:15:00,Carolina Kinlaw,4181,Assets,UZS-43862783,2023-03-15 05:15:00,EXP00000046,Generated configuration for Dell Latitude 5400,Dell Latitude 5400
+Customer Support,,Declined,,Helena Suermann,1246,Services,RVF-00511301,2024-01-30 07:11:00,EXP00000047,Automatically generated expense line for creation of service asset,Cloud-based Data Analysis Service
+Customer Support,,Submitted,,Shelley Groden,4743,Miscellaneous,,2024-02-14 22:45:00,EXP00000048,ServiceNow Hardware Asset - Miscellaneous category,Dell Latitude 7490
+Customer Support,,Processed,2023-12-30 04:54:00,Sean Bonnet,2233,Assets,LYU-01471984,2023-12-21 04:54:00,EXP00000049,Purchase of new hardware asset for IT department,Dell Optiplex 9020 Desktop PC
+Customer Support,,Pending,,Mabel Weeden,962,Services,AQN-78229534,2023-02-11 00:04:00,EXP00000050,Provision of IT services upgrade,ServiceNow ITSM
+Customer Support,,Pending,,Geri Forness,2365,Assets,LRO-68699498,2023-12-17 20:45:00,EXP00000051,New asset added to the pool,Dell Precision 5530
+Customer Support,,Submitted,,Danny Dales,1417,Services,ZLL-73089399,2024-03-07 23:06:00,EXP00000052,Automatically generated billing line for creation of service,Cloud Data Service
+Sales,,Processed,2023-10-14 21:56:00,Howard Johnson,7526,Assets,XVA-20145785,2023-09-14 21:56:00,EXP00000053,Automatically generated asset line for creation of asset,Dell Latitude 5490
+Customer Support,,Processed,2023-09-29 07:24:00,Ofelia Sheffler,1918,Services,QIV-96283167,2023-09-20 07:24:00,EXP00000054,Automatically generated service line for asset creation,Web Hosting Service
+Customer Support,,Processed,2024-01-22 09:56:00,Wilfredo Gidley,4093,Assets,GWS-05412323,2024-01-05 09:56:00,EXP00000055,Auto-generated record for HP EliteBook asset,HP EliteBook 840 G5
+Sales,,Processed,2023-12-07 19:41:00,Carolina Kinlaw,3887,Assets,IAU-51569946,2023-11-21 19:41:00,EXP00000056,Automatically generated asset record for computer equipment,Dell Latitude E7470 - Serial No. ALM192837DN
+Sales,,Processed,2024-01-10 12:32:00,Karen Zombo,4160,Miscellaneous,,2023-12-27 12:32:00,EXP00000057,Automatically generated expense line for creation of asset in Miscellaneous category,Apple Watch Series 6
+Customer Support,,Processed,2024-03-28 23:12:00,Rachel Larrison,2692,Miscellaneous,,2024-03-18 23:12:00,EXP00000058,Addition of new Miscellaneous asset,Miscellaneous Item 123
+Customer Support,,Processed,2024-03-05 02:46:00,Jimmie Kertzman,3453,Miscellaneous,,2024-02-20 02:46:00,EXP00000059,Miscellaneous hardware asset registration,Dell Monitor 27 Inch
+Customer Support,,Declined,,Rachel Larrison,3755,Miscellaneous,,2023-05-15 02:10:00,EXP00000060,Acquisition of new miscellaneous asset,Office Chair Model X
+Customer Support,,Processed,2024-02-11 17:56:00,Ofelia Sheffler,4145,Assets,ONI-11710063,2024-01-27 17:56:00,EXP00000061,Asset registration for new server,Dell PowerEdge R740
+Customer Support,,Submitted,,Lynda Caraway,2625,Travel,,2024-03-19 06:20:00,EXP00000062,Travel expense generated for asset registration,Travel Laptop Dell XPS 13
+Customer Support,,Processed,2024-02-04 00:41:00,Helena Suermann,6214,Travel,,2024-01-12 00:41:00,EXP00000063,Automatically generated expense line for travel equipment,Travel Suitcase Model 2020
+Customer Support,,Processed,2023-09-23 20:31:00,Rachel Larrison,768,Services,SHY-95051158,2023-09-20 20:31:00,EXP00000064,Service-related hardware asset creation,Cisco WebEx Services Server
+IT,,Processed,2023-05-25 11:21:00,Helene Iberg,2310,Assets,VIP-62906408,2023-05-14 11:21:00,EXP00000065,Automatically generated asset record for new hardware,Dell Latitude 7490
+Customer Support,,Processed,2023-06-27 12:57:00,Misty Ericksen,1719,Assets,HCT-97044677,2023-06-22 12:57:00,EXP00000066,Automated asset creation for Dell computer,Dell Inspiron 3583
+Sales,,Processed,2023-02-17 03:30:00,Leif Bachta,1400,Services,DBL-73319779,2023-02-11 03:30:00,EXP00000067,Provision of outsourced IT services,Outsourced IT Service Provider
+Customer Support,,Submitted,,Sean Bonnet,309,Miscellaneous,,2023-07-29 13:52:00,EXP00000068,Miscellaneous hardware asset acquisition,Config_item_Misc_Hardware_67854
+Customer Support,,Submitted,,Zackary Mockus,3747,Assets,JVJ-33411305,2023-05-20 11:42:00,EXP00000069,Automatically generated asset line for hardware addition,HP Spectre x360
+Development,,Submitted,,Ramon Amaral,3982,Miscellaneous,,2024-02-21 12:48:00,EXP00000070,Miscellaneous Hardware Asset Creation,Logitech G502 Mouse
+Sales,,Processed,2024-02-09 05:36:00,Lacy Hyten,1267,Services,SRV-19135146,2024-02-05 05:36:00,EXP00000071,Registration of new service asset,Cloud Hosting Service
+Customer Support,,Processed,2023-02-23 13:45:00,Helga Windle,3980,Miscellaneous,,2023-02-06 13:45:00,EXP00000072,Acquisition of miscellaneous hardware asset,Logitech HD Webcam
+Customer Support,,Processed,2023-10-18 05:52:00,Georgette Bandyk,4277,Assets,VYX-71186327,2023-09-30 05:52:00,EXP00000073,Automated asset entry for new server,Dell PowerEdge R740
+Customer Support,,Processed,2024-05-03 11:43:00,Darrel Tork,6062,Assets,RJX-73348134,2024-04-10 11:43:00,EXP00000074,Automatically generated hardware line for creation of asset,Dell Latitude 5411
+Customer Support,,Processed,2023-04-01 19:35:00,Rachel Larrison,7382,Assets,BJW-12661267,2023-03-03 19:35:00,EXP00000075,Newly registered asset for the company,Dell Latitude 13
+Customer Support,,Processed,2023-10-30 08:45:00,Petra Mcnichol,4946,Travel,,2023-10-11 08:45:00,EXP00000076,Creation of new travel related asset,Travel Booking System 900
+Customer Support,,Pending,,Carmel Overfelt,958,Services,HNC-20165943,2023-07-07 11:03:00,EXP00000077,Service-linked hardware asset,Cloud Database Service
+IT,,Pending,,Forest Orea,8076,Assets,QPF-20074122,2024-03-25 05:29:00,EXP00000078,Inhouse purchase of office laptop,Dell Latitude 7410
+IT,,Processed,2023-10-23 06:24:00,Helene Iberg,5097,Assets,UGM-35035888,2023-10-03 06:24:00,EXP00000079,Infrastructure asset procured for network maintenance,Cisco Router 2900 Series
+Customer Support,,Processed,2023-06-29 01:00:00,Valerie Pou,152,Miscellaneous,,2023-06-26 01:00:00,EXP00000080,Purchase of assorted hardware equipment,Miscellaneous Asset 102
+Sales,,Processed,2023-03-17 08:12:00,Savannah Loffier,2444,Assets,YLN-60292771,2023-03-08 08:12:00,EXP00000081,Newly acquired high-performance server for data operations,Data Server HP ProLiant DL385 Gen10
+IT,,Processed,2023-11-18 03:01:00,Helene Iberg,1988,Assets,PDA-03002581,2023-11-10 03:01:00,EXP00000082,Addition of new hardware asset,Dell Latitude 7400
+Customer Support,,Pending,,Zackary Mockus,434,Services,POI-84981034,2024-01-24 08:43:00,EXP00000083,Automatically generated service asset,Cloud Application Service
+Sales,,Pending,,Leif Bachta,3378,Miscellaneous,,2024-02-23 12:39:00,EXP00000084,Newly purchased asset for various office utility,Office Chair Premium Model
+Customer Support,,Pending,,Helena Suermann,1955,Miscellaneous,,2023-04-13 16:23:00,EXP00000085,Automatically generated asset entry for miscellaneous item,Logitech Wireless Mouse M185
+Customer Support,,Processed,2023-02-19 08:30:00,Felipe Mahone,2638,Assets,YJO-32103941,2023-02-08 08:30:00,EXP00000086,New hardware asset added to the company,Dell Latitude 7400
+Customer Support,,Processed,2024-02-14 13:20:00,Petra Mcnichol,8156,Assets,IGX-28169448,2024-01-16 13:20:00,EXP00000087,Generated asset record for IT department,HP EliteBook 850 G5
+Sales,,Processed,2023-05-04 11:03:00,Leif Bachta,1477,Services,DLV-94078096,2023-04-27 11:03:00,EXP00000088,Service implementation for new CRM system,Salesforce Cloud Services
+Finance,,Submitted,,Fausto Marks,4736,Travel,,2023-12-06 14:23:00,EXP00000089,Travel related hardware asset,Portable Projector
+Customer Support,,Processed,2023-03-14 10:35:00,Viola Mcsorley,2300,Miscellaneous,,2023-03-04 10:35:00,EXP00000090,Installation of new miscellaneous hardware asset,Workstation Series 7
+Customer Support,,Processed,2023-12-24 18:07:00,Geri Forness,1570,Services,DSB-17467850,2023-12-16 18:07:00,EXP00000091,Service deployment on main server,Database Server 1
+Customer Support,,Processed,2023-12-20 00:00:00,Georgette Bandyk,2720,Assets,YLD-39039555,2023-12-09 00:00:00,EXP00000092,Infrastructure asset added to the system,Cisco 2960 Series Switch
+Customer Support,,Processed,2023-04-08 10:18:00,Georgette Bandyk,5552,Assets,IKW-65975135,2023-03-19 10:18:00,EXP00000093,Inventory update for new hardware acquisition,Dell Latitude 7420
+Customer Support,,Processed,2023-07-02 02:31:00,Sal Pindell,3751,Assets,OSW-71435497,2023-06-18 02:31:00,EXP00000094,Automatically registered asset upon procurement,Dell Latitude 5410
+Finance,,Processed,2023-07-07 23:48:00,Germaine Bruski,1554,Services,ZZZ-47198963,2023-07-01 23:48:00,EXP00000095,Auto-created service configuration asset,Managed Cloud Service
+Customer Support,,Processed,2024-01-26 03:30:00,Mabel Weeden,1478,Travel,,2024-01-18 03:30:00,EXP00000096,Registered travel equipment purchase,Portable travel router
+Customer Support,,Processed,2023-04-22 22:07:00,Nelly Jakuboski,1541,Services,FLX-04523398,2023-04-15 22:07:00,EXP00000097,Automatically generated service asset,Office 365 Subscription Service
+Development,,Processed,2023-06-21 11:43:00,Cyril Behen,5320,Travel,,2023-05-30 11:43:00,EXP00000098,Automatically generated asset for travel equipment,"Portable Battery Pack 20,000mAh"
+Customer Support,,Submitted,,Misty Ericksen,7158,Assets,EJM-68863050,2024-03-30 03:35:00,EXP00000099,Automatically generated asset line for creation of Lenovo Thinkpad,Lenovo Thinkpad T480
+Sales,,Processed,2024-03-01 12:40:00,Howard Johnson,1712,Travel,,2024-02-23 12:40:00,EXP00000100,Automatically generated expense line for creation of travel asset,High-End Travel Pack
+Sales,,Submitted,,Essie Vaill,3517,Travel,,2023-10-14 13:50:00,EXP00000101,Travel expense incurred for asset acquisition,Travel Laptop Dell XPS 13
+Sales,,Processed,2023-08-25 03:49:00,Nadia Wilshire,1682,Services,ENO-88226916,2023-08-17 03:49:00,EXP00000102,Automatically generated asset line for creation of service,Cloud Server Service
+Customer Support,,Processed,2024-04-08 14:56:00,Felipe Mahone,4812,Assets,ZGR-85862289,2024-03-19 14:56:00,EXP00000103,Generated asset entry for hardware management,Dell Latitude E7240
+Customer Support,,Processed,2024-02-03 18:45:00,Petra Mcnichol,3992,Miscellaneous,,2024-01-20 18:45:00,EXP00000104,Added miscellaneous hardware item,Wireless Mouse Model 100
+Customer Support,,Declined,,Sal Pindell,1673,Services,WTV-43638345,2023-10-15 08:00:00,EXP00000105,Provisioning of Managed IT Services,Cisco Managed Network Services
+IT,,Processed,2023-06-06 09:48:00,Sadie Rowlett,4949,Assets,LQG-43987991,2023-05-17 09:48:00,EXP00000106,Generated data for asset purchase,Dell Latitude 7410
+Customer Support,,Processed,2023-04-28 07:01:00,Helga Windle,7542,Assets,SEW-73495566,2023-03-29 07:01:00,EXP00000107,Automated created asset description for new hardware equipment,Projector Model S441
+Sales,,Pending,,Cristina Sharper,6239,Assets,BKC-39096601,2023-02-22 16:15:00,EXP00000108,Automatically generated line for asset creation,IBM Laptop Thinkpad
+Customer Support,,Processed,2023-08-30 22:33:00,Janice Twiet,8116,Assets,NMS-35159042,2023-07-29 22:33:00,EXP00000109,Manually entered inventory registration of new hardware,Dell Optiplex 9010 Desktop
+Customer Support,,Processed,2023-04-18 05:15:00,Viola Mcsorley,3716,Assets,JCF-90739920,2023-04-03 05:15:00,EXP00000110,Asset registration for new hardware,Dell Latitude E5470
+Customer Support,,Processed,2023-09-17 12:45:00,Marcie Shulz,8223,Assets,HPA-25075756,2023-08-18 12:45:00,EXP00000111,Provision of new hardware asset,HP EliteBook 840 G6
+Customer Support,,Declined,,Valerie Pou,2496,Miscellaneous,,2023-03-23 15:06:00,EXP00000112,Miscellaneous item added to asset list,21002032
+Sales,,Processed,2024-01-05 21:57:00,Carolina Kinlaw,234,Services,WAE-82547862,2024-01-03 21:57:00,EXP00000113,Provision of cloud services for asset management,Amazon Web Services
+Sales,,Processed,2023-07-12 19:35:00,Essie Vaill,2678,Assets,CGB-13103348,2023-07-01 19:35:00,EXP00000114,ServiceNow hardware asset,Lenovo ThinkPad T490
+Sales,,Processed,2023-06-04 14:51:00,Raphael Bickel,196,Services,EJU-17014298,2023-06-03 14:51:00,EXP00000115,ServiceNow infrastructure server,Cloud Service Provider
+Customer Support,,Processed,2023-04-24 05:34:00,Sal Pindell,1867,Miscellaneous,,2023-04-16 05:34:00,EXP00000116,Addition for Computer Accessories,Dell Alienware Wired Mouse
+Customer Support,,Processed,2024-03-20 12:12:00,Darrel Tork,107,Miscellaneous,,2024-03-19 12:12:00,EXP00000117,Automatically created record for Miscellaneous asset,Wireless Mouse Model X
+Product Management,,Processed,2023-09-19 17:34:00,Mamie Mcintee,7904,Assets,ZLV-38474422,2023-08-17 17:34:00,EXP00000118,Asset registration for new server,Dell PowerEdge R640
+Sales,,Processed,2023-09-12 18:51:00,Bertie Luby,729,Services,OQW-37163028,2023-09-08 18:51:00,EXP00000119,Automatically generated line for asset creation of Services,Cloud Data Services
+Sales,,Pending,,Savannah Loffier,4697,Miscellaneous,,2023-08-07 04:50:00,EXP00000120,Miscellaneous hardware asset,Dell Ultrasharp Monitor
+IT,,Processed,2023-06-22 19:10:00,Vernon Engelman,1134,Services,FKI-85586918,2023-06-17 19:10:00,EXP00000121,Software services subscription for asset,Microsoft 365 Services
+Sales,,Pending,,Savannah Loffier,7605,Assets,WDX-13596482,2023-04-27 06:31:00,EXP00000122,Dell Latitude 14 inch Laptop Asset,Dell Latitude 7410
+Customer Support,,Processed,2023-12-08 22:24:00,Sean Bonnet,3340,Travel,,2023-11-25 22:24:00,EXP00000123,Automatically generated expense line for procurement of travel assets,Corporate Travel Management System
+Customer Support,,Processed,2023-08-05 02:58:00,Sean Bonnet,6746,Assets,YLA-83587370,2023-07-10 02:58:00,EXP00000124,Automatically generated asset for Dell Latitude laptop,Dell Latitude E7390
+Sales,,Pending,,Bertie Luby,1898,Assets,IJI-41690147,2023-10-29 00:44:00,EXP00000125,Asset record for Dell Latitude 7490,Dell Latitude 7490
+Customer Support,,Processed,2023-04-30 01:05:00,Janice Twiet,566,Services,GDH-18635867,2023-04-28 01:05:00,EXP00000126,Automatically created service record for asset management,Cloud Database Service
+Customer Support,,Declined,,Janice Twiet,4088,Assets,ZGO-91430501,2023-02-14 04:13:00,EXP00000127,Allocation of new hardware asset,Dell Latitude 7410
+Product Management,,Processed,2024-03-04 11:30:00,Mamie Mcintee,1769,Services,UBT-31386952,2024-02-26 11:30:00,EXP00000128,Newly deployed Oracle enterprise service,Oracle Database Server 12c
+Finance,,Processed,2024-03-19 07:59:00,Germaine Bruski,7262,Travel,,2024-02-21 07:59:00,EXP00000129,Travel Equipment - New Luggage,Samsonite Ultimaker Spinner 22.5
+Customer Support,,Processed,2023-03-02 01:00:00,Shelley Groden,1668,Assets,UPE-80215934,2023-02-24 01:00:00,EXP00000130,HP Printer added as new asset,HP LaserJet Pro
+Customer Support,,Submitted,,Sue Haakinson,3737,Assets,QAI-05954891,2023-10-24 14:38:00,EXP00000131,Automatically generated asset for new corporate asset,Dell Latitude 7420
+Customer Support,,Processed,2024-03-05 01:08:00,Carmel Overfelt,2032,Assets,TVH-55614728,2024-02-27 01:08:00,EXP00000132,Registration of new Dell Latitude 7400 under assets,Dell Latitude 7400
+Customer Support,,Pending,,Mabel Weeden,6026,Assets,XPS-04613505,2023-07-26 06:22:00,EXP00000133,Company new hardware asset acquisition,Dell Latitude 5420
+Sales,,Processed,2023-11-24 04:41:00,Carolina Kinlaw,734,Travel,,2023-11-21 04:41:00,EXP00000134,Travel expense generated for new asset,Travel Briefcase
+Customer Support,,Processed,2023-06-16 13:33:00,Geri Forness,2640,Miscellaneous,,2023-06-07 13:33:00,EXP00000135,Equipment purchase for various office utilities,Miscellaneous Hardware Asset 001
+Sales,,Processed,2023-09-16 03:34:00,Bertie Luby,3996,Assets,HLN-42417656,2023-08-30 03:34:00,EXP00000136,IT Dell Laptop assigned to John Doe,ITT_Dell_Laptop_001
+Customer Support,,Submitted,,Valerie Pou,521,Services,UVU-39548100,2024-01-13 19:33:00,EXP00000137,Automatically generated asset for IT service,Cloud Based Server-1
+Customer Support,,Processed,2023-12-08 06:05:00,Geri Forness,1746,Travel,,2023-12-03 06:05:00,EXP00000138,Reservation of business travelling assets,Business Class Flight Tickets
+Customer Support,,Processed,2023-05-12 13:29:00,Marcie Shulz,1688,Services,XGL-15423288,2023-05-05 13:29:00,EXP00000139,Creation of service asset,ServiceNow Enterprise
+Customer Support,,Processed,2023-06-01 20:15:00,Ofelia Sheffler,220,Miscellaneous,,2023-05-31 20:15:00,EXP00000140,Added miscellaneous hardware asset,NVIDIA GeForce RTX 3060
+Sales,,Processed,2023-11-21 04:03:00,Essie Vaill,6913,Assets,TDO-69641452,2023-10-26 04:03:00,EXP00000141,Internally purchased hardware asset,Dell OptiPlex 3080 Desktop Computer
+Development,,Processed,2023-08-31 13:30:00,Cyril Behen,7637,Travel,,2023-08-03 13:30:00,EXP00000142,Travel related hardware asset,Portable Mobile Charger
+Finance,,Processed,2023-10-30 02:32:00,Fausto Marks,2863,Assets,JOC-71085922,2023-10-17 02:32:00,EXP00000143,Dell Latitude Laptop Asset Creation,Dell Latitude 5490
+Customer Support,,Processed,2023-12-14 14:24:00,Lynda Caraway,5688,Travel,,2023-11-20 14:24:00,EXP00000144,Travel department's necessary asset,Travel guide application license
+Development,,Processed,2023-09-19 14:58:00,Ramon Amaral,5138,Assets,FCM-11880530,2023-08-30 14:58:00,EXP00000145,Asset Maintenance for Lenovo Thinkpad,Lenovo Thinkpad X1 Carbon
+Customer Support,,Submitted,,Owen Sparacino,8347,Assets,MSD-86312495,2023-02-20 03:49:00,EXP00000146,Automatically generated hardware asset,100-001-HP Elitebook 850
+IT,,Declined,,Vernon Engelman,230,Miscellaneous,,2023-05-20 14:06:00,EXP00000147,Miscellaneous hardware assets,Randomized Computer Gear
+Sales,,Submitted,,Carolina Kinlaw,6541,Assets,TUG-93297190,2024-02-14 09:27:00,EXP00000148,Automated setup script for new asset registration,Cisco Catalyst 9200 Series Switches
+Customer Support,,Processed,2023-07-16 11:53:00,Danny Dales,3335,Travel,,2023-07-04 11:53:00,EXP00000149,Travel related expense recorded for new asset generation,Business Travel Essentials Kit
+Customer Support,,Pending,,Mitzi Ihenyen,2063,Assets,TBH-69165234,2023-08-05 01:06:00,EXP00000150,Generated asset - Dell Inspiron 15 3000,Dell Inspiron 15 3000
+IT,,Processed,2024-03-05 18:51:00,Virgil Chinni,1990,Services,PST-68079026,2024-02-25 18:51:00,EXP00000151,Automatically generated service line for creation of asset,Cloud Server Service
+Customer Support,,Processed,2024-01-15 03:54:00,Owen Sparacino,842,Services,XXZ-72499389,2024-01-12 03:54:00,EXP00000152,Provision of cloud storage service,AWS S3 Service Instance
+IT,,Processed,2024-01-06 09:56:00,Forest Orea,2781,Assets,OUG-44773390,2023-12-27 09:56:00,EXP00000153,Lenovo ThinkPad T490 asset registration,Lenovo ThinkPad T490
+HR,,Declined,,Rosalie Krigger,484,Services,VYK-85688810,2023-10-02 15:37:00,EXP00000154,Installation of new server rack,Panasonic Server FZ-T1
+IT,,Submitted,,Virgil Chinni,817,Services,CXK-96657711,2023-09-09 05:19:00,EXP00000155,Automatically generated asset for provision of Services,Cloud Service Platform
+Finance,,Declined,,Germaine Bruski,6049,Travel,,2024-04-02 21:22:00,EXP00000156,Travel expense for new hardware asset,Samsonite Mobile Solutions Luggage
+Customer Support,,Pending,,Sean Bonnet,4997,Assets,EJL-65028996,2023-05-19 14:10:00,EXP00000157,Newly procured hardware asset,Dell Latitude 3410
+Sales,,Pending,,Essie Vaill,1997,Services,RIE-92940693,2024-02-13 06:40:00,EXP00000158,Subscription for professional service,Microsoft Office 365 Suite
+IT,,Declined,,Forest Orea,1075,Services,SOQ-34891140,2023-11-03 09:31:00,EXP00000159,Service-based cloud storage infrastructure,Amazon Web Services
+Sales,,Processed,2023-12-31 21:06:00,Luella Pliner,784,Services,FEB-81738439,2023-12-26 21:06:00,EXP00000160,Automatically generated service line for creation of asset,Web Hosting Server
+Sales,,Processed,2023-02-14 11:40:00,Essie Vaill,1132,Services,AEZ-07162756,2023-02-08 11:40:00,EXP00000161,Automatic service configuration for internal applications,Database Server DS-1200
+Customer Support,,Processed,2024-01-13 22:21:00,Sue Haakinson,5308,Assets,LDB-81624536,2023-12-23 22:21:00,EXP00000162,Auto-generated data for installed assets,Dell Latitude 7490 Laptop
+Sales,,Processed,2023-05-20 12:14:00,Rob Woodbyrne,113,Services,PQX-98207777,2023-05-18 12:14:00,EXP00000163,Automated service asset creation,Cloud Service Provider 1
+Customer Support,,Processed,2024-01-27 09:54:00,Ofelia Sheffler,3581,Assets,IUN-02832806,2024-01-14 09:54:00,EXP00000164,New inventory arrival - Dell Laptop,Dell Latitude 7410
+Customer Support,,Submitted,,Janice Twiet,4357,Miscellaneous,,2023-10-28 13:22:00,EXP00000165,Miscellaneous hardware asset added to inventory,Miscellaneous Device - 5734DX
+Sales,,Processed,2023-03-10 09:10:00,Howard Johnson,1403,Services,BOF-39232737,2023-03-05 09:10:00,EXP00000166,Provision of new cloud-based service,Amazon Web Service EC2
+Sales,,Declined,,Cristina Sharper,4083,Travel,,2023-04-29 06:46:00,EXP00000167,Travel category related equipment registered,Corporate Travel Laptop
+Customer Support,,Processed,2023-06-12 02:48:00,Lynda Caraway,4644,Assets,QAL-58101832,2023-05-26 02:48:00,EXP00000168,Automatically generated entry for new asset,Dell Latitude 7410
+Customer Support,,Processed,2024-02-06 07:07:00,Zackary Mockus,1375,Services,LKD-84866529,2024-02-01 07:07:00,EXP00000169,Automated System Creation of Service Asset,Cloud Service Asset
+Customer Support,,Declined,,Sal Pindell,102,Services,RXZ-01012286,2023-07-24 21:37:00,EXP00000170,Automated provisioning of ServiceNow cloud service,Service-Cloud-Enterprise-Edition
+Sales,,Pending,,Bertie Luby,7097,Assets,HDZ-52725375,2023-02-11 20:12:00,EXP00000171,Server machine added to hardware assets,Dell PowerEdge R440
+Customer Support,,Processed,2023-07-12 21:37:00,Petra Mcnichol,6194,Assets,PDL-29781101,2023-06-18 21:37:00,EXP00000172,Automated asset registration for new equipment,Dell Latitude E7470
+Customer Support,,Processed,2023-04-29 05:15:00,Viola Mcsorley,2710,Miscellaneous,,2023-04-19 05:15:00,EXP00000173,Miscellaneous hardware asset generated,Random Access Memory (RAM) Component
+Customer Support,,Processed,2024-05-06 10:34:00,Valerie Pou,5878,Assets,YQN-67562405,2024-04-12 10:34:00,EXP00000174,Automated record for newly acquired asset,Dell Latitude 7420
+Sales,,Processed,2023-06-17 06:36:00,Savannah Loffier,1623,Services,PVT-22480534,2023-06-10 06:36:00,EXP00000175,Asset created for provisioned service,Cloud Database Service
+Sales,,Processed,2023-04-25 15:05:00,Melody Saddat,149,Miscellaneous,,2023-04-23 15:05:00,EXP00000176,Automatically generated asset for creation of miscellaneous item,Dell Optiplex 3070
+Sales,,Processed,2023-07-06 07:01:00,Lacy Hyten,994,Services,SYV-33269124,2023-07-02 07:01:00,EXP00000177,Automatically generated service line for creation of asset,Cloud Hosting Service
+Customer Support,,Processed,2023-07-12 00:22:00,Marcie Shulz,4536,Assets,IIR-72636048,2023-06-25 00:22:00,EXP00000178,Creation of new asset for IT department,Dell Latitude 7410 Laptop
+IT,,Declined,,Helene Iberg,4566,Assets,DBB-70476144,2023-07-04 09:31:00,EXP00000179,Dell Latitude laptop added to IT assets,Dell Latitude E5470
+Customer Support,,Submitted,,Felipe Mahone,1953,Services,LPJ-18107115,2023-11-05 19:08:00,EXP00000180,Automatically generated expense line for creation of service asset,Cloud Storage Service
+Customer Support,,Processed,2023-07-09 16:08:00,Mabel Weeden,4878,Travel,,2023-06-20 16:08:00,EXP00000181,Traveling kit for field work,Dell Laptop Travel Edition
+Finance,,Processed,2023-09-03 03:18:00,Germaine Bruski,4632,Miscellaneous,,2023-08-15 03:18:00,EXP00000182,Purchase of Miscellaneous Asset for Office Use,Projector Panasonic PT-VZ580
+Finance,,Processed,2023-06-22 05:41:00,Fausto Marks,5656,Assets,JXT-11519863,2023-05-31 05:41:00,EXP00000183,Addition of asset HP Pavilion,HP Pavilion 17
+Sales,,Processed,2024-02-26 10:41:00,Bertie Luby,731,Services,WCK-24610572,2024-02-21 10:41:00,EXP00000184,Provisioning of new cloud service,AWS S3 Bucket Service
+Finance,,Processed,2024-05-14 18:13:00,Germaine Bruski,5322,Assets,ZWA-87301095,2024-04-24 18:13:00,EXP00000185,Hardware asset registration for new server,Dell PowerEdge R740xd
+IT,,Processed,2023-03-28 01:36:00,Virgil Chinni,3289,Travel,,2023-03-14 01:36:00,EXP00000186,Travel-related hardware asset registration,Portable GPS Device
+Customer Support,,Processed,2023-05-30 02:42:00,Rachel Larrison,7277,Assets,EEA-06442461,2023-04-30 02:42:00,EXP00000187,Hardware asset - Dell XPS 15 laptop,Dell_XPS_15_Asset_12345
+Customer Support,,Processed,2023-03-02 01:56:00,Janice Twiet,1788,Services,YIQ-93746910,2023-02-24 01:56:00,EXP00000188,Configuration item for Services,Cloud Data Service
+Customer Support,,Processed,2023-07-29 03:52:00,Darrel Tork,6807,Assets,PVX-97837259,2023-07-03 03:52:00,EXP00000189,Automated asset registration for new hardware purchase,Dell Latitude 7410
+HR,,Processed,2024-02-13 16:32:00,Rosalie Krigger,1218,Services,LZI-84659823,2024-02-08 16:32:00,EXP00000190,Virtual service hosted in cloud,AWS Server
+Customer Support,,Processed,2023-09-11 06:09:00,Rachel Larrison,116,Services,YZF-80510601,2023-09-09 06:09:00,EXP00000191,Provision of new cloud service,Amazon Web Services EC2
+Development,,Submitted,,Cyril Behen,2509,Miscellaneous,,2023-03-26 04:39:00,EXP00000192,Sample data for Misc category asset,Miscellaneous Item 12
+Sales,,Processed,2023-05-25 20:09:00,Leif Bachta,1119,Services,BHH-95801564,2023-05-20 20:09:00,EXP00000193,Installation of Cloud based Service Package,Office365 ProPlus
+Customer Support,,Processed,2023-12-17 06:12:00,Viola Mcsorley,7508,Travel,,2023-11-15 06:12:00,EXP00000194,Automatically generated expense line for creation of travel asset,Business Class Airfareticket 
+Sales,,Processed,2023-08-28 23:01:00,Melody Saddat,2905,Travel,,2023-08-17 23:01:00,EXP00000195,Automatically generated expense line for creation of travel assets,Business Travel Kit
+Customer Support,,Processed,2023-06-06 14:52:00,Helena Suermann,8196,Assets,BQU-65700204,2023-05-06 14:52:00,EXP00000196,Hardware asset registration for new equipment,Dell Latitude E5450
+Customer Support,,Processed,2023-08-10 09:37:00,Wilfredo Gidley,6549,Assets,MPW-54954237,2023-07-16 09:37:00,EXP00000197,Automatically recorded asset for Desktop PC,Dell OptiPlex 3070
+Customer Support,,Processed,2024-01-16 17:55:00,Janice Twiet,3896,Assets,EQL-70696171,2024-01-02 17:55:00,EXP00000198,Dell Latitude 7420 laptop added to assets,Dell Latitude 7420
+Product Management,,Processed,2023-07-26 16:40:00,Mamie Mcintee,3661,Miscellaneous,,2023-07-12 16:40:00,EXP00000199,Miscellaneous hardware asset added to inventory,Random Access Memory (RAM) Module
+Customer Support,,Processed,2023-12-07 20:35:00,Sue Haakinson,6592,Assets,AWV-77860162,2023-11-13 20:35:00,EXP00000200,Dell OptiPlex 7070 Desktop PC acquisition,OptiPlex 7070_Core_i5
+Customer Support,,Processed,2024-02-26 14:04:00,Darrel Tork,8286,Assets,XSR-56242586,2024-01-26 14:04:00,EXP00000201,Automatically generated line for addition of new hardware,HP EliteBook 840 G5
+Finance,,Processed,2023-05-18 11:42:00,Fausto Marks,5575,Assets,XDJ-90592080,2023-04-27 11:42:00,EXP00000202,Automatically generated asset for Dell Workstation,Dell Precision T1700
+Customer Support,,Processed,2024-02-02 05:07:00,Geri Forness,8205,Assets,VYZ-43274450,2023-12-30 05:07:00,EXP00000203,Asset procurement - Dell Inspiron 7501 Laptop,Dell Inspiron 7501
+Finance,,Processed,2023-09-29 20:37:00,Germaine Bruski,1971,Services,ETU-57773053,2023-09-21 20:37:00,EXP00000204,Creation of new Services related asset,Cloud Server
+Customer Support,,Processed,2023-07-13 06:34:00,Carmel Overfelt,6383,Assets,GHF-39746820,2023-06-19 06:34:00,EXP00000205,Automatically logged asset addition for IT equipment,Dell XPS 13
+Customer Support,,Processed,2024-02-26 08:01:00,Nelly Jakuboski,3457,Miscellaneous,,2024-02-11 08:01:00,EXP00000206,Miscellaneous asset creation for reporting,HP Printer 3100
+Customer Support,,Processed,2023-05-02 15:05:00,Geri Forness,2802,Assets,AIG-47311291,2023-04-22 15:05:00,EXP00000207,Automated entry for newly added hardware asset,Dell Latitude E7450
+Customer Support,,Processed,2024-04-08 18:12:00,Geri Forness,3251,Travel,,2024-03-25 18:12:00,EXP00000208,Automatically generated expense line for creation of travel asset,Company SUV
+Customer Support,,Processed,2024-01-12 04:23:00,Petra Mcnichol,4314,Assets,UPM-76710091,2023-12-27 04:23:00,EXP00000209,Asset tagged as high-value hardware,Dell Precision 5540
+Customer Support,,Declined,,Marcie Shulz,1683,Services,QMG-90854046,2023-09-27 22:39:00,EXP00000210,Provision of new Cloud Service,Azure Cloud Services
+Development,,Processed,2023-06-19 07:28:00,Cyril Behen,242,Services,TGQ-25446006,2023-06-18 07:28:00,EXP00000211,Initiation of Service related asset,Office365 Service Plan
+Customer Support,,Processed,2023-05-12 16:39:00,Sal Pindell,8019,Assets,FCI-99882480,2023-04-11 16:39:00,EXP00000212,Addition of new asset into system,HP Elitebook 840
+Customer Support,,Pending,,Janice Twiet,4969,Assets,FUB-70893346,2023-11-24 09:59:00,EXP00000213,Automatically generated record for the creation of desktop computer asset,Dell Optiplex 3070
+Customer Support,,Processed,2023-12-12 07:46:00,Nelly Jakuboski,1167,Services,WVQ-10281252,2023-12-07 07:46:00,EXP00000214,Allocation of Service related assets,Cloud Services Account
+Development,,Processed,2023-06-24 17:24:00,Ramon Amaral,1244,Services,KCL-44362572,2023-06-19 17:24:00,EXP00000215,Installation of new service configuration,Web Server Service
+Product Management,,Pending,,Mamie Mcintee,4759,Assets,XUD-44117049,2023-02-13 18:18:00,EXP00000216,Purchase of new hardware asset,Dell Inspiron 15
+Sales,,Processed,2024-01-17 13:11:00,Melody Saddat,3033,Assets,DAZ-06640777,2024-01-06 13:11:00,EXP00000217,Hard drive replacement,Dell PowerEdge Server
+Sales,,Processed,2023-10-22 11:52:00,Karen Zombo,2538,Miscellaneous,,2023-10-10 11:52:00,EXP00000218,Miscellaneous hardware asset entry,Dell OptiPlex 3070 Micro
+Development,,Processed,2023-08-06 16:26:00,Ramon Amaral,2535,Miscellaneous,,2023-07-27 16:26:00,EXP00000219,Automatically generated asset for Miscellaneous category,Dell Optiplex 780
+Sales,,Processed,2024-03-05 22:49:00,Luella Pliner,6327,Assets,XGH-76672243,2024-02-10 22:49:00,EXP00000220,Procured asset entry for company infrastructure,Dell Latitude 7420
+Customer Support,,Submitted,,Marcie Shulz,7766,Assets,WDN-00050178,2023-04-04 01:33:00,EXP00000221,Automatically logged asset creation,Dell Latitude E7450
+Customer Support,,Processed,2023-12-25 01:47:00,Helena Suermann,388,Services,SSR-07171265,2023-12-24 01:47:00,EXP00000222,Service Purchase for Asset Creation,Cloud Infrastructure Service
+Customer Support,,Declined,,Carmel Overfelt,2833,Assets,QVR-63591488,2023-05-29 16:45:00,EXP00000223,Server Asset Acquisition,Dell PowerEdge R740
+Sales,,Processed,2024-02-11 01:30:00,Essie Vaill,6122,Assets,GAF-92555646,2024-01-19 01:30:00,EXP00000224,Procurement of new office assets,Dell OptiPlex 3070 Micro
+Sales,,Processed,2024-03-20 09:02:00,Raphael Bickel,595,Miscellaneous,,2024-03-17 09:02:00,EXP00000225,Miscellaneous category hardware addition,Dell Precision 3640 Tower Workstation
+IT,,Processed,2023-08-12 07:12:00,Helene Iberg,4943,Assets,KAA-32692912,2023-07-22 07:12:00,EXP00000226,New Addition to Hardware Assets,Dell Latitude 5400
+IT,,Processed,2023-04-01 22:58:00,Helene Iberg,3961,Miscellaneous,,2023-03-16 22:58:00,EXP00000227,Miscellaneous hardware asset acquired,Comprehensive IT Tools Kit
+Sales,,Pending,,Bertie Luby,1684,Services,OMN-26412661,2023-11-22 18:28:00,EXP00000228,Services related asset creation,Cloud Service Platform 1
+IT,,Processed,2023-12-14 19:39:00,Helene Iberg,2353,Miscellaneous,,2023-12-05 19:39:00,EXP00000229,Miscellaneous hardware component,Graphics Card GTX 1080Ti
+Customer Support,,Processed,2023-09-21 08:29:00,Marianne Earman,365,Miscellaneous,,2023-09-17 08:29:00,EXP00000230,Expensed acquisition of new miscellaneous hardware,Dell Workstation OptiPlex 7090
+Sales,,Declined,,Lacy Hyten,2451,Travel,,2024-01-28 01:53:00,EXP00000231,Booking expense for travel equipment,Business Class Flight Ticket
+Customer Support,,Submitted,,Helga Windle,2542,Assets,RAM-27712788,2023-11-17 07:09:00,EXP00000232,Asset tagging for newly acquired laptop,Dell Latitude 7410
+IT,,Processed,2023-11-26 08:23:00,Forest Orea,5634,Travel,,2023-11-05 08:23:00,EXP00000233,Travel related hardware expense,Portable GPS Navigator
+Customer Support,,Submitted,,Helga Windle,2125,Assets,AZV-06813318,2023-08-14 07:54:00,EXP00000234,Creation of new asset for department,Dell Latitude 7480
+Sales,,Pending,,Howard Johnson,2794,Travel,,2023-07-09 03:08:00,EXP00000235,Luggage Tracker,TravelPro Elite GPS
+Development,,Processed,2024-02-10 12:18:00,Ramon Amaral,1328,Miscellaneous,,2024-02-05 12:18:00,EXP00000236,Miscellaneous Asset Added,Miscellaneous Item ID 6789
+Customer Support,,Declined,,Shelley Groden,181,Services,HHS-28383998,2023-09-21 14:25:00,EXP00000237,Automatically generated service line for creation of asset,Virtual Private Server(VPS)
+Sales,,Processed,2023-03-24 10:23:00,Leif Bachta,1876,Services,NUW-97961552,2023-03-17 10:23:00,EXP00000238,Service-related hardware asset,Server Rack 20U
+IT,,Pending,,Forest Orea,1030,Services,BEL-47941685,2023-05-26 19:43:00,EXP00000239,Newly provisioned service for enterprise management,Enterprise Service Bus
+Customer Support,,Processed,2024-04-05 08:48:00,Nelly Jakuboski,218,Services,TOC-27355130,2024-04-03 08:48:00,EXP00000240,Newly added service for IT support,Enterprise Cloud Service
+Customer Support,,Declined,,Danny Dales,3363,Miscellaneous,,2023-12-28 19:13:00,EXP00000241,Acquisition of new hardware asset,Miscellaneous Office Supplies
+Finance,,Processed,2023-04-26 14:13:00,Fausto Marks,2739,Assets,LPJ-50456714,2023-04-13 14:13:00,EXP00000242,Newly procured asset for the organization,Dell Latitude 5401
+Development,,Processed,2023-09-27 14:31:00,Cyril Behen,1459,Services,ZCQ-34437953,2023-09-20 14:31:00,EXP00000243,Automatically generated expense line for creation of Service utility,Cloud Computing Service
+IT,,Declined,,Helene Iberg,5086,Travel,,2023-08-21 13:24:00,EXP00000244,Automatically generated expense line for travel asset,American Airlines Flight AA123
+Sales,,Processed,2023-06-24 10:52:00,Leif Bachta,1954,Services,DFJ-09609306,2023-06-15 10:52:00,EXP00000245,Automatically generated Service asset,Cloud Service AWS
+HR,,Declined,,Rosalie Krigger,7309,Assets,RYJ-20329594,2023-06-23 13:37:00,EXP00000246,Automatically registered hardware asset in system,Dell Latitude 7490
+HR,,Processed,2023-09-07 19:19:00,Rosalie Krigger,1279,Services,QTC-13024058,2023-09-02 19:19:00,EXP00000247,Automatically generated expense line for creation of asset under services,Cisco Cloud Services Router 1000V
+Customer Support,,Pending,,Viola Mcsorley,608,Services,ZEO-80517727,2023-10-14 08:21:00,EXP00000248,Creation of Service: Managed Cloud Resources,Cloud Service AWS EC2
+Customer Support,,Pending,,Geri Forness,1011,Services,QPM-73379773,2023-11-28 14:14:00,EXP00000249,Automated service configuration expense,Cloud Server Service
+Sales,,Processed,2023-12-08 11:27:00,Karen Zombo,2274,Miscellaneous,,2023-11-28 11:27:00,EXP00000250,Asset for office automation equipment,Miscellaneous office projector
+Customer Support,,Processed,2023-07-15 06:05:00,Geri Forness,5155,Travel,,2023-06-24 06:05:00,EXP00000251,Expense for travel equipment purchase,Samsonite Travel Suitcase
+Finance,,Submitted,,Fausto Marks,7264,Assets,YGE-72475060,2023-10-10 13:44:00,EXP00000252,Automatically generated expense line for acquisition of asset,Dell Latitude 7490
+Finance,,Processed,2023-05-06 08:24:00,Fausto Marks,7800,Travel,,2023-04-06 08:24:00,EXP00000253,Travel related equipment asset,Laptop Dell Inspiron 15
+Customer Support,,Declined,,Helga Windle,5399,Assets,BJH-53743731,2023-09-10 18:29:00,EXP00000254,HP Printer Procurement for IT Department,HP LaserJet Pro M477fdw
+IT,,Processed,2023-05-15 20:54:00,Forest Orea,486,Services,FVX-63260633,2023-05-13 20:54:00,EXP00000255,Services related hardware asset,Cloud Service Rack 12
+Customer Support,,Declined,,Mabel Weeden,3772,Travel,,2023-12-06 14:39:00,EXP00000256,Luggage tracking GPS device,Travel Accessory Item 001
+Customer Support,,Processed,2023-07-12 09:38:00,Danny Dales,1173,Services,CQT-96210118,2023-07-08 09:38:00,EXP00000257,Automatically generated expense line for creation of service asset,Cloud Service Managed
+Sales,,Processed,2024-02-07 19:50:00,Lacy Hyten,455,Services,KBQ-69317298,2024-02-05 19:50:00,EXP00000258,Automatically generated service registration for newly provisioned server,Data Center Proxy Server
+Customer Support,,Pending,,Nelly Jakuboski,619,Services,VKS-83234079,2023-05-31 17:35:00,EXP00000259,Cloud service asset configuration,AWS EC2 Instance
+Sales,,Processed,2023-11-27 18:56:00,Melody Saddat,984,Services,ZHI-49652449,2023-11-22 18:56:00,EXP00000260,Service related hardware asset entry,Web Server Hardware WS12
+Customer Support,,Processed,2023-12-25 15:03:00,Nelly Jakuboski,1599,Services,WIA-11261699,2023-12-18 15:03:00,EXP00000261,Automatically generated service asset CI,Business Service: Cloud Infrastructure
+Customer Support,,Processed,2023-03-12 01:48:00,Geri Forness,3529,Travel,,2023-02-27 01:48:00,EXP00000262,Travel-associated asset,Travel Expense System TES12345
+Sales,,Processed,2023-06-25 18:22:00,Cristina Sharper,3571,Assets,ZYQ-40361445,2023-06-11 18:22:00,EXP00000263,Provision of new IT asset,Dell Latitude E7470
+IT,,Processed,2023-05-07 03:44:00,Helene Iberg,1085,Travel,,2023-05-02 03:44:00,EXP00000264,Travel related asset subscription,International Roaming Data Plan
+Customer Support,,Processed,2024-04-04 17:34:00,Misty Ericksen,1920,Travel,,2024-03-27 17:34:00,EXP00000265,Automatically generated asset line for travel equipment,Samsonite Spinner Suitcase
+IT,,Pending,,Vernon Engelman,1790,Services,HPP-84331742,2024-02-15 13:33:00,EXP00000266,ServiceNow Server Node-e5 Renewal,Node-e5 Cloud Computing Service
+Customer Support,,Processed,2023-04-11 04:40:00,Carmel Overfelt,1748,Services,YHB-69691343,2023-04-03 04:40:00,EXP00000267,Automatically generated expense line for creation of service asset,Cloud Based Web Hosting Service
+Sales,,Processed,2023-06-10 22:35:00,Raphael Bickel,8841,Assets,FLQ-76479532,2023-05-09 22:35:00,EXP00000268,Dell Latitude 5490 Laptop asset,Dell Latitude 5490
+Customer Support,,Pending,,Marianne Earman,8461,Assets,LXJ-42898808,2023-05-15 02:00:00,EXP00000269,Automated record for new hardware asset acquisition,Dell Latitude 5511
+Sales,,Processed,2024-04-15 22:31:00,Cristina Sharper,798,Services,OSS-41334463,2024-04-10 22:31:00,EXP00000270,New service asset registered,Cloud Storage Service
+Customer Support,,Processed,2023-04-15 00:50:00,Geri Forness,2156,Assets,ZMY-11716037,2023-04-06 00:50:00,EXP00000271,Lenovo ThinkPad T480 acquired for IT department,Computer Laptop Lenovo ThinkPad T480
+Customer Support,,Processed,2024-03-23 13:33:00,Janice Twiet,3006,Miscellaneous,,2024-03-11 13:33:00,EXP00000272,Purchase of Miscellaneous Equipment,Dell OptiPlex 7070
+HR,,Processed,2023-05-31 16:43:00,Rosalie Krigger,321,Services,WIH-29015902,2023-05-30 16:43:00,EXP00000273,Automated asset registration for Services,Microsoft Azure Cloud Service
+Customer Support,,Processed,2024-04-14 02:40:00,Mitzi Ihenyen,140,Services,OHE-36020581,2024-04-12 02:40:00,EXP00000274,Provision of services configuration,Cloud Services AWS
+Customer Support,,Pending,,Sean Bonnet,1392,Services,ANC-66294723,2023-08-12 17:00:00,EXP00000275,Services asset registration,Microsoft Office 365 Subscription
+Sales,,Processed,2023-10-25 22:24:00,Essie Vaill,812,Services,AWE-09151478,2023-10-22 22:24:00,EXP00000276,Automatically generated service asset line for Cloud Storage Service,AWS S3 Bucket
+Customer Support,,Processed,2024-01-07 05:04:00,Valerie Pou,536,Travel,,2024-01-06 05:04:00,EXP00000277,Travel package including flight and hotel bookings,Global Travel Elite Package
+IT,,Processed,2023-09-18 23:54:00,Forest Orea,6882,Travel,,2023-08-21 23:54:00,EXP00000278,Travel related hardware asset,Garmin GPS Navigator
+Customer Support,,Processed,2023-09-27 07:12:00,Ofelia Sheffler,3396,Miscellaneous,,2023-09-14 07:12:00,EXP00000279,Automatically generated asset for Miscellaneous category,Miscellaneous Asset ID: 12345
+Customer Support,,Processed,2024-01-15 16:12:00,Felipe Mahone,5504,Assets,PUU-86218465,2023-12-24 16:12:00,EXP00000280,Configuration item added for asset management,Dell Latitude E5470
+Customer Support,,Submitted,,Jimmie Kertzman,3578,Miscellaneous,,2024-01-03 12:01:00,EXP00000281,Automatically generated line for creation of miscellaneous hardware asset,LED Display Screen 22
+Customer Support,,Processed,2024-03-23 02:27:00,Wilfredo Gidley,902,Services,DGD-72752844,2024-03-18 02:27:00,EXP00000282,Hosting service for IT Asset,Cloud Hosting Service
+Customer Support,,Declined,,Sal Pindell,3717,Travel,,2024-03-25 01:01:00,EXP00000283,Travel-related IT asset acquisition,HP EliteBook 830
+Customer Support,,Processed,2024-01-24 10:32:00,Helena Suermann,1172,Miscellaneous,,2024-01-19 10:32:00,EXP00000284,Miscellaneous office equipment,Projector EPSON X123
+Sales,,Processed,2023-03-26 01:12:00,Essie Vaill,1188,Services,BLF-29746031,2023-03-21 01:12:00,EXP00000285,Automated services line for creation of asset,Projector Dell 4560
+Customer Support,,Processed,2023-07-29 12:21:00,Ofelia Sheffler,2934,Miscellaneous,,2023-07-18 12:21:00,EXP00000286,Automatically generated asset for Miscellaneous category,Miscellaneous Item 001
+Customer Support,,Processed,2023-07-25 10:21:00,Sue Haakinson,4425,Miscellaneous,,2023-07-07 10:21:00,EXP00000287,Miscellaneous hardware asset entry,Generic USB Device
+Sales,,Pending,,Lacy Hyten,2781,Assets,LYB-39951807,2023-09-20 08:48:00,EXP00000288,Asset Registration for new equipment,Dell OptiPlex 3080
+Customer Support,,Processed,2024-02-26 15:53:00,Viola Mcsorley,644,Services,CPC-24991457,2024-02-23 15:53:00,EXP00000289,Automated service allocation for asset,Cloud Service Azure
+Customer Support,,Processed,2023-07-31 17:32:00,Felipe Mahone,2523,Miscellaneous,,2023-07-20 17:32:00,EXP00000290,Acquisition of miscellaneous hardware,Dell Inspiron 15
+Sales,,Pending,,Bertie Luby,445,Services,KSY-97772222,2023-11-19 17:50:00,EXP00000291,Automatically generated ServiceNow asset for creation of service,Cloud Database Service
+Customer Support,,Processed,2023-03-21 05:50:00,Marcie Shulz,5138,Assets,CEO-17499987,2023-03-01 05:50:00,EXP00000292,MacBook Pro 17 inch under corporate asset management,Asset-123456
+Sales,,Processed,2024-04-24 13:10:00,Leif Bachta,7016,Assets,FYU-09440786,2024-03-29 13:10:00,EXP00000293,Automatically generated entry for IT asset,Dell Latitude 7410
+Sales,,Processed,2023-08-10 04:57:00,Carolina Kinlaw,2291,Assets,AXH-28196960,2023-08-01 04:57:00,EXP00000294,Asset addition of a new printer,HP LaserJet Pro M203dw
+Sales,,Declined,,Bertie Luby,4039,Travel,,2023-06-18 12:35:00,EXP00000295,Airport travel assistance hardware,Airport Automated Check-in System
+Customer Support,,Processed,2023-06-18 22:05:00,Mitzi Ihenyen,1910,Services,TMG-57280464,2023-06-11 22:05:00,EXP00000296,Provision of IT support services,IT Support Services
+Customer Support,,Processed,2023-06-03 13:20:00,Valerie Pou,4678,Miscellaneous,,2023-05-16 13:20:00,EXP00000297,Miscellaneous category hardware asset,Dell OptiPlex 380
+Customer Support,,Processed,2024-01-14 08:43:00,Marianne Earman,3589,Miscellaneous,,2023-12-31 08:43:00,EXP00000298,Registration of newly acquired miscellaneous hardware,Logitech Wireless Mouse MX Master 3
+Sales,,Processed,2023-03-06 08:42:00,Howard Johnson,1443,Services,TWD-47751417,2023-02-27 08:42:00,EXP00000299,Configuration Item added for new Service,Web Server Service
+Sales,,Processed,2023-05-16 05:32:00,Carolina Kinlaw,4318,Assets,ZDJ-91926488,2023-04-29 05:32:00,EXP00000300,Server Hardware - Dell PowerEdge R440,Server_Asset_Dell_R440_0003245
+IT,,Processed,2023-03-27 09:25:00,Sadie Rowlett,1716,Services,BWG-27040696,2023-03-22 09:25:00,EXP00000301,Automated provision of web server service,AWS EC2 Instance
+Finance,,Processed,2023-09-01 14:10:00,Germaine Bruski,375,Miscellaneous,,2023-08-29 14:10:00,EXP00000302,Miscellaneous hardware assets purchased,Dell OptiPlex 3070
+Customer Support,,Processed,2023-09-10 11:59:00,Nelly Jakuboski,757,Services,XOS-53471826,2023-09-05 11:59:00,EXP00000303,Automated service expense for software delivery,Cloud-based Software As A Service (SaaS)
+Development,,Submitted,,Cyril Behen,1702,Services,XMJ-75267839,2023-03-01 08:10:00,EXP00000304,Service request for Virtual Private Network setup,VPN Service Subscription
+IT,,Processed,2023-05-30 00:20:00,Virgil Chinni,6440,Assets,KXM-73199660,2023-05-04 00:20:00,EXP00000305,Procurement of new IT assets,Dell Optiplex 3070
+Customer Support,,Processed,2024-03-16 04:13:00,Sal Pindell,8086,Assets,OJX-26562050,2024-02-13 04:13:00,EXP00000306,IT asset registration - Dell OptiPlex 3080,Dell OptiPlex 3080 Desktop
+Customer Support,,Processed,2023-06-16 00:18:00,Viola Mcsorley,4331,Assets,DTN-85742487,2023-05-28 00:18:00,EXP00000307,Automatically generated asset line for Desktop PC,Dell Optiplex 780
+Customer Support,,Submitted,,Petra Mcnichol,6771,Travel,,2023-08-11 13:53:00,EXP00000308,Automatically generated expense line for creation of travel asset,Standard Business Travel Kit
+IT,,Processed,2023-06-06 03:35:00,Helene Iberg,3539,Assets,LXT-33516640,2023-05-22 03:35:00,EXP00000309,Hardware asset registration for Lenovo Thinkpad,Lenovo Thinkpad T480
+Sales,,Processed,2024-04-16 13:23:00,Leif Bachta,4231,Assets,BQN-14008353,2024-03-31 13:23:00,EXP00000310,Automated asset entry for newly acquired hardware,HP EliteBook 840 G5
+IT,,Processed,2023-08-28 06:51:00,Vernon Engelman,490,Miscellaneous,,2023-08-27 06:51:00,EXP00000311,Miscellaneous hardware asset registration,Dell OptiPlex 7070
+IT,,Pending,,Helene Iberg,1918,Services,UCE-67586225,2024-01-26 00:11:00,EXP00000312,Service asset registered in system,Windows Server 2016
+Sales,,Processed,2024-02-10 13:30:00,Savannah Loffier,5744,Travel,,2024-01-17 13:30:00,EXP00000313,Procurement of new travel equipment,Samsonite Omni PC Hardside Luggage
+Customer Support,,Processed,2023-11-17 05:02:00,Felipe Mahone,7653,Assets,WOX-89781817,2023-10-17 05:02:00,EXP00000314,Automatically generated asset creation for hardware,Dell Latitude 7490
+HR,,Processed,2023-10-25 16:08:00,Rosalie Krigger,5511,Travel,,2023-10-03 16:08:00,EXP00000315,New travel asset generated for department use,Travel Equipment Kit
+Customer Support,,Processed,2023-07-12 06:36:00,Lynda Caraway,1037,Services,VGZ-22395010,2023-07-09 06:36:00,EXP00000316,Auto-generated service line for creation of asset,Cloud-Based Storage Service
+Customer Support,,Processed,2024-03-31 22:56:00,Mitzi Ihenyen,826,Services,OCW-41046331,2024-03-27 22:56:00,EXP00000317,Configuration of service asset,Service Management Software
+Customer Support,,Processed,2023-08-04 19:48:00,Mitzi Ihenyen,6027,Assets,QKI-56227356,2023-07-11 19:48:00,EXP00000318,Automatically recorded Asset entry for laptop,Dell Latitude 7400
+Sales,,Submitted,,Cristina Sharper,7786,Assets,GCQ-43600220,2023-11-16 08:15:00,EXP00000319,Company hardware asset in use,HP Pavilion Desktop 590
+Customer Support,,Processed,2023-07-10 08:41:00,Zackary Mockus,7447,Assets,EMM-44087403,2023-06-11 08:41:00,EXP00000320,Automated entry for newly acquired hardware asset,Dell Latitude E5470
+HR,,Processed,2023-06-15 18:23:00,Rosalie Krigger,2557,Assets,QQK-54574637,2023-06-06 18:23:00,EXP00000321,Asset record for newly acquired Dell server,Dell PowerEdge Server
+Customer Support,,Processed,2024-01-02 01:52:00,Felipe Mahone,1072,Services,IIJ-99253019,2023-12-28 01:52:00,EXP00000322,Service invoice for acquisition of asset,Web Hosting Service
+Sales,,Processed,2024-01-04 21:42:00,Rob Woodbyrne,722,Miscellaneous,,2023-12-31 21:42:00,EXP00000323,Miscellaneous Asset Creation Record,Desktop Workstation DX2200
+Sales,,Pending,,Nadia Wilshire,7195,Travel,,2023-07-03 00:09:00,EXP00000324,Travel related asset creation,Tumi Alpha 3 Briefcase
+IT,,Submitted,,Forest Orea,3712,Miscellaneous,,2023-12-12 19:33:00,EXP00000325,Miscellaneous asset entry - document scanner,Fujitsu ScanSnap iX1500
+Customer Support,,Declined,,Jimmie Kertzman,2288,Assets,GRX-08821962,2024-01-14 03:15:00,EXP00000326,Regular maintenance of office assets,Dell Latitude 7420
+Customer Support,,Processed,2024-01-16 21:33:00,Misty Ericksen,7484,Assets,KKK-57026588,2023-12-17 21:33:00,EXP00000327,Procurement of new IT asset,Dell Latitude 5420
+Customer Support,,Processed,2023-02-20 02:09:00,Marianne Earman,614,Services,MNV-45266985,2023-02-17 02:09:00,EXP00000328,Service-related hardware asset,Cloud Server Instance
+Customer Support,,Processed,2024-03-03 01:35:00,Mitzi Ihenyen,2081,Assets,EBM-12709021,2024-02-24 01:35:00,EXP00000329,A server asset generated for company's intranet application,Dell PowerEdge Server
+Customer Support,,Pending,,Rachel Larrison,4011,Assets,YPS-42167442,2023-02-09 02:24:00,EXP00000330,Procurement of new IT asset,Dell Latitude E7270
+Sales,,Processed,2024-02-19 10:46:00,Karen Zombo,6667,Assets,ZJD-73238015,2024-01-25 10:46:00,EXP00000331,Automatically generated line for asset acquisition,Dell Inspiron 15
+Finance,,Declined,,Germaine Bruski,7752,Assets,MAL-00742392,2023-05-04 06:59:00,EXP00000332,Newly added asset to the hardware inventory,iMac 27 inch with Retina 5K display
+Customer Support,,Processed,2023-04-17 13:40:00,Sean Bonnet,4635,Miscellaneous,,2023-03-29 13:40:00,EXP00000333,Generated data for miscellaneous hardware asset,Dell Latitude 5480
+Sales,,Declined,,Carolina Kinlaw,7516,Assets,FRL-42243758,2023-11-06 15:50:00,EXP00000334,Automated hardware addition for asset generation,Dell Latitude 7400
+HR,,Processed,2023-05-18 18:16:00,Rosalie Krigger,5326,Travel,,2023-04-27 18:16:00,EXP00000335,Travel equipment acquisition,Luxury Tour Bus
+Customer Support,,Processed,2023-05-14 17:04:00,Mitzi Ihenyen,4943,Assets,YKB-88180033,2023-04-24 17:04:00,EXP00000336,HP laptop registered under assets,HP Pavilion 14
+Customer Support,,Processed,2024-04-10 08:37:00,Mabel Weeden,533,Miscellaneous,,2024-04-07 08:37:00,EXP00000337,Miscellaneous Hardware Asset Generated,Dell Inspiron 14
+Customer Support,,Processed,2023-06-25 11:06:00,Ofelia Sheffler,8406,Assets,BUI-02582631,2023-05-24 11:06:00,EXP00000338,Automatically generated asset record for company's new hardware,Dell Latitude 5420 Laptop
+Customer Support,,Submitted,,Jimmie Kertzman,309,Services,HBI-98775575,2023-07-05 01:53:00,EXP00000339,Cloud based service provider asset,AWS EC2 Instance
+Finance,,Processed,2023-07-14 06:24:00,Germaine Bruski,551,Miscellaneous,,2023-07-10 06:24:00,EXP00000340,Automatically generated for Miscellaneous asset creation,Miscellaneous Equipment 102
+Development,,Processed,2024-04-01 00:16:00,Cyril Behen,2090,Assets,EUA-08755206,2024-03-23 00:16:00,EXP00000341,Automated asset creation for office equipment,Dell OptiPlex 3080
+Customer Support,,Declined,,Helga Windle,1845,Services,PQJ-57322962,2024-01-23 11:01:00,EXP00000342,ServiceNow instance software implementation,Cloud Service Instance
+Sales,,Processed,2024-03-05 03:25:00,Leif Bachta,1014,Services,VPA-36676685,2024-02-28 03:25:00,EXP00000343,Service related hardware asset registered,Cisco Network Services
+Customer Support,,Processed,2024-03-02 07:37:00,Shelley Groden,8595,Assets,AEV-79918808,2024-01-28 07:37:00,EXP00000344,Automatically generated asset creation line for workstation hardware,Dell Optiplex 7010
+Sales,,Processed,2024-05-12 22:50:00,Carolina Kinlaw,4849,Miscellaneous,,2024-04-22 22:50:00,EXP00000345,Miscellaneous Hardware Asset CI,HP Color Laser Printer 150nw
+IT,,Submitted,,Vernon Engelman,5937,Travel,,2023-03-10 05:22:00,EXP00000346,Travel expense for laptop asset creation,Dell Latitude 7480
+Customer Support,,Processed,2023-05-20 11:42:00,Rachel Larrison,341,Services,LOJ-27430526,2023-05-19 11:42:00,EXP00000347,Automatically generated expense line for creation of service asset,Windows Server 2016
+Sales,,Processed,2023-05-14 16:24:00,Nadia Wilshire,5333,Assets,KMW-53422855,2023-04-23 16:24:00,EXP00000348,Asset tracking for Dell Latitude laptop,Dell Latitude E5470
+Sales,,Processed,2023-12-12 03:40:00,Luella Pliner,1510,Services,XBQ-93146871,2023-12-06 03:40:00,EXP00000349,Provision of new service-related hardware,Services Routers BWG345
+Customer Support,,Processed,2023-03-07 19:51:00,Danny Dales,1095,Miscellaneous,,2023-03-02 19:51:00,EXP00000350,Configuration item added for miscellaneous asset,Wireless Keyboard K360
+Finance,,Pending,,Fausto Marks,1297,Travel,,2023-02-10 13:02:00,EXP00000351,Travel category hardware asset,Dell Latitude 7410 Travel Laptop
+Development,,Pending,,Ramon Amaral,705,Services,RJB-24584877,2023-03-11 20:35:00,EXP00000352,Service related asset entry,Cloud Service AWS
+Customer Support,,Processed,2024-02-11 02:10:00,Rachel Larrison,8043,Assets,THH-65796390,2024-01-09 02:10:00,EXP00000353,Asset record for server hardware,Dell PowerEdge R740
+Customer Support,,Processed,2023-10-13 05:02:00,Helena Suermann,4481,Miscellaneous,,2023-09-24 05:02:00,EXP00000354,Purchase of Miscellaneous Hardware Asset,Miscellaneous_Office_Equipment_123
+Sales,,Processed,2023-06-04 11:02:00,Melody Saddat,749,Services,UUU-45966228,2023-06-01 11:02:00,EXP00000355,Generated service for asset creation,Cloud Database Service
+Customer Support,,Pending,,Felipe Mahone,1112,Services,CCE-38448224,2023-04-27 07:41:00,EXP00000356,Installation of cloud service infrastructure,Azure Cloud Services
+Sales,,Processed,2023-08-12 01:55:00,Savannah Loffier,180,Services,YZL-02914675,2023-08-11 01:55:00,EXP00000357,Asset record creation for Service related hardware,Cisco ASA 5506-X Firewall
+Customer Support,,Processed,2023-06-16 11:23:00,Marianne Earman,526,Services,AOV-53674192,2023-06-14 11:23:00,EXP00000358,Services related hardware asset,Cisco Firewall ASA 5506
+Development,,Processed,2023-09-24 15:42:00,Cyril Behen,1003,Services,VJR-96626135,2023-09-20 15:42:00,EXP00000359,Automatically provided service for asset creation,Database Server DS1
+Customer Support,,Processed,2023-09-04 22:08:00,Helena Suermann,1727,Travel,,2023-08-28 22:08:00,EXP00000360,New purchase for business travel,Dell Latitude 5420
+Customer Support,,Processed,2024-03-24 13:06:00,Nelly Jakuboski,2274,Assets,FWU-49834960,2024-03-13 13:06:00,EXP00000361,Automatically registered entry for new asset,Telecom Network Router-23
+Sales,,Processed,2023-08-07 11:49:00,Carolina Kinlaw,1382,Services,ZSX-00135249,2023-08-02 11:49:00,EXP00000362,Automatically generated expense line for creation of service asset,Web Hosting Service
+Sales,,Processed,2023-02-14 03:19:00,Karen Zombo,2519,Assets,IPP-54417969,2023-02-05 03:19:00,EXP00000363,Hardware asset registration for company equipment,Dell Latitude 7490
+IT,,Processed,2023-07-08 22:20:00,Vernon Engelman,509,Services,CDN-77319523,2023-07-05 22:20:00,EXP00000364,Automatically generated expense line for creation of Service asset,Web Hosting Service
+Customer Support,,Processed,2023-05-29 04:30:00,Helena Suermann,1491,Services,TMJ-86205394,2023-05-22 04:30:00,EXP00000365,Provision of Cloud storage service,AWS S3 Bucket configuration item
+Customer Support,,Submitted,,Petra Mcnichol,673,Services,NBF-45789386,2023-12-02 05:24:00,EXP00000366,Provision of IT services to the Sales Department,Cloud Server 23
+HR,,Processed,2023-06-28 10:46:00,Rosalie Krigger,1233,Services,BDB-61603141,2023-06-22 10:46:00,EXP00000367,Creation of service asset under services,Managed Database Service
+Customer Support,,Submitted,,Mabel Weeden,4060,Miscellaneous,,2023-11-20 14:33:00,EXP00000368,Automatically created record for Miscellaneous hardware asset,Conference Room Projector
+Sales,,Processed,2023-05-17 05:42:00,Nadia Wilshire,6595,Assets,YDU-70281339,2023-04-21 05:42:00,EXP00000369,Monthly depreciation expense for asset,Dell Latitude Laptop i7
+Customer Support,,Declined,,Valerie Pou,1214,Travel,,2024-03-11 12:09:00,EXP00000370,Travel expense for laptop acquisition,Dell Inspiron 15
+IT,,Processed,2023-09-30 21:37:00,Helene Iberg,4303,Miscellaneous,,2023-09-13 21:37:00,EXP00000371,Miscellaneous hardware asset,Dell Optiplex 3050
+Customer Support,,Submitted,,Viola Mcsorley,7268,Assets,ONN-79122937,2023-10-16 15:56:00,EXP00000372,Office-allocated Lenovo Thinkpad asset,Lenovo Thinkpad T480
+Customer Support,,Declined,,Sal Pindell,5616,Assets,HEC-58001267,2023-07-24 17:20:00,EXP00000373,Newly acquired Dell Server for IT department,Dell PowerEdge R740
+Customer Support,,Processed,2023-05-02 16:08:00,Shelley Groden,1518,Assets,ETE-46819153,2023-04-26 16:08:00,EXP00000374,Newly procured desktop hardware asset,Dell Optiplex 7070 Ultra
+Sales,,Processed,2023-08-08 11:44:00,Leif Bachta,674,Services,ONQ-60561889,2023-08-05 11:44:00,EXP00000375,Automatically generated service for creation of asset,Cloud Storage Service
+Customer Support,,Processed,2024-03-21 09:29:00,Sean Bonnet,1955,Assets,RNR-36028753,2024-03-12 09:29:00,EXP00000376,Procured hardware asset,Dell Latitude 7420
+Customer Support,,Processed,2024-01-09 19:56:00,Mabel Weeden,631,Services,ZJS-60082824,2024-01-06 19:56:00,EXP00000377,Installation of new service software,Microsoft Office 365
+Customer Support,,Submitted,,Sean Bonnet,1491,Services,SFZ-65236462,2023-05-07 18:10:00,EXP00000378,Automatically created asset line for service,Cloud Service Platform
+Customer Support,,Processed,2023-11-16 04:55:00,Danny Dales,1464,Services,HAF-10349199,2023-11-10 04:55:00,EXP00000379,Provision of new cloud service,Azure Cloud Service
+Sales,,Pending,,Raphael Bickel,3663,Assets,BRR-70482245,2023-10-31 04:04:00,EXP00000380,Hardware asset - Dell Desktop PC,Dell Optiplex 9020
+Sales,,Processed,2023-03-04 16:25:00,Karen Zombo,6236,Assets,FFN-85191249,2023-02-08 16:25:00,EXP00000381,Purchase of new Dell Desktop asset,Dell OptiPlex 3070 Micro
+Customer Support,,Submitted,,Wilfredo Gidley,1711,Services,JGU-84639223,2023-04-04 15:13:00,EXP00000382,Automatically generated expense line for creation of Service asset,Cloud Service Package A
+Customer Support,,Pending,,Jimmie Kertzman,1649,Services,TQA-54910003,2023-04-24 12:09:00,EXP00000383,Installation of new business service software,ServiceNow Application Suite
+Sales,,Processed,2024-01-02 03:55:00,Howard Johnson,457,Services,NVG-13075736,2024-01-01 03:55:00,EXP00000384,Services related asset addition,Database Server Oracle 12c
+Customer Support,,Processed,2024-02-24 19:32:00,Marianne Earman,4253,Assets,BZX-51461143,2024-02-09 19:32:00,EXP00000385,Asset registered - Lenovo Thinkpad T490,Workstation Lenovo T490
+HR,,Pending,,Rosalie Krigger,4472,Travel,,2023-08-11 02:45:00,EXP00000386,Travel expenses calculated for asset creation,Travel Bag
+Customer Support,,Processed,2023-08-04 18:26:00,Carmel Overfelt,7405,Travel,,2023-07-06 18:26:00,EXP00000387,Travel expense for laptop purchase,Dell Inspiron 14
+Customer Support,,Processed,2023-08-19 14:44:00,Lynda Caraway,4233,Assets,DJC-05511705,2023-08-03 14:44:00,EXP00000388,Maintenance incurred on office computers,Dell Inspiron 5280 Desktop
+Customer Support,,Submitted,,Marianne Earman,1758,Services,WQJ-24333500,2023-02-25 00:47:00,EXP00000389,Auto-generated service asset entry,Web Hosting Service
+HR,,Processed,2024-03-12 15:09:00,Rosalie Krigger,1962,Miscellaneous,,2024-03-03 15:09:00,EXP00000390,Entry for Miscellaneous Hardware Asset,Unidentified Server Component
+Sales,,Submitted,,Lacy Hyten,110,Services,IQR-74675438,2023-11-04 00:46:00,EXP00000391,Service related hardware asset on-boarded,Cloud Service Provider - AWS
+Customer Support,,Processed,2024-04-02 19:23:00,Owen Sparacino,6928,Assets,VBM-80899537,2024-03-05 19:23:00,EXP00000392,ACME Corp Asset Management - Server,HP ProLiant DL380 Gen10
+Customer Support,,Processed,2023-06-01 15:24:00,Nelly Jakuboski,1536,Travel,,2023-05-24 15:24:00,EXP00000393,Automatically generated expense line for purchase of travel equipment,Samsonite Carry-On Luggage
+Customer Support,,Pending,,Georgette Bandyk,729,Miscellaneous,,2023-10-17 00:07:00,EXP00000394,Miscellaneous asset registration,Lexmark MX410de Printer
+Customer Support,,Pending,,Wilfredo Gidley,2567,Assets,OHH-28393620,2024-04-06 12:57:00,EXP00000395,Input device hardware asset acquisition,Logitech MX Master 3
+Sales,,Declined,,Raphael Bickel,1023,Services,COA-01820326,2023-07-21 03:39:00,EXP00000396,Automated service related to asset creation,Amazon Web Services
+IT,,Processed,2023-05-09 13:31:00,Forest Orea,744,Services,IDW-17938547,2023-05-05 13:31:00,EXP00000397,Automatically generated asset record for new service,Cloud Computing Service
+Customer Support,,Declined,,Sal Pindell,1911,Services,FUP-75160034,2024-02-11 05:39:00,EXP00000398,Auto-generated service asset for IT Solution,Managed IT Services
+Sales,,Processed,2023-08-10 02:05:00,Essie Vaill,1922,Assets,RSM-14952474,2023-08-02 02:05:00,EXP00000399,Newly procured IT hardware asset,Dell Latitude 7410
+Sales,,Processed,2023-07-23 07:43:00,Essie Vaill,1558,Services,UOF-68135600,2023-07-17 07:43:00,EXP00000400,Enterprise service management module implementation,ServiceNow ITSM Core
+Sales,,Declined,,Melody Saddat,537,Services,BZJ-31149506,2024-03-16 10:23:00,EXP00000401,Automatically generated service assets,Web Hosting Server
+Sales,,Processed,2023-10-06 13:30:00,Savannah Loffier,1625,Assets,BOF-98187561,2023-09-28 13:30:00,EXP00000402,Automated hardware asset registration,Dell OptiPlex 7070
+Sales,,Declined,,Howard Johnson,876,Miscellaneous,,2023-10-06 22:14:00,EXP00000403,Miscellaneous hardware asset added,HP LaserJet 1536dnf MFP
+Customer Support,,Pending,,Owen Sparacino,1776,Services,IJC-09227043,2023-04-23 07:20:00,EXP00000404,Service asset registration for software application,Cloud Service Provider
+Customer Support,,Submitted,,Danny Dales,470,Services,RUD-26425735,2024-03-24 23:34:00,EXP00000405,Configuration item for ServiceNow platform,ServiceNow Cloud Instance
+Customer Support,,Processed,2024-05-05 17:50:00,Geri Forness,7911,Assets,BQS-79138253,2024-04-03 17:50:00,EXP00000406,Automated asset record for new Dell workstation,Dell Optiplex 7050
+IT,,Processed,2023-02-27 19:50:00,Sadie Rowlett,717,Miscellaneous,,2023-02-24 19:50:00,EXP00000407,Miscellaneous hardware asset added to inventory,Dell Monitor 24
+Development,,Processed,2024-02-08 04:23:00,Ramon Amaral,2008,Assets,FSD-33084482,2024-02-01 04:23:00,EXP00000408,Newly added asset to storage,HP EliteBook 840 G5
+Customer Support,,Pending,,Mabel Weeden,1598,Services,MNZ-06350459,2023-09-29 23:30:00,EXP00000409,Service-related hardware asset provision,Cloud Server Service
+Development,,Processed,2023-10-29 21:45:00,Ramon Amaral,458,Services,CGF-94025786,2023-10-28 21:45:00,EXP00000410,Automatically created service asset entry,Cloud Server Service
+Customer Support,,Processed,2024-02-19 22:24:00,Georgette Bandyk,2717,Assets,QTJ-67900519,2024-02-07 22:24:00,EXP00000411,Dell Inspiron 15 5000 Series Laptop,Dell_5000_Series_Laptop
+Customer Support,,Processed,2023-11-07 02:24:00,Nelly Jakuboski,2643,Assets,GSU-77641089,2023-10-27 02:24:00,EXP00000412,Automatically created asset for computer hardware integration,Dell Optiplex 7070
+Customer Support,,Processed,2023-07-02 00:45:00,Mabel Weeden,4430,Travel,,2023-06-15 00:45:00,EXP00000413,Travel expense for asset creation,Travel Case Pro
+Sales,,Processed,2023-06-10 20:16:00,Leif Bachta,7161,Travel,,2023-05-14 20:16:00,EXP00000414,Travel equipment asset entry,Samsonite Carry-On Suitcase
+Development,,Processed,2024-03-05 13:09:00,Ramon Amaral,1258,Services,LFF-14710387,2024-02-28 13:09:00,EXP00000415,Service related hardware asset,Cloud Server Instance
+IT,,Processed,2023-06-10 07:21:00,Sadie Rowlett,2040,Miscellaneous,,2023-06-01 07:21:00,EXP00000416,Automatically generated hardware asset for Miscellaneous category,Miscellaneous Item 1175
+Customer Support,,Submitted,,Owen Sparacino,2665,Miscellaneous,,2023-03-17 14:39:00,EXP00000417,Automatically generated line for creation of Miscellaneous asset,Stationery Kit
+Sales,,Submitted,,Melody Saddat,372,Services,PTK-66219602,2023-10-15 20:10:00,EXP00000418,Installation of new service asset,Server Xeon E3
+Customer Support,,Processed,2023-04-17 11:17:00,Rachel Larrison,236,Miscellaneous,,2023-04-16 11:17:00,EXP00000419,Miscellaneous ServiceNow hardware asset,Dell OptiPlex 3070 MT
+Sales,,Processed,2023-05-14 12:07:00,Raphael Bickel,1491,Services,OIH-61774838,2023-05-09 12:07:00,EXP00000420,Automatically generated line for creation of asset - Services,Active Directory Server SRV1023
+Customer Support,,Processed,2023-09-11 05:03:00,Rachel Larrison,6623,Travel,,2023-08-18 05:03:00,EXP00000421,Travel related hardware asset creation,Portable Charger 10000mAh
+Customer Support,,Processed,2024-03-09 01:57:00,Felipe Mahone,399,Services,RBK-82673122,2024-03-08 01:57:00,EXP00000422,Automated Service Asset Creation,Cloud Service Server
+Customer Support,,Submitted,,Georgette Bandyk,883,Travel,,2024-03-20 10:33:00,EXP00000423,Acquisition of new travel gear,Samsonite Pro-DLX5 Luggage
+Customer Support,,Declined,,Marcie Shulz,4397,Travel,,2023-11-09 13:17:00,EXP00000424,Travel expense for hardware procurement,Portable GPS Navigator
+Sales,,Processed,2023-04-19 22:28:00,Bertie Luby,1427,Services,YBO-53635255,2023-04-14 22:28:00,EXP00000425,Service asset for cloud storage,AWS S3 Bucket Service
+Customer Support,,Declined,,Danny Dales,834,Services,BRT-97506261,2023-07-13 13:25:00,EXP00000426,Automatically registered service asset,Enterprise Database System
+Sales,,Processed,2024-02-16 10:30:00,Essie Vaill,188,Services,HPP-78898318,2024-02-15 10:30:00,EXP00000427,Deployment of new cloud service,Azure Cloud Service
+Finance,,Pending,,Germaine Bruski,2584,Assets,YZB-08856173,2023-05-03 07:19:00,EXP00000428,Workstation Dell Precision 3431,Dell OptiPlex 3070 Tower
+Customer Support,,Processed,2023-07-09 22:57:00,Mabel Weeden,7980,Travel,,2023-06-09 22:57:00,EXP00000429,Travel related asset addition,Travel Kit - Laptop Dell Latitude 7480
+Customer Support,,Pending,,Sue Haakinson,2694,Miscellaneous,,2023-04-19 12:19:00,EXP00000430,Automatically generated asset for MISCELLANEOUS category,Dell Desktop Optiplex 7020
+Customer Support,,Processed,2024-05-07 15:36:00,Lynda Caraway,5195,Assets,RTM-34826201,2024-04-18 15:36:00,EXP00000431,Newly acquired desktop computer for Finance Department,Dell Optiplex 7050
+IT,,Processed,2023-04-14 06:43:00,Virgil Chinni,1772,Assets,VQV-49319357,2023-04-07 06:43:00,EXP00000432,Asset Acquisition: Dell Precision Tower 3000 Series 3420,Dell Precision 3420
+Customer Support,,Processed,2023-10-10 08:18:00,Mitzi Ihenyen,3561,Miscellaneous,,2023-09-26 08:18:00,EXP00000433,Miscellaneous asset entry,Dell OptiPlex 7060 MiniTower
+Customer Support,,Processed,2023-05-07 02:20:00,Mitzi Ihenyen,8919,Assets,YAZ-16952184,2023-04-04 02:20:00,EXP00000434,HP EliteBook 840 G5 configuration item added,HP EliteBook 840 G5
+Sales,,Processed,2023-07-27 22:07:00,Cristina Sharper,3484,Miscellaneous,,2023-07-12 22:07:00,EXP00000435,Miscellaneous type hardware configuration,Dell OptiPlex 3070
+Sales,,Processed,2023-09-20 00:17:00,Savannah Loffier,1904,Services,ODX-94307325,2023-09-12 00:17:00,EXP00000436,Automatically generated expense line for creation of Services asset,Cloud Service Provider
+IT,,Processed,2023-11-30 00:42:00,Sadie Rowlett,3879,Miscellaneous,,2023-11-14 00:42:00,EXP00000437,Generated expense line for Miscellaneous asset,Ergonomic Keyboard 07
+Customer Support,,Submitted,,Mitzi Ihenyen,7893,Assets,LJN-44400188,2023-10-07 21:21:00,EXP00000438,Company purchased new hardware assets,Dell Optiplex 3070 Tower
+Customer Support,,Processed,2023-12-08 13:02:00,Wilfredo Gidley,4590,Assets,QLX-59954319,2023-11-21 13:02:00,EXP00000439,HP Pavilion Laptop Asset Record,HP Pavilion Gaming 15
+Customer Support,,Processed,2023-12-26 13:45:00,Petra Mcnichol,1000,Travel,,2023-12-22 13:45:00,EXP00000440,Travel-related hardware asset,Garmin GPS Navigator
+IT,,Declined,,Sadie Rowlett,140,Services,CCC-90443422,2024-03-23 23:57:00,EXP00000441,Database service assets creation,Oracle Database Enterprise Edition 19c
+Customer Support,,Submitted,,Rachel Larrison,1558,Miscellaneous,,2023-04-10 06:50:00,EXP00000442,Expense line for purchase of miscellaneous asset,"Chair, Ergonomic"
+Sales,,Processed,2023-08-12 14:05:00,Karen Zombo,2356,Miscellaneous,,2023-08-02 14:05:00,EXP00000443,Miscellaneous hardware asset registration,Ergonomic Keyboard
+Customer Support,,Submitted,,Jimmie Kertzman,3159,Travel,,2023-11-03 05:46:00,EXP00000444,Travel-related asset registration,Samsonite Pro-DLX 5 Suitcase
+Customer Support,,Processed,2024-01-03 02:36:00,Misty Ericksen,225,Services,SIY-05126752,2024-01-01 02:36:00,EXP00000445,Automatic service configuration for asset,Web Server Cloud Service
+IT,,Processed,2024-02-20 21:13:00,Virgil Chinni,4383,Travel,,2024-02-03 21:13:00,EXP00000446,Travel related hardware asset,Lenovo ThinkPad X1 Carbon
+Finance,,Processed,2023-12-08 07:59:00,Germaine Bruski,7437,Assets,ULS-91807162,2023-11-08 07:59:00,EXP00000447,Allocation of new Hardware asset,Dell Vostro 3591
+Finance,,Processed,2023-07-03 07:43:00,Germaine Bruski,6179,Travel,,2023-06-09 07:43:00,EXP00000448,Travel expense for asset procurement,Flight Ticket
+Customer Support,,Processed,2023-12-12 15:18:00,Georgette Bandyk,6113,Travel,,2023-11-19 15:18:00,EXP00000449,Travel expenses for hardware assets,Portable Projector SONY VPL-DX221
+Customer Support,,Submitted,,Darrel Tork,1475,Miscellaneous,,2024-01-26 03:11:00,EXP00000450,Automatically generated expense line for creation of miscellaneous asset,iPad Pro 12.9
+Product Management,,Processed,2023-05-01 20:33:00,Mamie Mcintee,894,Services,YRY-85675011,2023-04-27 20:33:00,EXP00000451,Newly added service related asset,Cloud Service Provider
+IT,,Submitted,,Helene Iberg,1506,Services,YGA-04222868,2023-06-02 14:08:00,EXP00000452,Service-related hardware asset,Cisco Firewall Services Module
+Customer Support,,Declined,,Carmel Overfelt,101,Services,ZQT-82330984,2023-06-12 04:50:00,EXP00000453,Automatically generated asset for creation of services,Web Server Services
+Customer Support,,Declined,,Helga Windle,6543,Assets,AJO-91449113,2023-03-02 20:09:00,EXP00000454,Database Server Model X Asset,DB_Server_X_329
+Customer Support,,Pending,,Shelley Groden,3833,Travel,,2023-04-01 09:48:00,EXP00000455,Travel equipment asset add-on,Travel Suitcase Deluxe
+Sales,,Processed,2024-02-18 13:30:00,Lacy Hyten,7438,Assets,VJT-02356922,2024-01-20 13:30:00,EXP00000456,Asset record for network switch,Cisco Catalyst 2960
+HR,,Submitted,,Rosalie Krigger,4789,Travel,,2023-08-22 15:41:00,EXP00000457,Automatically generated expense line for creation of travel asset,Travel Asset 453
+Sales,,Processed,2023-11-09 15:10:00,Lacy Hyten,445,Miscellaneous,,2023-11-06 15:10:00,EXP00000458,Miscellaneous hardware asset acquired,Miscellaneous Device
+Customer Support,,Processed,2023-07-08 21:18:00,Mitzi Ihenyen,6466,Assets,GZB-89268430,2023-06-13 21:18:00,EXP00000459,Laptop asset added to network,Dell Latitude 7490
+Customer Support,,Pending,,Viola Mcsorley,3756,Miscellaneous,,2023-11-07 03:53:00,EXP00000460,Automatically generated asset for Miscellaneous category,Miscellaneous Item 4281
+Customer Support,,Processed,2023-11-17 19:04:00,Jimmie Kertzman,161,Services,OQC-82949724,2023-11-16 19:04:00,EXP00000461,Service - Development Server Hardware,Standard_Dev_Services
+Sales,,Processed,2023-06-13 00:37:00,Leif Bachta,3406,Travel,,2023-05-31 00:37:00,EXP00000462,Travel expense for flight ticket purchase,British Airways Flight BA288
+Customer Support,,Processed,2024-05-07 09:29:00,Petra Mcnichol,6733,Travel,,2024-04-08 09:29:00,EXP00000463,Purchase expense for travel equipment,Samsonite Laptop Travel Backpack
+Sales,,Processed,2023-08-31 01:45:00,Lacy Hyten,2526,Travel,,2023-08-21 01:45:00,EXP00000464,Travel related hardware expense,Travel laptop
+Customer Support,,Declined,,Helena Suermann,660,Services,OLR-74848765,2023-09-27 23:43:00,EXP00000465,Automatically generated record for creation of service asset,Office365 Suite Subscription
+Customer Support,,Declined,,Sean Bonnet,3319,Travel,,2023-08-21 09:36:00,EXP00000466,Travel Department: New Luggage Tracking Device,Tumi Alpha 3
+Customer Support,,Processed,2024-02-14 19:03:00,Shelley Groden,1765,Services,SLW-23544491,2024-02-06 19:03:00,EXP00000467,Automatically generated service asset,Cloud Server Configuration A1
+Sales,,Processed,2023-07-23 15:07:00,Rob Woodbyrne,5711,Travel,,2023-06-29 15:07:00,EXP00000468,Expense generated for travel equipment,Portable GPS Navigator
+Customer Support,,Processed,2023-02-27 04:40:00,Ofelia Sheffler,1064,Services,GRF-02570431,2023-02-22 04:40:00,EXP00000469,Automatically created Service asset,Cloud Service Provider
+Customer Support,,Submitted,,Shelley Groden,4678,Travel,,2024-04-06 09:28:00,EXP00000470,Travel expense line for new asset,Airline Ticket
+Customer Support,,Declined,,Nelly Jakuboski,2697,Assets,CLY-11618252,2023-04-25 23:29:00,EXP00000471,Apple Monitor 27-inch asset added,Apple Monitor 27
+Sales,,Processed,2023-08-03 11:39:00,Savannah Loffier,8426,Assets,BZS-16802985,2023-07-02 11:39:00,EXP00000472,Purchase of new company assets,Lenovo ThinkPad X1 Carbon
+Product Management,,Processed,2024-02-16 22:15:00,Mamie Mcintee,178,Services,MRL-84961302,2024-02-15 22:15:00,EXP00000473,Automatically generated expense line for creation of asset,Cloud Service Provider
+Customer Support,,Processed,2023-09-12 17:42:00,Marianne Earman,3971,Assets,IEC-10083821,2023-08-28 17:42:00,EXP00000474,Monitor Dell 24 HD added to asset list,Dell Monitor 24 Inch HD
+Sales,,Processed,2024-04-13 00:56:00,Howard Johnson,1760,Services,RUT-78681126,2024-04-06 00:56:00,EXP00000475,Deployment of new cloud service,Azure Cloud Service
+Customer Support,,Processed,2023-03-13 19:51:00,Mitzi Ihenyen,7023,Assets,WTF-59044346,2023-02-14 19:51:00,EXP00000476,New asset registration for IT department,HP EliteBook 840 G5
+Sales,,Processed,2023-11-07 07:20:00,Savannah Loffier,4697,Assets,KAR-82626152,2023-10-20 07:20:00,EXP00000477,Purchase of new office assets,Dell Latitude 7420
+Customer Support,,Processed,2023-04-19 10:19:00,Petra Mcnichol,6344,Assets,JBB-02177318,2023-03-28 10:19:00,EXP00000478,Acquisition of new hardware asset,Dell Latitude 5480
+Sales,,Processed,2023-04-26 00:43:00,Bertie Luby,3045,Miscellaneous,,2023-04-14 00:43:00,EXP00000479,Miscellaneous Hardware Asset Creation,Dell Inspiron 15
+Sales,,Processed,2023-07-02 08:33:00,Luella Pliner,2741,Travel,,2023-06-20 08:33:00,EXP00000480,Travel assistance request for purchasing a laptop,Dell Latitude 7420
+Sales,,Submitted,,Lacy Hyten,7072,Travel,,2023-05-17 19:44:00,EXP00000481,Travel equipment management asset,Travel Gadgets Management System
+Customer Support,,Processed,2023-08-14 17:33:00,Geri Forness,363,Miscellaneous,,2023-08-12 17:33:00,EXP00000482,Acquisition of new hardware asset,Miscellaneous - High Definition Projector
+Customer Support,,Processed,2023-07-28 04:59:00,Sue Haakinson,7585,Assets,RTA-41402012,2023-06-29 04:59:00,EXP00000483,Asset category Dell Latitude laptop,Dell Latitude 7420
+IT,,Submitted,,Virgil Chinni,7595,Travel,,2023-07-10 00:36:00,EXP00000484,Automatically generated asset for travel laptop,Dell Latitude 3500 Travel Laptop
+Customer Support,,Processed,2024-04-08 13:10:00,Misty Ericksen,896,Miscellaneous,,2024-04-04 13:10:00,EXP00000485,Addition of new Miscellaneous hardware asset,Miscellaneous_Device_01
+Sales,,Processed,2024-04-16 16:20:00,Savannah Loffier,8776,Assets,DDN-96234054,2024-03-14 16:20:00,EXP00000486,Asset generated for IT hardware,Dell Latitude 3490
+Sales,,Processed,2023-03-12 18:09:00,Nadia Wilshire,2694,Miscellaneous,,2023-02-28 18:09:00,EXP00000487,New addition of office equipment under Miscellaneous category,Dell OptiPlex 7020 Desktop
+Sales,,Pending,,Cristina Sharper,5559,Assets,KOB-06484551,2024-04-03 18:13:00,EXP00000488,Acquisition and registration of Lenovo ThinkPad X1,Lenovo ThinkPad X1
+Sales,,Processed,2023-11-28 14:50:00,Rob Woodbyrne,2915,Assets,WDT-27043825,2023-11-17 14:50:00,EXP00000489,Asset tracking for new IT equipment,Dell Latitude 5420 Laptop
+Sales,,Processed,2024-01-08 02:44:00,Nadia Wilshire,1173,Services,TFS-49717320,2024-01-02 02:44:00,EXP00000490,ServiceNow cloud subscription,ServiceNow_Business_Service
+Customer Support,,Pending,,Marcie Shulz,1930,Travel,,2023-07-07 00:15:00,EXP00000491,Automatically generated asset for Travel category,Travel Equipment
+Sales,,Processed,2023-04-10 16:50:00,Karen Zombo,2693,Assets,JVV-18506675,2023-03-30 16:50:00,EXP00000492,Company asset tracking for newly added hardware,Dell Latitude 5420
+Sales,,Pending,,Cristina Sharper,8445,Assets,DSS-27047700,2024-04-14 13:08:00,EXP00000493,Automatically added asset for new server,Dell PowerEdge T440 Server
+Sales,,Processed,2024-04-16 08:04:00,Melody Saddat,1761,Services,BIQ-86859491,2024-04-11 08:04:00,EXP00000494,Asset registered for new Service package,Cloud Service Subscription
+Customer Support,,Processed,2024-04-03 22:07:00,Nelly Jakuboski,1674,Miscellaneous,,2024-03-28 22:07:00,EXP00000495,Registered new Miscellaneous hardware asset,HP LaserJet 403gn Printer
+Customer Support,,Declined,,Sal Pindell,2837,Assets,BTN-71981617,2024-02-26 09:24:00,EXP00000496,Newly added asset within Infrastructure,Dell Latitude 5420
+Customer Support,,Processed,2023-08-04 05:31:00,Wilfredo Gidley,3068,Miscellaneous,,2023-07-23 05:31:00,EXP00000497,Miscellaneous category - Hardware asset creation,Dell OptiPlex 7070 Micro
+Finance,,Submitted,,Fausto Marks,775,Services,USO-04138367,2023-06-28 23:45:00,EXP00000498,Automatically generated expense line for creation of asset,Cloud Service
+IT,,Processed,2023-08-22 19:40:00,Forest Orea,7270,Assets,LKK-70966040,2023-07-24 19:40:00,EXP00000499,Dell Latitude 7480 laptop asset entry,Dell Latitude 7480
