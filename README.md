@@ -4,7 +4,7 @@
 [[Website]](https://insightbench.github.io/)[[Dataset]](https://huggingface.co/datasets/ServiceNow/insight_bench)
 
 
-Insight-Bench is a benchmark dataset designed to evaluate end-to-end data analytics by evaluating agents' ability to perform comprehensive data analysis across 31 diverse business use cases, featuring carefully curated insights, an evaluation mechanism based on LLaMA-3-Eval, and a data analytics agent, AgentPoirot
+Insight-Bench is a benchmark dataset designed to evaluate end-to-end data analytics by evaluating agents' ability to perform comprehensive data analysis across 31 diverse business use cases, featuring carefully curated insights, an evaluation mechanism based on LLaMA-3-Eval, and a data analytics agent, AgentPoirot.
 
 
 ## Pre-requisites
