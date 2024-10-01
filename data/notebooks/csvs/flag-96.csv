@@ -1,0 +1,571 @@
+category,state,closed_at,opened_at,closed_by,number,sys_updated_by,location,assigned_to,caller_id,sys_updated_on,short_description,priority,assignement_group
+Database,Closed,2023-07-25 03:32:18.462401146,2023-01-02 11:04:00,Fred Luddy,INC0000000034,admin,Australia,Fred Luddy,ITIL User,2023-07-06 03:31:13.838619495,There was an issue,2 - High,Database
+Hardware,Closed,2023-01-03 23:19:00,2023-01-03 10:19:00,Charlie Whitherspoon,INC0000000025,admin,India,Beth Anglin,Don Goodliffe,2023-05-19 04:22:50.443252112,2 - High,1 - Critical,Hardware
+Database,Resolved,2023-01-20 14:37:18.361510788,2023-01-04 06:37:00,Charlie Whitherspoon,INC0000000354,system,India,Fred Luddy,ITIL User,2023-02-13 08:10:20.378839709,There was an issue,2 - High,Database
+Hardware,Resolved,2023-01-25 20:46:13.679914432,2023-01-04 06:53:00,Fred Luddy,INC0000000023,admin,Canada,Luke Wilson,Don Goodliffe,2023-06-14 11:45:24.784548040,There was an issue,2 - High,Hardware
+Hardware,Closed,2023-01-08 00:52:00,2023-01-05 16:52:00,Luke Wilson,INC0000000459,employee,UK,Charlie Whitherspoon,David Loo,2023-06-11 20:25:35.094482408,3 - Moderate,2 - High,Hardware
+Inquiry / Help,Closed,2023-01-06 20:22:00,2023-01-06 01:22:00,Beth Anglin,INC0000000157,system,Canada,Beth Anglin,Bud Richman,2023-01-25 20:46:13.679914432,2 - High,1 - Critical,Inquiry / Help
+Software,Resolved,2023-01-12 00:34:00.000000000,2023-01-06 06:14:00,Beth Anglin,INC0000000389,system,Australia,Luke Wilson,David Loo,2023-09-28 01:25:23.074702845,There was an issue,2 - High,Software
+Hardware,Closed,2023-05-31 03:23:19.484544434,2023-01-06 15:27:00,Luke Wilson,INC0000000152,admin,United States,Fred Luddy,Don Goodliffe,2023-07-15 22:29:05.785588895,There was an issue,4 - Low,Hardware
+Hardware,Closed,2023-09-13 04:40:34.280556892,2023-01-07 15:20:00,Fred Luddy,INC0000000018,system,UK,Luke Wilson,David Loo,2023-12-28 23:19:22.500984917,There was an issue,4 - Low,Hardware
+Hardware,Closed,2023-01-09 08:53:00,2023-01-08 08:53:00,Beth Anglin,INC0000000134,employee,United States,Beth Anglin,Bud Richman,2023-07-09 14:14:29.904659016,2 - High,4 - Low,Hardware
+Network,Closed,2023-01-10 06:58:00,2023-01-09 09:58:00,Howard Johnson,INC0000000057,system,Australia,Beth Anglin,Don Goodliffe,2023-12-14 20:37:19.388113353,2 - High,2 - High,Network
+Inquiry / Help,Closed,2023-01-10 06:07:00,2023-01-09 16:07:00,Charlie Whitherspoon,INC0000000434,system,Australia,Beth Anglin,David Loo,2023-02-26 16:29:16.807931635,2 - High,1 - Critical,Inquiry / Help
+Network,Resolved,2023-02-08 15:38:00.000000000,2023-01-10 10:06:00,Fred Luddy,INC0000000271,employee,United States,Fred Luddy,Don Goodliffe,2023-12-10 05:44:39.457781801,There was an issue,4 - Low,Network
+Network,Resolved,2023-12-06 22:33:01.700205220,2023-01-11 00:34:00,Charlie Whitherspoon,INC0000000411,admin,India,Howard Johnson,David Loo,2024-02-01 06:07:10.554650244,There was an issue,2 - High,Network
+Network,Resolved,2023-05-06 08:53:56.696181202,2023-01-11 09:26:00,Luke Wilson,INC0000000490,admin,India,Howard Johnson,ITIL User,2024-01-04 10:16:12.278901784,There was an issue,2 - High,Network
+Software,Resolved,2023-09-28 01:25:23.074702845,2023-01-11 16:40:00,Howard Johnson,INC0000000233,employee,Australia,Fred Luddy,Bud Richman,2023-10-03 08:53:36.796709606,There was an issue,3 - Moderate,Software
+Hardware,Closed,2023-12-05 17:32:49.113615094,2023-01-11 18:29:00,Howard Johnson,INC0000000453,admin,UK,Fred Luddy,Bud Richman,2023-05-05 01:59:48.858836394,There was an issue,3 - Moderate,Hardware
+Hardware,Closed,2023-01-13 08:44:00,2023-01-13 00:44:00,Fred Luddy,INC0000000047,employee,Australia,Beth Anglin,ITIL User,2023-07-09 20:00:30.308403141,1 - Critical,1 - Critical,Hardware
+Software,Closed,2023-04-13 09:52:00.000000000,2023-01-15 14:01:00,Charlie Whitherspoon,INC0000000210,admin,Australia,Fred Luddy,ITIL User,2023-02-04 02:43:53.446979933,There was an issue,1 - Critical,Software
+Database,Resolved,2023-02-03 19:29:33.426983106,2023-01-16 04:28:00,Charlie Whitherspoon,INC0000000392,admin,India,Howard Johnson,Bud Richman,2023-04-26 13:43:55.256743773,There was an issue,3 - Moderate,Database
+Software,Closed,2023-01-16 10:28:00,2023-01-16 06:28:00,Beth Anglin,INC0000000005,system,Australia,Beth Anglin,Don Goodliffe,2023-08-04 18:56:00.000000000,2 - High,4 - Low,Software
+Hardware,Resolved,2023-10-18 13:41:25.546404143,2023-01-17 06:29:00,Fred Luddy,INC0000000088,system,Canada,Luke Wilson,David Loo,2023-03-13 16:49:10.116400647,There was an issue,1 - Critical,Hardware
+Network,Closed,2023-01-19 16:15:00,2023-01-17 12:15:00,Beth Anglin,INC0000000100,admin,United States,Charlie Whitherspoon,David Loo,2023-04-04 19:04:22.181856865,4 - Low,3 - Moderate,Network
+Software,Closed,2023-01-19 17:34:00,2023-01-17 13:34:00,Beth Anglin,INC0000000237,system,UK,Charlie Whitherspoon,ITIL User,2023-10-08 04:30:10.854895991,3 - Moderate,1 - Critical,Software
+Inquiry / Help,Resolved,2023-12-07 16:11:16.045197690,2023-01-17 17:47:00,Beth Anglin,INC0000000091,system,Australia,Luke Wilson,David Loo,2023-09-18 08:09:07.717459166,There was an issue,3 - Moderate,Inquiry / Help
+Hardware,Closed,2023-03-14 06:30:47.245274154,2023-01-18 23:27:00,Charlie Whitherspoon,INC0000000495,admin,Canada,Luke Wilson,ITIL User,2023-08-23 19:40:27.266944172,There was an issue,3 - Moderate,Hardware
+Database,Closed,2023-01-21 13:28:00,2023-01-19 05:28:00,Charlie Whitherspoon,INC0000000167,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-10-02 20:53:30.682718416,3 - Moderate,3 - Moderate,Database
+Inquiry / Help,Closed,2023-05-05 00:21:12.204265630,2023-01-19 17:29:00,Fred Luddy,INC0000000373,system,Canada,Fred Luddy,Don Goodliffe,2023-01-05 17:54:36.886511927,There was an issue,4 - Low,Inquiry / Help
+Network,Closed,2023-08-09 03:19:49.048508681,2023-01-20 05:48:00,Charlie Whitherspoon,INC0000000084,admin,Canada,Fred Luddy,Bud Richman,2023-09-18 19:43:08.637023310,There was an issue,1 - Critical,Network
+Database,Resolved,2023-01-18 08:42:15.759148193,2023-01-21 12:13:00,Beth Anglin,INC0000000341,employee,United States,Howard Johnson,Don Goodliffe,2023-10-09 10:00:05.170032833,There was an issue,4 - Low,Database
+Network,Closed,2023-01-09 08:53:00.000000000,2023-01-22 03:34:00,Luke Wilson,INC0000000366,employee,Canada,Luke Wilson,Don Goodliffe,2023-08-09 03:19:49.048508681,There was an issue,2 - High,Network
+Database,Resolved,2023-11-06 00:05:08.518186417,2023-01-23 23:18:00,Howard Johnson,INC0000000492,admin,Canada,Howard Johnson,ITIL User,2023-10-24 10:20:11.744461099,There was an issue,2 - High,Database
+Hardware,Resolved,2023-10-30 18:57:00.000000000,2023-01-24 15:02:00,Luke Wilson,INC0000000187,admin,Australia,Luke Wilson,Don Goodliffe,2024-02-07 23:14:21.894263712,There was an issue,1 - Critical,Hardware
+Hardware,Closed,2023-01-28 01:28:09.743197803,2023-01-25 02:38:00,Howard Johnson,INC0000000343,admin,UK,Luke Wilson,David Loo,2023-01-08 15:20:00.000000000,There was an issue,3 - Moderate,Hardware
+Inquiry / Help,Closed,2023-01-27 10:52:00,2023-01-25 20:52:00,Fred Luddy,INC0000000474,admin,UK,Charlie Whitherspoon,Bud Richman,2023-08-02 12:16:09.558065832,3 - Moderate,2 - High,Inquiry / Help
+Database,Closed,2023-01-27 04:22:00,2023-01-27 02:22:00,Charlie Whitherspoon,INC0000000107,system,India,Beth Anglin,ITIL User,2023-03-18 09:32:55.751173465,1 - Critical,3 - Moderate,Database
+Database,Closed,2023-01-28 05:28:00,2023-01-27 03:28:00,Fred Luddy,INC0000000483,employee,India,Charlie Whitherspoon,ITIL User,2023-01-21 03:18:58.590910419,3 - Moderate,4 - Low,Database
+Database,Closed,2023-01-30 06:48:00,2023-01-27 07:48:00,Fred Luddy,INC0000000119,employee,UK,Charlie Whitherspoon,ITIL User,2023-12-09 22:53:40.047263709,3 - Moderate,4 - Low,Database
+Inquiry / Help,Closed,2023-11-14 14:50:37.041296707,2023-01-27 16:44:00,Luke Wilson,INC0000000325,system,Canada,Luke Wilson,ITIL User,2024-01-04 00:08:18.653166818,There was an issue,3 - Moderate,Inquiry / Help
+Software,Resolved,2023-01-18 10:47:18.859313409,2023-01-30 17:07:00,Charlie Whitherspoon,INC0000000371,employee,India,Howard Johnson,David Loo,2023-01-25 07:44:05.814552632,There was an issue,1 - Critical,Software
+Inquiry / Help,Resolved,2023-08-10 06:30:11.927271898,2023-01-31 00:30:00,Luke Wilson,INC0000000033,admin,United States,Luke Wilson,David Loo,2023-11-08 06:15:25.825398065,There was an issue,1 - Critical,Inquiry / Help
+Software,Closed,2023-04-17 20:17:35.569877984,2023-02-01 19:46:00,Luke Wilson,INC0000000196,admin,Canada,Howard Johnson,Bud Richman,2023-08-07 09:44:00.000000000,There was an issue,2 - High,Software
+Database,Resolved,2023-01-25 07:44:05.814552632,2023-02-02 08:10:00,Luke Wilson,INC0000000014,admin,India,Luke Wilson,David Loo,2023-07-06 12:23:47.840976362,There was an issue,4 - Low,Database
+Hardware,Closed,2023-02-04 21:01:00,2023-02-03 02:01:00,Charlie Whitherspoon,INC0000000066,system,UK,Charlie Whitherspoon,Don Goodliffe,2023-04-05 05:58:43.770711476,4 - Low,1 - Critical,Hardware
+Database,Resolved,2023-08-12 18:27:47.789421821,2023-02-05 10:25:00,Fred Luddy,INC0000000473,admin,India,Luke Wilson,Don Goodliffe,2023-10-21 17:05:49.162145411,There was an issue,3 - Moderate,Database
+Software,Resolved,2024-01-25 11:01:00.578026325,2023-02-05 15:05:00,Howard Johnson,INC0000000161,admin,Australia,Luke Wilson,Don Goodliffe,2023-04-19 16:48:00.000000000,There was an issue,3 - Moderate,Software
+Hardware,Resolved,2023-12-06 06:18:20.231641812,2023-02-07 15:38:00,Fred Luddy,INC0000000086,admin,United States,Howard Johnson,David Loo,2023-03-17 12:55:54.993590364,There was an issue,4 - Low,Hardware
+Network,Resolved,2023-11-09 09:27:41.299495824,2023-02-08 05:33:00,Howard Johnson,INC0000000299,employee,United States,Howard Johnson,Bud Richman,2023-09-16 03:46:06.609216047,There was an issue,2 - High,Network
+Database,Closed,2024-01-21 14:31:46.018925216,2023-02-08 14:07:00,Luke Wilson,INC0000000212,admin,United States,Fred Luddy,ITIL User,2023-02-25 14:32:02.076278529,There was an issue,3 - Moderate,Database
+Software,Resolved,2023-03-26 23:30:22.193990107,2023-02-11 04:10:00,Luke Wilson,INC0000000003,system,Australia,Howard Johnson,David Loo,2023-01-30 01:44:17.443653956,There was an issue,2 - High,Software
+Software,Closed,2023-02-14 12:56:00,2023-02-12 00:56:00,Luke Wilson,INC0000000195,employee,United States,Charlie Whitherspoon,David Loo,2024-02-03 17:41:53.299049427,4 - Low,4 - Low,Software
+Software,Closed,2023-02-14 18:00:00,2023-02-12 09:00:00,Luke Wilson,INC0000000069,employee,UK,Charlie Whitherspoon,Bud Richman,2023-05-10 22:35:58.881919516,3 - Moderate,3 - Moderate,Software
+Hardware,Closed,2023-09-16 03:46:06.609216047,2023-02-12 10:41:00,Charlie Whitherspoon,INC0000000400,admin,Canada,Luke Wilson,David Loo,2024-01-22 06:01:00.000000000,There was an issue,3 - Moderate,Hardware
+Hardware,Closed,2023-02-15 02:34:00,2023-02-14 16:34:00,Luke Wilson,INC0000000001,admin,Canada,Beth Anglin,ITIL User,2023-06-07 15:04:30.359478777,1 - Critical,2 - High,Hardware
+Network,Closed,2024-01-24 20:11:01.690566157,2023-02-15 01:47:00,Charlie Whitherspoon,INC0000000035,employee,Canada,Luke Wilson,David Loo,2023-12-07 16:11:16.045197690,There was an issue,2 - High,Network
+Hardware,Closed,2023-02-17 10:34:00,2023-02-16 10:34:00,Howard Johnson,INC0000000217,system,UK,Beth Anglin,Don Goodliffe,2023-07-27 12:30:15.368139102,2 - High,4 - Low,Hardware
+Software,Closed,2023-11-29 21:52:24.416389196,2023-02-16 17:07:00,Fred Luddy,INC0000000242,system,Australia,Howard Johnson,David Loo,2023-10-11 12:19:52.993926660,There was an issue,4 - Low,Software
+Software,Closed,2023-02-19 06:29:00,2023-02-16 18:29:00,Beth Anglin,INC0000000381,admin,United States,Charlie Whitherspoon,Bud Richman,2023-08-17 17:26:24.730681330,4 - Low,1 - Critical,Software
+Hardware,Closed,2023-02-18 16:04:00,2023-02-16 19:04:00,Beth Anglin,INC0000000192,admin,United States,Charlie Whitherspoon,Bud Richman,2023-08-08 02:22:19.738512734,3 - Moderate,1 - Critical,Hardware
+Inquiry / Help,Resolved,2023-04-16 00:36:30.146701781,2023-02-18 01:46:00,Charlie Whitherspoon,INC0000000063,admin,Australia,Fred Luddy,Bud Richman,2023-07-11 23:34:29.390060680,There was an issue,3 - Moderate,Inquiry / Help
+Database,Resolved,2023-09-13 00:09:56.020598186,2023-02-18 16:04:00,Howard Johnson,INC0000000311,employee,Australia,Luke Wilson,David Loo,2023-11-07 04:08:46.640926620,There was an issue,4 - Low,Database
+Database,Closed,2023-02-25 10:21:00,2023-02-22 12:21:00,Howard Johnson,INC0000000129,admin,India,Charlie Whitherspoon,ITIL User,2023-04-13 12:13:00.000000000,3 - Moderate,4 - Low,Database
+Software,Closed,2024-02-12 22:31:48.126196708,2023-02-22 13:49:00,Charlie Whitherspoon,INC0000000039,system,UK,Howard Johnson,Don Goodliffe,2023-11-20 14:15:29.239228781,There was an issue,1 - Critical,Software
+Software,Resolved,2023-11-04 10:27:01.152081419,2023-02-22 19:23:00,Beth Anglin,INC0000000470,system,UK,Luke Wilson,Bud Richman,2023-10-25 19:50:20.337280678,There was an issue,4 - Low,Software
+Hardware,Closed,2023-02-23 13:37:00,2023-02-23 02:37:00,Beth Anglin,INC0000000377,system,UK,Beth Anglin,David Loo,2023-12-19 02:53:45.256687900,2 - High,1 - Critical,Hardware
+Software,Closed,2024-01-14 19:07:03.245823840,2023-02-23 05:40:00,Luke Wilson,INC0000000041,system,United States,Luke Wilson,Don Goodliffe,2023-06-06 08:20:00.000000000,There was an issue,4 - Low,Software
+Database,Resolved,2023-11-19 13:31:44.558204717,2023-02-25 17:52:00,Fred Luddy,INC0000000022,admin,India,Luke Wilson,Don Goodliffe,2023-01-26 02:18:22.920898595,There was an issue,1 - Critical,Database
+Software,Closed,2023-02-26 15:47:00,2023-02-25 19:47:00,Fred Luddy,INC0000000162,system,UK,Beth Anglin,Bud Richman,2023-10-12 20:28:38.706928972,1 - Critical,4 - Low,Software
+Database,Closed,2023-10-03 08:14:22.675801438,2023-02-25 21:22:00,Beth Anglin,INC0000000423,system,India,Howard Johnson,Bud Richman,2023-07-06 13:13:24.843387226,There was an issue,3 - Moderate,Database
+Network,Resolved,2023-03-02 18:17:24.556975522,2023-02-27 16:37:00,Charlie Whitherspoon,INC0000000043,system,India,Howard Johnson,David Loo,2023-02-13 09:00:00.000000000,There was an issue,2 - High,Network
+Network,Closed,2023-02-28 01:40:00,2023-02-27 21:40:00,Beth Anglin,INC0000000048,system,Australia,Beth Anglin,ITIL User,2023-09-26 20:40:00.000000000,2 - High,1 - Critical,Network
+Software,Closed,2023-03-01 07:42:00,2023-02-28 17:42:00,Fred Luddy,INC0000000194,system,Canada,Beth Anglin,David Loo,2023-03-31 22:32:42.024027147,2 - High,4 - Low,Software
+Database,Closed,2023-03-03 21:29:00,2023-03-02 01:29:00,Beth Anglin,INC0000000323,admin,India,Charlie Whitherspoon,ITIL User,2024-02-07 21:56:58.515415708,3 - Moderate,2 - High,Database
+Network,Closed,2023-03-04 15:56:00,2023-03-02 10:56:00,Charlie Whitherspoon,INC0000000433,system,Australia,Charlie Whitherspoon,ITIL User,2023-08-25 09:49:36.214757254,4 - Low,4 - Low,Network
+Inquiry / Help,Resolved,2023-11-25 13:45:38.979607981,2023-03-04 03:00:00,Fred Luddy,INC0000000427,system,Australia,Howard Johnson,ITIL User,2023-05-10 03:20:31.007719853,There was an issue,2 - High,Inquiry / Help
+Network,Closed,2023-03-10 03:18:00,2023-03-07 06:18:00,Luke Wilson,INC0000000482,admin,India,Charlie Whitherspoon,David Loo,2023-06-09 23:10:07.618999909,4 - Low,4 - Low,Network
+Inquiry / Help,Closed,2023-07-06 13:08:33.074641515,2023-03-08 16:23:00,Luke Wilson,INC0000000476,system,United States,Howard Johnson,Don Goodliffe,2023-02-03 08:09:45.834493992,There was an issue,3 - Moderate,Inquiry / Help
+Software,Closed,2023-03-09 11:01:00,2023-03-09 02:01:00,Howard Johnson,INC0000000240,employee,United States,Beth Anglin,Don Goodliffe,2023-02-13 00:56:00.000000000,2 - High,4 - Low,Software
+Database,Resolved,2024-01-31 02:23:56.445975993,2023-03-09 09:09:00,Howard Johnson,INC0000000449,system,United States,Luke Wilson,Don Goodliffe,2023-04-13 09:52:00.000000000,There was an issue,3 - Moderate,Database
+Database,Closed,2023-03-10 14:09:00,2023-03-10 09:09:00,Luke Wilson,INC0000000029,employee,India,Beth Anglin,David Loo,2023-05-06 00:19:06.845921162,2 - High,1 - Critical,Database
+Database,Closed,2023-03-12 02:49:00,2023-03-10 14:49:00,Beth Anglin,INC0000000327,system,United States,Charlie Whitherspoon,Don Goodliffe,2023-04-17 11:40:20.915287122,4 - Low,2 - High,Database
+Network,Closed,2023-01-14 09:42:31.239968317,2023-03-11 06:39:00,Howard Johnson,INC0000000464,system,UK,Fred Luddy,David Loo,2023-10-18 00:52:00.000000000,There was an issue,1 - Critical,Network
+Inquiry / Help,Closed,2023-03-13 18:53:00,2023-03-13 02:53:00,Charlie Whitherspoon,INC0000000231,system,Australia,Beth Anglin,ITIL User,2023-12-22 14:45:04.366600219,2 - High,2 - High,Inquiry / Help
+Software,Resolved,2023-12-26 08:26:25.509637696,2023-03-13 07:44:00,Fred Luddy,INC0000000050,system,Canada,Fred Luddy,Don Goodliffe,2023-03-11 09:09:00.000000000,There was an issue,3 - Moderate,Software
+Database,Closed,2023-03-14 05:05:00,2023-03-13 10:05:00,Beth Anglin,INC0000000414,system,Canada,Beth Anglin,ITIL User,2023-07-25 03:53:49.978687958,2 - High,2 - High,Database
+Database,Closed,2023-03-14 02:36:00,2023-03-13 11:36:00,Luke Wilson,INC0000000339,system,Canada,Beth Anglin,David Loo,2023-10-05 14:06:46.265722782,2 - High,4 - Low,Database
+Database,Resolved,2023-05-29 13:25:00.000000000,2023-03-14 00:04:00,Fred Luddy,INC0000000367,employee,United States,Luke Wilson,Don Goodliffe,2023-11-02 19:10:09.135343415,There was an issue,4 - Low,Database
+Database,Closed,2023-07-15 22:29:05.785588895,2023-03-17 00:19:00,Beth Anglin,INC0000000497,system,UK,Howard Johnson,Bud Richman,2023-07-26 01:50:52.068385147,There was an issue,3 - Moderate,Database
+Inquiry / Help,Closed,2023-04-08 23:37:33.628402771,2023-03-17 07:40:00,Beth Anglin,INC0000000417,admin,Canada,Fred Luddy,Bud Richman,2023-02-09 20:37:54.209291607,There was an issue,4 - Low,Inquiry / Help
+Software,Closed,2023-03-18 07:04:00,2023-03-18 01:04:00,Luke Wilson,INC0000000307,admin,India,Beth Anglin,Don Goodliffe,2023-02-04 20:06:34.055632819,2 - High,1 - Critical,Software
+Network,Closed,2023-01-18 12:15:00.000000000,2023-03-19 09:40:00,Charlie Whitherspoon,INC0000000318,admin,India,Luke Wilson,Bud Richman,2023-06-05 23:47:52.328722644,There was an issue,2 - High,Network
+Network,Resolved,2023-01-23 02:21:48.999352525,2023-03-19 12:57:00,Charlie Whitherspoon,INC0000000202,employee,India,Fred Luddy,Bud Richman,2023-09-22 15:44:42.056556368,There was an issue,2 - High,Network
+Network,Closed,2023-09-14 16:03:56.241021820,2023-03-19 14:53:00,Beth Anglin,INC0000000303,admin,Australia,Fred Luddy,Bud Richman,2023-06-13 20:13:50.263024628,There was an issue,4 - Low,Network
+Database,Closed,2023-09-03 18:58:33.803118210,2023-03-22 13:51:00,Fred Luddy,INC0000000399,admin,Canada,Howard Johnson,Bud Richman,2023-02-24 12:26:03.066179768,There was an issue,4 - Low,Database
+Hardware,Closed,2023-03-23 07:07:00,2023-03-22 14:07:00,Beth Anglin,INC0000000273,admin,Australia,Beth Anglin,Bud Richman,2023-11-25 18:11:25.410173561,1 - Critical,2 - High,Hardware
+Software,Closed,2023-03-25 03:33:00,2023-03-22 20:33:00,Charlie Whitherspoon,INC0000000391,employee,United States,Charlie Whitherspoon,David Loo,2023-09-13 05:14:51.293532720,3 - Moderate,3 - Moderate,Software
+Software,Closed,2023-07-30 12:07:08.997531852,2023-03-23 07:51:00,Beth Anglin,INC0000000278,system,India,Fred Luddy,ITIL User,2023-08-11 14:17:08.329647264,There was an issue,2 - High,Software
+Hardware,Closed,2023-06-30 13:34:11.629362629,2023-03-23 16:57:00,Fred Luddy,INC0000000395,system,UK,Howard Johnson,Bud Richman,2024-01-08 09:17:43.178873486,There was an issue,4 - Low,Hardware
+Network,Closed,2023-03-25 11:07:00,2023-03-23 22:07:00,Howard Johnson,INC0000000331,system,United States,Charlie Whitherspoon,ITIL User,2023-10-10 20:23:44.798714886,3 - Moderate,2 - High,Network
+Database,Closed,2023-07-28 21:34:00.908307924,2023-03-26 03:15:00,Luke Wilson,INC0000000405,admin,Australia,Howard Johnson,Don Goodliffe,2023-05-04 21:57:00.000000000,There was an issue,4 - Low,Database
+Inquiry / Help,Closed,2023-12-10 05:44:39.457781801,2023-03-26 20:37:00,Luke Wilson,INC0000000203,system,UK,Luke Wilson,Don Goodliffe,2023-08-07 18:21:44.544015394,There was an issue,1 - Critical,Inquiry / Help
+Inquiry / Help,Closed,2023-03-28 07:22:00,2023-03-27 23:22:00,Charlie Whitherspoon,INC0000000026,system,UK,Beth Anglin,Bud Richman,2023-06-07 06:19:03.182476115,1 - Critical,2 - High,Inquiry / Help
+Network,Closed,2023-03-29 06:49:00,2023-03-29 01:49:00,Howard Johnson,INC0000000146,employee,Australia,Beth Anglin,Don Goodliffe,2023-11-28 08:39:37.872085078,1 - Critical,3 - Moderate,Network
+Hardware,Closed,2023-08-26 16:09:36.942939516,2023-03-29 05:22:00,Charlie Whitherspoon,INC0000000089,employee,Australia,Luke Wilson,Don Goodliffe,2023-01-28 04:52:51.519667192,There was an issue,4 - Low,Hardware
+Network,Closed,2023-04-01 18:58:00,2023-03-30 00:58:00,Beth Anglin,INC0000000291,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-03-23 14:56:55.026865443,3 - Moderate,1 - Critical,Network
+Hardware,Closed,2023-08-04 08:39:00.000000000,2023-04-01 09:01:00,Howard Johnson,INC0000000342,system,Australia,Fred Luddy,Bud Richman,2023-08-10 22:01:38.300764703,There was an issue,3 - Moderate,Hardware
+Software,Closed,2023-11-28 08:39:37.872085078,2023-04-02 15:37:00,Fred Luddy,INC0000000037,employee,India,Howard Johnson,ITIL User,2023-12-12 19:10:00.000000000,There was an issue,1 - Critical,Software
+Network,Closed,2023-01-06 16:52:00.000000000,2023-04-03 23:10:00,Beth Anglin,INC0000000351,system,Australia,Howard Johnson,ITIL User,2023-02-23 22:00:23.401697490,There was an issue,3 - Moderate,Network
+Inquiry / Help,Resolved,2023-08-08 02:22:19.738512734,2023-04-04 04:43:00,Charlie Whitherspoon,INC0000000357,employee,India,Luke Wilson,Don Goodliffe,2023-10-18 13:41:25.546404143,There was an issue,3 - Moderate,Inquiry / Help
+Inquiry / Help,Closed,2023-04-07 17:45:00,2023-04-05 00:45:00,Beth Anglin,INC0000000218,employee,United States,Charlie Whitherspoon,Don Goodliffe,2023-10-27 12:35:42.247430186,4 - Low,3 - Moderate,Inquiry / Help
+Database,Closed,2023-04-09 07:59:00,2023-04-08 12:59:00,Beth Anglin,INC0000000465,admin,Canada,Beth Anglin,Don Goodliffe,2023-01-29 22:45:30.072558587,1 - Critical,2 - High,Database
+Software,Resolved,2023-11-24 19:39:37.248766516,2023-04-08 22:13:00,Beth Anglin,INC0000000485,employee,UK,Fred Luddy,Don Goodliffe,2023-08-01 00:45:22.754376187,There was an issue,2 - High,Software
+Inquiry / Help,Resolved,2023-09-07 09:17:08.466232846,2023-04-09 10:28:00,Howard Johnson,INC0000000293,employee,Canada,Howard Johnson,Don Goodliffe,2023-02-13 00:16:27.398179564,There was an issue,4 - Low,Inquiry / Help
+Database,Closed,2023-04-09 19:33:00,2023-04-09 15:33:00,Howard Johnson,INC0000000445,system,Australia,Beth Anglin,Don Goodliffe,2023-09-07 09:17:08.466232846,1 - Critical,1 - Critical,Database
+Software,Resolved,2023-06-04 09:17:41.184530679,2023-04-10 12:12:00,Luke Wilson,INC0000000282,employee,India,Howard Johnson,ITIL User,2023-08-31 15:44:00.000000000,There was an issue,2 - High,Software
+Inquiry / Help,Closed,2023-04-12 02:43:00,2023-04-11 08:43:00,Charlie Whitherspoon,INC0000000287,system,UK,Beth Anglin,David Loo,2024-01-19 04:34:40.251168087,2 - High,2 - High,Inquiry / Help
+Network,Closed,2023-04-14 06:50:00,2023-04-11 11:50:00,Charlie Whitherspoon,INC0000000077,admin,UK,Charlie Whitherspoon,ITIL User,2023-05-10 23:55:09.253391223,4 - Low,3 - Moderate,Network
+Inquiry / Help,Resolved,2023-08-11 14:17:08.329647264,2023-04-12 09:52:00,Luke Wilson,INC0000000103,admin,India,Luke Wilson,ITIL User,2023-10-07 15:02:09.446606967,There was an issue,2 - High,Inquiry / Help
+Hardware,Closed,2023-04-13 00:13:00,2023-04-12 12:13:00,Howard Johnson,INC0000000055,employee,India,Beth Anglin,Don Goodliffe,2023-05-14 06:26:59.910015516,1 - Critical,2 - High,Hardware
+Network,Closed,2023-04-15 21:00:00,2023-04-13 10:00:00,Luke Wilson,INC0000000141,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-04-25 00:40:17.584686390,3 - Moderate,2 - High,Network
+Network,Closed,2023-04-17 03:54:00,2023-04-14 23:54:00,Beth Anglin,INC0000000479,employee,UK,Charlie Whitherspoon,Don Goodliffe,2023-11-02 21:31:23.289304071,4 - Low,1 - Critical,Network
+Software,Resolved,2023-10-14 07:51:41.450443462,2023-04-15 11:57:00,Howard Johnson,INC0000000267,employee,Canada,Fred Luddy,Bud Richman,2023-03-31 07:59:26.909209525,There was an issue,3 - Moderate,Software
+Network,Resolved,2023-07-09 14:14:29.904659016,2023-04-18 16:48:00,Howard Johnson,INC0000000295,admin,United States,Howard Johnson,Don Goodliffe,2023-12-15 17:24:42.185263024,There was an issue,1 - Critical,Network
+Inquiry / Help,Closed,2023-04-19 06:22:00,2023-04-18 19:22:00,Fred Luddy,INC0000000469,employee,United States,Beth Anglin,David Loo,2023-02-16 16:49:49.770102240,1 - Critical,3 - Moderate,Inquiry / Help
+Software,Closed,2023-04-20 00:20:00,2023-04-18 22:20:00,Beth Anglin,INC0000000393,system,United States,Charlie Whitherspoon,ITIL User,2023-03-18 07:40:00.000000000,3 - Moderate,3 - Moderate,Software
+Software,Resolved,2023-12-22 14:45:04.366600219,2023-04-19 07:07:00,Charlie Whitherspoon,INC0000000385,employee,Australia,Howard Johnson,ITIL User,2023-10-03 01:05:00.000000000,There was an issue,4 - Low,Software
+Software,Closed,2023-04-09 09:12:14.485573467,2023-04-19 14:41:00,Luke Wilson,INC0000000309,system,UK,Fred Luddy,Don Goodliffe,2023-02-19 01:46:00.000000000,There was an issue,1 - Critical,Software
+Network,Resolved,2023-10-05 10:37:47.028545047,2023-04-20 22:34:00,Beth Anglin,INC0000000333,system,UK,Howard Johnson,Don Goodliffe,2023-02-16 22:50:20.255626998,There was an issue,3 - Moderate,Network
+Software,Closed,2023-04-21 16:46:00,2023-04-21 03:46:00,Luke Wilson,INC0000000446,admin,Australia,Beth Anglin,David Loo,2023-05-18 20:30:00.000000000,1 - Critical,2 - High,Software
+Inquiry / Help,Closed,2023-04-23 08:13:00,2023-04-21 08:13:00,Luke Wilson,INC0000000174,employee,Canada,Charlie Whitherspoon,David Loo,2023-12-05 02:10:03.357753705,4 - Low,3 - Moderate,Inquiry / Help
+Database,Closed,2023-04-24 17:22:00,2023-04-21 17:22:00,Beth Anglin,INC0000000015,system,United States,Charlie Whitherspoon,Bud Richman,2023-01-20 14:37:18.361510788,4 - Low,2 - High,Database
+Network,Resolved,2023-02-25 02:41:07.264125204,2023-04-22 10:55:00,Charlie Whitherspoon,INC0000000382,system,India,Fred Luddy,Don Goodliffe,2023-02-18 06:02:38.010888088,There was an issue,2 - High,Network
+Hardware,Closed,2023-10-27 12:35:42.247430186,2023-04-23 21:20:00,Howard Johnson,INC0000000205,admin,UK,Fred Luddy,David Loo,2023-06-11 09:48:35.368342810,There was an issue,4 - Low,Hardware
+Network,Closed,2023-04-30 00:25:00,2023-04-27 03:25:00,Howard Johnson,INC0000000269,employee,UK,Charlie Whitherspoon,Bud Richman,2023-09-30 03:37:15.453671612,4 - Low,2 - High,Network
+Inquiry / Help,Resolved,2023-04-04 09:15:27.409492338,2023-04-27 10:45:00,Fred Luddy,INC0000000298,employee,United States,Fred Luddy,ITIL User,2023-05-12 02:21:34.844909705,There was an issue,1 - Critical,Inquiry / Help
+Hardware,Closed,2023-04-29 01:24:00,2023-04-28 01:24:00,Charlie Whitherspoon,INC0000000130,admin,Canada,Beth Anglin,David Loo,2023-10-18 20:50:35.137819655,1 - Critical,1 - Critical,Hardware
+Inquiry / Help,Closed,2023-04-30 19:53:00,2023-04-30 00:53:00,Fred Luddy,INC0000000160,system,India,Beth Anglin,Don Goodliffe,2024-01-13 07:11:07.585466982,2 - High,4 - Low,Inquiry / Help
+Network,Resolved,2023-01-24 18:39:21.848415555,2023-05-02 14:34:00,Howard Johnson,INC0000000285,admin,India,Howard Johnson,ITIL User,2023-08-24 03:39:08.172397201,There was an issue,4 - Low,Network
+Network,Closed,2023-05-02 19:01:00,2023-05-02 15:01:00,Beth Anglin,INC0000000137,system,UK,Beth Anglin,David Loo,2023-11-03 11:52:00.000000000,1 - Critical,2 - High,Network
+Inquiry / Help,Closed,2023-08-19 00:17:36.874122878,2023-05-03 04:24:00,Fred Luddy,INC0000000042,employee,UK,Howard Johnson,ITIL User,2023-01-17 04:28:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
+Software,Resolved,2023-06-07 15:04:30.359478777,2023-05-03 21:57:00,Charlie Whitherspoon,INC0000000056,system,Canada,Fred Luddy,Don Goodliffe,2023-08-02 04:32:04.560171158,There was an issue,1 - Critical,Software
+Inquiry / Help,Resolved,2023-11-07 11:30:00.000000000,2023-05-04 13:17:00,Luke Wilson,INC0000000175,system,India,Fred Luddy,ITIL User,2023-10-02 04:18:49.766694358,There was an issue,1 - Critical,Inquiry / Help
+Database,Closed,2024-01-03 16:45:19.710278908,2023-05-05 07:09:00,Beth Anglin,INC0000000000,admin,Canada,Fred Luddy,Don Goodliffe,2024-01-09 12:37:13.292569926,There was an issue,4 - Low,Database
+Software,Resolved,2023-02-19 01:46:00.000000000,2023-05-05 20:05:00,Fred Luddy,INC0000000184,admin,Canada,Howard Johnson,Don Goodliffe,2023-06-30 06:01:54.007909417,There was an issue,3 - Moderate,Software
+Network,Resolved,2023-02-28 16:37:00.000000000,2023-05-05 20:26:00,Beth Anglin,INC0000000388,system,Canada,Howard Johnson,David Loo,2023-09-22 13:11:16.460337579,There was an issue,4 - Low,Network
+Inquiry / Help,Closed,2023-05-06 04:24:00,2023-05-05 22:24:00,Luke Wilson,INC0000000149,employee,Australia,Beth Anglin,Don Goodliffe,2023-02-03 19:29:33.426983106,2 - High,1 - Critical,Inquiry / Help
+Software,Closed,2023-05-08 05:01:00,2023-05-07 09:01:00,Luke Wilson,INC0000000250,admin,Canada,Beth Anglin,Bud Richman,2023-12-06 21:57:38.764148014,2 - High,3 - Moderate,Software
+Hardware,Closed,2023-01-03 11:04:00.000000000,2023-05-07 11:12:00,Luke Wilson,INC0000000317,admin,Australia,Fred Luddy,Bud Richman,2023-09-13 00:09:56.020598186,There was an issue,1 - Critical,Hardware
+Hardware,Resolved,2023-04-19 16:48:00.000000000,2023-05-07 12:05:00,Charlie Whitherspoon,INC0000000302,system,UK,Luke Wilson,David Loo,2024-01-14 00:18:47.213476730,There was an issue,1 - Critical,Hardware
+Software,Closed,2023-05-12 10:51:00,2023-05-12 06:51:00,Howard Johnson,INC0000000249,system,Australia,Beth Anglin,David Loo,2023-07-23 16:38:46.547163481,2 - High,1 - Critical,Software
+Inquiry / Help,Resolved,2023-02-24 12:26:03.066179768,2023-05-12 11:38:00,Charlie Whitherspoon,INC0000000185,admin,India,Howard Johnson,David Loo,2023-08-19 00:17:36.874122878,There was an issue,1 - Critical,Inquiry / Help
+Software,Closed,2023-05-13 21:54:00,2023-05-13 02:54:00,Luke Wilson,INC0000000466,system,United States,Beth Anglin,Bud Richman,2023-05-30 02:59:49.369927031,2 - High,2 - High,Software
+Hardware,Closed,2023-05-13 22:11:00,2023-05-13 10:11:00,Howard Johnson,INC0000000404,system,UK,Beth Anglin,David Loo,2023-06-04 09:17:41.184530679,2 - High,4 - Low,Hardware
+Hardware,Resolved,2023-05-22 23:24:00.000000000,2023-05-14 11:45:00,Howard Johnson,INC0000000106,admin,Australia,Luke Wilson,Bud Richman,2023-12-27 23:15:06.590296403,There was an issue,3 - Moderate,Hardware
+Database,Resolved,2024-01-09 12:37:13.292569926,2023-05-17 20:30:00,Howard Johnson,INC0000000275,system,Canada,Fred Luddy,Bud Richman,2023-03-03 22:24:21.666904166,There was an issue,3 - Moderate,Database
+Network,Closed,2023-05-20 01:29:00,2023-05-18 07:29:00,Fred Luddy,INC0000000274,employee,Canada,Charlie Whitherspoon,ITIL User,2023-04-22 08:16:59.883429480,3 - Moderate,3 - Moderate,Network
+Database,Closed,2023-01-28 04:52:51.519667192,2023-05-18 17:29:00,Beth Anglin,INC0000000199,employee,Australia,Fred Luddy,Don Goodliffe,2023-03-29 09:27:22.091188363,There was an issue,4 - Low,Database
+Software,Resolved,2023-10-12 19:50:00.000000000,2023-05-18 22:32:00,Howard Johnson,INC0000000370,employee,India,Howard Johnson,Don Goodliffe,2023-01-18 08:42:15.759148193,There was an issue,3 - Moderate,Software
+Network,Resolved,2023-05-03 23:18:07.556497402,2023-05-19 04:05:00,Charlie Whitherspoon,INC0000000397,admin,United States,Fred Luddy,David Loo,2023-06-29 19:11:43.933822843,There was an issue,4 - Low,Network
+Network,Closed,2023-07-25 23:13:55.734880101,2023-05-20 06:12:00,Howard Johnson,INC0000000488,admin,UK,Luke Wilson,ITIL User,2023-06-15 22:13:18.416949743,There was an issue,2 - High,Network
+Software,Closed,2023-10-08 04:30:10.854895991,2023-05-21 05:49:00,Charlie Whitherspoon,INC0000000140,admin,India,Fred Luddy,Don Goodliffe,2023-06-12 02:12:20.844915289,There was an issue,1 - Critical,Software
+Software,Closed,2023-12-15 03:54:00.000000000,2023-05-21 23:24:00,Luke Wilson,INC0000000281,system,United States,Howard Johnson,ITIL User,2023-02-25 02:41:07.264125204,There was an issue,3 - Moderate,Software
+Network,Closed,2023-05-22 08:22:00,2023-05-22 01:22:00,Luke Wilson,INC0000000448,employee,Canada,Beth Anglin,David Loo,2023-11-19 08:35:26.721892000,1 - Critical,4 - Low,Network
+Database,Closed,2023-11-03 11:52:00.000000000,2023-05-24 02:06:00,Charlie Whitherspoon,INC0000000284,system,UK,Fred Luddy,Bud Richman,2023-04-24 02:25:13.899200115,There was an issue,4 - Low,Database
+Hardware,Closed,2023-03-30 05:18:20.748165094,2023-05-24 03:55:00,Howard Johnson,INC0000000413,employee,United States,Fred Luddy,Bud Richman,2023-05-19 09:53:34.982040620,There was an issue,4 - Low,Hardware
+Inquiry / Help,Closed,2023-09-01 14:19:29.165134519,2023-05-26 08:08:00,Howard Johnson,INC0000000008,system,United States,Howard Johnson,Bud Richman,2023-02-18 11:04:04.387140839,There was an issue,1 - Critical,Inquiry / Help
+Network,Closed,2023-05-26 20:20:00,2023-05-26 13:20:00,Howard Johnson,INC0000000409,employee,India,Beth Anglin,Don Goodliffe,2023-08-18 23:36:22.191419882,2 - High,4 - Low,Network
+Hardware,Closed,2023-05-12 02:21:34.844909705,2023-05-27 08:38:00,Beth Anglin,INC0000000494,admin,United States,Luke Wilson,ITIL User,2023-10-12 19:50:00.000000000,There was an issue,3 - Moderate,Hardware
+Hardware,Resolved,2024-01-14 00:18:47.213476730,2023-05-27 21:00:00,Luke Wilson,INC0000000116,employee,UK,Luke Wilson,David Loo,2023-04-16 00:36:30.146701781,There was an issue,1 - Critical,Hardware
+Database,Closed,2023-05-30 12:25:00,2023-05-28 13:25:00,Luke Wilson,INC0000000147,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-11-07 22:41:41.858766805,4 - Low,2 - High,Database
+Inquiry / Help,Closed,2023-05-30 15:20:00,2023-05-29 04:20:00,Beth Anglin,INC0000000198,system,Canada,Charlie Whitherspoon,ITIL User,2023-10-29 06:16:49.729720000,4 - Low,2 - High,Inquiry / Help
+Software,Closed,2023-05-30 19:43:00,2023-05-30 09:43:00,Beth Anglin,INC0000000112,employee,Canada,Beth Anglin,ITIL User,2023-08-13 06:44:24.424288482,1 - Critical,3 - Moderate,Software
+Database,Closed,2023-07-31 00:33:13.437296119,2023-05-30 09:56:00,Howard Johnson,INC0000000054,employee,Australia,Luke Wilson,David Loo,2023-01-09 08:53:00.000000000,There was an issue,2 - High,Database
+Network,Resolved,2023-03-17 12:55:54.993590364,2023-06-01 00:47:00,Beth Anglin,INC0000000241,employee,India,Howard Johnson,Bud Richman,2023-01-11 01:17:39.128189467,There was an issue,4 - Low,Network
+Network,Closed,2023-06-01 19:13:00,2023-06-01 13:13:00,Luke Wilson,INC0000000036,admin,India,Beth Anglin,David Loo,2023-05-31 03:23:19.484544434,2 - High,3 - Moderate,Network
+Inquiry / Help,Resolved,2023-05-10 23:55:09.253391223,2023-06-02 12:28:00,Howard Johnson,INC0000000289,employee,UK,Luke Wilson,David Loo,2024-01-10 15:38:48.582320090,There was an issue,4 - Low,Inquiry / Help
+Hardware,Closed,2023-06-03 03:47:00,2023-06-02 22:47:00,Fred Luddy,INC0000000286,employee,India,Beth Anglin,Don Goodliffe,2023-06-07 21:23:00.000000000,2 - High,2 - High,Hardware
+Software,Resolved,2023-07-26 01:50:52.068385147,2023-06-03 10:45:00,Fred Luddy,INC0000000460,employee,India,Howard Johnson,Don Goodliffe,2023-09-23 18:17:16.716938240,There was an issue,4 - Low,Software
+Inquiry / Help,Closed,2023-06-05 12:39:00,2023-06-03 12:39:00,Charlie Whitherspoon,INC0000000292,employee,United States,Charlie Whitherspoon,Don Goodliffe,2023-09-16 11:23:21.172473709,3 - Moderate,1 - Critical,Inquiry / Help
+Network,Closed,2023-09-20 20:58:46.751153395,2023-06-04 15:09:00,Beth Anglin,INC0000000125,system,Canada,Fred Luddy,ITIL User,2023-09-27 06:11:00.000000000,There was an issue,3 - Moderate,Network
+Hardware,Closed,2023-10-10 08:31:35.983826188,2023-06-04 21:23:00,Luke Wilson,INC0000000264,employee,Canada,Luke Wilson,ITIL User,2023-09-03 18:58:33.803118210,There was an issue,1 - Critical,Hardware
+Hardware,Resolved,2023-10-27 01:49:16.402277796,2023-06-05 08:20:00,Howard Johnson,INC0000000225,admin,India,Luke Wilson,Bud Richman,2023-08-20 02:50:00.481014067,There was an issue,1 - Critical,Hardware
+Hardware,Closed,2023-04-30 20:00:34.805177671,2023-06-06 09:03:00,Howard Johnson,INC0000000144,system,United States,Howard Johnson,ITIL User,2023-02-03 19:14:44.970166482,There was an issue,2 - High,Hardware
+Database,Closed,2023-12-14 20:37:19.388113353,2023-06-06 21:23:00,Beth Anglin,INC0000000268,system,India,Fred Luddy,Bud Richman,2023-04-14 10:00:00.000000000,There was an issue,3 - Moderate,Database
+Network,Closed,2023-08-04 04:46:10.581661057,2023-06-07 02:47:00,Luke Wilson,INC0000000213,system,UK,Fred Luddy,Bud Richman,2023-04-26 00:28:50.913657583,There was an issue,2 - High,Network
+Software,Resolved,2023-03-26 11:10:50.949076210,2023-06-07 15:24:00,Fred Luddy,INC0000000496,employee,United States,Luke Wilson,Bud Richman,2023-11-04 00:17:56.334785377,There was an issue,4 - Low,Software
+Inquiry / Help,Resolved,2023-10-14 14:32:43.560111853,2023-06-07 17:00:00,Fred Luddy,INC0000000347,system,Canada,Luke Wilson,ITIL User,2023-08-22 19:11:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
+Network,Resolved,2023-04-26 00:28:50.913657583,2023-06-08 18:44:00,Charlie Whitherspoon,INC0000000059,employee,Australia,Fred Luddy,Bud Richman,2023-08-10 06:30:11.927271898,There was an issue,4 - Low,Network
+Network,Resolved,2023-07-10 23:00:15.709745176,2023-06-08 22:05:00,Fred Luddy,INC0000000301,admin,UK,Luke Wilson,Don Goodliffe,2023-10-10 08:31:35.983826188,There was an issue,4 - Low,Network
+Inquiry / Help,Closed,2023-08-07 09:44:00.000000000,2023-06-09 08:53:00,Charlie Whitherspoon,INC0000000330,employee,India,Fred Luddy,ITIL User,2023-01-03 11:04:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
+Network,Closed,2023-06-12 06:52:00,2023-06-10 17:52:00,Charlie Whitherspoon,INC0000000064,employee,United States,Charlie Whitherspoon,Don Goodliffe,2023-03-17 15:33:56.380678280,3 - Moderate,2 - High,Network
+Database,Resolved,2023-11-08 06:15:25.825398065,2023-06-10 20:44:00,Fred Luddy,INC0000000133,admin,Canada,Luke Wilson,Bud Richman,2023-10-21 05:30:42.585855096,There was an issue,4 - Low,Database
+Inquiry / Help,Resolved,2023-11-24 06:22:46.772217434,2023-06-11 07:00:00,Beth Anglin,INC0000000344,employee,UK,Luke Wilson,Bud Richman,2023-07-26 17:51:52.767336231,There was an issue,4 - Low,Inquiry / Help
+Database,Closed,2024-02-01 06:07:10.554650244,2023-06-14 04:06:00,Beth Anglin,INC0000000356,employee,India,Fred Luddy,Don Goodliffe,2023-05-06 22:24:00.000000000,There was an issue,4 - Low,Database
+Software,Closed,2023-06-16 17:56:00,2023-06-15 07:56:00,Charlie Whitherspoon,INC0000000121,system,Australia,Charlie Whitherspoon,ITIL User,2024-02-01 12:40:26.195788814,4 - Low,2 - High,Software
+Inquiry / Help,Resolved,2023-10-24 10:20:11.744461099,2023-06-19 10:41:00,Luke Wilson,INC0000000398,admin,India,Fred Luddy,Bud Richman,2023-05-24 09:29:18.509870284,There was an issue,4 - Low,Inquiry / Help
+Hardware,Closed,2023-03-01 04:41:50.658060449,2023-06-19 11:21:00,Charlie Whitherspoon,INC0000000062,system,Canada,Fred Luddy,Bud Richman,2023-11-19 13:31:44.558204717,There was an issue,4 - Low,Hardware
+Software,Resolved,2023-05-14 08:03:47.192602517,2023-06-19 12:22:00,Howard Johnson,INC0000000310,admin,Australia,Fred Luddy,David Loo,2024-01-31 02:23:56.445975993,There was an issue,3 - Moderate,Software
+Network,Resolved,2023-05-30 11:21:04.259433606,2023-06-19 13:59:00,Howard Johnson,INC0000000251,admin,UK,Howard Johnson,Don Goodliffe,2023-07-22 05:03:13.822074451,There was an issue,2 - High,Network
+Inquiry / Help,Closed,2023-06-24 13:04:00,2023-06-21 19:04:00,Luke Wilson,INC0000000145,system,India,Charlie Whitherspoon,Bud Richman,2023-10-08 05:16:54.012585598,3 - Moderate,2 - High,Inquiry / Help
+Inquiry / Help,Closed,2023-06-25 12:34:00,2023-06-22 17:34:00,Charlie Whitherspoon,INC0000000265,employee,Canada,Charlie Whitherspoon,Bud Richman,2023-11-15 23:12:53.763111504,4 - Low,3 - Moderate,Inquiry / Help
+Software,Closed,2023-12-09 17:15:01.861232926,2023-06-23 12:47:00,Luke Wilson,INC0000000358,employee,Australia,Fred Luddy,Bud Richman,2023-10-08 21:29:55.684306333,There was an issue,3 - Moderate,Software
+Database,Closed,2023-06-24 18:11:00,2023-06-23 20:11:00,Howard Johnson,INC0000000266,system,UK,Beth Anglin,Bud Richman,2023-12-06 22:33:01.700205220,2 - High,3 - Moderate,Database
+Network,Resolved,2023-06-24 09:17:21.801903137,2023-06-25 04:50:00,Howard Johnson,INC0000000045,employee,UK,Fred Luddy,Don Goodliffe,2023-10-06 07:39:16.761597562,There was an issue,4 - Low,Network
+Inquiry / Help,Closed,2023-06-26 21:31:00,2023-06-25 10:31:00,Beth Anglin,INC0000000468,admin,Australia,Charlie Whitherspoon,ITIL User,2023-06-01 13:53:33.745863862,3 - Moderate,2 - High,Inquiry / Help
+Database,Resolved,2023-08-10 22:01:38.300764703,2023-06-25 22:45:00,Luke Wilson,INC0000000219,system,United States,Luke Wilson,Bud Richman,2023-12-17 23:44:55.013288975,There was an issue,2 - High,Database
+Hardware,Closed,2023-06-26 13:56:00,2023-06-26 06:56:00,Charlie Whitherspoon,INC0000000294,admin,Australia,Beth Anglin,ITIL User,2023-06-18 08:09:47.068608027,2 - High,2 - High,Hardware
+Database,Closed,2023-04-13 12:13:00.000000000,2023-06-26 08:23:00,Fred Luddy,INC0000000252,admin,India,Luke Wilson,ITIL User,2023-02-28 16:37:00.000000000,There was an issue,4 - Low,Database
+Hardware,Closed,2023-11-15 23:12:53.763111504,2023-06-26 17:38:00,Beth Anglin,INC0000000401,employee,India,Luke Wilson,Bud Richman,2023-10-03 08:14:22.675801438,There was an issue,3 - Moderate,Hardware
+Database,Closed,2023-06-28 09:20:00,2023-06-27 10:20:00,Howard Johnson,INC0000000435,system,India,Beth Anglin,Don Goodliffe,2023-03-05 11:31:06.569025031,1 - Critical,4 - Low,Database
+Hardware,Closed,2023-06-28 00:41:00,2023-06-27 21:41:00,Beth Anglin,INC0000000408,admin,United States,Beth Anglin,ITIL User,2023-10-30 18:57:00.000000000,1 - Critical,1 - Critical,Hardware
+Inquiry / Help,Closed,2023-06-29 10:02:00,2023-06-28 11:02:00,Fred Luddy,INC0000000038,employee,Canada,Beth Anglin,David Loo,2023-10-31 00:43:50.133149704,2 - High,1 - Critical,Inquiry / Help
+Database,Closed,2023-07-01 03:35:00,2023-06-28 14:35:00,Charlie Whitherspoon,INC0000000426,admin,UK,Charlie Whitherspoon,ITIL User,2023-08-05 08:06:09.262346306,4 - Low,1 - Critical,Database
+Software,Closed,2023-06-30 08:01:00,2023-06-29 19:01:00,Charlie Whitherspoon,INC0000000419,employee,Australia,Beth Anglin,Bud Richman,2023-07-13 16:19:33.649785697,1 - Critical,4 - Low,Software
+Inquiry / Help,Closed,2024-01-08 21:09:04.022142416,2023-07-02 07:35:00,Fred Luddy,INC0000000171,system,India,Luke Wilson,Don Goodliffe,2023-08-13 06:41:18.526534971,There was an issue,3 - Moderate,Inquiry / Help
+Inquiry / Help,Closed,2023-02-07 09:37:36.868992308,2023-07-03 06:45:00,Charlie Whitherspoon,INC0000000172,admin,United States,Howard Johnson,ITIL User,2023-03-26 23:30:22.193990107,There was an issue,1 - Critical,Inquiry / Help
+Software,Resolved,2023-06-08 17:00:00.000000000,2023-07-04 04:13:00,Fred Luddy,INC0000000098,admin,India,Luke Wilson,Don Goodliffe,2023-05-28 08:38:00.000000000,There was an issue,2 - High,Software
+Inquiry / Help,Closed,2023-07-05 11:46:00,2023-07-04 13:46:00,Beth Anglin,INC0000000183,employee,UK,Beth Anglin,David Loo,2023-06-02 00:47:00.000000000,2 - High,3 - Moderate,Inquiry / Help
+Inquiry / Help,Resolved,2023-07-06 07:29:00.832219981,2023-07-07 04:36:00,Charlie Whitherspoon,INC0000000083,employee,Australia,Fred Luddy,ITIL User,2023-10-11 14:36:28.517445744,There was an issue,2 - High,Inquiry / Help
+Software,Closed,2023-06-30 23:29:55.851304419,2023-07-07 04:48:00,Howard Johnson,INC0000000315,system,United States,Fred Luddy,ITIL User,2023-05-03 23:18:07.556497402,There was an issue,4 - Low,Software
+Inquiry / Help,Closed,2023-08-15 14:03:57.099952165,2023-07-07 05:58:00,Howard Johnson,INC0000000215,system,United States,Howard Johnson,ITIL User,2023-04-13 15:50:15.123078287,There was an issue,3 - Moderate,Inquiry / Help
+Hardware,Closed,2023-07-08 11:52:00,2023-07-07 20:52:00,Howard Johnson,INC0000000123,system,Canada,Beth Anglin,ITIL User,2023-10-10 07:28:02.225169681,2 - High,4 - Low,Hardware
+Software,Closed,2023-03-23 14:56:55.026865443,2023-07-08 00:31:00,Fred Luddy,INC0000000386,employee,UK,Howard Johnson,David Loo,2023-01-23 14:49:23.734002375,There was an issue,3 - Moderate,Software
+Database,Resolved,2023-06-02 00:47:00.000000000,2023-07-09 03:39:00,Luke Wilson,INC0000000224,system,Canada,Luke Wilson,Don Goodliffe,2023-11-27 12:48:59.344411018,There was an issue,3 - Moderate,Database
+Inquiry / Help,Closed,2023-10-12 20:28:38.706928972,2023-07-11 16:02:00,Luke Wilson,INC0000000313,admin,Canada,Luke Wilson,David Loo,2023-05-24 07:52:48.690310999,There was an issue,3 - Moderate,Inquiry / Help
+Database,Closed,2023-06-07 06:19:03.182476115,2023-07-11 18:42:00,Beth Anglin,INC0000000150,employee,Canada,Howard Johnson,David Loo,2024-02-12 22:31:48.126196708,There was an issue,2 - High,Database
+Hardware,Closed,2023-07-12 10:27:00,2023-07-12 00:27:00,Charlie Whitherspoon,INC0000000115,employee,Canada,Beth Anglin,ITIL User,2023-03-26 17:14:15.209900642,2 - High,3 - Moderate,Hardware
+Software,Resolved,2023-03-31 22:32:42.024027147,2023-07-12 03:22:00,Charlie Whitherspoon,INC0000000245,system,United States,Luke Wilson,David Loo,2023-05-19 01:48:03.565852983,There was an issue,1 - Critical,Software
+Software,Closed,2023-11-12 08:41:55.212270110,2023-07-12 05:50:00,Howard Johnson,INC0000000352,admin,India,Howard Johnson,Bud Richman,2023-10-01 17:15:12.850603255,There was an issue,2 - High,Software
+Network,Closed,2023-07-16 04:27:00,2023-07-14 21:27:00,Howard Johnson,INC0000000428,admin,Canada,Charlie Whitherspoon,Don Goodliffe,2023-03-21 01:02:44.587646914,4 - Low,2 - High,Network
+Hardware,Resolved,2023-07-12 18:45:07.705046349,2023-07-15 12:17:00,Charlie Whitherspoon,INC0000000368,employee,Canada,Howard Johnson,Don Goodliffe,2023-10-11 11:31:18.203048562,There was an issue,2 - High,Hardware
+Hardware,Closed,2023-03-11 20:13:52.693225203,2023-07-15 14:09:00,Charlie Whitherspoon,INC0000000040,employee,Canada,Luke Wilson,Don Goodliffe,2023-05-19 07:25:36.115649042,There was an issue,2 - High,Hardware
+Hardware,Resolved,2023-02-13 00:56:00.000000000,2023-07-16 10:58:00,Charlie Whitherspoon,INC0000000170,employee,Australia,Howard Johnson,David Loo,2023-07-14 06:35:05.209399792,There was an issue,4 - Low,Hardware
+Database,Resolved,2023-02-05 00:09:42.176650334,2023-07-19 12:03:00,Luke Wilson,INC0000000462,admin,Canada,Luke Wilson,David Loo,2023-10-18 21:50:20.165772966,There was an issue,3 - Moderate,Database
+Network,Resolved,2023-06-15 22:13:18.416949743,2023-07-20 12:12:00,Fred Luddy,INC0000000369,system,Canada,Luke Wilson,David Loo,2024-02-01 02:14:30.096751951,There was an issue,2 - High,Network
+Software,Closed,2023-07-21 11:12:00,2023-07-21 07:12:00,Beth Anglin,INC0000000437,admin,Canada,Beth Anglin,Bud Richman,2023-07-06 13:08:33.074641515,1 - Critical,1 - Critical,Software
+Database,Closed,2023-07-23 12:13:00,2023-07-22 04:13:00,Howard Johnson,INC0000000118,system,United States,Charlie Whitherspoon,Bud Richman,2023-01-18 12:15:00.000000000,4 - Low,1 - Critical,Database
+Inquiry / Help,Closed,2023-05-14 12:40:40.813937606,2023-07-22 16:29:00,Luke Wilson,INC0000000078,system,UK,Luke Wilson,ITIL User,2023-03-17 12:37:48.453885624,There was an issue,2 - High,Inquiry / Help
+Database,Resolved,2023-03-08 05:56:31.551604697,2023-07-22 22:39:00,Fred Luddy,INC0000000131,employee,Canada,Howard Johnson,Don Goodliffe,2023-06-29 22:17:23.746230748,There was an issue,2 - High,Database
+Inquiry / Help,Closed,2023-07-25 19:48:00,2023-07-22 23:48:00,Charlie Whitherspoon,INC0000000296,employee,UK,Charlie Whitherspoon,Bud Richman,2024-01-20 12:12:40.568716377,3 - Moderate,1 - Critical,Inquiry / Help
+Network,Closed,2023-07-25 12:50:00,2023-07-23 08:50:00,Luke Wilson,INC0000000004,system,India,Charlie Whitherspoon,ITIL User,2023-03-29 18:40:47.611595618,4 - Low,1 - Critical,Network
+Hardware,Closed,2023-07-26 23:09:00,2023-07-24 09:09:00,Howard Johnson,INC0000000163,system,United States,Charlie Whitherspoon,Don Goodliffe,2024-01-21 14:31:46.018925216,4 - Low,3 - Moderate,Hardware
+Inquiry / Help,Closed,2023-07-26 16:13:00,2023-07-24 09:13:00,Luke Wilson,INC0000000361,admin,Canada,Charlie Whitherspoon,Don Goodliffe,2023-08-07 06:13:36.125124469,3 - Moderate,1 - Critical,Inquiry / Help
+Network,Closed,2023-07-28 04:08:00,2023-07-25 08:08:00,Howard Johnson,INC0000000322,employee,United States,Charlie Whitherspoon,ITIL User,2023-08-24 03:28:09.603360173,4 - Low,2 - High,Network
+Software,Closed,2023-02-18 06:02:38.010888088,2023-07-25 20:00:00,Fred Luddy,INC0000000216,system,India,Howard Johnson,Don Goodliffe,2023-08-15 21:18:27.557222760,There was an issue,4 - Low,Software
+Hardware,Resolved,2023-09-15 01:07:41.823641770,2023-07-26 06:53:00,Charlie Whitherspoon,INC0000000306,system,UK,Fred Luddy,Don Goodliffe,2023-07-25 23:13:55.734880101,There was an issue,4 - Low,Hardware
+Hardware,Closed,2023-09-07 23:02:26.238518168,2023-07-26 17:09:00,Fred Luddy,INC0000000379,system,United States,Fred Luddy,Bud Richman,2023-01-18 10:47:18.859313409,There was an issue,2 - High,Hardware
+Software,Closed,2023-07-27 19:40:00,2023-07-27 04:40:00,Beth Anglin,INC0000000487,system,Australia,Beth Anglin,Bud Richman,2023-04-13 00:44:40.599581505,1 - Critical,4 - Low,Software
+Database,Closed,2023-07-29 07:18:00,2023-07-27 08:18:00,Luke Wilson,INC0000000153,admin,Australia,Charlie Whitherspoon,Bud Richman,2023-11-29 19:40:37.040547419,3 - Moderate,3 - Moderate,Database
+Hardware,Resolved,2023-04-13 00:44:40.599581505,2023-07-27 19:21:00,Fred Luddy,INC0000000239,admin,Australia,Howard Johnson,Bud Richman,2023-02-07 09:37:36.868992308,There was an issue,3 - Moderate,Hardware
+Database,Closed,2023-07-30 16:29:00,2023-07-28 19:29:00,Luke Wilson,INC0000000010,employee,Australia,Charlie Whitherspoon,ITIL User,2023-06-07 16:18:08.061177566,3 - Moderate,1 - Critical,Database
+Database,Closed,2023-07-30 20:15:00,2023-07-29 10:15:00,Beth Anglin,INC0000000139,system,Canada,Charlie Whitherspoon,Bud Richman,2023-08-30 13:49:54.648995923,4 - Low,2 - High,Database
+Inquiry / Help,Closed,2023-07-31 20:39:00,2023-07-29 11:39:00,Beth Anglin,INC0000000355,employee,United States,Charlie Whitherspoon,David Loo,2023-05-22 23:24:00.000000000,4 - Low,4 - Low,Inquiry / Help
+Network,Closed,2023-07-31 00:49:00,2023-07-30 09:49:00,Beth Anglin,INC0000000181,system,United States,Beth Anglin,Bud Richman,2023-08-24 00:59:37.177124394,1 - Critical,2 - High,Network
+Inquiry / Help,Closed,2023-07-31 20:52:00,2023-07-30 09:52:00,Howard Johnson,INC0000000439,employee,United States,Charlie Whitherspoon,ITIL User,2023-01-23 16:07:55.271807823,3 - Moderate,2 - High,Inquiry / Help
+Network,Closed,2023-01-19 02:40:53.945578841,2023-07-30 17:08:00,Luke Wilson,INC0000000109,system,Australia,Howard Johnson,David Loo,2023-01-12 00:34:00.000000000,There was an issue,4 - Low,Network
+Software,Resolved,2023-08-03 13:35:26.483807424,2023-08-01 05:44:00,Charlie Whitherspoon,INC0000000177,employee,India,Fred Luddy,Bud Richman,2023-08-26 09:29:01.912064757,There was an issue,1 - Critical,Software
+Software,Closed,2023-08-01 14:34:00,2023-08-01 11:34:00,Beth Anglin,INC0000000334,employee,Australia,Beth Anglin,David Loo,2023-09-13 23:47:44.874072603,2 - High,1 - Critical,Software
+Inquiry / Help,Resolved,2023-09-27 06:11:00.000000000,2023-08-01 13:22:00,Howard Johnson,INC0000000179,system,United States,Luke Wilson,ITIL User,2023-03-14 06:30:47.245274154,There was an issue,2 - High,Inquiry / Help
+Network,Resolved,2023-08-02 05:44:00.000000000,2023-08-02 07:41:00,Luke Wilson,INC0000000335,employee,India,Fred Luddy,ITIL User,2023-01-14 09:42:31.239968317,There was an issue,4 - Low,Network
+Network,Resolved,2023-09-03 02:19:00.000000000,2023-08-02 14:46:00,Charlie Whitherspoon,INC0000000013,employee,India,Fred Luddy,Bud Richman,2023-11-20 13:58:24.005162219,There was an issue,2 - High,Network
+Inquiry / Help,Closed,2023-08-05 10:39:00,2023-08-03 08:39:00,Luke Wilson,INC0000000440,employee,United States,Charlie Whitherspoon,Don Goodliffe,2024-01-23 07:05:32.181816124,4 - Low,3 - Moderate,Inquiry / Help
+Database,Resolved,2023-07-20 09:47:52.908236069,2023-08-03 16:41:00,Beth Anglin,INC0000000108,system,UK,Howard Johnson,Bud Richman,2023-06-17 06:06:14.854314828,There was an issue,4 - Low,Database
+Software,Resolved,2023-09-16 11:23:21.172473709,2023-08-03 18:56:00,Luke Wilson,INC0000000006,system,India,Fred Luddy,David Loo,2023-11-24 19:39:37.248766516,There was an issue,1 - Critical,Software
+Inquiry / Help,Closed,2023-08-07 07:39:00,2023-08-05 07:39:00,Beth Anglin,INC0000000070,admin,Australia,Charlie Whitherspoon,Bud Richman,2023-06-03 13:13:53.896117331,3 - Moderate,4 - Low,Inquiry / Help
+Inquiry / Help,Resolved,2023-08-11 16:02:37.684405305,2023-08-06 09:44:00,Howard Johnson,INC0000000031,admin,Australia,Howard Johnson,Don Goodliffe,2023-11-25 13:45:38.979607981,There was an issue,4 - Low,Inquiry / Help
+Database,Resolved,2023-08-24 03:28:09.603360173,2023-08-07 02:37:00,Howard Johnson,INC0000000454,system,UK,Fred Luddy,David Loo,2024-02-09 04:30:29.586553971,There was an issue,4 - Low,Database
+Hardware,Closed,2023-11-25 18:11:25.410173561,2023-08-08 09:29:00,Fred Luddy,INC0000000420,employee,India,Fred Luddy,Don Goodliffe,2023-02-08 15:38:00.000000000,There was an issue,3 - Moderate,Hardware
+Database,Closed,2023-06-13 22:57:17.038108358,2023-08-09 04:10:00,Charlie Whitherspoon,INC0000000223,employee,UK,Luke Wilson,Don Goodliffe,2023-09-15 15:54:00.000000000,There was an issue,2 - High,Database
+Hardware,Closed,2023-08-11 12:13:00,2023-08-09 04:13:00,Howard Johnson,INC0000000431,employee,United States,Charlie Whitherspoon,David Loo,2023-08-26 15:36:56.981753690,4 - Low,4 - Low,Hardware
+Hardware,Closed,2023-04-13 19:24:58.346273013,2023-08-09 17:08:00,Beth Anglin,INC0000000126,employee,United States,Luke Wilson,David Loo,2023-09-22 07:03:43.180128742,There was an issue,1 - Critical,Hardware
+Software,Closed,2023-08-12 22:09:00,2023-08-10 08:09:00,Luke Wilson,INC0000000314,employee,Australia,Charlie Whitherspoon,ITIL User,2023-01-19 02:40:53.945578841,4 - Low,2 - High,Software
+Inquiry / Help,Closed,2023-01-21 03:18:58.590910419,2023-08-11 04:15:00,Beth Anglin,INC0000000243,employee,UK,Fred Luddy,Don Goodliffe,2023-11-29 21:52:24.416389196,There was an issue,3 - Moderate,Inquiry / Help
+Network,Closed,2023-04-08 07:50:02.291054808,2023-08-11 09:04:00,Charlie Whitherspoon,INC0000000390,system,United States,Howard Johnson,David Loo,2023-12-15 13:12:56.653826436,There was an issue,3 - Moderate,Network
+Inquiry / Help,Closed,2023-06-25 12:04:04.032337887,2023-08-12 03:28:00,Beth Anglin,INC0000000099,system,United States,Fred Luddy,ITIL User,2023-10-07 04:57:07.243553547,There was an issue,3 - Moderate,Inquiry / Help
+Network,Resolved,2023-10-16 11:37:53.443608066,2023-08-12 15:36:00,Charlie Whitherspoon,INC0000000336,employee,United States,Luke Wilson,Bud Richman,2023-06-06 12:59:19.008350345,There was an issue,1 - Critical,Network
+Software,Closed,2023-10-11 14:36:28.517445744,2023-08-13 08:04:00,Howard Johnson,INC0000000093,employee,Australia,Luke Wilson,Don Goodliffe,2024-01-19 09:54:00.000000000,There was an issue,3 - Moderate,Software
+Network,Closed,2023-08-14 19:58:00,2023-08-14 09:58:00,Luke Wilson,INC0000000272,employee,Australia,Beth Anglin,Bud Richman,2023-09-05 02:07:43.113682721,1 - Critical,2 - High,Network
+Inquiry / Help,Closed,2023-08-18 16:03:00,2023-08-15 20:03:00,Charlie Whitherspoon,INC0000000228,employee,Australia,Charlie Whitherspoon,Bud Richman,2024-01-03 16:58:25.664592126,3 - Moderate,3 - Moderate,Inquiry / Help
+Database,Closed,2023-05-18 20:30:00.000000000,2023-08-16 19:14:00,Fred Luddy,INC0000000432,admin,UK,Howard Johnson,ITIL User,2024-01-26 14:08:14.089327678,There was an issue,3 - Moderate,Database
+Network,Closed,2023-08-17 22:38:00,2023-08-17 11:38:00,Howard Johnson,INC0000000030,admin,Canada,Beth Anglin,ITIL User,2023-02-19 05:46:55.363664679,1 - Critical,1 - Critical,Network
+Database,Resolved,2023-05-15 10:38:15.815796741,2023-08-18 10:57:00,Beth Anglin,INC0000000359,employee,UK,Luke Wilson,Don Goodliffe,2023-10-27 01:49:16.402277796,There was an issue,2 - High,Database
+Hardware,Resolved,2023-09-18 08:09:07.717459166,2023-08-19 12:57:00,Howard Johnson,INC0000000374,admin,India,Luke Wilson,ITIL User,2023-11-18 17:10:46.429479768,There was an issue,1 - Critical,Hardware
+Software,Closed,2023-08-20 22:09:00,2023-08-20 08:09:00,Luke Wilson,INC0000000277,system,Australia,Beth Anglin,David Loo,2023-04-29 07:22:13.691497066,2 - High,3 - Moderate,Software
+Hardware,Closed,2023-08-21 07:38:00,2023-08-20 08:38:00,Howard Johnson,INC0000000229,admin,Canada,Beth Anglin,ITIL User,2023-01-22 04:15:55.294347270,2 - High,4 - Low,Hardware
+Database,Closed,2023-06-20 19:52:27.802682144,2023-08-20 18:16:00,Charlie Whitherspoon,INC0000000308,employee,Australia,Luke Wilson,Bud Richman,2024-01-19 07:24:42.210493722,There was an issue,4 - Low,Database
+Software,Closed,2023-08-23 22:17:00,2023-08-21 07:17:00,Charlie Whitherspoon,INC0000000345,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-08-27 03:03:00.000000000,4 - Low,4 - Low,Software
+Network,Closed,2023-03-16 11:23:45.848878332,2023-08-21 07:38:00,Howard Johnson,INC0000000017,employee,Australia,Howard Johnson,Bud Richman,2023-12-07 19:08:00.907490315,There was an issue,1 - Critical,Network
+Software,Resolved,2023-08-20 02:50:00.481014067,2023-08-21 19:11:00,Fred Luddy,INC0000000092,admin,UK,Howard Johnson,ITIL User,2023-01-28 01:28:09.743197803,There was an issue,3 - Moderate,Software
+Software,Resolved,2023-11-02 21:31:23.289304071,2023-08-22 03:19:00,Howard Johnson,INC0000000458,admin,Canada,Luke Wilson,Don Goodliffe,2023-10-19 02:19:42.091067289,There was an issue,3 - Moderate,Software
+Inquiry / Help,Closed,2023-08-26 15:22:00,2023-08-24 07:22:00,Beth Anglin,INC0000000244,admin,Australia,Charlie Whitherspoon,ITIL User,2024-01-24 00:12:58.375121721,4 - Low,1 - Critical,Inquiry / Help
+Software,Resolved,2023-08-24 00:59:37.177124394,2023-08-25 12:10:00,Luke Wilson,INC0000000074,system,Australia,Fred Luddy,David Loo,2023-09-15 01:07:41.823641770,There was an issue,2 - High,Software
+Network,Closed,2023-04-26 13:43:55.256743773,2023-08-25 22:41:00,Beth Anglin,INC0000000072,system,Canada,Fred Luddy,Bud Richman,2023-04-15 04:23:54.073331834,There was an issue,4 - Low,Network
+Database,Closed,2023-07-27 12:30:15.368139102,2023-08-26 03:03:00,Fred Luddy,INC0000000456,employee,Australia,Howard Johnson,ITIL User,2023-03-08 05:56:31.551604697,There was an issue,1 - Critical,Database
+Inquiry / Help,Closed,2023-08-30 15:14:00,2023-08-27 21:14:00,Beth Anglin,INC0000000283,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-12-09 12:22:44.658032345,3 - Moderate,3 - Moderate,Inquiry / Help
+Network,Resolved,2023-05-04 21:57:00.000000000,2023-08-28 16:06:00,Howard Johnson,INC0000000478,admin,Australia,Luke Wilson,Don Goodliffe,2023-11-09 01:36:23.094504250,There was an issue,1 - Critical,Network
+Network,Resolved,2023-10-01 17:15:12.850603255,2023-08-30 15:44:00,Luke Wilson,INC0000000227,admin,India,Howard Johnson,David Loo,2023-08-26 16:09:36.942939516,There was an issue,4 - Low,Network
+Software,Closed,2023-09-23 18:17:16.716938240,2023-08-31 14:06:00,Fred Luddy,INC0000000316,admin,India,Fred Luddy,ITIL User,2023-01-13 03:44:31.383066130,There was an issue,3 - Moderate,Software
+Database,Resolved,2023-11-27 06:06:19.635851412,2023-09-02 01:15:00,Howard Johnson,INC0000000499,admin,India,Luke Wilson,David Loo,2023-04-24 09:36:05.775625483,There was an issue,3 - Moderate,Database
+Hardware,Closed,2023-09-04 18:19:00,2023-09-02 02:19:00,Charlie Whitherspoon,INC0000000380,admin,UK,Charlie Whitherspoon,Don Goodliffe,2023-06-05 15:09:00.000000000,3 - Moderate,2 - High,Hardware
+Hardware,Closed,2023-01-05 17:54:36.886511927,2023-09-02 03:20:00,Howard Johnson,INC0000000081,system,India,Fred Luddy,Bud Richman,2024-01-08 21:09:04.022142416,There was an issue,2 - High,Hardware
+Inquiry / Help,Closed,2023-09-05 22:56:00,2023-09-03 07:56:00,Charlie Whitherspoon,INC0000000101,admin,United States,Charlie Whitherspoon,ITIL User,2023-11-11 22:19:34.292012026,4 - Low,3 - Moderate,Inquiry / Help
+Network,Closed,2023-02-26 07:36:08.762766728,2023-09-03 12:21:00,Howard Johnson,INC0000000189,system,India,Fred Luddy,Don Goodliffe,2023-10-09 09:10:00.000000000,There was an issue,3 - Moderate,Network
+Network,Closed,2023-06-05 15:09:00.000000000,2023-09-03 15:48:00,Howard Johnson,INC0000000173,admin,Australia,Fred Luddy,David Loo,2024-01-16 19:13:13.303553162,There was an issue,2 - High,Network
+Database,Resolved,2023-09-13 23:47:44.874072603,2023-09-04 16:00:00,Fred Luddy,INC0000000305,employee,Canada,Howard Johnson,Don Goodliffe,2023-07-06 07:29:00.832219981,There was an issue,2 - High,Database
+Database,Resolved,2023-06-13 20:13:50.263024628,2023-09-04 18:36:00,Fred Luddy,INC0000000071,system,United States,Fred Luddy,Bud Richman,2023-10-05 14:59:20.783399866,There was an issue,2 - High,Database
+Database,Closed,2023-09-07 11:24:00,2023-09-06 12:24:00,Fred Luddy,INC0000000044,employee,United States,Beth Anglin,ITIL User,2023-08-21 08:48:34.847604103,1 - Critical,4 - Low,Database
+Hardware,Resolved,2023-08-13 15:36:00.000000000,2023-09-07 03:40:00,Fred Luddy,INC0000000154,system,United States,Howard Johnson,David Loo,2024-02-08 06:58:35.863529275,There was an issue,1 - Critical,Hardware
+Network,Closed,2023-06-29 12:44:20.753397452,2023-09-07 17:44:00,Fred Luddy,INC0000000375,system,Australia,Howard Johnson,Bud Richman,2023-09-28 19:04:36.066288946,There was an issue,1 - Critical,Network
+Software,Closed,2023-08-19 10:57:00.000000000,2023-09-08 07:01:00,Luke Wilson,INC0000000046,system,UK,Howard Johnson,Don Goodliffe,2023-07-25 09:09:00.000000000,There was an issue,2 - High,Software
+Hardware,Resolved,2023-04-08 15:04:33.153395278,2023-09-08 17:14:00,Howard Johnson,INC0000000340,employee,Canada,Howard Johnson,ITIL User,2024-01-21 17:52:21.410495977,There was an issue,3 - Moderate,Hardware
+Inquiry / Help,Closed,2023-09-12 05:57:00,2023-09-11 18:57:00,Beth Anglin,INC0000000180,system,India,Beth Anglin,David Loo,2023-01-12 10:23:00.628645777,1 - Critical,3 - Moderate,Inquiry / Help
+Database,Closed,2023-09-13 19:43:00,2023-09-12 15:43:00,Howard Johnson,INC0000000486,admin,Canada,Charlie Whitherspoon,Don Goodliffe,2023-01-24 18:39:21.848415555,4 - Low,2 - High,Database
+Database,Closed,2024-01-24 00:12:58.375121721,2023-09-13 03:14:00,Luke Wilson,INC0000000076,admin,United States,Howard Johnson,David Loo,2024-01-21 13:40:00.000000000,There was an issue,1 - Critical,Database
+Inquiry / Help,Closed,2023-12-07 19:08:00.907490315,2023-09-13 23:38:00,Howard Johnson,INC0000000279,system,UK,Fred Luddy,David Loo,2023-05-29 16:00:46.480174225,There was an issue,1 - Critical,Inquiry / Help
+Database,Closed,2023-09-17 08:29:00,2023-09-14 10:29:00,Luke Wilson,INC0000000021,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-11-23 08:35:34.467772083,4 - Low,2 - High,Database
+Inquiry / Help,Resolved,2023-09-28 19:04:36.066288946,2023-09-14 10:58:00,Beth Anglin,INC0000000346,admin,Australia,Luke Wilson,ITIL User,2023-06-22 02:33:39.410009617,There was an issue,1 - Critical,Inquiry / Help
+Database,Resolved,2023-09-22 13:11:16.460337579,2023-09-14 13:00:00,Howard Johnson,INC0000000438,admin,United States,Fred Luddy,ITIL User,2023-11-04 10:27:01.152081419,There was an issue,4 - Low,Database
+Software,Closed,2023-01-30 01:44:17.443653956,2023-09-14 15:54:00,Fred Luddy,INC0000000255,system,UK,Fred Luddy,ITIL User,2023-09-11 18:47:05.423433239,There was an issue,1 - Critical,Software
+Inquiry / Help,Resolved,2023-08-22 19:11:00.000000000,2023-09-15 05:28:00,Luke Wilson,INC0000000410,employee,Canada,Howard Johnson,David Loo,2023-07-20 02:37:10.813279462,There was an issue,1 - Critical,Inquiry / Help
+Inquiry / Help,Resolved,2023-07-31 04:33:45.303280610,2023-09-16 09:18:00,Charlie Whitherspoon,INC0000000148,employee,UK,Luke Wilson,ITIL User,2023-07-31 00:33:13.437296119,There was an issue,1 - Critical,Inquiry / Help
+Network,Resolved,2023-03-13 09:38:15.903837660,2023-09-16 09:20:00,Luke Wilson,INC0000000085,admin,Australia,Fred Luddy,David Loo,2023-07-20 09:47:52.908236069,There was an issue,4 - Low,Network
+Inquiry / Help,Closed,2023-05-13 14:49:23.379483573,2023-09-18 03:29:00,Beth Anglin,INC0000000430,admin,United States,Luke Wilson,ITIL User,2023-02-05 00:09:42.176650334,There was an issue,2 - High,Inquiry / Help
+Database,Resolved,2023-04-13 02:17:59.600859991,2023-09-19 03:45:00,Luke Wilson,INC0000000444,system,Australia,Fred Luddy,ITIL User,2023-12-14 13:02:12.152455924,There was an issue,2 - High,Database
+Database,Closed,2023-08-19 05:22:39.220366354,2023-09-19 08:44:00,Howard Johnson,INC0000000191,admin,United States,Luke Wilson,Bud Richman,2023-08-04 04:46:10.581661057,There was an issue,4 - Low,Database
+Hardware,Closed,2023-09-11 18:47:05.423433239,2023-09-20 06:22:00,Luke Wilson,INC0000000436,admin,India,Howard Johnson,ITIL User,2023-06-29 12:44:20.753397452,There was an issue,4 - Low,Hardware
+Software,Closed,2023-09-22 00:36:00,2023-09-20 20:36:00,Charlie Whitherspoon,INC0000000143,employee,Canada,Charlie Whitherspoon,David Loo,2023-12-17 00:37:06.937192986,4 - Low,1 - Critical,Software
+Inquiry / Help,Resolved,2024-01-16 19:13:13.303553162,2023-09-21 05:32:00,Luke Wilson,INC0000000117,employee,UK,Fred Luddy,ITIL User,2023-09-14 16:03:56.241021820,There was an issue,1 - Critical,Inquiry / Help
+Software,Closed,2023-08-01 00:45:22.754376187,2023-09-21 14:49:00,Charlie Whitherspoon,INC0000000348,admin,United States,Fred Luddy,David Loo,2023-03-02 18:17:24.556975522,There was an issue,1 - Critical,Software
+Inquiry / Help,Closed,2023-09-24 01:14:00,2023-09-21 21:14:00,Charlie Whitherspoon,INC0000000060,system,UK,Charlie Whitherspoon,ITIL User,2023-11-23 15:56:17.027339265,3 - Moderate,1 - Critical,Inquiry / Help
+Software,Closed,2023-09-22 17:53:00,2023-09-21 23:53:00,Fred Luddy,INC0000000246,system,UK,Beth Anglin,Bud Richman,2023-02-18 18:49:23.647006730,1 - Critical,2 - High,Software
+Software,Closed,2023-10-10 07:28:02.225169681,2023-09-24 10:56:00,Fred Luddy,INC0000000262,system,Canada,Fred Luddy,Bud Richman,2023-04-13 19:24:58.346273013,There was an issue,4 - Low,Software
+Database,Closed,2023-10-11 11:31:18.203048562,2023-09-24 13:55:00,Beth Anglin,INC0000000463,system,United States,Howard Johnson,Bud Richman,2023-09-26 02:31:00.000000000,There was an issue,3 - Moderate,Database
+Network,Resolved,2023-07-14 21:15:31.584390518,2023-09-25 02:31:00,Luke Wilson,INC0000000297,admin,India,Fred Luddy,David Loo,2023-10-05 10:37:47.028545047,There was an issue,1 - Critical,Network
+Inquiry / Help,Closed,2023-09-25 21:21:00,2023-09-25 19:21:00,Luke Wilson,INC0000000236,admin,UK,Beth Anglin,Bud Richman,2023-08-02 05:44:00.000000000,1 - Critical,3 - Moderate,Inquiry / Help
+Inquiry / Help,Closed,2023-12-01 04:31:00.000000000,2023-09-25 20:40:00,Fred Luddy,INC0000000270,system,Australia,Luke Wilson,Don Goodliffe,2023-03-22 15:24:16.646216503,There was an issue,4 - Low,Inquiry / Help
+Software,Closed,2023-09-26 02:56:00,2023-09-25 20:56:00,Fred Luddy,INC0000000186,admin,Canada,Beth Anglin,Don Goodliffe,2023-03-11 13:42:59.511508874,2 - High,3 - Moderate,Software
+Hardware,Resolved,2023-09-22 23:55:17.560026848,2023-09-26 00:01:00,Charlie Whitherspoon,INC0000000197,system,Australia,Luke Wilson,Don Goodliffe,2023-09-13 01:47:32.680016461,There was an issue,2 - High,Hardware
+Database,Closed,2023-09-26 08:11:00,2023-09-26 06:11:00,Howard Johnson,INC0000000403,system,India,Beth Anglin,Don Goodliffe,2023-09-21 01:28:06.686513687,1 - Critical,2 - High,Database
+Inquiry / Help,Closed,2023-09-27 22:04:00,2023-09-27 00:04:00,Beth Anglin,INC0000000208,system,United States,Beth Anglin,Bud Richman,2023-12-26 08:26:25.509637696,2 - High,2 - High,Inquiry / Help
+Hardware,Resolved,2023-11-14 12:04:58.180425139,2023-09-27 23:08:00,Charlie Whitherspoon,INC0000000232,system,Australia,Howard Johnson,Don Goodliffe,2023-12-11 12:52:00.000000000,There was an issue,4 - Low,Hardware
+Hardware,Closed,2023-09-28 15:57:00,2023-09-28 01:57:00,Fred Luddy,INC0000000324,employee,India,Beth Anglin,ITIL User,2023-07-08 04:48:00.000000000,2 - High,3 - Moderate,Hardware
+Hardware,Resolved,2023-10-18 00:52:00.000000000,2023-09-28 13:16:00,Howard Johnson,INC0000000209,system,Canada,Luke Wilson,Bud Richman,2023-11-22 14:54:17.505991208,There was an issue,1 - Critical,Hardware
+Database,Closed,2023-09-29 15:59:00,2023-09-29 02:59:00,Luke Wilson,INC0000000052,system,Canada,Beth Anglin,David Loo,2023-08-02 05:21:25.991706511,2 - High,2 - High,Database
+Database,Closed,2023-03-18 09:32:55.751173465,2023-09-30 07:14:00,Luke Wilson,INC0000000238,admin,Canada,Fred Luddy,David Loo,2023-06-08 17:00:00.000000000,There was an issue,2 - High,Database
+Software,Closed,2023-10-02 05:37:00,2023-09-30 14:37:00,Beth Anglin,INC0000000176,employee,India,Charlie Whitherspoon,David Loo,2023-07-30 12:07:08.997531852,4 - Low,4 - Low,Software
+Inquiry / Help,Closed,2023-03-18 07:40:00.000000000,2023-10-01 18:20:00,Howard Johnson,INC0000000104,system,Canada,Howard Johnson,David Loo,2023-01-24 10:21:12.713928509,There was an issue,2 - High,Inquiry / Help
+Network,Closed,2023-12-17 23:44:55.013288975,2023-10-01 20:05:00,Luke Wilson,INC0000000122,admin,Canada,Howard Johnson,David Loo,2023-06-13 22:57:17.038108358,There was an issue,1 - Critical,Network
+Database,Resolved,2023-04-14 10:00:00.000000000,2023-10-02 01:05:00,Beth Anglin,INC0000000165,employee,UK,Luke Wilson,Bud Richman,2023-12-01 23:08:08.172813661,There was an issue,4 - Low,Database
+Software,Closed,2023-08-02 04:32:04.560171158,2023-10-02 20:23:00,Fred Luddy,INC0000000350,admin,United States,Howard Johnson,ITIL User,2023-01-23 02:21:48.999352525,There was an issue,3 - Moderate,Software
+Network,Resolved,2023-12-01 23:08:08.172813661,2023-10-03 07:12:00,Howard Johnson,INC0000000182,employee,India,Luke Wilson,Don Goodliffe,2023-11-15 18:59:00.000000000,There was an issue,3 - Moderate,Network
+Hardware,Resolved,2023-02-09 20:37:54.209291607,2023-10-03 08:47:00,Fred Luddy,INC0000000360,system,UK,Fred Luddy,Bud Richman,2023-07-31 04:33:45.303280610,There was an issue,4 - Low,Hardware
+Network,Resolved,2024-01-06 13:12:25.109624389,2023-10-03 11:29:00,Charlie Whitherspoon,INC0000000364,employee,UK,Fred Luddy,Bud Richman,2023-08-08 20:25:25.735379947,There was an issue,4 - Low,Network
+Network,Closed,2023-06-29 19:11:43.933822843,2023-10-03 14:29:00,Charlie Whitherspoon,INC0000000027,admin,India,Fred Luddy,David Loo,2023-12-13 03:48:19.521259680,There was an issue,3 - Moderate,Network
+Inquiry / Help,Closed,2023-10-05 11:50:00,2023-10-04 21:50:00,Howard Johnson,INC0000000234,employee,Canada,Beth Anglin,Don Goodliffe,2023-11-01 13:29:20.811811166,2 - High,4 - Low,Inquiry / Help
+Network,Closed,2023-10-05 18:17:00,2023-10-05 06:17:00,Charlie Whitherspoon,INC0000000326,system,UK,Beth Anglin,Bud Richman,2023-05-06 08:53:56.696181202,2 - High,3 - Moderate,Network
+Inquiry / Help,Closed,2023-05-27 02:04:45.048501853,2023-10-05 12:36:00,Beth Anglin,INC0000000158,system,Canada,Fred Luddy,David Loo,2023-04-08 15:04:33.153395278,There was an issue,2 - High,Inquiry / Help
+Network,Closed,2023-10-06 16:02:00,2023-10-06 14:02:00,Luke Wilson,INC0000000132,employee,India,Beth Anglin,Don Goodliffe,2023-11-06 00:05:08.518186417,2 - High,3 - Moderate,Network
+Database,Closed,2023-10-10 15:05:00,2023-10-07 19:05:00,Fred Luddy,INC0000000481,employee,Canada,Charlie Whitherspoon,Bud Richman,2023-07-06 00:45:36.251942561,4 - Low,3 - Moderate,Database
+Hardware,Closed,2023-10-09 10:10:00,2023-10-08 09:10:00,Howard Johnson,INC0000000136,system,Canada,Charlie Whitherspoon,David Loo,2023-05-13 13:14:46.388208661,3 - Moderate,2 - High,Hardware
+Software,Closed,2023-10-08 19:24:00,2023-10-08 10:24:00,Beth Anglin,INC0000000222,admin,India,Beth Anglin,David Loo,2023-07-19 14:54:49.403388921,2 - High,1 - Critical,Software
+Inquiry / Help,Closed,2023-10-10 00:23:00,2023-10-09 03:23:00,Beth Anglin,INC0000000260,admin,Australia,Beth Anglin,David Loo,2023-09-22 21:14:00.000000000,1 - Critical,2 - High,Inquiry / Help
+Hardware,Closed,2023-10-11 12:19:52.993926660,2023-10-09 19:05:00,Beth Anglin,INC0000000193,system,India,Howard Johnson,Bud Richman,2023-11-11 05:32:19.072152631,There was an issue,2 - High,Hardware
+Inquiry / Help,Closed,2023-10-11 16:43:00,2023-10-10 09:43:00,Fred Luddy,INC0000000051,system,Australia,Charlie Whitherspoon,ITIL User,2023-11-24 06:22:46.772217434,4 - Low,1 - Critical,Inquiry / Help
+Network,Closed,2023-10-12 00:15:00,2023-10-11 11:15:00,Fred Luddy,INC0000000337,admin,Australia,Beth Anglin,ITIL User,2023-10-20 04:35:01.141400836,1 - Critical,3 - Moderate,Network
+Network,Closed,2023-10-12 11:14:00,2023-10-11 14:14:00,Fred Luddy,INC0000000220,employee,Canada,Beth Anglin,Don Goodliffe,2023-09-13 13:44:32.848563603,2 - High,4 - Low,Network
+Network,Closed,2023-10-30 13:55:51.015143360,2023-10-11 19:50:00,Beth Anglin,INC0000000457,admin,India,Howard Johnson,Bud Richman,2023-09-17 17:36:33.312203552,There was an issue,3 - Moderate,Network
+Inquiry / Help,Resolved,2023-08-07 18:20:23.668968040,2023-10-12 01:24:00,Charlie Whitherspoon,INC0000000421,employee,Canada,Howard Johnson,ITIL User,2023-10-28 17:01:26.639036991,There was an issue,4 - Low,Inquiry / Help
+Software,Resolved,2023-03-31 07:59:26.909209525,2023-10-12 03:06:00,Howard Johnson,INC0000000383,admin,United States,Luke Wilson,ITIL User,2023-11-09 09:27:41.299495824,There was an issue,4 - Low,Software
+Software,Closed,2023-10-13 19:39:00,2023-10-12 20:39:00,Howard Johnson,INC0000000020,employee,Canada,Beth Anglin,Don Goodliffe,2023-08-03 13:35:26.483807424,2 - High,1 - Critical,Software
+Network,Resolved,2023-01-12 10:23:00.628645777,2023-10-13 09:01:00,Luke Wilson,INC0000000447,system,United States,Howard Johnson,Bud Richman,2023-07-25 03:32:18.462401146,There was an issue,3 - Moderate,Network
+Network,Closed,2023-10-17 06:37:00,2023-10-14 19:37:00,Beth Anglin,INC0000000169,system,United States,Charlie Whitherspoon,David Loo,2023-11-07 11:30:00.000000000,3 - Moderate,1 - Critical,Network
+Database,Resolved,2023-09-13 13:44:32.848563603,2023-10-15 00:02:00,Fred Luddy,INC0000000102,employee,India,Luke Wilson,Bud Richman,2023-02-14 04:41:35.236486606,There was an issue,2 - High,Database
+Network,Closed,2023-10-17 07:53:00,2023-10-15 00:53:00,Luke Wilson,INC0000000016,employee,Australia,Charlie Whitherspoon,Don Goodliffe,2023-10-10 07:54:06.270667738,4 - Low,1 - Critical,Network
+Inquiry / Help,Closed,2023-10-16 07:23:00,2023-10-15 17:23:00,Fred Luddy,INC0000000415,employee,Australia,Beth Anglin,ITIL User,2023-09-20 04:57:50.969058643,1 - Critical,3 - Moderate,Inquiry / Help
+Network,Resolved,2023-08-09 07:59:01.326042131,2023-10-16 14:21:00,Howard Johnson,INC0000000378,employee,United States,Luke Wilson,Bud Richman,2023-11-12 08:10:38.248010764,There was an issue,1 - Critical,Network
+Database,Closed,2023-10-17 23:55:00,2023-10-16 16:55:00,Charlie Whitherspoon,INC0000000007,admin,India,Charlie Whitherspoon,ITIL User,2023-12-09 17:15:01.861232926,3 - Moderate,3 - Moderate,Database
+Software,Closed,2023-04-26 07:15:31.647958414,2023-10-17 00:52:00,Charlie Whitherspoon,INC0000000111,employee,United States,Luke Wilson,David Loo,2023-10-14 07:51:41.450443462,There was an issue,2 - High,Software
+Hardware,Closed,2023-03-29 09:27:22.091188363,2023-10-20 02:34:00,Charlie Whitherspoon,INC0000000402,employee,Canada,Luke Wilson,Don Goodliffe,2023-03-01 04:41:50.658060449,There was an issue,4 - Low,Hardware
+Inquiry / Help,Closed,2023-10-23 08:48:00,2023-10-21 03:48:00,Fred Luddy,INC0000000207,admin,UK,Charlie Whitherspoon,David Loo,2023-08-04 08:39:00.000000000,4 - Low,4 - Low,Inquiry / Help
+Software,Closed,2023-10-25 03:17:00,2023-10-22 17:17:00,Charlie Whitherspoon,INC0000000082,employee,UK,Charlie Whitherspoon,Bud Richman,2023-04-08 07:50:02.291054808,4 - Low,3 - Moderate,Software
+Hardware,Closed,2023-07-21 18:09:17.803746956,2023-10-23 01:08:00,Howard Johnson,INC0000000471,employee,India,Howard Johnson,ITIL User,2024-01-25 11:01:00.578026325,There was an issue,4 - Low,Hardware
+Inquiry / Help,Closed,2023-04-24 02:25:13.899200115,2023-10-23 14:06:00,Charlie Whitherspoon,INC0000000257,employee,UK,Howard Johnson,David Loo,2023-03-30 05:18:20.748165094,There was an issue,2 - High,Inquiry / Help
+Software,Closed,2023-10-24 14:28:00,2023-10-24 02:28:00,Fred Luddy,INC0000000090,admin,Canada,Beth Anglin,ITIL User,2023-07-14 08:23:51.080019979,2 - High,3 - Moderate,Software
+Database,Closed,2023-06-07 21:23:00.000000000,2023-10-24 20:18:00,Howard Johnson,INC0000000451,admin,UK,Fred Luddy,Don Goodliffe,2023-03-11 20:13:52.693225203,There was an issue,1 - Critical,Database
+Software,Resolved,2023-05-08 00:19:49.950083121,2023-10-25 03:39:00,Charlie Whitherspoon,INC0000000095,admin,UK,Luke Wilson,ITIL User,2023-09-28 10:20:40.858388369,There was an issue,4 - Low,Software
+Inquiry / Help,Resolved,2023-05-24 09:29:18.509870284,2023-10-25 05:06:00,Charlie Whitherspoon,INC0000000248,admin,India,Fred Luddy,David Loo,2023-04-08 23:37:33.628402771,There was an issue,1 - Critical,Inquiry / Help
+Database,Closed,2023-10-09 09:10:00.000000000,2023-10-26 10:39:00,Howard Johnson,INC0000000498,admin,UK,Howard Johnson,David Loo,2023-08-28 16:17:39.682367202,There was an issue,1 - Critical,Database
+Software,Closed,2023-07-09 20:00:30.308403141,2023-10-26 19:39:00,Howard Johnson,INC0000000429,employee,United States,Fred Luddy,Don Goodliffe,2023-02-11 09:07:59.479099672,There was an issue,3 - Moderate,Software
+Inquiry / Help,Closed,2023-10-27 05:51:00,2023-10-26 20:51:00,Fred Luddy,INC0000000155,admin,India,Beth Anglin,David Loo,2023-09-01 14:19:29.165134519,1 - Critical,3 - Moderate,Inquiry / Help
+Inquiry / Help,Resolved,2023-02-16 22:50:20.255626998,2023-10-27 23:13:00,Charlie Whitherspoon,INC0000000075,employee,Canada,Luke Wilson,Bud Richman,2023-12-05 17:32:49.113615094,There was an issue,3 - Moderate,Inquiry / Help
+Inquiry / Help,Closed,2023-02-13 08:10:20.378839709,2023-10-28 04:24:00,Fred Luddy,INC0000000407,admin,Canada,Howard Johnson,Don Goodliffe,2023-05-05 00:21:12.204265630,There was an issue,3 - Moderate,Inquiry / Help
+Hardware,Resolved,2023-07-08 04:48:00.000000000,2023-10-29 03:27:00,Fred Luddy,INC0000000049,admin,United States,Fred Luddy,David Loo,2023-05-14 08:03:47.192602517,There was an issue,2 - High,Hardware
+Inquiry / Help,Closed,2023-06-12 02:12:20.844915289,2023-10-29 03:41:00,Fred Luddy,INC0000000254,system,India,Howard Johnson,David Loo,2024-01-06 22:55:13.977268119,There was an issue,4 - Low,Inquiry / Help
+Software,Closed,2023-04-25 04:21:38.122505056,2023-10-29 14:02:00,Charlie Whitherspoon,INC0000000058,employee,Australia,Luke Wilson,Don Goodliffe,2023-11-27 06:06:19.635851412,There was an issue,1 - Critical,Software
+Hardware,Closed,2023-10-16 04:30:10.679168966,2023-10-29 17:52:00,Howard Johnson,INC0000000472,employee,United States,Howard Johnson,Bud Richman,2023-03-14 22:49:22.720352152,There was an issue,3 - Moderate,Hardware
+Hardware,Closed,2023-01-13 22:01:58.804819178,2023-10-29 18:57:00,Luke Wilson,INC0000000096,admin,Canada,Fred Luddy,Bud Richman,2023-06-20 19:52:27.802682144,There was an issue,3 - Moderate,Hardware
+Software,Closed,2023-11-03 13:16:00,2023-10-31 23:16:00,Luke Wilson,INC0000000489,system,India,Charlie Whitherspoon,David Loo,2023-04-04 09:15:27.409492338,3 - Moderate,4 - Low,Software
+Hardware,Resolved,2024-02-08 06:58:35.863529275,2023-11-02 11:52:00,Fred Luddy,INC0000000422,employee,UK,Fred Luddy,David Loo,2023-07-12 18:45:07.705046349,There was an issue,1 - Critical,Hardware
+Inquiry / Help,Resolved,2023-06-14 11:45:24.784548040,2023-11-02 12:42:00,Luke Wilson,INC0000000280,employee,UK,Fred Luddy,ITIL User,2023-08-25 07:22:00.000000000,There was an issue,1 - Critical,Inquiry / Help
+Software,Closed,2024-01-29 03:16:08.014433635,2023-11-03 09:56:00,Fred Luddy,INC0000000105,admin,Canada,Luke Wilson,Bud Richman,2023-05-08 00:19:49.950083121,There was an issue,3 - Moderate,Software
+Hardware,Closed,2023-11-04 10:49:00,2023-11-03 13:49:00,Howard Johnson,INC0000000363,employee,India,Beth Anglin,David Loo,2023-03-31 08:03:25.091057805,2 - High,4 - Low,Hardware
+Network,Closed,2023-11-04 19:59:00,2023-11-04 10:59:00,Luke Wilson,INC0000000442,admin,Australia,Beth Anglin,David Loo,2024-01-14 19:07:03.245823840,2 - High,3 - Moderate,Network
+Hardware,Closed,2023-10-05 14:06:46.265722782,2023-11-05 06:44:00,Charlie Whitherspoon,INC0000000211,employee,India,Fred Luddy,Bud Richman,2024-01-27 16:50:43.924769422,There was an issue,1 - Critical,Hardware
+Database,Closed,2023-11-07 13:29:00,2023-11-05 11:29:00,Fred Luddy,INC0000000128,employee,United States,Charlie Whitherspoon,David Loo,2023-11-14 12:04:58.180425139,4 - Low,1 - Critical,Database
+Inquiry / Help,Closed,2023-12-09 12:22:44.658032345,2023-11-05 19:34:00,Beth Anglin,INC0000000372,admin,Australia,Luke Wilson,Don Goodliffe,2023-01-13 22:01:58.804819178,There was an issue,1 - Critical,Inquiry / Help
+Database,Closed,2023-12-12 19:10:00.000000000,2023-11-06 04:39:00,Howard Johnson,INC0000000425,system,UK,Luke Wilson,David Loo,2023-02-19 06:21:12.452625610,There was an issue,4 - Low,Database
+Software,Resolved,2024-01-04 00:08:18.653166818,2023-11-06 11:30:00,Beth Anglin,INC0000000304,system,United States,Luke Wilson,Bud Richman,2023-06-25 09:59:55.161658018,There was an issue,4 - Low,Software
+Hardware,Closed,2023-11-07 15:57:00,2023-11-07 02:57:00,Charlie Whitherspoon,INC0000000097,employee,Australia,Beth Anglin,Bud Richman,2024-01-24 20:11:01.690566157,2 - High,3 - Moderate,Hardware
+Database,Closed,2023-11-10 18:50:00,2023-11-07 19:50:00,Beth Anglin,INC0000000235,system,India,Charlie Whitherspoon,David Loo,2023-05-15 10:38:15.815796741,3 - Moderate,4 - Low,Database
+Software,Resolved,2023-10-03 08:53:36.796709606,2023-11-08 05:51:00,Howard Johnson,INC0000000159,system,Australia,Fred Luddy,ITIL User,2023-05-05 19:25:33.306689559,There was an issue,4 - Low,Software
+Software,Closed,2023-09-22 15:44:42.056556368,2023-11-08 19:58:00,Fred Luddy,INC0000000009,system,Canada,Howard Johnson,ITIL User,2023-08-22 04:24:28.410211673,There was an issue,2 - High,Software
+Inquiry / Help,Closed,2023-11-09 07:45:00,2023-11-09 00:45:00,Luke Wilson,INC0000000320,admin,Canada,Beth Anglin,ITIL User,2023-12-14 06:24:13.933877695,2 - High,1 - Critical,Inquiry / Help
+Inquiry / Help,Resolved,2023-10-01 22:54:51.030860190,2023-11-09 12:54:00,Beth Anglin,INC0000000467,employee,Australia,Howard Johnson,Bud Richman,2023-06-25 12:04:04.032337887,There was an issue,3 - Moderate,Inquiry / Help
+Hardware,Closed,2023-03-14 22:49:22.720352152,2023-11-10 16:18:00,Fred Luddy,INC0000000253,admin,India,Howard Johnson,Bud Richman,2023-05-27 00:02:45.297437201,There was an issue,2 - High,Hardware
+Hardware,Resolved,2023-10-07 04:57:07.243553547,2023-11-11 21:57:00,Fred Luddy,INC0000000142,admin,India,Luke Wilson,Don Goodliffe,2023-02-05 14:01:58.932181130,There was an issue,4 - Low,Hardware
+Network,Resolved,2023-07-14 06:35:05.209399792,2023-11-12 04:33:00,Luke Wilson,INC0000000300,admin,Canada,Fred Luddy,ITIL User,2023-05-30 11:21:04.259433606,There was an issue,1 - Critical,Network
+Network,Closed,2023-10-09 10:00:05.170032833,2023-11-14 18:59:00,Fred Luddy,INC0000000012,employee,UK,Fred Luddy,Don Goodliffe,2023-04-25 04:21:38.122505056,There was an issue,4 - Low,Network
+Hardware,Closed,2023-11-16 04:32:00,2023-11-14 19:32:00,Luke Wilson,INC0000000073,admin,United States,Charlie Whitherspoon,David Loo,2023-07-14 21:15:31.584390518,4 - Low,1 - Critical,Hardware
+Database,Closed,2023-11-15 15:35:00,2023-11-15 07:35:00,Beth Anglin,INC0000000288,system,UK,Beth Anglin,David Loo,2023-09-30 16:57:13.076218110,2 - High,1 - Critical,Database
+Network,Closed,2023-11-16 23:05:00,2023-11-15 19:05:00,Charlie Whitherspoon,INC0000000019,system,Australia,Charlie Whitherspoon,Bud Richman,2023-05-27 02:04:45.048501853,4 - Low,1 - Critical,Network
+Hardware,Resolved,2024-01-01 04:47:56.741681309,2023-11-17 07:33:00,Luke Wilson,INC0000000406,employee,UK,Luke Wilson,Bud Richman,2023-08-19 05:22:39.220366354,There was an issue,3 - Moderate,Hardware
+Hardware,Resolved,2023-08-02 12:16:09.558065832,2023-11-17 11:41:00,Fred Luddy,INC0000000200,system,India,Fred Luddy,ITIL User,2023-02-19 11:12:41.587556967,There was an issue,3 - Moderate,Hardware
+Software,Resolved,2023-03-19 18:35:49.186969810,2023-11-18 02:05:00,Fred Luddy,INC0000000067,system,Australia,Fred Luddy,David Loo,2023-03-10 09:09:00.000000000,There was an issue,3 - Moderate,Software
+Database,Closed,2023-07-26 17:51:52.767336231,2023-11-19 02:52:00,Charlie Whitherspoon,INC0000000230,system,Australia,Luke Wilson,David Loo,2023-09-03 02:19:00.000000000,There was an issue,3 - Moderate,Database
+Database,Closed,2023-11-20 02:06:00,2023-11-19 11:06:00,Beth Anglin,INC0000000201,admin,Australia,Beth Anglin,David Loo,2023-11-19 06:43:16.486790150,1 - Critical,3 - Moderate,Database
+Database,Closed,2023-11-07 22:41:41.858766805,2023-11-21 04:00:00,Fred Luddy,INC0000000166,system,United States,Howard Johnson,Don Goodliffe,2024-01-29 03:16:08.014433635,There was an issue,3 - Moderate,Database
+Hardware,Closed,2023-11-23 08:43:00,2023-11-22 08:43:00,Charlie Whitherspoon,INC0000000416,system,Australia,Charlie Whitherspoon,ITIL User,2023-07-23 19:05:17.533035942,4 - Low,2 - High,Hardware
+Software,Resolved,2023-04-13 12:12:50.918205479,2023-11-23 08:47:00,Beth Anglin,INC0000000226,employee,India,Fred Luddy,David Loo,2023-04-13 02:17:59.600859991,There was an issue,1 - Critical,Software
+Database,Closed,2023-05-05 01:59:48.858836394,2023-11-23 15:24:00,Luke Wilson,INC0000000024,employee,UK,Howard Johnson,Don Goodliffe,2023-10-16 11:37:53.443608066,There was an issue,3 - Moderate,Database
+Network,Closed,2023-11-26 20:27:00,2023-11-24 19:27:00,Howard Johnson,INC0000000328,employee,Canada,Charlie Whitherspoon,ITIL User,2023-08-04 22:43:36.252615961,4 - Low,4 - Low,Network
+Software,Closed,2023-11-30 14:26:00,2023-11-27 20:26:00,Luke Wilson,INC0000000365,system,United States,Charlie Whitherspoon,Bud Richman,2023-07-01 09:46:55.866723604,3 - Moderate,2 - High,Software
+Hardware,Resolved,2023-12-05 02:10:03.357753705,2023-11-28 06:30:00,Howard Johnson,INC0000000319,employee,United States,Howard Johnson,ITIL User,2023-12-15 03:54:00.000000000,There was an issue,1 - Critical,Hardware
+Database,Closed,2023-12-01 13:39:00,2023-11-29 01:39:00,Luke Wilson,INC0000000028,admin,UK,Charlie Whitherspoon,Don Goodliffe,2023-01-06 16:52:00.000000000,4 - Low,2 - High,Database
+Hardware,Closed,2023-11-29 09:33:00,2023-11-29 07:33:00,Charlie Whitherspoon,INC0000000221,admin,UK,Beth Anglin,Don Goodliffe,2023-08-13 15:36:00.000000000,1 - Critical,2 - High,Hardware
+Network,Closed,2023-11-30 23:31:00,2023-11-30 04:31:00,Beth Anglin,INC0000000412,employee,United States,Beth Anglin,Don Goodliffe,2023-10-02 19:11:48.163774968,1 - Critical,4 - Low,Network
+Hardware,Resolved,2023-10-16 08:25:44.792483730,2023-12-01 04:34:00,Fred Luddy,INC0000000114,admin,Australia,Luke Wilson,ITIL User,2023-07-28 21:34:00.908307924,There was an issue,4 - Low,Hardware
+Inquiry / Help,Resolved,2023-08-04 18:56:00.000000000,2023-12-02 09:51:00,Howard Johnson,INC0000000276,employee,India,Fred Luddy,ITIL User,2023-12-06 06:18:20.231641812,There was an issue,4 - Low,Inquiry / Help
+Inquiry / Help,Closed,2023-12-04 22:21:00,2023-12-03 07:21:00,Fred Luddy,INC0000000156,employee,United States,Charlie Whitherspoon,ITIL User,2023-05-24 17:45:04.375124775,4 - Low,2 - High,Inquiry / Help
+Hardware,Resolved,2024-01-06 22:55:13.977268119,2023-12-04 13:22:00,Howard Johnson,INC0000000484,employee,United States,Fred Luddy,ITIL User,2024-02-11 16:34:09.159779461,There was an issue,4 - Low,Hardware
+Inquiry / Help,Resolved,2023-02-13 00:16:27.398179564,2023-12-04 20:14:00,Luke Wilson,INC0000000338,system,Australia,Howard Johnson,Bud Richman,2023-08-19 10:57:00.000000000,There was an issue,1 - Critical,Inquiry / Help
+Hardware,Closed,2023-04-24 09:36:05.775625483,2023-12-04 20:19:00,Howard Johnson,INC0000000321,employee,United States,Luke Wilson,David Loo,2023-11-12 08:41:55.212270110,There was an issue,1 - Critical,Hardware
+Network,Resolved,2023-07-20 02:37:10.813279462,2023-12-05 11:43:00,Fred Luddy,INC0000000164,admin,UK,Fred Luddy,Don Goodliffe,2023-11-23 05:26:06.568026419,There was an issue,1 - Critical,Network
+Network,Closed,2023-12-07 12:02:00,2023-12-05 15:02:00,Howard Johnson,INC0000000452,admin,United States,Charlie Whitherspoon,David Loo,2023-09-22 23:55:17.560026848,4 - Low,1 - Critical,Network
+Hardware,Closed,2023-07-14 08:23:51.080019979,2023-12-06 00:31:00,Howard Johnson,INC0000000002,employee,Australia,Luke Wilson,Bud Richman,2023-06-19 06:59:02.120925069,There was an issue,1 - Critical,Hardware
+Software,Closed,2023-12-07 05:44:00,2023-12-07 00:44:00,Fred Luddy,INC0000000259,admin,Australia,Beth Anglin,Don Goodliffe,2023-03-26 11:10:50.949076210,2 - High,4 - Low,Software
+Software,Closed,2023-12-10 17:32:00,2023-12-08 00:32:00,Beth Anglin,INC0000000450,system,Australia,Charlie Whitherspoon,Bud Richman,2023-11-13 13:05:35.772593402,3 - Moderate,3 - Moderate,Software
+Network,Resolved,2023-12-14 13:02:12.152455924,2023-12-09 03:58:00,Fred Luddy,INC0000000151,admin,Australia,Luke Wilson,David Loo,2023-09-13 04:40:34.280556892,There was an issue,4 - Low,Network
+Database,Closed,2023-08-21 08:48:34.847604103,2023-12-10 12:52:00,Charlie Whitherspoon,INC0000000387,system,Canada,Fred Luddy,David Loo,2023-08-14 09:36:00.295254938,There was an issue,2 - High,Database
+Inquiry / Help,Closed,2023-12-12 15:57:00,2023-12-11 17:57:00,Beth Anglin,INC0000000204,admin,Australia,Beth Anglin,David Loo,2023-11-14 14:50:37.041296707,1 - Critical,1 - Critical,Inquiry / Help
+Network,Closed,2023-12-12 16:10:00,2023-12-11 19:10:00,Fred Luddy,INC0000000178,admin,Canada,Beth Anglin,Bud Richman,2024-01-07 03:03:46.511421975,1 - Critical,1 - Critical,Network
+Hardware,Closed,2023-12-14 07:51:00,2023-12-12 08:51:00,Luke Wilson,INC0000000011,system,UK,Charlie Whitherspoon,ITIL User,2023-07-21 18:09:17.803746956,3 - Moderate,2 - High,Hardware
+Inquiry / Help,Closed,2023-12-13 17:28:00,2023-12-12 15:28:00,Howard Johnson,INC0000000087,employee,India,Charlie Whitherspoon,Don Goodliffe,2023-10-01 22:54:51.030860190,4 - Low,2 - High,Inquiry / Help
+Database,Closed,2023-12-16 17:54:00,2023-12-14 03:54:00,Fred Luddy,INC0000000261,employee,United States,Charlie Whitherspoon,David Loo,2023-08-11 16:02:37.684405305,4 - Low,3 - Moderate,Database
+Inquiry / Help,Resolved,2023-06-29 22:17:23.746230748,2023-12-17 08:06:00,Charlie Whitherspoon,INC0000000443,admin,Canada,Luke Wilson,Don Goodliffe,2023-10-14 10:07:06.909703281,There was an issue,1 - Critical,Inquiry / Help
+Software,Resolved,2023-10-21 17:05:49.162145411,2023-12-18 04:38:00,Charlie Whitherspoon,INC0000000353,employee,UK,Howard Johnson,ITIL User,2023-03-05 04:00:53.829740603,There was an issue,4 - Low,Software
+Hardware,Closed,2023-12-21 02:13:00,2023-12-18 11:13:00,Beth Anglin,INC0000000124,employee,India,Charlie Whitherspoon,Don Goodliffe,2023-06-24 09:17:21.801903137,3 - Moderate,2 - High,Hardware
+Inquiry / Help,Closed,2023-12-19 14:43:00,2023-12-19 05:43:00,Fred Luddy,INC0000000061,employee,United States,Beth Anglin,David Loo,2024-01-03 16:45:19.710278908,2 - High,3 - Moderate,Inquiry / Help
+Database,Closed,2023-12-21 16:32:00,2023-12-19 07:32:00,Beth Anglin,INC0000000290,admin,UK,Charlie Whitherspoon,ITIL User,2023-08-17 04:45:43.185739101,3 - Moderate,4 - Low,Database
+Network,Resolved,2023-08-22 04:24:28.410211673,2023-12-23 18:43:00,Howard Johnson,INC0000000032,admin,United States,Luke Wilson,Bud Richman,2023-10-31 10:15:16.995034613,There was an issue,4 - Low,Network
+Database,Closed,2023-12-26 19:19:00,2023-12-26 00:19:00,Beth Anglin,INC0000000461,system,UK,Beth Anglin,David Loo,2023-01-26 12:30:48.397896971,2 - High,2 - High,Database
+Inquiry / Help,Closed,2023-10-28 17:01:26.639036991,2023-12-26 00:25:00,Howard Johnson,INC0000000263,employee,Australia,Luke Wilson,David Loo,2023-10-16 08:15:55.096916626,There was an issue,1 - Critical,Inquiry / Help
+Database,Closed,2023-12-27 20:08:00,2023-12-26 16:08:00,Luke Wilson,INC0000000424,employee,Australia,Charlie Whitherspoon,Bud Richman,2023-06-28 14:05:28.538482547,3 - Moderate,3 - Moderate,Database
+Network,Closed,2023-12-30 18:15:00,2023-12-28 06:15:00,Charlie Whitherspoon,INC0000000329,employee,India,Charlie Whitherspoon,David Loo,2023-05-13 14:49:23.379483573,4 - Low,3 - Moderate,Network
+Hardware,Closed,2023-12-30 06:22:00,2023-12-28 22:22:00,Beth Anglin,INC0000000493,employee,India,Charlie Whitherspoon,ITIL User,2023-05-29 13:25:00.000000000,3 - Moderate,1 - Critical,Hardware
+Database,Closed,2023-12-31 18:23:00,2023-12-31 00:23:00,Fred Luddy,INC0000000168,system,United States,Beth Anglin,ITIL User,2023-08-12 18:27:47.789421821,1 - Critical,1 - Critical,Database
+Network,Resolved,2023-11-02 19:10:09.135343415,2024-01-02 05:33:00,Luke Wilson,INC0000000349,employee,UK,Luke Wilson,Don Goodliffe,2023-11-21 01:30:21.296528133,There was an issue,2 - High,Network
+Hardware,Closed,2023-09-15 15:54:00.000000000,2024-01-02 23:29:00,Beth Anglin,INC0000000258,admin,UK,Howard Johnson,David Loo,2023-04-08 08:46:45.358954276,There was an issue,4 - Low,Hardware
+Database,Closed,2023-05-10 03:20:31.007719853,2024-01-04 15:03:00,Fred Luddy,INC0000000127,system,India,Howard Johnson,Don Goodliffe,2023-04-17 20:17:35.569877984,There was an issue,2 - High,Database
+Software,Closed,2024-02-03 17:41:53.299049427,2024-01-05 03:27:00,Beth Anglin,INC0000000477,system,United States,Howard Johnson,ITIL User,2023-03-13 09:38:15.903837660,There was an issue,3 - Moderate,Software
+Database,Closed,2024-01-06 03:47:00,2024-01-05 10:47:00,Fred Luddy,INC0000000094,admin,Australia,Beth Anglin,David Loo,2023-08-15 14:03:57.099952165,2 - High,3 - Moderate,Database
+Network,Closed,2023-02-04 20:06:34.055632819,2024-01-05 16:43:00,Howard Johnson,INC0000000214,system,UK,Luke Wilson,Don Goodliffe,2023-08-09 07:59:01.326042131,There was an issue,2 - High,Network
+Hardware,Closed,2024-01-08 09:25:00,2024-01-07 21:25:00,Beth Anglin,INC0000000362,admin,Australia,Beth Anglin,ITIL User,2024-01-06 13:12:25.109624389,1 - Critical,4 - Low,Hardware
+Software,Closed,2024-01-12 01:10:00,2024-01-09 07:10:00,Luke Wilson,INC0000000441,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-10-16 04:30:10.679168966,3 - Moderate,1 - Critical,Software
+Network,Closed,2023-02-26 16:29:16.807931635,2024-01-10 15:21:00,Fred Luddy,INC0000000080,system,Canada,Luke Wilson,ITIL User,2023-10-30 03:46:43.553522312,There was an issue,1 - Critical,Network
+Network,Closed,2024-01-12 03:07:00,2024-01-11 05:07:00,Beth Anglin,INC0000000053,admin,UK,Beth Anglin,Bud Richman,2023-03-16 11:23:45.848878332,1 - Critical,3 - Moderate,Network
+Inquiry / Help,Closed,2023-05-27 00:02:45.297437201,2024-01-13 06:18:00,Beth Anglin,INC0000000120,employee,UK,Howard Johnson,Don Goodliffe,2023-09-20 20:58:46.751153395,There was an issue,2 - High,Inquiry / Help
+Hardware,Resolved,2023-08-26 15:36:56.981753690,2024-01-15 02:05:00,Beth Anglin,INC0000000480,system,Canada,Fred Luddy,David Loo,2023-12-01 04:31:00.000000000,There was an issue,1 - Critical,Hardware
+Hardware,Closed,2024-01-15 16:42:00,2024-01-15 14:42:00,Charlie Whitherspoon,INC0000000332,admin,Canada,Beth Anglin,Bud Richman,2023-04-09 09:12:14.485573467,1 - Critical,1 - Critical,Hardware
+Software,Resolved,2023-07-25 03:53:49.978687958,2024-01-15 16:26:00,Luke Wilson,INC0000000376,employee,India,Howard Johnson,David Loo,2023-05-31 14:07:51.086048950,There was an issue,1 - Critical,Software
+Software,Closed,2023-11-19 06:43:16.486790150,2024-01-16 10:00:00,Fred Luddy,INC0000000394,admin,Australia,Fred Luddy,ITIL User,2023-07-10 23:00:15.709745176,There was an issue,4 - Low,Software
+Database,Resolved,2023-08-25 07:22:00.000000000,2024-01-18 09:54:00,Charlie Whitherspoon,INC0000000188,system,India,Howard Johnson,Don Goodliffe,2023-03-19 18:35:49.186969810,There was an issue,2 - High,Database
+Network,Closed,2024-01-22 00:43:00,2024-01-19 21:43:00,Luke Wilson,INC0000000068,admin,India,Charlie Whitherspoon,ITIL User,2023-10-14 14:32:43.560111853,4 - Low,1 - Critical,Network
+Database,Closed,2024-01-22 10:40:00,2024-01-20 13:40:00,Fred Luddy,INC0000000475,employee,United States,Charlie Whitherspoon,ITIL User,2023-10-30 13:55:51.015143360,4 - Low,1 - Critical,Database
+Network,Closed,2024-01-24 03:01:00,2024-01-21 06:01:00,Beth Anglin,INC0000000491,system,UK,Charlie Whitherspoon,Don Goodliffe,2023-04-13 12:12:50.918205479,4 - Low,4 - Low,Network
+Hardware,Closed,2024-01-21 17:04:00,2024-01-21 09:04:00,Beth Anglin,INC0000000065,system,UK,Beth Anglin,Don Goodliffe,2023-11-06 18:24:09.637921817,2 - High,1 - Critical,Hardware
+Hardware,Closed,2023-09-20 04:57:50.969058643,2024-01-21 19:11:00,Fred Luddy,INC0000000138,admin,UK,Luke Wilson,Bud Richman,2024-01-01 04:47:56.741681309,There was an issue,1 - Critical,Hardware
+Hardware,Closed,2023-12-15 13:12:56.653826436,2024-01-22 14:06:00,Beth Anglin,INC0000000079,employee,India,Howard Johnson,ITIL User,2023-02-17 00:34:25.927389861,There was an issue,4 - Low,Hardware
+Software,Closed,2024-01-23 11:20:00,2024-01-23 03:20:00,Fred Luddy,INC0000000110,employee,United States,Beth Anglin,Bud Richman,2023-04-30 20:00:34.805177671,1 - Critical,3 - Moderate,Software
+Network,Closed,2023-06-18 08:09:47.068608027,2024-01-24 06:55:00,Luke Wilson,INC0000000312,employee,UK,Fred Luddy,Don Goodliffe,2023-07-01 10:42:22.374438866,There was an issue,1 - Critical,Network
+Inquiry / Help,Resolved,2023-09-30 16:57:13.076218110,2024-01-24 16:35:00,Luke Wilson,INC0000000247,system,UK,Luke Wilson,Bud Richman,2023-08-07 18:20:23.668968040,There was an issue,4 - Low,Inquiry / Help
+Hardware,Closed,2024-01-25 15:19:00,2024-01-25 11:19:00,Luke Wilson,INC0000000206,admin,UK,Beth Anglin,David Loo,2023-02-26 07:36:08.762766728,1 - Critical,2 - High,Hardware
+Hardware,Resolved,2023-10-02 19:11:48.163774968,2024-01-25 18:57:00,Luke Wilson,INC0000000384,employee,Canada,Fred Luddy,Don Goodliffe,2023-07-06 00:00:59.012006127,There was an issue,1 - Critical,Hardware
+Network,Closed,2023-12-13 03:48:19.521259680,2024-01-26 08:59:00,Charlie Whitherspoon,INC0000000113,system,Australia,Howard Johnson,Bud Richman,2023-06-30 23:29:55.851304419,There was an issue,2 - High,Network
+Software,Closed,2023-10-20 04:35:01.141400836,2024-01-27 11:50:00,Luke Wilson,INC0000000418,admin,UK,Howard Johnson,David Loo,2023-08-30 14:14:08.283969923,There was an issue,2 - High,Software
+Inquiry / Help,Resolved,2024-01-08 09:17:43.178873486,2024-01-28 15:54:00,Charlie Whitherspoon,INC0000000396,system,India,Howard Johnson,ITIL User,2023-05-14 12:40:40.813937606,There was an issue,2 - High,Inquiry / Help
+Network,Closed,2024-01-30 13:48:00,2024-01-29 10:48:00,Howard Johnson,INC0000000455,employee,United States,Charlie Whitherspoon,Bud Richman,2023-04-26 07:15:31.647958414,4 - Low,4 - Low,Network
+Database,Closed,2024-02-01 10:51:00,2024-01-31 05:51:00,Charlie Whitherspoon,INC0000000190,admin,Canada,Charlie Whitherspoon,ITIL User,2023-06-30 13:34:11.629362629,3 - Moderate,2 - High,Database
+Database,Resolved,2023-06-17 06:06:14.854314828,2024-01-31 18:48:00,Beth Anglin,INC0000000135,system,UK,Howard Johnson,Bud Richman,2023-10-16 08:25:44.792483730,There was an issue,2 - High,Database
+Database,Closed,2024-02-02 17:20:00,2024-01-31 21:20:00,Charlie Whitherspoon,INC0000000256,employee,United States,Charlie Whitherspoon,ITIL User,2023-09-07 23:02:26.238518168,3 - Moderate,1 - Critical,Database
+Software,Closed,2023-08-17 20:00:00,2023-08-16 00:00:00,Fred Luddy,INC4765444,system,India,Beth Anglin,Don Goodliffe,2023-08-17 20:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-09-27 17:00:00,2023-09-27 00:00:00,Charlie Whitherspoon,INC8836412,system,UK,Charlie Whitherspoon,Bud Richman,2023-09-27 17:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-07-12 21:00:00,2023-07-12 00:00:00,Beth Anglin,INC1424626,system,India,Charlie Whitherspoon,Don Goodliffe,2023-07-12 21:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-10-02 00:00:00,2023-09-30 00:00:00,Charlie Whitherspoon,INC8389825,system,United States,Fred Luddy,David Loo,2023-10-02 00:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-08-18 07:00:00,2023-08-18 00:00:00,Beth Anglin,INC9770427,system,UK,Charlie Whitherspoon,Bud Richman,2023-08-18 07:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-09-13 17:00:00,2023-09-13 00:00:00,Beth Anglin,INC2059621,system,Australia,Charlie Whitherspoon,David Loo,2023-09-13 17:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-08-17 18:00:00,2023-08-16 00:00:00,Beth Anglin,INC6028287,system,United States,Beth Anglin,Bud Richman,2023-08-17 18:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-08-19 12:00:00,2023-08-19 00:00:00,Fred Luddy,INC2870785,system,Canada,Fred Luddy,David Loo,2023-08-19 12:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-08-31 15:00:00,2023-08-30 00:00:00,Fred Luddy,INC6926277,system,UK,Charlie Whitherspoon,Don Goodliffe,2023-08-31 15:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-09-13 16:00:00,2023-09-12 00:00:00,Fred Luddy,INC6217806,system,Australia,Charlie Whitherspoon,ITIL User,2023-09-13 16:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-07-18 00:00:00,2023-07-17 00:00:00,Fred Luddy,INC4641209,system,India,Beth Anglin,Don Goodliffe,2023-07-18 00:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-08-12 03:00:00,2023-08-11 00:00:00,Beth Anglin,INC2690252,system,United States,Fred Luddy,Don Goodliffe,2023-08-12 03:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-09-17 10:00:00,2023-09-17 00:00:00,Fred Luddy,INC7741210,system,UK,Fred Luddy,ITIL User,2023-09-17 10:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-07-16 06:00:00,2023-07-16 00:00:00,Beth Anglin,INC3863067,system,UK,Beth Anglin,Don Goodliffe,2023-07-16 06:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-07-06 17:00:00,2023-07-05 00:00:00,Fred Luddy,INC8664704,system,UK,Fred Luddy,Don Goodliffe,2023-07-06 17:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-08-12 04:00:00,2023-08-12 00:00:00,Beth Anglin,INC6738543,system,India,Fred Luddy,Bud Richman,2023-08-12 04:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-07-02 11:00:00,2023-07-02 00:00:00,Beth Anglin,INC8224595,system,Canada,Fred Luddy,Bud Richman,2023-07-02 11:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-08-21 23:00:00,2023-08-20 00:00:00,Beth Anglin,INC2176160,system,Australia,Beth Anglin,Don Goodliffe,2023-08-21 23:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-07-16 14:00:00,2023-07-16 00:00:00,Charlie Whitherspoon,INC3301723,system,Australia,Beth Anglin,Bud Richman,2023-07-16 14:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-08-28 17:00:00,2023-08-27 00:00:00,Beth Anglin,INC8646060,system,Canada,Charlie Whitherspoon,ITIL User,2023-08-28 17:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-07-24 14:00:00,2023-07-23 00:00:00,Fred Luddy,INC8874611,system,India,Beth Anglin,Bud Richman,2023-07-24 14:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-07-31 19:00:00,2023-07-31 00:00:00,Fred Luddy,INC8542276,system,Canada,Fred Luddy,David Loo,2023-07-31 19:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-08-20 11:00:00,2023-08-19 00:00:00,Charlie Whitherspoon,INC1027679,system,Canada,Charlie Whitherspoon,Bud Richman,2023-08-20 11:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-08-02 17:00:00,2023-08-02 00:00:00,Fred Luddy,INC7323662,system,Australia,Beth Anglin,ITIL User,2023-08-02 17:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-09-30 13:00:00,2023-09-29 00:00:00,Beth Anglin,INC5508695,system,UK,Beth Anglin,ITIL User,2023-09-30 13:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-07-25 04:00:00,2023-07-24 00:00:00,Charlie Whitherspoon,INC7221032,system,India,Fred Luddy,Don Goodliffe,2023-07-25 04:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-09-22 07:00:00,2023-09-21 00:00:00,Beth Anglin,INC4458983,system,Australia,Beth Anglin,ITIL User,2023-09-22 07:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-09-30 22:00:00,2023-09-30 00:00:00,Fred Luddy,INC9630813,system,Australia,Charlie Whitherspoon,Don Goodliffe,2023-09-30 22:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-07-01 04:00:00,2023-07-01 00:00:00,Charlie Whitherspoon,INC6539978,system,Australia,Fred Luddy,Don Goodliffe,2023-07-01 04:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-09-19 03:00:00,2023-09-19 00:00:00,Charlie Whitherspoon,INC4153823,system,United States,Beth Anglin,Don Goodliffe,2023-09-19 03:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-08-04 23:00:00,2023-08-03 00:00:00,Beth Anglin,INC4609177,system,United States,Charlie Whitherspoon,ITIL User,2023-08-04 23:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-07-11 08:00:00,2023-07-10 00:00:00,Beth Anglin,INC5841896,system,Australia,Charlie Whitherspoon,Don Goodliffe,2023-07-11 08:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-09-25 14:00:00,2023-09-24 00:00:00,Fred Luddy,INC2771638,system,United States,Fred Luddy,David Loo,2023-09-25 14:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-09-19 13:00:00,2023-09-18 00:00:00,Beth Anglin,INC5678056,system,India,Charlie Whitherspoon,David Loo,2023-09-19 13:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-09-23 03:00:00,2023-09-23 00:00:00,Fred Luddy,INC1618644,system,United States,Charlie Whitherspoon,Don Goodliffe,2023-09-23 03:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-09-14 07:00:00,2023-09-14 00:00:00,Fred Luddy,INC8289527,system,United States,Fred Luddy,Don Goodliffe,2023-09-14 07:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-07-17 00:00:00,2023-07-16 00:00:00,Charlie Whitherspoon,INC8491525,system,UK,Fred Luddy,Bud Richman,2023-07-17 00:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-09-12 10:00:00,2023-09-12 00:00:00,Fred Luddy,INC9922928,system,UK,Fred Luddy,Don Goodliffe,2023-09-12 10:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-09-14 04:00:00,2023-09-14 00:00:00,Charlie Whitherspoon,INC5655654,system,Australia,Beth Anglin,Bud Richman,2023-09-14 04:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-09-09 09:00:00,2023-09-09 00:00:00,Beth Anglin,INC4480007,system,India,Beth Anglin,ITIL User,2023-09-09 09:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-07-31 11:00:00,2023-07-31 00:00:00,Beth Anglin,INC8664823,system,Australia,Charlie Whitherspoon,Bud Richman,2023-07-31 11:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-07-30 04:00:00,2023-07-29 00:00:00,Beth Anglin,INC2200680,system,Canada,Charlie Whitherspoon,Bud Richman,2023-07-30 04:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-08-04 19:00:00,2023-08-04 00:00:00,Fred Luddy,INC2888945,system,Canada,Beth Anglin,ITIL User,2023-08-04 19:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-09-15 20:00:00,2023-09-14 00:00:00,Charlie Whitherspoon,INC7571886,system,Australia,Charlie Whitherspoon,Don Goodliffe,2023-09-15 20:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-07-23 06:00:00,2023-07-22 00:00:00,Charlie Whitherspoon,INC8446985,system,India,Beth Anglin,Don Goodliffe,2023-07-23 06:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-09-13 11:00:00,2023-09-12 00:00:00,Charlie Whitherspoon,INC6868299,system,Canada,Beth Anglin,Bud Richman,2023-09-13 11:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-07-22 16:00:00,2023-07-22 00:00:00,Beth Anglin,INC4934359,system,UK,Fred Luddy,David Loo,2023-07-22 16:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-09-20 20:00:00,2023-09-20 00:00:00,Charlie Whitherspoon,INC8160818,system,Australia,Charlie Whitherspoon,ITIL User,2023-09-20 20:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-08-26 15:00:00,2023-08-25 00:00:00,Fred Luddy,INC1525465,system,India,Beth Anglin,Don Goodliffe,2023-08-26 15:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-07-27 04:00:00,2023-07-27 00:00:00,Fred Luddy,INC2908800,system,Australia,Fred Luddy,ITIL User,2023-07-27 04:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-11-12 11:00:00,2023-11-12 00:00:00,Beth Anglin,INC1658530,system,United States,Charlie Whitherspoon,Don Goodliffe,2023-11-12 11:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-12-29 00:00:00,2023-12-28 00:00:00,Fred Luddy,INC7421009,system,United States,Fred Luddy,Don Goodliffe,2023-12-29 00:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-12-08 18:00:00,2023-12-07 00:00:00,Charlie Whitherspoon,INC4746310,system,India,Fred Luddy,ITIL User,2023-12-08 18:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-12-27 22:00:00,2023-12-26 00:00:00,Beth Anglin,INC9717562,system,Canada,Fred Luddy,David Loo,2023-12-27 22:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-10-21 09:00:00,2023-10-21 00:00:00,Fred Luddy,INC2592567,system,United States,Fred Luddy,Bud Richman,2023-10-21 09:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-10-23 03:00:00,2023-10-22 00:00:00,Beth Anglin,INC5932725,system,UK,Beth Anglin,Don Goodliffe,2023-10-23 03:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-11-11 10:00:00,2023-11-11 00:00:00,Fred Luddy,INC9494507,system,UK,Fred Luddy,Bud Richman,2023-11-11 10:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-12-17 17:00:00,2023-12-17 00:00:00,Charlie Whitherspoon,INC4656782,system,United States,Charlie Whitherspoon,Don Goodliffe,2023-12-17 17:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-12-18 00:00:00,2023-12-16 00:00:00,Charlie Whitherspoon,INC3359620,system,Australia,Charlie Whitherspoon,Don Goodliffe,2023-12-18 00:00:00,Issue with new CRM system,3 - Moderate,Software
+Software,Closed,2023-12-30 00:00:00,2023-12-28 00:00:00,Charlie Whitherspoon,INC9531006,system,India,Charlie Whitherspoon,Bud Richman,2023-12-30 00:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-12-22 11:00:00,2023-12-22 00:00:00,Beth Anglin,INC9309780,system,UK,Charlie Whitherspoon,Bud Richman,2023-12-22 11:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-10-17 00:00:00,2023-10-15 00:00:00,Beth Anglin,INC3473486,system,Canada,Fred Luddy,Bud Richman,2023-10-17 00:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-11-15 16:00:00,2023-11-15 00:00:00,Beth Anglin,INC2768040,system,Australia,Fred Luddy,Don Goodliffe,2023-11-15 16:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-12-06 01:00:00,2023-12-05 00:00:00,Fred Luddy,INC1644544,system,India,Beth Anglin,ITIL User,2023-12-06 01:00:00,Issue with new CRM system,1 - Critical,Software
+Software,Closed,2023-11-09 23:00:00,2023-11-08 00:00:00,Charlie Whitherspoon,INC7729412,system,Canada,Charlie Whitherspoon,ITIL User,2023-11-09 23:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-10-22 06:00:00,2023-10-22 00:00:00,Charlie Whitherspoon,INC5767275,system,United States,Beth Anglin,ITIL User,2023-10-22 06:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-12-11 12:00:00,2023-12-10 00:00:00,Beth Anglin,INC5556923,system,Canada,Fred Luddy,ITIL User,2023-12-11 12:00:00,Issue with new CRM system,2 - High,Software
+Software,Closed,2023-12-03 02:00:00,2023-12-02 00:00:00,Fred Luddy,INC3784382,system,Australia,Fred Luddy,David Loo,2023-12-03 02:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-11-18 10:00:00,2023-11-17 00:00:00,Charlie Whitherspoon,INC7238190,system,Canada,Charlie Whitherspoon,David Loo,2023-11-18 10:00:00,Issue with new CRM system,4 - Low,Software
+Software,Closed,2023-10-30 02:00:00,2023-10-30 00:00:00,Fred Luddy,INC4214097,system,UK,Beth Anglin,Don Goodliffe,2023-10-30 02:00:00,Issue with new CRM system,3 - Moderate,Software
