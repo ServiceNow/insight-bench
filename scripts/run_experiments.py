@@ -1,11 +1,11 @@
 import os, argparse
-import exp_groups
+import scripts.exp_groups as exp_groups
 import pandas as pd
 
-from cba.utils import agent_utils as au
-from cba import agents
-from cba.utils import exp_utils as eu
-from cba.utils.exp_utils import hash_dict, save_json
+from insightbench.utils import agent_utils as au
+from insightbench import agents
+from insightbench.utils import exp_utils as eu
+from insightbench.utils.exp_utils import hash_dict, save_json
 
 
 def main(exp_dict, savedir, args):
@@ -105,6 +105,8 @@ if __name__ == "__main__":
     parser.add_argument("-sb", "--savedir_base", type=str, default="results")
     parser.add_argument("-r", "--reset", type=int, default=0)
     parser.add_argument("--eval_only", type=int, default=0)
+    # add openai api key
+    parser.add_argument("-o", "--openai_api_key", type=str, default=None)
 
     parser.add_argument(
         "-e",

@@ -39,4 +39,20 @@ The variables <...> can be substituted with the following values:
 Experiment hyperparameters are defined in `exp_groups.py`
 
 
+## Quick Start
+
+Run the following command to run AgentPoirot on one of the notebook flags
+
+```
+python run_agent.py -e <exp_group> -sb <savedir_base>
+```
+
+The variables <...> can be substituted with the following values:
+
+- <exp_group> : quick
+- <savedir_base>:  path to where results will be saved
+
+Experiment hyperparameters are defined in `exp_groups.py`
+
+
 

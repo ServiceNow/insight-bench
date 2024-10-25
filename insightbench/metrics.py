@@ -1,7 +1,7 @@
 from collections import defaultdict
 import numpy as np
-from cba.utils import metrics_utils as mu
-from cba.utils import eval_utils as eu
+from insightbench.utils import metrics_utils as mu
+from insightbench.utils import eval_utils as eu
 from tqdm import tqdm
 
 
@@ -163,77 +163,3 @@ if __name__ == "__main__":
 
     score = compute_mAP(gt_boxes, pred_boxes, score_method="rouge1")
     print("mAP: {:.4f}".format(score))
-
-# if __name__ == "__main__":
-
-#     with open("/mnt/home/projects/research-cba/data/gt_boxes.json") as infile:
-#         gt_boxes = json.load(infile)
-
-#     with open("/mnt/home/projects/research-cba/data/pred_boxes.json") as infile:
-#         pred_boxes = json.load(infile)
-
-#     use_cba = True
-#     if use_cba:
-#         # gt_boxes = gt_boxes["img_00172.png"]
-#         # pred_boxes = pred_boxes["img_00172.png"]["boxes"]
-#         gt_insights = gt_boxes = [
-#             "Prioritize tasks, delegate wisely.",
-#             "Clear goals boost productivity.",
-#             "Effective communication is key.",
-#             "Foster a culture of trust.",
-#             "Recognize and reward achievements.",
-#         ]
-
-#         pred_insights = pred_boxes = [
-#             "Delegate tasks effectively.",
-#             "Set clear, achievable goals.",
-#             "Communication prevents misunderstandings.",
-#             "Build a trusting environment.",
-#             "Celebrate and acknowledge success.",
-#         ]
-
-#     # Runs it for one IoU threshold
-#     iou_thr = 0.7
-#     start_time = time.time()
-#     data = get_cba_avg_precision_at_iou(
-#         gt_boxes, pred_boxes, iou_thr=iou_thr, use_cba=use_cba
-#     )
-#     end_time = time.time()
-#     print("Single IoU calculation took {:.4f} secs".format(end_time - start_time))
-#     print("avg precision: {:.4f}".format(data["avg_prec"]))
-
-#     start_time = time.time()
-#     ax = None
-#     avg_precs = []
-#     iou_thrs = []
-#     for idx, iou_thr in enumerate(np.linspace(0.5, 0.95, 10)):
-#         data = get_cba_avg_precision_at_iou(
-#             gt_boxes, pred_boxes, iou_thr=iou_thr, use_cba=use_cba
-#         )
-#         avg_precs.append(data["avg_prec"])
-#         iou_thrs.append(iou_thr)
-
-#         precisions = data["precisions"]
-#         recalls = data["recalls"]
-#         ax = plot_pr_curve(
-#             precisions,
-#             recalls,
-#             label="{:.2f}".format(iou_thr),
-#             color=COLORS[idx * 2],
-#             ax=ax,
-#         )
-
-#     # prettify for printing:
-#     avg_precs = [float("{:.4f}".format(ap)) for ap in avg_precs]
-#     iou_thrs = [float("{:.4f}".format(thr)) for thr in iou_thrs]
-#     print("map: {:.2f}".format(100 * np.mean(avg_precs)))
-#     print("avg precs: ", avg_precs)
-#     print("iou_thrs:  ", iou_thrs)
-#     plt.legend(loc="upper right", title="IOU Thr", frameon=True)
-#     for xval in np.linspace(0.0, 1.0, 11):
-#         plt.vlines(xval, 0.0, 1.1, color="gray", alpha=0.3, linestyles="dashed")
-#     end_time = time.time()
-#     print(
-#         "\nPlotting and calculating mAP takes {:.4f} secs".format(end_time - start_time)
-#     )
-#     plt.show()

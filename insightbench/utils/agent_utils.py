@@ -1,25 +1,22 @@
 import os
-import numpy as np, pandas as pd, time, re, json, os, shutil, inspect
+import numpy as np, pandas as pd,  re, json, os, shutil, inspect
 import nbformat
 import contextlib
 import io
 import os
 import re
 import subprocess
-from collections import namedtuple
 import traceback
 import sys
 
 from io import StringIO
 from pathlib import Path
-from cba import prompts
+from insightbench import prompts
 from copy import deepcopy
 from typing import Dict
-from cba import tools
-from cba.vllm import infer_vllm
-from PIL import Image
+from insightbench import tools
 from dateutil.parser import parse
-from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from langchain.schema import HumanMessage, SystemMessage
 from warnings import warn
 from functools import partial
 from langchain.prompts import PromptTemplate
@@ -1451,10 +1448,6 @@ def get_chat_model(model_name, temperature=0):
             )
             .choices[0]
             .message.content
-        )
-    else:
-        llm = partial(
-            infer_vllm, max_tokens=4192, end_point=model_name, temperature=temperature
         )
 
     return llm

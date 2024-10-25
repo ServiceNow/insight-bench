@@ -2,36 +2,44 @@ import json
 import os
 import tempfile
 import copy
-from cba.utils import agent_utils as au
-from cba import prompts
+import pandas as pd
+
+from insightbench.utils import agent_utils as au
+from insightbench import prompts
 from langchain.schema import HumanMessage, SystemMessage
-from cba.utils.metrics_utils import score_insight
-from cba import metrics
+from insightbench.utils.metrics_utils import score_insight
+from insightbench import metrics
 from PIL import Image
 
 
 class Agent:
+
     def __init__(
         self,
-        df,
-        df_user,
-        gen_engine,
+        table=None,
+        table_user=None,
+        model_name="gpt-4o",
         dataset_csv_path=None,
         user_dataset_csv_path=None,
-        goal=None,
+        goal="I want to find interesting trends in this dataset",
         max_questions=3,
         branch_depth=4,
         n_retries=2,
         savedir=None,
         temperature=0,
     ):
-        self.df = df
-        self.df_user = df_user
+        if table is None:
+            table = pd.read_csv(dataset_csv_path)
+        self.table = table
+        if table_user is None:
+            table_user = pd.read_csv(user_dataset_csv_path)
+
+        self.table_user = table_user
         self.goal = goal
         self.max_questions = max_questions
 
         self.temperature = temperature
-        self.gen_engine = gen_engine
+        self.model_name = model_name
         self.n_retries = n_retries
         self.branch_depth = branch_depth
 
@@ -40,14 +48,14 @@ class Agent:
         self.savedir = savedir
         if dataset_csv_path is None:
             dataset_csv_path = os.path.join(savedir, "dataset.csv")
-            df.to_csv(dataset_csv_path, index=False)
+            table.to_csv(dataset_csv_path, index=False)
 
         self.dataset_csv_path = dataset_csv_path
         self.user_dataset_csv_path = user_dataset_csv_path
         self.agent_poirot = AgentPoirot(
-            df=df,
-            df_user=df_user,
-            gen_engine=gen_engine,
+            table=table,
+            table_user=table_user,
+            model_name=model_name,
             savedir=savedir,
             goal=goal,
             verbose=True,
@@ -69,7 +77,7 @@ class Agent:
         for q in root_questions:
             question = q
             for i in range(self.branch_depth):
-                if self.df_user is None:
+                if self.table_user is None:
                     prompt_code_method = "single"
                 else:
                     prompt_code_method = "multi"
@@ -139,11 +147,11 @@ class Agent:
 class AgentPoirot:
     def __init__(
         self,
-        df,
-        df_user,
+        table,
+        table_user,
         savedir=None,
         context="This is a dataset that could potentially consist of interesting insights",
-        gen_engine="gpt-3.5-turbo-0613",
+        model_name="gpt-3.5-turbo-0613",
         goal="I want to find interesting trends in this dataset",
         verbose=False,
         dataset_csv_path=None,
@@ -151,23 +159,23 @@ class AgentPoirot:
         temperature=0,
     ):
         self.goal = goal
-        self.df = df
+        self.table = table
         if savedir is None:
             savedir = tempfile.mkdtemp()
         self.savedir = savedir
         self.context = context
-        # save df without index in savedir
+        # save table without index in savedir
         if dataset_csv_path is None:
             self.dataset_csv_path = os.path.join(savedir, "dataset.csv")
-            self.df.to_csv(self.dataset_csv_path, index=False)
+            self.table.to_csv(self.dataset_csv_path, index=False)
         else:
             self.dataset_csv_path = dataset_csv_path
             self.user_dataset_csv_path = user_dataset_csv_path
-        self.gen_engine = gen_engine
+        self.model_name = model_name
         self.temperature = temperature
-        self.schema = au.get_schema(df)
-        if df_user is not None:
-            self.user_schema = au.get_schema(df_user)
+        self.schema = au.get_schema(table)
+        if table_user is not None:
+            self.user_schema = au.get_schema(table_user)
         else:
             self.user_schema = None
         self.insights_history = []
@@ -175,7 +183,7 @@ class AgentPoirot:
 
     def summarize(self, method="list", prompt_summarize_method="basic"):
         if method == "list":
-            chat = au.get_chat_model(self.gen_engine, self.temperature)
+            chat = au.get_chat_model(self.model_name, self.temperature)
 
             # Function to format the data
             def format_data(data):
@@ -234,7 +242,7 @@ class AgentPoirot:
             self.context,
             self.goal,
             [o["question"] for o in self.insights_history],
-            self.gen_engine,
+            self.model_name,
             prompts.SELECT_A_QUESTION_TEMPLATE,
             prompts.SELECT_A_QUESTION_SYSTEM_MESSAGE,
         )
@@ -256,7 +264,7 @@ class AgentPoirot:
         Suggest Next Best Questions
         """
         if self.verbose:
-            print(f"Generating {n_questions} Questions using {self.gen_engine}...")
+            print(f"Generating {n_questions} Questions using {self.model_name}...")
 
         if insights_history is None:
 
@@ -268,7 +276,7 @@ class AgentPoirot:
                 messages=[],
                 schema=self.schema,
                 max_questions=n_questions,
-                model_name=self.gen_engine,
+                model_name=self.model_name,
                 temperature=self.temperature,
             )
         else:
@@ -281,7 +289,7 @@ class AgentPoirot:
                 answer=last_insight["answer"],
                 schema=self.schema,
                 max_questions=n_questions,
-                model_name=self.gen_engine,
+                model_name=self.model_name,
                 prompt_method=prompt_method,
                 question_type=question_type,
                 temperature=self.temperature,
@@ -333,7 +341,7 @@ class AgentPoirot:
                 else None
             ),
             output_folder=code_output_folder,
-            model_name=self.gen_engine,
+            model_name=self.model_name,
             n_retries=n_retries,
             prompt_method=prompt_code_method,
             temperature=self.temperature,
@@ -342,7 +350,7 @@ class AgentPoirot:
         # Prompt 4: Interpret Solution
         interpretation_dict = au.interpret_solution(
             solution=solution,
-            model_name=self.gen_engine,
+            model_name=self.model_name,
             n_retries=n_retries,
             prompt_method=prompt_interpret_method,
             temperature=self.temperature,
