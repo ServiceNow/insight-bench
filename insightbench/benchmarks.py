@@ -1,8 +1,9 @@
-def load_dataset(dataset_type):
+def get_benchmark(dataset_type, datadir):
     """load a set of tables and a set of golden insights to evaluate the agent's performance"""
 
     if dataset_type == "toy":
-        return load_toy_dataset()
+        # load the first 3 notebooks from datadir
+        return
     elif dataset_type == "standard":
         return load_flag_dataset()
     elif dataset_type == "full":
