@@ -1,501 +1,501 @@
-category,state,closed_at,opened_at,closed_by,number,sys_updated_by,location,assigned_to,caller_id,sys_updated_on,short_description,priority,assignement_group
-Database,Closed,2023-07-25 03:32:18.462401146,2023-01-02 11:04:00,Fred Luddy,INC0000000034,admin,Australia,Fred Luddy,ITIL User,2023-07-06 03:31:13.838619495,There was an issue,2 - High,Database
-Hardware,Closed,2023-03-11 13:42:59.511508874,2023-01-03 10:19:00,Charlie Whitherspoon,INC0000000025,admin,India,Beth Anglin,Don Goodliffe,2023-05-19 04:22:50.443252112,There was an issue,1 - Critical,Hardware
-Database,Resolved,2023-01-20 14:37:18.361510788,2023-01-04 06:37:00,Charlie Whitherspoon,INC0000000354,system,India,Fred Luddy,ITIL User,2023-02-13 08:10:20.378839709,There was an issue,2 - High,Database
-Hardware,Resolved,2023-01-25 20:46:13.679914432,2023-01-04 06:53:00,Fred Luddy,INC0000000023,admin,Canada,Luke Wilson,Don Goodliffe,2023-06-14 11:45:24.784548040,There was an issue,2 - High,Hardware
-Hardware,Closed,2023-05-10 22:35:58.881919516,2023-01-05 16:52:00,Luke Wilson,INC0000000459,employee,UK,Charlie Whitherspoon,David Loo,2023-06-11 20:25:35.094482408,There was an issue,2 - High,Hardware
-Inquiry / Help,Resolved,2023-12-27 23:15:06.590296403,2023-01-06 01:22:00,Beth Anglin,INC0000000157,system,Canada,Beth Anglin,Bud Richman,2023-01-25 20:46:13.679914432,There was an issue,1 - Critical,Inquiry / Help
-Software,Resolved,2023-01-12 00:34:00.000000000,2023-01-06 06:14:00,Beth Anglin,INC0000000389,system,Australia,Luke Wilson,David Loo,2023-09-28 01:25:23.074702845,There was an issue,2 - High,Software
-Hardware,Closed,2023-05-31 03:23:19.484544434,2023-01-06 15:27:00,Luke Wilson,INC0000000152,admin,United States,Fred Luddy,Don Goodliffe,2023-07-15 22:29:05.785588895,There was an issue,4 - Low,Hardware
-Hardware,Closed,2023-09-13 04:40:34.280556892,2023-01-07 15:20:00,Fred Luddy,INC0000000018,system,UK,Luke Wilson,David Loo,2023-12-28 23:19:22.500984917,There was an issue,4 - Low,Hardware
-Hardware,Resolved,2024-01-26 14:08:14.089327678,2023-01-08 08:53:00,Beth Anglin,INC0000000134,employee,United States,Beth Anglin,Bud Richman,2023-07-09 14:14:29.904659016,There was an issue,4 - Low,Hardware
-Network,Resolved,2023-12-28 23:19:22.500984917,2023-01-09 09:58:00,Howard Johnson,INC0000000057,system,Australia,Beth Anglin,Don Goodliffe,2023-12-14 20:37:19.388113353,There was an issue,2 - High,Network
-Inquiry / Help,Closed,2023-08-05 08:06:09.262346306,2023-01-09 16:07:00,Charlie Whitherspoon,INC0000000434,system,Australia,Beth Anglin,David Loo,2023-02-26 16:29:16.807931635,There was an issue,1 - Critical,Inquiry / Help
-Network,Resolved,2023-02-08 15:38:00.000000000,2023-01-10 10:06:00,Fred Luddy,INC0000000271,employee,United States,Fred Luddy,Don Goodliffe,2023-12-10 05:44:39.457781801,There was an issue,4 - Low,Network
-Network,Resolved,2023-12-06 22:33:01.700205220,2023-01-11 00:34:00,Charlie Whitherspoon,INC0000000411,admin,India,Howard Johnson,David Loo,2024-02-01 06:07:10.554650244,There was an issue,2 - High,Network
-Network,Resolved,2023-05-06 08:53:56.696181202,2023-01-11 09:26:00,Luke Wilson,INC0000000490,admin,India,Howard Johnson,ITIL User,2024-01-04 10:16:12.278901784,There was an issue,2 - High,Network
-Software,Resolved,2023-09-28 01:25:23.074702845,2023-01-11 16:40:00,Howard Johnson,INC0000000233,employee,Australia,Fred Luddy,Bud Richman,2023-10-03 08:53:36.796709606,There was an issue,3 - Moderate,Software
-Hardware,Closed,2023-12-05 17:32:49.113615094,2023-01-11 18:29:00,Howard Johnson,INC0000000453,admin,UK,Fred Luddy,Bud Richman,2023-05-05 01:59:48.858836394,There was an issue,3 - Moderate,Hardware
-Hardware,Resolved,2024-01-19 04:34:40.251168087,2023-01-13 00:44:00,Fred Luddy,INC0000000047,employee,Australia,Beth Anglin,ITIL User,2023-07-09 20:00:30.308403141,There was an issue,1 - Critical,Hardware
-Software,Closed,2023-04-13 09:52:00.000000000,2023-01-15 14:01:00,Charlie Whitherspoon,INC0000000210,admin,Australia,Fred Luddy,ITIL User,2023-02-04 02:43:53.446979933,There was an issue,1 - Critical,Software
-Database,Resolved,2023-02-03 19:29:33.426983106,2023-01-16 04:28:00,Charlie Whitherspoon,INC0000000392,admin,India,Howard Johnson,Bud Richman,2023-04-26 13:43:55.256743773,There was an issue,3 - Moderate,Database
-Software,Closed,2023-01-26 12:30:48.397896971,2023-01-16 06:28:00,Beth Anglin,INC0000000005,system,Australia,Beth Anglin,Don Goodliffe,2023-08-04 18:56:00.000000000,There was an issue,4 - Low,Software
-Hardware,Resolved,2023-10-18 13:41:25.546404143,2023-01-17 06:29:00,Fred Luddy,INC0000000088,system,Canada,Luke Wilson,David Loo,2023-03-13 16:49:10.116400647,There was an issue,1 - Critical,Hardware
-Network,Resolved,2023-05-13 13:14:46.388208661,2023-01-17 12:15:00,Beth Anglin,INC0000000100,admin,United States,Charlie Whitherspoon,David Loo,2023-04-04 19:04:22.181856865,There was an issue,3 - Moderate,Network
-Software,Closed,2023-02-14 04:41:35.236486606,2023-01-17 13:34:00,Beth Anglin,INC0000000237,system,UK,Charlie Whitherspoon,ITIL User,2023-10-08 04:30:10.854895991,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2023-12-07 16:11:16.045197690,2023-01-17 17:47:00,Beth Anglin,INC0000000091,system,Australia,Luke Wilson,David Loo,2023-09-18 08:09:07.717459166,There was an issue,3 - Moderate,Inquiry / Help
-Hardware,Closed,2023-03-14 06:30:47.245274154,2023-01-18 23:27:00,Charlie Whitherspoon,INC0000000495,admin,Canada,Luke Wilson,ITIL User,2023-08-23 19:40:27.266944172,There was an issue,3 - Moderate,Hardware
-Database,Closed,2024-01-21 13:40:00.000000000,2023-01-19 05:28:00,Charlie Whitherspoon,INC0000000167,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-10-02 20:53:30.682718416,There was an issue,3 - Moderate,Database
-Inquiry / Help,Closed,2023-05-05 00:21:12.204265630,2023-01-19 17:29:00,Fred Luddy,INC0000000373,system,Canada,Fred Luddy,Don Goodliffe,2023-01-05 17:54:36.886511927,There was an issue,4 - Low,Inquiry / Help
-Network,Closed,2023-08-09 03:19:49.048508681,2023-01-20 05:48:00,Charlie Whitherspoon,INC0000000084,admin,Canada,Fred Luddy,Bud Richman,2023-09-18 19:43:08.637023310,There was an issue,1 - Critical,Network
-Database,Resolved,2023-01-18 08:42:15.759148193,2023-01-21 12:13:00,Beth Anglin,INC0000000341,employee,United States,Howard Johnson,Don Goodliffe,2023-10-09 10:00:05.170032833,There was an issue,4 - Low,Database
-Network,Closed,2023-01-09 08:53:00.000000000,2023-01-22 03:34:00,Luke Wilson,INC0000000366,employee,Canada,Luke Wilson,Don Goodliffe,2023-08-09 03:19:49.048508681,There was an issue,2 - High,Network
-Database,Resolved,2023-11-06 00:05:08.518186417,2023-01-23 23:18:00,Howard Johnson,INC0000000492,admin,Canada,Howard Johnson,ITIL User,2023-10-24 10:20:11.744461099,There was an issue,2 - High,Database
-Hardware,Resolved,2023-10-30 18:57:00.000000000,2023-01-24 15:02:00,Luke Wilson,INC0000000187,admin,Australia,Luke Wilson,Don Goodliffe,2024-02-07 23:14:21.894263712,There was an issue,1 - Critical,Hardware
-Hardware,Closed,2023-01-28 01:28:09.743197803,2023-01-25 02:38:00,Howard Johnson,INC0000000343,admin,UK,Luke Wilson,David Loo,2023-01-08 15:20:00.000000000,There was an issue,3 - Moderate,Hardware
-Inquiry / Help,Resolved,2023-10-29 06:16:49.729720000,2023-01-25 20:52:00,Fred Luddy,INC0000000474,admin,UK,Charlie Whitherspoon,Bud Richman,2023-08-02 12:16:09.558065832,There was an issue,2 - High,Inquiry / Help
-Database,Closed,2023-07-06 12:23:47.840976362,2023-01-27 02:22:00,Charlie Whitherspoon,INC0000000107,system,India,Beth Anglin,ITIL User,2023-03-18 09:32:55.751173465,There was an issue,3 - Moderate,Database
-Database,Resolved,2023-08-14 09:36:00.295254938,2023-01-27 03:28:00,Fred Luddy,INC0000000483,employee,India,Charlie Whitherspoon,ITIL User,2023-01-21 03:18:58.590910419,There was an issue,4 - Low,Database
-Database,Closed,2023-09-22 07:03:43.180128742,2023-01-27 07:48:00,Fred Luddy,INC0000000119,employee,UK,Charlie Whitherspoon,ITIL User,2023-12-09 22:53:40.047263709,There was an issue,4 - Low,Database
-Inquiry / Help,Closed,2023-11-14 14:50:37.041296707,2023-01-27 16:44:00,Luke Wilson,INC0000000325,system,Canada,Luke Wilson,ITIL User,2024-01-04 00:08:18.653166818,There was an issue,3 - Moderate,Inquiry / Help
-Software,Resolved,2023-01-18 10:47:18.859313409,2023-01-30 17:07:00,Charlie Whitherspoon,INC0000000371,employee,India,Howard Johnson,David Loo,2023-01-25 07:44:05.814552632,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2023-08-10 06:30:11.927271898,2023-01-31 00:30:00,Luke Wilson,INC0000000033,admin,United States,Luke Wilson,David Loo,2023-11-08 06:15:25.825398065,There was an issue,1 - Critical,Inquiry / Help
-Software,Closed,2023-04-17 20:17:35.569877984,2023-02-01 19:46:00,Luke Wilson,INC0000000196,admin,Canada,Howard Johnson,Bud Richman,2023-08-07 09:44:00.000000000,There was an issue,2 - High,Software
-Database,Resolved,2023-01-25 07:44:05.814552632,2023-02-02 08:10:00,Luke Wilson,INC0000000014,admin,India,Luke Wilson,David Loo,2023-07-06 12:23:47.840976362,There was an issue,4 - Low,Database
-Hardware,Resolved,2023-11-27 12:48:59.344411018,2023-02-03 02:01:00,Charlie Whitherspoon,INC0000000066,system,UK,Charlie Whitherspoon,Don Goodliffe,2023-04-05 05:58:43.770711476,There was an issue,1 - Critical,Hardware
-Database,Resolved,2023-08-12 18:27:47.789421821,2023-02-05 10:25:00,Fred Luddy,INC0000000473,admin,India,Luke Wilson,Don Goodliffe,2023-10-21 17:05:49.162145411,There was an issue,3 - Moderate,Database
-Software,Resolved,2024-01-25 11:01:00.578026325,2023-02-05 15:05:00,Howard Johnson,INC0000000161,admin,Australia,Luke Wilson,Don Goodliffe,2023-04-19 16:48:00.000000000,There was an issue,3 - Moderate,Software
-Hardware,Resolved,2023-12-06 06:18:20.231641812,2023-02-07 15:38:00,Fred Luddy,INC0000000086,admin,United States,Howard Johnson,David Loo,2023-03-17 12:55:54.993590364,There was an issue,4 - Low,Hardware
-Network,Resolved,2023-11-09 09:27:41.299495824,2023-02-08 05:33:00,Howard Johnson,INC0000000299,employee,United States,Howard Johnson,Bud Richman,2023-09-16 03:46:06.609216047,There was an issue,2 - High,Network
-Database,Closed,2024-01-21 14:31:46.018925216,2023-02-08 14:07:00,Luke Wilson,INC0000000212,admin,United States,Fred Luddy,ITIL User,2023-02-25 14:32:02.076278529,There was an issue,3 - Moderate,Database
-Software,Resolved,2023-03-26 23:30:22.193990107,2023-02-11 04:10:00,Luke Wilson,INC0000000003,system,Australia,Howard Johnson,David Loo,2023-01-30 01:44:17.443653956,There was an issue,2 - High,Software
-Software,Closed,2023-09-26 20:40:00.000000000,2023-02-12 00:56:00,Luke Wilson,INC0000000195,employee,United States,Charlie Whitherspoon,David Loo,2024-02-03 17:41:53.299049427,There was an issue,4 - Low,Software
-Software,Resolved,2023-10-05 14:59:20.783399866,2023-02-12 09:00:00,Luke Wilson,INC0000000069,employee,UK,Charlie Whitherspoon,Bud Richman,2023-05-10 22:35:58.881919516,There was an issue,3 - Moderate,Software
-Hardware,Closed,2023-09-16 03:46:06.609216047,2023-02-12 10:41:00,Charlie Whitherspoon,INC0000000400,admin,Canada,Luke Wilson,David Loo,2024-01-22 06:01:00.000000000,There was an issue,3 - Moderate,Hardware
-Hardware,Resolved,2023-07-22 05:03:13.822074451,2023-02-14 16:34:00,Luke Wilson,INC0000000001,admin,Canada,Beth Anglin,ITIL User,2023-06-07 15:04:30.359478777,There was an issue,2 - High,Hardware
-Network,Closed,2024-01-24 20:11:01.690566157,2023-02-15 01:47:00,Charlie Whitherspoon,INC0000000035,employee,Canada,Luke Wilson,David Loo,2023-12-07 16:11:16.045197690,There was an issue,2 - High,Network
-Hardware,Resolved,2023-03-22 15:24:16.646216503,2023-02-16 10:34:00,Howard Johnson,INC0000000217,system,UK,Beth Anglin,Don Goodliffe,2023-07-27 12:30:15.368139102,There was an issue,4 - Low,Hardware
-Software,Closed,2023-11-29 21:52:24.416389196,2023-02-16 17:07:00,Fred Luddy,INC0000000242,system,Australia,Howard Johnson,David Loo,2023-10-11 12:19:52.993926660,There was an issue,4 - Low,Software
-Software,Resolved,2023-06-03 13:13:53.896117331,2023-02-16 18:29:00,Beth Anglin,INC0000000381,admin,United States,Charlie Whitherspoon,Bud Richman,2023-08-17 17:26:24.730681330,There was an issue,1 - Critical,Software
-Hardware,Resolved,2024-01-23 07:05:32.181816124,2023-02-16 19:04:00,Beth Anglin,INC0000000192,admin,United States,Charlie Whitherspoon,Bud Richman,2023-08-08 02:22:19.738512734,There was an issue,1 - Critical,Hardware
-Inquiry / Help,Resolved,2023-04-16 00:36:30.146701781,2023-02-18 01:46:00,Charlie Whitherspoon,INC0000000063,admin,Australia,Fred Luddy,Bud Richman,2023-07-11 23:34:29.390060680,There was an issue,3 - Moderate,Inquiry / Help
-Database,Resolved,2023-09-13 00:09:56.020598186,2023-02-18 16:04:00,Howard Johnson,INC0000000311,employee,Australia,Luke Wilson,David Loo,2023-11-07 04:08:46.640926620,There was an issue,4 - Low,Database
-Database,Closed,2023-01-08 15:20:00.000000000,2023-02-22 12:21:00,Howard Johnson,INC0000000129,admin,India,Charlie Whitherspoon,ITIL User,2023-04-13 12:13:00.000000000,There was an issue,4 - Low,Database
-Software,Closed,2024-02-12 22:31:48.126196708,2023-02-22 13:49:00,Charlie Whitherspoon,INC0000000039,system,UK,Howard Johnson,Don Goodliffe,2023-11-20 14:15:29.239228781,There was an issue,1 - Critical,Software
-Software,Resolved,2023-11-04 10:27:01.152081419,2023-02-22 19:23:00,Beth Anglin,INC0000000470,system,UK,Luke Wilson,Bud Richman,2023-10-25 19:50:20.337280678,There was an issue,4 - Low,Software
-Hardware,Resolved,2023-02-18 11:04:04.387140839,2023-02-23 02:37:00,Beth Anglin,INC0000000377,system,UK,Beth Anglin,David Loo,2023-12-19 02:53:45.256687900,There was an issue,1 - Critical,Hardware
-Software,Closed,2024-01-14 19:07:03.245823840,2023-02-23 05:40:00,Luke Wilson,INC0000000041,system,United States,Luke Wilson,Don Goodliffe,2023-06-06 08:20:00.000000000,There was an issue,4 - Low,Software
-Database,Resolved,2023-11-19 13:31:44.558204717,2023-02-25 17:52:00,Fred Luddy,INC0000000022,admin,India,Luke Wilson,Don Goodliffe,2023-01-26 02:18:22.920898595,There was an issue,1 - Critical,Database
-Software,Resolved,2023-02-18 18:49:23.647006730,2023-02-25 19:47:00,Fred Luddy,INC0000000162,system,UK,Beth Anglin,Bud Richman,2023-10-12 20:28:38.706928972,There was an issue,4 - Low,Software
-Database,Closed,2023-10-03 08:14:22.675801438,2023-02-25 21:22:00,Beth Anglin,INC0000000423,system,India,Howard Johnson,Bud Richman,2023-07-06 13:13:24.843387226,There was an issue,3 - Moderate,Database
-Network,Resolved,2023-03-02 18:17:24.556975522,2023-02-27 16:37:00,Charlie Whitherspoon,INC0000000043,system,India,Howard Johnson,David Loo,2023-02-13 09:00:00.000000000,There was an issue,2 - High,Network
-Network,Resolved,2023-11-06 18:24:09.637921817,2023-02-27 21:40:00,Beth Anglin,INC0000000048,system,Australia,Beth Anglin,ITIL User,2023-09-26 20:40:00.000000000,There was an issue,1 - Critical,Network
-Software,Resolved,2023-05-24 17:45:04.375124775,2023-02-28 17:42:00,Fred Luddy,INC0000000194,system,Canada,Beth Anglin,David Loo,2023-03-31 22:32:42.024027147,There was an issue,4 - Low,Software
-Database,Resolved,2023-02-19 11:12:41.587556967,2023-03-02 01:29:00,Beth Anglin,INC0000000323,admin,India,Charlie Whitherspoon,ITIL User,2024-02-07 21:56:58.515415708,There was an issue,2 - High,Database
-Network,Resolved,2023-06-25 09:59:55.161658018,2023-03-02 10:56:00,Charlie Whitherspoon,INC0000000433,system,Australia,Charlie Whitherspoon,ITIL User,2023-08-25 09:49:36.214757254,There was an issue,4 - Low,Network
-Inquiry / Help,Resolved,2023-11-25 13:45:38.979607981,2023-03-04 03:00:00,Fred Luddy,INC0000000427,system,Australia,Howard Johnson,ITIL User,2023-05-10 03:20:31.007719853,There was an issue,2 - High,Inquiry / Help
-Network,Resolved,2023-11-01 13:29:20.811811166,2023-03-07 06:18:00,Luke Wilson,INC0000000482,admin,India,Charlie Whitherspoon,David Loo,2023-06-09 23:10:07.618999909,There was an issue,4 - Low,Network
-Inquiry / Help,Closed,2023-07-06 13:08:33.074641515,2023-03-08 16:23:00,Luke Wilson,INC0000000476,system,United States,Howard Johnson,Don Goodliffe,2023-02-03 08:09:45.834493992,There was an issue,3 - Moderate,Inquiry / Help
-Software,Closed,2023-02-04 02:43:53.446979933,2023-03-09 02:01:00,Howard Johnson,INC0000000240,employee,United States,Beth Anglin,Don Goodliffe,2023-02-13 00:56:00.000000000,There was an issue,4 - Low,Software
-Database,Resolved,2024-01-31 02:23:56.445975993,2023-03-09 09:09:00,Howard Johnson,INC0000000449,system,United States,Luke Wilson,Don Goodliffe,2023-04-13 09:52:00.000000000,There was an issue,3 - Moderate,Database
-Database,Closed,2023-09-21 01:28:06.686513687,2023-03-10 09:09:00,Luke Wilson,INC0000000029,employee,India,Beth Anglin,David Loo,2023-05-06 00:19:06.845921162,There was an issue,1 - Critical,Database
-Database,Resolved,2024-01-13 07:11:07.585466982,2023-03-10 14:49:00,Beth Anglin,INC0000000327,system,United States,Charlie Whitherspoon,Don Goodliffe,2023-04-17 11:40:20.915287122,There was an issue,2 - High,Database
-Network,Closed,2023-01-14 09:42:31.239968317,2023-03-11 06:39:00,Howard Johnson,INC0000000464,system,UK,Fred Luddy,David Loo,2023-10-18 00:52:00.000000000,There was an issue,1 - Critical,Network
-Inquiry / Help,Closed,2023-05-05 19:25:33.306689559,2023-03-13 02:53:00,Charlie Whitherspoon,INC0000000231,system,Australia,Beth Anglin,ITIL User,2023-12-22 14:45:04.366600219,There was an issue,2 - High,Inquiry / Help
-Software,Resolved,2023-12-26 08:26:25.509637696,2023-03-13 07:44:00,Fred Luddy,INC0000000050,system,Canada,Fred Luddy,Don Goodliffe,2023-03-11 09:09:00.000000000,There was an issue,3 - Moderate,Software
-Database,Closed,2023-01-23 16:07:55.271807823,2023-03-13 10:05:00,Beth Anglin,INC0000000414,system,Canada,Beth Anglin,ITIL User,2023-07-25 03:53:49.978687958,There was an issue,2 - High,Database
-Database,Closed,2024-01-10 15:38:48.582320090,2023-03-13 11:36:00,Luke Wilson,INC0000000339,system,Canada,Beth Anglin,David Loo,2023-10-05 14:06:46.265722782,There was an issue,4 - Low,Database
-Database,Resolved,2023-05-29 13:25:00.000000000,2023-03-14 00:04:00,Fred Luddy,INC0000000367,employee,United States,Luke Wilson,Don Goodliffe,2023-11-02 19:10:09.135343415,There was an issue,4 - Low,Database
-Database,Closed,2023-07-15 22:29:05.785588895,2023-03-17 00:19:00,Beth Anglin,INC0000000497,system,UK,Howard Johnson,Bud Richman,2023-07-26 01:50:52.068385147,There was an issue,3 - Moderate,Database
-Inquiry / Help,Closed,2023-04-08 23:37:33.628402771,2023-03-17 07:40:00,Beth Anglin,INC0000000417,admin,Canada,Fred Luddy,Bud Richman,2023-02-09 20:37:54.209291607,There was an issue,4 - Low,Inquiry / Help
-Software,Closed,2023-10-08 21:29:55.684306333,2023-03-18 01:04:00,Luke Wilson,INC0000000307,admin,India,Beth Anglin,Don Goodliffe,2023-02-04 20:06:34.055632819,There was an issue,1 - Critical,Software
-Network,Closed,2023-01-18 12:15:00.000000000,2023-03-19 09:40:00,Charlie Whitherspoon,INC0000000318,admin,India,Luke Wilson,Bud Richman,2023-06-05 23:47:52.328722644,There was an issue,2 - High,Network
-Network,Resolved,2023-01-23 02:21:48.999352525,2023-03-19 12:57:00,Charlie Whitherspoon,INC0000000202,employee,India,Fred Luddy,Bud Richman,2023-09-22 15:44:42.056556368,There was an issue,2 - High,Network
-Network,Closed,2023-09-14 16:03:56.241021820,2023-03-19 14:53:00,Beth Anglin,INC0000000303,admin,Australia,Fred Luddy,Bud Richman,2023-06-13 20:13:50.263024628,There was an issue,4 - Low,Network
-Database,Closed,2023-09-03 18:58:33.803118210,2023-03-22 13:51:00,Fred Luddy,INC0000000399,admin,Canada,Howard Johnson,Bud Richman,2023-02-24 12:26:03.066179768,There was an issue,4 - Low,Database
-Hardware,Closed,2023-10-16 08:15:55.096916626,2023-03-22 14:07:00,Beth Anglin,INC0000000273,admin,Australia,Beth Anglin,Bud Richman,2023-11-25 18:11:25.410173561,There was an issue,2 - High,Hardware
-Software,Resolved,2023-02-19 06:21:12.452625610,2023-03-22 20:33:00,Charlie Whitherspoon,INC0000000391,employee,United States,Charlie Whitherspoon,David Loo,2023-09-13 05:14:51.293532720,There was an issue,3 - Moderate,Software
-Software,Closed,2023-07-30 12:07:08.997531852,2023-03-23 07:51:00,Beth Anglin,INC0000000278,system,India,Fred Luddy,ITIL User,2023-08-11 14:17:08.329647264,There was an issue,2 - High,Software
-Hardware,Closed,2023-06-30 13:34:11.629362629,2023-03-23 16:57:00,Fred Luddy,INC0000000395,system,UK,Howard Johnson,Bud Richman,2024-01-08 09:17:43.178873486,There was an issue,4 - Low,Hardware
-Network,Resolved,2023-04-22 08:16:59.883429480,2023-03-23 22:07:00,Howard Johnson,INC0000000331,system,United States,Charlie Whitherspoon,ITIL User,2023-10-10 20:23:44.798714886,There was an issue,2 - High,Network
-Database,Closed,2023-07-28 21:34:00.908307924,2023-03-26 03:15:00,Luke Wilson,INC0000000405,admin,Australia,Howard Johnson,Don Goodliffe,2023-05-04 21:57:00.000000000,There was an issue,4 - Low,Database
-Inquiry / Help,Closed,2023-12-10 05:44:39.457781801,2023-03-26 20:37:00,Luke Wilson,INC0000000203,system,UK,Luke Wilson,Don Goodliffe,2023-08-07 18:21:44.544015394,There was an issue,1 - Critical,Inquiry / Help
-Inquiry / Help,Resolved,2023-07-06 00:00:59.012006127,2023-03-27 23:22:00,Charlie Whitherspoon,INC0000000026,system,UK,Beth Anglin,Bud Richman,2023-06-07 06:19:03.182476115,There was an issue,2 - High,Inquiry / Help
-Network,Closed,2023-05-19 07:25:36.115649042,2023-03-29 01:49:00,Howard Johnson,INC0000000146,employee,Australia,Beth Anglin,Don Goodliffe,2023-11-28 08:39:37.872085078,There was an issue,3 - Moderate,Network
-Hardware,Closed,2023-08-26 16:09:36.942939516,2023-03-29 05:22:00,Charlie Whitherspoon,INC0000000089,employee,Australia,Luke Wilson,Don Goodliffe,2023-01-28 04:52:51.519667192,There was an issue,4 - Low,Hardware
-Network,Resolved,2023-11-09 01:36:23.094504250,2023-03-30 00:58:00,Beth Anglin,INC0000000291,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-03-23 14:56:55.026865443,There was an issue,1 - Critical,Network
-Hardware,Closed,2023-08-04 08:39:00.000000000,2023-04-01 09:01:00,Howard Johnson,INC0000000342,system,Australia,Fred Luddy,Bud Richman,2023-08-10 22:01:38.300764703,There was an issue,3 - Moderate,Hardware
-Software,Closed,2023-11-28 08:39:37.872085078,2023-04-02 15:37:00,Fred Luddy,INC0000000037,employee,India,Howard Johnson,ITIL User,2023-12-12 19:10:00.000000000,There was an issue,1 - Critical,Software
-Network,Closed,2023-01-06 16:52:00.000000000,2023-04-03 23:10:00,Beth Anglin,INC0000000351,system,Australia,Howard Johnson,ITIL User,2023-02-23 22:00:23.401697490,There was an issue,3 - Moderate,Network
-Inquiry / Help,Resolved,2023-08-08 02:22:19.738512734,2023-04-04 04:43:00,Charlie Whitherspoon,INC0000000357,employee,India,Luke Wilson,Don Goodliffe,2023-10-18 13:41:25.546404143,There was an issue,3 - Moderate,Inquiry / Help
-Inquiry / Help,Closed,2023-10-25 19:50:20.337280678,2023-04-05 00:45:00,Beth Anglin,INC0000000218,employee,United States,Charlie Whitherspoon,Don Goodliffe,2023-10-27 12:35:42.247430186,There was an issue,3 - Moderate,Inquiry / Help
-Database,Closed,2023-01-26 02:18:22.920898595,2023-04-08 12:59:00,Beth Anglin,INC0000000465,admin,Canada,Beth Anglin,Don Goodliffe,2023-01-29 22:45:30.072558587,There was an issue,2 - High,Database
-Software,Resolved,2023-11-24 19:39:37.248766516,2023-04-08 22:13:00,Beth Anglin,INC0000000485,employee,UK,Fred Luddy,Don Goodliffe,2023-08-01 00:45:22.754376187,There was an issue,2 - High,Software
-Inquiry / Help,Resolved,2023-09-07 09:17:08.466232846,2023-04-09 10:28:00,Howard Johnson,INC0000000293,employee,Canada,Howard Johnson,Don Goodliffe,2023-02-13 00:16:27.398179564,There was an issue,4 - Low,Inquiry / Help
-Database,Closed,2023-10-02 20:53:30.682718416,2023-04-09 15:33:00,Howard Johnson,INC0000000445,system,Australia,Beth Anglin,Don Goodliffe,2023-09-07 09:17:08.466232846,There was an issue,1 - Critical,Database
-Software,Resolved,2023-06-04 09:17:41.184530679,2023-04-10 12:12:00,Luke Wilson,INC0000000282,employee,India,Howard Johnson,ITIL User,2023-08-31 15:44:00.000000000,There was an issue,2 - High,Software
-Inquiry / Help,Closed,2023-08-15 21:18:27.557222760,2023-04-11 08:43:00,Charlie Whitherspoon,INC0000000287,system,UK,Beth Anglin,David Loo,2024-01-19 04:34:40.251168087,There was an issue,2 - High,Inquiry / Help
-Network,Closed,2023-11-23 15:56:17.027339265,2023-04-11 11:50:00,Charlie Whitherspoon,INC0000000077,admin,UK,Charlie Whitherspoon,ITIL User,2023-05-10 23:55:09.253391223,There was an issue,3 - Moderate,Network
-Inquiry / Help,Resolved,2023-08-11 14:17:08.329647264,2023-04-12 09:52:00,Luke Wilson,INC0000000103,admin,India,Luke Wilson,ITIL User,2023-10-07 15:02:09.446606967,There was an issue,2 - High,Inquiry / Help
-Hardware,Closed,2023-03-29 18:40:47.611595618,2023-04-12 12:13:00,Howard Johnson,INC0000000055,employee,India,Beth Anglin,Don Goodliffe,2023-05-14 06:26:59.910015516,There was an issue,2 - High,Hardware
-Network,Closed,2023-12-15 17:24:42.185263024,2023-04-13 10:00:00,Luke Wilson,INC0000000141,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-04-25 00:40:17.584686390,There was an issue,2 - High,Network
-Network,Resolved,2023-09-30 03:37:15.453671612,2023-04-14 23:54:00,Beth Anglin,INC0000000479,employee,UK,Charlie Whitherspoon,Don Goodliffe,2023-11-02 21:31:23.289304071,There was an issue,1 - Critical,Network
-Software,Resolved,2023-10-14 07:51:41.450443462,2023-04-15 11:57:00,Howard Johnson,INC0000000267,employee,Canada,Fred Luddy,Bud Richman,2023-03-31 07:59:26.909209525,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-07-09 14:14:29.904659016,2023-04-18 16:48:00,Howard Johnson,INC0000000295,admin,United States,Howard Johnson,Don Goodliffe,2023-12-15 17:24:42.185263024,There was an issue,1 - Critical,Network
-Inquiry / Help,Closed,2023-09-26 02:31:00.000000000,2023-04-18 19:22:00,Fred Luddy,INC0000000469,employee,United States,Beth Anglin,David Loo,2023-02-16 16:49:49.770102240,There was an issue,3 - Moderate,Inquiry / Help
-Software,Resolved,2023-10-14 10:07:06.909703281,2023-04-18 22:20:00,Beth Anglin,INC0000000393,system,United States,Charlie Whitherspoon,ITIL User,2023-03-18 07:40:00.000000000,There was an issue,3 - Moderate,Software
-Software,Resolved,2023-12-22 14:45:04.366600219,2023-04-19 07:07:00,Charlie Whitherspoon,INC0000000385,employee,Australia,Howard Johnson,ITIL User,2023-10-03 01:05:00.000000000,There was an issue,4 - Low,Software
-Software,Closed,2023-04-09 09:12:14.485573467,2023-04-19 14:41:00,Luke Wilson,INC0000000309,system,UK,Fred Luddy,Don Goodliffe,2023-02-19 01:46:00.000000000,There was an issue,1 - Critical,Software
-Network,Resolved,2023-10-05 10:37:47.028545047,2023-04-20 22:34:00,Beth Anglin,INC0000000333,system,UK,Howard Johnson,Don Goodliffe,2023-02-16 22:50:20.255626998,There was an issue,3 - Moderate,Network
-Software,Resolved,2023-12-17 00:37:06.937192986,2023-04-21 03:46:00,Luke Wilson,INC0000000446,admin,Australia,Beth Anglin,David Loo,2023-05-18 20:30:00.000000000,There was an issue,2 - High,Software
-Inquiry / Help,Resolved,2023-08-30 13:49:54.648995923,2023-04-21 08:13:00,Luke Wilson,INC0000000174,employee,Canada,Charlie Whitherspoon,David Loo,2023-12-05 02:10:03.357753705,There was an issue,3 - Moderate,Inquiry / Help
-Database,Closed,2023-11-29 19:40:37.040547419,2023-04-21 17:22:00,Beth Anglin,INC0000000015,system,United States,Charlie Whitherspoon,Bud Richman,2023-01-20 14:37:18.361510788,There was an issue,2 - High,Database
-Network,Resolved,2023-02-25 02:41:07.264125204,2023-04-22 10:55:00,Charlie Whitherspoon,INC0000000382,system,India,Fred Luddy,Don Goodliffe,2023-02-18 06:02:38.010888088,There was an issue,2 - High,Network
-Hardware,Closed,2023-10-27 12:35:42.247430186,2023-04-23 21:20:00,Howard Johnson,INC0000000205,admin,UK,Fred Luddy,David Loo,2023-06-11 09:48:35.368342810,There was an issue,4 - Low,Hardware
-Network,Closed,2023-04-08 08:46:45.358954276,2023-04-27 03:25:00,Howard Johnson,INC0000000269,employee,UK,Charlie Whitherspoon,Bud Richman,2023-09-30 03:37:15.453671612,There was an issue,2 - High,Network
-Inquiry / Help,Resolved,2023-04-04 09:15:27.409492338,2023-04-27 10:45:00,Fred Luddy,INC0000000298,employee,United States,Fred Luddy,ITIL User,2023-05-12 02:21:34.844909705,There was an issue,1 - Critical,Inquiry / Help
-Hardware,Resolved,2023-06-28 14:05:28.538482547,2023-04-28 01:24:00,Charlie Whitherspoon,INC0000000130,admin,Canada,Beth Anglin,David Loo,2023-10-18 20:50:35.137819655,There was an issue,1 - Critical,Hardware
-Inquiry / Help,Resolved,2023-08-13 06:41:18.526534971,2023-04-30 00:53:00,Fred Luddy,INC0000000160,system,India,Beth Anglin,Don Goodliffe,2024-01-13 07:11:07.585466982,There was an issue,4 - Low,Inquiry / Help
-Network,Resolved,2023-01-24 18:39:21.848415555,2023-05-02 14:34:00,Howard Johnson,INC0000000285,admin,India,Howard Johnson,ITIL User,2023-08-24 03:39:08.172397201,There was an issue,4 - Low,Network
-Network,Closed,2024-01-21 17:52:21.410495977,2023-05-02 15:01:00,Beth Anglin,INC0000000137,system,UK,Beth Anglin,David Loo,2023-11-03 11:52:00.000000000,There was an issue,2 - High,Network
-Inquiry / Help,Closed,2023-08-19 00:17:36.874122878,2023-05-03 04:24:00,Fred Luddy,INC0000000042,employee,UK,Howard Johnson,ITIL User,2023-01-17 04:28:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
-Software,Resolved,2023-06-07 15:04:30.359478777,2023-05-03 21:57:00,Charlie Whitherspoon,INC0000000056,system,Canada,Fred Luddy,Don Goodliffe,2023-08-02 04:32:04.560171158,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2023-11-07 11:30:00.000000000,2023-05-04 13:17:00,Luke Wilson,INC0000000175,system,India,Fred Luddy,ITIL User,2023-10-02 04:18:49.766694358,There was an issue,1 - Critical,Inquiry / Help
-Database,Closed,2024-01-03 16:45:19.710278908,2023-05-05 07:09:00,Beth Anglin,INC0000000000,admin,Canada,Fred Luddy,Don Goodliffe,2024-01-09 12:37:13.292569926,There was an issue,4 - Low,Database
-Software,Resolved,2023-02-19 01:46:00.000000000,2023-05-05 20:05:00,Fred Luddy,INC0000000184,admin,Canada,Howard Johnson,Don Goodliffe,2023-06-30 06:01:54.007909417,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-02-28 16:37:00.000000000,2023-05-05 20:26:00,Beth Anglin,INC0000000388,system,Canada,Howard Johnson,David Loo,2023-09-22 13:11:16.460337579,There was an issue,4 - Low,Network
-Inquiry / Help,Resolved,2023-03-11 09:09:00.000000000,2023-05-05 22:24:00,Luke Wilson,INC0000000149,employee,Australia,Beth Anglin,Don Goodliffe,2023-02-03 19:29:33.426983106,There was an issue,1 - Critical,Inquiry / Help
-Software,Resolved,2023-10-03 01:05:00.000000000,2023-05-07 09:01:00,Luke Wilson,INC0000000250,admin,Canada,Beth Anglin,Bud Richman,2023-12-06 21:57:38.764148014,There was an issue,3 - Moderate,Software
-Hardware,Closed,2023-01-03 11:04:00.000000000,2023-05-07 11:12:00,Luke Wilson,INC0000000317,admin,Australia,Fred Luddy,Bud Richman,2023-09-13 00:09:56.020598186,There was an issue,1 - Critical,Hardware
-Hardware,Resolved,2023-04-19 16:48:00.000000000,2023-05-07 12:05:00,Charlie Whitherspoon,INC0000000302,system,UK,Luke Wilson,David Loo,2024-01-14 00:18:47.213476730,There was an issue,1 - Critical,Hardware
-Software,Closed,2023-02-16 16:49:49.770102240,2023-05-12 06:51:00,Howard Johnson,INC0000000249,system,Australia,Beth Anglin,David Loo,2023-07-23 16:38:46.547163481,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2023-02-24 12:26:03.066179768,2023-05-12 11:38:00,Charlie Whitherspoon,INC0000000185,admin,India,Howard Johnson,David Loo,2023-08-19 00:17:36.874122878,There was an issue,1 - Critical,Inquiry / Help
-Software,Resolved,2023-10-10 20:23:44.798714886,2023-05-13 02:54:00,Luke Wilson,INC0000000466,system,United States,Beth Anglin,Bud Richman,2023-05-30 02:59:49.369927031,There was an issue,2 - High,Software
-Hardware,Closed,2023-08-18 23:36:22.191419882,2023-05-13 10:11:00,Howard Johnson,INC0000000404,system,UK,Beth Anglin,David Loo,2023-06-04 09:17:41.184530679,There was an issue,4 - Low,Hardware
-Hardware,Resolved,2023-05-22 23:24:00.000000000,2023-05-14 11:45:00,Howard Johnson,INC0000000106,admin,Australia,Luke Wilson,Bud Richman,2023-12-27 23:15:06.590296403,There was an issue,3 - Moderate,Hardware
-Database,Resolved,2024-01-09 12:37:13.292569926,2023-05-17 20:30:00,Howard Johnson,INC0000000275,system,Canada,Fred Luddy,Bud Richman,2023-03-03 22:24:21.666904166,There was an issue,3 - Moderate,Database
-Network,Closed,2023-01-13 03:44:31.383066130,2023-05-18 07:29:00,Fred Luddy,INC0000000274,employee,Canada,Charlie Whitherspoon,ITIL User,2023-04-22 08:16:59.883429480,There was an issue,3 - Moderate,Network
-Database,Closed,2023-01-28 04:52:51.519667192,2023-05-18 17:29:00,Beth Anglin,INC0000000199,employee,Australia,Fred Luddy,Don Goodliffe,2023-03-29 09:27:22.091188363,There was an issue,4 - Low,Database
-Software,Resolved,2023-10-12 19:50:00.000000000,2023-05-18 22:32:00,Howard Johnson,INC0000000370,employee,India,Howard Johnson,Don Goodliffe,2023-01-18 08:42:15.759148193,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-05-03 23:18:07.556497402,2023-05-19 04:05:00,Charlie Whitherspoon,INC0000000397,admin,United States,Fred Luddy,David Loo,2023-06-29 19:11:43.933822843,There was an issue,4 - Low,Network
-Network,Closed,2023-07-25 23:13:55.734880101,2023-05-20 06:12:00,Howard Johnson,INC0000000488,admin,UK,Luke Wilson,ITIL User,2023-06-15 22:13:18.416949743,There was an issue,2 - High,Network
-Software,Closed,2023-10-08 04:30:10.854895991,2023-05-21 05:49:00,Charlie Whitherspoon,INC0000000140,admin,India,Fred Luddy,Don Goodliffe,2023-06-12 02:12:20.844915289,There was an issue,1 - Critical,Software
-Software,Closed,2023-12-15 03:54:00.000000000,2023-05-21 23:24:00,Luke Wilson,INC0000000281,system,United States,Howard Johnson,ITIL User,2023-02-25 02:41:07.264125204,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-05-24 07:52:48.690310999,2023-05-22 01:22:00,Luke Wilson,INC0000000448,employee,Canada,Beth Anglin,David Loo,2023-11-19 08:35:26.721892000,There was an issue,4 - Low,Network
-Database,Closed,2023-11-03 11:52:00.000000000,2023-05-24 02:06:00,Charlie Whitherspoon,INC0000000284,system,UK,Fred Luddy,Bud Richman,2023-04-24 02:25:13.899200115,There was an issue,4 - Low,Database
-Hardware,Closed,2023-03-30 05:18:20.748165094,2023-05-24 03:55:00,Howard Johnson,INC0000000413,employee,United States,Fred Luddy,Bud Richman,2023-05-19 09:53:34.982040620,There was an issue,4 - Low,Hardware
-Inquiry / Help,Closed,2023-09-01 14:19:29.165134519,2023-05-26 08:08:00,Howard Johnson,INC0000000008,system,United States,Howard Johnson,Bud Richman,2023-02-18 11:04:04.387140839,There was an issue,1 - Critical,Inquiry / Help
-Network,Closed,2023-10-02 04:18:49.766694358,2023-05-26 13:20:00,Howard Johnson,INC0000000409,employee,India,Beth Anglin,Don Goodliffe,2023-08-18 23:36:22.191419882,There was an issue,4 - Low,Network
-Hardware,Closed,2023-05-12 02:21:34.844909705,2023-05-27 08:38:00,Beth Anglin,INC0000000494,admin,United States,Luke Wilson,ITIL User,2023-10-12 19:50:00.000000000,There was an issue,3 - Moderate,Hardware
-Hardware,Resolved,2024-01-14 00:18:47.213476730,2023-05-27 21:00:00,Luke Wilson,INC0000000116,employee,UK,Luke Wilson,David Loo,2023-04-16 00:36:30.146701781,There was an issue,1 - Critical,Hardware
-Database,Closed,2023-03-05 04:00:53.829740603,2023-05-28 13:25:00,Luke Wilson,INC0000000147,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-11-07 22:41:41.858766805,There was an issue,2 - High,Database
-Inquiry / Help,Resolved,2023-11-04 00:17:56.334785377,2023-05-29 04:20:00,Beth Anglin,INC0000000198,system,Canada,Charlie Whitherspoon,ITIL User,2023-10-29 06:16:49.729720000,There was an issue,2 - High,Inquiry / Help
-Software,Closed,2023-06-19 06:59:02.120925069,2023-05-30 09:43:00,Beth Anglin,INC0000000112,employee,Canada,Beth Anglin,ITIL User,2023-08-13 06:44:24.424288482,There was an issue,3 - Moderate,Software
-Database,Closed,2023-07-31 00:33:13.437296119,2023-05-30 09:56:00,Howard Johnson,INC0000000054,employee,Australia,Luke Wilson,David Loo,2023-01-09 08:53:00.000000000,There was an issue,2 - High,Database
-Network,Resolved,2023-03-17 12:55:54.993590364,2023-06-01 00:47:00,Beth Anglin,INC0000000241,employee,India,Howard Johnson,Bud Richman,2023-01-11 01:17:39.128189467,There was an issue,4 - Low,Network
-Network,Closed,2023-10-18 20:50:35.137819655,2023-06-01 13:13:00,Luke Wilson,INC0000000036,admin,India,Beth Anglin,David Loo,2023-05-31 03:23:19.484544434,There was an issue,3 - Moderate,Network
-Inquiry / Help,Resolved,2023-05-10 23:55:09.253391223,2023-06-02 12:28:00,Howard Johnson,INC0000000289,employee,UK,Luke Wilson,David Loo,2024-01-10 15:38:48.582320090,There was an issue,4 - Low,Inquiry / Help
-Hardware,Closed,2023-04-13 15:50:15.123078287,2023-06-02 22:47:00,Fred Luddy,INC0000000286,employee,India,Beth Anglin,Don Goodliffe,2023-06-07 21:23:00.000000000,There was an issue,2 - High,Hardware
-Software,Resolved,2023-07-26 01:50:52.068385147,2023-06-03 10:45:00,Fred Luddy,INC0000000460,employee,India,Howard Johnson,Don Goodliffe,2023-09-23 18:17:16.716938240,There was an issue,4 - Low,Software
-Inquiry / Help,Resolved,2024-01-20 12:12:40.568716377,2023-06-03 12:39:00,Charlie Whitherspoon,INC0000000292,employee,United States,Charlie Whitherspoon,Don Goodliffe,2023-09-16 11:23:21.172473709,There was an issue,1 - Critical,Inquiry / Help
-Network,Closed,2023-09-20 20:58:46.751153395,2023-06-04 15:09:00,Beth Anglin,INC0000000125,system,Canada,Fred Luddy,ITIL User,2023-09-27 06:11:00.000000000,There was an issue,3 - Moderate,Network
-Hardware,Closed,2023-10-10 08:31:35.983826188,2023-06-04 21:23:00,Luke Wilson,INC0000000264,employee,Canada,Luke Wilson,ITIL User,2023-09-03 18:58:33.803118210,There was an issue,1 - Critical,Hardware
-Hardware,Resolved,2023-10-27 01:49:16.402277796,2023-06-05 08:20:00,Howard Johnson,INC0000000225,admin,India,Luke Wilson,Bud Richman,2023-08-20 02:50:00.481014067,There was an issue,1 - Critical,Hardware
-Hardware,Closed,2023-04-30 20:00:34.805177671,2023-06-06 09:03:00,Howard Johnson,INC0000000144,system,United States,Howard Johnson,ITIL User,2023-02-03 19:14:44.970166482,There was an issue,2 - High,Hardware
-Database,Closed,2023-12-14 20:37:19.388113353,2023-06-06 21:23:00,Beth Anglin,INC0000000268,system,India,Fred Luddy,Bud Richman,2023-04-14 10:00:00.000000000,There was an issue,3 - Moderate,Database
-Network,Closed,2023-08-04 04:46:10.581661057,2023-06-07 02:47:00,Luke Wilson,INC0000000213,system,UK,Fred Luddy,Bud Richman,2023-04-26 00:28:50.913657583,There was an issue,2 - High,Network
-Software,Resolved,2023-03-26 11:10:50.949076210,2023-06-07 15:24:00,Fred Luddy,INC0000000496,employee,United States,Luke Wilson,Bud Richman,2023-11-04 00:17:56.334785377,There was an issue,4 - Low,Software
-Inquiry / Help,Resolved,2023-10-14 14:32:43.560111853,2023-06-07 17:00:00,Fred Luddy,INC0000000347,system,Canada,Luke Wilson,ITIL User,2023-08-22 19:11:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
-Network,Resolved,2023-04-26 00:28:50.913657583,2023-06-08 18:44:00,Charlie Whitherspoon,INC0000000059,employee,Australia,Fred Luddy,Bud Richman,2023-08-10 06:30:11.927271898,There was an issue,4 - Low,Network
-Network,Resolved,2023-07-10 23:00:15.709745176,2023-06-08 22:05:00,Fred Luddy,INC0000000301,admin,UK,Luke Wilson,Don Goodliffe,2023-10-10 08:31:35.983826188,There was an issue,4 - Low,Network
-Inquiry / Help,Closed,2023-08-07 09:44:00.000000000,2023-06-09 08:53:00,Charlie Whitherspoon,INC0000000330,employee,India,Fred Luddy,ITIL User,2023-01-03 11:04:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
-Network,Closed,2024-01-19 09:54:00.000000000,2023-06-10 17:52:00,Charlie Whitherspoon,INC0000000064,employee,United States,Charlie Whitherspoon,Don Goodliffe,2023-03-17 15:33:56.380678280,There was an issue,2 - High,Network
-Database,Resolved,2023-11-08 06:15:25.825398065,2023-06-10 20:44:00,Fred Luddy,INC0000000133,admin,Canada,Luke Wilson,Bud Richman,2023-10-21 05:30:42.585855096,There was an issue,4 - Low,Database
-Inquiry / Help,Resolved,2023-11-24 06:22:46.772217434,2023-06-11 07:00:00,Beth Anglin,INC0000000344,employee,UK,Luke Wilson,Bud Richman,2023-07-26 17:51:52.767336231,There was an issue,4 - Low,Inquiry / Help
-Database,Closed,2024-02-01 06:07:10.554650244,2023-06-14 04:06:00,Beth Anglin,INC0000000356,employee,India,Fred Luddy,Don Goodliffe,2023-05-06 22:24:00.000000000,There was an issue,4 - Low,Database
-Software,Resolved,2023-11-20 14:15:29.239228781,2023-06-15 07:56:00,Charlie Whitherspoon,INC0000000121,system,Australia,Charlie Whitherspoon,ITIL User,2024-02-01 12:40:26.195788814,There was an issue,2 - High,Software
-Inquiry / Help,Resolved,2023-10-24 10:20:11.744461099,2023-06-19 10:41:00,Luke Wilson,INC0000000398,admin,India,Fred Luddy,Bud Richman,2023-05-24 09:29:18.509870284,There was an issue,4 - Low,Inquiry / Help
-Hardware,Closed,2023-03-01 04:41:50.658060449,2023-06-19 11:21:00,Charlie Whitherspoon,INC0000000062,system,Canada,Fred Luddy,Bud Richman,2023-11-19 13:31:44.558204717,There was an issue,4 - Low,Hardware
-Software,Resolved,2023-05-14 08:03:47.192602517,2023-06-19 12:22:00,Howard Johnson,INC0000000310,admin,Australia,Fred Luddy,David Loo,2024-01-31 02:23:56.445975993,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-05-30 11:21:04.259433606,2023-06-19 13:59:00,Howard Johnson,INC0000000251,admin,UK,Howard Johnson,Don Goodliffe,2023-07-22 05:03:13.822074451,There was an issue,2 - High,Network
-Inquiry / Help,Resolved,2023-02-17 00:34:25.927389861,2023-06-21 19:04:00,Luke Wilson,INC0000000145,system,India,Charlie Whitherspoon,Bud Richman,2023-10-08 05:16:54.012585598,There was an issue,2 - High,Inquiry / Help
-Inquiry / Help,Resolved,2023-09-22 21:14:00.000000000,2023-06-22 17:34:00,Charlie Whitherspoon,INC0000000265,employee,Canada,Charlie Whitherspoon,Bud Richman,2023-11-15 23:12:53.763111504,There was an issue,3 - Moderate,Inquiry / Help
-Software,Closed,2023-12-09 17:15:01.861232926,2023-06-23 12:47:00,Luke Wilson,INC0000000358,employee,Australia,Fred Luddy,Bud Richman,2023-10-08 21:29:55.684306333,There was an issue,3 - Moderate,Software
-Database,Closed,2023-06-09 23:10:07.618999909,2023-06-23 20:11:00,Howard Johnson,INC0000000266,system,UK,Beth Anglin,Bud Richman,2023-12-06 22:33:01.700205220,There was an issue,3 - Moderate,Database
-Network,Resolved,2023-06-24 09:17:21.801903137,2023-06-25 04:50:00,Howard Johnson,INC0000000045,employee,UK,Fred Luddy,Don Goodliffe,2023-10-06 07:39:16.761597562,There was an issue,4 - Low,Network
-Inquiry / Help,Closed,2023-08-17 04:45:43.185739101,2023-06-25 10:31:00,Beth Anglin,INC0000000468,admin,Australia,Charlie Whitherspoon,ITIL User,2023-06-01 13:53:33.745863862,There was an issue,2 - High,Inquiry / Help
-Database,Resolved,2023-08-10 22:01:38.300764703,2023-06-25 22:45:00,Luke Wilson,INC0000000219,system,United States,Luke Wilson,Bud Richman,2023-12-17 23:44:55.013288975,There was an issue,2 - High,Database
-Hardware,Closed,2024-02-07 21:56:58.515415708,2023-06-26 06:56:00,Charlie Whitherspoon,INC0000000294,admin,Australia,Beth Anglin,ITIL User,2023-06-18 08:09:47.068608027,There was an issue,2 - High,Hardware
-Database,Closed,2023-04-13 12:13:00.000000000,2023-06-26 08:23:00,Fred Luddy,INC0000000252,admin,India,Luke Wilson,ITIL User,2023-02-28 16:37:00.000000000,There was an issue,4 - Low,Database
-Hardware,Closed,2023-11-15 23:12:53.763111504,2023-06-26 17:38:00,Beth Anglin,INC0000000401,employee,India,Luke Wilson,Bud Richman,2023-10-03 08:14:22.675801438,There was an issue,3 - Moderate,Hardware
-Database,Resolved,2024-01-19 07:24:42.210493722,2023-06-27 10:20:00,Howard Johnson,INC0000000435,system,India,Beth Anglin,Don Goodliffe,2023-03-05 11:31:06.569025031,There was an issue,4 - Low,Database
-Hardware,Closed,2024-02-09 04:30:29.586553971,2023-06-27 21:41:00,Beth Anglin,INC0000000408,admin,United States,Beth Anglin,ITIL User,2023-10-30 18:57:00.000000000,There was an issue,1 - Critical,Hardware
-Inquiry / Help,Closed,2023-05-06 00:19:06.845921162,2023-06-28 11:02:00,Fred Luddy,INC0000000038,employee,Canada,Beth Anglin,David Loo,2023-10-31 00:43:50.133149704,There was an issue,1 - Critical,Inquiry / Help
-Database,Resolved,2024-01-27 16:50:43.924769422,2023-06-28 14:35:00,Charlie Whitherspoon,INC0000000426,admin,UK,Charlie Whitherspoon,ITIL User,2023-08-05 08:06:09.262346306,There was an issue,1 - Critical,Database
-Software,Resolved,2023-11-11 22:19:34.292012026,2023-06-29 19:01:00,Charlie Whitherspoon,INC0000000419,employee,Australia,Beth Anglin,Bud Richman,2023-07-13 16:19:33.649785697,There was an issue,4 - Low,Software
-Inquiry / Help,Closed,2024-01-08 21:09:04.022142416,2023-07-02 07:35:00,Fred Luddy,INC0000000171,system,India,Luke Wilson,Don Goodliffe,2023-08-13 06:41:18.526534971,There was an issue,3 - Moderate,Inquiry / Help
-Inquiry / Help,Closed,2023-02-07 09:37:36.868992308,2023-07-03 06:45:00,Charlie Whitherspoon,INC0000000172,admin,United States,Howard Johnson,ITIL User,2023-03-26 23:30:22.193990107,There was an issue,1 - Critical,Inquiry / Help
-Software,Resolved,2023-06-08 17:00:00.000000000,2023-07-04 04:13:00,Fred Luddy,INC0000000098,admin,India,Luke Wilson,Don Goodliffe,2023-05-28 08:38:00.000000000,There was an issue,2 - High,Software
-Inquiry / Help,Resolved,2023-06-11 09:48:35.368342810,2023-07-04 13:46:00,Beth Anglin,INC0000000183,employee,UK,Beth Anglin,David Loo,2023-06-02 00:47:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
-Inquiry / Help,Resolved,2023-07-06 07:29:00.832219981,2023-07-07 04:36:00,Charlie Whitherspoon,INC0000000083,employee,Australia,Fred Luddy,ITIL User,2023-10-11 14:36:28.517445744,There was an issue,2 - High,Inquiry / Help
-Software,Closed,2023-06-30 23:29:55.851304419,2023-07-07 04:48:00,Howard Johnson,INC0000000315,system,United States,Fred Luddy,ITIL User,2023-05-03 23:18:07.556497402,There was an issue,4 - Low,Software
-Inquiry / Help,Closed,2023-08-15 14:03:57.099952165,2023-07-07 05:58:00,Howard Johnson,INC0000000215,system,United States,Howard Johnson,ITIL User,2023-04-13 15:50:15.123078287,There was an issue,3 - Moderate,Inquiry / Help
-Hardware,Resolved,2023-04-05 05:58:43.770711476,2023-07-07 20:52:00,Howard Johnson,INC0000000123,system,Canada,Beth Anglin,ITIL User,2023-10-10 07:28:02.225169681,There was an issue,4 - Low,Hardware
-Software,Closed,2023-03-23 14:56:55.026865443,2023-07-08 00:31:00,Fred Luddy,INC0000000386,employee,UK,Howard Johnson,David Loo,2023-01-23 14:49:23.734002375,There was an issue,3 - Moderate,Software
-Database,Resolved,2023-06-02 00:47:00.000000000,2023-07-09 03:39:00,Luke Wilson,INC0000000224,system,Canada,Luke Wilson,Don Goodliffe,2023-11-27 12:48:59.344411018,There was an issue,3 - Moderate,Database
-Inquiry / Help,Closed,2023-10-12 20:28:38.706928972,2023-07-11 16:02:00,Luke Wilson,INC0000000313,admin,Canada,Luke Wilson,David Loo,2023-05-24 07:52:48.690310999,There was an issue,3 - Moderate,Inquiry / Help
-Database,Closed,2023-06-07 06:19:03.182476115,2023-07-11 18:42:00,Beth Anglin,INC0000000150,employee,Canada,Howard Johnson,David Loo,2024-02-12 22:31:48.126196708,There was an issue,2 - High,Database
-Hardware,Closed,2024-01-03 16:58:25.664592126,2023-07-12 00:27:00,Charlie Whitherspoon,INC0000000115,employee,Canada,Beth Anglin,ITIL User,2023-03-26 17:14:15.209900642,There was an issue,3 - Moderate,Hardware
-Software,Resolved,2023-03-31 22:32:42.024027147,2023-07-12 03:22:00,Charlie Whitherspoon,INC0000000245,system,United States,Luke Wilson,David Loo,2023-05-19 01:48:03.565852983,There was an issue,1 - Critical,Software
-Software,Closed,2023-11-12 08:41:55.212270110,2023-07-12 05:50:00,Howard Johnson,INC0000000352,admin,India,Howard Johnson,Bud Richman,2023-10-01 17:15:12.850603255,There was an issue,2 - High,Software
-Network,Resolved,2024-02-07 23:14:21.894263712,2023-07-14 21:27:00,Howard Johnson,INC0000000428,admin,Canada,Charlie Whitherspoon,Don Goodliffe,2023-03-21 01:02:44.587646914,There was an issue,2 - High,Network
-Hardware,Resolved,2023-07-12 18:45:07.705046349,2023-07-15 12:17:00,Charlie Whitherspoon,INC0000000368,employee,Canada,Howard Johnson,Don Goodliffe,2023-10-11 11:31:18.203048562,There was an issue,2 - High,Hardware
-Hardware,Closed,2023-03-11 20:13:52.693225203,2023-07-15 14:09:00,Charlie Whitherspoon,INC0000000040,employee,Canada,Luke Wilson,Don Goodliffe,2023-05-19 07:25:36.115649042,There was an issue,2 - High,Hardware
-Hardware,Resolved,2023-02-13 00:56:00.000000000,2023-07-16 10:58:00,Charlie Whitherspoon,INC0000000170,employee,Australia,Howard Johnson,David Loo,2023-07-14 06:35:05.209399792,There was an issue,4 - Low,Hardware
-Database,Resolved,2023-02-05 00:09:42.176650334,2023-07-19 12:03:00,Luke Wilson,INC0000000462,admin,Canada,Luke Wilson,David Loo,2023-10-18 21:50:20.165772966,There was an issue,3 - Moderate,Database
-Network,Resolved,2023-06-15 22:13:18.416949743,2023-07-20 12:12:00,Fred Luddy,INC0000000369,system,Canada,Luke Wilson,David Loo,2024-02-01 02:14:30.096751951,There was an issue,2 - High,Network
-Software,Closed,2023-10-21 05:30:42.585855096,2023-07-21 07:12:00,Beth Anglin,INC0000000437,admin,Canada,Beth Anglin,Bud Richman,2023-07-06 13:08:33.074641515,There was an issue,1 - Critical,Software
-Database,Closed,2023-12-14 06:24:13.933877695,2023-07-22 04:13:00,Howard Johnson,INC0000000118,system,United States,Charlie Whitherspoon,Bud Richman,2023-01-18 12:15:00.000000000,There was an issue,1 - Critical,Database
-Inquiry / Help,Closed,2023-05-14 12:40:40.813937606,2023-07-22 16:29:00,Luke Wilson,INC0000000078,system,UK,Luke Wilson,ITIL User,2023-03-17 12:37:48.453885624,There was an issue,2 - High,Inquiry / Help
-Database,Resolved,2023-03-08 05:56:31.551604697,2023-07-22 22:39:00,Fred Luddy,INC0000000131,employee,Canada,Howard Johnson,Don Goodliffe,2023-06-29 22:17:23.746230748,There was an issue,2 - High,Database
-Inquiry / Help,Closed,2023-06-07 16:18:08.061177566,2023-07-22 23:48:00,Charlie Whitherspoon,INC0000000296,employee,UK,Charlie Whitherspoon,Bud Richman,2024-01-20 12:12:40.568716377,There was an issue,1 - Critical,Inquiry / Help
-Network,Closed,2023-02-03 08:09:45.834493992,2023-07-23 08:50:00,Luke Wilson,INC0000000004,system,India,Charlie Whitherspoon,ITIL User,2023-03-29 18:40:47.611595618,There was an issue,1 - Critical,Network
-Hardware,Closed,2023-11-12 08:10:38.248010764,2023-07-24 09:09:00,Howard Johnson,INC0000000163,system,United States,Charlie Whitherspoon,Don Goodliffe,2024-01-21 14:31:46.018925216,There was an issue,3 - Moderate,Hardware
-Inquiry / Help,Closed,2023-04-15 04:23:54.073331834,2023-07-24 09:13:00,Luke Wilson,INC0000000361,admin,Canada,Charlie Whitherspoon,Don Goodliffe,2023-08-07 06:13:36.125124469,There was an issue,1 - Critical,Inquiry / Help
-Network,Closed,2023-08-23 19:40:27.266944172,2023-07-25 08:08:00,Howard Johnson,INC0000000322,employee,United States,Charlie Whitherspoon,ITIL User,2023-08-24 03:28:09.603360173,There was an issue,2 - High,Network
-Software,Closed,2023-02-18 06:02:38.010888088,2023-07-25 20:00:00,Fred Luddy,INC0000000216,system,India,Howard Johnson,Don Goodliffe,2023-08-15 21:18:27.557222760,There was an issue,4 - Low,Software
-Hardware,Resolved,2023-09-15 01:07:41.823641770,2023-07-26 06:53:00,Charlie Whitherspoon,INC0000000306,system,UK,Fred Luddy,Don Goodliffe,2023-07-25 23:13:55.734880101,There was an issue,4 - Low,Hardware
-Hardware,Closed,2023-09-07 23:02:26.238518168,2023-07-26 17:09:00,Fred Luddy,INC0000000379,system,United States,Fred Luddy,Bud Richman,2023-01-18 10:47:18.859313409,There was an issue,2 - High,Hardware
-Software,Closed,2023-09-17 17:36:33.312203552,2023-07-27 04:40:00,Beth Anglin,INC0000000487,system,Australia,Beth Anglin,Bud Richman,2023-04-13 00:44:40.599581505,There was an issue,4 - Low,Software
-Database,Resolved,2023-11-18 17:10:46.429479768,2023-07-27 08:18:00,Luke Wilson,INC0000000153,admin,Australia,Charlie Whitherspoon,Bud Richman,2023-11-29 19:40:37.040547419,There was an issue,3 - Moderate,Database
-Hardware,Resolved,2023-04-13 00:44:40.599581505,2023-07-27 19:21:00,Fred Luddy,INC0000000239,admin,Australia,Howard Johnson,Bud Richman,2023-02-07 09:37:36.868992308,There was an issue,3 - Moderate,Hardware
-Database,Resolved,2023-11-07 04:08:46.640926620,2023-07-28 19:29:00,Luke Wilson,INC0000000010,employee,Australia,Charlie Whitherspoon,ITIL User,2023-06-07 16:18:08.061177566,There was an issue,1 - Critical,Database
-Database,Closed,2023-07-13 16:19:33.649785697,2023-07-29 10:15:00,Beth Anglin,INC0000000139,system,Canada,Charlie Whitherspoon,Bud Richman,2023-08-30 13:49:54.648995923,There was an issue,2 - High,Database
-Inquiry / Help,Closed,2023-06-11 20:25:35.094482408,2023-07-29 11:39:00,Beth Anglin,INC0000000355,employee,United States,Charlie Whitherspoon,David Loo,2023-05-22 23:24:00.000000000,There was an issue,4 - Low,Inquiry / Help
-Network,Closed,2023-07-25 09:09:00.000000000,2023-07-30 09:49:00,Beth Anglin,INC0000000181,system,United States,Beth Anglin,Bud Richman,2023-08-24 00:59:37.177124394,There was an issue,2 - High,Network
-Inquiry / Help,Closed,2023-11-20 13:58:24.005162219,2023-07-30 09:52:00,Howard Johnson,INC0000000439,employee,United States,Charlie Whitherspoon,ITIL User,2023-01-23 16:07:55.271807823,There was an issue,2 - High,Inquiry / Help
-Network,Closed,2023-01-19 02:40:53.945578841,2023-07-30 17:08:00,Luke Wilson,INC0000000109,system,Australia,Howard Johnson,David Loo,2023-01-12 00:34:00.000000000,There was an issue,4 - Low,Network
-Software,Resolved,2023-08-03 13:35:26.483807424,2023-08-01 05:44:00,Charlie Whitherspoon,INC0000000177,employee,India,Fred Luddy,Bud Richman,2023-08-26 09:29:01.912064757,There was an issue,1 - Critical,Software
-Software,Closed,2023-11-22 14:54:17.505991208,2023-08-01 11:34:00,Beth Anglin,INC0000000334,employee,Australia,Beth Anglin,David Loo,2023-09-13 23:47:44.874072603,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2023-09-27 06:11:00.000000000,2023-08-01 13:22:00,Howard Johnson,INC0000000179,system,United States,Luke Wilson,ITIL User,2023-03-14 06:30:47.245274154,There was an issue,2 - High,Inquiry / Help
-Network,Resolved,2023-08-02 05:44:00.000000000,2023-08-02 07:41:00,Luke Wilson,INC0000000335,employee,India,Fred Luddy,ITIL User,2023-01-14 09:42:31.239968317,There was an issue,4 - Low,Network
-Network,Resolved,2023-09-03 02:19:00.000000000,2023-08-02 14:46:00,Charlie Whitherspoon,INC0000000013,employee,India,Fred Luddy,Bud Richman,2023-11-20 13:58:24.005162219,There was an issue,2 - High,Network
-Inquiry / Help,Resolved,2023-03-21 01:02:44.587646914,2023-08-03 08:39:00,Luke Wilson,INC0000000440,employee,United States,Charlie Whitherspoon,Don Goodliffe,2024-01-23 07:05:32.181816124,There was an issue,3 - Moderate,Inquiry / Help
-Database,Resolved,2023-07-20 09:47:52.908236069,2023-08-03 16:41:00,Beth Anglin,INC0000000108,system,UK,Howard Johnson,Bud Richman,2023-06-17 06:06:14.854314828,There was an issue,4 - Low,Database
-Software,Resolved,2023-09-16 11:23:21.172473709,2023-08-03 18:56:00,Luke Wilson,INC0000000006,system,India,Fred Luddy,David Loo,2023-11-24 19:39:37.248766516,There was an issue,1 - Critical,Software
-Inquiry / Help,Closed,2023-07-11 23:34:29.390060680,2023-08-05 07:39:00,Beth Anglin,INC0000000070,admin,Australia,Charlie Whitherspoon,Bud Richman,2023-06-03 13:13:53.896117331,There was an issue,4 - Low,Inquiry / Help
-Inquiry / Help,Resolved,2023-08-11 16:02:37.684405305,2023-08-06 09:44:00,Howard Johnson,INC0000000031,admin,Australia,Howard Johnson,Don Goodliffe,2023-11-25 13:45:38.979607981,There was an issue,4 - Low,Inquiry / Help
-Database,Resolved,2023-08-24 03:28:09.603360173,2023-08-07 02:37:00,Howard Johnson,INC0000000454,system,UK,Fred Luddy,David Loo,2024-02-09 04:30:29.586553971,There was an issue,4 - Low,Database
-Hardware,Closed,2023-11-25 18:11:25.410173561,2023-08-08 09:29:00,Fred Luddy,INC0000000420,employee,India,Fred Luddy,Don Goodliffe,2023-02-08 15:38:00.000000000,There was an issue,3 - Moderate,Hardware
-Database,Closed,2023-06-13 22:57:17.038108358,2023-08-09 04:10:00,Charlie Whitherspoon,INC0000000223,employee,UK,Luke Wilson,Don Goodliffe,2023-09-15 15:54:00.000000000,There was an issue,2 - High,Database
-Hardware,Resolved,2023-11-23 05:26:06.568026419,2023-08-09 04:13:00,Howard Johnson,INC0000000431,employee,United States,Charlie Whitherspoon,David Loo,2023-08-26 15:36:56.981753690,There was an issue,4 - Low,Hardware
-Hardware,Closed,2023-04-13 19:24:58.346273013,2023-08-09 17:08:00,Beth Anglin,INC0000000126,employee,United States,Luke Wilson,David Loo,2023-09-22 07:03:43.180128742,There was an issue,1 - Critical,Hardware
-Software,Resolved,2023-06-06 08:20:00.000000000,2023-08-10 08:09:00,Luke Wilson,INC0000000314,employee,Australia,Charlie Whitherspoon,ITIL User,2023-01-19 02:40:53.945578841,There was an issue,2 - High,Software
-Inquiry / Help,Closed,2023-01-21 03:18:58.590910419,2023-08-11 04:15:00,Beth Anglin,INC0000000243,employee,UK,Fred Luddy,Don Goodliffe,2023-11-29 21:52:24.416389196,There was an issue,3 - Moderate,Inquiry / Help
-Network,Closed,2023-04-08 07:50:02.291054808,2023-08-11 09:04:00,Charlie Whitherspoon,INC0000000390,system,United States,Howard Johnson,David Loo,2023-12-15 13:12:56.653826436,There was an issue,3 - Moderate,Network
-Inquiry / Help,Closed,2023-06-25 12:04:04.032337887,2023-08-12 03:28:00,Beth Anglin,INC0000000099,system,United States,Fred Luddy,ITIL User,2023-10-07 04:57:07.243553547,There was an issue,3 - Moderate,Inquiry / Help
-Network,Resolved,2023-10-16 11:37:53.443608066,2023-08-12 15:36:00,Charlie Whitherspoon,INC0000000336,employee,United States,Luke Wilson,Bud Richman,2023-06-06 12:59:19.008350345,There was an issue,1 - Critical,Network
-Software,Closed,2023-10-11 14:36:28.517445744,2023-08-13 08:04:00,Howard Johnson,INC0000000093,employee,Australia,Luke Wilson,Don Goodliffe,2024-01-19 09:54:00.000000000,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-03-17 12:37:48.453885624,2023-08-14 09:58:00,Luke Wilson,INC0000000272,employee,Australia,Beth Anglin,Bud Richman,2023-09-05 02:07:43.113682721,There was an issue,2 - High,Network
-Inquiry / Help,Resolved,2023-01-22 04:15:55.294347270,2023-08-15 20:03:00,Charlie Whitherspoon,INC0000000228,employee,Australia,Charlie Whitherspoon,Bud Richman,2024-01-03 16:58:25.664592126,There was an issue,3 - Moderate,Inquiry / Help
-Database,Closed,2023-05-18 20:30:00.000000000,2023-08-16 19:14:00,Fred Luddy,INC0000000432,admin,UK,Howard Johnson,ITIL User,2024-01-26 14:08:14.089327678,There was an issue,3 - Moderate,Database
-Network,Closed,2023-05-19 09:53:34.982040620,2023-08-17 11:38:00,Howard Johnson,INC0000000030,admin,Canada,Beth Anglin,ITIL User,2023-02-19 05:46:55.363664679,There was an issue,1 - Critical,Network
-Database,Resolved,2023-05-15 10:38:15.815796741,2023-08-18 10:57:00,Beth Anglin,INC0000000359,employee,UK,Luke Wilson,Don Goodliffe,2023-10-27 01:49:16.402277796,There was an issue,2 - High,Database
-Hardware,Resolved,2023-09-18 08:09:07.717459166,2023-08-19 12:57:00,Howard Johnson,INC0000000374,admin,India,Luke Wilson,ITIL User,2023-11-18 17:10:46.429479768,There was an issue,1 - Critical,Hardware
-Software,Resolved,2023-12-11 12:52:00.000000000,2023-08-20 08:09:00,Luke Wilson,INC0000000277,system,Australia,Beth Anglin,David Loo,2023-04-29 07:22:13.691497066,There was an issue,3 - Moderate,Software
-Hardware,Closed,2024-02-01 12:40:26.195788814,2023-08-20 08:38:00,Howard Johnson,INC0000000229,admin,Canada,Beth Anglin,ITIL User,2023-01-22 04:15:55.294347270,There was an issue,4 - Low,Hardware
-Database,Closed,2023-06-20 19:52:27.802682144,2023-08-20 18:16:00,Charlie Whitherspoon,INC0000000308,employee,Australia,Luke Wilson,Bud Richman,2024-01-19 07:24:42.210493722,There was an issue,4 - Low,Database
-Software,Resolved,2023-08-08 20:25:25.735379947,2023-08-21 07:17:00,Charlie Whitherspoon,INC0000000345,admin,Canada,Charlie Whitherspoon,Bud Richman,2023-08-27 03:03:00.000000000,There was an issue,4 - Low,Software
-Network,Closed,2023-03-16 11:23:45.848878332,2023-08-21 07:38:00,Howard Johnson,INC0000000017,employee,Australia,Howard Johnson,Bud Richman,2023-12-07 19:08:00.907490315,There was an issue,1 - Critical,Network
-Software,Resolved,2023-08-20 02:50:00.481014067,2023-08-21 19:11:00,Fred Luddy,INC0000000092,admin,UK,Howard Johnson,ITIL User,2023-01-28 01:28:09.743197803,There was an issue,3 - Moderate,Software
-Software,Resolved,2023-11-02 21:31:23.289304071,2023-08-22 03:19:00,Howard Johnson,INC0000000458,admin,Canada,Luke Wilson,Don Goodliffe,2023-10-19 02:19:42.091067289,There was an issue,3 - Moderate,Software
-Inquiry / Help,Closed,2023-10-31 10:15:16.995034613,2023-08-24 07:22:00,Beth Anglin,INC0000000244,admin,Australia,Charlie Whitherspoon,ITIL User,2024-01-24 00:12:58.375121721,There was an issue,1 - Critical,Inquiry / Help
-Software,Resolved,2023-08-24 00:59:37.177124394,2023-08-25 12:10:00,Luke Wilson,INC0000000074,system,Australia,Fred Luddy,David Loo,2023-09-15 01:07:41.823641770,There was an issue,2 - High,Software
-Network,Closed,2023-04-26 13:43:55.256743773,2023-08-25 22:41:00,Beth Anglin,INC0000000072,system,Canada,Fred Luddy,Bud Richman,2023-04-15 04:23:54.073331834,There was an issue,4 - Low,Network
-Database,Closed,2023-07-27 12:30:15.368139102,2023-08-26 03:03:00,Fred Luddy,INC0000000456,employee,Australia,Howard Johnson,ITIL User,2023-03-08 05:56:31.551604697,There was an issue,1 - Critical,Database
-Inquiry / Help,Closed,2023-06-22 02:33:39.410009617,2023-08-27 21:14:00,Beth Anglin,INC0000000283,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-12-09 12:22:44.658032345,There was an issue,3 - Moderate,Inquiry / Help
-Network,Resolved,2023-05-04 21:57:00.000000000,2023-08-28 16:06:00,Howard Johnson,INC0000000478,admin,Australia,Luke Wilson,Don Goodliffe,2023-11-09 01:36:23.094504250,There was an issue,1 - Critical,Network
-Network,Resolved,2023-10-01 17:15:12.850603255,2023-08-30 15:44:00,Luke Wilson,INC0000000227,admin,India,Howard Johnson,David Loo,2023-08-26 16:09:36.942939516,There was an issue,4 - Low,Network
-Software,Closed,2023-09-23 18:17:16.716938240,2023-08-31 14:06:00,Fred Luddy,INC0000000316,admin,India,Fred Luddy,ITIL User,2023-01-13 03:44:31.383066130,There was an issue,3 - Moderate,Software
-Database,Resolved,2023-11-27 06:06:19.635851412,2023-09-02 01:15:00,Howard Johnson,INC0000000499,admin,India,Luke Wilson,David Loo,2023-04-24 09:36:05.775625483,There was an issue,3 - Moderate,Database
-Hardware,Closed,2023-08-17 17:26:24.730681330,2023-09-02 02:19:00,Charlie Whitherspoon,INC0000000380,admin,UK,Charlie Whitherspoon,Don Goodliffe,2023-06-05 15:09:00.000000000,There was an issue,2 - High,Hardware
-Hardware,Closed,2023-01-05 17:54:36.886511927,2023-09-02 03:20:00,Howard Johnson,INC0000000081,system,India,Fred Luddy,Bud Richman,2024-01-08 21:09:04.022142416,There was an issue,2 - High,Hardware
-Inquiry / Help,Closed,2023-08-25 09:49:36.214757254,2023-09-03 07:56:00,Charlie Whitherspoon,INC0000000101,admin,United States,Charlie Whitherspoon,ITIL User,2023-11-11 22:19:34.292012026,There was an issue,3 - Moderate,Inquiry / Help
-Network,Closed,2023-02-26 07:36:08.762766728,2023-09-03 12:21:00,Howard Johnson,INC0000000189,system,India,Fred Luddy,Don Goodliffe,2023-10-09 09:10:00.000000000,There was an issue,3 - Moderate,Network
-Network,Closed,2023-06-05 15:09:00.000000000,2023-09-03 15:48:00,Howard Johnson,INC0000000173,admin,Australia,Fred Luddy,David Loo,2024-01-16 19:13:13.303553162,There was an issue,2 - High,Network
-Database,Resolved,2023-09-13 23:47:44.874072603,2023-09-04 16:00:00,Fred Luddy,INC0000000305,employee,Canada,Howard Johnson,Don Goodliffe,2023-07-06 07:29:00.832219981,There was an issue,2 - High,Database
-Database,Resolved,2023-06-13 20:13:50.263024628,2023-09-04 18:36:00,Fred Luddy,INC0000000071,system,United States,Fred Luddy,Bud Richman,2023-10-05 14:59:20.783399866,There was an issue,2 - High,Database
-Database,Closed,2024-02-01 02:14:30.096751951,2023-09-06 12:24:00,Fred Luddy,INC0000000044,employee,United States,Beth Anglin,ITIL User,2023-08-21 08:48:34.847604103,There was an issue,4 - Low,Database
-Hardware,Resolved,2023-08-13 15:36:00.000000000,2023-09-07 03:40:00,Fred Luddy,INC0000000154,system,United States,Howard Johnson,David Loo,2024-02-08 06:58:35.863529275,There was an issue,1 - Critical,Hardware
-Network,Closed,2023-06-29 12:44:20.753397452,2023-09-07 17:44:00,Fred Luddy,INC0000000375,system,Australia,Howard Johnson,Bud Richman,2023-09-28 19:04:36.066288946,There was an issue,1 - Critical,Network
-Software,Closed,2023-08-19 10:57:00.000000000,2023-09-08 07:01:00,Luke Wilson,INC0000000046,system,UK,Howard Johnson,Don Goodliffe,2023-07-25 09:09:00.000000000,There was an issue,2 - High,Software
-Hardware,Resolved,2023-04-08 15:04:33.153395278,2023-09-08 17:14:00,Howard Johnson,INC0000000340,employee,Canada,Howard Johnson,ITIL User,2024-01-21 17:52:21.410495977,There was an issue,3 - Moderate,Hardware
-Inquiry / Help,Resolved,2023-10-31 00:43:50.133149704,2023-09-11 18:57:00,Beth Anglin,INC0000000180,system,India,Beth Anglin,David Loo,2023-01-12 10:23:00.628645777,There was an issue,3 - Moderate,Inquiry / Help
-Database,Closed,2023-06-30 06:01:54.007909417,2023-09-12 15:43:00,Howard Johnson,INC0000000486,admin,Canada,Charlie Whitherspoon,Don Goodliffe,2023-01-24 18:39:21.848415555,There was an issue,2 - High,Database
-Database,Closed,2024-01-24 00:12:58.375121721,2023-09-13 03:14:00,Luke Wilson,INC0000000076,admin,United States,Howard Johnson,David Loo,2024-01-21 13:40:00.000000000,There was an issue,1 - Critical,Database
-Inquiry / Help,Closed,2023-12-07 19:08:00.907490315,2023-09-13 23:38:00,Howard Johnson,INC0000000279,system,UK,Fred Luddy,David Loo,2023-05-29 16:00:46.480174225,There was an issue,1 - Critical,Inquiry / Help
-Database,Closed,2023-11-19 08:35:26.721892000,2023-09-14 10:29:00,Luke Wilson,INC0000000021,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-11-23 08:35:34.467772083,There was an issue,2 - High,Database
-Inquiry / Help,Resolved,2023-09-28 19:04:36.066288946,2023-09-14 10:58:00,Beth Anglin,INC0000000346,admin,Australia,Luke Wilson,ITIL User,2023-06-22 02:33:39.410009617,There was an issue,1 - Critical,Inquiry / Help
-Database,Resolved,2023-09-22 13:11:16.460337579,2023-09-14 13:00:00,Howard Johnson,INC0000000438,admin,United States,Fred Luddy,ITIL User,2023-11-04 10:27:01.152081419,There was an issue,4 - Low,Database
-Software,Closed,2023-01-30 01:44:17.443653956,2023-09-14 15:54:00,Fred Luddy,INC0000000255,system,UK,Fred Luddy,ITIL User,2023-09-11 18:47:05.423433239,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2023-08-22 19:11:00.000000000,2023-09-15 05:28:00,Luke Wilson,INC0000000410,employee,Canada,Howard Johnson,David Loo,2023-07-20 02:37:10.813279462,There was an issue,1 - Critical,Inquiry / Help
-Inquiry / Help,Resolved,2023-07-31 04:33:45.303280610,2023-09-16 09:18:00,Charlie Whitherspoon,INC0000000148,employee,UK,Luke Wilson,ITIL User,2023-07-31 00:33:13.437296119,There was an issue,1 - Critical,Inquiry / Help
-Network,Resolved,2023-03-13 09:38:15.903837660,2023-09-16 09:20:00,Luke Wilson,INC0000000085,admin,Australia,Fred Luddy,David Loo,2023-07-20 09:47:52.908236069,There was an issue,4 - Low,Network
-Inquiry / Help,Closed,2023-05-13 14:49:23.379483573,2023-09-18 03:29:00,Beth Anglin,INC0000000430,admin,United States,Luke Wilson,ITIL User,2023-02-05 00:09:42.176650334,There was an issue,2 - High,Inquiry / Help
-Database,Resolved,2023-04-13 02:17:59.600859991,2023-09-19 03:45:00,Luke Wilson,INC0000000444,system,Australia,Fred Luddy,ITIL User,2023-12-14 13:02:12.152455924,There was an issue,2 - High,Database
-Database,Closed,2023-08-19 05:22:39.220366354,2023-09-19 08:44:00,Howard Johnson,INC0000000191,admin,United States,Luke Wilson,Bud Richman,2023-08-04 04:46:10.581661057,There was an issue,4 - Low,Database
-Hardware,Closed,2023-09-11 18:47:05.423433239,2023-09-20 06:22:00,Luke Wilson,INC0000000436,admin,India,Howard Johnson,ITIL User,2023-06-29 12:44:20.753397452,There was an issue,4 - Low,Hardware
-Software,Closed,2023-05-31 14:07:51.086048950,2023-09-20 20:36:00,Charlie Whitherspoon,INC0000000143,employee,Canada,Charlie Whitherspoon,David Loo,2023-12-17 00:37:06.937192986,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2024-01-16 19:13:13.303553162,2023-09-21 05:32:00,Luke Wilson,INC0000000117,employee,UK,Fred Luddy,ITIL User,2023-09-14 16:03:56.241021820,There was an issue,1 - Critical,Inquiry / Help
-Software,Closed,2023-08-01 00:45:22.754376187,2023-09-21 14:49:00,Charlie Whitherspoon,INC0000000348,admin,United States,Fred Luddy,David Loo,2023-03-02 18:17:24.556975522,There was an issue,1 - Critical,Software
-Inquiry / Help,Closed,2023-09-18 19:43:08.637023310,2023-09-21 21:14:00,Charlie Whitherspoon,INC0000000060,system,UK,Charlie Whitherspoon,ITIL User,2023-11-23 15:56:17.027339265,There was an issue,1 - Critical,Inquiry / Help
-Software,Resolved,2023-09-13 01:47:32.680016461,2023-09-21 23:53:00,Fred Luddy,INC0000000246,system,UK,Beth Anglin,Bud Richman,2023-02-18 18:49:23.647006730,There was an issue,2 - High,Software
-Software,Closed,2023-10-10 07:28:02.225169681,2023-09-24 10:56:00,Fred Luddy,INC0000000262,system,Canada,Fred Luddy,Bud Richman,2023-04-13 19:24:58.346273013,There was an issue,4 - Low,Software
-Database,Closed,2023-10-11 11:31:18.203048562,2023-09-24 13:55:00,Beth Anglin,INC0000000463,system,United States,Howard Johnson,Bud Richman,2023-09-26 02:31:00.000000000,There was an issue,3 - Moderate,Database
-Network,Resolved,2023-07-14 21:15:31.584390518,2023-09-25 02:31:00,Luke Wilson,INC0000000297,admin,India,Fred Luddy,David Loo,2023-10-05 10:37:47.028545047,There was an issue,1 - Critical,Network
-Inquiry / Help,Resolved,2023-04-17 11:40:20.915287122,2023-09-25 19:21:00,Luke Wilson,INC0000000236,admin,UK,Beth Anglin,Bud Richman,2023-08-02 05:44:00.000000000,There was an issue,3 - Moderate,Inquiry / Help
-Inquiry / Help,Closed,2023-12-01 04:31:00.000000000,2023-09-25 20:40:00,Fred Luddy,INC0000000270,system,Australia,Luke Wilson,Don Goodliffe,2023-03-22 15:24:16.646216503,There was an issue,4 - Low,Inquiry / Help
-Software,Resolved,2023-08-24 03:39:08.172397201,2023-09-25 20:56:00,Fred Luddy,INC0000000186,admin,Canada,Beth Anglin,Don Goodliffe,2023-03-11 13:42:59.511508874,There was an issue,3 - Moderate,Software
-Hardware,Resolved,2023-09-22 23:55:17.560026848,2023-09-26 00:01:00,Charlie Whitherspoon,INC0000000197,system,Australia,Luke Wilson,Don Goodliffe,2023-09-13 01:47:32.680016461,There was an issue,2 - High,Hardware
-Database,Resolved,2023-09-13 05:14:51.293532720,2023-09-26 06:11:00,Howard Johnson,INC0000000403,system,India,Beth Anglin,Don Goodliffe,2023-09-21 01:28:06.686513687,There was an issue,2 - High,Database
-Inquiry / Help,Resolved,2023-07-23 16:38:46.547163481,2023-09-27 00:04:00,Beth Anglin,INC0000000208,system,United States,Beth Anglin,Bud Richman,2023-12-26 08:26:25.509637696,There was an issue,2 - High,Inquiry / Help
-Hardware,Resolved,2023-11-14 12:04:58.180425139,2023-09-27 23:08:00,Charlie Whitherspoon,INC0000000232,system,Australia,Howard Johnson,Don Goodliffe,2023-12-11 12:52:00.000000000,There was an issue,4 - Low,Hardware
-Hardware,Resolved,2023-06-05 23:47:52.328722644,2023-09-28 01:57:00,Fred Luddy,INC0000000324,employee,India,Beth Anglin,ITIL User,2023-07-08 04:48:00.000000000,There was an issue,3 - Moderate,Hardware
-Hardware,Resolved,2023-10-18 00:52:00.000000000,2023-09-28 13:16:00,Howard Johnson,INC0000000209,system,Canada,Luke Wilson,Bud Richman,2023-11-22 14:54:17.505991208,There was an issue,1 - Critical,Hardware
-Database,Resolved,2023-02-05 14:01:58.932181130,2023-09-29 02:59:00,Luke Wilson,INC0000000052,system,Canada,Beth Anglin,David Loo,2023-08-02 05:21:25.991706511,There was an issue,2 - High,Database
-Database,Closed,2023-03-18 09:32:55.751173465,2023-09-30 07:14:00,Luke Wilson,INC0000000238,admin,Canada,Fred Luddy,David Loo,2023-06-08 17:00:00.000000000,There was an issue,2 - High,Database
-Software,Closed,2023-08-07 18:21:44.544015394,2023-09-30 14:37:00,Beth Anglin,INC0000000176,employee,India,Charlie Whitherspoon,David Loo,2023-07-30 12:07:08.997531852,There was an issue,4 - Low,Software
-Inquiry / Help,Closed,2023-03-18 07:40:00.000000000,2023-10-01 18:20:00,Howard Johnson,INC0000000104,system,Canada,Howard Johnson,David Loo,2023-01-24 10:21:12.713928509,There was an issue,2 - High,Inquiry / Help
-Network,Closed,2023-12-17 23:44:55.013288975,2023-10-01 20:05:00,Luke Wilson,INC0000000122,admin,Canada,Howard Johnson,David Loo,2023-06-13 22:57:17.038108358,There was an issue,1 - Critical,Network
-Database,Resolved,2023-04-14 10:00:00.000000000,2023-10-02 01:05:00,Beth Anglin,INC0000000165,employee,UK,Luke Wilson,Bud Richman,2023-12-01 23:08:08.172813661,There was an issue,4 - Low,Database
-Software,Closed,2023-08-02 04:32:04.560171158,2023-10-02 20:23:00,Fred Luddy,INC0000000350,admin,United States,Howard Johnson,ITIL User,2023-01-23 02:21:48.999352525,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-12-01 23:08:08.172813661,2023-10-03 07:12:00,Howard Johnson,INC0000000182,employee,India,Luke Wilson,Don Goodliffe,2023-11-15 18:59:00.000000000,There was an issue,3 - Moderate,Network
-Hardware,Resolved,2023-02-09 20:37:54.209291607,2023-10-03 08:47:00,Fred Luddy,INC0000000360,system,UK,Fred Luddy,Bud Richman,2023-07-31 04:33:45.303280610,There was an issue,4 - Low,Hardware
-Network,Resolved,2024-01-06 13:12:25.109624389,2023-10-03 11:29:00,Charlie Whitherspoon,INC0000000364,employee,UK,Fred Luddy,Bud Richman,2023-08-08 20:25:25.735379947,There was an issue,4 - Low,Network
-Network,Closed,2023-06-29 19:11:43.933822843,2023-10-03 14:29:00,Charlie Whitherspoon,INC0000000027,admin,India,Fred Luddy,David Loo,2023-12-13 03:48:19.521259680,There was an issue,3 - Moderate,Network
-Inquiry / Help,Resolved,2023-07-06 13:13:24.843387226,2023-10-04 21:50:00,Howard Johnson,INC0000000234,employee,Canada,Beth Anglin,Don Goodliffe,2023-11-01 13:29:20.811811166,There was an issue,4 - Low,Inquiry / Help
-Network,Resolved,2023-12-09 22:53:40.047263709,2023-10-05 06:17:00,Charlie Whitherspoon,INC0000000326,system,UK,Beth Anglin,Bud Richman,2023-05-06 08:53:56.696181202,There was an issue,3 - Moderate,Network
-Inquiry / Help,Closed,2023-05-27 02:04:45.048501853,2023-10-05 12:36:00,Beth Anglin,INC0000000158,system,Canada,Fred Luddy,David Loo,2023-04-08 15:04:33.153395278,There was an issue,2 - High,Inquiry / Help
-Network,Resolved,2023-10-07 15:02:09.446606967,2023-10-06 14:02:00,Luke Wilson,INC0000000132,employee,India,Beth Anglin,Don Goodliffe,2023-11-06 00:05:08.518186417,There was an issue,3 - Moderate,Network
-Database,Resolved,2023-03-17 15:33:56.380678280,2023-10-07 19:05:00,Fred Luddy,INC0000000481,employee,Canada,Charlie Whitherspoon,Bud Richman,2023-07-06 00:45:36.251942561,There was an issue,3 - Moderate,Database
-Hardware,Closed,2023-08-30 14:14:08.283969923,2023-10-08 09:10:00,Howard Johnson,INC0000000136,system,Canada,Charlie Whitherspoon,David Loo,2023-05-13 13:14:46.388208661,There was an issue,2 - High,Hardware
-Software,Resolved,2023-07-06 00:45:36.251942561,2023-10-08 10:24:00,Beth Anglin,INC0000000222,admin,India,Beth Anglin,David Loo,2023-07-19 14:54:49.403388921,There was an issue,1 - Critical,Software
-Inquiry / Help,Resolved,2023-08-07 06:13:36.125124469,2023-10-09 03:23:00,Beth Anglin,INC0000000260,admin,Australia,Beth Anglin,David Loo,2023-09-22 21:14:00.000000000,There was an issue,2 - High,Inquiry / Help
-Hardware,Closed,2023-10-11 12:19:52.993926660,2023-10-09 19:05:00,Beth Anglin,INC0000000193,system,India,Howard Johnson,Bud Richman,2023-11-11 05:32:19.072152631,There was an issue,2 - High,Hardware
-Inquiry / Help,Closed,2023-04-25 00:40:17.584686390,2023-10-10 09:43:00,Fred Luddy,INC0000000051,system,Australia,Charlie Whitherspoon,ITIL User,2023-11-24 06:22:46.772217434,There was an issue,1 - Critical,Inquiry / Help
-Network,Closed,2023-11-13 13:05:35.772593402,2023-10-11 11:15:00,Fred Luddy,INC0000000337,admin,Australia,Beth Anglin,ITIL User,2023-10-20 04:35:01.141400836,There was an issue,3 - Moderate,Network
-Network,Closed,2023-10-06 07:39:16.761597562,2023-10-11 14:14:00,Fred Luddy,INC0000000220,employee,Canada,Beth Anglin,Don Goodliffe,2023-09-13 13:44:32.848563603,There was an issue,4 - Low,Network
-Network,Closed,2023-10-30 13:55:51.015143360,2023-10-11 19:50:00,Beth Anglin,INC0000000457,admin,India,Howard Johnson,Bud Richman,2023-09-17 17:36:33.312203552,There was an issue,3 - Moderate,Network
-Inquiry / Help,Resolved,2023-08-07 18:20:23.668968040,2023-10-12 01:24:00,Charlie Whitherspoon,INC0000000421,employee,Canada,Howard Johnson,ITIL User,2023-10-28 17:01:26.639036991,There was an issue,4 - Low,Inquiry / Help
-Software,Resolved,2023-03-31 07:59:26.909209525,2023-10-12 03:06:00,Howard Johnson,INC0000000383,admin,United States,Luke Wilson,ITIL User,2023-11-09 09:27:41.299495824,There was an issue,4 - Low,Software
-Software,Resolved,2023-06-06 12:59:19.008350345,2023-10-12 20:39:00,Howard Johnson,INC0000000020,employee,Canada,Beth Anglin,Don Goodliffe,2023-08-03 13:35:26.483807424,There was an issue,1 - Critical,Software
-Network,Resolved,2023-01-12 10:23:00.628645777,2023-10-13 09:01:00,Luke Wilson,INC0000000447,system,United States,Howard Johnson,Bud Richman,2023-07-25 03:32:18.462401146,There was an issue,3 - Moderate,Network
-Network,Closed,2023-07-01 09:46:55.866723604,2023-10-14 19:37:00,Beth Anglin,INC0000000169,system,United States,Charlie Whitherspoon,David Loo,2023-11-07 11:30:00.000000000,There was an issue,1 - Critical,Network
-Database,Resolved,2023-09-13 13:44:32.848563603,2023-10-15 00:02:00,Fred Luddy,INC0000000102,employee,India,Luke Wilson,Bud Richman,2023-02-14 04:41:35.236486606,There was an issue,2 - High,Database
-Network,Resolved,2023-02-13 09:00:00.000000000,2023-10-15 00:53:00,Luke Wilson,INC0000000016,employee,Australia,Charlie Whitherspoon,Don Goodliffe,2023-10-10 07:54:06.270667738,There was an issue,1 - Critical,Network
-Inquiry / Help,Closed,2023-02-11 09:07:59.479099672,2023-10-15 17:23:00,Fred Luddy,INC0000000415,employee,Australia,Beth Anglin,ITIL User,2023-09-20 04:57:50.969058643,There was an issue,3 - Moderate,Inquiry / Help
-Network,Resolved,2023-08-09 07:59:01.326042131,2023-10-16 14:21:00,Howard Johnson,INC0000000378,employee,United States,Luke Wilson,Bud Richman,2023-11-12 08:10:38.248010764,There was an issue,1 - Critical,Network
-Database,Resolved,2023-07-06 03:31:13.838619495,2023-10-16 16:55:00,Charlie Whitherspoon,INC0000000007,admin,India,Charlie Whitherspoon,ITIL User,2023-12-09 17:15:01.861232926,There was an issue,3 - Moderate,Database
-Software,Closed,2023-04-26 07:15:31.647958414,2023-10-17 00:52:00,Charlie Whitherspoon,INC0000000111,employee,United States,Luke Wilson,David Loo,2023-10-14 07:51:41.450443462,There was an issue,2 - High,Software
-Hardware,Closed,2023-03-29 09:27:22.091188363,2023-10-20 02:34:00,Charlie Whitherspoon,INC0000000402,employee,Canada,Luke Wilson,Don Goodliffe,2023-03-01 04:41:50.658060449,There was an issue,4 - Low,Hardware
-Inquiry / Help,Resolved,2023-01-11 01:17:39.128189467,2023-10-21 03:48:00,Fred Luddy,INC0000000207,admin,UK,Charlie Whitherspoon,David Loo,2023-08-04 08:39:00.000000000,There was an issue,4 - Low,Inquiry / Help
-Software,Resolved,2023-03-05 11:31:06.569025031,2023-10-22 17:17:00,Charlie Whitherspoon,INC0000000082,employee,UK,Charlie Whitherspoon,Bud Richman,2023-04-08 07:50:02.291054808,There was an issue,3 - Moderate,Software
-Hardware,Closed,2023-07-21 18:09:17.803746956,2023-10-23 01:08:00,Howard Johnson,INC0000000471,employee,India,Howard Johnson,ITIL User,2024-01-25 11:01:00.578026325,There was an issue,4 - Low,Hardware
-Inquiry / Help,Closed,2023-04-24 02:25:13.899200115,2023-10-23 14:06:00,Charlie Whitherspoon,INC0000000257,employee,UK,Howard Johnson,David Loo,2023-03-30 05:18:20.748165094,There was an issue,2 - High,Inquiry / Help
-Software,Closed,2023-02-03 19:14:44.970166482,2023-10-24 02:28:00,Fred Luddy,INC0000000090,admin,Canada,Beth Anglin,ITIL User,2023-07-14 08:23:51.080019979,There was an issue,3 - Moderate,Software
-Database,Closed,2023-06-07 21:23:00.000000000,2023-10-24 20:18:00,Howard Johnson,INC0000000451,admin,UK,Fred Luddy,Don Goodliffe,2023-03-11 20:13:52.693225203,There was an issue,1 - Critical,Database
-Software,Resolved,2023-05-08 00:19:49.950083121,2023-10-25 03:39:00,Charlie Whitherspoon,INC0000000095,admin,UK,Luke Wilson,ITIL User,2023-09-28 10:20:40.858388369,There was an issue,4 - Low,Software
-Inquiry / Help,Resolved,2023-05-24 09:29:18.509870284,2023-10-25 05:06:00,Charlie Whitherspoon,INC0000000248,admin,India,Fred Luddy,David Loo,2023-04-08 23:37:33.628402771,There was an issue,1 - Critical,Inquiry / Help
-Database,Closed,2023-10-09 09:10:00.000000000,2023-10-26 10:39:00,Howard Johnson,INC0000000498,admin,UK,Howard Johnson,David Loo,2023-08-28 16:17:39.682367202,There was an issue,1 - Critical,Database
-Software,Closed,2023-07-09 20:00:30.308403141,2023-10-26 19:39:00,Howard Johnson,INC0000000429,employee,United States,Fred Luddy,Don Goodliffe,2023-02-11 09:07:59.479099672,There was an issue,3 - Moderate,Software
-Inquiry / Help,Closed,2023-03-13 16:49:10.116400647,2023-10-26 20:51:00,Fred Luddy,INC0000000155,admin,India,Beth Anglin,David Loo,2023-09-01 14:19:29.165134519,There was an issue,3 - Moderate,Inquiry / Help
-Inquiry / Help,Resolved,2023-02-16 22:50:20.255626998,2023-10-27 23:13:00,Charlie Whitherspoon,INC0000000075,employee,Canada,Luke Wilson,Bud Richman,2023-12-05 17:32:49.113615094,There was an issue,3 - Moderate,Inquiry / Help
-Inquiry / Help,Closed,2023-02-13 08:10:20.378839709,2023-10-28 04:24:00,Fred Luddy,INC0000000407,admin,Canada,Howard Johnson,Don Goodliffe,2023-05-05 00:21:12.204265630,There was an issue,3 - Moderate,Inquiry / Help
-Hardware,Resolved,2023-07-08 04:48:00.000000000,2023-10-29 03:27:00,Fred Luddy,INC0000000049,admin,United States,Fred Luddy,David Loo,2023-05-14 08:03:47.192602517,There was an issue,2 - High,Hardware
-Inquiry / Help,Closed,2023-06-12 02:12:20.844915289,2023-10-29 03:41:00,Fred Luddy,INC0000000254,system,India,Howard Johnson,David Loo,2024-01-06 22:55:13.977268119,There was an issue,4 - Low,Inquiry / Help
-Software,Closed,2023-04-25 04:21:38.122505056,2023-10-29 14:02:00,Charlie Whitherspoon,INC0000000058,employee,Australia,Luke Wilson,Don Goodliffe,2023-11-27 06:06:19.635851412,There was an issue,1 - Critical,Software
-Hardware,Closed,2023-10-16 04:30:10.679168966,2023-10-29 17:52:00,Howard Johnson,INC0000000472,employee,United States,Howard Johnson,Bud Richman,2023-03-14 22:49:22.720352152,There was an issue,3 - Moderate,Hardware
-Hardware,Closed,2023-01-13 22:01:58.804819178,2023-10-29 18:57:00,Luke Wilson,INC0000000096,admin,Canada,Fred Luddy,Bud Richman,2023-06-20 19:52:27.802682144,There was an issue,3 - Moderate,Hardware
-Software,Closed,2023-11-11 05:32:19.072152631,2023-10-31 23:16:00,Luke Wilson,INC0000000489,system,India,Charlie Whitherspoon,David Loo,2023-04-04 09:15:27.409492338,There was an issue,4 - Low,Software
-Hardware,Resolved,2024-02-08 06:58:35.863529275,2023-11-02 11:52:00,Fred Luddy,INC0000000422,employee,UK,Fred Luddy,David Loo,2023-07-12 18:45:07.705046349,There was an issue,1 - Critical,Hardware
-Inquiry / Help,Resolved,2023-06-14 11:45:24.784548040,2023-11-02 12:42:00,Luke Wilson,INC0000000280,employee,UK,Fred Luddy,ITIL User,2023-08-25 07:22:00.000000000,There was an issue,1 - Critical,Inquiry / Help
-Software,Closed,2024-01-29 03:16:08.014433635,2023-11-03 09:56:00,Fred Luddy,INC0000000105,admin,Canada,Luke Wilson,Bud Richman,2023-05-08 00:19:49.950083121,There was an issue,3 - Moderate,Software
-Hardware,Closed,2023-02-25 14:32:02.076278529,2023-11-03 13:49:00,Howard Johnson,INC0000000363,employee,India,Beth Anglin,David Loo,2023-03-31 08:03:25.091057805,There was an issue,4 - Low,Hardware
-Network,Closed,2023-10-10 07:54:06.270667738,2023-11-04 10:59:00,Luke Wilson,INC0000000442,admin,Australia,Beth Anglin,David Loo,2024-01-14 19:07:03.245823840,There was an issue,3 - Moderate,Network
-Hardware,Closed,2023-10-05 14:06:46.265722782,2023-11-05 06:44:00,Charlie Whitherspoon,INC0000000211,employee,India,Fred Luddy,Bud Richman,2024-01-27 16:50:43.924769422,There was an issue,1 - Critical,Hardware
-Database,Closed,2023-04-29 07:22:13.691497066,2023-11-05 11:29:00,Fred Luddy,INC0000000128,employee,United States,Charlie Whitherspoon,David Loo,2023-11-14 12:04:58.180425139,There was an issue,1 - Critical,Database
-Inquiry / Help,Closed,2023-12-09 12:22:44.658032345,2023-11-05 19:34:00,Beth Anglin,INC0000000372,admin,Australia,Luke Wilson,Don Goodliffe,2023-01-13 22:01:58.804819178,There was an issue,1 - Critical,Inquiry / Help
-Database,Closed,2023-12-12 19:10:00.000000000,2023-11-06 04:39:00,Howard Johnson,INC0000000425,system,UK,Luke Wilson,David Loo,2023-02-19 06:21:12.452625610,There was an issue,4 - Low,Database
-Software,Resolved,2024-01-04 00:08:18.653166818,2023-11-06 11:30:00,Beth Anglin,INC0000000304,system,United States,Luke Wilson,Bud Richman,2023-06-25 09:59:55.161658018,There was an issue,4 - Low,Software
-Hardware,Resolved,2023-03-03 22:24:21.666904166,2023-11-07 02:57:00,Charlie Whitherspoon,INC0000000097,employee,Australia,Beth Anglin,Bud Richman,2024-01-24 20:11:01.690566157,There was an issue,3 - Moderate,Hardware
-Database,Closed,2023-01-23 14:49:23.734002375,2023-11-07 19:50:00,Beth Anglin,INC0000000235,system,India,Charlie Whitherspoon,David Loo,2023-05-15 10:38:15.815796741,There was an issue,4 - Low,Database
-Software,Resolved,2023-10-03 08:53:36.796709606,2023-11-08 05:51:00,Howard Johnson,INC0000000159,system,Australia,Fred Luddy,ITIL User,2023-05-05 19:25:33.306689559,There was an issue,4 - Low,Software
-Software,Closed,2023-09-22 15:44:42.056556368,2023-11-08 19:58:00,Fred Luddy,INC0000000009,system,Canada,Howard Johnson,ITIL User,2023-08-22 04:24:28.410211673,There was an issue,2 - High,Software
-Inquiry / Help,Resolved,2023-02-19 05:46:55.363664679,2023-11-09 00:45:00,Luke Wilson,INC0000000320,admin,Canada,Beth Anglin,ITIL User,2023-12-14 06:24:13.933877695,There was an issue,1 - Critical,Inquiry / Help
-Inquiry / Help,Resolved,2023-10-01 22:54:51.030860190,2023-11-09 12:54:00,Beth Anglin,INC0000000467,employee,Australia,Howard Johnson,Bud Richman,2023-06-25 12:04:04.032337887,There was an issue,3 - Moderate,Inquiry / Help
-Hardware,Closed,2023-03-14 22:49:22.720352152,2023-11-10 16:18:00,Fred Luddy,INC0000000253,admin,India,Howard Johnson,Bud Richman,2023-05-27 00:02:45.297437201,There was an issue,2 - High,Hardware
-Hardware,Resolved,2023-10-07 04:57:07.243553547,2023-11-11 21:57:00,Fred Luddy,INC0000000142,admin,India,Luke Wilson,Don Goodliffe,2023-02-05 14:01:58.932181130,There was an issue,4 - Low,Hardware
-Network,Resolved,2023-07-14 06:35:05.209399792,2023-11-12 04:33:00,Luke Wilson,INC0000000300,admin,Canada,Fred Luddy,ITIL User,2023-05-30 11:21:04.259433606,There was an issue,1 - Critical,Network
-Network,Closed,2023-10-09 10:00:05.170032833,2023-11-14 18:59:00,Fred Luddy,INC0000000012,employee,UK,Fred Luddy,Don Goodliffe,2023-04-25 04:21:38.122505056,There was an issue,4 - Low,Network
-Hardware,Resolved,2023-05-19 01:48:03.565852983,2023-11-14 19:32:00,Luke Wilson,INC0000000073,admin,United States,Charlie Whitherspoon,David Loo,2023-07-14 21:15:31.584390518,There was an issue,1 - Critical,Hardware
-Database,Closed,2023-05-30 02:59:49.369927031,2023-11-15 07:35:00,Beth Anglin,INC0000000288,system,UK,Beth Anglin,David Loo,2023-09-30 16:57:13.076218110,There was an issue,1 - Critical,Database
-Network,Closed,2023-06-01 13:53:33.745863862,2023-11-15 19:05:00,Charlie Whitherspoon,INC0000000019,system,Australia,Charlie Whitherspoon,Bud Richman,2023-05-27 02:04:45.048501853,There was an issue,1 - Critical,Network
-Hardware,Resolved,2024-01-01 04:47:56.741681309,2023-11-17 07:33:00,Luke Wilson,INC0000000406,employee,UK,Luke Wilson,Bud Richman,2023-08-19 05:22:39.220366354,There was an issue,3 - Moderate,Hardware
-Hardware,Resolved,2023-08-02 12:16:09.558065832,2023-11-17 11:41:00,Fred Luddy,INC0000000200,system,India,Fred Luddy,ITIL User,2023-02-19 11:12:41.587556967,There was an issue,3 - Moderate,Hardware
-Software,Resolved,2023-03-19 18:35:49.186969810,2023-11-18 02:05:00,Fred Luddy,INC0000000067,system,Australia,Fred Luddy,David Loo,2023-03-10 09:09:00.000000000,There was an issue,3 - Moderate,Software
-Database,Closed,2023-07-26 17:51:52.767336231,2023-11-19 02:52:00,Charlie Whitherspoon,INC0000000230,system,Australia,Luke Wilson,David Loo,2023-09-03 02:19:00.000000000,There was an issue,3 - Moderate,Database
-Database,Resolved,2023-09-05 02:07:43.113682721,2023-11-19 11:06:00,Beth Anglin,INC0000000201,admin,Australia,Beth Anglin,David Loo,2023-11-19 06:43:16.486790150,There was an issue,3 - Moderate,Database
-Database,Closed,2023-11-07 22:41:41.858766805,2023-11-21 04:00:00,Fred Luddy,INC0000000166,system,United States,Howard Johnson,Don Goodliffe,2024-01-29 03:16:08.014433635,There was an issue,3 - Moderate,Database
-Hardware,Closed,2023-11-23 08:35:34.467772083,2023-11-22 08:43:00,Charlie Whitherspoon,INC0000000416,system,Australia,Charlie Whitherspoon,ITIL User,2023-07-23 19:05:17.533035942,There was an issue,2 - High,Hardware
-Software,Resolved,2023-04-13 12:12:50.918205479,2023-11-23 08:47:00,Beth Anglin,INC0000000226,employee,India,Fred Luddy,David Loo,2023-04-13 02:17:59.600859991,There was an issue,1 - Critical,Software
-Database,Closed,2023-05-05 01:59:48.858836394,2023-11-23 15:24:00,Luke Wilson,INC0000000024,employee,UK,Howard Johnson,Don Goodliffe,2023-10-16 11:37:53.443608066,There was an issue,3 - Moderate,Database
-Network,Closed,2023-05-19 04:22:50.443252112,2023-11-24 19:27:00,Howard Johnson,INC0000000328,employee,Canada,Charlie Whitherspoon,ITIL User,2023-08-04 22:43:36.252615961,There was an issue,4 - Low,Network
-Software,Closed,2023-07-19 14:54:49.403388921,2023-11-27 20:26:00,Luke Wilson,INC0000000365,system,United States,Charlie Whitherspoon,Bud Richman,2023-07-01 09:46:55.866723604,There was an issue,2 - High,Software
-Hardware,Resolved,2023-12-05 02:10:03.357753705,2023-11-28 06:30:00,Howard Johnson,INC0000000319,employee,United States,Howard Johnson,ITIL User,2023-12-15 03:54:00.000000000,There was an issue,1 - Critical,Hardware
-Database,Closed,2023-12-19 02:53:45.256687900,2023-11-29 01:39:00,Luke Wilson,INC0000000028,admin,UK,Charlie Whitherspoon,Don Goodliffe,2023-01-06 16:52:00.000000000,There was an issue,2 - High,Database
-Hardware,Resolved,2023-07-23 19:05:17.533035942,2023-11-29 07:33:00,Charlie Whitherspoon,INC0000000221,admin,UK,Beth Anglin,Don Goodliffe,2023-08-13 15:36:00.000000000,There was an issue,2 - High,Hardware
-Network,Closed,2023-10-18 21:50:20.165772966,2023-11-30 04:31:00,Beth Anglin,INC0000000412,employee,United States,Beth Anglin,Don Goodliffe,2023-10-02 19:11:48.163774968,There was an issue,4 - Low,Network
-Hardware,Resolved,2023-10-16 08:25:44.792483730,2023-12-01 04:34:00,Fred Luddy,INC0000000114,admin,Australia,Luke Wilson,ITIL User,2023-07-28 21:34:00.908307924,There was an issue,4 - Low,Hardware
-Inquiry / Help,Resolved,2023-08-04 18:56:00.000000000,2023-12-02 09:51:00,Howard Johnson,INC0000000276,employee,India,Fred Luddy,ITIL User,2023-12-06 06:18:20.231641812,There was an issue,4 - Low,Inquiry / Help
-Inquiry / Help,Closed,2023-11-15 18:59:00.000000000,2023-12-03 07:21:00,Fred Luddy,INC0000000156,employee,United States,Charlie Whitherspoon,ITIL User,2023-05-24 17:45:04.375124775,There was an issue,2 - High,Inquiry / Help
-Hardware,Resolved,2024-01-06 22:55:13.977268119,2023-12-04 13:22:00,Howard Johnson,INC0000000484,employee,United States,Fred Luddy,ITIL User,2024-02-11 16:34:09.159779461,There was an issue,4 - Low,Hardware
-Inquiry / Help,Resolved,2023-02-13 00:16:27.398179564,2023-12-04 20:14:00,Luke Wilson,INC0000000338,system,Australia,Howard Johnson,Bud Richman,2023-08-19 10:57:00.000000000,There was an issue,1 - Critical,Inquiry / Help
-Hardware,Closed,2023-04-24 09:36:05.775625483,2023-12-04 20:19:00,Howard Johnson,INC0000000321,employee,United States,Luke Wilson,David Loo,2023-11-12 08:41:55.212270110,There was an issue,1 - Critical,Hardware
-Network,Resolved,2023-07-20 02:37:10.813279462,2023-12-05 11:43:00,Fred Luddy,INC0000000164,admin,UK,Fred Luddy,Don Goodliffe,2023-11-23 05:26:06.568026419,There was an issue,1 - Critical,Network
-Network,Resolved,2023-08-31 15:44:00.000000000,2023-12-05 15:02:00,Howard Johnson,INC0000000452,admin,United States,Charlie Whitherspoon,David Loo,2023-09-22 23:55:17.560026848,There was an issue,1 - Critical,Network
-Hardware,Closed,2023-07-14 08:23:51.080019979,2023-12-06 00:31:00,Howard Johnson,INC0000000002,employee,Australia,Luke Wilson,Bud Richman,2023-06-19 06:59:02.120925069,There was an issue,1 - Critical,Hardware
-Software,Resolved,2023-10-30 03:46:43.553522312,2023-12-07 00:44:00,Fred Luddy,INC0000000259,admin,Australia,Beth Anglin,Don Goodliffe,2023-03-26 11:10:50.949076210,There was an issue,4 - Low,Software
-Software,Closed,2023-03-26 17:14:15.209900642,2023-12-08 00:32:00,Beth Anglin,INC0000000450,system,Australia,Charlie Whitherspoon,Bud Richman,2023-11-13 13:05:35.772593402,There was an issue,3 - Moderate,Software
-Network,Resolved,2023-12-14 13:02:12.152455924,2023-12-09 03:58:00,Fred Luddy,INC0000000151,admin,Australia,Luke Wilson,David Loo,2023-09-13 04:40:34.280556892,There was an issue,4 - Low,Network
-Database,Closed,2023-08-21 08:48:34.847604103,2023-12-10 12:52:00,Charlie Whitherspoon,INC0000000387,system,Canada,Fred Luddy,David Loo,2023-08-14 09:36:00.295254938,There was an issue,2 - High,Database
-Inquiry / Help,Resolved,2023-01-24 10:21:12.713928509,2023-12-11 17:57:00,Beth Anglin,INC0000000204,admin,Australia,Beth Anglin,David Loo,2023-11-14 14:50:37.041296707,There was an issue,1 - Critical,Inquiry / Help
-Network,Closed,2023-02-23 22:00:23.401697490,2023-12-11 19:10:00,Fred Luddy,INC0000000178,admin,Canada,Beth Anglin,Bud Richman,2024-01-07 03:03:46.511421975,There was an issue,1 - Critical,Network
-Hardware,Closed,2023-01-17 04:28:00.000000000,2023-12-12 08:51:00,Luke Wilson,INC0000000011,system,UK,Charlie Whitherspoon,ITIL User,2023-07-21 18:09:17.803746956,There was an issue,2 - High,Hardware
-Inquiry / Help,Closed,2023-12-06 21:57:38.764148014,2023-12-12 15:28:00,Howard Johnson,INC0000000087,employee,India,Charlie Whitherspoon,Don Goodliffe,2023-10-01 22:54:51.030860190,There was an issue,2 - High,Inquiry / Help
-Database,Resolved,2023-05-06 22:24:00.000000000,2023-12-14 03:54:00,Fred Luddy,INC0000000261,employee,United States,Charlie Whitherspoon,David Loo,2023-08-11 16:02:37.684405305,There was an issue,3 - Moderate,Database
-Inquiry / Help,Resolved,2023-06-29 22:17:23.746230748,2023-12-17 08:06:00,Charlie Whitherspoon,INC0000000443,admin,Canada,Luke Wilson,Don Goodliffe,2023-10-14 10:07:06.909703281,There was an issue,1 - Critical,Inquiry / Help
-Software,Resolved,2023-10-21 17:05:49.162145411,2023-12-18 04:38:00,Charlie Whitherspoon,INC0000000353,employee,UK,Howard Johnson,ITIL User,2023-03-05 04:00:53.829740603,There was an issue,4 - Low,Software
-Hardware,Resolved,2023-09-28 10:20:40.858388369,2023-12-18 11:13:00,Beth Anglin,INC0000000124,employee,India,Charlie Whitherspoon,Don Goodliffe,2023-06-24 09:17:21.801903137,There was an issue,2 - High,Hardware
-Inquiry / Help,Resolved,2023-08-02 05:21:25.991706511,2023-12-19 05:43:00,Fred Luddy,INC0000000061,employee,United States,Beth Anglin,David Loo,2024-01-03 16:45:19.710278908,There was an issue,3 - Moderate,Inquiry / Help
-Database,Resolved,2024-02-11 16:34:09.159779461,2023-12-19 07:32:00,Beth Anglin,INC0000000290,admin,UK,Charlie Whitherspoon,ITIL User,2023-08-17 04:45:43.185739101,There was an issue,4 - Low,Database
-Network,Resolved,2023-08-22 04:24:28.410211673,2023-12-23 18:43:00,Howard Johnson,INC0000000032,admin,United States,Luke Wilson,Bud Richman,2023-10-31 10:15:16.995034613,There was an issue,4 - Low,Network
-Database,Closed,2023-04-04 19:04:22.181856865,2023-12-26 00:19:00,Beth Anglin,INC0000000461,system,UK,Beth Anglin,David Loo,2023-01-26 12:30:48.397896971,There was an issue,2 - High,Database
-Inquiry / Help,Closed,2023-10-28 17:01:26.639036991,2023-12-26 00:25:00,Howard Johnson,INC0000000263,employee,Australia,Luke Wilson,David Loo,2023-10-16 08:15:55.096916626,There was an issue,1 - Critical,Inquiry / Help
-Database,Closed,2023-08-13 06:44:24.424288482,2023-12-26 16:08:00,Luke Wilson,INC0000000424,employee,Australia,Charlie Whitherspoon,Bud Richman,2023-06-28 14:05:28.538482547,There was an issue,3 - Moderate,Database
-Network,Closed,2023-05-14 06:26:59.910015516,2023-12-28 06:15:00,Charlie Whitherspoon,INC0000000329,employee,India,Charlie Whitherspoon,David Loo,2023-05-13 14:49:23.379483573,There was an issue,3 - Moderate,Network
-Hardware,Resolved,2023-08-27 03:03:00.000000000,2023-12-28 22:22:00,Beth Anglin,INC0000000493,employee,India,Charlie Whitherspoon,ITIL User,2023-05-29 13:25:00.000000000,There was an issue,1 - Critical,Hardware
-Database,Resolved,2023-08-26 09:29:01.912064757,2023-12-31 00:23:00,Fred Luddy,INC0000000168,system,United States,Beth Anglin,ITIL User,2023-08-12 18:27:47.789421821,There was an issue,1 - Critical,Database
-Network,Resolved,2023-11-02 19:10:09.135343415,2024-01-02 05:33:00,Luke Wilson,INC0000000349,employee,UK,Luke Wilson,Don Goodliffe,2023-11-21 01:30:21.296528133,There was an issue,2 - High,Network
-Hardware,Closed,2023-09-15 15:54:00.000000000,2024-01-02 23:29:00,Beth Anglin,INC0000000258,admin,UK,Howard Johnson,David Loo,2023-04-08 08:46:45.358954276,There was an issue,4 - Low,Hardware
-Database,Closed,2023-05-10 03:20:31.007719853,2024-01-04 15:03:00,Fred Luddy,INC0000000127,system,India,Howard Johnson,Don Goodliffe,2023-04-17 20:17:35.569877984,There was an issue,2 - High,Database
-Software,Closed,2024-02-03 17:41:53.299049427,2024-01-05 03:27:00,Beth Anglin,INC0000000477,system,United States,Howard Johnson,ITIL User,2023-03-13 09:38:15.903837660,There was an issue,3 - Moderate,Software
-Database,Resolved,2023-03-10 09:09:00.000000000,2024-01-05 10:47:00,Fred Luddy,INC0000000094,admin,Australia,Beth Anglin,David Loo,2023-08-15 14:03:57.099952165,There was an issue,3 - Moderate,Database
-Network,Closed,2023-02-04 20:06:34.055632819,2024-01-05 16:43:00,Howard Johnson,INC0000000214,system,UK,Luke Wilson,Don Goodliffe,2023-08-09 07:59:01.326042131,There was an issue,2 - High,Network
-Hardware,Resolved,2024-01-04 10:16:12.278901784,2024-01-07 21:25:00,Beth Anglin,INC0000000362,admin,Australia,Beth Anglin,ITIL User,2024-01-06 13:12:25.109624389,There was an issue,4 - Low,Hardware
-Software,Resolved,2023-11-21 01:30:21.296528133,2024-01-09 07:10:00,Luke Wilson,INC0000000441,admin,United States,Charlie Whitherspoon,Don Goodliffe,2023-10-16 04:30:10.679168966,There was an issue,1 - Critical,Software
-Network,Closed,2023-02-26 16:29:16.807931635,2024-01-10 15:21:00,Fred Luddy,INC0000000080,system,Canada,Luke Wilson,ITIL User,2023-10-30 03:46:43.553522312,There was an issue,1 - Critical,Network
-Network,Closed,2023-05-29 16:00:46.480174225,2024-01-11 05:07:00,Beth Anglin,INC0000000053,admin,UK,Beth Anglin,Bud Richman,2023-03-16 11:23:45.848878332,There was an issue,3 - Moderate,Network
-Inquiry / Help,Closed,2023-05-27 00:02:45.297437201,2024-01-13 06:18:00,Beth Anglin,INC0000000120,employee,UK,Howard Johnson,Don Goodliffe,2023-09-20 20:58:46.751153395,There was an issue,2 - High,Inquiry / Help
-Hardware,Resolved,2023-08-26 15:36:56.981753690,2024-01-15 02:05:00,Beth Anglin,INC0000000480,system,Canada,Fred Luddy,David Loo,2023-12-01 04:31:00.000000000,There was an issue,1 - Critical,Hardware
-Hardware,Resolved,2023-10-08 05:16:54.012585598,2024-01-15 14:42:00,Charlie Whitherspoon,INC0000000332,admin,Canada,Beth Anglin,Bud Richman,2023-04-09 09:12:14.485573467,There was an issue,1 - Critical,Hardware
-Software,Resolved,2023-07-25 03:53:49.978687958,2024-01-15 16:26:00,Luke Wilson,INC0000000376,employee,India,Howard Johnson,David Loo,2023-05-31 14:07:51.086048950,There was an issue,1 - Critical,Software
-Software,Closed,2023-11-19 06:43:16.486790150,2024-01-16 10:00:00,Fred Luddy,INC0000000394,admin,Australia,Fred Luddy,ITIL User,2023-07-10 23:00:15.709745176,There was an issue,4 - Low,Software
-Database,Resolved,2023-08-25 07:22:00.000000000,2024-01-18 09:54:00,Charlie Whitherspoon,INC0000000188,system,India,Howard Johnson,Don Goodliffe,2023-03-19 18:35:49.186969810,There was an issue,2 - High,Database
-Network,Resolved,2024-01-07 03:03:46.511421975,2024-01-19 21:43:00,Luke Wilson,INC0000000068,admin,India,Charlie Whitherspoon,ITIL User,2023-10-14 14:32:43.560111853,There was an issue,1 - Critical,Network
-Database,Closed,2023-01-29 22:45:30.072558587,2024-01-20 13:40:00,Fred Luddy,INC0000000475,employee,United States,Charlie Whitherspoon,ITIL User,2023-10-30 13:55:51.015143360,There was an issue,1 - Critical,Database
-Network,Closed,2023-03-31 08:03:25.091057805,2024-01-21 06:01:00,Beth Anglin,INC0000000491,system,UK,Charlie Whitherspoon,Don Goodliffe,2023-04-13 12:12:50.918205479,There was an issue,4 - Low,Network
-Hardware,Closed,2023-08-28 16:17:39.682367202,2024-01-21 09:04:00,Beth Anglin,INC0000000065,system,UK,Beth Anglin,Don Goodliffe,2023-11-06 18:24:09.637921817,There was an issue,1 - Critical,Hardware
-Hardware,Closed,2023-09-20 04:57:50.969058643,2024-01-21 19:11:00,Fred Luddy,INC0000000138,admin,UK,Luke Wilson,Bud Richman,2024-01-01 04:47:56.741681309,There was an issue,1 - Critical,Hardware
-Hardware,Closed,2023-12-15 13:12:56.653826436,2024-01-22 14:06:00,Beth Anglin,INC0000000079,employee,India,Howard Johnson,ITIL User,2023-02-17 00:34:25.927389861,There was an issue,4 - Low,Hardware
-Software,Resolved,2024-01-22 06:01:00.000000000,2024-01-23 03:20:00,Fred Luddy,INC0000000110,employee,United States,Beth Anglin,Bud Richman,2023-04-30 20:00:34.805177671,There was an issue,3 - Moderate,Software
-Network,Closed,2023-06-18 08:09:47.068608027,2024-01-24 06:55:00,Luke Wilson,INC0000000312,employee,UK,Fred Luddy,Don Goodliffe,2023-07-01 10:42:22.374438866,There was an issue,1 - Critical,Network
-Inquiry / Help,Resolved,2023-09-30 16:57:13.076218110,2024-01-24 16:35:00,Luke Wilson,INC0000000247,system,UK,Luke Wilson,Bud Richman,2023-08-07 18:20:23.668968040,There was an issue,4 - Low,Inquiry / Help
-Hardware,Closed,2023-08-04 22:43:36.252615961,2024-01-25 11:19:00,Luke Wilson,INC0000000206,admin,UK,Beth Anglin,David Loo,2023-02-26 07:36:08.762766728,There was an issue,2 - High,Hardware
-Hardware,Resolved,2023-10-02 19:11:48.163774968,2024-01-25 18:57:00,Luke Wilson,INC0000000384,employee,Canada,Fred Luddy,Don Goodliffe,2023-07-06 00:00:59.012006127,There was an issue,1 - Critical,Hardware
-Network,Closed,2023-12-13 03:48:19.521259680,2024-01-26 08:59:00,Charlie Whitherspoon,INC0000000113,system,Australia,Howard Johnson,Bud Richman,2023-06-30 23:29:55.851304419,There was an issue,2 - High,Network
-Software,Closed,2023-10-20 04:35:01.141400836,2024-01-27 11:50:00,Luke Wilson,INC0000000418,admin,UK,Howard Johnson,David Loo,2023-08-30 14:14:08.283969923,There was an issue,2 - High,Software
-Inquiry / Help,Resolved,2024-01-08 09:17:43.178873486,2024-01-28 15:54:00,Charlie Whitherspoon,INC0000000396,system,India,Howard Johnson,ITIL User,2023-05-14 12:40:40.813937606,There was an issue,2 - High,Inquiry / Help
-Network,Closed,2023-07-01 10:42:22.374438866,2024-01-29 10:48:00,Howard Johnson,INC0000000455,employee,United States,Charlie Whitherspoon,Bud Richman,2023-04-26 07:15:31.647958414,There was an issue,4 - Low,Network
-Database,Resolved,2023-10-19 02:19:42.091067289,2024-01-31 05:51:00,Charlie Whitherspoon,INC0000000190,admin,Canada,Charlie Whitherspoon,ITIL User,2023-06-30 13:34:11.629362629,There was an issue,2 - High,Database
-Database,Resolved,2023-06-17 06:06:14.854314828,2024-01-31 18:48:00,Beth Anglin,INC0000000135,system,UK,Howard Johnson,Bud Richman,2023-10-16 08:25:44.792483730,There was an issue,2 - High,Database
-Database,Resolved,2023-05-28 08:38:00.000000000,2024-01-31 21:20:00,Charlie Whitherspoon,INC0000000256,employee,United States,Charlie Whitherspoon,ITIL User,2023-09-07 23:02:26.238518168,There was an issue,1 - Critical,Database
+assigned_to,purchased_on,cost,serial_number,sys_updated_on,warranty_expiration,model_category,department,asset_tag,display_name,ci
+Valeria Lingbeek,2023-09-16 09:47:00,2688,FUM-85495157,2023-10-25 09:47:00,2026-04-16 09:47:00,Computer,Sales,P1000000,Dell Inspiron Desktop Computer,Inspiron Desktop
+Kurtis Asberry,2024-03-26 15:43:00,2596,QFX-47362028,2024-04-11 15:43:00,2026-09-10 15:43:00,Computer,Sales,P1000001,Dell Inspiron 15,Inspiron 15
+Darrel Tork,2024-03-09 10:16:00,4786,SKI-78647990,2024-04-23 10:16:00,2029-07-25 10:16:00,Computer,Customer Support,P1000002,Dell Inspiron 5558 Computer,Inspiron 5558
+Dorthy Alexy,2024-01-31 09:21:00,1631,EMF-32833485,2024-02-12 09:21:00,2025-04-03 09:21:00,Computer,Development,P1000003,Dell Inspiron 15 3000 Computer,Inspiron 15 3000
+Vince Ettel,2023-07-14 09:56:00,2834,XUQ-81198965,2023-09-04 09:56:00,2026-04-23 09:56:00,Computer,Customer Support,P1000004,Dell Inspiron 7000 Computer,Inspiron 7000
+Jess Assad,2023-10-05 15:50:00,3433,XHC-15689724,2023-11-27 15:50:00,2027-05-02 15:50:00,Computer,Customer Support,P1000005,Dell Inspiron Desktop Computer,Inspiron Desktop
+Sam Sorokin,2023-07-24 07:04:00,4877,WBR-26869320,2023-08-17 07:04:00,2029-01-21 07:04:00,Computer,IT,P1000006,Dell Inspiron 14 Computer,Inspiron 14
+Fabian Mcshaw,2023-07-20 01:17:00,4427,ZTH-46507672,2023-07-29 01:17:00,2028-06-12 01:17:00,Computer,Sales,P1000007,Dell Inspiron 5000 Computer,Inspiron 5000
+Rita Center,2023-10-07 01:41:00,4154,SKV-73261744,2023-10-19 01:41:00,2028-04-19 01:41:00,Computer,Customer Support,P1000008,Dell Inspiron 15 Computer,Inspiron 15
+Valerie Pou,2023-09-03 04:42:00,1792,OHN-23233501,2023-09-23 04:42:00,2025-01-22 04:42:00,Computer,Customer Support,P1000009,Dell Inspiron Gaming Desktop,Inspiron Gaming Desktop
+Shanna Numkena,2024-02-10 17:04:00,2173,YJS-84064125,2024-03-24 17:04:00,2026-01-02 17:04:00,Computer,Customer Support,P1000010,Dell OptiPlex 780 Desktop Computer,OptiPlex 780
+Kathie Argenti,2023-06-08 19:12:00,4863,FLB-12021262,2023-08-03 19:12:00,2028-11-29 19:12:00,Computer,Customer Support,P1000011,Dell XPS 13 Computer,XPS 13
+Dollie Daquino,2023-06-08 00:06:00,5000,MOG-57974075,2023-07-01 00:06:00,2029-02-04 00:06:00,Computer,Customer Support,P1000012,Dell Latitude 7490 Computer,Latitude 7490
+Colin Altonen,2024-01-04 21:09:00,4762,JWC-64180041,2024-02-24 21:09:00,2029-05-09 21:09:00,Computer,Development,P1000013,Dell Inspiron 14,Inspiron 14
+Garfield Lijewski,2024-01-15 01:19:00,2534,OIO-23695629,2024-03-11 01:19:00,2026-06-01 01:19:00,Computer,IT,P1000014,Dell Inspiron 5000 Series Laptop Computer,Inspiron 5000 Series
+Lee Javens,2023-06-03 03:05:00,2498,LDH-49941475,2023-07-29 03:05:00,2025-09-30 03:05:00,Computer,Sales,P1000015,Dell Inspiron Desktop Computer,Inspiron Desktop
+Zackary Mockus,2023-08-23 18:04:00,4264,NUY-76066821,2023-10-12 18:04:00,2028-04-28 18:04:00,Computer,Customer Support,P1000016,Dell Inspiron 7480,Inspiron 7480
+Martin Carley,2023-12-06 10:23:00,3279,SQI-49133722,2023-12-13 10:23:00,2027-04-19 10:23:00,Computer,Sales,P1000017,Dell Inspiron 3593 Computer,Inspiron 3593
+Felipe Mahone,2024-02-19 01:10:00,3677,RUS-77403204,2024-03-28 01:10:00,2028-01-13 01:10:00,Computer,Customer Support,P1000018,Dell Latitude 7400,Latitude 7400
+Lizzie Torregrossa,2023-12-26 02:15:00,2188,YSL-50193591,2023-12-28 02:15:00,2025-11-24 02:15:00,Computer,IT,P1000019,Dell Inspiron 5559 Laptop,Inspiron 5559
+Paul Shafer,2024-03-03 16:42:00,4637,ICZ-70102271,2024-04-26 16:42:00,2029-05-07 16:42:00,Computer,Sales,P1000020,Dell Optiplex 740 Desktop Computer,Optiplex 740
+Mamie Mcintee,2023-11-18 18:44:00,3624,OUN-35868630,2023-11-30 18:44:00,2027-09-16 18:44:00,Computer,Product Management,P1000021,Dell Inspiron 7501 Laptop,Inspiron 7501
+Chuck Farley,2023-12-21 20:21:00,1842,EEB-32623820,2024-01-14 20:21:00,2025-06-04 20:21:00,Computer,Sales,P1000022,Dell Inspiron 15 Computer,Inspiron 15
+Donald Sherretts,2023-08-01 00:43:00,2305,CCU-27588209,2023-09-28 00:43:00,2025-08-26 00:43:00,Computer,Customer Support,P1000023,Dell Optiplex 780 Desktop Computer,Optiplex 780
+Reva Lecates,2023-04-20 20:28:00,2085,RHT-06368189,2023-06-05 20:28:00,2025-01-28 20:28:00,Computer,Finance,P1000024,Dell Inspiron 15R SE-7520 Laptop,Inspiron 15R SE-7520
+Rebekah Padley,2023-09-18 09:23:00,3712,NKK-91645019,2023-10-17 09:23:00,2027-08-29 09:23:00,Computer,Sales,P1000025,Dell Optiplex 9020,Optiplex 9020
+Berta Karczewski,2023-12-17 14:15:00,4171,TSN-27831863,2024-01-09 14:15:00,2028-07-07 14:15:00,Computer,Sales,P1000026,Dell OptiPlex 3050 Computer,OptiPlex 3050
+Sheila Holloran,2023-12-19 15:44:00,4294,CQX-01116403,2024-01-09 15:44:00,2028-09-07 15:44:00,Computer,Sales,P1000027,HP EliteBook 840,EliteBook 840
+Denver Topete,2024-03-19 15:58:00,4923,XYJ-37110957,2024-04-03 15:58:00,2029-10-09 15:58:00,Computer,Customer Support,P1000028,Dell Latitude 7490 Laptop,Latitude 7490
+Jasmin Gum,2023-11-12 17:01:00,1658,HDC-23862488,2023-11-13 17:01:00,2025-01-26 17:01:00,Computer,Sales,P1000029,Dell Inspiron Desktop Computer,Inspiron Desktop
+Carolina Kinlaw,2023-07-22 18:15:00,4548,NOH-42942680,2023-09-08 18:15:00,2028-08-12 18:15:00,Computer,Sales,P1000030,Dell Latitude 5580 Computer,Latitude 5580
+Nathanial Phoenix,2023-06-26 21:36:00,2448,QCV-06654623,2023-08-20 21:36:00,2025-09-29 21:36:00,Computer,Customer Support,P1000031,Dell Inspiron 15 Computer,Inspiron 15
+Olga Yarovenko,2023-07-31 00:39:00,2278,WLL-74073414,2023-08-10 00:39:00,2025-08-12 00:39:00,Computer,Sales,P1000032,Dell Inspiron 15 Computer,Inspiron 15
+Danny Dales,2023-08-16 09:34:00,3926,IWI-07387752,2023-10-01 09:34:00,2027-11-08 09:34:00,Computer,Customer Support,P1000033,Dell Inspiron 15-3593 Laptop,Inspiron 15-3593
+George Tukis,2023-10-06 04:55:00,4558,SRC-57523509,2023-10-07 04:55:00,2028-11-01 04:55:00,Computer,Customer Support,P1000034,Dell Inspiron 15,Inspiron 15
+Allie Pumphrey,2024-02-11 00:36:00,2005,XGN-81517387,2024-03-04 00:36:00,2025-10-13 00:36:00,Computer,Product Management,P1000035,Dell Inspiron 15 Computer,Inspiron 15
+Logan Muhl,2023-11-21 11:51:00,1885,EIO-77313175,2024-01-14 11:51:00,2025-05-26 11:51:00,Computer,Customer Support,P1000036,Dell Inspiron 14 7000,Inspiron 14 7000
+Tia Lino,2024-03-04 05:53:00,1734,VWW-68406256,2024-04-24 05:53:00,2025-06-25 05:53:00,Computer,Sales,P1000037,Dell Inspiron 15 3000 Computer,Inspiron 15 3000
+Allyson Gillispie,2023-11-16 10:45:00,2425,YHM-30962328,2023-12-01 10:45:00,2026-02-08 10:45:00,Computer,Development,P1000038,Dell OptiPlex 7040 Desktop Computer,OptiPlex 7040
+Marta Horner,2024-04-03 02:33:00,1635,LVG-21580428,2024-04-08 02:33:00,2025-06-07 02:33:00,Computer,Customer Support,P1000039,Dell Inspiron 15,Inspiron 15
+Kira Papen,2023-05-05 12:09:00,2725,NIY-09394326,2023-06-18 12:09:00,2025-12-21 12:09:00,Computer,Customer Support,P1000040,Dell Inspiron Desktop Computer,Inspiron Desktop
+Kira Staffon,2024-02-15 22:28:00,4740,EBM-87779657,2024-02-20 22:28:00,2029-06-09 22:28:00,Computer,Finance,P1000041,Dell Inspiron 15 Computer,Dell Inspiron 15
+Cherie Fuhri,2024-02-01 15:52:00,2150,RFG-28788259,2024-02-29 15:52:00,2025-12-13 15:52:00,Computer,Customer Support,P1000042,Dell Inspiron 7405-Computer,Inspiron 7405
+Corinne Cowan,2023-07-30 19:18:00,1884,RXK-26078065,2023-08-11 19:18:00,2025-01-31 19:18:00,Computer,Finance,P1000043,Dell Latitude E5470 Computer,Latitude E5470
+Eli Bettner,2023-10-05 05:42:00,3350,AFU-83744470,2023-11-11 05:42:00,2027-03-23 05:42:00,Computer,IT,P1000044,Dell Inspiron 15 3000 Computer,Inspiron 15 3000
+Darrel Ruffins,2024-01-31 07:56:00,3478,BIJ-71799167,2024-02-11 07:56:00,2027-09-19 07:56:00,Computer,IT,P1000045,Dell Inspiron Gaming Desktop,Inspiron Gaming Desktop
+Kerry Evertt,2023-10-02 09:59:00,3659,YLG-33053890,2023-10-23 09:59:00,2027-08-17 09:59:00,Computer,Development,P1000046,Dell Inspiron 5501 Laptop Computer,Inspiron 5501 Laptop
+Mitch Schattner,2023-12-13 18:09:00,3935,QIQ-79463431,2024-01-25 18:09:00,2028-03-11 18:09:00,Computer,Customer Support,P1000047,Dell Inspiron Series Computer,Inspiron Series
+Isaac Davensizer,2023-09-03 14:21:00,2232,HFX-22669908,2023-09-14 14:21:00,2025-08-24 14:21:00,Computer,Customer Support,P1000048,Dell Inspiron 3583,Inspiron 3583
+Kasey Nguyen,2023-06-27 13:09:00,2024,MHV-64762617,2023-08-19 13:09:00,2025-03-08 13:09:00,Computer,Customer Support,P1000049,Dell Inspiron 5570 Laptop,Inspiron 5570
+Roseann Jerko,2023-05-28 21:11:00,2512,EXY-50284416,2023-06-05 21:11:00,2025-10-01 21:11:00,Computer,Sales,P1000050,Dell Inspiron Desktop Computer,Inspiron Desktop
+Emery Reek,2023-12-23 15:50:00,4011,HLC-14950437,2024-01-27 15:50:00,2028-04-27 15:50:00,Computer,Customer Support,P1000051,Dell Inspiron 1525 Laptop,Inspiron 1525
+Lona Scronce,2023-11-28 23:49:00,4423,YNC-51707922,2024-01-07 23:49:00,2028-10-19 23:49:00,Computer,Customer Support,P1000052,Dell Latitude 5590 Computer,Latitude 5590
+Claudio Loose,2023-07-25 15:01:00,4541,RWX-55329069,2023-07-29 15:01:00,2028-08-11 15:01:00,Computer,Customer Support,P1000053,Dell Inspiron Desktop Computer,Inspiron Desktop
+Karyn Jinks,2023-08-07 08:28:00,2295,ZMO-43363012,2023-09-13 08:28:00,2025-08-27 08:28:00,Computer,IT,P1000054,Dell Inspiron Desktop Computer,Inspiron Desktop
+Wes Fontanella,2023-10-04 01:26:00,1713,DYZ-33249246,2023-11-03 01:26:00,2025-01-14 01:26:00,Computer,IT,P1000055,Dell Inspiron 15 7000 Gaming,Inspiron 15 7000 Gaming
+Florine Willardson,2024-02-03 22:20:00,4784,XHH-21781726,2024-02-09 22:20:00,2029-06-19 22:20:00,Computer,Sales,P1000056,Dell Inspiron Desktop Computer,Inspiron Desktop
+Warren Speach,2024-01-19 20:26:00,3988,AJG-57480224,2024-02-19 20:26:00,2028-05-12 20:26:00,Computer,HR,P1000057,Dell Latitude 14 Computer,Latitude 14
+Margaret Grey,2024-01-07 06:17:00,3637,NMS-58315319,2024-01-08 06:17:00,2027-11-12 06:17:00,Computer,Sales,P1000058,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+Jimmie Barninger,2024-01-05 07:27:00,1846,XVW-13504889,2024-02-24 07:27:00,2025-06-21 07:27:00,Computer,Customer Support,P1000059,Dell Inspiron 7391 - Computer,Inspiron 7391
+Lucien Iurato,2023-08-01 06:32:00,4981,OXY-86921979,2023-09-07 06:32:00,2029-03-21 06:32:00,Computer,Development,P1000060,Dell Latitude 7400 Computer,Latitude 7400
+Mary Cruse,2023-11-12 09:45:00,3983,PAI-47837952,2023-12-03 09:45:00,2028-03-03 09:45:00,Computer,Sales,P1000061,Dell Inspiron 15 Computer,Inspiron 15
+Jeanie Dalen,2023-12-24 14:43:00,1679,EXL-04205103,2024-01-08 14:43:00,2025-03-20 14:43:00,Computer,Customer Support,P1000062,Dell Inspiron 15 Computer,Inspiron 15
+Howard Johnson,2023-06-05 03:06:00,2495,DMN-65760942,2023-06-24 03:06:00,2025-10-01 03:06:00,Computer,Sales,P1000063,Dell Optiplex 7050 Desktop,Optiplex 7050
+Bridgett Retort,2023-07-13 03:51:00,1726,RRN-88902828,2023-08-28 03:51:00,2024-10-29 03:51:00,Computer,Finance,P1000064,Dell Optiplex 7060,Optiplex 7060
+Mandy Mcdonnell,2023-06-25 10:34:00,4574,KTT-24363335,2023-08-24 10:34:00,2028-07-29 10:34:00,Computer,Development,P1000065,Dell OptiPlex 3070 Micro Desktop Computer,OptiPlex 3070 Micro
+Stacey Blow,2024-04-19 10:03:00,3382,YWU-70855485,2024-04-25 10:03:00,2027-10-21 10:03:00,Computer,IT,P1000066,Dell Optiplex 7050 Desktop Computer,Optiplex 7050
+Ted Keppel,2023-08-25 19:34:00,3264,LJF-22429348,2023-09-08 19:34:00,2026-12-30 19:34:00,Computer,IT,P1000067,Dell Optiplex 3060 Desktop Computer,Optiplex 3060
+Teodoro Gaboury,2023-10-25 00:28:00,3675,UEI-53458316,2023-11-21 00:28:00,2027-09-17 00:28:00,Computer,Customer Support,P1000068,Dell OptiPlex 7460 All-In-One,OptiPlex 7460 AIO
+Mabel Weeden,2023-12-18 07:26:00,1710,NNL-38266112,2023-12-28 07:26:00,2025-03-29 07:26:00,Computer,Customer Support,P1000069,Dell Inspiron 3580 Laptop Computer,Inspiron 3580
+Jimmy Hrobsky,2024-03-10 05:20:00,2423,XTY-33371981,2024-03-21 05:20:00,2026-06-02 05:20:00,Computer,Finance,P1000070,Dell Inspiron 5000 Laptop Computer,Inspiron 5000 Laptop
+Ron Kettering,2023-11-13 16:36:00,3559,LDH-09483379,2023-12-23 16:36:00,2027-08-11 16:36:00,Computer,IT,P1000071,Dell OptiPlex 3070 Micro,OptiPlex 3070 Micro
+Lynda Caraway,2023-08-18 05:16:00,3284,UDM-85294626,2023-09-03 05:16:00,2027-01-02 05:16:00,Computer,Customer Support,P1000072,Dell Inspiron 15 Computer,Inspiron 15
+Tiffany Knust,2024-04-05 19:11:00,2868,CIY-98438574,2024-04-08 19:11:00,2027-01-30 19:11:00,Computer,Customer Support,P1000073,Dell Inspiron 15 Computer,Inspiron 15
+Petra Clemmens,2024-02-06 11:37:00,4238,IVE-03183819,2024-02-22 11:37:00,2028-09-29 11:37:00,Computer,Sales,P1000074,Dell Inspiron 3593 Laptop Computer,Inspiron 3593
+Pilar Suddeth,2023-07-17 03:09:00,4500,TDT-11947828,2023-09-06 03:09:00,2028-07-15 03:09:00,Computer,Sales,P1000075,Dell Inspiron 15,Inspiron 15
+Byron Fortuna,2023-11-20 09:05:00,3599,MXT-51287313,2023-12-07 09:05:00,2027-09-06 09:05:00,Computer,IT,P1000076,Dell Inspiron 15 3000 Series,Inspiron 15 3000
+Fannie Steese,2023-12-15 19:37:00,2130,LTJ-73240586,2023-12-28 19:37:00,2025-10-16 19:37:00,Computer,Customer Support,P1000077,Dell Inspiron 15 7559 Laptop Computer,Inspiron 15 7559 Laptop
+Maryann Garnette,2024-01-08 23:53:00,3277,GLX-89039882,2024-02-29 23:53:00,2027-05-21 23:53:00,Computer,IT,P1000078,Dell Inspiron 7000 Computer,Inspiron 7000
+Shelley Groden,2023-05-01 18:41:00,2506,XWJ-81085405,2023-06-16 18:41:00,2025-09-01 18:41:00,Computer,Customer Support,P1000079,Dell Inspiron 5000 Series Computer,Inspiron 5000 Series
+Rena Griffeth,2023-06-23 17:15:00,3295,LBM-98015093,2023-07-16 17:15:00,2026-11-12 17:15:00,Computer,Customer Support,P1000080,Dell Latitude 7490 Computer,Latitude 7490
+Joe Employee,2023-07-11 14:45:00,4072,FHA-87469730,2023-07-28 14:45:00,2027-12-13 14:45:00,Computer,Sales,P1000081,Dell Inspiron Desktop Computer,Inspiron Desktop
+Valentine Granberry,2024-03-19 07:20:00,4596,HPR-68864625,2024-04-14 07:20:00,2029-05-03 07:20:00,Computer,Customer Support,P1000082,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+Mayme Staub,2023-11-20 05:52:00,3456,DLU-33372958,2024-01-17 05:52:00,2027-06-28 05:52:00,Computer,IT,P1000083,Dell OptiPlex 7080 Desktop Computer,OptiPlex 7080
+Bart Hachey,2023-08-25 00:41:00,1632,HLG-77241394,2023-09-07 00:41:00,2024-10-27 00:41:00,Computer,Product Management,P1000084,Dell Inspiron 7000,Inspiron 7000
+Mitchel Harnar,2023-12-31 11:34:00,2248,JGW-03936955,2024-02-24 11:34:00,2025-12-29 11:34:00,Computer,Sales,P1000085,Dell OptiPlex 780 Desktop Computer,OptiPlex 780
+Devon Samrah,2024-01-08 09:01:00,2615,QQO-45550218,2024-02-15 09:01:00,2026-07-03 09:01:00,Computer,IT,P1000086,Dell OptiPlex 7090,OptiPlex 7090
+Kyle Lindauer,2024-01-12 08:00:00,4140,UFM-03758046,2024-02-17 08:00:00,2028-07-18 08:00:00,Computer,IT,P1000087,Dell Inspiron 15 Laptop,Inspiron 15
+Phil Hendrie,2024-02-23 20:26:00,3632,NNZ-38938540,2024-03-24 20:26:00,2027-12-26 20:26:00,Computer,Sales,P1000088,Dell Inspiron 14,Inspiron 14
+Dennis Millar,2024-03-21 16:24:00,2117,SZE-21682624,2024-03-30 16:24:00,2026-01-15 16:24:00,Computer,Sales,P1000089,Dell Inspiron 7000,Inspiron 7000
+Deshawn Inafuku,2023-09-21 23:26:00,2880,AQI-01528735,2023-11-02 23:26:00,2026-07-23 23:26:00,Computer,IT,P1000090,Dell Inspiron 3593 Laptop,Insprion 3593
+Mara Rineheart,2023-07-09 13:36:00,3684,DYO-19475579,2023-08-09 13:36:00,2027-06-05 13:36:00,Computer,Customer Support,P1000091,Dell Inspiron 15 Computer,Inspiron 15
+Lora Lendor,2023-07-13 22:11:00,4601,YJO-76154470,2023-08-18 22:11:00,2028-08-29 22:11:00,Computer,IT,P1000092,Dell Inspiron 14,Inspiron 14
+Luella Pliner,2023-09-24 11:03:00,1812,URO-81511026,2023-11-11 11:03:00,2025-02-21 11:03:00,Computer,Sales,P1000093,Dell Inspiron 7501 Laptop,Inspiron 7501
+Fred Luddy,2023-06-03 06:29:00,2408,UHO-11693986,2023-07-09 06:29:00,2025-08-17 06:29:00,Computer,Development,P1000094,Dell Inspiron 7501 Laptop,Inspiron 7501
+Pierre Salera,2023-11-05 17:52:00,4091,GAN-67076488,2023-11-29 17:52:00,2028-04-17 17:52:00,Computer,IT,P1000095,Dell Inspiron Desktop Computer,Inspiron Desktop
+Titus Rodreguez,2024-01-17 04:19:00,3392,LUW-80067448,2024-03-04 04:19:00,2027-07-25 04:19:00,Computer,Finance,P1000096,Dell Inspiron 5400 Computer,Inspiron 5400
+Bradly Hasselvander,2024-01-27 05:01:00,3564,RFW-05914986,2024-03-08 05:01:00,2027-10-27 05:01:00,Computer,Sales,P1000097,Dell Optiplex 7080 Desktop Computer,Optiplex 7080
+Bud Richman,2024-01-20 14:43:00,1635,JGT-89740184,2024-03-20 14:43:00,2025-03-25 14:43:00,Computer,Sales,P1000098,Dell Inspiron 3576 Computer,Inspiron 3576
+Darrell Amrich,2023-12-08 19:03:00,3065,IDP-17170621,2024-01-28 19:03:00,2027-01-07 19:03:00,Computer,Customer Support,P1000099,Dell OptiPlex 780 Desktop Computer,OptiPlex 780
+Wayne Webb,2024-02-26 13:59:00,1811,BXF-81678142,2024-03-16 13:59:00,2025-07-26 13:59:00,Computer,IT,P1000100,Dell OptiPlex 7080,OptiPlex 7080
+Lynette Setlock,2024-02-09 21:33:00,3073,GRC-23027503,2024-02-15 21:33:00,2027-03-15 21:33:00,Computer,Customer Support,P1000101,Dell Inspiron 3501,Inspiron 3501
+Patty Bernasconi,2023-06-15 00:35:00,3526,ZIP-02778201,2023-06-26 00:35:00,2027-02-24 00:35:00,Computer,Sales,P1000102,Dell Inspiron 15 Computer,Inspiron 15
+Jarvis Galas,2023-10-23 14:46:00,3944,EIE-56070647,2023-11-13 14:46:00,2028-01-24 14:46:00,Computer,Customer Support,P1000103,Dell OptiPlex 7020 Desktop Computer,OptiPlex 7020
+Van Leanen,2023-10-30 21:50:00,3610,NXA-37449554,2023-11-25 21:50:00,2027-08-21 21:50:00,Computer,IT,P1000104,Dell Inspiron 15 Computer,Inspiron 15
+Doreen Sakurai,2023-09-09 15:48:00,4109,STA-75840407,2023-10-01 15:48:00,2028-02-29 15:48:00,Computer,Sales,P1000105,Dell Inspiron 7577,Inspiron 7577
+Cruz Roudabush,2023-10-29 18:34:00,3676,HXI-78287900,2023-12-25 18:34:00,2027-09-21 18:34:00,Computer,IT,P1000106,Dell Inspiron 5593 Computer,Inspiron 5593
+Guillermo Tsang,2024-01-01 23:26:00,3997,EQO-82129041,2024-02-01 23:26:00,2028-04-29 23:26:00,Computer,Customer Support,P1000107,Dell Inspiron 14,Inspiron 14
+John Retak,2023-08-08 23:48:00,3594,YUW-77327818,2023-08-09 23:48:00,2027-05-23 23:48:00,Computer,Sales,P1000108,Dell Latitude E7470 Laptop,Latitude E7470
+Maurine Monroy,2023-08-09 01:32:00,1530,VLE-62725092,2023-10-05 01:32:00,2024-08-22 01:32:00,Computer,IT,P1000109,Dell Inspiron 5000 Computer,Inspiron 5000
+Brendan Qin,2023-09-03 10:35:00,4007,LXS-14010069,2023-10-08 10:35:00,2028-01-05 10:35:00,Computer,Finance,P1000110,Dell Inspiron 5481,Inspiron 5481
+Jonathon Waldall,2023-05-04 21:03:00,4832,UCT-31507247,2023-06-27 21:03:00,2028-10-10 21:03:00,Computer,IT,P1000111,Dell Inspiron 7000 Series Computer,Inspiron 7000
+David Dan,2023-08-31 09:20:00,4732,RAG-87809839,2023-09-20 09:20:00,2028-12-19 09:20:00,Computer,Sales,P1000112,HP  pavilion 360 Computer,pavilion 360
+Barton Friesner,2024-02-02 00:42:00,4601,FKW-65976155,2024-03-15 00:42:00,2029-03-21 00:42:00,Computer,IT,P1000113,Dell Inspiron 15 3000,Inspiron 15 3000
+Alyssa Biasotti,2023-07-05 02:04:00,1560,CRQ-39071546,2023-07-30 02:04:00,2024-08-02 02:04:00,Computer,IT,P1000114,Dell Inspiron 5480 Computer,Inspiron 5480
+Latisha Bahls,2023-11-28 14:05:00,3873,DJC-13779482,2024-01-16 14:05:00,2028-01-25 14:05:00,Computer,Customer Support,P1000115,Dell Inspiron 15 Computer,Inspiron 15
+Emilia Oxley,2023-12-22 16:53:00,2641,WXW-82094937,2024-02-17 16:53:00,2026-06-29 16:53:00,Computer,Customer Support,P1000116,Dell Inspiron 15 Computer,Inspiron 15
+Lacy Belmont,2023-07-18 18:50:00,3794,NQG-49484420,2023-08-20 18:50:00,2027-08-07 18:50:00,Computer,Customer Support,P1000117,Dell Inspiron 15 Computer,Inspiron 15
+Jacklyn Emayo,2024-01-23 13:40:00,3072,YOD-19683365,2024-02-04 13:40:00,2027-02-26 13:40:00,Computer,Customer Support,P1000118,HP Compaq Elite 8300 Computer,Compaq Elite 8300
+Genevieve Kekiwi,2023-11-09 04:55:00,4783,PHB-92748100,2023-12-08 04:55:00,2029-03-24 04:55:00,Computer,Customer Support,P1000119,Dell Optiplex 3060 Desktop Computer,Optiplex 3060
+Elmo Dagenais,2023-12-27 20:03:00,4420,WJW-69433021,2024-02-02 20:03:00,2028-11-16 20:03:00,Computer,Sales,P1000120,Dell Precision T7600 Computer,Precision T7600
+Alejandro Mascall,2024-04-09 22:22:00,3106,QMW-43273047,2024-04-12 22:22:00,2027-05-30 22:22:00,Computer,Product Management,P1000121,Dell Inspiron 3583 Laptop Computer,Inspiron 3583
+Viola Mcsorley,2024-01-08 07:35:00,4572,GSR-66617060,2024-02-05 07:35:00,2029-02-10 07:35:00,Computer,Customer Support,P1000122,Dell Inspiron 15 Computer,Inspiron 15
+Cherie Schronce,2023-07-23 00:03:00,3980,NUK-06335803,2023-09-12 00:03:00,2027-11-10 00:03:00,Computer,IT,P1000123,Dell Latitude E7450 Laptop,Latitude E7450
+Robin Schartz,2023-08-16 00:56:00,3119,EYZ-80481531,2023-09-04 00:56:00,2026-10-11 00:56:00,Computer,Finance,P1000124,Dell XPS 13 Computer,XPS 13
+Diana Temple,2023-06-24 07:51:00,4808,EUS-45946332,2023-08-04 07:51:00,2028-11-18 07:51:00,Computer,Sales,P1000125,Dell Precision T7600 Desktop Computer,Precision T7600
+Stephen Seiters,2023-09-06 04:58:00,1871,LDW-85347256,2023-10-23 04:58:00,2025-03-04 04:58:00,Computer,HR,P1000126,Dell OptiPlex 7080,OptiPlex 7080
+Sal Pindell,2023-08-23 09:19:00,2232,NLP-21272864,2023-09-20 09:19:00,2025-08-13 09:19:00,Computer,Customer Support,P1000127,Dell Inspiron 14,Inspiron 14
+Nickolas Khosravi,2023-06-08 06:02:00,3025,IWU-15963111,2023-07-02 06:02:00,2026-06-19 06:02:00,Computer,Product Management,P1000128,Dell Inspiron 15 3000 Series Laptop,Inspiron 15 3000 Series
+Deandre Resendiz,2023-06-11 20:46:00,3097,CJY-23211303,2023-08-06 20:46:00,2026-07-27 20:46:00,Computer,Customer Support,P1000129,Dell Inspiron i5 Desktop,Inspiron i5
+Nadia Wilshire,2023-10-30 12:29:00,2917,LXY-68319342,2023-12-15 12:29:00,2026-09-18 12:29:00,Computer,Sales,P1000130,Dell Inspiron Desktop,Inspiron Desktop
+Efren Baucher,2023-12-17 23:42:00,3344,SGI-84395007,2024-01-18 23:42:00,2027-06-01 23:42:00,Computer,Sales,P1000131,Dell Inspiron 15 3000 Series,Inspiron 15 3000
+Melinda Carleton,2024-03-10 14:34:00,4000,ABY-84604040,2024-03-26 14:34:00,2028-07-08 14:34:00,Computer,Customer Support,P1000132,Dell Inspiron 5593,Inspiron 5593
+Ross Spurger,2024-02-14 06:05:00,2206,TPX-29550672,2024-03-02 06:05:00,2026-01-22 06:05:00,Computer,Customer Support,P1000133,Dell Latitude 5400 Computer,Latitude 5400
+Lane Brantz,2023-04-09 00:42:00,2249,UES-29256083,2023-06-02 00:42:00,2025-04-07 00:42:00,Computer,Sales,P1000134,Dell OptiPlex 3070 Micro,OptiPlex 3070
+Heath Vanalphen,2023-08-31 00:37:00,2497,JDD-61287756,2023-09-25 00:37:00,2025-12-28 00:37:00,Computer,Sales,P1000135,Dell OptiPlex 7090,OptiPlex 7090
+Terrance Nimmer,2023-06-17 17:08:00,4276,GCP-29256865,2023-06-25 17:08:00,2028-02-26 17:08:00,Computer,HR,P1000136,Dell OptiPlex 780 Desktop Computer,OptiPlex 780
+Jewel Agresta,2023-06-21 03:37:00,2119,YDA-11720263,2023-07-08 03:37:00,2025-04-17 03:37:00,Computer,Customer Support,P1000137,Dell Inspiron 15,Inspiron 15
+Haley Rocheford,2023-08-18 03:24:00,1938,FYP-97286720,2023-10-01 03:24:00,2025-03-18 03:24:00,Computer,Sales,P1000138,Dell Inspiron 7560 Computer,Inspiron 7560
+Prince Kauk,2023-06-02 13:28:00,4994,ARG-70179586,2023-07-04 13:28:00,2029-01-26 13:28:00,Computer,Customer Support,P1000139,Dell XPS 13 Laptop,XPS 13
+Sean Bonnet,2023-05-17 06:55:00,2531,SBS-14905533,2023-06-02 06:55:00,2025-09-29 06:55:00,Computer,Customer Support,P1000140,Dell Inspiron 5570 Laptop Computer,Inspiron 5570
+Nanette Turansky,2023-09-13 23:47:00,3841,XLE-41893039,2023-11-02 23:47:00,2027-10-26 23:47:00,Computer,Customer Support,P1000141,Dell Inspiron 3780 Computer,Inspiron 3780
+Rolando Baumann,2023-11-02 18:42:00,3124,RFY-62332200,2023-11-23 18:42:00,2026-12-31 18:42:00,Computer,Sales,P1000142,Dell Inspiron 14 3000 Series,Inspiron 14 3000 Series
+Merle Wyrosdick,2023-07-08 08:48:00,1728,ORT-79576614,2023-07-21 08:48:00,2024-10-25 08:48:00,Computer,Customer Support,P1000143,Dell Inspiron 15 5000,Inspiron 15 5000
+Elmo Gabouer,2023-11-27 13:01:00,3207,VFO-63296632,2023-12-13 13:01:00,2027-03-06 13:01:00,Computer,Sales,P1000144,Dell Inspiron 14,Inspiron 14
+Eduardo Bellendir,2024-04-05 22:28:00,4367,UUJ-41367966,2024-04-16 22:28:00,2029-01-29 22:28:00,Computer,IT,P1000145,Dell OptiPlex 3070,OptiPlex 3070
+Bertram Quertermous,2024-01-10 07:14:00,3154,IWU-95924777,2024-03-01 07:14:00,2027-03-24 07:14:00,Computer,IT,P1000146,Dell Inspiron 15 Gaming Computer,Inspiron 15
+Peggy Hohlstein,2023-06-10 23:23:00,3587,HSA-04353025,2023-07-28 23:23:00,2027-03-21 23:23:00,Computer,Customer Support,P1000147,Dell Inspiron 15 Computer,Inspiron 15
+Carla Sirbaugh,2023-09-24 20:02:00,4394,UQY-47622341,2023-11-11 20:02:00,2028-08-01 20:02:00,Computer,Product Management,P1000148,Dell Inspiron 3593 Laptop,Inspiron 3593
+Kurtis Mcbay,2024-01-01 22:30:00,4278,HBU-27571103,2024-01-27 22:30:00,2028-09-12 22:30:00,Computer,Sales,P1000149,Dell OptiPlex 780,OptiPlex 780
+System Administrator,2023-12-01 21:54:00,3851,FKM-74252995,2023-12-31 21:54:00,2028-01-18 21:54:00,Computer,Finance,P1000150,Dell Optiplex 790 Desktop Computer,Optiplex 790
+Alene Rabeck,2024-03-04 10:44:00,4718,RIN-56219692,2024-03-18 10:44:00,2029-06-17 10:44:00,Computer,Sales,P1000151,Dell Inspiron 5000 Series,Inspiron 5000 Series
+Judy Gartenmayer,2023-06-03 06:08:00,1714,EHS-88008360,2023-06-19 06:08:00,2024-09-14 06:08:00,Computer,IT,P1000152,Microsoft Surface Pro,Surface Pro
+Naomi Caetano,2024-02-06 14:02:00,2481,BUW-35727314,2024-02-08 14:02:00,2026-05-28 14:02:00,Computer,Customer Support,P1000153,Dell XPS 13 Laptop,XPS 13
+Robt Braithwaite,2023-10-23 06:47:00,2816,BXD-22784156,2023-12-20 06:47:00,2026-07-24 06:47:00,Computer,Sales,P1000154,Dell OptiPlex 3090 Desktop Computer,OptiPlex 3090
+Marquita Bousman,2024-03-26 14:58:00,3987,MFL-91269242,2024-04-14 14:58:00,2028-07-18 14:58:00,Computer,Customer Support,P1000155,Dell Inspiron 15 3000,Inspiron 15 3000
+Roman Simone,2024-02-29 23:57:00,2581,YQR-03304579,2024-03-24 23:57:00,2026-08-08 23:57:00,Computer,Sales,P1000156,Dell Inspiron 15 3000 Series,Inspiron 15 3000
+Rosalind Krenzke,2023-08-26 19:06:00,4678,FSP-30120927,2023-10-20 19:06:00,2028-11-18 19:06:00,Computer,Sales,P1000157,Dell Inspiron 15 Computer,Inspiron 15
+Carol Coughlin,2023-11-17 22:57:00,1564,DIX-52279509,2023-12-07 22:57:00,2024-12-17 22:57:00,Computer,Sales,P1000158,Dell Inspiron 15 Computer,Inspiron 15
+Sue Haakinson,2023-09-12 16:37:00,2349,LEV-18332748,2023-10-03 16:37:00,2025-10-29 16:37:00,Computer,Customer Support,P1000159,Microsoft Surface Pro 7,Surface Pro 7
+Sharlene Circelli,2023-09-05 13:39:00,4187,PHI-27802560,2023-10-02 13:39:00,2028-04-03 13:39:00,Computer,Sales,P1000160,Dell Inspiron 5559 Computer,Inspiron 5559
+Reginald Lunan,2023-10-20 07:50:00,4818,QYD-59961437,2023-10-25 07:50:00,2029-03-21 07:50:00,Computer,HR,P1000161,Dell Inspiron 15,Inspiron 15
+Doug Matrisciano,2023-12-14 04:28:00,3345,MRU-38154550,2023-12-28 04:28:00,2027-05-29 04:28:00,Computer,Customer Support,P1000162,Dell Optiplex 7070 Desktop Computer,Optiplex 7070
+Reginald Humes,2023-10-02 10:34:00,3973,HVL-04269302,2023-10-15 10:34:00,2028-01-17 10:34:00,Computer,Sales,P1000163,Dell Inspiron 15,Inspiron 15
+Jacinto Gawron,2023-07-02 15:58:00,2125,BLF-48563330,2023-08-20 15:58:00,2025-05-01 15:58:00,Computer,Customer Support,P1000164,Dell XPS 13,XPS 13
+Ella Pahnke,2023-11-16 10:48:00,3733,XJY-46988149,2024-01-13 10:48:00,2027-11-06 10:48:00,Computer,Customer Support,P1000165,Dell Inspiron 15 Computer,Inspiron 15
+Danette Fostervold,2023-07-02 08:12:00,3651,NHA-04157758,2023-07-10 08:12:00,2027-05-13 08:12:00,Computer,Finance,P1000166,Dell XPS 13 Computer,XPS 13
+Naomi Mcraven,2023-11-15 16:39:00,2131,PCE-61209430,2023-12-22 16:39:00,2025-09-17 16:39:00,Computer,Customer Support,P1000167,Dell Inspiron 5501 Laptop,Inspiron 5501
+Pamala Brodtmann,2024-01-02 17:26:00,2440,XFB-91018526,2024-02-22 17:26:00,2026-04-03 17:26:00,Computer,IT,P1000168,Dell Latitude E6430,Latitude E6430
+Megan Burke,2024-04-02 20:35:00,1622,CRL-55451256,2024-04-19 20:35:00,2025-05-31 20:35:00,Computer,Sales,P1000169,Dell Latitude 5510 Laptop Computer,Latitude 5510
+Lacy Hyten,2023-11-12 02:31:00,4668,XFW-17831826,2024-01-05 02:31:00,2029-01-30 02:31:00,Computer,Sales,P1000170,Dell Latitude E7470 Laptop,Latitude E7470
+Renae Eldrige,2023-12-26 04:22:00,2833,XIC-47893729,2023-12-30 04:22:00,2026-10-04 04:22:00,Computer,Sales,P1000171,Dell Inspiron 13 5301 Laptop,Inspiron 13 5301
+Edgardo Prudente,2023-09-18 10:28:00,4323,FVC-36630488,2023-10-21 10:28:00,2028-06-21 10:28:00,Computer,Sales,P1000172,Dell Inspiron Desktop Computer,Inspiron Desktop
+Alva Pennigton,2023-10-08 00:51:00,3515,MGW-52229634,2023-10-25 00:51:00,2027-06-14 00:51:00,Computer,Development,P1000173,Dell Inspiron Desktop Computer,Inspiron Desktop
+Delphine Helmich,2023-05-23 17:41:00,3229,JSC-51104493,2023-06-06 17:41:00,2026-09-10 17:41:00,Computer,Finance,P1000174,Dell Inspiron Desktop - 5488,Inspiron Desktop - 5488
+David Loo,2024-02-14 20:45:00,4404,KXX-97508729,2024-04-03 20:45:00,2028-12-27 20:45:00,Computer,Development,P1000175,Dell Optiplex 7060 Desktop Computer,Optiplex 7060
+Mellissa Sule,2023-09-19 14:23:00,3617,YEW-71481916,2023-10-02 14:23:00,2027-07-15 14:23:00,Computer,IT,P1000176,Dell OptiPlex 780 Desktop Computer,OptiPlex 780
+Davin Czukowski,2023-11-29 10:15:00,2534,PKF-51518678,2023-12-25 10:15:00,2026-04-15 10:15:00,Computer,Sales,P1000177,Dell Inspiron 15 - 7577 Computer,Inspiron 15 - 7577
+Miranda Hammitt,2023-12-11 14:08:00,3991,VVX-05483667,2023-12-27 14:08:00,2028-04-05 14:08:00,Computer,IT,P1000178,Dell Inspiron 15 Computer,Inspiron 15
+Rebeca Brumet,2024-02-04 14:29:00,1769,IYX-09561475,2024-03-04 14:29:00,2025-06-13 14:29:00,Computer,Customer Support,P1000179,Dell Optiplex 7040 Desktop Computer,Optiplex 7040
+Cristopher Wiget,2023-06-18 01:42:00,3614,USU-25054097,2023-07-08 01:42:00,2027-04-11 01:42:00,Computer,Customer Support,P1000180,Dell Precision Workstation 5820,Precision Workstation 5820
+Nelly Jakuboski,2023-09-09 16:39:00,2973,TFA-30594403,2023-09-19 16:39:00,2026-08-25 16:39:00,Computer,Customer Support,P1000181,Dell Inspiron 15 3000 Series - Computer,Inspiron 15 3000 Series
+Elisa Gracely,2024-01-30 04:16:00,1729,XLV-08065112,2024-02-01 04:16:00,2025-05-20 04:16:00,Computer,Product Management,P1000182,Dell Latitude 5490,Latitude 5490
+Rita Center,2023-12-07 19:44:00,212,,2024-01-15 19:44:00,2025-12-07 19:44:00,Storage Device,Customer Support,P1000183,Samsung SSD 860 EVO 1TB,SSD 860 EVO 1TB
+Haley Rocheford,2024-01-25 03:58:00,400,,2024-02-19 03:58:00,2027-01-25 03:58:00,Rack,Sales,P1000184,Rack Server Model 24x7,Server Model 24x7
+Danny Dales,2023-09-18 03:53:00,5569,EFV-30493724,2023-11-13 03:53:00,2024-09-18 03:53:00,Server,Customer Support,P1000185,Dell PowerEdge R740 Server,PowerEdge R740
+Ella Pahnke,2024-02-05 15:57:00,7410,SHA-78857445,2024-03-15 15:57:00,2027-02-05 15:57:00,Server,Customer Support,P1000186,Dell PowerEdge R940 Server,PowerEdge R940
+Ross Spurger,2024-02-16 21:35:00,163,,2024-03-22 21:35:00,2025-02-16 21:35:00,Computer Peripheral,Customer Support,P1000187,Dell Alienware Advanced Gaming Mouse,Alienware Advanced Gaming Mouse
+George Tukis,2023-12-26 09:39:00,134,,2024-02-15 09:39:00,2026-12-26 09:39:00,Storage Device,Customer Support,P1000188,Seagate Barracuda 1TB,Barracuda 1TB
+Byron Fortuna,2024-03-12 13:06:00,262,,2024-03-18 13:06:00,2027-03-12 13:06:00,Storage Device,IT,P1000189,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+Mamie Mcintee,2024-02-20 07:37:00,221,,2024-03-15 07:37:00,2027-02-20 07:37:00,Computer Peripheral,Product Management,P1000190,Dell Monitor UltraSharp 27,UltraSharp 27
+Valeria Lingbeek,2023-12-03 12:25:00,121,,2024-01-01 12:25:00,2026-12-03 12:25:00,Storage Device,Sales,P1000191,Dell EMC PowerEdge Server,PowerEdge Server
+Valeria Lingbeek,2024-01-17 20:17:00,8000,,2024-03-13 20:17:00,2025-01-17 20:17:00,Web Server,Sales,P1000192,Dell PowerEdge R740 Web Server,PowerEdge R740
+Mitchel Harnar,2024-03-03 21:22:00,400,,2024-04-25 21:22:00,2026-03-03 21:22:00,Rack,Sales,P1000193,HP ProLiant DL380 Rack,ProLiant DL380
+Martin Carley,2023-05-27 11:13:00,8000,,2023-06-05 11:13:00,2026-05-27 11:13:00,Web Server,Sales,P1000194,Microsoft IIS Web Server,IIS Web Server
+Delphine Helmich,2023-10-02 07:31:00,400,,2023-11-04 07:31:00,2025-10-02 07:31:00,Rack,Finance,P1000195,Dell PowerEdge Rack,Dell PowerEdge
+Tia Lino,2024-02-07 23:43:00,224,,2024-02-19 23:43:00,2027-02-07 23:43:00,Storage Device,Sales,P1000196,Seagate Barracuda 1TB Storage Device,Barracuda 1TB
+Kasey Nguyen,2024-01-06 10:18:00,479,,2024-03-03 10:18:00,2026-01-06 10:18:00,Computer Peripheral,Customer Support,P1000197,Dell Computer Peripheral Keyboard,Dell Keyboard
+Bradly Hasselvander,2024-01-24 23:11:00,8000,,2024-02-12 23:11:00,2025-01-24 23:11:00,Web Server,Sales,P1000198,HP ProLiant DL380 Web Server,ProLiant DL380
+Brendan Qin,2023-12-02 09:07:00,2572,FPL-47769291,2024-01-23 09:07:00,2026-05-06 09:07:00,Computer,Finance,P1000199,Dell Inspiron 5000 Series Computer,Inspiron 5000 Series
+Pierre Salera,2023-08-03 05:33:00,4912,BEB-75866639,2023-09-24 05:33:00,2029-02-17 05:33:00,Computer,IT,P1000200,Dell Inspiron 5502 Laptop,Inspiron 5502
+Diana Temple,2023-11-18 20:12:00,2001,BSQ-95832735,2023-11-27 20:12:00,2024-11-18 20:12:00,Printer,Sales,P1000201,Brother HL-L2370DW Compact Monochrome Laser Printer,HL-L2370DW Monochrome Laser Printer
+Reginald Humes,2023-08-26 17:24:00,8000,,2023-09-03 17:24:00,2024-08-26 17:24:00,Web Server,Sales,P1000202,Dell PowerEdge 6400 Web Server,PowerEdge 6400
+Roseann Jerko,2023-11-06 10:34:00,422,,2023-11-23 10:34:00,2026-11-06 10:34:00,Storage Device,Sales,P1000203,Samsung SSD 850 EVO 500GB,SSD 850 EVO 500GB
+Kathie Argenti,2023-12-16 23:24:00,400,,2024-01-03 23:24:00,2024-12-16 23:24:00,Rack,Customer Support,P1000204,Dell PowerEdge Rack Server,PowerEdge Rack
+Mara Rineheart,2024-01-09 05:30:00,8000,,2024-02-11 05:30:00,2026-01-09 05:30:00,Web Server,Customer Support,P1000205,Dell Web Server R740,Dell R740
+Haley Rocheford,2023-07-20 06:45:00,299,,2023-09-01 06:45:00,2024-07-20 06:45:00,Computer Peripheral,Sales,P1000206,HP LaserJet Printer 3050,LaserJet 3050
+Jimmie Barninger,2024-01-12 00:16:00,3734,TMV-85650445,2024-02-26 00:16:00,2028-01-03 00:16:00,Computer,Customer Support,P1000207,Dell XPS 13 9380,XPS 13 9380
+Jimmy Hrobsky,2023-09-08 02:56:00,411,,2023-09-24 02:56:00,2025-09-08 02:56:00,Storage Device,Finance,P1000208,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+Jess Assad,2023-07-16 22:11:00,400,,2023-09-02 22:11:00,2024-07-16 22:11:00,Rack,Customer Support,P1000209,Dell PowerEdge R240 Rack,PowerEdge R240
+System Administrator,2024-02-09 10:00:00,8000,,2024-03-26 10:00:00,2026-02-09 10:00:00,Web Server,Finance,P1000210,Dell PowerEdge R740 Web Server,PowerEdge R740
+Megan Burke,2023-05-27 11:39:00,280,,2023-07-20 11:39:00,2026-05-27 11:39:00,Computer Peripheral,Sales,P1000211,Dell Ultrasharp Monitor,Ultrasharp Monitor
+Lucien Iurato,2023-06-19 10:50:00,284,,2023-08-04 10:50:00,2026-06-19 10:50:00,Computer Peripheral,Development,P1000212,Dell USB Keyboard SK-8121,USB Keyboard SK-8121
+Marta Horner,2023-05-07 11:45:00,8000,,2023-06-21 11:45:00,2025-05-07 11:45:00,Web Server,Customer Support,P1000213,Dell PowerEdge R740 Web Server,PowerEdge R740
+Olga Yarovenko,2023-05-24 21:25:00,8000,,2023-06-26 21:25:00,2025-05-24 21:25:00,Web Server,Sales,P1000214,IBM Web Server X3650 M4,X3650 M4
+Emery Reek,2023-06-18 12:39:00,8000,,2023-07-30 12:39:00,2025-06-18 12:39:00,Web Server,Customer Support,P1000215,Dell PowerEdge R740 Web Server,PowerEdge R740
+Karyn Jinks,2023-09-15 04:47:00,6687,ZMD-63647080,2023-10-12 04:47:00,2026-09-15 04:47:00,Server,IT,P1000216,Dell PowerEdge R940 Server,PowerEdge R940
+Efren Baucher,2023-07-19 22:32:00,8000,,2023-08-28 22:32:00,2025-07-19 22:32:00,Web Server,Sales,P1000217,Dell PowerEdge R730 Web Server,PowerEdge R730
+Mitchel Harnar,2023-06-23 10:25:00,179,,2023-07-11 10:25:00,2026-06-23 10:25:00,Storage Device,Sales,P1000218,Seagate Backup Plus 5TB External Hard Drive,Backup Plus 5TB
+Bart Hachey,2023-07-08 04:00:00,10227,LTW-98182494,2023-07-16 04:00:00,2024-07-08 04:00:00,Server,Product Management,P1000219,Dell PowerEdge R740xd Server,PowerEdge R740xd
+Elmo Dagenais,2023-05-11 21:40:00,4474,MQH-72279228,2023-06-08 21:40:00,2028-04-26 21:40:00,Computer,Sales,P1000220,Dell Inspiron 3580 Computer,Inspiron 3580
+Martin Carley,2023-09-22 06:06:00,497,,2023-10-24 06:06:00,2024-09-22 06:06:00,Computer Peripheral,Sales,P1000221,Dell Monitor 27 inches,Monitor 27 inches
+Lacy Hyten,2023-10-02 10:48:00,344,,2023-11-13 10:48:00,2025-10-02 10:48:00,Storage Device,Sales,P1000222,Dell EMC PowerVault NX400,PowerVault NX400
+Nathanial Phoenix,2023-09-30 21:28:00,9845,LTJ-93088235,2023-11-08 21:28:00,2025-09-30 21:28:00,Server,Customer Support,P1000223,Dell PowerEdge R340 Server,PowerEdge R340
+Elisa Gracely,2023-09-03 14:59:00,1773,GCL-25720127,2023-10-13 14:59:00,2026-09-03 14:59:00,Printer,Product Management,P1000224,HP LaserJet Pro Printer,LaserJet Pro
+Isaac Davensizer,2023-07-22 17:15:00,400,,2023-08-06 17:15:00,2024-07-22 17:15:00,Rack,Customer Support,P1000225,Datacenter Rack SR42UB,Rack SR42UB
+Jimmie Barninger,2023-12-31 17:08:00,8000,,2024-01-09 17:08:00,2026-12-31 17:08:00,Web Server,Customer Support,P1000226,Dell PowerEdge Web Server,PowerEdge Server
+Lee Javens,2023-06-22 07:24:00,4591,VSJ-69739070,2023-08-20 07:24:00,2028-08-03 07:24:00,Computer,Sales,P1000227,Dell OptiPlex 7070 Desktop Computer,OptiPlex 7070
+Zackary Mockus,2023-07-27 19:13:00,3310,OYX-21430507,2023-08-11 19:13:00,2026-12-23 19:13:00,Computer,Customer Support,P1000228,Lenovo ThinkPad T480,ThinkPad T480
+Deshawn Inafuku,2023-12-22 08:59:00,8000,,2024-02-17 08:59:00,2024-12-22 08:59:00,Web Server,IT,P1000229,Microsoft Azure Virtual Web Server,Azure Virtual Server
+Fred Luddy,2023-07-14 09:49:00,1555,QMU-07934176,2023-08-15 09:49:00,2026-07-14 09:49:00,Printer,Development,P1000230,HP LaserJet Pro 500,LaserJet Pro 500
+Mitch Schattner,2023-10-19 08:52:00,184,,2023-11-03 08:52:00,2024-10-19 08:52:00,Storage Device,Customer Support,P1000231,Seagate Barracuda 2TB HDD,Barracuda 2TB
+Fabian Mcshaw,2023-08-14 06:06:00,400,,2023-09-01 06:06:00,2025-08-14 06:06:00,Rack,Sales,P1000232,Dell PowerEdge Rack Server,PowerEdge Server
+George Tukis,2023-12-05 04:24:00,3939,OSM-15279303,2024-01-09 04:24:00,2028-03-04 04:24:00,Computer,Customer Support,P1000233,Dell Inspiron 15 5000 Series,Inspiron 15 5000
+Allie Pumphrey,2023-12-26 13:02:00,4879,ZUI-43530519,2024-01-27 13:02:00,2029-06-26 13:02:00,Computer,Product Management,P1000234,Dell Inspiron 15 Gaming Computer,Inspiron 15
+Kurtis Asberry,2023-12-12 04:41:00,400,,2023-12-16 04:41:00,2025-12-12 04:41:00,Rack,Sales,P1000235,Dell PowerEdge R240 Rack Server,PowerEdge R240
+Robt Braithwaite,2023-10-09 23:14:00,443,,2023-11-19 23:14:00,2026-10-09 23:14:00,Computer Peripheral,Sales,P1000236,Dell Computer Peripheral,Computer Peripheral
+Phil Hendrie,2023-08-30 15:06:00,400,,2023-09-20 15:06:00,2026-08-30 15:06:00,Rack,Sales,P1000237,Dell PowerEdge Rack Server R930,PowerEdge R930
+Kyle Lindauer,2023-07-06 00:02:00,486,,2023-07-22 00:02:00,2026-07-06 00:02:00,Computer Peripheral,IT,P1000238,Dell Monitor UltraSharp 27,UltraSharp 27
+Alva Pennigton,2023-08-07 21:13:00,2232,MZZ-68123910,2023-09-26 21:13:00,2026-08-07 21:13:00,Printer,Development,P1000239,HP LaserJet Pro M501,LaserJet Pro M501
+Lane Brantz,2023-11-12 16:45:00,451,,2023-11-17 16:45:00,2026-11-12 16:45:00,Storage Device,Sales,P1000240,Kingston A2000 NVMe SSD 1TB,A2000 NVMe SSD 1TB
+Danny Dales,2023-06-30 09:17:00,1311,SYB-62287228,2023-07-05 09:17:00,2025-06-30 09:17:00,Printer,Customer Support,P1000241,HP LaserJet Pro M452dn Printer,LaserJet Pro M452
+Wayne Webb,2023-08-23 13:50:00,400,,2023-08-29 13:50:00,2025-08-23 13:50:00,Rack,IT,P1000242,Dell Server Rack R530,Server Rack R530
+Jess Assad,2024-03-24 16:48:00,400,,2024-04-13 16:48:00,2025-03-24 16:48:00,Rack,Customer Support,P1000243,Dell PowerEdge R740 Rack,PowerEdge R740
+Jewel Agresta,2024-01-31 18:36:00,1014,XPZ-88917727,2024-02-25 18:36:00,2026-01-31 18:36:00,Printer,Customer Support,P1000244,HP OfficeJet Pro 6978,OfficeJet Pro 6978
+Rebeca Brumet,2023-11-11 08:30:00,10413,WEX-50782771,2023-12-30 08:30:00,2025-11-11 08:30:00,Server,Customer Support,P1000245,Dell PowerEdge R740 Server,PowerEdge R740
+Fabian Mcshaw,2023-06-09 22:50:00,8000,,2023-06-12 22:50:00,2024-06-09 22:50:00,Web Server,Sales,P1000246,Google Cloud Web Server,Cloud Web Server
+Mandy Mcdonnell,2023-07-19 19:21:00,8000,,2023-08-04 19:21:00,2026-07-19 19:21:00,Web Server,Development,P1000247,IBM WebSphere Application Web Server,WebSphere Application Server
+Emery Reek,2023-07-26 12:44:00,8000,,2023-09-05 12:44:00,2025-07-26 12:44:00,Web Server,Customer Support,P1000248,Dell PowerEdge R640 Web Server,PowerEdge R640
+Margaret Grey,2023-12-24 09:58:00,232,,2024-01-21 09:58:00,2026-12-24 09:58:00,Storage Device,Sales,P1000249,Western Digital Black 1TB,WD Black 1TB
+Reginald Humes,2023-09-07 00:26:00,1257,VFP-31840054,2023-10-16 00:26:00,2025-09-07 00:26:00,Printer,Sales,P1000250,HP LaserJet 4000 Series Printer,LaserJet 4000
+Ted Keppel,2023-11-28 18:08:00,8000,,2023-12-27 18:08:00,2024-11-28 18:08:00,Web Server,IT,P1000251,Dell PowerEdge R740 Web Server,PowerEdge R740
+Howard Johnson,2024-03-25 14:28:00,1886,RCU-59075485,2024-04-20 14:28:00,2025-03-25 14:28:00,Printer,Sales,P1000252,Brother HL-L2380DW Printer,HL-L2380DW
+Bart Hachey,2024-01-06 23:11:00,263,,2024-02-17 23:11:00,2027-01-06 23:11:00,Storage Device,Product Management,P1000253,Seagate Exos 7E8 1TB Hard Drive,Exos 7E8 1TB
+Naomi Caetano,2024-02-04 19:23:00,8000,,2024-03-18 19:23:00,2026-02-04 19:23:00,Web Server,Customer Support,P1000254,Dell PowerEdge R740 Web Server,PowerEdge R740
+Mandy Mcdonnell,2023-05-12 15:44:00,2130,WJK-04347125,2023-07-06 15:44:00,2025-03-13 15:44:00,Computer,Development,P1000255,Dell Inspiron Computer,Inspiron Computer
+Carol Coughlin,2023-10-17 02:16:00,11770,NZS-42153651,2023-12-01 02:16:00,2026-10-17 02:16:00,Server,Sales,P1000256,Dell PowerEdge R940 Server,PowerEdge R940
+Roman Simone,2023-12-15 06:12:00,2993,WSQ-33014162,2024-02-05 06:12:00,2026-12-10 06:12:00,Computer,Sales,P1000257,Dell Inspiron 5593 Laptop,Inspiron 5593
+Denver Topete,2023-11-30 22:19:00,157,,2024-01-23 22:19:00,2026-11-30 22:19:00,Computer Peripheral,Customer Support,P1000258,HP DeskJet 1100,DeskJet 1100
+Kerry Evertt,2023-05-16 18:56:00,203,,2023-06-09 18:56:00,2024-05-16 18:56:00,Storage Device,Development,P1000259,Western Digital Black 1TB HDD,WD Black 1TB HDD
+Kira Papen,2023-08-05 03:32:00,365,,2023-09-09 03:32:00,2026-08-05 03:32:00,Storage Device,Customer Support,P1000260,Samsung SSD 870 EVO,SSD 870 EVO
+Valentine Granberry,2023-06-07 19:53:00,226,,2023-08-01 19:53:00,2024-06-07 19:53:00,Storage Device,Customer Support,P1000261,Seagate External Storage Device 1TB,External Storage Device 1TB
+Rosalind Krenzke,2023-09-22 10:44:00,400,,2023-10-02 10:44:00,2024-09-22 10:44:00,Rack,Sales,P1000262,Dell PowerEdge Server Rack,PowerEdge Server Rack
+Efren Baucher,2023-07-29 17:52:00,1424,IQD-69248801,2023-09-24 17:52:00,2024-07-29 17:52:00,Printer,Sales,P1000263,HP LaserJet Pro M281fdw Printer,LaserJet Pro M281fdw
+Bridgett Retort,2023-08-15 22:54:00,4777,OIZ-77728320,2023-09-14 22:54:00,2028-12-25 22:54:00,Computer,Finance,P1000264,Dell Inspiron 5481,Inspiron 5481
+Stephen Seiters,2023-09-27 05:41:00,408,,2023-11-09 05:41:00,2024-09-27 05:41:00,Computer Peripheral,HR,P1000265,Logitech Wireless Mouse M510,Wireless Mouse M510
+Jasmin Gum,2023-11-13 06:33:00,3635,JRN-58283740,2024-01-03 06:33:00,2027-09-17 06:33:00,Computer,Sales,P1000266,Dell Inspiron 7506 2-in-1 Computer,Inspiron 7506 2-in-1
+Felipe Mahone,2023-04-24 08:02:00,234,,2023-06-14 08:02:00,2025-04-24 08:02:00,Storage Device,Customer Support,P1000267,Western Digital My Passport 1TB,My Passport 1TB
+Nathanial Phoenix,2023-07-29 17:01:00,108,,2023-08-29 17:01:00,2026-07-29 17:01:00,Computer Peripheral,Customer Support,P1000268,Dell Monitor UltraSharp U2719D,UltraSharp U2719D
+Ella Pahnke,2023-10-16 04:50:00,3734,VZZ-02825015,2023-12-10 04:50:00,2027-10-07 04:50:00,Computer,Customer Support,P1000269,Dell Inspiron Desktop,Inspiron Desktop
+Denver Topete,2024-02-02 12:06:00,183,,2024-02-21 12:06:00,2027-02-02 12:06:00,Storage Device,Customer Support,P1000270,Samsung Evo SSD 1TB,Evo SSD 1TB
+Kira Staffon,2023-11-01 12:16:00,130,,2023-12-18 12:16:00,2026-11-01 12:16:00,Storage Device,Finance,P1000271,Seagate 1TB External Hard Drive,1TB External Hard Drive
+Bertram Quertermous,2023-06-28 07:42:00,5380,NRM-01821722,2023-07-04 07:42:00,2025-06-28 07:42:00,Server,IT,P1000272,Dell PowerEdge R940 Server,PowerEdge R940
+Genevieve Kekiwi,2023-06-21 12:11:00,8000,,2023-06-29 12:11:00,2026-06-21 12:11:00,Web Server,Customer Support,P1000273,IBM WebSphere Web Server,WebSphere
+Marquita Bousman,2024-01-20 05:19:00,8000,,2024-03-07 05:19:00,2027-01-20 05:19:00,Web Server,Customer Support,P1000274,Dell PowerEdge R740 Web Server,PowerEdge R740
+Lynette Setlock,2023-11-15 18:41:00,497,,2023-12-12 18:41:00,2026-11-15 18:41:00,Computer Peripheral,Customer Support,P1000275,Logitech Wireless Mouse,Wireless Mouse
+Jimmie Barninger,2024-01-14 05:43:00,107,,2024-01-16 05:43:00,2026-01-14 05:43:00,Computer Peripheral,Customer Support,P1000276,Logitech Wireless Mouse M510,Wireless Mouse M510
+Zackary Mockus,2023-11-11 06:33:00,414,,2024-01-07 06:33:00,2024-11-11 06:33:00,Computer Peripheral,Customer Support,P1000277,Dell USB Keyboard SK-8120,SK-8120
+Devon Samrah,2024-03-09 16:55:00,492,,2024-03-22 16:55:00,2026-03-09 16:55:00,Storage Device,IT,P1000278,Samsung SSD 860 EVO 1TB,SSD 860 EVO 1TB
+Reginald Lunan,2023-10-01 12:02:00,4362,LMX-94324136,2023-11-07 12:02:00,2028-07-23 12:02:00,Computer,HR,P1000279,Dell Inspiron 5501 Laptop,Inspiron 5501
+Elmo Dagenais,2023-11-05 23:46:00,400,,2023-12-26 23:46:00,2025-11-05 23:46:00,Rack,Sales,P1000280,Server Rack 42U,42U Rack
+Garfield Lijewski,2023-12-23 18:48:00,417,,2024-01-31 18:48:00,2025-12-23 18:48:00,Storage Device,IT,P1000281,Dell PowerVault MD3820i Storage Device,PowerVault MD3820i
+Corinne Cowan,2024-02-24 03:19:00,4959,JMH-96874491,2024-03-19 03:19:00,2029-10-03 03:19:00,Computer,Finance,P1000282,Dell Inspiron 3593 Computer,Inspiron 3593
+Mara Rineheart,2024-02-11 13:03:00,8000,,2024-03-19 13:03:00,2026-02-11 13:03:00,Web Server,Customer Support,P1000283,Dell PowerEdge R440 Web Server,PowerEdge R440
+Elisa Gracely,2023-08-21 03:40:00,144,,2023-09-01 03:40:00,2026-08-21 03:40:00,Storage Device,Product Management,P1000284,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+Danny Dales,2023-06-24 21:19:00,454,,2023-08-15 21:19:00,2024-06-24 21:19:00,Computer Peripheral,Customer Support,P1000285,Dell External Keyboard SK-8121,SK-8121
+Melinda Carleton,2023-10-24 16:16:00,10470,YNO-35735224,2023-11-28 16:16:00,2025-10-24 16:16:00,Server,Customer Support,P1000286,IBM Power System S922 Server,Power System S922
+Vince Ettel,2023-08-31 16:50:00,9678,ZUM-55952890,2023-10-22 16:50:00,2025-08-31 16:50:00,Server,Customer Support,P1000287,Dell PowerEdge R940 Server,PowerEdge R940
+Karyn Jinks,2024-03-12 10:57:00,402,EFU-53014770,2024-03-26 10:57:00,2026-03-12 10:57:00,Printer,IT,P1000288,HP LaserJet 4000 Series Printer,LaserJet 4000
+Naomi Mcraven,2024-04-04 17:38:00,8000,,2024-04-05 17:38:00,2026-04-04 17:38:00,Web Server,Customer Support,P1000289,Dell PowerEdge R740 Web Server,PowerEdge R740
+Terrance Nimmer,2024-03-08 10:29:00,379,,2024-03-22 10:29:00,2025-03-08 10:29:00,Computer Peripheral,HR,P1000290,Dell UltraSharp 27 Monitor,UltraSharp 27
+Reginald Humes,2023-09-25 03:22:00,400,,2023-11-24 03:22:00,2024-09-25 03:22:00,Rack,Sales,P1000291,Rack Server Dell PowerEdge R740XD,Dell PowerEdge R740XD
+Lora Lendor,2023-06-06 02:01:00,8000,,2023-06-20 02:01:00,2026-06-06 02:01:00,Web Server,IT,P1000292,Dell PowerEdge R940 Web Server,PowerEdge R940
+Lizzie Torregrossa,2023-07-22 14:09:00,2266,MVA-88553526,2023-08-20 14:09:00,2025-07-28 14:09:00,Computer,IT,P1000293,Dell Inspiron 15 3000,Inspiron 15 3000
+Jacklyn Emayo,2023-07-03 21:28:00,156,,2023-08-23 21:28:00,2025-07-03 21:28:00,Storage Device,Customer Support,P1000294,Quantum Storage Device DX100,SD DX100
+Efren Baucher,2024-03-23 14:43:00,2647,JXZ-35185358,2024-03-28 14:43:00,2026-10-02 14:43:00,Computer,Sales,P1000295,Dell Inspiron 15 Computer,Inspiron 15
+Carol Coughlin,2023-04-22 09:00:00,8000,,2023-06-13 09:00:00,2026-04-22 09:00:00,Web Server,Sales,P1000296,Dell PowerEdge R740 Web Server,Dell PowerEdge R740
+Donald Sherretts,2023-09-08 18:24:00,606,YFS-21745118,2023-10-05 18:24:00,2024-09-08 18:24:00,Printer,Customer Support,P1000297,HP OfficeJet 4650 All-in-One Printer,OfficeJet 4650
+Kurtis Asberry,2024-02-21 04:17:00,400,,2024-03-11 04:17:00,2026-02-21 04:17:00,Rack,Sales,P1000298,Rack Mount Dell Server R740,Dell Server R740
+Mandy Mcdonnell,2023-12-05 19:48:00,2443,GHN-38847515,2024-01-16 19:48:00,2024-12-05 19:48:00,Printer,Development,P1000299,HP OfficeJet Pro 9015 All-in-One Wireless Printer,OfficeJet Pro 9015
+Peggy Hohlstein,2024-02-10 15:11:00,314,,2024-02-24 15:11:00,2026-02-10 15:11:00,Storage Device,Customer Support,P1000300,Dell EMC PowerEdge Storage Device,EMC PowerEdge
+Elmo Dagenais,2023-06-29 21:12:00,461,,2023-07-18 21:12:00,2026-06-29 21:12:00,Storage Device,Sales,P1000301,Dell EMC PowerEdge R940 Storage Device,PowerEdge R940
+Efren Baucher,2023-07-19 04:16:00,8000,,2023-08-24 04:16:00,2025-07-19 04:16:00,Web Server,Sales,P1000302,Dell PowerEdge R940 Web Server,PowerEdge R940
+Allie Pumphrey,2023-09-14 09:23:00,10118,YBY-44036825,2023-10-24 09:23:00,2026-09-14 09:23:00,Server,Product Management,P1000303,Dell PowerEdge R740 Server,PowerEdge R740
+Latisha Bahls,2023-10-04 19:51:00,8000,,2023-10-25 19:51:00,2025-10-04 19:51:00,Web Server,Customer Support,P1000304,Dell PowerEdge R740 Web Server,PowerEdge R740
+Naomi Caetano,2024-03-07 07:40:00,6236,QZL-18634444,2024-03-25 07:40:00,2025-03-07 07:40:00,Server,Customer Support,P1000305,Dell PowerEdge R940 Server,PowerEdge R940
+Donald Sherretts,2023-06-25 10:43:00,400,,2023-06-30 10:43:00,2024-06-25 10:43:00,Rack,Customer Support,P1000306,Dell PowerEdge Server Rack,PowerEdge Server Rack
+Nelly Jakuboski,2023-05-20 18:03:00,276,,2023-07-19 18:03:00,2026-05-20 18:03:00,Computer Peripheral,Customer Support,P1000307,Logitech Wireless Keyboard K800,Wireless Keyboard K800
+Titus Rodreguez,2024-02-26 15:17:00,497,JBG-56777695,2024-04-03 15:17:00,2025-02-26 15:17:00,Printer,Finance,P1000308,HP LaserJet 4050 Printer,LaserJet 4050
+Pilar Suddeth,2024-01-03 06:32:00,400,,2024-01-15 06:32:00,2026-01-03 06:32:00,Rack,Sales,P1000309,Dell PowerEdge Rack,PowerEdge Rack
+Alva Pennigton,2024-03-28 03:33:00,10305,OHP-91031495,2024-04-13 03:33:00,2027-03-28 03:33:00,Server,Development,P1000310,Dell PowerEdge R740 Server,PowerEdge R740
+Martin Carley,2023-10-15 08:12:00,154,,2023-11-20 08:12:00,2026-10-15 08:12:00,Computer Peripheral,Sales,P1000311,Dell Keyboard SK-8115,SK-8115
+Lane Brantz,2023-12-01 19:38:00,8000,,2023-12-22 19:38:00,2026-12-01 19:38:00,Web Server,Sales,P1000312,Dell PowerEdge R720 Web Server,PowerEdge R720
+Fabian Mcshaw,2023-06-02 21:26:00,254,,2023-07-18 21:26:00,2025-06-02 21:26:00,Computer Peripheral,Sales,P1000313,Dell Laser Printer 1815dn,Laser Printer 1815dn
+Petra Clemmens,2023-07-07 02:21:00,418,,2023-07-17 02:21:00,2025-07-07 02:21:00,Storage Device,Sales,P1000314,Western Digital HDD 4TB,HDD 4TB
+Van Leanen,2024-03-30 08:32:00,237,,2024-04-15 08:32:00,2026-03-30 08:32:00,Computer Peripheral,IT,P1000315,Dell UltraSharp Monitor U2415,UltraSharp U2415
+Dennis Millar,2024-01-29 02:19:00,139,,2024-02-18 02:19:00,2026-01-29 02:19:00,Storage Device,Sales,P1000316,Seagate Backup Plus 4TB External Hard Drive,Seagate Backup Plus 4TB
+Marquita Bousman,2023-08-10 12:05:00,5615,ZQT-12277848,2023-09-12 12:05:00,2025-08-10 12:05:00,Server,Customer Support,P1000317,Dell PowerEdge R640 Server,PowerEdge R640
+Carol Coughlin,2023-08-23 04:30:00,629,AMZ-23325356,2023-10-08 04:30:00,2025-08-23 04:30:00,Printer,Sales,P1000318,HP LaserJet Pro M404n Printer,LaserJet Pro M404n
+Nathanial Phoenix,2023-12-15 05:02:00,248,,2024-01-11 05:02:00,2024-12-15 05:02:00,Computer Peripheral,Customer Support,P1000319,Dell Ultrasharp Monitor,Ultrasharp Monitor
+Lona Scronce,2023-05-30 09:26:00,400,,2023-06-24 09:26:00,2026-05-30 09:26:00,Rack,Customer Support,P1000320,Dell PowerEdge Rack Server,PowerEdge Rack
+Pilar Suddeth,2023-11-09 22:41:00,8000,,2023-12-24 22:41:00,2024-11-09 22:41:00,Web Server,Sales,P1000321,Dell PowerEdge R740 Web Server,PowerEdge R740
+Heath Vanalphen,2023-06-08 06:10:00,203,,2023-06-13 06:10:00,2025-06-08 06:10:00,Storage Device,Sales,P1000322,Dell PowerVault MD3200i Storage Device,PowerVault MD3200i
+Mayme Staub,2023-09-23 12:38:00,352,,2023-10-15 12:38:00,2024-09-23 12:38:00,Computer Peripheral,IT,P1000323,Logitech Wireless Mouse M235,Wireless Mouse M235
+Edgardo Prudente,2023-12-22 19:36:00,400,,2023-12-24 19:36:00,2025-12-22 19:36:00,Rack,Sales,P1000324,Dell PowerEdge Rack,Dell PowerEdge
+Teodoro Gaboury,2023-05-16 03:01:00,365,,2023-06-01 03:01:00,2025-05-16 03:01:00,Computer Peripheral,Customer Support,P1000325,Logitech Wireless Mouse M560,Wireless Mouse M560
+Reginald Humes,2023-06-06 20:02:00,3896,NPZ-23165002,2023-07-07 20:02:00,2027-08-15 20:02:00,Computer,Sales,P1000326,Dell OptiPlex 7040 Desktop Computer,OptiPlex 7040
+Sean Bonnet,2023-05-26 15:05:00,8000,,2023-06-17 15:05:00,2025-05-26 15:05:00,Web Server,Customer Support,P1000327,Dell PowerEdge R740 Web Server,PowerEdge R740
+Chuck Farley,2024-02-21 08:42:00,409,,2024-03-16 08:42:00,2025-02-21 08:42:00,Storage Device,Sales,P1000328,Synology DiskStation DS420j Storage Device,DiskStation DS420j
+Viola Mcsorley,2023-04-21 05:54:00,9124,APO-42723021,2023-06-19 05:54:00,2026-04-21 05:54:00,Server,Customer Support,P1000329,Dell PowerEdge R740 Server,PowerEdge R740
+Mamie Mcintee,2023-08-20 16:07:00,4503,WFZ-47129146,2023-09-13 16:07:00,2028-08-19 16:07:00,Computer,Product Management,P1000330,Dell Inspiron 3580 Laptop,Inspiron 3580
+Maryann Garnette,2023-04-26 19:22:00,2615,RGN-53805668,2023-06-23 19:22:00,2025-10-19 19:22:00,Computer,IT,P1000331,Dell Inspiron Desktop Computer,Inspiron Desktop
+Terrance Nimmer,2024-03-25 14:39:00,8000,,2024-04-13 14:39:00,2026-03-25 14:39:00,Web Server,HR,P1000332,Dell PowerEdge R940 Web Server,PowerEdge R940
+Mayme Staub,2023-12-20 05:33:00,487,,2024-01-04 05:33:00,2024-12-20 05:33:00,Computer Peripheral,IT,P1000333,Logitech MX Master 3 Computer Peripheral,MX Master 3
+Naomi Mcraven,2023-07-11 20:38:00,3453,CRO-40800278,2023-08-10 20:38:00,2027-02-15 20:38:00,Computer,Customer Support,P1000334,Dell Inspiron 15 7000,Inspiron 15 7000
+Jimmie Barninger,2023-08-30 23:52:00,400,,2023-09-09 23:52:00,2025-08-30 23:52:00,Rack,Customer Support,P1000335,Dell PowerEdge Rack,PowerEdge
+Carol Coughlin,2023-07-04 16:53:00,343,,2023-07-28 16:53:00,2026-07-04 16:53:00,Computer Peripheral,Sales,P1000336,Dell Wireless Mouse WM615,Dell_WM615
+Danette Fostervold,2023-11-23 21:02:00,2318,ZWK-46641547,2023-12-15 21:02:00,2025-11-23 21:02:00,Printer,Finance,P1000337,HP LaserJet Pro M15w,LaserJet Pro M15w
+Isaac Davensizer,2023-06-12 05:41:00,8411,PHY-96999250,2023-06-13 05:41:00,2025-06-12 05:41:00,Server,Customer Support,P1000338,Dell PowerEdge R740 Server,PowerEdge R740
+Stacey Blow,2023-10-21 22:08:00,429,,2023-11-19 22:08:00,2026-10-21 22:08:00,Storage Device,IT,P1000339,Dell PowerVault NX3200 Storage Device,PowerVault NX3200
+Felipe Mahone,2023-10-29 13:24:00,120,,2023-12-27 13:24:00,2025-10-29 13:24:00,Storage Device,Customer Support,P1000340,Dell PowerVault MD1200 Storage Device,PowerVault MD1200
+Warren Speach,2023-09-17 21:31:00,8000,,2023-10-11 21:31:00,2024-09-17 21:31:00,Web Server,HR,P1000341,Dell PowerEdge T330 Web Server,PowerEdge T330
+Lane Brantz,2023-07-03 05:02:00,2482,NQU-39162635,2023-08-05 05:02:00,2024-07-03 05:02:00,Printer,Sales,P1000342,HP LaserJet Pro M281fdw Printer,LaserJet Pro M281fdw
+Jewel Agresta,2024-02-26 21:45:00,3122,KGB-32294466,2024-03-17 21:45:00,2027-04-25 21:45:00,Computer,Customer Support,P1000343,Dell Inspiron 15 - Computer,Inspiron 15
+Sharlene Circelli,2023-09-09 17:49:00,105,,2023-11-01 17:49:00,2026-09-09 17:49:00,Computer Peripheral,Sales,P1000344,Logitech Wireless Mouse M325,Wireless Mouse M325
+Robt Braithwaite,2023-10-30 01:22:00,400,,2023-11-23 01:22:00,2024-10-30 01:22:00,Rack,Sales,P1000345,Rack Mounted Server X550,Server X550
+Lynda Caraway,2023-08-26 00:14:00,3000,CKK-42225919,2023-09-05 00:14:00,2026-08-25 00:14:00,Computer,Customer Support,P1000346,Dell XPS 17 Computer,XPS 17
+Reginald Lunan,2023-10-17 14:30:00,9418,POX-80487173,2023-11-05 14:30:00,2024-10-17 14:30:00,Server,HR,P1000347,Dell PowerEdge R740 Server,PowerEdge R740
+Fabian Mcshaw,2023-10-21 19:30:00,4897,AZY-41341879,2023-11-22 19:30:00,2029-04-30 19:30:00,Computer,Sales,P1000348,Dell Inspiron Desktop Computer,Inspiron Desktop
+Jimmy Hrobsky,2023-08-29 20:03:00,400,,2023-10-16 20:03:00,2026-08-29 20:03:00,Rack,Finance,P1000349,HPE ProLiant DL385 Gen10 Rack Server,ProLiant DL385 Gen10
+Mary Cruse,2023-12-10 00:40:00,741,QXH-82904317,2023-12-28 00:40:00,2025-12-10 00:40:00,Printer,Sales,P1000350,HP LaserJet Pro M281fdw Printer,LaserJet Pro M281fdw
+Deandre Resendiz,2023-06-09 16:22:00,424,,2023-07-09 16:22:00,2024-06-09 16:22:00,Storage Device,Customer Support,P1000351,Western Digital Red 6TB,WD Red 6TB
+Mara Rineheart,2023-10-16 08:56:00,8897,BVL-16367187,2023-11-11 08:56:00,2024-10-16 08:56:00,Server,Customer Support,P1000352,Dell PowerEdge R740 Rack Server,PowerEdge R740
+Marta Horner,2023-06-12 19:41:00,5585,NML-69844980,2023-07-18 19:41:00,2026-06-12 19:41:00,Server,Customer Support,P1000353,Dell PowerEdge R740xd Server,PowerEdge R740xd
+Warren Speach,2023-09-22 09:43:00,2420,SUL-48025506,2023-09-23 09:43:00,2026-09-22 09:43:00,Printer,HR,P1000354,HP LaserJet 4200dn Printer,LaserJet 4200dn
+Deshawn Inafuku,2023-07-26 06:13:00,8000,,2023-08-01 06:13:00,2025-07-26 06:13:00,Web Server,IT,P1000355,Dell PowerEdge R640 Web Server,PowerEdge R640
+Delphine Helmich,2024-03-30 17:19:00,10803,EVA-74265104,2024-04-09 17:19:00,2027-03-30 17:19:00,Server,Finance,P1000356,Dell PowerEdge R440 Server,PowerEdge R440
+Nadia Wilshire,2023-06-12 09:32:00,482,,2023-06-18 09:32:00,2026-06-12 09:32:00,Computer Peripheral,Sales,P1000357,Dell Monitor Ultrasharp 4K,Ultrasharp 4K
+Chuck Farley,2023-10-02 21:10:00,388,,2023-10-11 21:10:00,2025-10-02 21:10:00,Storage Device,Sales,P1000358,Western Digital External Hard Drive 2TB,External Hard Drive 2TB
+Ross Spurger,2024-02-08 22:20:00,358,,2024-04-08 22:20:00,2027-02-08 22:20:00,Computer Peripheral,Customer Support,P1000359,Logitech Wireless Mouse,Wireless Mouse
+Renae Eldrige,2023-09-07 22:55:00,400,,2023-09-27 22:55:00,2024-09-07 22:55:00,Rack,Sales,P1000360,Dell PowerEdge Rack R340,PowerEdge Rack R340
+Kathie Argenti,2023-08-10 11:20:00,1966,SVT-69517517,2023-08-21 11:20:00,2025-03-23 11:20:00,Computer,Customer Support,P1000361,Dell Inspiron 7472 Laptop,Inspiron 7472
+David Dan,2023-10-26 17:36:00,981,QOL-36557496,2023-12-13 17:36:00,2024-10-26 17:36:00,Printer,Sales,P1000362,HP LaserJet 4050 Printer,LaserJet 4050
+Valeria Lingbeek,2023-08-08 16:25:00,8000,,2023-08-17 16:25:00,2025-08-08 16:25:00,Web Server,Sales,P1000363,Microsoft Web Server 2019,Web Server 2019
+Naomi Caetano,2023-11-27 19:49:00,2195,SZQ-98652807,2024-01-21 19:49:00,2026-11-27 19:49:00,Printer,Customer Support,P1000364,HP LaserJet 9050dn Printer,LaserJet 9050dn
+Jacinto Gawron,2024-02-05 17:56:00,10723,MRH-59178829,2024-03-02 17:56:00,2025-02-05 17:56:00,Server,Customer Support,P1000365,Dell PowerEdge R940 Server,PowerEdge R940
+Fred Luddy,2023-11-10 18:45:00,400,,2023-12-08 18:45:00,2025-11-10 18:45:00,Rack,Development,P1000366,Dell PowerEdge Rack,PowerEdge Rack
+Carla Sirbaugh,2024-02-07 22:30:00,345,,2024-03-14 22:30:00,2026-02-07 22:30:00,Computer Peripheral,Product Management,P1000367,HP LaserJet 400 Printer,LaserJet 400
+Darrell Amrich,2024-02-23 05:52:00,5850,UTL-58701457,2024-03-16 05:52:00,2026-02-23 05:52:00,Server,Customer Support,P1000368,Dell PowerEdge R740 Server,PowerEdge R740
+Carla Sirbaugh,2023-08-07 08:08:00,8000,,2023-08-27 08:08:00,2026-08-07 08:08:00,Web Server,Product Management,P1000369,Dell PowerEdge R440 Web Server,PowerEdge R440
+Titus Rodreguez,2024-02-01 17:35:00,150,,2024-02-08 17:35:00,2025-02-01 17:35:00,Computer Peripheral,Finance,P1000370,Dell XPS 8700 Computer Peripheral,XPS 8700
+Teodoro Gaboury,2024-02-15 03:51:00,361,,2024-03-19 03:51:00,2027-02-15 03:51:00,Computer Peripheral,Customer Support,P1000371,Logitech Keyboard K120,Keyboard K120
+Margaret Grey,2023-11-21 06:16:00,8000,,2023-12-24 06:16:00,2024-11-21 06:16:00,Web Server,Sales,P1000372,IBM Web Server X3100 M5,X3100 M5
+Mara Rineheart,2024-01-22 20:20:00,276,,2024-02-12 20:20:00,2025-01-22 20:20:00,Storage Device,Customer Support,P1000373,Seagate Expansion 8TB Desktop External Hard Drive,Seagate Expansion 8TB
+Lacy Hyten,2023-06-29 10:54:00,1823,FAQ-44333300,2023-08-08 10:54:00,2026-06-29 10:54:00,Printer,Sales,P1000374,HP OfficeJet Pro 8025,OfficeJet Pro 8025
+Miranda Hammitt,2024-03-12 20:40:00,378,,2024-03-14 20:40:00,2026-03-12 20:40:00,Storage Device,IT,P1000375,Western Digital Storage Device 1TB,WD 1TB
+Nadia Wilshire,2023-08-13 03:10:00,715,FAQ-62884558,2023-08-27 03:10:00,2025-08-13 03:10:00,Printer,Sales,P1000376,HP LaserJet Pro M203dw,LaserJet Pro M203dw
+Roman Simone,2023-10-28 19:59:00,400,,2023-11-11 19:59:00,2025-10-28 19:59:00,Rack,Sales,P1000377,Dell PowerEdge R830 Rack Server,PowerEdge R830
+Mitch Schattner,2023-08-10 05:12:00,400,,2023-09-11 05:12:00,2024-08-10 05:12:00,Rack,Customer Support,P1000378,Dell PowerEdge Rack Server,PowerEdge Rack Server
+Mayme Staub,2023-05-28 04:36:00,400,,2023-06-25 04:36:00,2024-05-28 04:36:00,Rack,IT,P1000379,Dell PowerEdge Rack Server R740,PowerEdge R740
+David Loo,2023-12-17 03:38:00,4435,FJN-00196945,2024-01-25 03:38:00,2028-11-13 03:38:00,Computer,Development,P1000380,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+Rosalind Krenzke,2023-08-22 04:10:00,277,,2023-09-23 04:10:00,2025-08-22 04:10:00,Storage Device,Sales,P1000381,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+Alejandro Mascall,2023-12-22 23:50:00,8000,,2024-01-08 23:50:00,2026-12-22 23:50:00,Web Server,Product Management,P1000382,Dell PowerEdge R740 Web Server,PowerEdge R740
+Roman Simone,2024-02-06 07:59:00,743,ZQI-57553029,2024-03-15 07:59:00,2026-02-06 07:59:00,Printer,Sales,P1000383,HP LaserJet Pro M479fdw,LaserJet Pro M479fdw
+Cruz Roudabush,2024-01-12 11:37:00,8000,,2024-02-07 11:37:00,2025-01-12 11:37:00,Web Server,IT,P1000384,Dell PowerEdge Web Server,PowerEdge Server
+Kyle Lindauer,2023-05-20 06:56:00,400,,2023-07-14 06:56:00,2024-05-20 06:56:00,Rack,IT,P1000385,Dell PowerEdge Rack Server,PowerEdge Rack Server
+Davin Czukowski,2024-03-29 21:09:00,1938,IQR-35609422,2024-04-10 21:09:00,2025-10-28 21:09:00,Computer,Sales,P1000386,Dell Inspiron 14,Inspiron 14
+Karyn Jinks,2023-12-14 06:58:00,1224,ZYE-93471292,2024-01-10 06:58:00,2024-12-14 06:58:00,Printer,IT,P1000387,Epson AcuLaser M7000N Printer,AcuLaser M7000N
+Davin Czukowski,2023-09-24 07:46:00,2349,YVR-46350687,2023-10-27 07:46:00,2026-09-24 07:46:00,Printer,Sales,P1000388,HP LaserJet Pro M454dn Printer,LaserJet Pro M454dn
+Luella Pliner,2023-12-10 14:13:00,353,,2024-01-12 14:13:00,2026-12-10 14:13:00,Storage Device,Sales,P1000389,Seagate External HDD 2TB,External HDD 2TB
+Byron Fortuna,2023-09-09 10:38:00,400,,2023-09-14 10:38:00,2024-09-09 10:38:00,Rack,IT,P1000390,Dell PowerEdge Rack R530,PowerEdge Rack R530
+Bridgett Retort,2024-01-02 10:31:00,323,,2024-02-13 10:31:00,2027-01-02 10:31:00,Computer Peripheral,Finance,P1000391,Dell Computer Peripheral XPS 30,XPS 30
+Robin Schartz,2023-11-14 13:44:00,436,,2023-12-26 13:44:00,2026-11-14 13:44:00,Computer Peripheral,Finance,P1000392,Dell Latitude 7480 Computer Peripheral,Latitude 7480
+Rolando Baumann,2023-07-17 04:40:00,411,,2023-09-07 04:40:00,2025-07-17 04:40:00,Storage Device,Sales,P1000393,Seagate Backup Plus 4TB,Backup Plus 4TB
+Alene Rabeck,2024-01-06 19:28:00,400,,2024-01-18 19:28:00,2025-01-06 19:28:00,Rack,Sales,P1000394,Dell PowerEdge Rack,PowerEdge
+Howard Johnson,2023-09-14 04:58:00,2384,LSJ-55077952,2023-09-28 04:58:00,2025-11-17 04:58:00,Computer,Sales,P1000395,Dell Inspiron 15 Computer,Inspiron 15
+Jasmin Gum,2024-03-19 00:19:00,372,,2024-04-14 00:19:00,2026-03-19 00:19:00,Computer Peripheral,Sales,P1000396,Dell Monitor U2415,Monitor U2415
+Doug Matrisciano,2023-04-11 23:36:00,2105,SPA-01935458,2023-06-03 23:36:00,2024-04-11 23:36:00,Printer,Customer Support,P1000397,HP LaserJet Pro M428fdw,LaserJet Pro M428fdw
+Colin Altonen,2023-07-13 18:22:00,8000,,2023-08-08 18:22:00,2024-07-13 18:22:00,Web Server,Development,P1000398,Dell PowerEdge T140 Web Server,PowerEdge T140
+David Loo,2023-07-29 03:08:00,226,,2023-08-25 03:08:00,2026-07-29 03:08:00,Computer Peripheral,Development,P1000399,Razer DeathAdder Elite Gaming Mouse,DeathAdder Elite
+Lucien Iurato,2024-04-02 06:40:00,341,,2024-04-04 06:40:00,2026-04-02 06:40:00,Computer Peripheral,Development,P1000400,Dell Monitor Screen 27,Monitor Screen 27
+Van Leanen,2023-11-08 14:29:00,283,,2023-12-15 14:29:00,2024-11-08 14:29:00,Storage Device,IT,P1000401,Sandisk SSD 500GB,SSD 500GB
+Lacy Belmont,2024-01-19 23:06:00,8000,,2024-01-31 23:06:00,2026-01-19 23:06:00,Web Server,Customer Support,P1000402,IBM WebSphere Web Server,WebSphere Server
+Ted Keppel,2023-06-23 23:35:00,1199,TEN-23401356,2023-08-03 23:35:00,2025-06-23 23:35:00,Printer,IT,P1000403,HP LaserJet Pro M404n Printer,LaserJet Pro M404n
+Luella Pliner,2023-07-10 00:20:00,1717,FQT-63035096,2023-07-21 00:20:00,2024-07-10 00:20:00,Printer,Sales,P1000404,HP LaserJet Pro Printer,LaserJet Pro
+Kurtis Mcbay,2023-05-21 08:48:00,334,,2023-06-04 08:48:00,2026-05-21 08:48:00,Computer Peripheral,Sales,P1000405,Logitech USB Keyboard,USB Keyboard
+Pierre Salera,2023-08-06 21:23:00,400,,2023-09-29 21:23:00,2026-08-06 21:23:00,Rack,IT,P1000406,Dell PowerEdge Rack Server R340,PowerEdge R340
+Byron Fortuna,2023-07-02 19:04:00,2269,GLE-78124954,2023-07-21 19:04:00,2024-07-02 19:04:00,Printer,IT,P1000407,HP LaserJet Pro MFP M281fdw,LaserJet Pro MFP M281fdw
+Nanette Turansky,2023-05-02 01:55:00,327,,2023-06-24 01:55:00,2025-05-02 01:55:00,Storage Device,Customer Support,P1000408,Seagate External Hard Drive 1TB,External Hard Drive 1TB
+Mamie Mcintee,2023-06-26 00:36:00,400,,2023-08-25 00:36:00,2026-06-26 00:36:00,Rack,Product Management,P1000409,Dell PowerEdge Rack,PowerEdge
+Danny Dales,2023-12-03 04:12:00,8000,,2024-01-03 04:12:00,2025-12-03 04:12:00,Web Server,Customer Support,P1000410,Dell PowerEdge R740 Web Server,PowerEdge R740
+Margaret Grey,2023-08-31 01:45:00,173,,2023-10-05 01:45:00,2024-08-31 01:45:00,Storage Device,Sales,P1000411,Western Digital My Passport 4TB,My Passport 4TB
+Dollie Daquino,2023-10-02 11:59:00,2975,BMT-46727040,2023-11-21 11:59:00,2026-09-18 11:59:00,Computer,Customer Support,P1000412,Dell Inspiron N5010 Computer,Inspiron N5010
+Titus Rodreguez,2023-07-04 05:06:00,400,,2023-07-12 05:06:00,2026-07-04 05:06:00,Rack,Finance,P1000413,Dell PowerEdge Rack,PowerEdge
+Jonathon Waldall,2023-07-21 22:01:00,9151,LEX-69302113,2023-08-03 22:01:00,2024-07-21 22:01:00,Server,IT,P1000414,Dell PowerEdge R740 Server,PowerEdge R740
+Deshawn Inafuku,2023-11-09 18:15:00,3602,RMT-00379571,2023-11-23 18:15:00,2027-08-27 18:15:00,Computer,IT,P1000415,Dell Inspiron 15 3000 Series,Inspiron 15 3000
+Reginald Humes,2023-06-28 00:35:00,400,,2023-08-07 00:35:00,2024-06-28 00:35:00,Rack,Sales,P1000416,Dell PowerEdge Rack Server,PowerEdge Server
+Luella Pliner,2023-12-27 21:01:00,1520,GEK-40919736,2024-01-25 21:01:00,2025-01-04 21:01:00,Computer,Sales,P1000417,Dell Inspiron 15 5000,Inspiron 15 5000
+Cherie Fuhri,2023-07-09 01:17:00,400,,2023-08-13 01:17:00,2025-07-09 01:17:00,Rack,Customer Support,P1000418,Dell PowerEdge Rack Server,PowerEdge Server
+Ross Spurger,2024-02-24 06:42:00,400,,2024-03-27 06:42:00,2026-02-24 06:42:00,Rack,Customer Support,P1000419,Dell PowerEdge Rack Server R430,PowerEdge R430
+Cherie Fuhri,2023-10-14 16:01:00,400,,2023-11-17 16:01:00,2026-10-14 16:01:00,Rack,Customer Support,P1000420,Dell PowerEdge Rack Server R740xd,R740xd
+Lane Brantz,2023-09-09 23:14:00,189,,2023-10-27 23:14:00,2024-09-09 23:14:00,Computer Peripheral,Sales,P1000421,Dell UltraSharp Monitor 27,UltraSharp 27
+Cherie Fuhri,2024-02-15 18:48:00,470,,2024-02-27 18:48:00,2025-02-15 18:48:00,Computer Peripheral,Customer Support,P1000422,Dell 27 Monitor - SE2719H Computer Peripheral,SE2719H
+Joe Employee,2023-09-24 09:48:00,400,,2023-11-05 09:48:00,2026-09-24 09:48:00,Rack,Sales,P1000423,Dell PowerEdge Rack R740,PowerEdge R740
+Genevieve Kekiwi,2023-07-25 13:44:00,182,,2023-08-07 13:44:00,2024-07-25 13:44:00,Storage Device,Customer Support,P1000424,Samsung SSD 860 EVO,SSD 860 EVO
+Dollie Daquino,2024-02-25 22:11:00,400,,2024-03-26 22:11:00,2025-02-25 22:11:00,Rack,Customer Support,P1000425,Dell PowerEdge Rack,PowerEdge Rack
+Dollie Daquino,2023-07-06 19:39:00,2467,XIK-08680215,2023-08-01 19:39:00,2026-07-06 19:39:00,Printer,Customer Support,P1000426,OfficeJet Pro 8600,HP OfficeJet 8600
+Lacy Hyten,2023-09-01 06:29:00,400,,2023-09-15 06:29:00,2025-09-01 06:29:00,Rack,Sales,P1000427,Dell PowerEdge Rack Server,PowerEdge Rack Server
+Dorthy Alexy,2023-07-15 13:36:00,1253,RLR-44240307,2023-08-21 13:36:00,2025-07-15 13:36:00,Printer,Development,P1000428,HP LaserJet P2035 Printer,LaserJet P2035
+Genevieve Kekiwi,2023-07-21 08:41:00,2345,GTX-98893892,2023-09-03 08:41:00,2025-09-04 08:41:00,Computer,Customer Support,P1000429,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+Alyssa Biasotti,2023-09-02 19:52:00,280,,2023-09-19 19:52:00,2024-09-02 19:52:00,Computer Peripheral,IT,P1000430,Dell Monitor 24-Inch,Monitor 24-Inch
+Brendan Qin,2023-05-04 07:02:00,11069,FBS-22107790,2023-06-22 07:02:00,2025-05-04 07:02:00,Server,Finance,P1000431,Dell PowerEdge R740 Rack Server,PowerEdge R740
+Titus Rodreguez,2023-11-17 09:19:00,400,,2023-12-22 09:19:00,2024-11-17 09:19:00,Rack,Finance,P1000432,Dell PowerEdge R740 Rack Server,PowerEdge R740
+Doug Matrisciano,2024-01-06 23:33:00,8000,,2024-02-03 23:33:00,2025-01-06 23:33:00,Web Server,Customer Support,P1000433,Dell PowerEdge R940 Web Server,PowerEdge R940
+Bart Hachey,2023-06-24 11:50:00,10241,LOX-76275621,2023-08-08 11:50:00,2025-06-24 11:50:00,Server,Product Management,P1000434,Dell PowerEdge Server R740,PowerEdge R740
+Mamie Mcintee,2023-08-17 11:11:00,8000,,2023-08-29 11:11:00,2024-08-17 11:11:00,Web Server,Product Management,P1000435,Dell PowerEdge R740xd Web Server,PowerEdge R740xd
+Darrel Tork,2023-05-28 13:11:00,5221,JGB-59513035,2023-07-05 13:11:00,2024-05-28 13:11:00,Server,Customer Support,P1000436,IBM Server X3650 M5,IBM X3650 M5
+Karyn Jinks,2023-11-28 00:18:00,400,,2023-12-17 00:18:00,2024-11-28 00:18:00,Rack,IT,P1000437,Dell PowerEdge Rack Server,PowerEdge Rack Server
+Cristopher Wiget,2024-01-20 02:05:00,588,CHF-93072480,2024-03-05 02:05:00,2026-01-20 02:05:00,Printer,Customer Support,P1000438,HP DeskJet 4530 printer,DeskJet 4530
+Merle Wyrosdick,2023-10-01 17:19:00,870,NER-44763292,2023-10-28 17:19:00,2025-10-01 17:19:00,Printer,Customer Support,P1000439,HP LaserJet Pro M404dn Printer,LaserJet Pro M404dn
+Mara Rineheart,2023-10-09 15:50:00,1767,XUL-01409726,2023-10-18 15:50:00,2025-02-14 15:50:00,Computer,Customer Support,P1000440,Dell Inspiron 5502 Computer,Inspiron 5502
+Kasey Nguyen,2023-10-30 08:04:00,1535,VMY-08670019,2023-11-05 08:04:00,2024-11-15 08:04:00,Computer,Customer Support,P1000441,Dell Latitude 7400,Latitude 7400
+Ella Pahnke,2024-01-16 03:51:00,1259,DTW-18384396,2024-01-21 03:51:00,2026-01-16 03:51:00,Printer,Customer Support,P1000442,HP LaserJet Pro M281fdw,LaserJet Pro M281fdw
+George Tukis,2023-06-23 06:01:00,1661,OQY-57270444,2023-07-18 06:01:00,2026-06-23 06:01:00,Printer,Customer Support,P1000443,HP Officejet 5258 All-in-One Printer,Officejet 5258
+Fabian Mcshaw,2024-03-04 23:10:00,391,,2024-03-22 23:10:00,2027-03-04 23:10:00,Storage Device,Sales,P1000444,Dell PowerVault MD3 Storage Device,PowerVault MD3
+Judy Gartenmayer,2024-01-13 01:26:00,400,,2024-01-16 01:26:00,2025-01-13 01:26:00,Rack,IT,P1000445,Dell PowerEdge R940 Rack Server,PowerEdge R940
+Valerie Pou,2023-10-29 11:56:00,7476,ZJB-09322334,2023-12-06 11:56:00,2024-10-29 11:56:00,Server,Customer Support,P1000446,Dell PowerEdge R740 Server,PowerEdge R740
+Marquita Bousman,2023-05-30 12:21:00,474,,2023-07-29 12:21:00,2025-05-30 12:21:00,Storage Device,Customer Support,P1000447,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+Rena Griffeth,2023-09-05 10:59:00,321,,2023-10-22 10:59:00,2026-09-05 10:59:00,Computer Peripheral,Customer Support,P1000448,Logitech Wireless Mouse MX,Wireless Mouse MX
+Robin Schartz,2023-04-22 11:08:00,469,,2023-06-16 11:08:00,2024-04-22 11:08:00,Computer Peripheral,Finance,P1000449,Logitech Wireless Mouse,Wireless Mouse
+System Administrator,2023-11-02 07:50:00,2482,YUO-49554900,2023-11-11 07:50:00,2026-11-02 07:50:00,Printer,Finance,P1000450,HP LaserJet Pro M477fdw,LaserJet Pro M477fdw
+System Administrator,2023-11-08 14:22:00,3100,QGE-07171667,2023-12-17 14:22:00,2026-12-25 14:22:00,Computer,Finance,P1000451,Dell Inspiron 3583,Inspiron 3583
+Lynda Caraway,2023-11-14 02:37:00,400,,2023-12-17 02:37:00,2025-11-14 02:37:00,Rack,Customer Support,P1000452,Dell PowerEdge Rack,PowerEdge Rack
+Mandy Mcdonnell,2024-03-24 04:24:00,8000,,2024-04-01 04:24:00,2026-03-24 04:24:00,Web Server,Development,P1000453,HPE ProLiant DL380 Web Server,ProLiant DL380
+Diana Temple,2024-03-31 00:14:00,11630,PTH-61208657,2024-04-20 00:14:00,2027-03-31 00:14:00,Server,Sales,P1000454,Dell PowerEdge R940 Server,PowerEdge R940
+Eli Bettner,2023-11-17 21:19:00,4378,VCC-72722627,2023-11-26 21:19:00,2028-09-16 21:19:00,Computer,IT,P1000455,Dell Inspiron 3493,Inspiron 3493
+Kira Papen,2023-08-28 14:33:00,8000,,2023-10-05 14:33:00,2025-08-28 14:33:00,Web Server,Customer Support,P1000456,Dell PowerEdge R740 XD Web Server,PowerEdge R740 XD
+Tiffany Knust,2023-09-24 13:55:00,8000,,2023-10-16 13:55:00,2024-09-24 13:55:00,Web Server,Customer Support,P1000457,Dell PowerEdge R440 Web Server,PowerEdge R440
+Latisha Bahls,2023-10-30 10:06:00,2490,WFB-50047558,2023-11-14 10:06:00,2026-02-22 10:06:00,Computer,Customer Support,P1000458,Dell Inspiron 13 Computer,Inspiron 13
+Reginald Humes,2024-02-25 21:38:00,400,,2024-03-28 21:38:00,2025-02-25 21:38:00,Rack,Sales,P1000459,Rack Server Dell PowerEdge R940,Dell PowerEdge R940
+Nathanial Phoenix,2023-12-11 16:14:00,1034,NSH-81944879,2023-12-26 16:14:00,2024-12-11 16:14:00,Printer,Customer Support,P1000460,HP LaserJet Pro M277dw,LaserJet Pro M277dw
+Darrel Tork,2023-11-13 05:30:00,400,,2023-11-24 05:30:00,2024-11-13 05:30:00,Rack,Customer Support,P1000461,Rack 4500 Modular Server,4500 Modular
+Lynda Caraway,2024-02-13 18:12:00,482,,2024-03-30 18:12:00,2026-02-13 18:12:00,Computer Peripheral,Customer Support,P1000462,Dell USB Keyboard SK-8115,USB Keyboard SK-8115
+Heath Vanalphen,2023-05-08 03:01:00,10219,PCD-79282125,2023-06-08 03:01:00,2025-05-08 03:01:00,Server,Sales,P1000463,Dell PowerEdge R740xd Server,PowerEdge R740xd
+Zackary Mockus,2023-09-10 05:43:00,210,,2023-10-23 05:43:00,2026-09-10 05:43:00,Computer Peripheral,Customer Support,P1000464,Logitech MX Master 3 Computer Peripheral,MX Master 3
+Valerie Pou,2023-06-04 05:13:00,400,,2023-06-21 05:13:00,2025-06-04 05:13:00,Rack,Customer Support,P1000465,DataCentric Rack Server D555,Rack Server D555
+Karyn Jinks,2024-03-28 00:03:00,8000,,2024-04-19 00:03:00,2025-03-28 00:03:00,Web Server,IT,P1000466,Dell PowerEdge R740 Web Server,PowerEdge R740
+Guillermo Tsang,2024-01-01 11:35:00,306,,2024-01-02 11:35:00,2025-01-01 11:35:00,Storage Device,Customer Support,P1000467,Western Digital Hard Drive 1TB,WD Hard Drive 1TB
+Patty Bernasconi,2023-09-05 14:46:00,2114,COW-56610763,2023-09-27 14:46:00,2025-06-29 14:46:00,Computer,Sales,P1000468,Dell Inspiron 15 3000,Inspiron 15 3000
+Alene Rabeck,2023-07-16 08:37:00,4712,TCA-51021595,2023-09-02 08:37:00,2028-10-25 08:37:00,Computer,Sales,P1000469,Dell Optiplex Desktop Computer,Optiplex Desktop
+Nathanial Phoenix,2023-11-26 10:52:00,342,,2023-12-10 10:52:00,2026-11-26 10:52:00,Computer Peripheral,Customer Support,P1000470,Dell Computer Mouse 1020,Mouse 1020
+Naomi Caetano,2023-05-27 18:43:00,7503,NTU-25710776,2023-07-04 18:43:00,2025-05-27 18:43:00,Server,Customer Support,P1000471,Dell PowerEdge R640 Server,PowerEdge R640
+Kira Staffon,2023-12-16 04:33:00,456,,2024-02-04 04:33:00,2025-12-16 04:33:00,Computer Peripheral,Finance,P1000472,Dell Monitor HD2715,Monitor HD2715
+Petra Clemmens,2023-07-30 08:21:00,679,PHH-50466024,2023-07-31 08:21:00,2024-07-30 08:21:00,Printer,Sales,P1000473,HP LaserJet P4014dn Printer,LaserJet P4014dn
+Luella Pliner,2024-04-09 11:02:00,8000,,2024-04-25 11:02:00,2025-04-09 11:02:00,Web Server,Sales,P1000474,Dell PowerEdge R640 Web Server,PowerEdge R640
+Ted Keppel,2024-04-03 12:43:00,1810,FFE-57250076,2024-04-05 12:43:00,2027-04-03 12:43:00,Printer,IT,P1000475,HP LaserJet Pro M15w,LaserJet Pro M15w
+Mitchel Harnar,2023-10-14 13:20:00,2359,ZBX-91363744,2023-10-26 13:20:00,2026-10-14 13:20:00,Printer,Sales,P1000476,HP LaserJet Pro MFP M227fdw,LaserJet Pro MFP M227fdw
+Mamie Mcintee,2023-08-10 10:43:00,400,,2023-08-25 10:43:00,2025-08-10 10:43:00,Rack,Product Management,P1000477,IBM Server Rack Model X,Server Rack Model X
+Jeanie Dalen,2023-08-18 02:11:00,400,,2023-10-15 02:11:00,2026-08-18 02:11:00,Rack,Customer Support,P1000478,Dell PowerEdge Rack Server,PowerEdge Rack
+Darrel Tork,2023-10-29 14:46:00,410,,2023-12-13 14:46:00,2026-10-29 14:46:00,Storage Device,Customer Support,P1000479,Dell PowerVault MD3800i,PowerVault MD3800i
+Allie Pumphrey,2024-01-07 13:49:00,400,,2024-01-11 13:49:00,2027-01-07 13:49:00,Rack,Product Management,P1000480,Dell PowerEdge Rack Server R940,PowerEdge R940
+Reginald Humes,2023-07-26 15:00:00,367,,2023-09-06 15:00:00,2025-07-26 15:00:00,Storage Device,Sales,P1000481,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+Diana Temple,2023-08-03 22:19:00,361,,2023-09-17 22:19:00,2026-08-03 22:19:00,Computer Peripheral,Sales,P1000482,Dell Monitor 24-Inch,Monitor 24-Inch
+Ron Kettering,2023-10-10 12:45:00,11009,JCL-35722495,2023-10-12 12:45:00,2025-10-10 12:45:00,Server,IT,P1000483,Dell PowerEdge R740 Server,PowerEdge R740
+Mara Rineheart,2023-05-31 04:21:00,8000,,2023-06-09 04:21:00,2025-05-31 04:21:00,Web Server,Customer Support,P1000484,Dell PowerEdge R740 Web Server,PowerEdge R740
+Isaac Davensizer,2023-05-26 07:23:00,8000,,2023-07-21 07:23:00,2026-05-26 07:23:00,Web Server,Customer Support,P1000485,Dell PowerEdge R430 Web Server,PowerEdge R430
+Jimmie Barninger,2023-10-03 04:15:00,400,,2023-10-14 04:15:00,2024-10-03 04:15:00,Rack,Customer Support,P1000486,Dell PowerEdge Rack,PowerEdge
+Guillermo Tsang,2023-08-28 00:27:00,400,,2023-09-30 00:27:00,2026-08-28 00:27:00,Rack,Customer Support,P1000487,Hewlett-Packard ProLiant Rack Server,ProLiant Server
+Elmo Dagenais,2024-02-14 23:44:00,400,,2024-03-11 23:44:00,2026-02-14 23:44:00,Rack,Sales,P1000488,Dell Server Rack 720xr,Dell Rack 720xr
+Isaac Davensizer,2023-10-23 20:19:00,493,,2023-10-27 20:19:00,2026-10-23 20:19:00,Storage Device,Customer Support,P1000489,Samsung SSD 870 EVO,SSD 870 EVO
+Eli Bettner,2023-08-05 12:39:00,1205,MWX-47498701,2023-08-30 12:39:00,2026-08-05 12:39:00,Printer,IT,P1000490,HP LaserJet Printer P1102,LaserJet P1102
+Carla Sirbaugh,2024-01-31 06:52:00,400,,2024-03-10 06:52:00,2025-01-31 06:52:00,Rack,Product Management,P1000491,Rack Server - Dell PowerEdge R740,PowerEdge R740
+Bridgett Retort,2024-02-19 22:06:00,1381,PKK-26211415,2024-04-02 22:06:00,2026-02-19 22:06:00,Printer,Finance,P1000492,HP LaserJet Pro M254dw,LaserJet Pro M254dw
+Naomi Caetano,2023-12-31 07:04:00,3974,ZGV-75669994,2024-01-19 07:04:00,2028-04-17 07:04:00,Computer,Customer Support,P1000493,Dell Optiplex 3050,Optiplex 3050
+Emery Reek,2024-03-04 20:59:00,427,,2024-04-13 20:59:00,2027-03-04 20:59:00,Computer Peripheral,Customer Support,P1000494,Logitech MX Master 3 Mouse,MX Master 3
+Dollie Daquino,2023-11-18 12:48:00,758,BJX-78544762,2024-01-13 12:48:00,2026-11-18 12:48:00,Printer,Customer Support,P1000495,HP LaserJet Pro M454dw,LaserJet Pro M454dw
+Maurine Monroy,2023-05-16 00:39:00,8000,,2023-06-02 00:39:00,2025-05-16 00:39:00,Web Server,IT,P1000496,Dell PowerEdge R740xd Web Server,PowerEdge R740xd
+Kurtis Mcbay,2023-10-06 03:26:00,8000,,2023-11-10 03:26:00,2026-10-06 03:26:00,Web Server,Sales,P1000497,IBM Web Server X3,Web Server X3
+Naomi Caetano,2023-10-02 08:50:00,921,EYZ-56289457,2023-10-27 08:50:00,2024-10-02 08:50:00,Printer,Customer Support,P1000498,Canon Pixma TR4520 Printer,Pixma TR4520
+Merle Wyrosdick,2023-12-26 17:18:00,400,,2024-02-17 17:18:00,2026-12-26 17:18:00,Rack,Customer Support,P1000499,Dell PowerEdge R640 Rack Server,PowerEdge R640
