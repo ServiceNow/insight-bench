@@ -18,12 +18,21 @@ agent = agents.Agent(
     n_retries=2,
     savedir="results/sample",
 )
-pred_insights = agent.get_insights(dataset_csv_path=dataset_csv_path)
+pred_insights, pred_summary = agent.get_insights(
+    dataset_csv_path=dataset_csv_path, return_summary=True
+)
+
 
 # Evaluate
-score = benchmarks.evaluate_insights(
-    pred=pred_insights, gt=dataset_dict["insights"], method="rouge"
+score_insights = benchmarks.evaluate_insights(
+    pred_insights=pred_insights,
+    gt_insights=dataset_dict["insights"],
+    score_name="rouge1",
+)
+score_summary = benchmarks.evaluate_summary(
+    pred=pred_summary, gt=dataset_dict["summary"], score_name="rouge1"
 )
 
 # Print Score
-print("score: ", score)
+print("score_insights: ", score_insights)
+print("score_summary: ", score_summary)

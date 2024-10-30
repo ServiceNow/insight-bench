@@ -1,6 +1,8 @@
 import os
 import pandas as pd
 from insightbench.utils.agent_utils import analysis_nb_to_gt
+from insightbench.utils.metrics_utils import score_insight
+from insightbench import metrics
 
 
 def get_benchmark(dataset_type, datadir):
@@ -57,3 +59,19 @@ def load_dataset_dict(
     }
 
     return dataset_dict
+
+
+def evaluate_insights(pred_insights, gt_insights, score_name="rouge1"):
+    # compute score using score_method
+    if score_name == "rouge1":
+        score, score_dict = metrics.compute_rouge(pred_insights, gt_insights)
+    elif score_name == "g_eval":
+        score, score_dict = metrics.compute_g_eval_o2m(pred_insights, gt_insights)
+
+    return score
+
+
+def evaluate_summary(pred, gt, score_name="rouge1"):
+    score_summary = score_insight(pred, gt, score_name=score_name)
+
+    return score_summary

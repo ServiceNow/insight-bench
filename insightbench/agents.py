@@ -61,7 +61,7 @@ class Agent:
         user_dataset_csv_path=None,
         table=None,
         table_user=None,
-        return_insights_only=True,
+        return_summary=True,
     ) -> tuple:
         """
         run the agent to generate a sequence of questions and answers
@@ -105,8 +105,10 @@ class Agent:
         self.agent_poirot.save_state_dict(
             os.path.join(self.savedir, "insights_history.json")
         )
-        if return_insights_only:    
-            return [o["insight"] for o in self.agent_poirot.insights_history]
+        pred_insights = [o["insight"] for o in self.agent_poirot.insights_history]
+        if return_summary:
+            pred_summary = self.summarize(self.agent_poirot.insights_history)
+            return pred_insights, pred_summary
         return self.agent_poirot.insights_history
 
     def load_checkpoint(self, savedir):
@@ -114,8 +116,10 @@ class Agent:
             os.path.join(savedir, "insights_history.json")
         )
 
-    def summarize(self):
-        return self.agent_poirot.summarize()
+    def summarize(self, pred_insights, method="list", prompt_summarize_method="basic"):
+        return self.agent_poirot.summarize(
+            pred_insights, method, prompt_summarize_method
+        )
 
     def evaluate_agent_on_summary(
         self, gt_insights_dict, score_name, return_summary=False
@@ -205,7 +209,7 @@ class AgentPoirot:
         else:
             self.user_schema = None
 
-    def summarize(self, method="list", prompt_summarize_method="basic"):
+    def summarize(self, pred_insights, method="list", prompt_summarize_method="basic"):
         if method == "list":
             chat = au.get_chat_model(self.model_name, self.temperature)
 
@@ -219,7 +223,7 @@ class AgentPoirot:
                 return result
 
             # Format the data and print
-            formatted_history = format_data(self.insights_history)
+            formatted_history = format_data(pred_insights)
 
             # summary = agent.summarize_insights(method="list")
             system_prompt, content_prompt = prompts.get_summarize_prompt(

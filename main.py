@@ -50,38 +50,33 @@ def main(exp_dict, savedir, args):
         )
 
         # Predict Insights
-        pred_insights = agent.get_insights(
+        pred_insights, pred_summary = agent.get_insights(
             dataset_csv_path=dataset_dict["dataset_csv_path"],
             user_dataset_csv_path=dataset_dict["user_dataset_csv_path"],
         )
-        pred_summary = agent.agent_poirot.summarize(pred_insights)
-
         # Evaluate Agent
         # --------------
-        gt_insights_dict = dataset_dict["gt_insights_dict"]
-        gt_summary = gt_insights_dict["flag"]
+        # Evaluate
+        score_insights = benchmarks.evaluate_insights(
+            pred_insights=pred_insights,
+            gt_insights=dataset_dict["insights"],
+            score_name="rouge1",
+        )
+        score_summary = benchmarks.evaluate_summary(
+            pred=pred_summary, gt=dataset_dict["summary"], score_name="rouge1"
+        )
 
-        scores_dict = {}
-        for score_method in exp_dict["eval_metrics"]:
-            pred_summary = agent.agent_poirot.summarize()
-            pred_insights = [o["answer"] for o in agent.agent_poirot.insights_history]
-            # compute summary score
-            score_summary, summary_dict = agent.evaluate_agent_on_summary(
-                gt_insights_dict, score_name=score_method, return_summary=True
-            )
-
-            score, score_dict = agent.evaluate_agent_on_notebook(
-                gt_insights_dict, score_method=score_method
-            )
-            scores_dict[score_method + "_summary"] = summary_dict
-            scores_dict[score_method + "_insights"] = score
-            scores_dict[score_method + "_score_dict"] = score_dict
-
-        # Save Scores
-        save_json(os.path.join(savedir, "scores.json"), scores_dict)
-
+        score_list.append(
+            {
+                "score_insights": score_insights,
+                "score_summary": score_summary,
+            }
+        )
         # Print Scores
-        eu.print(scores_dict)
+        print(pd.DataFrame(score_list).tail())
+
+        # save score_list
+        save_json(os.path.join(savedir, "score_list.json"), score_list)
 
     print("Experiment Done!")
 

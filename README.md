@@ -25,26 +25,44 @@ pip install --upgrade git+https://github.com/ServiceNow/insight-bench
 Evaluate agent on a single notebook
 
 ```python
-import os 
+import os
 from insightbench import benchmarks, agents
 
 # Set OpenAI API Key
 # os.environ["OPENAI_API_KEY"] = "<openai_api_key>"
 
 # Get Dataset
-dataset_csv_path = "data/datasets/flag-1.csv"
+dataset_csv_path = "data/notebooks/csvs/flag-1.csv"
 dataset_notebook_path = "data/notebooks/flag-1.ipynb"
-dataset_dict = benchmarks.load_dataset_dict(dataset_csv_path=dataset_csv_path, 
-                                            dataset_notebook_path=dataset_notebook_path)
+dataset_dict = benchmarks.load_dataset_dict(
+    dataset_csv_path=dataset_csv_path, dataset_notebook_path=dataset_notebook_path
+)
 # Run an Agent
-agent = agents.Agent(model_name="gpt-4o-mini", max_questions=10, branch_depth=2, n_retries=2, savedir="results/sample")
-pred_insights = agent.get_insights(dataset_csv_path=dataset_csv_path)
+agent = agents.Agent(
+    model_name="gpt-4o-mini",
+    max_questions=2,
+    branch_depth=1,
+    n_retries=2,
+    savedir="results/sample",
+)
+pred_insights, pred_summary = agent.get_insights(
+    dataset_csv_path=dataset_csv_path, return_summary=True
+)
+
 
 # Evaluate
-score = evaluate_insights(pred=pred_insights, gt=dataset_dict['insights'])
+score_insights = benchmarks.evaluate_insights(
+    pred_insights=pred_insights,
+    gt_insights=dataset_dict["insights"],
+    score_name="rouge1",
+)
+score_summary = benchmarks.evaluate_summary(
+    pred=pred_summary, gt=dataset_dict["summary"], score_name="rouge1"
+)
 
 # Print Score
-print("score: ", score)
+print("score_insights: ", score_insights)
+print("score_summary: ", score_summary)
 ```
 
 ## 3. Evaluate Agent on Multiple Insights

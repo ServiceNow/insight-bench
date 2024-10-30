@@ -42,8 +42,8 @@ def execute_notebooks():
             ep.preprocess(nb, {"metadata": {"path": os.path.dirname(notebook_path)}})
 
             # Save the executed notebook
-            with open(notebook_path, "w", encoding="utf-8") as f:
-                nbformat.write(nb, f)
+            # with open(notebook_path, "w", encoding="utf-8") as f:
+            #     nbformat.write(nb, f)
 
             successful_notebooks += 1
             print("SUCCESS: ", notebook_path)
