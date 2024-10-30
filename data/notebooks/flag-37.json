@@ -1,0 +1,144 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-37.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": null,
+        "role": null,
+        "category": null,
+        "dataset_description": null,
+        "header": null
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "There is a disparity in Managerial Distribution across departments",
+            "insight_value": {
+                "description": "The IT department is markedly understaffed in terms of managerial positions, having only 2 managers, whereas departments such as Sales, Customer Support, Finance, and HR each have 10 managers. This significant discrepancy may indicate potential challenges in leadership distribution and workload management within the IT department."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Unique Managers per Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "IT",
+                        "Sales",
+                        "Customer Support",
+                        "Finance",
+                        "HR"
+                    ],
+                    "description": "This axis categorizes the company's departments to show the number of managers responsible for each."
+                },
+                "y_axis": {
+                    "name": "Number of Managers",
+                    "value": "[2, 10, 10, 10, 10]",
+                    "description": "This axis displays the number of unique managers in each department, highlighting the disparities in managerial staffing."
+                },
+                "description": "The bar chart illustrates a stark contrast in the number of managers between the IT department and other departments. While IT has only 2 managers, other departments such as Sales, Customer Support, Finance, and HR are significantly better staffed, each with 10 managers."
+            },
+            "question": "How does the number of managers and their distribution across departments affect operational effectiveness?",
+            "actionable_insight": {
+                "description": "Given the low number of managers in the IT department, it is crucial for the organization to assess the impact of this disparity on the department's operational effectiveness, employee satisfaction, and overall workload distribution. The organization should consider either redistributing existing managerial resources or hiring additional managers in the IT department to balance leadership roles more evenly across departments. This adjustment could improve decision-making speed, team supervision, and resource allocation."
+            },
+            "code": "# Group by department and count unique managers\ndepartment_manager_counts = flag_data.groupby('department')['manager'].nunique().reset_index()\n\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Create a bar plot\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='department', y='manager', data=department_manager_counts, palette=\"muted\")\n\n# Add title and labels to the plot\nplt.title('Number of Unique Managers per Department')\nplt.xlabel('Department')\nplt.ylabel('Number of Unique Managers')\n\n# Optional: add the exact number on top of each bar\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'), \n                      (p.get_x() + p.get_width() / 2., p.get_height()), \n                      ha = 'center', va = 'center', \n                      xytext = (0, 9), \n                      textcoords = 'offset points')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "location-based retention analysis",
+            "insight": "Employees located in high-retention locations tend to have significantly longer tenures compared to those in other locations.",
+            "insight_value": {
+                "High Retention Locations Average Tenure": "Approximately 1200 days",
+                "Other Locations Average Tenure": "Approximately 200 days"
+            },
+            "plot": {
+                "plot_type": "barplot",
+                "title": "Average Employee Retention by Location Category",
+                "x_axis": {
+                    "name": "Location Category",
+                    "value": "High Retention, Other",
+                    "description": "This axis represents the category of the employee's location, distinguishing between 'High Retention' and 'Other' locations."
+                },
+                "y_axis": {
+                    "name": "Average Tenure (Days)",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the average tenure of employees in days, highlighting the difference in retention between high-retention and other locations."
+                },
+                "description": "The barplot shows a stark contrast in average tenure between high-retention locations and other locations, suggesting that geographic location plays a significant role in employee retention."
+            },
+            "question": "How does employee retention vary across different locations, particularly in high-retention areas?",
+            "actionable insight": {
+                "description": "Organizations may consider investigating the specific factors that contribute to higher retention in high-retention locations and implementing similar practices or policies in other locations to improve overall retention rates."
+            },
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Convert 'schedule' back to datetime format for visualization\ndf['schedule'] = pd.to_datetime(df['schedule'], errors='coerce')\n\n# Filter data to include only the high-retention and other locations\ndf['location_category'] = df['location'].apply(lambda loc: 'High Retention' if 'Tokyo' in str(loc) or 'London' in str(loc) else 'Other')\n\n# Calculate the average schedule length by location category\ndf['tenure_days'] = (pd.Timestamp('2024-10-29')- df['schedule']).dt.days\navg_tenure_by_location = df.groupby('location_category')['tenure_days'].mean().reset_index()\n\n# Plot the average tenure by location category\nplt.figure(figsize=(10, 6))\nsns.barplot(x='location_category', y='tenure_days', data=avg_tenure_by_location, palette='coolwarm')\nplt.title('Average Employee Retention by Location Category')\nplt.xlabel('Location Category')\nplt.ylabel('Average Tenure (Days)')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+        },
+        {
+            "data_type": "analytical",
+            "insight": "There is a disproportionate high number of reportees per manager in the IT Department",
+            "insight_value": {
+                "description": "The average number of reportees per manager in the IT department is significantly higher at 50.5 compared to other departments. This is a stark contrast to Customer Support with 8.8, Finance with 11.6, HR with 12.8, and Sales with 13.0."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Number of Reportees per Manager by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "IT",
+                        "Customer Support",
+                        "Finance",
+                        "HR",
+                        "Sales"
+                    ],
+                    "description": "This axis lists the departments to compare the average number of reportees managed in each."
+                },
+                "y_axis": {
+                    "name": "Average Number of Reportees",
+                    "value": "[50, 10, 10, 10, 10]",
+                    "description": "This axis displays the average number of reportees per manager in each department, highlighting the discrepancy in workload distribution."
+                },
+                "description": "The bar chart vividly illustrates the disparity in the distribution of reportees per manager across departments, with the IT department notably overwhelmed compared to others. This discrepancy could be indicative of potential management and operational inefficiencies within the IT department."
+            },
+            "question": "What is the distribution of reportees in the IT department compared to other departments?",
+            "actionable_insight": {
+                "description": "Considering the high average number of reportees per manager in the IT department, it is advisable for the organization to reevaluate its staffing and managerial distribution strategies. Possible actions include hiring more managers within the IT department to reduce the current manager's workload, thereby potentially increasing oversight and improving management effectiveness. Additionally, the organization might explore restructuring or introducing more supportive roles to alleviate the burden on existing managers, ensuring a more equitable distribution of reportees and enhancing overall departmental performance."
+            },
+            "code": "# Group by department and manager, and count the number of employees per manager\nreportees_per_manager = flag_data.groupby(['department', 'manager']).size().reset_index(name='num_reportees')\n\n# Calculate the average number of reportees per manager for each department\navg_reportees_per_manager = reportees_per_manager.groupby('department')['num_reportees'].mean().reset_index()\n\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Create a bar plot\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='department', y='num_reportees', data=avg_reportees_per_manager, palette=\"muted\")\n\n# Add title and labels to the plot\nplt.title('Average Number of Reportees per Manager by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Number of Reportees per Manager')\n\n# Optional: add the exact number on top of each bar\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.1f'), \n                      (p.get_x() + p.get_width() / 2., p.get_height()), \n                      ha = 'center', va = 'center', \n                      xytext = (0, 9), \n                      textcoords = 'offset points')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a significant disparity among managers in terms of reportee numbers",
+            "insight_value": {
+                "description": "Within the IT department, there is a notable disparity in the distribution of reportees among managers. Ed Gompf manages a significantly higher number of reportees, totaling 76, which starkly contrasts with Mariano Mauray, who oversees 25 reportees."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Reportees per Manager in IT Department",
+                "x_axis": {
+                    "name": "Manager",
+                    "value": [
+                        "Ed Gompf",
+                        "Mariano Mauray"
+                    ],
+                    "description": "This axis lists the managers within the IT department who have the highest number of reportees."
+                },
+                "y_axis": {
+                    "name": "Number of Reportees",
+                    "value": "[76, 23]",
+                    "description": "This axis displays the number of reportees managed by each of the specified managers, highlighting the unequal workload distribution."
+                },
+                "description": "The bar chart clearly shows the significant burden on Ed Gompf compared to other managers within the same department, raising concerns about potential overburden and the need for more balanced management responsibilities."
+            },
+            "question": "Who are the managers with the highest number of reportees?",
+            "actionable_insight": {
+                "description": "The disparity in reportee distribution within the IT department suggests a need for reassessment of managerial assignments and potential restructuring. The organization should consider redistributing reportees more evenly among existing managers or hiring additional managerial staff to alleviate the burden on Ed Gompf. Such adjustments would not only promote fairness and potentially enhance employee satisfaction but also ensure that leadership responsibilities are more manageable, which could improve decision-making and team dynamics."
+            },
+            "code": "# Filter the data for the IT department\nit_department_data = flag_data[flag_data['department'] == 'IT']\n\n# Group by manager and count the number of reportees\nreportees_per_manager = it_department_data.groupby('manager').size().reset_index(name='num_reportees')\n\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Create a bar plot\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='manager', y='num_reportees', data=reportees_per_manager, palette=\"muted\")\n\n# Add title and labels to the plot\nplt.title('Number of Reportees for Managers in IT Department')\nplt.xlabel('Manager')\nplt.ylabel('Number of Reportees')\n\n# Show the plot\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is a disparity in Managerial Distribution across departments",
+        "Employees located in high-retention locations tend to have significantly longer tenures compared to those in other locations.",
+        "There is a disproportionate high number of reportees per manager in the IT Department",
+        "There is a significant disparity among managers in terms of reportee numbers"
+    ],
+    "summary": "\n\n1. **Managerial Disparity and Geographic Influence**: The dataset highlights a significant lack of managerial positions within the IT department, similar to other departments, but with an added layer of complexity introduced by geographic location. Employees based in high-retention cities like Tokyo and London tend to have longer tenures, suggesting that geographic location influences retention patterns and potentially affects managerial workload distribution.\n\n2. **Reportee Distribution**: The IT department remains markedly understaffed in terms of managerial positions, with an average of 50 reportees per manager. This issue is further exacerbated in high-retention locations where longer employee tenures may lead to increased workload and sustained pressure on managers over time.\n\n3. **Individual Manager Analysis**: A disparity is observed within the IT department, where a manager named Ed Gompf handles a disproportionately high number of reportees. This situation is particularly concerning in high-retention locations, where Ed Gompf\u2019s already heavy workload may be compounded by the longer tenures of his reportees, potentially leading to burnout and inefficiencies in management."
+}

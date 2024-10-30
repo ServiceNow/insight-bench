@@ -1,0 +1,46 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-86.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": null,
+        "role": null,
+        "category": null,
+        "dataset_description": null,
+        "header": null
+    },
+    "insight_list": [
+        {
+            "insight": "There was no column processed_date to conduct any analysis",
+            "question": "Is there a statistically significant correlation between the cost of an expense and its processing time?",
+            "code": "# import matplotlib.pyplot as plt\n# import pandas as pd\n\n# # Assuming 'df' is the DataFrame containing your data\n# flag_data['opened_at'] = pd.to_datetime(flag_data['opened_at'])\n# flag_data[\"processed_date\"] = pd.to_datetime(flag_data[\"processed_date\"])\n# # Calculate the difference in days between 'opened_at' and 'process_date'\n# flag_data['processing_time'] = (flag_data['processed_date'] - flag_data['opened_at']).dt.days\n\n# # Create a scatter plot of amount vs. processing time\n# plt.figure(figsize=(12, 7))\n# plt.scatter(flag_data['amount'], flag_data['processing_time'], alpha=0.6, edgecolors='w', color='blue')\n# plt.title('Processing Time vs. Expense Amount')\n# plt.xlabel('Expense Amount ($)')\n# plt.ylabel('Processing Time (days)')\n# plt.grid(True)\n\n# # Annotate some points with amount and processing time for clarity\n# for i, point in flag_data.sample(n=50).iterrows():  # Randomly sample points to annotate to avoid clutter\n#     plt.annotate(f\"{point['amount']}$, {point['processing_time']}d\", \n#                  (point['amount'], point['processing_time']),\n#                  textcoords=\"offset points\", \n#                  xytext=(0,10), \n#                  ha='center')\n\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column amount to conduct any analysis",
+            "question": "How do processing times vary across different expense cost brackets?",
+            "code": "# import matplotlib.pyplot as plt\n# import pandas as pd\n\n# # Define bins for the expense amounts and labels for these bins\n# bins = [0, 1000, 3000, 6000, 9000]\n# labels = ['Low (<$1000)', 'Medium ($1000-$3000)', 'High ($3000-$6000)', 'Very High (>$6000)']\n# flag_data['amount_category'] = pd.cut(flag_data['amount'], bins=bins, labels=labels, right=False)\n\n# # Calculate the average processing time for each category\n# average_processing_time = flag_data.groupby('amount_category')['processing_time'].mean()\n\n# # Create the bar plot\n# plt.figure(figsize=(10, 6))\n# average_processing_time.plot(kind='bar', color='cadetblue')\n# plt.title('Average Processing Time by Expense Amount Category')\n# plt.xlabel('Expense Amount Category')\n# plt.ylabel('Average Processing Time (days)')\n# plt.xticks(rotation=45)  # Rotate labels to fit them better\n# plt.grid(True, axis='y')\n\n# # Show the plot\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column amount to conduct any analysis",
+            "question": "How do amounts vary based on the keywords in short descriptions of expenses?",
+            "code": "# keywords = {\n#     \"Oracle\": 1.2,  # Increase amount by 20% if \"Oracle\" is in the description\n#     \"Automated\": 0.8,  # Decrease amount by 20% if \"Automated\" is in the description\n#     \"Travel\": 1.5,  # Increase amount by 50% if \"Travel\" is in the description\n#     \"Cloud\": 1.1,  # Increase amount by 10% if \"Cloud\" is in the description\n#     \"Server\": 1.3  # Increase amount by 30% if \"Server\" is in the description\n# }\n\n# # Function to categorize descriptions based on keywords\n# def categorize_description(description):\n#     for keyword in keywords.keys():\n#         if pd.notnull(description) and keyword in description:\n#             return keyword\n#     return 'Other'\n\n# # Apply the function to create a new column for categories\n# df['description_category'] = df['short_description'].apply(categorize_description)\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a boxplot for amount by description category\n# plt.figure(figsize=(12, 6))\n# sns.boxplot(x='description_category', y='amount', data=df)\n# plt.title('Amount Distribution by Short Description Category')\n# plt.xlabel('Short Description Category')\n# plt.ylabel('Amount')\n# plt.xticks(rotation=45)\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column amount to conduct any analysis",
+            "question": "How do processing times vary across different expense cost brackets?",
+            "code": "# import matplotlib.pyplot as plt\n# import pandas as pd\n\n# # Assuming 'df' is your DataFrame containing the expense report data\n# # Calculate the frequency of different states for each expense amount range\n# expense_brackets = [0, 100, 500, 1000, 5000, np.inf]\n# labels = ['< $100', '$100 - $500', '$500 - $1000', '$1000 - $5000', '> $5000']\n# df['expense_bracket'] = pd.cut(df['amount'], bins=expense_brackets, labels=labels, right=False)\n\n# # Group by expense bracket and state, then count occurrences\n# state_distribution = df.groupby(['expense_bracket', 'state']).size().unstack().fillna(0)\n\n# # Plotting\n# fig, ax = plt.subplots(figsize=(12, 8))\n# bars = state_distribution.plot(kind='bar', stacked=True, ax=ax, color=['green', 'red', 'blue', 'orange'])\n\n# ax.set_title('Distribution of Expense Amounts by State', fontsize=16)\n# ax.set_xlabel('Expense Bracket', fontsize=14)\n# ax.set_ylabel('Number of Expenses', fontsize=14)\n# ax.grid(True)\n# plt.xticks(rotation=45)\n# plt.tight_layout()\n\n# # Add number labels on top of each bar\n# for bar in bars.containers:\n#     ax.bar_label(bar, label_type='center')\n\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column amount to conduct any analysis",
+            "question": "Is there any particular user or department that has high processing time in the very high bracket, or is it uniform more or less?",
+            "code": "# import matplotlib.pyplot as plt\n# import pandas as pd\n\n# # Assuming 'df' is your DataFrame containing the expense report data\n# # Filter for expenses greater than $5000\n# high_cost_expenses = df[df['amount'] < 1000]\n\n# # Calculate processing time in days\n# high_cost_expenses['processing_time'] = (pd.to_datetime(high_cost_expenses['processed_date']) - pd.to_datetime(high_cost_expenses['opened_at'])).dt.days\n\n# # Plot for Departments\n# plt.figure(figsize=(12, 7))\n# plt.subplot(2, 1, 1)  # Two rows, one column, first subplot\n# department_processing = high_cost_expenses.groupby('department')['processing_time'].mean()\n# department_processing.plot(kind='bar', color='teal')\n# plt.title('Average Processing Time by Department for Expenses < $1000')\n# plt.ylabel('Average Processing Time (days)')\n# plt.xlabel('Department')\n# plt.xticks(rotation=45)\n# plt.grid(True)\n\n# # Plot for Users\n# plt.subplot(2, 1, 2)  # Two rows, one column, second subplot\n# user_processing = high_cost_expenses.groupby('user')['processing_time'].mean()\n# user_processing.plot(kind='bar', color='orange')\n# plt.title('Average Processing Time by User for Expenses < $1000')\n# plt.ylabel('Average Processing Time (days)')\n# plt.xlabel('User')\n# plt.xticks(rotation=45)\n# plt.grid(True)\n\n# plt.tight_layout()\n# plt.show()\n\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "There was no column processed_date to conduct any analysis",
+        "There was no column amount to conduct any analysis",
+        "There was no column amount to conduct any analysis",
+        "There was no column amount to conduct any analysis",
+        "There was no column amount to conduct any analysis"
+    ],
+    "summary": "\n\n1. **Lack of Data for Correlation Analysis**: The absence of the `processed_date` column prevents any analysis to determine whether there is a statistically significant correlation between the cost of an expense and its processing time.\n\n2. **Processing Time by Expense Cost**: Without the `amount` column, it is not possible to analyze how processing times vary across different expense cost brackets, leading to an inability to understand trends related to cost and processing duration.\n\n3. **Keyword Impact on Expense Amounts**: The missing `amount` column also restricts the analysis on how amounts vary based on the keywords present in the short descriptions of expenses, leaving a gap in potential insights."
+}

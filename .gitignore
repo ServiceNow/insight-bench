@@ -9,6 +9,7 @@ results/
 *.pdf
 outputs/
 results
+analyze.ipynb 
 
 # C extensions
 *.so

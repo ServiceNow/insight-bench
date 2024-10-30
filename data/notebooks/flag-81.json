@@ -1,0 +1,40 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-81.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": null,
+        "role": null,
+        "category": null,
+        "dataset_description": null,
+        "header": null
+    },
+    "insight_list": [
+        {
+            "insight": "There was no column end_date to conduct any analysis",
+            "question": "How do the durations of 'Cost Reduction' goals in the Finance department compare to those in other departments?",
+            "code": "# import matplotlib.pyplot as plt\n# import seaborn as sns\n# import pandas as pd\n# import numpy as np\n\n# # Assuming 'goal_data' is preloaded and contains 'Cost Reduction' category\n# goal_data['end_date'] = pd.to_datetime(goal_data['end_date'])\n# goal_data[\"start_date\"] = pd.to_datetime(goal_data[\"start_date\"])\n# # Calculate goal durations\n# goal_data['duration'] = (goal_data['end_date'] - goal_data['start_date']).dt.days\n\n# # Plotting\n# plt.figure(figsize=(12, 8))\n# box_plot = sns.boxplot(x='department', y='duration', data=goal_data, palette=\"Set3\")\n# plt.title('Comparison of Goal Durations by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Goal Duration (days)')\n# plt.grid(True)\n\n# # Calculate median and mean for annotations\n# medians = goal_data.groupby(['department'])['duration'].median()\n# means = goal_data.groupby(['department'])['duration'].mean()\n\n# # Iterate over the departments to place the text annotations for median and mean\n# for xtick in box_plot.get_xticks():\n#     box_plot.text(xtick, medians[xtick] + 1, 'Median: {:.1f}'.format(medians[xtick]), \n#                   horizontalalignment='center', size='x-small', color='black', weight='semibold')\n#     box_plot.text(xtick, means[xtick] + 1, 'Mean: {:.1f}'.format(means[xtick]), \n#                   horizontalalignment='center', size='x-small', color='red', weight='semibold')\n\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column start_date to conduct any analysis",
+            "question": "How does the time of year (quarter) impact the completion rate of tasks?",
+            "code": "# # Convert start_date to datetime format\n# df['start_date'] = pd.to_datetime(df['start_date'])\n\n# # Extract the month and quarter from the start_date\n# df['month'] = df['start_date'].dt.month\n# df['quarter'] = df['start_date'].dt.quarter\n\n# # Visualize the trend of percent_complete by quarter\n# plt.figure(figsize=(12, 6))\n# sns.boxplot(x='quarter', y='percent_complete', data=df)\n# plt.title('Percent Complete by Quarter')\n# plt.xlabel('Quarter')\n# plt.ylabel('Percent Complete')\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column department to conduct any analysis",
+            "question": "What is the distribution of Goal types and categories in the Finance department?",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Filter data for the Finance department\n# finance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# # Count the occurrence of each category in the Finance department\n# category_counts = finance_goals['category'].value_counts()\n\n# # Create a pie chart\n# plt.figure(figsize=(10, 7))\n# plt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\n# plt.title('Distribution of Goal Categories in Finance Department')\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column department to conduct any analysis",
+            "question": "What is the distribution of Goal priorities in the Finance department?",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Filter data for the Finance department\n# finance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# # Count the occurrence of each category in the Finance department\n# category_counts = finance_goals['priority'].value_counts()\n\n# # Create a pie chart\n# plt.figure(figsize=(10, 7))\n# plt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\n# plt.title('Distribution of Goal priorities in Finance Department')\n# plt.show()\n\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "There was no column end_date to conduct any analysis",
+        "There was no column start_date to conduct any analysis",
+        "There was no column department to conduct any analysis",
+        "There was no column department to conduct any analysis"
+    ],
+    "summary": "\n\n1. **Comparison of Goal Durations in Finance vs. Other Departments**: The absence of the `end_date` column prevents the analysis of how the durations of 'Cost Reduction' goals in the Finance department compare to those in other departments, limiting insights into departmental efficiency.\n\n2. **Impact of Time of Year on Task Completion Rates**: Without the `start_date` column, it is impossible to analyze how the completion rates of tasks vary by quarter, preventing an understanding of any seasonal trends in task performance.\n\n3. **Distribution of Goal Types and Categories in Finance**: The lack of the `department` column restricts the ability to analyze the distribution of goal types and categories specifically within the Finance department, hindering targeted performance analysis.\n\n4. **Distribution of Goal Priorities in Finance**: The absence of the `department` column also limits the ability to assess the distribution of goal priorities in the Finance department, making it difficult to identify focus areas and potential improvement strategies."
+}

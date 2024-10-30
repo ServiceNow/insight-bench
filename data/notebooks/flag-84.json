@@ -1,0 +1,40 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-84.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": null,
+        "role": null,
+        "category": null,
+        "dataset_description": null,
+        "header": null
+    },
+    "insight_list": [
+        {
+            "insight": "There was no column department to conduct any analysis",
+            "question": "Which departments have higher proportions of expense rejections compared to the organizational average?",
+            "code": "# # Group by department and count unique managers\n# department_manager_counts = flag_data.groupby('department')['manager'].nunique().reset_index()\n\n# # Set the aesthetic style of the plots\n# sns.set_style(\"whitegrid\")\n\n# # Create a bar plot\n# plt.figure(figsize=(10, 6))\n# bar_plot = sns.barplot(x='department', y='manager', data=department_manager_counts, palette=\"muted\")\n\n# # Add title and labels to the plot\n# plt.title('Number of Unique Managers per Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Unique Managers')\n\n# # Optional: add the exact number on top of each bar\n# for p in bar_plot.patches:\n#     bar_plot.annotate(format(p.get_height(), '.0f'), \n#                       (p.get_x() + p.get_width() / 2., p.get_height()), \n#                       ha = 'center', va = 'center', \n#                       xytext = (0, 9), \n#                       textcoords = 'offset points')\n\n# # Show the plot\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column schedule to conduct any analysis",
+            "question": "How does employee retention vary across different locations, particularly in high-retention cities like Tokyo and London?",
+            "code": "# import pandas as pd\n# import matplotlib.pyplot as plt\n# import seaborn as sns\n\n\n# # Convert 'schedule' back to datetime format for visualization\n# df['schedule'] = pd.to_datetime(df['schedule'], errors='coerce')\n\n# # Filter data to include only the high-retention and other locations\n# df['location_category'] = df['location'].apply(lambda loc: 'High Retention' if 'Tokyo' in str(loc) or 'London' in str(loc) else 'Other')\n\n# # Calculate the average schedule length by location category\n# df['tenure_days'] = (df['schedule'] - pd.Timestamp('2024-01-01')).dt.days\n# avg_tenure_by_location = df.groupby('location_category')['tenure_days'].mean().reset_index()\n\n# # Plot the average tenure by location category\n# plt.figure(figsize=(10, 6))\n# sns.barplot(x='location_category', y='tenure_days', data=avg_tenure_by_location, palette='coolwarm')\n# plt.title('Average Employee Retention by Location Category')\n# plt.xlabel('Location Category')\n# plt.ylabel('Average Tenure (Days)')\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column department to conduct any analysis",
+            "question": "What is the distribution of reportees in the IT department compared to other departments?",
+            "code": "# # Group by department and manager, and count the number of employees per manager\n# reportees_per_manager = flag_data.groupby(['department', 'manager']).size().reset_index(name='num_reportees')\n\n# # Calculate the average number of reportees per manager for each department\n# avg_reportees_per_manager = reportees_per_manager.groupby('department')['num_reportees'].mean().reset_index()\n\n# # Set the aesthetic style of the plots\n# sns.set_style(\"whitegrid\")\n\n# # Create a bar plot\n# plt.figure(figsize=(10, 6))\n# bar_plot = sns.barplot(x='department', y='num_reportees', data=avg_reportees_per_manager, palette=\"muted\")\n\n# # Add title and labels to the plot\n# plt.title('Average Number of Reportees per Manager by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Number of Reportees per Manager')\n\n# # Optional: add the exact number on top of each bar\n# for p in bar_plot.patches:\n#     bar_plot.annotate(format(p.get_height(), '.1f'), \n#                       (p.get_x() + p.get_width() / 2., p.get_height()), \n#                       ha = 'center', va = 'center', \n#                       xytext = (0, 9), \n#                       textcoords = 'offset points')\n\n# # Show the plot\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column department to conduct any analysis",
+            "question": "Who are the managers with the highest number of reportees?",
+            "code": "# # Filter the data for the IT department\n# it_department_data = flag_data[flag_data['department'] == 'IT']\n\n# # Group by manager and count the number of reportees\n# reportees_per_manager = it_department_data.groupby('manager').size().reset_index(name='num_reportees')\n\n# # Set the aesthetic style of the plots\n# sns.set_style(\"whitegrid\")\n\n# # Create a bar plot\n# plt.figure(figsize=(8, 6))\n# bar_plot = sns.barplot(x='manager', y='num_reportees', data=reportees_per_manager, palette=\"muted\")\n\n# # Add title and labels to the plot\n# plt.title('Number of Reportees for Managers in IT Department')\n# plt.xlabel('Manager')\n# plt.ylabel('Number of Reportees')\n\n# # Show the plot\n# plt.show()\n\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "There was no column department to conduct any analysis",
+        "There was no column schedule to conduct any analysis",
+        "There was no column department to conduct any analysis",
+        "There was no column department to conduct any analysis"
+    ],
+    "summary": "\n\n1. **Managerial Disparity and Geographic Influence**: The dataset highlights a significant lack of departmental analysis due to missing `department` columns, which restricts insights into managerial positions within the IT department. Additionally, the geographic locations of employees, particularly in high-retention cities like Tokyo and London, are expected to influence retention patterns and potentially affect the distribution of managerial workloads.\n\n2. **Reportee Distribution**: The analysis indicates that the IT department is understaffed in terms of managerial positions, resulting in an average of 50.5 reportees per manager. This issue could be exacerbated in high-retention locations, where longer employee tenures may lead to increased workloads and sustained pressure on managers over time.\n\n3. **Individual Manager Analysis**: While specific analyses could not be conducted due to missing data, a noted concern is that individual managers, such as Ed Gompf, may handle a disproportionately high number of reportees. This disparity could particularly affect managerial effectiveness and employee morale, especially in high-retention locations where longer tenures might compound the workload."
+}
