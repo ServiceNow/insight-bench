@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-17.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "",
-        "role": "",
-        "category": "",
+        "goal": "Analyze any uneven distribution and higher cost of assets in the certain department, with a particular focus on the HR department, to optimize asset management and enhance cost-effectiveness.",
+        "role": "Asset Manager",
+        "category": "Asset Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow alm_hardware table, detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The table effectively captures asset management activities, offering insights into the operational handling, allocation, and maintenance status of hardware resources across various departments within an organization.",
         "header": "Asset Cost Analysis by Department (Flag 17)"
     },

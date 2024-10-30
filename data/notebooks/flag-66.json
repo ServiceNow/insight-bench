@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-66.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "",
-        "role": "",
-        "category": "', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "goal": "To uncover and address the reasons behind the varying rates of expense rejections across departments to improve overall financial management within the organization.",
+        "role": "Financial Compliance Analyst",
+        "category": "Financial Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
         "header": "Expense Management Discrepancies (Flag 66)"
     },

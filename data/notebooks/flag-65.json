@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-65.csv",
     "user_dataset_csv_path": "data/notebooks/csvs/flag-65-sysuser.csv",
     "metadata": {
-        "goal": "",
-        "role": "', 'email', 'start_date', and 'department', providing insights into the user profiles managed within the ServiceNow system.",
-        "category": "",
+        "goal": "To explore and understand the correlation between asset purchase dates, warranty periods, and employee start dates to optimize asset procurement and warranty management.",
+        "role": "Procurement Analyst",
+        "category": "Asset Management & User Management",
         "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `alm_hardware` table with 500 entries. The assets alm_hardware table, consists of detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'role', 'email', 'start_date', and 'department', providing insights into the user profiles managed within the ServiceNow system.",
         "header": "Asset Warranty and Purchase Date Analysis (Flag 65)"
     },

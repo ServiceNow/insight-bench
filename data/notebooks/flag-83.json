@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-83.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "` tables, capturing various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, descriptions, and key performance metrics such as priority, percent complete, and target percentage. The dataset offers a comprehensive view of goal management across departments, with a focus on cross-departmental collaboration, seasonal performance trends, and priority-level efficiency. The data also tracks updates to each goal, documenting the timeline of changes and the individuals responsible for these updates, providing a rich context for analyzing organizational efficiency and strategic goal alignment.",
-        "role": "",
-        "category": "",
+        "goal": "Analyze the impact of cross-departmental collaboration and seasonal timing on the success rates of organizational goals. Additionally, assess how task priority correlates with completion rates across different categories to optimize resource allocation and strategic planning.",
+        "role": "Strategic Performance Analyst",
+        "category": "Goal Management",
         "dataset_description": "The dataset combines 1,050 entries from two simulated ServiceNow `sn_gf_goal` tables, capturing various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, descriptions, and key performance metrics such as priority, percent complete, and target percentage. The dataset offers a comprehensive view of goal management across departments, with a focus on cross-departmental collaboration, seasonal performance trends, and priority-level efficiency. The data also tracks updates to each goal, documenting the timeline of changes and the individuals responsible for these updates, providing a rich context for analyzing organizational efficiency and strategic goal alignment.",
         "header": "Cross-Departmental and Temporal Performance Analysis (Flag 83)"
     },

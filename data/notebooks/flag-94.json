@@ -4,7 +4,7 @@
     "metadata": {
         "goal": "Find the discrepancy and imbalance in distribution of incidents assigned across categories",
         "role": "L2 Support Agent",
-        "category": ", state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "category": "Incidents Management",
         "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
         "header": "Hardware Incident Dataset (Flag 94)"
     },

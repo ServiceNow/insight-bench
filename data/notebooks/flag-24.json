@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-24.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "",
-        "role": "",
-        "category": "', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "goal": "To understand the factors contributing to faster expense processing times in a specific department and evaluate whether these practices can be extended to improve efficiency across all departments.",
+        "role": "Operational Efficiency Analyst",
+        "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
         "header": "Expense Processing Time Analysis (Flag 24)"
     },

@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-9.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "",
-        "role": "",
-        "category": ", state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "goal": "Analyze the hardware-related incidents during an identified time window to pinpoint potential hiccups that could be causing any anomalies.",
+        "role": "DT Asset Manager",
+        "category": "Incident Management",
         "dataset_description": "The dataset comprises 600 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
         "header": "Hardware Incident Analysis During Specific Time Windows (Flag 9)"
     },

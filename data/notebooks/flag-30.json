@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-30.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "Management Analysis in Cost Reduction (Flag 30)",
-        "role": "",
-        "category": "",
+        "goal": "Investigate the factors that contribute to the swift completion of goals in the Finance department compared to others, assess the impact on overall departmental performance.",
+        "role": "Performance Analyst in Enterprise Goal Management",
+        "category": "Goal Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow `sn_gf_goal` table, which details various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, and description, alongside metrics such as priority, percent complete, and target percentage. This data primarily tracks the progression and management of departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational objectives. Additionally, the table captures updates made to each goal, providing a timeline of modifications and the identity of individuals making these updates.",
         "header": "Goal Management Analysis in Cost Reduction (Flag 30)"
     },

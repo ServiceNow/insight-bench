@@ -4,7 +4,7 @@
     "metadata": {
         "goal": "Analyze the trend of incident resolution times and identify potential reasons for any observed patterns.",
         "role": "Operations Data Analyst",
-        "category": ", state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "category": "Incidents Management.",
         "dataset_description": "The dataset comprises 500 entries simulating a ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
         "header": "Incident Resolution Time Dataset (Flag 2)"
     },

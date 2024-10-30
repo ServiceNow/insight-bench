@@ -61,19 +61,21 @@ def extract_notebook_info(notebook_path):
 
             # More flexible patterns for all metadata fields
             goal_match = re.search(
-                r"Goal:?\s*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
+                r"Goal[\s\*]*:[:\s]*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
             )
             if goal_match:
                 metadata["goal"] = goal_match.group(1).strip()
 
             role_match = re.search(
-                r"Role:?\s*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
+                r"Role[\s\*]*:[:\s]*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
             )
             if role_match:
                 metadata["role"] = role_match.group(1).strip()
 
             category_match = re.search(
-                r"Category:?\s*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
+                r"Category[\s\*]*:[:\s]*(.*?)(?=\n\n|\n\*\*|\*\*|$)",
+                content,
+                re.IGNORECASE,
             )
             if category_match:
                 metadata["category"] = category_match.group(1).strip()

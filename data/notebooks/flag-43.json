@@ -2,9 +2,9 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-43.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "",
-        "role": "",
-        "category": "', 'processed_date', 'source_id', and 'type'. This dataset documents the flow of financial transactions, offering a comprehensive view of organizational spending by detailing the amount, departmental allocation, and nature of each expense. It highlights different expense categories, departmental spending patterns, and the processing state of each entry, providing valuable insights into both the financial operations and the efficiency of expense processing within the organization.",
+        "goal": "To analyze departmental spending patterns, uncover insights into expense allocation across categories, and assess the efficiency of the expense processing workflow.",
+        "role": "Financial Analyst",
+        "category": "Finance Management",
         "dataset_description": "The dataset consists of 642 entries, capturing detailed records of financial expenses within an organization. The data simulates the ServiceNow `fm_expense_line` table, including key fields such as 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This dataset documents the flow of financial transactions, offering a comprehensive view of organizational spending by detailing the amount, departmental allocation, and nature of each expense. It highlights different expense categories, departmental spending patterns, and the processing state of each entry, providing valuable insights into both the financial operations and the efficiency of expense processing within the organization.",
         "header": "Expense Trends and Departmental Analysis (Flag 43)"
     },
