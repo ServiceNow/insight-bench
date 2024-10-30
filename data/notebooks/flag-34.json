@@ -1,0 +1,87 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-34.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": null,
+        "role": null,
+        "category": null,
+        "dataset_description": null,
+        "header": null
+    },
+    "insight_list": [
+        {
+            "insight": "",
+            "question": "",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\nimport numpy as np\n\n# Assuming 'goal_data' is preloaded and contains 'Cost Reduction' category\ngoal_data['end_date'] = pd.to_datetime(goal_data['end_date'])\ngoal_data[\"start_date\"] = pd.to_datetime(goal_data[\"start_date\"])\n# Calculate goal durations\ngoal_data['duration'] = (goal_data['end_date'] - goal_data['start_date']).dt.days\n\n# Plotting\nplt.figure(figsize=(12, 8))\nbox_plot = sns.boxplot(x='department', y='duration', data=goal_data, palette=\"Set3\")\nplt.title('Comparison of Goal Durations by Department')\nplt.xlabel('Department')\nplt.ylabel('Goal Duration (days)')\nplt.grid(True)\n\n# Calculate median and mean for annotations\nmedians = goal_data.groupby(['department'])['duration'].median()\nmeans = goal_data.groupby(['department'])['duration'].mean()\n\n# Iterate over the departments to place the text annotations for median and mean\nfor xtick in box_plot.get_xticks():\n    box_plot.text(xtick, medians[xtick] + 1, 'Median: {:.1f}'.format(medians[xtick]), \n                  horizontalalignment='center', size='x-small', color='black', weight='semibold')\n    box_plot.text(xtick, means[xtick] + 1, 'Mean: {:.1f}'.format(means[xtick]), \n                  horizontalalignment='center', size='x-small', color='red', weight='semibold')\n\nplt.show()"
+        },
+        {
+            "insight": "Tasks initiated in Q4 exhibit higher completion percentages compared to those started in other quarters.",
+            "question": "How does the time of year (quarter) impact the completion rate of tasks?",
+            "code": "# Convert start_date to datetime format\ndf['start_date'] = pd.to_datetime(df['start_date'])\n\n# Extract the month and quarter from the start_date\ndf['month'] = df['start_date'].dt.month\ndf['quarter'] = df['start_date'].dt.quarter\n\n# Visualize the trend of percent_complete by quarter\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='quarter', y='percent_complete', data=df)\nplt.title('Percent Complete by Quarter')\nplt.xlabel('Quarter')\nplt.ylabel('Percent Complete')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a dominance of 'Cost Reduction' goals within the Finance department",
+            "insight_value": {
+                "Cost Reduction": "49.0%",
+                "Revenue Growth": "13%",
+                "Efficiency": "12%",
+                "Employee Satisfaction": "15%",
+                "Customer Satisfaction": "11%"
+            },
+            "plot": {
+                "plot_type": "pie",
+                "title": "Distribution of Goal Categories in the Finance Department",
+                "x_axis": {
+                    "name": "None",
+                    "value": "None",
+                    "description": "Pie charts do not use x-axis representations."
+                },
+                "y_axis": {
+                    "name": "None",
+                    "value": "None",
+                    "description": "Pie charts do not use y-axis representations."
+                },
+                "description": "The pie chart highlights the distribution of goals by category within the Finance department. It shows a significant majority of 50.7% for 'Cost Reduction', followed by 14.1% for 'Revenue Growth', 12.2% for 'Customer Satisfaction', 11.7% for 'Employee Satisfaction', and 11.3% for 'Efficiency'. The predominant share of 'Cost Reduction' goals necessitates further analysis to understand its correlation with the notably shorter goal durations observed in this department."
+            },
+            "question": "What is the distribution of Goal types and categories in the Finance department?",
+            "actionable_insight": "Given the high proportion of 'Cost Reduction' goals, it is imperative to delve deeper into understanding how this focus impacts overall goal durations and departmental efficiencies. Analyzing the relationship between the goal category and duration could uncover strategies that significantly enhance productivity and goal achievement rates. This could lead to strategic adjustments that balance goal types more effectively and potentially replicate successful practices across other departments.",
+            "code": "import matplotlib.pyplot as plt\n\n# Filter data for the Finance department\nfinance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# Count the occurrence of each category in the Finance department\ncategory_counts = finance_goals['category'].value_counts()\n\n# Create a pie chart\nplt.figure(figsize=(10, 7))\nplt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\nplt.title('Distribution of Goal Categories in Finance Department')\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a uniform distribution of goal priorities in the Finance department",
+            "insight_value": {
+                "Critical": "18%",
+                "High": "28%",
+                "Medium": "34%",
+                "Low": "18%"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Goal Priorities in the Finance Department",
+                "x_axis": {
+                    "name": "Priority Level",
+                    "value": "Critical, High, Medium, Low",
+                    "description": "This represents the different priority levels assigned to goals within the Finance department."
+                },
+                "y_axis": {
+                    "name": "Percentage of Goals",
+                    "value": "mean is 24.5% across all priorities",
+                    "description": "This shows the percentage of goals classified under each priority level, indicating an even distribution across priorities."
+                },
+                "description": "The bar graph illustrates a uniform distribution of goal priorities within the Finance department, with each priority level\u2014Critical, High, Medium, and Low\u2014comprising 25% of goals. This even distribution suggests that the variation in goal durations and success rates may more likely be influenced by factors related to goal category rather than priority."
+            },
+            "question": "What is the distribution of Goal priorities in the Finance department?",
+            "actionable_insight": "Given the uniform distribution of priorities, further analysis should focus on goal categories to uncover potential factors influencing goal durations and success rates in the Finance department. Understanding how different categories impact goal outcomes could provide strategic insights into effective goal management and resource allocation.",
+            "code": "import matplotlib.pyplot as plt\n\n# Filter data for the Finance department\nfinance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# Count the occurrence of each category in the Finance department\ncategory_counts = finance_goals['priority'].value_counts()\n\n# Create a pie chart\nplt.figure(figsize=(10, 7))\nplt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\nplt.title('Distribution of Goal priorities in Finance Department')\nplt.show()"
+        }
+    ],
+    "insights": [
+        "",
+        "Tasks initiated in Q4 exhibit higher completion percentages compared to those started in other quarters.",
+        "There is a dominance of 'Cost Reduction' goals within the Finance department",
+        "There is a uniform distribution of goal priorities in the Finance department"
+    ],
+    "summary": "\n\n1. **Efficiency in Goal Completion**: The dataset highlights a significant trend where 'Cost Reduction' goals within the Finance department are completed in notably shorter durations compared to other departments such as HR, Marketing, and IT. Additionally, tasks initiated in Q4 across all departments exhibit higher completion percentages, indicating a potential seasonal boost in performance.\n\n2. **Concentration of Goals in Finance**: The Finance department not only hosts a higher count of 'Cost Reduction' goals but also demonstrates a focused and efficient approach to achieving these goals. This department consistently completes goals quicker than others, especially during Q4, suggesting strategic timing and resource allocation.\n\n3. **Uniform Goal Prioritization**: Despite the observed temporal performance variation and the variance in completion times, the distribution of goal priorities within the Finance department remains uniform. This indicates a consistent operational strategy across different priority levels, irrespective of the timing or seasonal trends."
+}

@@ -26,7 +26,7 @@ def main(exp_dict, savedir, args):
 
     # Get Benchmark:
     # ----------------
-    notebook_list = benchmarks.get_benchmark(
+    dataset_list = benchmarks.get_benchmark(
         exp_dict["benchmark_type"], datadir=args.datadir
     )
 
@@ -41,13 +41,9 @@ def main(exp_dict, savedir, args):
 
     # load dataset
     score_list = []
-    for notebook_dict in notebook_list:
+    for dataset_json_path in dataset_list:
         # Load Dataset
-        dataset_dict = benchmarks.load_dataset_dict(
-            dataset_csv_path=notebook_dict["dataset_csv_path"],
-            dataset_notebook_path=notebook_dict["notebook_path"],
-            user_dataset_csv_path=notebook_dict["user_dataset_csv_path"],
-        )
+        dataset_dict = benchmarks.load_dataset_dict(dataset_json_path=dataset_json_path)
 
         # Predict Insights
         pred_insights, pred_summary = agent.get_insights(

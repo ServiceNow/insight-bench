@@ -93,9 +93,6 @@ def test_notebook_execution():
             failed_notebooks = json.load(f)
 
         print(f"Failed Notebooks: {len(failed_notebooks)}")
-        print(
-            f"Total Notebooks: {len(failed_notebooks) + int(success_rate * len(failed_notebooks) / (100 - success_rate))}"
-        )
 
         print("\nFailed Notebooks and Error Messages:")
         for notebook, error_info in failed_notebooks.items():

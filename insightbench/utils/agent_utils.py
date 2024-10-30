@@ -1312,22 +1312,28 @@ def analysis_nb_to_gt(fname_notebook, include_df_head=False) -> None:
         # extract dataset description
         description = (
             re.findall(
-                r"Dataset Description(.+)Your Task", nb.cells[0].source, re.DOTALL
-            )[0]
+                r"(Dataset Overview|Description)(.+)(Your Objective|Task)",
+                nb.cells[0].source,
+                re.DOTALL,
+            )[0][1]
             .replace("#", "")
             .strip()
         )
         metadata["dataset_description"] = description
 
         # extract goal and role
-        metadata["goal"] = re.findall(r"Goal\**:(.+)", nb.cells[0].source)[0].strip()
+        metadata["goal"] = re.findall(r"Goal|Objective\**:(.+)", nb.cells[0].source)[
+            0
+        ].strip()
         metadata["role"] = re.findall(r"Role\**:(.+)", nb.cells[0].source)[0].strip()
 
         metadata["difficulty"] = re.findall(
-            r"Difficulty\**: (\d) out of \d", nb.cells[0].source
+            r"Difficulty|Challenge Level\**: (\d) out of \d", nb.cells[0].source
         )[0].strip()
         metadata["difficulty_description"] = (
-            re.findall(r"Difficulty\**: \d out of \d(.+)", nb.cells[0].source)[0]
+            re.findall(
+                r"Difficulty|Challenge Level\**: \d out of \d(.+)", nb.cells[0].source
+            )[0]
             .replace("*", "")
             .strip()
         )
@@ -1419,9 +1425,19 @@ def analysis_nb_to_gt(fname_notebook, include_df_head=False) -> None:
                     break
 
             # extract the insight
-            qdict["insight_dict"] = json.loads(nb.cells[cell_idx + 4].source)
+            try:
+                qdict["insight_dict"] = json.loads(nb.cells[cell_idx + 4].source)
+            except Exception as e:
+                # find the next cell with the insight dict
+                for cell in nb.cells[cell_idx + 3 :]:
+                    try:
+                        qdict["insight_dict"] = json.loads(cell.source)
+                        break
+                    except Exception as e:
+                        continue
+
         else:
-            print(f"Found prescriptive insight in {fname_notebook}")
+            # print(f"Found prescriptive insight in {fname_notebook}")
             qdict["insight_dict"] = {
                 "data_type": "prescriptive",
                 "insight": nb.cells[cell_idx + 1].source.strip(),

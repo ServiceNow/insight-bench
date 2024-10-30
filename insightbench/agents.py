@@ -444,10 +444,13 @@ class AgentPoirot:
             y_axis = None
 
         if os.path.exists(os.path.join(insight_dict["output_folder"], "stat.json")):
-            # get stat.json
-            stat = json.load(
-                open(os.path.join(insight_dict["output_folder"], "stat.json"), "r")
-            )
+            try:
+                # get stat.json
+                stat = json.load(
+                    open(os.path.join(insight_dict["output_folder"], "stat.json"), "r")
+                )
+            except:
+                stat = None
         else:
             stat = None
 

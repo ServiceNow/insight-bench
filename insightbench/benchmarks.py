@@ -3,6 +3,7 @@ import pandas as pd
 from insightbench.utils.agent_utils import analysis_nb_to_gt
 from insightbench.utils.metrics_utils import score_insight
 from insightbench import metrics
+import nbformat, re, json
 
 
 def get_benchmark(dataset_type, datadir):
@@ -17,46 +18,135 @@ def get_benchmark(dataset_type, datadir):
     else:
         raise ValueError(f"Dataset type {dataset_type} not supported")
 
-    # Create a list of dictionaries with notebook and csv paths
-    notebooks_list = [
-        {
-            "notebook_path": os.path.join(datadir, f"flag-{flag}.ipynb"),
-            "dataset_csv_path": os.path.join(datadir, "csvs", f"flag-{flag}.csv"),
-            # Check if the sysuser CSV exists and add it to the dictionary if it does
-            "user_dataset_csv_path": (
-                os.path.join(datadir, "csvs", f"flag-{flag}-sysuser.csv")
-                if os.path.exists(
-                    os.path.join(datadir, "csvs", f"flag-{flag}-sysuser.csv")
-                )
-                else None
-            ),
-        }
-        for flag in flag_list
-    ]
-
-    return notebooks_list
+    return [f"{datadir}/flag-{flag}.json" for flag in flag_list]
 
 
-def load_dataset_dict(
-    dataset_csv_path, dataset_notebook_path, user_dataset_csv_path=None
-):
-    # Load the CSV file into a DataFrame
-    df = pd.read_csv(dataset_csv_path)
+def create_jsons(datadir):
+    import glob
 
-    # Use the analysis_nb_to_gt function to extract insights from the notebook
-    notebook_data = analysis_nb_to_gt(dataset_notebook_path)
+    datasets = glob.glob(f"{datadir}/flag-*.ipynb")
+    for d in datasets:
+        dataset_dict = extract_notebook_info(d)
+        print("success:", d)
 
-    # Create a dictionary to store the dataset
-    dataset_dict = {
-        "dataset_csv_path": dataset_csv_path,
-        "user_dataset_csv_path": user_dataset_csv_path,
-        "dataframe": df,
-        "notebook": notebook_data,
-        "insights": [
-            ins["insight_dict"]["insight"] for ins in notebook_data["insights"]
-        ],
-        "summary": notebook_data["flag"],
+
+def load_dataset_dict(dataset_json_path):
+    # load json
+    with open(dataset_json_path, "r") as f:
+        return json.load(f)
+
+
+def extract_notebook_info(notebook_path):
+
+    # Read the notebook
+    with open(notebook_path, "r", encoding="utf-8") as f:
+        nb = nbformat.read(f, as_version=4)
+
+    # Initialize variables
+    metadata = {
+        "goal": None,
+        "role": None,
+        "category": None,
+        "dataset_description": None,
+        "header": None,
     }
+    insight_list = []
+    summary = None
+
+    # Process each cell
+    for cell in nb.cells:
+        # Look for metadata in markdown cells containing "Dataset Description"
+        if cell.cell_type == "markdown" and "Dataset Description" in cell.source:
+            content = cell.source
+
+            # More flexible patterns for all metadata fields
+            goal_match = re.search(
+                r"Goal:?\s*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
+            )
+            if goal_match:
+                metadata["goal"] = goal_match.group(1).strip()
+
+            role_match = re.search(
+                r"Role:?\s*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
+            )
+            if role_match:
+                metadata["role"] = role_match.group(1).strip()
+
+            category_match = re.search(
+                r"Category:?\s*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
+            )
+            if category_match:
+                metadata["category"] = category_match.group(1).strip()
+
+            # More flexible dataset description pattern
+            desc_match = re.search(
+                r"(?:###\s*Dataset Description|Dataset Description:?)\s*(.*?)(?=\n\n(?:\*\*|###)|$)",
+                content,
+                re.IGNORECASE | re.DOTALL,
+            )
+            if desc_match:
+                metadata["dataset_description"] = desc_match.group(1).strip()
+
+            # More flexible header pattern
+            header_match = re.search(r"^(?:##\s*|)([^\n]+)", content)
+            if header_match:
+                metadata["header"] = header_match.group(1).strip()
+
+        # Look for summary in markdown cells
+        elif (
+            cell.cell_type == "markdown"
+            and "summary of findings".lower() in cell.source.lower()
+        ):
+            # Find the index case-insensitively but keep original text
+            pattern = re.compile("summary of findings", re.IGNORECASE)
+            match = pattern.search(cell.source)
+            if match:
+                summary = cell.source[match.end() :].strip()
+
+        # Process code cells for insights
+        elif cell.cell_type == "code" and cell.source.strip().startswith("{"):
+            try:
+                data = json.loads(cell.source)
+                data["code"] = code
+                if isinstance(data, dict):
+                    insight_list.append(data)
+            except Exception as e:
+                # Extract insight and question directly from the text
+                source = cell.source.strip()
+                insight_match = re.search(r'"insight":\s*"([^"]*)"', source)
+                question_match = re.search(r'"question":\s*"([^"]*)"', source)
+
+                insight_dict = {
+                    "insight": insight_match.group(1) if insight_match else "",
+                    "question": question_match.group(1) if question_match else "",
+                    "code": code,
+                }
+                insight_list.append(insight_dict)
+        elif cell.cell_type == "code":
+            code = cell.source.strip()
+
+    # get flag id from notebook path
+    flag = notebook_path.split("-")[-1].split(".")[0]
+    # only if user_dataset_csv_path exists
+    user_dataset_csv_path = (
+        f"data/notebooks/csvs/flag-{flag}-sysuser.csv"
+        if os.path.exists(f"data/notebooks/csvs/flag-{flag}-sysuser.csv")
+        else None
+    )
+    dataset_dict = {
+        "dataset_csv_path": f"data/notebooks/csvs/flag-{flag}.csv",
+        "user_dataset_csv_path": user_dataset_csv_path,
+        "metadata": metadata,
+        "insight_list": insight_list,
+        "insights": [ins["insight"] for ins in insight_list],
+        "summary": summary[summary.find("\n") :],
+    }
+    assert os.path.exists(
+        dataset_dict["dataset_csv_path"]
+    ), f"Dataset path {dataset_dict['dataset_csv_path']} does not exist"
+    # save dataset_dict to json
+    with open(f"data/notebooks/flag-{flag}.json", "w") as f:
+        json.dump(dataset_dict, f, indent=4)
 
     return dataset_dict
 
