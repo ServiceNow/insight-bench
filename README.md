@@ -35,7 +35,7 @@ from insightbench import benchmarks, agents
 dataset_csv_path = "data/datasets/flag-1.csv"
 dataset_notebook_path = "data/notebooks/flag-1.ipynb"
 dataset_dict = benchmarks.load_dataset_dict(dataset_csv_path=dataset_csv_path, 
-                                 dataset_notebook_path=dataset_notebook_path)
+                                            dataset_notebook_path=dataset_notebook_path)
 # Run an Agent
 agent = agents.Agent(model_name="gpt-4o-mini", max_questions=10, branch_depth=2, n_retries=2, savedir="results/sample")
 pred_insights = agent.get_insights(dataset_csv_path=dataset_csv_path)
