@@ -6,7 +6,7 @@ from insightbench import benchmarks, agents
 
 
 # Get Dataset
-dataset_dict = benchmarks.load_dataset_dict("data/notebooks/flag-69.json")
+dataset_dict = benchmarks.load_dataset_dict("data/notebooks/flag-1.json")
 
 # Run an Agent
 agent = agents.Agent(
