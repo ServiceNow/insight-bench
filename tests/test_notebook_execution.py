@@ -49,7 +49,7 @@ def execute_notebooks():
             print("SUCCESS: ", notebook_path)
 
             # Remove from failed_notebooks if it was there
-            failed_notebooks.pop(notebook_path, None)
+            # failed_notebooks.pop(notebook_path, None)
 
         except Exception as e:
             failed_notebooks[notebook_path] = {

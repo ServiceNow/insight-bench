@@ -1,5 +1,5 @@
 import os
-import numpy as np, pandas as pd,  re, json, os, shutil, inspect
+import numpy as np, pandas as pd, re, json, os, shutil, inspect
 import nbformat
 import contextlib
 import io
@@ -36,6 +36,7 @@ def interpret_solution(
     n_retries: int,
     model_name: str,
     prompt_method,
+    schema,
     temperature: 0,
 ) -> str:
     """
@@ -77,6 +78,7 @@ def interpret_solution(
             question=solution["question"],
             message=solution["code_output"],
             insights=insight_prompt,
+            schema=schema,
         ),
         parser=_parse_human_readable_insight,
         n_retries=n_retries,
@@ -629,8 +631,27 @@ def _parse_human_readable_insight(output):
             False,
             f"The following error occured while extracting the value for the <justification> tag: {str(e)}",
         )
+    try:
+        insight = extract_html_tags(output, ["insight"])
+        if "insight" not in insight:
+            return (
+                "",
+                False,
+                f"Error: you did not generate answers within the <insight></insight> tags",
+            )
+        insight = insight["insight"][0]
+    except ValueError as e:
+        return (
+            "",
+            False,
+            f"The following error occured while extracting the value for the <insight> tag: {str(e)}",
+        )
 
-    return {"answer": answer, "justification": justification}, True, ""
+    return (
+        {"answer": answer, "justification": justification, "insight": insight},
+        True,
+        "",
+    )
 
 
 def _build_insight_prompt(solution) -> str:

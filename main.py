@@ -26,19 +26,19 @@ def main(exp_dict, savedir, args):
 
     # Get Benchmark:
     # ----------------
-    benchmark = benchmarks.get_benchmark(
+    notebook_list = benchmarks.get_benchmark(
         exp_dict["benchmark_type"], datadir=args.datadir
     )
 
     # load dataset
 
-    for dataset_dict in benchmark:
+    for dataset_dict in notebook_list:
         # Run an Agent
         # ----------------
         agent = agents.Agent(
             dataset_csv_path=dataset_dict["dataset_csv_path"],
             user_dataset_csv_path=dataset_dict["user_dataset_csv_path"],
-            model="gpt-4o",
+            model_name="gpt-4o-mini",
             max_questions=exp_dict["max_questions"],
             branch_depth=exp_dict["branch_depth"],
             n_retries=2,
@@ -46,7 +46,8 @@ def main(exp_dict, savedir, args):
         )
 
         # Predict Insights
-        pred_insights = agent.run_agent()
+        pred_insights = agent.get_insights()
+        pred_summary = agent.agent_poirot.summarize()
 
         # Evaluate Agent
         # --------------
@@ -92,7 +93,17 @@ if __name__ == "__main__":
     # exp_list
     exp_list = []
     for benchmark_type in ["toy"]:
-        exp_list.append({"benchmark_type": benchmark_type})
+        exp_list.append(
+            {
+                "benchmark_type": benchmark_type,
+                "gen_engine": "gpt-4o-mini",
+                "max_questions": 2,
+                "branch_depth": 1,
+            }
+        )
+
+    # set open ai env
+    os.environ["OPENAI_API_KEY"] = args.openai_api_key
 
     # Loop through experiments
     for exp_dict in exp_list:

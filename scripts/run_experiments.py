@@ -70,7 +70,7 @@ def main(exp_dict, savedir, args):
     # Run Agent or Run Evaluation Only
     if not args.eval_only:
         # Run Full Data Analytics
-        pred_insights_dict = agent.run_agent()
+        pred_insights_dict = agent.get_insights()
     else:
         # Load pred_insights_dict
         agent.load_checkpoint(savedir)

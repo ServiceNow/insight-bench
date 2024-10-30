@@ -101,6 +101,9 @@ Given the context:
     You need to answer a question based on information provided by a data scientist.
 </context>
 
+Given the following dataset schema:
+<schema>{schema}</schema>
+
 Given the goal:
 <goal>{goal}</goal>
 
@@ -118,11 +121,15 @@ Given the analysis:
 Instructions:
 * Based on the analysis and other information provided above, write an answer to the question enclosed with <question></question> tags.
 * The answer should be a single sentence, but it should not be too high level and should include the key details from justification.
-* Write your answer in HTML-like tags, enclosing the answer between <answer></answer> tags, followed by a justification between <justification></justification> tags.
+* Write your answer in HTML-like tags, enclosing the answer between <answer></answer> tags, followed by a justification between <justification></justification> tags, followed by an insight between <insight></insight> tags.
 * Refer to the following example response for the format of the answer and justification.
+* The insight should be something interesting and grounded based on the question, goal, and the dataset schema, something that would be interesting. 
+* The insight should be as quantiative as possible and informative and non-trivial and concise.
+* The insight should be a meaningful conclusion that can be acquired from the analysis in laymans terms
 
 Example response:
 <answer>This is a sample answer</answer>
+<insight>This is a sample insight</insight>
 <justification>This is a sample justification</justification>
 
 ### Response:
@@ -306,7 +313,7 @@ Given the schema:\n
 Given the data path:\n
 {database_path}
 
-Given the list of predefined functions in cba.tools module and their example usage:\n\n
+Given the list of predefined functions in insightbench.tools module and their example usage:\n\n
 {function_docs}
 
 Give me the python code required to answer this question "{question}" and put a comment on top of each variable.\n\n
@@ -314,7 +321,7 @@ Give me the python code required to answer this question "{question}" and put a 
 Make a single code block for starting with ```python
 Do not produce code blocks for languages other than Python.
 Make simple plots and save them as jpg files.
-Import cba.tools, pandas as pd, and numpy as np at the beginning and use the predefined functions above to make plots.
+Import insightbench.tools, pandas as pd, and numpy as np at the beginning and use the predefined functions above to make plots.
 If you need to make multiple line/histogram plots, plot with the same x-axis data should be plotted together.
 For every plot, save a stats json file that stores the data of the plot.
 For every plot, save a x and y axis json file.
@@ -322,7 +329,7 @@ There can be at most 100 datapoints in the plot.
 Round floating datapoints values to the 100th decimal place if necessary.
 Each json file must have a "name", "description", and "value" field that describes the data.
 If the content of the json file is getting too long, truncate the unnecessary parts.
-Call the fix_fnames function in cba.tools at the end of your code.
+Call the fix_fnames function in insightbench.tools at the end of your code.
 End your code with ```.
 
 Output code:\n
@@ -345,23 +352,23 @@ Given the schema of the second dataset:\n
 Given the data path of the second dataset:\n
 {user_database_path}
 
-Given the list of predefined functions in cba.tools module and their example usage:\n\n
+Given the list of predefined functions in insightbench.tools module and their example usage:\n\n
 {function_docs}
 
 Give me the python code required to answer this question "{question}" and put a comment on top of each variable.\n\n
 
 Make a single code block for starting with ```python
 Do not produce code blocks for languages other than Python.
-Import cba.tools at the beginning. 
+Import insightbench.tools at the beginning. 
 You must only use the predefined functions mentioned above to make the plot.
 You must generate one single simple plot and save it as a jpg file.
 For the plot, save a stats json file that stores the data of the plot.
 For the plot, save a x_axis.json and y_axis.json file that stores 100 most important x and y axis data points of the plot, respectively.
-Save each json file using the cba.save_json function
+Save each json file using the insightbench.save_json function
 For the json file must have a "name", "description", and "value" field that describes the data.
 If the content of the json file is getting too long, truncate the unnecessary parts until the number of characters is less than 10000
 
-Call the fix_fnames function in cba.tools at the end of your code.
+Call the fix_fnames function in insightbench.tools at the end of your code.
 End your code with ```.
 
 Output code:\n
@@ -378,23 +385,23 @@ Given the schema:\n
 Given the data path:\n
 {database_path}
 
-Given the list of predefined functions in cba.tools module and their example usage:\n\n
+Given the list of predefined functions in insightbench.tools module and their example usage:\n\n
 {function_docs}
 
 Give me the python code required to answer this question "{question}" and put a comment on top of each variable.\n\n
 
 Make a single code block for starting with ```python
 Do not produce code blocks for languages other than Python.
-Import cba.tools at the beginning. 
+Import insightbench.tools at the beginning. 
 You must only use the predefined functions mentioned above to make the plot.
 You must generate one single simple plot and save it as a jpg file.
 For the plot, save a stats json file that stores the data of the plot.
 For the plot, save a x_axis.json and y_axis.json file that stores a maximum of 50 of the most important x and y axis data points of the plot, respectively.
-Save each json file using the cba.save_json function
+Save each json file using the insightbench.save_json function
 For the json file must have a "name", "description", and "value" field that describes the data.
 The content of the json file should be less than 4500 characters 
 
-Call the fix_fnames function in cba.tools at the end of your code.
+Call the fix_fnames function in insightbench.tools at the end of your code.
 End your code with ```.
 
 Output code:\n
@@ -494,8 +501,10 @@ Hi, I require the services of your team to help me reach my goal.
 <history>{history}</history>
 
 Instructions:
-* Given a context and a goal, and all the history of <question_i><answer_i> pairs from the above list generate the 3 top insights that will help me reach my goal.
+* Given a context and a goal, and all the history of <question_i><answer_i> pairs from the above list generate the 3 top actionable insights.
+* Make sure they don't offer actions and the summary should be more about highlights of the findings
 * Output each insight within this tag <insight></insight>.
+* Each insight should be a meaningful conclusion that can be acquired from the analysis in laymans terms and should be as quantiative as possible and should aggregate the findings.
 """
 
 SUMMARIZE_SYSTEM_MESSAGE = """

@@ -31,7 +31,7 @@ class Agent:
         if table is None:
             table = pd.read_csv(dataset_csv_path)
         self.table = table
-        if table_user is None:
+        if table_user is None and user_dataset_csv_path is not None:
             table_user = pd.read_csv(user_dataset_csv_path)
 
         self.table_user = table_user
@@ -64,7 +64,7 @@ class Agent:
             temperature=temperature,
         )
 
-    def run_agent(self) -> tuple:
+    def get_insights(self) -> tuple:
         """
         run the agent to generate a sequence of questions and answers
         """
@@ -107,6 +107,9 @@ class Agent:
         self.agent_poirot.load_state_dict(
             os.path.join(savedir, "insights_history.json")
         )
+
+    def summarize(self):
+        return self.agent_poirot.summarize()
 
     def evaluate_agent_on_summary(
         self, gt_insights_dict, score_name, return_summary=False
@@ -351,6 +354,7 @@ class AgentPoirot:
         interpretation_dict = au.interpret_solution(
             solution=solution,
             model_name=self.model_name,
+            schema=self.schema,
             n_retries=n_retries,
             prompt_method=prompt_interpret_method,
             temperature=self.temperature,
@@ -368,6 +372,7 @@ class AgentPoirot:
         insight_dict = {
             "question": question,
             "answer": answer,
+            "insight": interpretation_dict["interpretation"]["insight"],
             "justification": interpretation_dict["interpretation"]["justification"],
             "output_folder": code_output_folder,
         }
