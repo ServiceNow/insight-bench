@@ -30,24 +30,31 @@ def main(exp_dict, savedir, args):
         exp_dict["benchmark_type"], datadir=args.datadir
     )
 
-    # load dataset
+    # load agent
+    agent = agents.Agent(
+        model_name=exp_dict["model_name"],
+        max_questions=exp_dict["max_questions"],
+        branch_depth=exp_dict["branch_depth"],
+        n_retries=2,
+        savedir=savedir,
+    )
 
-    for dataset_dict in notebook_list:
-        # Run an Agent
-        # ----------------
-        agent = agents.Agent(
-            dataset_csv_path=dataset_dict["dataset_csv_path"],
-            user_dataset_csv_path=dataset_dict["user_dataset_csv_path"],
-            model_name="gpt-4o-mini",
-            max_questions=exp_dict["max_questions"],
-            branch_depth=exp_dict["branch_depth"],
-            n_retries=2,
-            savedir=savedir,
+    # load dataset
+    score_list = []
+    for notebook_dict in notebook_list:
+        # Load Dataset
+        dataset_dict = benchmarks.load_dataset_dict(
+            dataset_csv_path=notebook_dict["dataset_csv_path"],
+            dataset_notebook_path=notebook_dict["notebook_path"],
+            user_dataset_csv_path=notebook_dict["user_dataset_csv_path"],
         )
 
         # Predict Insights
-        pred_insights = agent.get_insights()
-        pred_summary = agent.agent_poirot.summarize()
+        pred_insights = agent.get_insights(
+            dataset_csv_path=dataset_dict["dataset_csv_path"],
+            user_dataset_csv_path=dataset_dict["user_dataset_csv_path"],
+        )
+        pred_summary = agent.agent_poirot.summarize(pred_insights)
 
         # Evaluate Agent
         # --------------
@@ -93,14 +100,15 @@ if __name__ == "__main__":
     # exp_list
     exp_list = []
     for benchmark_type in ["toy"]:
-        exp_list.append(
-            {
-                "benchmark_type": benchmark_type,
-                "gen_engine": "gpt-4o-mini",
-                "max_questions": 2,
-                "branch_depth": 1,
-            }
-        )
+        for model_name in ["gpt-4o-mini"]:
+            exp_list.append(
+                {
+                    "benchmark_type": benchmark_type,
+                    "model_name": model_name,
+                    "max_questions": 2,
+                    "branch_depth": 1,
+                }
+            )
 
     # set open ai env
     os.environ["OPENAI_API_KEY"] = args.openai_api_key

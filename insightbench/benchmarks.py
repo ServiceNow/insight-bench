@@ -1,4 +1,6 @@
 import os
+import pandas as pd
+from insightbench.utils.agent_utils import analysis_nb_to_gt
 
 
 def get_benchmark(dataset_type, datadir):
@@ -31,3 +33,27 @@ def get_benchmark(dataset_type, datadir):
     ]
 
     return notebooks_list
+
+
+def load_dataset_dict(
+    dataset_csv_path, dataset_notebook_path, user_dataset_csv_path=None
+):
+    # Load the CSV file into a DataFrame
+    df = pd.read_csv(dataset_csv_path)
+
+    # Use the analysis_nb_to_gt function to extract insights from the notebook
+    notebook_data = analysis_nb_to_gt(dataset_notebook_path)
+
+    # Create a dictionary to store the dataset
+    dataset_dict = {
+        "dataset_csv_path": dataset_csv_path,
+        "user_dataset_csv_path": user_dataset_csv_path,
+        "dataframe": df,
+        "notebook": notebook_data,
+        "insights": [
+            ins["insight_dict"]["insight"] for ins in notebook_data["insights"]
+        ],
+        "summary": notebook_data["flag"],
+    }
+
+    return dataset_dict

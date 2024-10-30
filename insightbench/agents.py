@@ -18,9 +18,9 @@ class Agent:
         self,
         table=None,
         table_user=None,
-        model_name="gpt-4o",
         dataset_csv_path=None,
         user_dataset_csv_path=None,
+        model_name="gpt-4o",
         goal="I want to find interesting trends in this dataset",
         max_questions=3,
         branch_depth=4,
@@ -28,13 +28,6 @@ class Agent:
         savedir=None,
         temperature=0,
     ):
-        if table is None:
-            table = pd.read_csv(dataset_csv_path)
-        self.table = table
-        if table_user is None and user_dataset_csv_path is not None:
-            table_user = pd.read_csv(user_dataset_csv_path)
-
-        self.table_user = table_user
         self.goal = goal
         self.max_questions = max_questions
 
@@ -46,28 +39,40 @@ class Agent:
         if savedir is None:
             savedir = tempfile.mkdtemp()
         self.savedir = savedir
-        if dataset_csv_path is None:
-            dataset_csv_path = os.path.join(savedir, "dataset.csv")
-            table.to_csv(dataset_csv_path, index=False)
 
-        self.dataset_csv_path = dataset_csv_path
-        self.user_dataset_csv_path = user_dataset_csv_path
         self.agent_poirot = AgentPoirot(
-            table=table,
-            table_user=table_user,
             model_name=model_name,
             savedir=savedir,
             goal=goal,
             verbose=True,
-            dataset_csv_path=dataset_csv_path,
-            user_dataset_csv_path=user_dataset_csv_path,
             temperature=temperature,
         )
+        if dataset_csv_path is not None or table is not None:
+            self.agent_poirot.set_table(
+                table=table,
+                table_user=table_user,
+                dataset_csv_path=dataset_csv_path,
+                user_dataset_csv_path=user_dataset_csv_path,
+            )
 
-    def get_insights(self) -> tuple:
+    def get_insights(
+        self,
+        dataset_csv_path=None,
+        user_dataset_csv_path=None,
+        table=None,
+        table_user=None,
+        return_insights_only=True,
+    ) -> tuple:
         """
         run the agent to generate a sequence of questions and answers
         """
+        self.agent_poirot.set_table(
+            table=table,
+            table_user=table_user,
+            dataset_csv_path=dataset_csv_path,
+            user_dataset_csv_path=user_dataset_csv_path,
+        )
+
         # Prompt 2: Get Root Questions
         root_questions = self.agent_poirot.recommend_questions(
             prompt_method="basic", n_questions=self.max_questions
@@ -77,11 +82,11 @@ class Agent:
         for q in root_questions:
             question = q
             for i in range(self.branch_depth):
-                if self.table_user is None:
+                if self.agent_poirot.table_user is None:
                     prompt_code_method = "single"
                 else:
                     prompt_code_method = "multi"
-                answer, insight_dict = self.agent_poirot.answer_question(
+                _, insight_dict = self.agent_poirot.answer_question(
                     question,
                     prompt_code_method=prompt_code_method,
                     prompt_interpret_method="basic",
@@ -100,7 +105,8 @@ class Agent:
         self.agent_poirot.save_state_dict(
             os.path.join(self.savedir, "insights_history.json")
         )
-
+        if return_insights_only:    
+            return [o["insight"] for o in self.agent_poirot.insights_history]
         return self.agent_poirot.insights_history
 
     def load_checkpoint(self, savedir):
@@ -150,39 +156,54 @@ class Agent:
 class AgentPoirot:
     def __init__(
         self,
-        table,
-        table_user,
         savedir=None,
         context="This is a dataset that could potentially consist of interesting insights",
         model_name="gpt-3.5-turbo-0613",
         goal="I want to find interesting trends in this dataset",
         verbose=False,
-        dataset_csv_path=None,
-        user_dataset_csv_path=None,
         temperature=0,
     ):
         self.goal = goal
-        self.table = table
         if savedir is None:
             savedir = tempfile.mkdtemp()
         self.savedir = savedir
         self.context = context
-        # save table without index in savedir
-        if dataset_csv_path is None:
-            self.dataset_csv_path = os.path.join(savedir, "dataset.csv")
-            self.table.to_csv(self.dataset_csv_path, index=False)
-        else:
-            self.dataset_csv_path = dataset_csv_path
-            self.user_dataset_csv_path = user_dataset_csv_path
+
         self.model_name = model_name
         self.temperature = temperature
-        self.schema = au.get_schema(table)
-        if table_user is not None:
-            self.user_schema = au.get_schema(table_user)
-        else:
-            self.user_schema = None
+
         self.insights_history = []
         self.verbose = verbose
+
+    def set_table(
+        self,
+        table=None,
+        table_user=None,
+        dataset_csv_path=None,
+        user_dataset_csv_path=None,
+    ):
+        self.table = table
+        self.table_user = table_user
+        self.dataset_csv_path = dataset_csv_path
+        self.user_dataset_csv_path = user_dataset_csv_path
+
+        if table is not None:
+            self.table = table
+        if table_user is not None:
+            self.table_user = table_user
+        if dataset_csv_path is not None:
+            self.dataset_csv_path = dataset_csv_path
+            self.table = pd.read_csv(dataset_csv_path)
+        if user_dataset_csv_path is not None:
+            self.user_dataset_csv_path = user_dataset_csv_path
+            self.table_user = pd.read_csv(user_dataset_csv_path)
+
+        # schema
+        self.schema = au.get_schema(self.table)
+        if self.table_user is not None:
+            self.user_schema = au.get_schema(self.table_user)
+        else:
+            self.user_schema = None
 
     def summarize(self, method="list", prompt_summarize_method="basic"):
         if method == "list":
