@@ -1,0 +1,94 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-18.csv",
+    "user_dataset_csv_path": "data/notebooks/csvs/flag-18-sysuser.csv",
+    "metadata": {
+        "goal": "To explore and understand the correlation between asset purchase dates, warranty periods, and employee start dates to optimize asset procurement and warranty management.",
+        "role": "Procurement Analyst",
+        "category": "Asset Management & User Management",
+        "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `alm_hardware` table with 500 entries. The assets alm_hardware table, consists of detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'role', 'email', 'start_date', and 'department', providing insights into the user profiles managed within the ServiceNow system.",
+        "header": "Asset Warranty and Purchase Date Analysis (Flag 18)"
+    },
+    "insight_list": [
+        {
+            "data_type": "correlative",
+            "insight": "There is a positive correlation between Asset Purchase Dates and Warranty Periods",
+            "insight_value": {
+                "description": "Statistically significant. Recently purchased assets exhibit increasingly longer warranty periods compared to assets purchased earlier, indicating a trend towards extending warranties over time."
+            },
+            "plot": {
+                "plot_type": "scatter",
+                "title": "Correlation Between Purchase Date of Assets and Warranty Periods",
+                "x_axis": {
+                    "name": "Purchase Date",
+                    "value": "Date range from earliest to most recent purchases",
+                    "description": "This axis represents the time of asset purchase, plotted chronologically."
+                },
+                "y_axis": {
+                    "name": "Warranty Period (years)",
+                    "value": "Continuously variable warranty durations",
+                    "description": "This axis displays the warranty periods associated with each purchase date, illustrating how newer purchases tend to have longer warranties."
+                },
+                "description": "The scatter plot demonstrates a clear positive trend, showing that as the purchase date of assets moves closer to the present, the associated warranty periods become longer. This trend is statistically significant and highlights a shift in procurement strategies, possibly reflecting improved product quality or changes in manufacturer warranty policies."
+            },
+            "question": "Is there a statistically significant correlation between the purchase date of assets and their warranty periods?",
+            "actionable_insight": "This observed correlation should prompt a review of procurement policies to leverage the trend of longer warranties. Procurement strategies could be adjusted to optimize warranty terms, potentially leading to better coverage and reduced long-term maintenance costs. This insight could also guide future purchasing decisions, encouraging the selection of assets with favorable warranty terms that align with the organization's operational and financial planning.",
+            "code": "import matplotlib.pyplot as plt\n\n# Assuming 'df' is the DataFrame containing your data\ndf[\"warranty_expiration\"] = pd.to_datetime(df[\"warranty_expiration\"])\ndf[\"purchased_on\"] = pd.to_datetime(df[\"purchased_on\"])\n# Calculate the warranty period in years\ndf['warranty_period_years'] = (df['warranty_expiration'] - df['purchased_on']).dt.days / 365\n\n# Create the scatter plot\nplt.figure(figsize=(10, 6))\nplt.scatter(df['purchased_on'], df['warranty_period_years'], alpha=0.6, edgecolors='w', color='blue')\nplt.title('Correlation between purchased date and Warranty Period')\nplt.xlabel('Purchased On Date')\nplt.ylabel('Warranty Period (Years)')\nplt.grid(True)\n\n\n\nplt.show()"
+        },
+        {
+            "data_type": "predictive",
+            "insight": "The Linear Regression Model is able to predicts Warranty Periods Based on Purchase Dates",
+            "insight_value": {
+                "description": "The linear regression analysis confirms a predictable relationship between asset purchase dates and warranty periods, with a trend indicating longer warranties for more recently purchased assets."
+            },
+            "plot": {
+                "plot_type": "regression",
+                "title": "Linear Regression of Warranty Periods Against Purchase Dates",
+                "x_axis": {
+                    "name": "Purchase Date",
+                    "value": "Date range from earliest to most recent purchases",
+                    "description": "This axis represents the chronological order of asset purchases."
+                },
+                "y_axis": {
+                    "name": "Warranty Period (years)",
+                    "value": "Continuously variable warranty durations",
+                    "description": "This axis plots the warranty periods, with the regression line illustrating the linear trend."
+                },
+                "description": "The regression plot effectively shows a clear linear trend, indicating that newer assets tend to have longer warranties. The presence of noise suggests variability around the trend line, which could be due to factors such as different asset types or supplier agreements."
+            },
+            "question": "Is it a linear trend and can it be regressed with noise?",
+            "actionable_insight": "Given the predictability of warranty periods based on purchase dates as evidenced by the linear regression model, the organization can anticipate warranty terms for future purchases. This foresight could be instrumental in negotiating terms with suppliers or choosing products that offer the best value in terms of warranty coverage. Further, by understanding the variability (noise) around the trend, procurement managers can refine their asset management strategies to account for exceptions and ensure robust handling of warranty terms.",
+            "code": "# Assuming 'df' is the DataFrame containing your data\ndf[\"warranty_expiration\"] = pd.to_datetime(df[\"warranty_expiration\"])\ndf[\"purchased_on\"] = pd.to_datetime(df[\"purchased_on\"])\n# Calculate the warranty period in years\ndf['warranty_period_years'] = (df['warranty_expiration'] - df['purchased_on']).dt.days / 365\n\n# Create the scatter plot\nplt.figure(figsize=(10, 6))\nplt.scatter(df['purchased_on'], df['warranty_period_years'], alpha=0.6, edgecolors='w', color='blue')\nplt.title('Correlation between purchased date and Warranty Period')\nplt.xlabel('Purchased On Date')\nplt.ylabel('Warranty Period (Years)')\nplt.grid(True)\n# Optionally, you can fit a linear regression line to emphasize the trend\n# Using numpy for linear regression line\nimport numpy as np\n# Convert dates to ordinal for regression\ndf['sys_updated_on_ordinal'] = df['purchased_on'].apply(lambda x: x.toordinal())\n# Fit the regression\nfit = np.polyfit(df['sys_updated_on_ordinal'], df['warranty_period_years'], 1)\nfit_fn = np.poly1d(fit)\n# Plot the regression line\nplt.plot(df['purchased_on'], fit_fn(df['sys_updated_on_ordinal']), color='red', linewidth=2)"
+        },
+        {
+            "data_type": "correlative",
+            "insight": "There is a strong positive correlation between employee Start Dates and Asset Purchase dates",
+            "insight_value": {
+                "description": "Assets are frequently purchased close to the start dates of new employees, indicating that recent hires are likely to receive newer assets with potentially longer warranties."
+            },
+            "plot": {
+                "plot_type": "scatter",
+                "title": "Correlation Between Start Dates of New Employees and Asset Purchase Dates",
+                "x_axis": {
+                    "name": "Employee Start Date",
+                    "value": "Dates ranging from earliest to most recent employee inductions",
+                    "description": "This axis represents the start dates of employees within the organization."
+                },
+                "y_axis": {
+                    "name": "Asset Purchase Date",
+                    "value": "Dates of asset purchases assigned to new employees",
+                    "description": "This axis plots the purchase dates of assets, showing how these dates align with employee start dates."
+                },
+                "description": "The scatter plot demonstrates a clear positive correlation, indicating that newer employees are typically assigned newly purchased assets. This trend suggests a strategic approach to asset procurement that aligns with workforce expansion."
+            },
+            "question": "How does the asset purchase timing correlate with the start dates of recently joined employees?",
+            "actionable_insight": "This correlation suggests that recently joined employees receive newer assets, which not only could enhance their initial experience and productivity but also align with organizational strategies to maintain up-to-date technology and infrastructure. This trend should encourage HR and IT departments to collaborate closely on workforce and asset planning, ensuring that asset procurements are timely and anticipate the needs of incoming staff. Additionally, this practice might also imply a need for systematic updates or replacements of older assets to maintain parity and prevent technological disparities among staff.",
+            "code": "most_recent_updates = flag_data.groupby('assigned_to')['sys_updated_on'].max().reset_index()\n\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport matplotlib.dates as mdates  # for date formatting\n# Assuming most_recent_updates is already defined as shown previously\n# It contains 'assigned_to' and the most recent 'sys_updated_on'\n\n# Merge most_recent_updates with data_user_human_agents to get start_dates aligned with sys_updated_on dates\nvisualization_data = pd.merge(most_recent_updates, data_user_human_agents[['name', 'start_date']], \n                             left_on='assigned_to', right_on='name', how='left')\n\n# Drop any rows with NaN values that might affect the visualization\nvisualization_data.dropna(subset=['start_date', 'sys_updated_on'], inplace=True)\n\n# Convert dates to ordinal for plotting purposes\nvisualization_data[\"sys_updated_on\"] = pd.to_datetime(visualization_data[\"sys_updated_on\"])\nvisualization_data[\"start_date\"] = pd.to_datetime(visualization_data[\"start_date\"])\nvisualization_data['sys_updated_on_ordinal'] = visualization_data['sys_updated_on'].apply(lambda x: x.toordinal())\nvisualization_data['start_date_ordinal'] = visualization_data['start_date'].apply(lambda x: x.toordinal())\n\n\n# Create the scatter plot using datetime directly\nplt.figure(figsize=(12, 6))\nplt.scatter(visualization_data['sys_updated_on'], visualization_data['start_date'], alpha=0.6, edgecolors='w', color='blue')\nplt.title('Correlation between Most Recent System Update and User Start Date')\nplt.xlabel('Most Recent System Update Date')\nplt.ylabel('User Start Date')\n\n# Format the date display on the x and y axes\nplt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))\nplt.gca().yaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))\n\n# Set the date tick labels on the x-axis to be rotated for better readability\nplt.gcf().autofmt_xdate()  # Automatically format x-axis dates to fit them better\n\n# Optionally rotate y-axis labels manually if needed (uncomment the next line if desired)\n# plt.gca().set_yticklabels(plt.gca().get_yticks(), rotation=45)\n\nplt.grid(True)  # Add a grid for easier visual estimation\n\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is a positive correlation between Asset Purchase Dates and Warranty Periods",
+        "The Linear Regression Model is able to predicts Warranty Periods Based on Purchase Dates",
+        "There is a strong positive correlation between employee Start Dates and Asset Purchase dates"
+    ],
+    "summary": "\n\n1. **Correlation Exploration**: This dataset involves exploring the correlation between the warranty periods of assets and their purchase dates across different categories. The analysis also delves into how these factors align with the start dates of employees who are assigned these assets.\n   \n2. **Insight into Asset Management**: The dataset is crucial for understanding asset procurement strategies over time, particularly how warranty durations are structured relative to asset purchase dates. This is particularly relevant for optimizing lifecycle management and cost efficiency in asset procurement.\n   \n3. **Employee Integration**: By examining the relationship between asset allocation and employee start dates, the dataset provides insights into how new hires are equipped with necessary tools and resources, ensuring they are well-prepared from day one."
+}

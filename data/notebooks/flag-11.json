@@ -1,0 +1,177 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-11.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the incident data to identify trends and underlying causes for the increasing resolution time in certain category.",
+        "role": "L2 Engineering Manager",
+        "category": "Incident Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Category based Incident Trends Analysis (Flag 11)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "There is a linear Increase in TTR for Hardware incidents suspiciously from a particular time period",
+            "insight_value": {
+                "x_val": "Anomaly Periods",
+                "y_val": "Increased TTR from 2023-07"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "TTR Trends for Hardware Incidents",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Anomaly periods",
+                    "description": "This represents the specific anomaly periods identified."
+                },
+                "y_axis": {
+                    "name": "Time to Resolution",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the time taken to resolve incidents, focusing on the Hardware category during anomaly periods."
+                },
+                "description": "The line graph demonstrates an increasing trend in the TTR for Hardware incidents from period 2023-07"
+            },
+            "question": "What is the trend in the time to resolution (TTR) for Hardware incidents, especially during the identified anomaly periods?",
+            "actionable_insight": "Addressing the root causes of increased TTR during these periods could enhance overall service efficiency and customer satisfaction.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Create a new column 'month_year' to make the plot more readable\n# df['month_year'] = df['opened_at'].dt.to_period('M')\ndf[\"ttr\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n# Convert 'ttr' column to numeric and handle errors\ndf[\"ttr\"] = pd.to_numeric(df[\"ttr\"], errors=\"coerce\")\n\n# Create a lineplot\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) Over Time for Different Categories\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There are fluctuations in incident frequencies across categories and Hardware incidents suddenly increased from 2023-06 to 2023-08",
+            "insight_value": {
+                "x_val": "Time",
+                "y_val": "Incident Count"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Incident Distribution Over Time by Category",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "2023-01-01 to 2024-02-01",
+                    "description": "This represents the timeline of the data collected."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the number of incidents occurring over time for each category."
+                },
+                "description": "The line graph shows the trend of incidents over time, divided by categories. It highlights periods with unusually high activity, particularly in the Hardware category. for periods between 2023-06 to 2023-08 the cases are 4 times more than the average. This could indicate a potential issue that needs to be addressed."
+            },
+            "question": "How are incidents distributed across different categories over time?",
+            "actionable_insight": "Identifying specific times with high incident rates can help in preemptive resource allocation and readiness for handling spikes.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Put the data into a DataFrame\n\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"category\")\nplt.title(\"Number of Incidents Created Over Time by Category\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There are specific time windows with elevated Hardware incidents",
+            "insight_value": {
+                "x_val": "Time Window",
+                "y_val": "47, 43"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Spikes in Hardware Incidents Over Time",
+                "x_axis": {
+                    "name": "Time Window",
+                    "value": [
+                        "2023-07",
+                        "2023-08"
+                    ],
+                    "description": "This represents specific time windows identified with high incident rates."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": [
+                        47,
+                        43
+                    ],
+                    "description": "This represents the count of Hardware incidents in each identified time window."
+                },
+                "description": "The bar graph identifies specific periods where Hardware incidents spike significantly, warranting further investigation. average is 6 incidents per month, but in 2023-06 to 2023-08 the cases are 4 to 5 times more than the average."
+            },
+            "question": "During which periods do we observe spikes in incident reports, particularly in the Hardware category?",
+            "actionable_insight": "Focusing on these high-activity periods can guide targeted troubleshooting and preventive measures.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming df is already loaded and sorted by 'opened_at' as in the previous code\n\n# Filter the DataFrame to include only Hardware incidents\nhardware_df = df[df['category'] == 'Hardware']\n\n# Create a new DataFrame grouping by 'month_year' to count incidents in each period\nhardware_counts = hardware_df.groupby('month_year').size().reset_index(name='counts')\n\n# Create a bar plot to visualize the number of Hardware incidents over time\nplt.figure(figsize=(12, 6))\nplot = sns.barplot(data=hardware_counts, x='month_year', y='counts', color='blue')\n# Loop through the rectangles (i.e., bars)\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_x() + i.get_width() / 2\n    y_value = i.get_height()\n\n    # Use Y value as label and format number with one decimal place\n    label = \"{:.1f}\".format(y_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      # Use `label` as label\n        (x_value, y_value),         # Place label at end of the bar\n        xytext=(0, 5),              # Shift text slightly above bar\n        textcoords=\"offset points\", # Interpret `xytext` as offset in points\n        ha='center',                # Horizontally align label \n        va='bottom'                 # Vertically align label at bottom\n    )\nplt.title(\"Number of Hardware Incidents Over Time\")\nplt.xlabel(\"Month and Year\")\nplt.ylabel(\"Number of Incidents\")\nplt.xticks(rotation=45)\nplt.grid(True, which='both', linestyle='--', linewidth=0.5)\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Hardware incidents predominantly occur in Australia during spikes from 2023-06 to 2023-08",
+            "insight_value": {
+                "x_val": "Australia",
+                "y_val": "Majority"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Geographical Distribution of Hardware Incidents During Spikes",
+                "description": "The bar plot shows the proportion of Hardware incidents occurring in different locations during the identified spikes, with a significant majority in Australia."
+            },
+            "question": "Are there geographical patterns associated with the spikes in Hardware incidents?",
+            "actionable_insight": "Understanding geographical trends can help localize response strategies and possibly identify region-specific issues.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n\n\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\n\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"location\")\nplt.title(\"Number of Incidents Created Over Location\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is an increase in TTR for Hardware incidents during anomaly periods",
+            "insight_value": {
+                "x_val": "Anomaly Periods",
+                "y_val": "Increased TTR"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "TTR Trends for Hardware Incidents",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Anomaly periods",
+                    "description": "This represents the specific anomaly periods identified."
+                },
+                "y_axis": {
+                    "name": "Time to Resolution",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the time taken to resolve incidents, focusing on the Hardware category during anomaly periods."
+                },
+                "description": "The line graph demonstrates an increasing trend in the TTR for Hardware incidents during times of elevated incident frequency."
+            },
+            "question": "What is the trend in the time to resolution (TTR) for Hardware incidents, especially during the identified anomaly periods?",
+            "actionable_insight": "Addressing the root causes of increased TTR during these periods could enhance overall service efficiency and customer satisfaction.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filtering for Hardware category incidents\nhardware_df = df[df['category'] == 'Hardware']\n\n# Calculating TTR in days\nhardware_df[\"ttr\"] = (hardware_df[\"closed_at\"] - hardware_df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Convert 'ttr' to numeric, handling errors\nhardware_df[\"ttr\"] = pd.to_numeric(hardware_df[\"ttr\"], errors=\"coerce\")\n\n# Filtering data for the anomaly period\nanomaly_period_df = hardware_df[(hardware_df['opened_at'] >= pd.Timestamp('2023-06-01')) & \n                                (hardware_df['opened_at'] <= pd.Timestamp('2023-08-31'))]\n\n# Create a lineplot to show TTR trends during the anomaly period\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=anomaly_period_df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) for Hardware Incidents During Anomaly Period\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Time to Resolution (days)\")\nplt.xticks(rotation=45)\nplt.grid(True)\nplt.legend(title='Category')\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Specific system outage types identified as problematic during anomalies",
+            "insight_value": {
+                "x_val": "Hardware Type",
+                "y_val": "Incident Count"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Problematic Hardware Types During Anomaly Periods",
+                "x_axis": {
+                    "name": "Hardware Type",
+                    "value": [
+                        "Email Servers",
+                        "System Outage"
+                    ],
+                    "description": "This represents different types of hardware."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the incident counts for problematic hardware types during the anomaly periods."
+                },
+                "description": "The word plot highlights specific hardware types that frequently fail or cause incidents during the anomaly periods."
+            },
+            "question": "Can we identify specific sub-categories or types of hardware that are most problematic during these anomaly periods?",
+            "actionable_insight": "Focusing on the outage specific hardware types for maintenance or upgrades could mitigate the high incident rates.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom wordcloud import WordCloud\n\n\n# Grouping the data by 'category' and concatenating 'short_description'\ngrouped_descriptions = df.groupby('category')['short_description'].apply(lambda x: ' '.join(x)).reset_index()\n\n# Setting up the plot with appropriate size\nplt.figure(figsize=(20, 10))\n\n# Generating a word cloud for each category\nfor index, row in grouped_descriptions.iterrows():\n    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(row['short_description'])\n    \n    plt.subplot(3, 2, index+1)  # Adjust the grid size according to the number of categories\n    plt.imshow(wordcloud, interpolation='bilinear')\n    plt.title(row['category'])\n    plt.axis('off')\n\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is a linear Increase in TTR for Hardware incidents suspiciously from a particular time period",
+        "There are fluctuations in incident frequencies across categories and Hardware incidents suddenly increased from 2023-06 to 2023-08",
+        "There are specific time windows with elevated Hardware incidents",
+        "Hardware incidents predominantly occur in Australia during spikes from 2023-06 to 2023-08",
+        "There is an increase in TTR for Hardware incidents during anomaly periods",
+        "Specific system outage types identified as problematic during anomalies"
+    ],
+    "summary": "\n\n1. **Increasing Trend in Resolution Time**: There is a noticeable linear increase in the Time to Resolution (TTR) for incidents within the Hardware category, starting from a specific date 2023-07-01. This trend suggests challenges in resolving these incidents efficiently.\n2. **Cause of Increased TTR**: The linear increase in TTR coincides with an increase in the volume of hardware incidents. where there is spike number of hardware incidents between July and August months in 2023. This surge may be attributed to factors such as new hardware deployments, software updates, or external influences like peak usage times and increased demand.\n3. **Location of the spikes**: Hardware incidents predominantly occur in Australia during spikes from 2023-06 to 2023-08.\n4. **Reason and Impact Assessment**: The growing frequency and prolonged resolution times of hardware incidents is mostly due to email server outage issue and could strain resources and affect overall service delivery, highlighting the need for adjustment and repairs."
+}

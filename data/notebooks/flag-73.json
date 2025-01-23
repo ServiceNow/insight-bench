@@ -1,0 +1,90 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-73.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the relationship between the cost of assets and their warranty periods to identify discrepancies and align procurement strategies with the observed asset value trends.",
+        "role": "Operations Manager",
+        "category": "Asset Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow alm_hardware table, detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The table effectively captures asset management activities, offering insights into the operational handling, allocation, and maintenance status of hardware resources across various departments within an organization.",
+        "header": "Asset Warranty Analysis (Flag 73)"
+    },
+    "insight_list": [
+        {
+            "insight": "The HR department exhibits the highest average asset cost, while Customer Support and IT departments have greater variability with significant outliers.",
+            "question": "How does the cost of assets vary by department, and are there any significant outliers in asset costs within each department?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load data\nflag_data = pd.read_csv(\"csvs/flag-73.csv\")\n\n# Convert `cost` to numeric in case of any non-numeric issues, and filter for positive costs only\nflag_data[\"cost\"] = pd.to_numeric(flag_data[\"cost\"], errors=\"coerce\")\nfiltered_data = flag_data[flag_data[\"cost\"] > 0]\n\n# Plotting boxplot to show cost distribution by department\nplt.figure(figsize=(12, 6))\nfiltered_data.boxplot(\n    column=\"cost\", by=\"department\", grid=False, showfliers=True, notch=True\n)\n\n# Enhancing the plot aesthetics\nplt.title(\"Asset Cost Distribution by Department with Outliers\")\nplt.suptitle(\"\")  # Remove the default pandas title\nplt.xlabel(\"Department\")\nplt.ylabel(\"Asset Cost\")\nplt.xticks(rotation=45)  # Rotate department names for readability\n\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Servers and Web Servers are the most expensive asset categories on average, followed by computers.",
+            "insight_value": {
+                "description": "Average costs vary significantly across model categories, with Servers and Web Servers leading in terms of investment required."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Asset Cost by Model Category",
+                "x_axis": {
+                    "name": "Model Category",
+                    "value": [
+                        "Server",
+                        "Web Server",
+                        "Computer",
+                        "Printer",
+                        "Rack",
+                        "Computer Peripheral",
+                        "Storage Device"
+                    ],
+                    "description": "This axis categorizes different types of assets based on their model category."
+                },
+                "y_axis": {
+                    "name": "Average Cost (USD)",
+                    "value": {
+                        "Server": "8775.90$",
+                        "Web Server": "8000$",
+                        "Computer": "3274.48$",
+                        "Printer": "1478.14$",
+                        "Rack": "400.0$",
+                        "Computer Peripheral": "331.27$",
+                        "Storage Device": "299.9$"
+                    },
+                    "description": "This axis displays the average cost for each asset model category, highlighting the substantial cost disparities among different asset types."
+                },
+                "description": "The bar chart clearly illustrates the average costs associated with different asset model categories within the organization. It underscores that Servers and Web Servers are notably more expensive on average than other categories such as Computers, Printers, and more peripheral equipment."
+            },
+            "question": "What is the distribution of Average asset cost across Model Categories?",
+            "actionable_insight": "Given the higher average costs associated with Servers and Web Servers, followed by computers, it's essential for the organization to carefully consider the lifecycle costs and benefits of these investments. This insight can inform budgeting decisions, procurement strategies, and asset management practices to optimize the organization's infrastructure and ensure cost-effective operations.",
+            "code": "import matplotlib.pyplot as plt\n\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\nflag_data[\"sys_updated_on\"] = pd.to_datetime(flag_data[\"sys_updated_on\"])\n# Calculate the warranty period in years for each asset\nflag_data['warranty_period_years'] = (flag_data['warranty_expiration'] - flag_data['sys_updated_on']).dt.days / 365\n\n# Group by model_category and calculate the average warranty period\navg_warranty_by_category = flag_data.groupby('model_category')['cost'].mean()\n\n# Plotting\na_plot = avg_warranty_by_category.plot(kind='bar', color='skyblue', figsize=(10, 6))\nfor p in a_plot.patches:\n    a_plot.annotate(format(p.get_height(), '.2f'), \n                          (p.get_x() + p.get_width() / 2., p.get_height()), \n                          ha = 'center', va = 'center', \n                          xytext = (0, 9), \n                          textcoords = 'offset points')\nplt.xlabel('Model Category')\nplt.ylabel('Average Cost ($)')\nplt.title('Average Cost by Model Category')\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "correlative",
+            "insight": "Strong correlation between the cost of computer assets and their warranty periods.",
+            "insight_value": {
+                "description": "More expensive computer assets tend to have shorter warranty periods, suggesting that lower costs are associated with extended warranty provisions."
+            },
+            "plot": {
+                "plot_type": "scatter",
+                "title": "Correlation Between Cost of Computers and Their Warranty Periods",
+                "x_axis": {
+                    "name": "Cost of Computer Assets (USD)",
+                    "value": "Continuously variable cost amounts",
+                    "description": "This axis represents the cost of computer assets, highlighting a range from lower to higher priced models."
+                },
+                "y_axis": {
+                    "name": "Warranty Period (years)",
+                    "value": "Continuously variable warranty durations",
+                    "description": "This axis displays the warranty periods associated with each cost level, illustrating how warranty durations increase with asset cost."
+                },
+                "description": "The scatter plot demonstrates a clear linear correlation between the cost of computer assets and their warranty periods. This trend confirms that more expensive computers although more expensive, tend to have shorter warranty periods, while lower-cost models are associated with longer warranty coverage. This insight can guide procurement decisions and warranty management strategies for computer assets."
+            },
+            "question": "What is the correlation between the cost of computer assets and their warranty periods?",
+            "actionable_insight": "This observed correlation suggests that investing in more expensive computer assets may require additional warranty coverage to mitigate risks and ensure operational continuity. Organizations should consider negotiating extended warranty terms with vendors or investing in comprehensive warranty plans to protect high-value computer assets and minimize potential disruptions. Secondly, organisation can prioitise the procurement of lower cost computers to benefit from extended warranty provisions. This can help in optimizing the warranty management strategy and ensuring cost-effective asset maintenance.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\nflag_data[\"purchased_on\"] = pd.to_datetime(flag_data[\"purchased_on\"])\n\ncomputer_data = flag_data[flag_data['model_category'] == 'Computer']\nplt.scatter(computer_data['cost'], (computer_data['warranty_expiration'] - computer_data['purchased_on']).dt.days / 365)\nplt.xlabel('Cost ($)')\nplt.ylabel('Warranty Period (Years)')\nplt.title('Correlation between Cost and Warranty Period of Computers')\nplt.show()"
+        }
+    ],
+    "insights": [
+        "The HR department exhibits the highest average asset cost, while Customer Support and IT departments have greater variability with significant outliers.",
+        "Servers and Web Servers are the most expensive asset categories on average, followed by computers.",
+        "Strong correlation between the cost of computer assets and their warranty periods."
+    ],
+    "summary": "\n\n1. **Asset Cost Variability by Department** (Question 1): The HR department consistently has the highest average asset cost, indicating potential premium or specialized equipment allocation. In contrast, Customer Support and IT departments show significant cost variability with frequent outliers, suggesting mixed asset types or varying equipment quality levels.\n\n2. **Average Cost by Model Category** (Question 2): Servers and Web Servers are the most expensive asset categories on average, followed by computers. This highlights the need for careful budgeting and procurement strategies to manage these high-cost investments effectively.\n\n3. **Correlation Between Cost and Warranty Period** (Question 3): There is a strong correlation where more expensive computer assets tend to have shorter warranty periods. This suggests that organizations may need to negotiate extended warranty terms for high-value assets or prioritize lower-cost computers to benefit from longer warranty coverage."
+}

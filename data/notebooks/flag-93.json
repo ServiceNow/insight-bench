@@ -1,0 +1,74 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-93.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To identify and rectify the causes of high rejection rates in travel expenses while also detecting and addressing potential duplicate expense claims. This ensures that submissions align with organizational policies and reduces the risk of financial inefficiencies or unauthorized claims.",
+        "role": "Expense Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow `fm_expense_line` table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a clear view of organizational expenditures across different categories, highlighting both the timing and approval state of each financial entry. Additionally, the dataset captures patterns in expense submissions, including potential duplicate claims and their impact on financial management.",
+        "header": "Travel Expense Rejection Analysis (Flag 93)"
+    },
+    "insight_list": [
+        {
+            "data_type": "comparative",
+            "insight": "The analysis could not be completed due to a KeyError indicating that 'Declined' is not a valid state in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted to show proportions of declined expenses by category, but failed due to missing 'Declined' state in the data"
+            },
+            "question": "How do rejection rates for travel expenses compare to other categories within the expense reports?",
+            "actionable_insight": "No actionable insight could be generated due to the missing data",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Group the data by category and state, then count occurrences\n# category_state_counts = flag_data.groupby(['category', 'state']).size().unstack(fill_value=0)\n\n# # Calculate proportions of each state within each category\n# category_state_proportions = category_state_counts.div(category_state_counts.sum(axis=1), axis=0)\n\n# # Plot the data, focusing only on the 'Declined' state\n# fig, ax = plt.subplots(figsize=(12, 8))\n# declined_proportions = category_state_proportions['Declined']\n# declined_proportions.plot(kind='bar', color='red', ax=ax)\n\n# # Add titles and labels\n# ax.set_title('Proportion of Declined Expenses by Category', fontsize=16)\n# ax.set_xlabel('Expense Category', fontsize=14)\n# ax.set_ylabel('Proportion of Declined', fontsize=14)\n# ax.set_ylim(0, 1)  # Set y-axis limit to show proportions from 0 to 1\n\n# # Show grid\n# ax.grid(True, which='both', linestyle='--', linewidth=0.5)\n\n# # Rotate the x-axis labels for better readability\n# plt.xticks(rotation=45)\n# plt.tight_layout()  # Adjust layout to not cut off labels\n\n# # Adding numeric labels on top of the bars\n# for i, value in enumerate(declined_proportions):\n#     ax.text(i, value, f\"{value:.2f}\", ha='center', va='bottom', fontsize=10, color='black')\n\n# # Show the plot\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The distribution of expense reports shows equal reporting across all IT departments",
+            "insight_value": {
+                "description": "Each department (Database, Hardware, Inquiry/Help, Software, Network) has exactly 100 expense reports"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Expense Reports by Category",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Database",
+                        "Hardware",
+                        "Inquiry/Help",
+                        "Software",
+                        "Network"
+                    ],
+                    "description": "Different IT departments generating expense reports"
+                },
+                "y_axis": {
+                    "name": "Number of Expense Reports",
+                    "value": 100,
+                    "description": "Shows the count of expense reports submitted by each department"
+                },
+                "description": "Light blue bar chart showing uniform distribution of 100 expense reports across all departments"
+            },
+            "question": "What is the distribution of expense reports by department?",
+            "actionable_insight": {
+                "description": "The consistent number of reports across departments suggests standardized reporting practices, though it may be worth investigating if this uniformity is natural or due to reporting constraints"
+            },
+            "code": "import matplotlib.pyplot as plt\n\n# Count the number of expense reports per department\ndepartment_counts = flag_data['category'].value_counts()\n\n# Plot the data\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_counts.plot(kind='bar', color='skyblue', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Expense Reports by Category', fontsize=16)\nax.set_xlabel('Category', fontsize=14)\nax.set_ylabel('Number of Expense Reports', fontsize=14)\n\n# Show grid\nax.grid(axis='y')  # Only horizontal grid lines for readability\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars for clarity\nfor p in ax.patches:\n    ax.annotate(f\"{int(p.get_height())}\", (p.get_x() + p.get_width() / 2., p.get_height()),\n                ha='center', va='bottom', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "frequency",
+            "insight": "The analysis could not be completed due to missing columns 'user' and 'amount' in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "No plot could be generated due to missing columns in the dataset"
+            },
+            "question": "Which users have submitted multiple duplicate expense claims?",
+            "actionable_insight": "No actionable insight could be generated due to the missing data",
+            "code": "# # Identify potential duplicates based on user, amount, category, and short description\n# duplicate_entries = df[df.duplicated(subset=['user', 'amount', 'category', 'short_description'], keep=False)]\n\n# # Count the number of duplicates per user\n# duplicates_count = duplicate_entries['user'].value_counts()\n\n# # Plot the number of duplicate claims per user\n# plt.figure(figsize=(10, 6))\n# duplicates_count.plot(kind='bar', color='tomato')\n# plt.title('Number of Duplicate Expense Claims by User')\n# plt.xlabel('User')\n# plt.ylabel('Number of Duplicate Claims')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "The analysis could not be completed due to a KeyError indicating that 'Declined' is not a valid state in the dataset",
+        "The distribution of expense reports shows equal reporting across all IT departments",
+        "The analysis could not be completed due to missing columns 'user' and 'amount' in the dataset"
+    ],
+    "summary": "\n\n1. **Duplicate Expense Claims:** There are no duplicate expense claims in the dataset.\n\n2. **Trend in Expense Rejections:** No trend could be identified due to missing data.\n\n3. **Enhancing Policy Adherence:** The absence of data on training or resources for travel expense submission suggests a potential gap in policy adherence."
+}

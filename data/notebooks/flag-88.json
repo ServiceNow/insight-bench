@@ -1,0 +1,76 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-88.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To detect and investigate instances of repeated identical expense claims by individual users, determining whether these repetitions are fraudulent or due to misunderstandings of the expense policy.",
+        "role": "Compliance and Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
+        "header": "Expense Claim Patterns and Fraud Analysis (Flag 88)"
+    },
+    "insight_list": [
+        {
+            "data_type": "frequency",
+            "insight": "The analysis could not be completed because the required 'department' column is missing from the dataset (flag_data). This is evidenced by the KeyError in the output indicating that 'department' is not a valid column name.",
+            "insight_value": {},
+            "plot": {
+                "description": "The graph could not be generated due to missing data"
+            },
+            "question": "How many instances of repeated identical expense claims are there, and which users are involved?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# import matplotlib.pyplot as plt\n# import pandas as pd\n\n# # Assuming flag_data is your DataFrame containing expense data\n# # Group data by department and calculate total and average expenses\n# department_expenses = flag_data.groupby('department')['amount'].agg(['sum', 'mean']).reset_index()\n\n# # Sort data for better visualization (optional)\n# department_expenses.sort_values('sum', ascending=False, inplace=True)\n\n# # Creating the plot\n# fig, ax = plt.subplots(figsize=(14, 8))\n\n# # Bar plot for total expenses\n# # total_bars = ax.bar(department_expenses['department'], department_expenses['sum'], color='blue', label='Total Expenses')\n\n# # Bar plot for average expenses\n# average_bars = ax.bar(department_expenses['department'], department_expenses['mean'], color='green', label='Average Expenses', alpha=0.6, width=0.5)\n\n# # Add some labels, title and custom x-axis tick labels, etc.\n# ax.set_xlabel('Department')\n# ax.set_ylabel('Expenses ($)')\n# ax.set_title('Average Expenses by Department')\n# ax.set_xticks(department_expenses['department'])\n# ax.set_xticklabels(department_expenses['department'], rotation=45)\n# ax.legend()\n\n# # Adding a label above each bar\n# def add_labels(bars):\n#     for bar in bars:\n#         height = bar.get_height()\n#         ax.annotate(f'{height:.2f}',\n#                     xy=(bar.get_x() + bar.get_width() / 2, height),\n#                     xytext=(0, 3),  # 3 points vertical offset\n#                     textcoords=\"offset points\",\n#                     ha='center', va='bottom')\n\n# # add_labels(total_bars)\n# add_labels(average_bars)\n\n# plt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "The analysis could not be completed because the column 'processing_time_hours' was not found in the dataset, indicating either missing or incorrectly named data",
+            "insight_value": {},
+            "plot": {
+                "description": "The graph could not be generated due to missing data"
+            },
+            "question": "What are the differences in processing times for expenses in various states such as Processed, Declined, Submitted, and Pending?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# # Calculate average processing time for each state\n# avg_processing_time_by_state = df.groupby('state')['processing_time_hours'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average processing time by state\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='state', y='processing_time_hours', data=avg_processing_time_by_state)\n# plt.title('Average Processing Time by State')\n# plt.xlabel('State')\n# plt.ylabel('Average Processing Time (hours)')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "frequency",
+            "insight": "The analysis could not be completed due to a KeyError indicating that the 'user' column is missing from the dataset (flag_data)",
+            "insight_value": {},
+            "plot": {
+                "description": "The code attempted to create a histogram showing the distribution of repeated claims frequency, but failed due to missing data. The intended visualization would have shown the frequency of identical expense claims made by the same user in the same category"
+            },
+            "question": "How many instances of any repeated identical expense claims are there?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# import matplotlib.pyplot as plt\n# import pandas as pd\n\n# # Group by user, category, and amount to count occurrences\n# grouped_data = flag_data.groupby(['user', 'category', 'amount']).size().reset_index(name='frequency')\n\n# # Filter out normal entries to focus on potential anomalies\n# potential_fraud = grouped_data[grouped_data['frequency'] > 3]  # Arbitrary threshold, adjust based on your data\n\n# # Plot histogram of frequencies\n# plt.figure(figsize=(10, 6))\n# plt.hist(potential_fraud['frequency'], bins=30, color='red', alpha=0.7)\n# plt.title('Distribution of Repeated Claims Frequency')\n# plt.xlabel('Frequency of Same Amount Claims by Same User in Same Category')\n# plt.ylabel('Count of Such Incidents')\n# plt.grid(True)\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "frequency",
+            "insight": "The analysis could not be completed due to a KeyError indicating that the 'user' column is missing from the flag_data DataFrame",
+            "insight_value": {},
+            "plot": {
+                "description": "A scatter plot was attempted to visualize repeated expense claims by user and category, with point sizes representing frequency of claims, but failed due to missing data"
+            },
+            "question": "Which users are involved in the frequent cases?",
+            "actionable_insight": "Before proceeding with the analysis, verify that the flag_data DataFrame contains the required 'user' column and ensure data integrity",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Assume flag_data includes 'user', 'amount', 'category' columns\n# # Group data by user, category, and amount to count frequencies\n# grouped_data = flag_data.groupby(['user', 'category', 'amount']).size().reset_index(name='count')\n\n# # Filter to only include cases with more than one claim (to highlight potential fraud)\n# repeated_claims = grouped_data[grouped_data['count'] > 1]\n\n# # Create a scatter plot with sizes proportional to the count of claims\n# plt.figure(figsize=(14, 8))\n# colors = {'Travel': 'blue', 'Meals': 'green', 'Accommodation': 'red', 'Miscellaneous': 'purple'}  # Add more categories as needed\n# for ct in repeated_claims['category'].unique():\n#     subset = repeated_claims[repeated_claims['category'] == ct]\n#     plt.scatter(subset['user'], subset['amount'], s=subset['count'] * 100,  # Increased size factor for better visibility\n#                 color=colors.get(ct, 'gray'), label=f'Category: {ct}', alpha=0.6)\n\n# # Customizing the plot\n# plt.title('Repeated Expense Claims by User and Category')\n# plt.xlabel('User')\n# plt.ylabel('Amount ($)')\n# plt.legend(title='Expense Categories')\n# plt.xticks(rotation=45)  # Rotate x-axis labels for better readability\n# plt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\n\n# # Highlighting significant cases\n# # Let's annotate the specific user found in your description\n# for i, row in repeated_claims.iterrows():\n#     if row['user'] == 'Mamie Mcintee' and row['amount'] == 8000:\n#         plt.annotate(f\"{row['user']} (${row['amount']})\", (row['user'], row['amount']),\n#                      textcoords=\"offset points\", xytext=(0,10), ha='center', fontsize=9, color='darkred')\n\n# # Show plot\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "distribution",
+            "insight": "The analysis could not be completed due to a KeyError indicating that the 'user' column is missing from the flag_data DataFrame",
+            "insight_value": {},
+            "plot": {
+                "description": "No plot was generated due to missing data"
+            },
+            "question": "What department and categories are most commonly involved in these repeated claims?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# import matplotlib.pyplot as plt\n# import pandas as pd\n\n# # Assuming 'flag_data' includes 'user', 'department', 'amount', 'category' columns\n# # and it's already loaded with the data\n\n# # Filter for the specific user\n# user_data = flag_data[flag_data['user'] == 'Mamie Mcintee']\n\n# # Group data by department and category to count frequencies\n# department_category_counts = user_data.groupby(['department', 'category']).size().unstack(fill_value=0)\n\n# # Plotting\n# plt.figure(figsize=(12, 7))\n# department_category_counts.plot(kind='bar', stacked=True, color=['blue', 'green', 'red', 'purple', 'orange'], alpha=0.7)\n# plt.title('Distribution of Expense Claims by Department and Category for Mamie Mcintee')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Claims')\n# plt.xticks(rotation=0)  # Keep the department names horizontal for better readability\n# plt.legend(title='Expense Categories')\n# plt.grid(True, which='both', linestyle='--', linewidth=0.5)\n# plt.show()\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "The analysis could not be completed because the required 'department' column is missing from the dataset (flag_data). This is evidenced by the KeyError in the output indicating that 'department' is not a valid column name.",
+        "The analysis could not be completed because the column 'processing_time_hours' was not found in the dataset, indicating either missing or incorrectly named data",
+        "The analysis could not be completed due to a KeyError indicating that the 'user' column is missing from the dataset (flag_data)",
+        "The analysis could not be completed due to a KeyError indicating that the 'user' column is missing from the flag_data DataFrame",
+        "The analysis could not be completed due to a KeyError indicating that the 'user' column is missing from the flag_data DataFrame"
+    ],
+    "summary": "\n\n1. **Pattern Recognition:** The dataset is focused on identifying patterns in expense submissions that may indicate potential fraud or policy abuse. However, the dataset is missing key columns such as 'department', 'user', and 'processing_time_hours', which are essential for conducting the analysis.\n\n2. **Insight into User Behavior:** No analysis could be performed due to the missing 'user' column. This column is crucial for identifying repeated identical expense claims by individual users.\n\n3. **State-Based Processing Time Analysis:** The analysis could not be completed because the 'processing_time_hours' column is missing from the dataset. This column is necessary to compare processing times for expenses in various states such as Processed, Declined, Submitted, and Pending.\n\n4. **Expense Distribution by Department:** The analysis could not be completed because the 'department' column is missing from the dataset. This column is needed to plot the distribution of expenses across different departments."
+}

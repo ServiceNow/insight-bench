@@ -1,0 +1,70 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-66.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To uncover and address the reasons behind the varying rates of expense rejections across departments to improve overall financial management within the organization.",
+        "role": "Financial Compliance Analyst",
+        "category": "Financial Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Expense Management Discrepancies (Flag 66)"
+    },
+    "insight_list": [
+        {
+            "insight": "Certain departments, notably Product Management and HR, exhibit notably longer processing delays in specific categories such as Services and Travel, indicating potential workflow bottlenecks.",
+            "question": "How does the processing delay (in days) vary across different departments and categories?",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load and process the data\nflag_data = pd.read_csv(\"csvs/flag-66.csv\")\n\n# Convert date columns to datetime format\nflag_data[\"opened_at\"] = pd.to_datetime(flag_data[\"opened_at\"], errors=\"coerce\")\nflag_data[\"processed_date\"] = pd.to_datetime(\n    flag_data[\"processed_date\"], errors=\"coerce\"\n)\n\n# Calculate processing delay in days and remove rows with missing dates\nflag_data[\"processing_delay\"] = (\n    flag_data[\"processed_date\"] - flag_data[\"opened_at\"]\n).dt.days\nflag_data = flag_data.dropna(subset=[\"processing_delay\", \"department\", \"category\"])\n\n# Aggregate mean processing delay by department and category\ndelay_by_dept_category = (\n    flag_data.groupby([\"department\", \"category\"])[\"processing_delay\"]\n    .mean()\n    .reset_index()\n)\n\n# Plotting\nplt.figure(figsize=(14, 8))\nsns.barplot(\n    data=delay_by_dept_category,\n    x=\"processing_delay\",\n    y=\"department\",\n    hue=\"category\",\n    dodge=False,\n)\nplt.title(\"Average Processing Delay (in days) by Department and Category\")\nplt.xlabel(\"Average Processing Delay (days)\")\nplt.ylabel(\"Department\")\nplt.legend(title=\"Category\", bbox_to_anchor=(1.05, 1), loc=\"upper left\")\nplt.grid(True)\n\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is no correlation between the number of expense reports submitted and rejection rates",
+            "insight_value": {
+                "description": "Despite having a lower volume of expense submissions, the IT department has the highest rejection rate, while departments with higher submission volumes like Customer Support exhibit lower rejection rates."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Reports by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Customer Support",
+                        "Sales",
+                        "IT",
+                        "Finance",
+                        "Development",
+                        "HR",
+                        "Product Management"
+                    ],
+                    "description": "This axis categorizes expenses based on department affiliation."
+                },
+                "y_axis": {
+                    "name": "Number of Expense Reports",
+                    "value": {
+                        "Customer Support": "267",
+                        "Sales": "122",
+                        "IT": "43",
+                        "Finance": "22",
+                        "Development": "20",
+                        "HR": "14",
+                        "Product Management": "12"
+                    },
+                    "description": "This axis displays the number of expense reports submitted by each department, revealing that Customer Support submits the most, while IT, despite its high rejection rate, submits far fewer."
+                },
+                "description": "The bar chart vividly illustrates the number of expense reports submitted by each department. The data highlight that the volume of submissions does not correlate with the proportion of rejections, as seen with the IT department, which submits fewer reports but faces a high rate of rejections."
+            },
+            "question": "What is the distribution of Expense Reports by Department?",
+            "actionable_insight": "This discrepancy in rejection rates despite lower submission volumes suggests underlying issues in IT\u2019s expense reporting process or stricter scrutiny of their reports. It would be prudent to conduct a detailed review of the IT department's submissions to understand the reasons behind the high rejection rates. Efforts should be focused on aligning IT\u2019s expense reporting practices with those departments exhibiting high compliance and low rejection rates, like Customer Support, to reduce unnecessary financial discrepancies and improve procedural compliance.",
+            "code": "import matplotlib.pyplot as plt\n\n# Count the number of expense reports per department\ndepartment_counts = flag_data['department'].value_counts()\n\n# Plot the data\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_counts.plot(kind='bar', color='skyblue', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Expense Reports by Department', fontsize=16)\nax.set_xlabel('Department', fontsize=14)\nax.set_ylabel('Number of Expense Reports', fontsize=14)\n\n# Show grid\nax.grid(axis='y')  # Only horizontal grid lines for readability\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars for clarity\nfor p in ax.patches:\n    ax.annotate(f\"{int(p.get_height())}\", (p.get_x() + p.get_width() / 2., p.get_height()),\n                ha='center', va='bottom', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "insight": "The Customer Support and Sales departments have the highest total expenses, with Customer Support leading significantly in total spending and count of expense instances.",
+            "question": "How do expense amounts vary across different departments, and what is the distribution of these expenses?",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Load the dataset\nflag_data = pd.read_csv(\"csvs/flag-66.csv\")\n\n# Drop rows with missing department or amount values\nflag_data_cleaned = flag_data.dropna(subset=[\"department\", \"amount\"])\n\n# Convert the amount column to numeric if it's not already\nflag_data_cleaned[\"amount\"] = pd.to_numeric(\n    flag_data_cleaned[\"amount\"], errors=\"coerce\"\n)\n\n# Drop rows where amount conversion failed (if any)\nflag_data_cleaned = flag_data_cleaned.dropna(subset=[\"amount\"])\n\n# Group the data by department and calculate the total and mean amounts\ndepartment_expenses = (\n    flag_data_cleaned.groupby(\"department\")[\"amount\"]\n    .agg([\"sum\", \"mean\", \"count\"])\n    .reset_index()\n)\n\n# Sort by total amount for better visualization\ndepartment_expenses_sorted = department_expenses.sort_values(by=\"sum\", ascending=False)\n\n# Plot the distribution of expense amounts for each department\nplt.figure(figsize=(14, 8))\nsns.boxplot(\n    x=\"department\",\n    y=\"amount\",\n    data=flag_data_cleaned,\n    order=department_expenses_sorted[\"department\"],\n)\nplt.xticks(rotation=45, ha=\"right\")\nplt.title(\"Distribution of Expense Amounts Across Departments\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Expense Amount\")\nplt.grid(True, axis=\"y\")\n\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Certain departments, notably Product Management and HR, exhibit notably longer processing delays in specific categories such as Services and Travel, indicating potential workflow bottlenecks.",
+        "There is no correlation between the number of expense reports submitted and rejection rates",
+        "The Customer Support and Sales departments have the highest total expenses, with Customer Support leading significantly in total spending and count of expense instances."
+    ],
+    "summary": "\n\n1. **Processing Delays**: From Question 1, it was found that departments like Product Management and HR experience significant processing delays, particularly in categories such as Services and Travel. This suggests potential workflow bottlenecks that could be addressed to improve efficiency.\n\n2. **Expense Report Distribution**: Question 2 revealed that there is no direct correlation between the number of expense reports submitted and their rejection rates. Notably, the IT department, despite submitting fewer reports, has a higher rejection rate, indicating possible issues in their reporting process.\n\n3. **Expense Amount Variability**: According to Question 3, Customer Support and Sales departments have the highest total expenses, with Customer Support leading in both spending and the number of expense instances. This highlights the need for closer evaluation of operational spending to identify potential cost-saving opportunities."
+}

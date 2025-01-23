@@ -1,0 +1,132 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-30.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Investigate the factors that contribute to the swift completion of goals in the Finance department compared to others, assess the impact on overall departmental performance.",
+        "role": "Performance Analyst in Enterprise Goal Management",
+        "category": "Goal Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow `sn_gf_goal` table, which details various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, and description, alongside metrics such as priority, percent complete, and target percentage. This data primarily tracks the progression and management of departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational objectives. Additionally, the table captures updates made to each goal, providing a timeline of modifications and the identity of individuals making these updates.",
+        "header": "Goal Management Analysis in Cost Reduction (Flag 30)"
+    },
+    "insight_list": [
+        {
+            "data_type": "analytical",
+            "insight": "There are significantly shorter goal durations in the finance department compared to HR, Marketing, and IT",
+            "insight_value": {
+                "Finance": "57.0 days",
+                "HR": "165.2 days",
+                "Marketing": "154.4 days",
+                "IT": "149.5 days",
+                "Key Finding": "Finance department's goal duration is notably lower than other departments, suggesting more efficient goal completion processes or simpler goal structures."
+            },
+            "plot": {
+                "plot_type": "box",
+                "title": "Goal Durations by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "Finance, HR, Marketing, IT",
+                    "description": "This categorizes goals by the departments responsible for their completion."
+                },
+                "y_axis": {
+                    "name": "Goal Duration (days)",
+                    "value": "Finance: 57.0, HR: 165.2, Marketing: 154.4, IT: 149.5",
+                    "description": "This represents the median duration of goals in days, measured from start to end, across different departments."
+                },
+                "description": "The boxplot demonstrates that the median duration for completing goals in the Finance department is significantly lower at 57.0 days, compared to HR at 165.2 days, Marketing at 154.4 days, and IT at 149.5 days. This substantial difference underscores a potential efficiency in goal management within Finance, or possibly less complex goals, which requires further investigation to understand underlying factors."
+            },
+            "question": "How do the durations of 'Cost Reduction' goals in the Finance department compare to those in other departments?",
+            "actionable_insight": "Given the significantly shorter duration of goals in the Finance department, it is recommended to conduct a detailed analysis to understand the factors contributing to this efficiency. Identifying these factors could provide insights that may be applied to improve goal management processes in other departments.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\nimport numpy as np\n\n# Assuming 'goal_data' is preloaded and contains 'Cost Reduction' category\ngoal_data['end_date'] = pd.to_datetime(goal_data['end_date'])\ngoal_data[\"start_date\"] = pd.to_datetime(goal_data[\"start_date\"])\n# Calculate goal durations\ngoal_data['duration'] = (goal_data['end_date'] - goal_data['start_date']).dt.days\n\n# Plotting\nplt.figure(figsize=(12, 8))\nbox_plot = sns.boxplot(x='department', y='duration', data=goal_data, palette=\"Set3\")\nplt.title('Comparison of Goal Durations by Department')\nplt.xlabel('Department')\nplt.ylabel('Goal Duration (days)')\nplt.grid(True)\n\n# Calculate median and mean for annotations\nmedians = goal_data.groupby(['department'])['duration'].median()\nmeans = goal_data.groupby(['department'])['duration'].mean()\n\n# Iterate over the departments to place the text annotations for median and mean\nfor xtick in box_plot.get_xticks():\n    box_plot.text(xtick, medians[xtick] + 1, 'Median: {:.1f}'.format(medians[xtick]), \n                  horizontalalignment='center', size='x-small', color='black', weight='semibold')\n    box_plot.text(xtick, means[xtick] + 1, 'Mean: {:.1f}'.format(means[xtick]), \n                  horizontalalignment='center', size='x-small', color='red', weight='semibold')\n\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a dominance of 'Cost Reduction' goals within the Finance department",
+            "insight_value": {
+                "Cost Reduction": "50.7%",
+                "Revenue Growth": "14.1%",
+                "Efficiency": "11.3%",
+                "Employee Satisfaction": "11.7%",
+                "Customer Satisfaction": "12.2%"
+            },
+            "plot": {
+                "plot_type": "pie",
+                "title": "Distribution of Goal Categories in the Finance Department",
+                "x_axis": {
+                    "name": "None",
+                    "value": "None",
+                    "description": "Pie charts do not use x-axis representations."
+                },
+                "y_axis": {
+                    "name": "None",
+                    "value": "None",
+                    "description": "Pie charts do not use y-axis representations."
+                },
+                "description": "The pie chart highlights the distribution of goals by category within the Finance department. It shows a significant majority of 50.7% for 'Cost Reduction', followed by 14.1% for 'Revenue Growth', 12.2% for 'Customer Satisfaction', 11.7% for 'Employee Satisfaction', and 11.3% for 'Efficiency'. The predominant share of 'Cost Reduction' goals necessitates further analysis to understand its correlation with the notably shorter goal durations observed in this department."
+            },
+            "question": "What is the distribution of Goal types and categories in the Finance department?",
+            "actionable_insight": "Given the high proportion of 'Cost Reduction' goals, it is imperative to delve deeper into understanding how this focus impacts overall goal durations and departmental efficiencies. Analyzing the relationship between the goal category and duration could uncover strategies that significantly enhance productivity and goal achievement rates. This could lead to strategic adjustments that balance goal types more effectively and potentially replicate successful practices across other departments.",
+            "code": "import matplotlib.pyplot as plt\n\n# Filter data for the Finance department\nfinance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# Count the occurrence of each category in the Finance department\ncategory_counts = finance_goals['category'].value_counts()\n\n# Create a pie chart\nplt.figure(figsize=(10, 7))\nplt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\nplt.title('Distribution of Goal Categories in Finance Department')\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a uniform distribution of goal priorities in the Finance department",
+            "insight_value": {
+                "Critical": "23.9%",
+                "High": "24.4%",
+                "Medium": "24.4%",
+                "Low": "27.2%"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Goal Priorities in the Finance Department",
+                "x_axis": {
+                    "name": "Priority Level",
+                    "value": "Critical, High, Medium, Low",
+                    "description": "This represents the different priority levels assigned to goals within the Finance department."
+                },
+                "y_axis": {
+                    "name": "Percentage of Goals",
+                    "value": "mean is 25% across all priorities",
+                    "description": "This shows the percentage of goals classified under each priority level, indicating an even distribution across priorities."
+                },
+                "description": "The bar graph illustrates a uniform distribution of goal priorities within the Finance department, with each priority level\u2014Critical, High, Medium, and Low\u2014comprising 25% of goals. This even distribution suggests that the variation in goal durations and success rates may more likely be influenced by factors related to goal category rather than priority."
+            },
+            "question": "What is the distribution of Goal priorities in the Finance department?",
+            "actionable_insight": "Given the uniform distribution of priorities, further analysis should focus on goal categories to uncover potential factors influencing goal durations and success rates in the Finance department. Understanding how different categories impact goal outcomes could provide strategic insights into effective goal management and resource allocation.",
+            "code": "import matplotlib.pyplot as plt\n\n# Filter data for the Finance department\nfinance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# Count the occurrence of each category in the Finance department\ncategory_counts = finance_goals['priority'].value_counts()\n\n# Create a pie chart\nplt.figure(figsize=(10, 7))\nplt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\nplt.title('Distribution of Goal priorities in Finance Department')\nplt.show()"
+        },
+        {
+            "data_type": "analytical",
+            "insight": "The cost reduction goals have significantly shorter average durations compared to other categories",
+            "insight_value": {
+                "Most Prominent Value": "Cost Reduction goals average 33.8 days",
+                "Next Closest Category": "Employee Satisfaction at 178.3 days"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Goal Duration by Category Across All Departments",
+                "x_axis": {
+                    "name": "Category",
+                    "value": "Cost Reduction, Revenue Growth, Efficiency, Customer Satisfaction, Employee Satisfaction",
+                    "description": "This represents the different goal categories analyzed across all departments."
+                },
+                "y_axis": {
+                    "name": "Average Goal Duration (days)",
+                    "value": "Cost Reduction: 33.8, Revenue Growth: 194.4, Efficiency: 174.8, Customer Satisfaction: 188.6, Employee Satisfaction: 178.3",
+                    "description": "This shows the average duration in days for goals within each category, highlighting the efficiency of Cost Reduction goals."
+                },
+                "description": "The bar graph displays the average durations for goals by category across all departments, with the Cost Reduction category showing a notably lower average duration of 33.8 days, which is significantly less than those of other categories. This stark contrast underscores the efficiency and streamlined processes potentially inherent in Cost Reduction initiatives."
+            },
+            "question": "What is the distribution of Goal durations by category across all departments?",
+            "actionable_insight": "The significantly shorter duration of 'Cost Reduction' goals suggests a need to investigate the practices, resource allocations, and strategies that contribute to such efficiency. Applying these effective approaches from the 'Cost Reduction' category to other categories may help reduce durations and enhance overall productivity.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Calculate goal durations in days\ngoal_data['duration'] = (goal_data['end_date'] - goal_data['start_date']).dt.days\n\n\n# Plotting\nplt.figure(figsize=(14, 8))\nbox_plot = sns.boxplot(x='category', y='duration', data=goal_data)\nplt.title('Comparison of Goal Duration by Category Across All Departments')\nplt.xlabel('Goal Category')\nplt.ylabel('Duration (days)')\nplt.xticks(rotation=45)  # Rotate category names for better readability\nplt.grid(True)\n\n# Calculate median and mean for annotations\nmedians = goal_data.groupby(['category'])['duration'].median()\nmeans = goal_data.groupby(['category'])['duration'].mean()\n\n# Iterate over the departments to place the text annotations for median and mean\nfor xtick in box_plot.get_xticks():\n    box_plot.text(xtick, medians[xtick] + 1, 'Median: {:.1f}'.format(medians[xtick]), \n                  horizontalalignment='center', size='x-small', color='black', weight='semibold')\n    box_plot.text(xtick, means[xtick] + 1, 'Mean: {:.1f}'.format(means[xtick]), \n                  horizontalalignment='center', size='x-small', color='red', weight='semibold')\n\n\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There are significantly shorter goal durations in the finance department compared to HR, Marketing, and IT",
+        "There is a dominance of 'Cost Reduction' goals within the Finance department",
+        "There is a uniform distribution of goal priorities in the Finance department",
+        "The cost reduction goals have significantly shorter average durations compared to other categories"
+    ],
+    "summary": "\n\n1. **Efficiency in Goal Completion**: This dataset highlights an anomaly where 'Cost Reduction' goals across the organization, especially within the Finance department, are completed in notably shorter durations compared to other departments such as HR, Marketing, and IT.\n   \n2. **Concentration of Goals in Finance**: The Finance department not only hosts a higher count of 'Cost Reduction' goals but also completes these goals significantly quicker. This suggests a focused and efficient approach to achieving financial efficiency goals within the department.\n   \n3. **Uniform Goal Prioritization**: Despite the variance in completion time, the distribution of goal priorities within the Finance department remains uniform, indicating a consistent operational strategy across different priority levels."
+}

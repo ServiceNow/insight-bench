@@ -1,0 +1,70 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-58.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the incident data to identify trends and underlying causes for the increasing resolution time in certain category.",
+        "role": "L2 Engineering Manager",
+        "category": "Incident Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Category based Incident Trends Analysis (Flag 58)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "There is a linear decrease in TTR for all categories over time.",
+            "insight_value": {
+                "x_val": "Anomaly Periods",
+                "y_val": "No particular value"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "TTR Trends for Hardware Incidents",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Anomaly periods",
+                    "description": "This represents the specific anomaly periods identified."
+                },
+                "y_axis": {
+                    "name": "Time to Resolution",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the time taken to resolve incidents."
+                },
+                "description": "The line graph demonstrates an increasing trend in the TTR for incidents from period 2023-07"
+            },
+            "question": "What is the trend in the time to resolution (TTR) for incidents, especially during the identified anomaly periods?",
+            "actionable_insight": "The decreasing trend in TTR for incidents during the anomaly periods indicates that the team is becoming more efficient in resolving incidents. This could be due to improved processes or better tools. It would be beneficial to analyze the changes made during these periods to identify the factors contributing to the decrease in TTR and implement them more broadly to improve overall incident resolution times.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Create a new column 'month_year' to make the plot more readable\n# df['month_year'] = df['opened_at'].dt.to_period('M')\ndf[\"ttr\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n# Convert 'ttr' column to numeric and handle errors\ndf[\"ttr\"] = pd.to_numeric(df[\"ttr\"], errors=\"coerce\")\n\n# Create a lineplot\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) Over Time for Different Categories\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There are fluctuations in incident frequencies across categories but no clear trend.",
+            "insight_value": {
+                "x_val": "Time",
+                "y_val": "Incident Count"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Incident Distribution Over Time by Category",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "2023-01-01 to 2024-02-01",
+                    "description": "This represents the timeline of the data collected."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the number of incidents occurring over time for each category."
+                },
+                "description": "The line graph shows the trend of incidents over time, divided by categories. It highlights periods with unusually high activity."
+            },
+            "question": "How are incidents distributed across different categories over time?",
+            "actionable_insight": "The fluctuations in incident frequencies across categories indicate that the volume of incidents is not consistent over time. It would be beneficial to investigate the causes of these fluctuations to identify any patterns or underlying issues that may be driving the changes. This analysis can help in resource allocation and prioritization of incident resolution efforts.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Put the data into a DataFrame\n\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"category\")\nplt.title(\"Number of Incidents Created Over Time by Category\")\nplt.xticks(rotation=45)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is a linear decrease in TTR for all categories over time.",
+        "There are fluctuations in incident frequencies across categories but no clear trend."
+    ],
+    "summary": "\n\n1. **Decreasing Trend in Resolution Time**: There is a slight decrease in the Time to Resolution (TTR) for incidents across categories from 2023-01 to 2023-08, indicating an improvement in the efficiency of incident resolution processes.\n2. **Reason and Impact Assessment**: The decreasing trend in TTR could be attributed to the implementation of new incident management strategies or the optimization of existing processes. This improvement may have positively impacted the overall service quality and customer satisfaction."
+}

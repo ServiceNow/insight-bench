@@ -1,0 +1,34 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-63.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the relationship between the cost of assets and their warranty periods to identify discrepancies and align procurement strategies with the observed asset value trends.",
+        "role": "Procurement Manager",
+        "category": "Asset Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow alm_hardware table, detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The table effectively captures asset management activities, offering insights into the operational handling, allocation, and maintenance status of hardware resources across various departments within an organization.",
+        "header": "Asset Warranty Analysis (Flag 63)"
+    },
+    "insight_list": [
+        {
+            "insight": "The HR department has the highest average asset cost, indicating a potentially higher investment in resources allocated to this department.",
+            "question": "How does the cost of assets vary across different departments, and are there any departments that consistently allocate more budget for higher-cost assets?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load data\nflag_data = pd.read_csv(\"csvs/flag-63.csv\")\n\n# Calculate average cost per department\navg_cost_per_department = flag_data.groupby(\"department\")[\"cost\"].mean().reset_index()\n\n# Sort departments by average cost for a more readable plot\navg_cost_per_department = avg_cost_per_department.sort_values(\n    by=\"cost\", ascending=False\n)\n\n# Plotting average cost per department\nplt.figure(figsize=(10, 6))\nplt.barh(\n    avg_cost_per_department[\"department\"],\n    avg_cost_per_department[\"cost\"],\n    edgecolor=\"black\",\n    alpha=0.7,\n)\nplt.xlabel(\"Average Cost of Assets\")\nplt.ylabel(\"Department\")\nplt.title(\"Average Asset Cost by Department\")\nplt.grid(axis=\"x\", linestyle=\"--\", alpha=0.7)\n\nplt.show()"
+        },
+        {
+            "insight": "The dataset does not have any warranty information for the assets.",
+            "question": "What is the distribution of Average asset cost across Model Categories?",
+            "code": "import matplotlib.pyplot as plt\n\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\nflag_data[\"sys_updated_on\"] = pd.to_datetime(flag_data[\"sys_updated_on\"])\n# Calculate the warranty period in years for each asset\nflag_data['warranty_period_years'] = (flag_data['warranty_expiration'] - flag_data['sys_updated_on']).dt.days / 365\n\n# Group by model_category and calculate the average warranty period\navg_warranty_by_category = flag_data.groupby('model_category')['cost'].mean()\n\n# Plotting\na_plot = avg_warranty_by_category.plot(kind='bar', color='skyblue', figsize=(10, 6))\nfor p in a_plot.patches:\n    a_plot.annotate(format(p.get_height(), '.2f'), \n                          (p.get_x() + p.get_width() / 2., p.get_height()), \n                          ha = 'center', va = 'center', \n                          xytext = (0, 9), \n                          textcoords = 'offset points')\nplt.xlabel('Model Category')\nplt.ylabel('Average Cost ($)')\nplt.title('Average Cost by Model Category')\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "insight": "The average cost of assets shows a significant upward trend over the years, particularly for assets with longer warranty periods.",
+            "question": "How does the cost of assets relate to their warranty expiration dates?",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the dataset\ndf = pd.read_csv(\"/mnt/home/projects/insight-bench/data/notebooks/csvs/flag-63.csv\")\n\n# Convert date columns to datetime\ndf[\"purchased_on\"] = pd.to_datetime(df[\"purchased_on\"])\ndf[\"warranty_expiration\"] = pd.to_datetime(df[\"warranty_expiration\"])\n\n# Extract the year from the warranty expiration date\ndf[\"warranty_expiration_year\"] = df[\"warranty_expiration\"].dt.year\n\n# Calculate the average cost for each warranty expiration year\navg_cost_per_year = df.groupby(\"warranty_expiration_year\")[\"cost\"].mean().reset_index()\n\n# Plot the trend\nplt.figure(figsize=(10, 6))\nplt.plot(\n    avg_cost_per_year[\"warranty_expiration_year\"], avg_cost_per_year[\"cost\"], marker=\"o\"\n)\nplt.title(\"Average Cost of Assets by Warranty Expiration Year\")\nplt.xlabel(\"Warranty Expiration Year\")\nplt.ylabel(\"Average Cost\")\nplt.grid(True)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "The HR department has the highest average asset cost, indicating a potentially higher investment in resources allocated to this department.",
+        "The dataset does not have any warranty information for the assets.",
+        "The average cost of assets shows a significant upward trend over the years, particularly for assets with longer warranty periods."
+    ],
+    "summary": "\n\n1. **Departmental Asset Cost Allocation**: The HR department consistently allocates a higher budget for assets, with an average cost significantly above other departments. This suggests a strategic focus on enhancing resource quality in HR, which may require further evaluation to ensure alignment with organizational goals.\n\n2. **Model Category Cost Distribution**: Despite the lack of warranty information, the analysis of average costs across model categories highlights potential areas for cost optimization. Understanding these distributions can aid in better budget planning and resource allocation.\n\n3. **Warranty and Cost Relationship**: There is a notable upward trend in asset costs for those with longer warranty periods, indicating a possible shift towards investing in higher-quality assets. This trend underscores the importance of conducting a cost-benefit analysis to ensure these investments align with the organization's operational needs and budget constraints."
+}

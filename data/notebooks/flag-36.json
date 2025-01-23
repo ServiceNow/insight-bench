@@ -1,0 +1,46 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-36.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the impact of cross-departmental collaboration and seasonal timing on the success rates of organizational goals. Additionally, assess how task priority correlates with completion rates across different categories to optimize resource allocation and strategic planning.",
+        "role": "Strategic Performance Analyst",
+        "category": "Goal Management",
+        "dataset_description": "The dataset combines 1,050 entries from two simulated ServiceNow `sn_gf_goal` tables, capturing various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, descriptions, and key performance metrics such as priority, percent complete, and target percentage. The dataset offers a comprehensive view of goal management across departments, with a focus on cross-departmental collaboration, seasonal performance trends, and priority-level efficiency. The data also tracks updates to each goal, documenting the timeline of changes and the individuals responsible for these updates, providing a rich context for analyzing organizational efficiency and strategic goal alignment.",
+        "header": "Cross-Departmental and Temporal Performance Analysis (Flag 36)"
+    },
+    "insight_list": [
+        {
+            "insight": "",
+            "question": "",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load the dataset\ndf = pd.read_csv('csvs/flag-36.csv')  # Replace with the correct path if needed\n\n# Define cross-departmental keywords\ncross_dept_keywords = ['collaborate', 'joint', 'integration', 'cross-departmental', 'partnership']\n\n# Identify cross-departmental tasks\ndf['is_cross_departmental'] = df['description'].apply(\n    lambda desc: any(keyword in desc.lower() for keyword in cross_dept_keywords)\n)\n\n# Calculate average completion and target percentage\navg_data = df.groupby('is_cross_departmental').agg({\n    'percent_complete': 'mean',\n    'target_percentage': 'mean'\n}).reset_index()\n\n# Rename columns for clarity\navg_data['is_cross_departmental'] = avg_data['is_cross_departmental'].map({True: 'Cross-Departmental', False: 'Non-Cross-Departmental'})\n\n# Plot the average completion and target percentages\nplt.figure(figsize=(10, 6))\nsns.barplot(x='is_cross_departmental', y='value', hue='variable', \n            data=pd.melt(avg_data, id_vars='is_cross_departmental', value_vars=['percent_complete', 'target_percentage']),\n            palette='coolwarm')\nplt.title('Completion and Target Achievement: Cross-Departmental vs Non-Cross-Departmental')\nplt.xlabel('Task Type')\nplt.ylabel('Percentage')\nplt.ylim(0, 100)\nplt.legend(title='Metric')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+        },
+        {
+            "insight": "",
+            "question": "",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Convert start_date to datetime format\ndf['start_date'] = pd.to_datetime(df['start_date'])\n\n# Extract the month and quarter from the start_date\ndf['month'] = df['start_date'].dt.month\ndf['quarter'] = df['start_date'].dt.quarter\n\n# Calculate the average percent_complete by quarter\navg_completion_by_quarter = df.groupby('quarter')['percent_complete'].mean().reset_index()\n\n# Plot the average completion by quarter\nplt.figure(figsize=(10, 6))\nsns.barplot(x='quarter', y='percent_complete', data=avg_completion_by_quarter, palette='viridis')\nplt.title('Average Completion Rate by Quarter')\nplt.xlabel('Quarter')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+        },
+        {
+            "insight": "",
+            "question": "",
+            "code": "# Calculate average completion by priority and category\navg_completion_by_priority_category = df.groupby(['priority', 'category'])['percent_complete'].mean().unstack().reset_index()\n\n# Plot the average completion by priority and category\nplt.figure(figsize=(12, 8))\navg_completion_by_priority_category.plot(kind='bar', x='priority', stacked=True, colormap='Set3', ax=plt.gca())\nplt.title('Average Completion Rate by Priority and Category')\nplt.xlabel('Priority Level')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.show()"
+        },
+        {
+            "insight": "",
+            "question": "",
+            "code": "# Calculate the average percent_complete by month\navg_completion_by_month = df.groupby(df['start_date'].dt.month)['percent_complete'].mean().reset_index()\n\n# Plot the average completion by month\nplt.figure(figsize=(10, 6))\nsns.lineplot(x='start_date', y='percent_complete', data=avg_completion_by_month, marker='o')\nplt.title('Average Completion Rate by Month')\nplt.xlabel('Month')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+        },
+        {
+            "insight": "",
+            "question": "",
+            "code": "# Calculate the average percent_complete by department and metric\navg_completion_by_dept_metric = df.groupby(['department', 'priority'])['percent_complete'].mean().unstack().reset_index()\n\n# Plot the average completion by department and metric\nplt.figure(figsize=(14, 8))\navg_completion_by_dept_metric.set_index('department').plot(kind='bar', stacked=True, colormap='tab20', ax=plt.gca())\nplt.title('Average Completion Rate by Department and Priority')\nplt.xlabel('Department')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Metric', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.show()"
+        }
+    ],
+    "insights": [
+        "",
+        "",
+        "",
+        "",
+        ""
+    ],
+    "summary": "\n\n1. **Cross-Departmental Collaboration Benefits**: The dataset reveals that tasks classified as cross-departmental, involving collaboration between multiple departments, exhibit higher completion rates and target achievement percentages compared to non-cross-departmental tasks. This trend suggests that collaborative efforts can significantly enhance task performance across the organization.\n\n2. **Seasonal Performance Variations**: A notable trend is observed where tasks initiated in Q4 (October to December) have higher average completion rates than those started in other quarters. This suggests a seasonal push or end-of-year urgency, indicating that organizations may be strategically planning critical tasks during this period to leverage higher performance.\n\n3. **Priority-Category Performance Discrepancies**: The analysis shows that the correlation between task priority levels and completion rates varies across different categories. For example, in some categories like 'Cost Reduction,' Medium-priority tasks outperform High-priority tasks, indicating potential inefficiencies or challenges in managing higher priority tasks. This insight highlights the need for a reassessment of how tasks are prioritized and resources are allocated to ensure high-priority tasks achieve their desired outcomes. Additionally, departments should be aligned with their strengths in specific metrics, and resources should be allocated accordingly. This can help in focusing on core competencies and addressing areas that require improvement.\n\n4. **Departmental Performance Analysis**: Certain departments consistently outperform others in specific metrics, showing strong alignment with their key objectives. For instance, the Marketing department has the highest completion rate for high-priority tasks, while the IT department shows the lowest performance for low-priority tasks. This suggests that departments should focus on their strengths and allocate resources to address areas needing improvement."
+}

@@ -1,0 +1,112 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-78.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the anomaly of increasing durations of 'Cost Reduction' goals within the Finance department to identify underlying causes and propose solutions to enhance goal management.",
+        "role": "Strategic Goal Analyst",
+        "category": "Goal Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow `sn_gf_goal` table, which details various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, and description, alongside metrics such as priority, percent complete, and target percentage. This data primarily tracks the progression and management of departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational objectives. Additionally, the table captures updates made to each goal, providing a timeline of modifications and the identity of individuals making these updates.",
+        "header": "Goal Management in a Department Analysis (Flag 78)"
+    },
+    "insight_list": [
+        {
+            "insight": "Medium-priority projects have the highest average completion rate, while critical-priority projects have the lowest.",
+            "question": "How does the completion percentage of projects relate to their planned priorities?",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load data\nflag_data = pd.read_csv(\"csvs/flag-78.csv\")\n\n# Aggregate data to calculate the mean completion percentage by priority level\ncompletion_by_priority = (\n    flag_data.groupby(\"priority\")[\"percent_complete\"].mean().reset_index()\n)\n\n# Sort priorities by completion percentage for a clearer visualization\ncompletion_by_priority = completion_by_priority.sort_values(\n    by=\"percent_complete\", ascending=False\n)\n\n# Plot the average completion percentage for each priority level\nplt.figure(figsize=(10, 6))\nsns.barplot(\n    data=completion_by_priority, x=\"priority\", y=\"percent_complete\", edgecolor=\"black\"\n)\n\n# Title and labels\nplt.title(\"Average Project Completion Percentage by Priority Level\")\nplt.xlabel(\"Priority Level\")\nplt.ylabel(\"Average Completion Percentage\")\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The cost reduction goals dominate the goal types in the Finance department",
+            "insight_value": {
+                "Cost Reduction": "50.5%",
+                "Revenue Growth": "16.4%",
+                "Customer Satisfaction": "17.3%",
+                "Efficiency": "8.4%",
+                "Employee Satisfaction": "7.5%"
+            },
+            "plot": {
+                "plot_type": "pie",
+                "title": "Distribution of Goal Categories in the Finance Department",
+                "x_axis": {
+                    "name": "None",
+                    "value": "None",
+                    "description": "Pie charts do not utilize an x-axis."
+                },
+                "y_axis": {
+                    "name": "None",
+                    "value": "None",
+                    "description": "Pie charts do not utilize a y-axis."
+                },
+                "description": "This pie chart illustrates the distribution of different goal categories within the Finance department. 'Cost Reduction' goals represent a significant majority, accounting for 50.5% of all goals. This is followed by 'Customer Satisfaction' at 17.3% and 'Revenue Growth' at 16.4%, with 'Efficiency' and 'Employee Satisfaction' goals at 8.4% and 7.5% respectively. The prevalence of 'Cost Reduction' goals indicates a strong strategic focus on cost management within the department."
+            },
+            "question": "What is the distribution of Goal categories in the Finance department?",
+            "Actionable Insight": "Given the predominant focus on 'Cost Reduction', it may be reason for what differentiates Finance department from others, and it is further beneficial for the Finance department to reassess the balance of goal categories to ensure a holistic approach to departmental objectives. Broadening the focus to include other categories like 'Employee Satisfaction' and 'Efficiency' could foster a more diverse and resilient operational strategy, potentially leading to enhanced overall department performance.",
+            "code": "import matplotlib.pyplot as plt\n\n# Filter data for the Finance department\nfinance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# Count the occurrence of each category in the Finance department\ncategory_counts = finance_goals['category'].value_counts()\n\n# Create a pie chart\nplt.figure(figsize=(10, 7))\nplt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\nplt.title('Distribution of Goal Categories in Finance Department')\nplt.show()"
+        },
+        {
+            "data_type": "trend diagnosis",
+            "insight": "There is an increasing trend in the duration of 'Cost Reduction' goals over time",
+            "insight_value": {
+                "Trend": "Linear increase",
+                "Correlation": "Positive correlation between start date and goal duration"
+            },
+            "plot": {
+                "plot_type": "scatter with trend line",
+                "title": "Trend of Duration for Cost Reduction Goals Over Time",
+                "x_axis": {
+                    "name": "Start Date",
+                    "value": "Numeric representation converted from actual dates",
+                    "description": "This axis represents the start dates of 'Cost Reduction' goals, converted to numerical values to facilitate trend analysis."
+                },
+                "y_axis": {
+                    "name": "Duration (days)",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the durations of 'Cost Reduction' goals, illustrating how they have changed over time as represented by the trend line."
+                },
+                "description": "The scatter plot with a regression trend line demonstrates a linear increasing correlation between the start date of 'Cost Reduction' goals and their durations. This trend suggests that over time, 'Cost Reduction' goals are taking longer to complete. The plot uses numerical days since the first date in the dataset for regression analysis, with x-axis labels converted back to dates for clarity."
+            },
+            "question": "How have the durations of 'Cost Reduction' goals changed over time across all departments?",
+            "actionable insight": "The observed increasing trend in durations calls for an in-depth analysis to identify underlying causes, such as changes in organizational processes, increased goal complexity, or resource allocation issues. Understanding these factors can help in implementing strategic measures to optimize the planning and execution",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Convert date columns to datetime first\ngoal_data[\"start_date\"] = pd.to_datetime(goal_data[\"start_date\"])\ngoal_data[\"end_date\"] = pd.to_datetime(goal_data[\"end_date\"])\n\n# Filter data to include only 'Cost Reduction' category\ncost_reduction_goals = goal_data[goal_data[\"category\"] == \"Cost Reduction\"]\n\n# Convert start_date to numerical days since the first date in the dataset for regression analysis\ncost_reduction_goals[\"start_date_numeric\"] = (\n    cost_reduction_goals[\"start_date\"] - cost_reduction_goals[\"start_date\"].min()\n).dt.days\n\n# Prepare data for plotting\ncost_reduction_goals[\"duration\"] = (\n    cost_reduction_goals[\"end_date\"] - cost_reduction_goals[\"start_date\"]\n).dt.days\n\n# Plotting\nplt.figure(figsize=(12, 8))\nsns.scatterplot(x='start_date_numeric', y='duration', data=cost_reduction_goals, color='blue', label='Duration per Start Date')\n\n# Convert numeric dates back to dates for labeling on x-axis\nlabel_dates = pd.date_range(start=cost_reduction_goals['start_date'].min(), periods=cost_reduction_goals['start_date_numeric'].max()+1, freq='D')\nplt.xticks(ticks=range(0, cost_reduction_goals['start_date_numeric'].max()+1, 50),  # Adjust ticks frequency as needed\n           labels=[date.strftime('%Y-%m-%d') for date in label_dates[::50]])\n\nsns.regplot(x='start_date_numeric', y='duration', data=cost_reduction_goals, scatter=False, color='red', label='Trend Line')\n\nplt.title('Trend of Duration for Cost Reduction Goals Over Time')\nplt.xlabel('Start Date')\nplt.ylabel('Duration (days)')\nplt.legend()\nplt.show()"
+        },
+        {
+            "data_type": "predictive",
+            "insight": "Continued linear increase in the duration of 'Cost Reduction' goals across all departments",
+            "insight_value": {
+                "Trend": "Linear increase",
+                "Future Projection": "Duration of 'Cost Reduction' goals expected to increase steadily if current operational and strategic practices remain unchanged"
+            },
+            "plot": {
+                "plot_type": "regression",
+                "title": "Predictive Trend Analysis for the Duration of 'Cost Reduction' Goals",
+                "x_axis": {
+                    "name": "Start Date",
+                    "value": "Time period extended beyond current data",
+                    "description": "This axis represents the time period, including both historical data and future projections, illustrating the trend in goal durations."
+                },
+                "y_axis": {
+                    "name": "Duration (days)",
+                    "value": "Dynamic based on model predictions",
+                    "description": "This shows the predicted durations of 'Cost Reduction' goals over time, reflecting a continuous increase."
+                },
+                "description": "The regression analysis predicts a continued linear increase in the duration of 'Cost Reduction' goals. The trend line, extended beyond the current data into the future, suggests that without changes in current strategies or operations, the time required to achieve these goals will progressively lengthen. This projection is visualized through a combination of actual data points and a projected trend line in green, indicating future expectations."
+            },
+            "question": "What are the potential future trends in the duration of 'Cost Reduction' goals across all departments if current operational and strategic practices remain unchanged?",
+            "Actionable Insight": "The projection of increasing goal durations highlights the need for a strategic review and potential overhaul of current processes and resource allocations concerning 'Cost Reduction' goals. To counteract the rising trend, it may be necessary to enhance efficiency through streamlined processes, better resource management, or revisiting the complexity and scope of these goals. Such actions could help stabilize or reduce the durations, aligning them more closely with organizational efficiency targets.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\n\n# Convert string dates to datetime first\ncost_reduction_goals[\"start_date\"] = pd.to_datetime(cost_reduction_goals[\"start_date\"])\ncost_reduction_goals[\"end_date\"] = pd.to_datetime(cost_reduction_goals[\"end_date\"])\n\n\n# Assuming 'goal_data' is preloaded and contains the relevant data for 'Cost Reduction' category\ncost_reduction_goals = goal_data[goal_data['category'] == 'Cost Reduction']\n\n# Convert start_date to a numeric value for regression (number of days since the first date)\ncost_reduction_goals['start_date_numeric'] = (cost_reduction_goals['start_date'] - cost_reduction_goals['start_date'].min()).dt.days\n\n# Calculate durations\ncost_reduction_goals['duration'] = (cost_reduction_goals['end_date'] - cost_reduction_goals['start_date']).dt.days\n\n# Prepare data for regression model\nX = cost_reduction_goals[['start_date_numeric']]  # Features\ny = cost_reduction_goals['duration']  # Target\n\n# Fit the regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Predict future durations\n# Extend the date range by, say, 20% more time into the future for forecasting\nfuture_dates = np.arange(X['start_date_numeric'].max() + 1, X['start_date_numeric'].max() * 1.2, dtype=int).reshape(-1, 1)\nfuture_predictions = model.predict(future_dates)\n\n# Plotting\nplt.figure(figsize=(12, 8))\n# Scatter plot for existing data\nsns.scatterplot(x='start_date_numeric', y='duration', data=cost_reduction_goals, color='blue', label='Actual Durations')\n# Regression line for existing data\nsns.regplot(x='start_date_numeric', y='duration', data=cost_reduction_goals, scatter=False, color='red', label='Trend Line')\n# Plot for future predictions\nplt.plot(future_dates.flatten(), future_predictions, 'g--', label='Future Trend')\n# Convert numeric dates back to actual dates for labeling on x-axis\nactual_dates = pd.date_range(start=cost_reduction_goals['start_date'].min(), periods=int(1.2 * X['start_date_numeric'].max()), freq='D')\nplt.xticks(ticks=range(0, int(1.2 * X['start_date_numeric'].max()), 50), labels=[date.strftime('%Y-%m-%d') for date in actual_dates[::50]], rotation=45)\nplt.title('Future Trends in the Duration of \\'Cost Reduction\\' Goals')\nplt.xlabel('Start Date')\nplt.ylabel('Duration (days)')\nplt.legend()\nplt.grid(True)\nplt.show()"
+        },
+        {
+            "insight": "There is significant variation in project completion rates over time across departments, with IT showing the most dramatic swings in completion percentage.",
+            "question": "What is the trend in completion percentages of projects across different departments over time?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load the dataset\nflag_data = pd.read_csv(\"csvs/flag-78.csv\")\n\n# Convert 'start_date' to datetime for accurate plotting\nflag_data[\"start_date\"] = pd.to_datetime(flag_data[\"start_date\"])\n\n# Group by 'department' and time ('start_date' monthly) to calculate mean 'percent_complete'\nmonthly_completion_trend = (\n    flag_data.groupby([pd.Grouper(key=\"start_date\", freq=\"M\"), \"department\"])[\n        \"percent_complete\"\n    ]\n    .mean()\n    .reset_index()\n)\n\n# Pivot the data to have departments as columns for easy plotting\ntrend_pivot = monthly_completion_trend.pivot(\n    index=\"start_date\", columns=\"department\", values=\"percent_complete\"\n)\n\n# Plot the trend of completion percentages for each department over time\nplt.figure(figsize=(14, 8))\nfor department in trend_pivot.columns:\n    plt.plot(trend_pivot.index, trend_pivot[department], marker=\"o\", label=department)\n\nplt.title(\"Monthly Average Completion Percentage by Department\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Average Completion Percentage\")\nplt.legend(title=\"Department\")\nplt.grid(True)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Medium-priority projects have the highest average completion rate, while critical-priority projects have the lowest.",
+        "The cost reduction goals dominate the goal types in the Finance department",
+        "There is an increasing trend in the duration of 'Cost Reduction' goals over time",
+        "Continued linear increase in the duration of 'Cost Reduction' goals across all departments",
+        "There is significant variation in project completion rates over time across departments, with IT showing the most dramatic swings in completion percentage."
+    ],
+    "summary": "\n\n1. **Completion vs. Priority Levels**: Derived from Question 1, the analysis shows that medium-priority projects have the highest average completion rate, while critical-priority projects have the lowest. This suggests a potential misalignment in resource allocation, where medium-priority projects may be receiving more focus than critical ones.\n\n2. **Goal Category Distribution in Finance**: Insights from Question 2 reveal that 'Cost Reduction' goals dominate the Finance department, accounting for 50.5% of all goals. This heavy focus on cost management may overshadow other important areas like 'Employee Satisfaction' and 'Efficiency', suggesting a need for a more balanced approach.\n\n3. **Trend in 'Cost Reduction' Goal Durations**: From Questions 3 and 4, there is a linear increase in the duration of 'Cost Reduction' goals over time. This trend suggests potential inefficiencies or increased complexity in these goals, necessitating a strategic review to optimize their management and execution."
+}

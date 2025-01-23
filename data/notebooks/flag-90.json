@@ -1,0 +1,76 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-90.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To detect and investigate instances of repeated identical expense claims by individual users, determining whether these repetitions are fraudulent or due to misunderstandings of the expense policy.",
+        "role": "Compliance and Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
+        "header": "Expense Claim Patterns and Fraud Analysis (Flag 90)"
+    },
+    "insight_list": [
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be performed due to missing 'department' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "Bar chart could not be generated due to KeyError indicating missing 'department' column"
+            },
+            "question": "What are the total expenses by department?",
+            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Group by department and sum the amount\n# department_expenses = df.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# department_expenses.plot(kind='bar', color='skyblue')\n# plt.title('Total Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be completed due to a KeyError indicating that the 'department' column is missing from the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted to show average expenses per user across departments, but failed due to missing department column"
+            },
+            "question": "What are the average expenses per user within each department?",
+            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
+            "code": "# # Group by department and user, then calculate the average amount\n# average_expense_per_user = df.groupby(['department', 'user'])['amount'].mean().groupby('department').mean().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_expense_per_user.plot(kind='bar', color='lightgreen')\n# plt.title('Average Expense per User by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Expense per User ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "categorical",
+            "insight": "Analysis could not be completed due to missing 'amount' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted but failed due to missing 'amount' column in the dataset"
+            },
+            "question": "What are the total expenses by category?",
+            "actionable_insight": "No actionable insight could be generated due to missing 'amount' column in the dataset",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Group by category and sum the amount\n# total_expenses_by_category = df.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_category.plot(kind='bar', color='mediumseagreen')\n# plt.title('Total Expenses by Category')\n# plt.xlabel('Category')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "Bar chart could not be generated due to KeyError indicating missing 'department' column"
+            },
+            "question": "How many expenses have been processes by each department?",
+            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Filter for processed expenses and group by department\n# processed_expenses_by_department = df[df['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# processed_expenses_by_department.plot(kind='bar', color='dodgerblue')\n# plt.title('Number of Processed Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Processed Expenses')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted but failed due to missing 'department' column in the dataset"
+            },
+            "question": "What is the average processing time by department?",
+            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Group by department and calculate the average processing time for processed expenses\n# average_processing_time_by_department = df[df['state'] == 'Processed'].groupby('department')['processing_time_hours'].mean().sort_values()\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_processing_time_by_department.plot(kind='bar', color='purple')\n# plt.title('Average Processing Time by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Processing Time (Hours)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "Analysis could not be performed due to missing 'department' column in the dataset",
+        "Analysis could not be completed due to a KeyError indicating that the 'department' column is missing from the dataset",
+        "Analysis could not be completed due to missing 'amount' column in the dataset",
+        "Analysis could not be completed due to missing 'department' column in the dataset",
+        "Analysis could not be completed due to missing 'department' column in the dataset"
+    ],
+    "summary": "\n\n1. **Total Expenses by Department:** The analysis could not be conducted due to missing data in the 'department' field. Further data cleaning and imputation may be required to address this issue and provide insights into departmental expenses.\n\n2. **Average Expense by Department:** This analysis could not be conducted due to missing data in the 'department' field. Further data cleaning and imputation may be required to address this issue and provide insights into individual spending behavior across departments.\n\n3. **Total Expenses by Category:** This analysis could not be conducted due to missing data in the 'category' field. Further data cleaning and imputation may be required to address this issue and provide insights into expense distribution across different categories."
+}

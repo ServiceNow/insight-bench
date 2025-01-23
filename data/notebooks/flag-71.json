@@ -1,0 +1,83 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-71.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To understand the factors contributing to faster expense processing times in a specific department and evaluate whether these practices can be extended to improve efficiency across all departments.",
+        "role": "Operational Efficiency Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Expense Processing Time Analysis (Flag 71)"
+    },
+    "insight_list": [
+        {
+            "insight": "Customer Support consistently leads in high-cost spending, with a peak in July 2023.",
+            "question": "How do different departments' spending habits change over time, particularly regarding high-cost transactions?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-71.csv\")\n\n# Convert 'processed_date' to datetime for time-based analysis\nflag_data[\"processed_date\"] = pd.to_datetime(flag_data[\"processed_date\"])\n\n# Define high-cost threshold, let's consider transactions above the 75th percentile as \"high-cost\"\nhigh_cost_threshold = flag_data[\"amount\"].quantile(0.75)\nhigh_cost_data = flag_data[flag_data[\"amount\"] >= high_cost_threshold]\n\n# Aggregate monthly high-cost spending for each department\nhigh_cost_data[\"month_year\"] = high_cost_data[\"processed_date\"].dt.to_period(\"M\")\nmonthly_spending = (\n    high_cost_data.groupby([\"department\", \"month_year\"])[\"amount\"]\n    .sum()\n    .unstack()\n    .fillna(0)\n)\n\n# Plot high-cost spending trends over time for each department\nplt.figure(figsize=(12, 8))\nmonthly_spending.T.plot(marker=\"o\", linestyle=\"-\", figsize=(14, 8))\nplt.title(\"High-Cost Spending Trends Over Time by Department\")\nplt.xlabel(\"Month-Year\")\nplt.ylabel(\"Total High-Cost Spending Amount\")\nplt.xticks(rotation=45)\nplt.legend(title=\"Department\")\nplt.grid(True)\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Processing Times are uniform across expense categories in departments",
+            "insight_value": {
+                "description": "The analysis reveals no significant differences in the processing times of various expense categories across departments, suggesting that the speed of processing is not influenced by the nature of the expenses themselves but may be attributed to other factors."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Categories by Department with Processing Times",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "All departments analyzed",
+                    "description": "This axis categorizes expenses into different departments to illustrate variations in expense submission patterns."
+                },
+                "y_axis": {
+                    "name": "Count of Expenses",
+                    "value": "Number of expenses segmented by category",
+                    "description": "This axis displays the count of expenses, categorized by types within each department, along with annotations showing average processing times."
+                },
+                "description": "The stacked bar chart displays the distribution of expenses across categories within departments, annotated with average processing times. The uniformity in processing times across different categories suggests that departmental efficiencies or specific operational practices may not be tied to the type of expenses processed."
+            },
+            "question": "Are there differences in the categories of expenses submitted by this department that could explain the faster processing?",
+            "actionable_insight": {
+                "description": "Given the uniform processing times across expense categories, it is advisable for the organization to look beyond the nature of expenses to understand departmental processing speed disparities. Factors such as departmental staffing, the efficiency of workflow systems, or even the use of automated tools could play a significant role. A further analysis of these operational aspects could provide more definitive answers and help in implementing strategies to enhance processing efficiency across all departments."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Assuming 'flag_data' contains 'department', 'category', and 'processing_period' columns\n# Calculate processing period in days if not already calculated\nflag_data['processed_date'] = pd.to_datetime(flag_data['processed_date'])\nflag_data['opened_at'] = pd.to_datetime(flag_data['opened_at'])\nflag_data['processing_period'] = (flag_data['processed_date'] - flag_data['opened_at']).dt.days\n\n# Group data by department and category to count frequencies and calculate average processing time\ncategory_counts = flag_data.groupby(['department', 'category']).size().reset_index(name='count')\ncategory_processing_times = flag_data.groupby(['department', 'category'])['processing_period'].mean().reset_index()\n\n# Merging counts with processing times for richer insights\ncategory_data = pd.merge(category_counts, category_processing_times, on=['department', 'category'])\n\n# Pivoting data for better visualization in stacked bar plot\npivot_data = category_data.pivot(index='department', columns='category', values='count').fillna(0)\n\n# Plotting\nplt.figure(figsize=(14, 8))\npivot_data.plot(kind='bar', stacked=True, colormap='viridis', alpha=0.7)\nplt.title('Distribution of Expense Categories by Department with Processing Times')\nplt.xlabel('Department')\nplt.ylabel('Count of Expenses')\nplt.xticks(rotation=45)\nplt.legend(title='Expense Categories')\n\n# Show mean processing times on bars for additional context\nfor n, x in enumerate([*pivot_data.index.values]):\n    for (category, count), y in zip(pivot_data.loc[x].items(), pivot_data.loc[x].cumsum()):\n        plt.text(n, y - (count / 2), f'{category_processing_times.loc[(category_processing_times[\"department\"] == x) & (category_processing_times[\"category\"] == category), \"processing_period\"].values[0]:.1f} days',\n                 ha='center', va='center', color='black', fontweight='bold', fontsize=9)\n\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Lower expense brackets has faster processing",
+            "insight_value": {
+                "description": "Expenses under $100, which constitute 71.4% of the submissions from the Development department, are processed almost immediately (0 days), contributing significantly to the department's overall faster processing times. In contrast, expenses between $100 and $500, while constituting 19% of submissions, take considerably longer (2 days)."
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Expense Processing Times by Amount Brackets in Development Department",
+                "x_axis": {
+                    "name": "Expense Amount Brackets",
+                    "value": [
+                        "< $100",
+                        "$100-$500",
+                        "$500-$1000",
+                        "$1000-$5000"
+                    ],
+                    "description": "This axis categorizes expenses into distinct brackets to illustrate how processing times vary with the amount of the expense."
+                },
+                "y_axis": {
+                    "name": "Processing Time (days)",
+                    "value": "Variable processing times",
+                    "description": "This axis displays the processing time required for each expense bracket, highlighting the trend of quicker processing for lower amounts."
+                },
+                "description": "The analysis reveals a clear trend: lower expense amounts are processed more rapidly, contributing to the Development department's overall efficiency. The immediate processing of the smallest expense bracket, which makes up the majority of submissions, significantly lowers the average processing time for the department."
+            },
+            "question": "Are there any specific brackets of amounts these expenses from the Development department fall into that could explain the faster processing?",
+            "actionable_insight": {
+                "description": "Understanding that lower expense amounts are processed more quickly suggests that the Development department may be benefiting from streamlined approval processes for smaller amounts. To leverage this efficiency, other departments might consider adopting similar streamlined processes for lower-cost expenses. Additionally, investigating why expenses in the $100-$500 bracket take longer to process could help in identifying bottlenecks and implementing solutions to enhance processing times across all brackets."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Assuming 'flag_data' contains 'department', 'amount', and 'processing_period' columns\n# and is already loaded with the data\n\n# Filter data to only include the Development department\ndev_expenses = flag_data[flag_data['department'] == 'Development']\n\n# Define the amount brackets\nbins = [0, 100, 500, 1000, 5000, 10000, np.inf]\nlabels = ['< $100', '$100 - $500', '$500 - $1000', '$1000 - $5000', '$5000 - $10000', '> $10000']\ndev_expenses['amount_bracket'] = pd.cut(dev_expenses['amount'], bins=bins, labels=labels)\n\n# Calculate the proportion of expenses in each bracket\nbracket_counts = dev_expenses['amount_bracket'].value_counts(normalize=True) * 100\n\n# Create the box plot to visualize processing periods by amount brackets\nfig, ax1 = plt.subplots(figsize=(14, 8))\nsns.boxplot(x='amount_bracket', y='processing_period', data=dev_expenses, palette='coolwarm', ax=ax1)\nax1.set_title('Processing Period by Expense Amount Brackets in Development Department')\nax1.set_xlabel('Expense Amount Brackets')\nax1.set_ylabel('Processing Period (days)')\nax1.tick_params(axis='x', rotation=45)  # Rotate labels for better readability\n\n# Create a twin axis to show the proportion of expenses on the same plot\nax2 = ax1.twinx()\nax2.plot(bracket_counts.index, bracket_counts.values, color='k', marker='o', linestyle='-', linewidth=2, markersize=8)\nax2.set_ylabel('Proportion of Expenses (%)')\nax2.set_ylim(0, 100)  # Limit y-axis for proportion to 100%\nax2.grid(False)  # Turn off grid for the secondary axis to avoid visual clutter\n\n# Adding annotations for proportions\nfor i, val in enumerate(bracket_counts.values):\n    ax2.text(i, val + 3, f'{val:.1f}%', color='black', ha='center', va='bottom', fontweight='bold')\n\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Customer Support consistently leads in high-cost spending, with a peak in July 2023.",
+        "Processing Times are uniform across expense categories in departments",
+        "Lower expense brackets has faster processing"
+    ],
+    "summary": "\n\n1. **High-Cost Spending Trends**: Analysis from Question 1 reveals that Customer Support consistently leads in high-cost spending, with a significant peak in July 2023. This suggests a focus on critical resources or strategic investments during this period, highlighting the need for budget scrutiny and potential resource alignment across departments.\n\n2. **Uniform Processing Times Across Categories**: Insights from Question 2 indicate that processing times are uniform across different expense categories within departments. This suggests that factors other than the nature of expenses, such as staffing or workflow systems, may influence processing efficiency, pointing to areas for operational improvement.\n\n3. **Expense Amount Brackets and Processing Efficiency**: Findings from Question 3 show that lower expense brackets, particularly those under $100, are processed more quickly in the Development department. This efficiency could be attributed to streamlined approval processes, offering a model for other departments to enhance processing times for smaller expenses."
+}

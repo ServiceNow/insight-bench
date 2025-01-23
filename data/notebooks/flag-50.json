@@ -1,0 +1,131 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-50.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Identify and analyze increasing trends in the number of incidents assigned to understand the implications of these trends on workload and agent efficiency.",
+        "role": "Strategic Planning Manager",
+        "category": "Incidents Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Incident Category Trends Over Time (Flag 50)"
+    },
+    "insight_list": [
+        {
+            "data_type": "time_series",
+            "insight": "There is no clear trend in the volume of incidents opened over time. The volume of incidents opened fluctuates over time, with some weeks having higher volumes than others. Further analysis is required to identify any underlying patterns or causes for the fluctuations.",
+            "plot": {
+                "plot_type": "single_line",
+                "title": "Trend of number of incidents opened Over Time",
+                "x_axis": {
+                    "name": "Opened At",
+                    "description": "This represents the date when the incident was opened."
+                },
+                "y_axis": {
+                    "name": "Average Volume (incident count)",
+                    "description": "This represents the average number of incidents opened on a particular date."
+                },
+                "description": "The line plot displays the trend of volume of incidents across all categories over time. The trend shows a slight increase in the volume of incidents opened over time. The increase is not uniform and there are fluctuations in the volume of incidents opened. Further analysis is required to understand the underlying causes of the increase in volume of incidents."
+            },
+            "question": "Do we observe any trend in the volume of incidents?",
+            "actionable_insight": "Further analysis is required to identify any underlying patterns or causes for the fluctuations in the volume of incidents opened over time. This analysis can help in identifying the factors contributing to the increase or decrease in the volume of incidents and can guide decision-making to address the underlying issues.",
+            "code": "df[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n# Sort the DataFrame by the opened_at column\ndf[\"date\"] = df[\"opened_at\"].dt.date\n\n# Count the number of incidents per day\ndf_daily_count = df.groupby(\"date\").size().reset_index(name=\"counts\")\n\n# Count the number of incidents per day\ndf_daily_count[\"date\"] = pd.to_datetime(df_daily_count[\"date\"])\n\n# Resample the data to get the weekly count of incidents\ndf_weekly_count = df_daily_count.resample(\"W\", on=\"date\").sum().reset_index()\n\n# Plot the trend\nplt.figure(figsize=(12, 6))\nsns.lineplot(x=\"date\", y=\"counts\", data=df_weekly_count)\nplt.title(\"Trend in Volume of Incident Tickets Per Week\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents opened\")\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a no correlation between the volume of incidents and the TTR",
+            "insight_value": {
+                "correlation": "negative"
+            },
+            "plot": {
+                "plot_type": "dual_axis_line",
+                "title": "Correlation Between Volume of Incidents And TTR",
+                "x_axis": {
+                    "name": "Opened At",
+                    "description": "This represents the date when the incident was opened."
+                },
+                "y_axis_1": {
+                    "name": "Number of Incidents",
+                    "description": "This represents the number of incidents opened on a particular date."
+                },
+                "y_axis_2": {
+                    "name": "Average TTR (Days)",
+                    "description": "This represents the average time to resolution (in days) of incidents opened on a particular date."
+                },
+                "description": "The dual-axis line plot displays the correlation between the volume of incidents and the TTR. The red line represents the number of incidents and the blue line represents the average TTR. As the number of incidents increases, the TTR also tends to increase, indicating a positive correlation."
+            },
+            "question": "Is there a correlation between the volume of incidents and the ttr?",
+            "actionable_insight": "No correlation between the volume of incidents and the TTR suggests that as the volume of incidents increases, while ttr is more or less uniform. This could suggest efficiencies in handling a larger volume of incidents. It would be beneficial to assess capacity planning and process efficiency to manage high volume of incidents.",
+            "code": "df[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Group by opened_at date and calculate count of incidents and average ttr\ndf['ttr'] = df['closed_at'] - df['opened_at']\n\n# Convert ttr to days\ndf['ttr_days'] = df['ttr'].dt.days\nincident_ttr_trend = df.groupby(df['opened_at'].dt.date).agg({'number':'count', 'ttr_days':'mean'})\n\n# Plot the trend\nfig, ax1 = plt.subplots(figsize=(10,6))\n\ncolor = 'tab:red'\nax1.set_xlabel('Opened At')\nax1.set_ylabel('Number of Incidents', color=color)\nax1.plot(incident_ttr_trend.index, incident_ttr_trend['number'], color=color)\nax1.tick_params(axis='y', labelcolor=color)\n\nax2 = ax1.twinx()  \ncolor = 'tab:blue'\nax2.set_ylabel('Average TTR (Days)', color=color)  \nax2.plot(incident_ttr_trend.index, incident_ttr_trend['ttr_days'], color=color)\nax2.tick_params(axis='y', labelcolor=color)\n\nfig.tight_layout()  \nplt.title('Correlation Between Volume of Incidents And TTR')\nplt.grid(True)\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "The time to resolution of incidents is slightly decreasing over time",
+            "insight_value": {
+                "trend": "slight decrease"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Trend of Time to Resolution (TTR) Over Time",
+                "x_axis": {
+                    "name": "Opened At",
+                    "description": "This represents the date when the incident was opened."
+                },
+                "y_axis": {
+                    "name": "Average TTR (Days)",
+                    "description": "This represents the average time to resolution (in days) of incidents opened on a particular date."
+                },
+                "description": "The line plot displays the trend of time to resolution (TTR) over time. Each point on the line represents the average TTR for incidents opened on a particular date. The line is generally stable and unform with average ttr of 10 days."
+            },
+            "question": "What is the trend of time to resolution (ttr) over time?",
+            "actionable_insight": "The slight decrease in the time to resolution of incidents over time indicates an improvement in the efficiency of resolving incidents. This trend could be due to process improvements, resource allocation, or other factors. Further analysis is required to identify the underlying causes of the decrease in TTR and to ensure that the trend is sustainable.",
+            "code": "# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Compute resolution time in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\nsns.lineplot(x=df[\"opened_at\"], y=df[\"resolution_time\"])\nplt.xlabel(\"Creation date\")\nplt.ylabel(\"Time to resolution\")\nplt.title(\"Time to resolution by creation date\")"
+        },
+        {
+            "data_type": "time_series",
+            "insight": "There is no increase in the volume of incidents across all categories.",
+            "plot": {
+                "plot_type": "multiple_line",
+                "title": "Trend of number of incidents opened Across Categories Over Time",
+                "x_axis": {
+                    "name": "Opened At",
+                    "description": "This represents the date when the incident was opened."
+                },
+                "y_axis": {
+                    "name": "Average Volume (incident count)",
+                    "description": "This represents the average number of incidents opened on a particular date."
+                },
+                "description": "The multiple line plot displays the trend of volume of incidents across different categories over time. Each line represents a category and the points on the line represent the average volume of incidents of that category opened on a particular date. The trend is seen for hardware category, indicating that the increase in trend is specific to one particular category."
+            },
+            "question": "Is the increase in incidents uniform across all categories of incidents or is it more pronounced in a specific category?",
+            "actionable_insight": "There is no actionable insight to be derived from this analysis. There is no clear trend.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is your DataFrame and it has columns 'opened_at' and 'category'\n\n# Convert 'opened_at' to datetime if it's not already\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Extract date from 'opened_at'\ndf['date'] = df['opened_at'].dt.date\n\n# Group by category and date, then count the number of incidents\ncategory_daily = df.groupby(['category', 'date']).size().reset_index(name='counts')\n\n# Convert 'date' back to datetime for resampling\ncategory_daily['date'] = pd.to_datetime(category_daily['date'])\n\n# Prepare an empty DataFrame to hold resampled data\ncategory_weekly = pd.DataFrame()\n\n# Loop through each category to resample separately\nfor category in category_daily['category'].unique():\n    temp_df = category_daily[category_daily['category'] == category]\n    resampled_df = temp_df.set_index('date').resample('W').sum().reset_index()\n    resampled_df['category'] = category  # add category column back after resampling\n    category_weekly = pd.concat([category_weekly, resampled_df], ignore_index=True)\n\n# Plot the trend for each category\nplt.figure(figsize=(14, 7))\nsns.lineplot(x='date', y='counts', hue='category', data=category_weekly, marker='o')\nplt.title(\"Trend in Volume of Incident Tickets Per Week by Category\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents Opened\")\nplt.legend(title='Category')\nplt.grid(True)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The productivity is uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Incidents Resolved Per Agent",
+                "x_axis": {
+                    "name": "Agent",
+                    "description": "This represents each agent assigned to resolve incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents Resolved",
+                    "description": "This represents the number of incidents resolved by an agent."
+                },
+                "description": "The bar chart displays the number of incidents resolved per agent. Each bar represents an agent and the height of the bar represents the number of incidents resolved by that agent. The number of incidents resolved is more or less uniform across all agents, indicating that productivity is fairly balanced."
+            },
+            "question": "Are there any trends in the productivity of the human agents over time? For instance, is there a decrease in the number of incidents resolved per agent over time?",
+            "actionable_insight": "The uniform productivity across all agents suggests that the workload is evenly distributed and all agents are equally productive. This is a positive indicator of good workload management. However, it would still be beneficial to continually monitor agent productivity and workload to ensure this balance is maintained.",
+            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is no clear trend in the volume of incidents opened over time. The volume of incidents opened fluctuates over time, with some weeks having higher volumes than others. Further analysis is required to identify any underlying patterns or causes for the fluctuations.",
+        "There is a no correlation between the volume of incidents and the TTR",
+        "The time to resolution of incidents is slightly decreasing over time",
+        "There is no increase in the volume of incidents across all categories.",
+        "The productivity is uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time"
+    ],
+    "summary": "\n\n1. **Specific Category Growth**: Analysis reveals that there is no increase in the volume of incidents across all categories.\n\n2. **Impact on Human Agents**: The productivity of human agents has remained consistent over time, with no significant changes in the number of incidents resolved per agent."
+}

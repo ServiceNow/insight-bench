@@ -1,0 +1,104 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-72.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To analyze and understand how the cost of an expense influences its processing time, aiming to improve the efficiency and fairness of expense report processing across all cost brackets.",
+        "role": "Financial Operations Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Expense Processing Dynamics Analysis (Flag 72)"
+    },
+    "insight_list": [
+        {
+            "insight": "The 'Services' category consistently leads in the number of processed expenses over the observed months, with marked increases towards the end of each quarter.",
+            "question": "What is the relationship between the number of expenses processed over time and the types of expenses?",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the dataset\nflag_data = pd.read_csv(\"csvs/flag-72.csv\")\n\n# Convert 'processed_date' to datetime format for time-based analysis\nflag_data[\"processed_date\"] = pd.to_datetime(flag_data[\"processed_date\"])\n\n# Group data by month and category, counting the number of expenses processed\nmonthly_expenses = (\n    flag_data.groupby([flag_data[\"processed_date\"].dt.to_period(\"M\"), \"category\"])\n    .size()\n    .unstack(fill_value=0)\n)\n\n# Plot the number of expenses processed by month for each category\nplt.figure(figsize=(14, 8))\nmonthly_expenses.plot(kind=\"area\", stacked=True, alpha=0.7)\n\n# Formatting the plot\nplt.title(\"Monthly Count of Processed Expenses by Category\")\nplt.xlabel(\"Processed Date (Monthly)\")\nplt.ylabel(\"Number of Expenses Processed\")\nplt.grid(True)\nplt.legend(title=\"Category\", bbox_to_anchor=(1.05, 1), loc=\"upper left\")\nplt.xticks(rotation=45)\n\nplt.tight_layout()  # Adjust layout for readability\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is varied processing outcomes across expense brackets",
+            "insight_value": {
+                "description": "Expenses within brackets (1000$ - 5000$) encounter a higher volume of transactions and typically higher brackets experience a lower number of pending statuses compared to lower brackets."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Detailed Distribution of Expense Processing Outcomes by Cost Bracket",
+                "x_axis": {
+                    "name": "Expense Bracket",
+                    "value": [
+                        "$100-$500",
+                        "$500-$1000",
+                        "$1000-$5000",
+                        ">$5000"
+                    ],
+                    "description": "Categorizes expenses into four distinct brackets based on amount."
+                },
+                "y_axis": {
+                    "name": "Number of Expenses",
+                    "value": {
+                        "$100-$500": {
+                            "Declined": "8",
+                            "Pending": "7",
+                            "Processed": "30"
+                        },
+                        "$500-$1000": {
+                            "Declined": "4",
+                            "Pending": "5",
+                            "Processed": "38"
+                        },
+                        "$1000-$5000": {
+                            "Declined": "20",
+                            "Pending": "43",
+                            "Processed": "186"
+                        },
+                        ">$5000": {
+                            "Declined": "11",
+                            "Pending": "7",
+                            "Processed": "86"
+                        }
+                    },
+                    "description": "Displays the count of expenses in each state (Declined, Pending, Processed) for each cost bracket, revealing trends in how financial magnitude influences processing outcomes."
+                },
+                "description": "The bar chart provides a detailed view of expense report outcomes within various cost brackets, illustrating how lower expense amounts correlate with not only more transactions but also a higher likelihood of encountering delays."
+            },
+            "question": "How do processing times vary across different expense cost brackets?",
+            "actionable_insight": {
+                "description": "The disproportionate number of declines and pending statuses in lower expense brackets suggests a need for slight refining the approval workflows for lower amounts. Organizations could benefit from automating certain aspects of the approval process for high-cost transactions to allocate more resources towards efficiently managing lower-cost expenses too, although more weightage and care should be for higher amount expenses. Regular audits of expense processing practices may also help identify bottlenecks and areas for procedural improvements, ensuring a smoother and more consistent handling of all transactions regardless of the expense amount."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'df' is your DataFrame containing the expense report data\n# Calculate the frequency of different states for each expense amount range\nexpense_brackets = [0, 100, 500, 1000, 5000, np.inf]\nlabels = ['< $100', '$100 - $500', '$500 - $1000', '$1000 - $5000', '> $5000']\ndf['expense_bracket'] = pd.cut(df['amount'], bins=expense_brackets, labels=labels, right=False)\n\n# Group by expense bracket and state, then count occurrences\nstate_distribution = df.groupby(['expense_bracket', 'state']).size().unstack().fillna(0)\n\n# Plotting\nfig, ax = plt.subplots(figsize=(12, 8))\nbars = state_distribution.plot(kind='bar', stacked=True, ax=ax, color=['green', 'red', 'blue', 'orange'])\n\nax.set_title('Distribution of Expense Amounts by State', fontsize=16)\nax.set_xlabel('Expense Bracket', fontsize=14)\nax.set_ylabel('Number of Expenses', fontsize=14)\nax.grid(True)\nplt.xticks(rotation=45)\nplt.tight_layout()\n\n# Add number labels on top of each bar\nfor bar in bars.containers:\n    ax.bar_label(bar, label_type='center')\n\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Processing times are uniform across users and departments for lower-cost expenses",
+            "insight_value": {
+                "description": "The processing time for lower-cost expenses (<$1000) shows a uniform trend across different users and departments, indicating that delays or efficiencies are generally related to the amount involved rather than specific departmental or individual user practices."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Processing Time by Department and User for Expenses less that $1000",
+                "x_axis": {
+                    "name": "Department/User",
+                    "value": "Mixed categories including various departments and users",
+                    "description": "This axis represents both departments and individual users, categorized to show their respective processing times for lower-cost expenses."
+                },
+                "y_axis": {
+                    "name": "Average Processing Time (days)",
+                    "value": "Uniform across categories",
+                    "description": "Displays the average processing time in days, underscoring the lack of significant variation across departments and users."
+                },
+                "description": "The bar charts, segmented by department and user, illustrate that processing times for expenses under $1000 are uniformly distributed. This suggests that the lower cost of these expenses inherently requires a consistent processing approach across the organization, likely due to the need for thorough review and approval processes that are standard regardless of the department or user."
+            },
+            "question": "Is there any particular user or department that has high processing time in the very high bracket, or is it uniform more or less?",
+            "actionable_insight": {
+                "description": "Given that the trend of processing times is generally uniform and related to the lower expense amounts, efforts to streamline or expedite processing should focus on improving the overall efficiency of handling low-cost expenses. This could involve reviewing and potentially simplifying the steps required for approving any expenditures, ensuring that such procedures are efficient yet robust enough to maintain financial control."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'df' is your DataFrame containing the expense report data\n# Filter for expenses greater than $5000\nhigh_cost_expenses = df[df['amount'] < 1000]\n\n# Calculate processing time in days\nhigh_cost_expenses['processing_time'] = (pd.to_datetime(high_cost_expenses['processed_date']) - pd.to_datetime(high_cost_expenses['opened_at'])).dt.days\n\n# Plot for Departments\nplt.figure(figsize=(12, 7))\nplt.subplot(2, 1, 1)  # Two rows, one column, first subplot\ndepartment_processing = high_cost_expenses.groupby('department')['processing_time'].mean()\ndepartment_processing.plot(kind='bar', color='teal')\nplt.title('Average Processing Time by Department for Expenses < $1000')\nplt.ylabel('Average Processing Time (days)')\nplt.xlabel('Department')\nplt.xticks(rotation=45)\nplt.grid(True)\n\n# Plot for Users\nplt.subplot(2, 1, 2)  # Two rows, one column, second subplot\nuser_processing = high_cost_expenses.groupby('user')['processing_time'].mean()\nuser_processing.plot(kind='bar', color='orange')\nplt.title('Average Processing Time by User for Expenses < $1000')\nplt.ylabel('Average Processing Time (days)')\nplt.xlabel('User')\nplt.xticks(rotation=45)\nplt.grid(True)\n\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "The 'Services' category consistently leads in the number of processed expenses over the observed months, with marked increases towards the end of each quarter.",
+        "There is varied processing outcomes across expense brackets",
+        "Processing times are uniform across users and departments for lower-cost expenses"
+    ],
+    "summary": "\n\n1. **Temporal Trends in Expense Processing**: From Question 1, the analysis highlights that the 'Services' category consistently leads in the number of processed expenses, with notable increases towards the end of each quarter. This suggests a periodic peak in service-related activities, potentially linked to contract renewals or end-of-quarter financial reviews.\n\n2. **Cost Bracket Processing Dynamics**: Question 2 reveals an unexpected trend where lower-cost expenses (<$1000) experience significantly longer processing times compared to higher-cost ones. This counterintuitive finding suggests inefficiencies in handling smaller transactions, possibly due to more complex approval processes or less prioritization.\n\n3. **Uniform Processing Across Departments and Users**: As derived from Question 3, the processing times for lower-cost expenses are uniform across different departments and users. This indicates that the delays are more related to the expense amount rather than specific departmental or individual practices, suggesting a need for streamlined processes for low-cost expenses."
+}

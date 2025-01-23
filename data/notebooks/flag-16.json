@@ -1,0 +1,126 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-16.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the relationship between the cost of assets and their warranty periods to identify discrepancies and align procurement strategies with the observed asset value trends.",
+        "role": "Procurement Manager",
+        "category": "Asset Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow alm_hardware table, detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The table effectively captures asset management activities, offering insights into the operational handling, allocation, and maintenance status of hardware resources across various departments within an organization.",
+        "header": "Asset Warranty Analysis (Flag 16)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "Computers exhibit significantly longer warranty periods compared to other asset categories, which may reflect their higher cost and complexity.",
+            "insight_value": {
+                "description": "The average warranty period for Computers is markedly higher than for other asset categories, suggesting a strategic emphasis on longer warranties for more expensive and complex equipment."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Warranty Period by Asset Model Category",
+                "x_axis": {
+                    "name": "Model Category",
+                    "value": [
+                        "Computer",
+                        "Computer Peripheral",
+                        "Printer",
+                        "Rack",
+                        "Server",
+                        "Storage Device",
+                        "Web Server"
+                    ],
+                    "description": "This axis categorizes different types of assets based on their model category."
+                },
+                "y_axis": {
+                    "name": "Average Warranty Period (years)",
+                    "value": {
+                        "Computer": "3.28 years",
+                        "Computer Peripheral": "2.09 years",
+                        "Printer": "1.90 years",
+                        "Rack": "1.75 years",
+                        "Server": "1.92 years",
+                        "Storage Device": "2.11 years",
+                        "Web Server": "1.85 years"
+                    },
+                    "description": "This axis displays the average warranty period for each model category, clearly showing the variation in warranty terms across different asset types."
+                },
+                "description": "The bar chart visually represents the average warranty periods across various asset model categories. It highlights that Computers have a significantly longer average warranty of 3.31 years, emphasizing their importance and value within the organization compared to other categories with shorter warranty periods."
+            },
+            "question": "What is the distribution of Average Warranty Period across Model Categories?",
+            "actionable_insight": "The longer warranty period for Computers underlines the need for detailed scrutiny of procurement contracts for these assets. Organizations should consider leveraging this data to negotiate extended warranty periods for other high-value asset categories to ensure better return on investment and reduced maintenance costs.",
+            "code": "import matplotlib.pyplot as plt\n\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\nflag_data[\"sys_updated_on\"] = pd.to_datetime(flag_data[\"sys_updated_on\"])\n# Calculate the warranty period in years for each asset\nflag_data['warranty_period_years'] = (flag_data['warranty_expiration'] - flag_data['sys_updated_on']).dt.days / 365\n\n# Group by model_category and calculate the average warranty period\navg_warranty_by_category = flag_data.groupby('model_category')['warranty_period_years'].mean()\n\n# Plotting\na_plot = avg_warranty_by_category.plot(kind='bar', color='skyblue', figsize=(10, 6))\nfor p in a_plot.patches:\n    a_plot.annotate(format(p.get_height(), '.2f'), \n                          (p.get_x() + p.get_width() / 2., p.get_height()), \n                          ha = 'center', va = 'center', \n                          xytext = (0, 9), \n                          textcoords = 'offset points')\nplt.xlabel('Model Category')\nplt.ylabel('Average Warranty Period (Years)')\nplt.title('Average Warranty Period by Model Category')\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Servers and Web Servers are the most expensive asset categories on average, followed by computers.",
+            "insight_value": {
+                "description": "Average costs vary significantly across model categories, with Servers and Web Servers leading in terms of investment required."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Asset Cost by Model Category",
+                "x_axis": {
+                    "name": "Model Category",
+                    "value": [
+                        "Server",
+                        "Web Server",
+                        "Computer",
+                        "Printer",
+                        "Rack",
+                        "Computer Peripheral",
+                        "Storage Device"
+                    ],
+                    "description": "This axis categorizes different types of assets based on their model category."
+                },
+                "y_axis": {
+                    "name": "Average Cost (USD)",
+                    "value": {
+                        "Server": "8775.90$",
+                        "Web Server": "8000$",
+                        "Computer": "3274.48$",
+                        "Printer": "1478.14$",
+                        "Rack": "400.0$",
+                        "Computer Peripheral": "331.27$",
+                        "Storage Device": "299.9$"
+                    },
+                    "description": "This axis displays the average cost for each asset model category, highlighting the substantial cost disparities among different asset types."
+                },
+                "description": "The bar chart clearly illustrates the average costs associated with different asset model categories within the organization. It underscores that Servers and Web Servers are notably more expensive on average than other categories such as Computers, Printers, and more peripheral equipment."
+            },
+            "question": "What is the distribution of Average asset cost across Model Categories?",
+            "actionable_insight": "Given the higher average costs associated with Servers and Web Servers, it's essential for the organization to carefully consider the lifecycle costs and benefits of these investments. Prioritizing maintenance and potentially exploring bulk purchasing agreements or extended warranties for these high-cost items could yield significant cost savings over time.",
+            "code": "import matplotlib.pyplot as plt\n\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\nflag_data[\"sys_updated_on\"] = pd.to_datetime(flag_data[\"sys_updated_on\"])\n# Calculate the warranty period in years for each asset\nflag_data['warranty_period_years'] = (flag_data['warranty_expiration'] - flag_data['sys_updated_on']).dt.days / 365\n\n# Group by model_category and calculate the average warranty period\navg_warranty_by_category = flag_data.groupby('model_category')['cost'].mean()\n\n# Plotting\na_plot = avg_warranty_by_category.plot(kind='bar', color='skyblue', figsize=(10, 6))\nfor p in a_plot.patches:\n    a_plot.annotate(format(p.get_height(), '.2f'), \n                          (p.get_x() + p.get_width() / 2., p.get_height()), \n                          ha = 'center', va = 'center', \n                          xytext = (0, 9), \n                          textcoords = 'offset points')\nplt.xlabel('Model Category')\nplt.ylabel('Average Cost ($)')\nplt.title('Average Cost by Model Category')\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "correlative",
+            "insight": "Strong positive correlation between the cost of computer assets and their warranty periods.",
+            "insight_value": {
+                "description": "More expensive computer assets tend to have longer warranty periods, suggesting that higher costs are associated with extended warranty provisions."
+            },
+            "plot": {
+                "plot_type": "scatter",
+                "title": "Correlation Between Cost of Computers and Their Warranty Periods",
+                "x_axis": {
+                    "name": "Cost of Computer Assets (USD)",
+                    "value": "Continuously variable cost amounts",
+                    "description": "This axis represents the cost of computer assets, highlighting a range from lower to higher priced models."
+                },
+                "y_axis": {
+                    "name": "Warranty Period (years)",
+                    "value": "Continuously variable warranty durations",
+                    "description": "This axis displays the warranty periods associated with each cost level, illustrating how warranty durations increase with asset cost."
+                },
+                "description": "The scatter plot demonstrates a clear linear correlation between the cost of computer assets and their warranty periods. This trend confirms that more expensive computers not only cost more but also come with longer warranties, possibly reflecting a manufacturer's confidence in their high-value products."
+            },
+            "question": "What is the correlation between the cost of computer assets and their warranty periods?",
+            "actionable_insight": "This observed correlation suggests that investing in more expensive computer assets could be beneficial for the organization in terms of receiving longer warranty periods, which might translate to lower long-term maintenance costs and greater asset reliability. It is advisable for procurement teams to factor in warranty durations when assessing the total cost of ownership for high-end computer assets.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\nflag_data[\"purchased_on\"] = pd.to_datetime(flag_data[\"purchased_on\"])\n\ncomputer_data = flag_data[flag_data['model_category'] == 'Computer']\nplt.scatter(computer_data['cost'], (computer_data['warranty_expiration'] - computer_data['purchased_on']).dt.days / 365)\nplt.xlabel('Cost ($)')\nplt.ylabel('Warranty Period (Years)')\nplt.title('Correlation between Cost and Warranty Period of Computers')\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Computers exhibit significantly longer warranty periods compared to other asset categories, which may reflect their higher cost and complexity.",
+        "Servers and Web Servers are the most expensive asset categories on average, followed by computers.",
+        "Strong positive correlation between the cost of computer assets and their warranty periods."
+    ],
+    "summary": "\n\n1. **Data Insights**: The dataset comprises entries from the ServiceNow alm_hardware table, detailing attributes like asset tags, costs, and warranty expiration dates. \n\n2. **Trend Observation**: The dataset captures a trend where the warranty period of computer assets increases as their cost increases. This suggests that more expensive assets may come with longer warranties, potentially reflecting higher confidence from manufacturers in their more advanced or higher-quality products.\n\n3. **Strategic Implications**: Understanding these trends is crucial for strategic asset management, offering insights that can inform procurement decisions and asset lifecycle planning."
+}

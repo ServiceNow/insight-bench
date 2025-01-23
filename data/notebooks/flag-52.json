@@ -1,0 +1,166 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-52.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the trends in the dataset to identify factors that influence the time to resolution, particularly in certain category.",
+        "role": "Hardware Incident Analyst",
+        "category": "Incident Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Time to Resolution Trends Across Incident Categories (Flag 52)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "Incident distribution across categories is more or less uniform",
+            "insight_value": {
+                "x_val": [
+                    "Hardware",
+                    "Software",
+                    "Network",
+                    "Inquiry / Help",
+                    "Database"
+                ],
+                "y_val": [
+                    100,
+                    100,
+                    100,
+                    100,
+                    100
+                ]
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Incidents by Category",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Hardware",
+                        "Software",
+                        "Network",
+                        "Inquiry / Help",
+                        "Database"
+                    ],
+                    "description": "This represents different categories of incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": [
+                        100,
+                        100,
+                        100,
+                        100,
+                        100
+                    ],
+                    "description": "This represents the number of incidents in each category, showing a uniform distribution across all categories. software category incidents are sightly higher than others"
+                },
+                "description": "The histogram displays the distribution of incidents across different categories. Each bar represents a category and the length of the bar corresponds to the number of incidents in that category, illustrating a uniform distribution."
+            },
+            "question": "What is the distribution of incidents across all categories?",
+            "actionable_insight": "Given the uniform distribution of incidents across categories, it is important to ensure that resources and training are equally distributed to maintain efficiency and effectiveness in handling incidents across all categories.",
+            "code": "plot = df.groupby(\"category\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Incidents by Category')\n\n# Set x-axis label\nplt.xlabel('Category')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Average time to resolution for Software incidents is higher than for other categories. Avg TTR is also negative for Network and Inquiry/Help categories, which suggests possible errors in logging.",
+            "insight_value": {
+                "x_val": "Hardware",
+                "y_val": 26.1
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Time to Resolution by Category",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Hardware",
+                        "Software",
+                        "Network",
+                        "Inquiry / Help",
+                        "Database"
+                    ],
+                    "description": "This represents the different categories of incidents."
+                },
+                "y_axis": {
+                    "name": "Average Time to Resolution (days)",
+                    "value": [
+                        12.5,
+                        10.2,
+                        -1.3,
+                        -9.3,
+                        26.1
+                    ],
+                    "description": "This represents the average time (in days) taken to resolve incidents in each category."
+                },
+                "description": "The bar chart illustrates the average time to resolution for incidents across different categories. The 'Hardware' category shows a significantly higher average time to resolution compared to other categories, indicating a need for focused improvement in this area."
+            },
+            "question": "How does the average time to resolution compare across different categories?",
+            "actionable_insight": "Considering the higher average time to resolution in the Software category, it may be beneficial to investigate the specific challenges in this category. Enhancements in training, resources, or processes could be implemented to reduce resolution times and improve service efficiency.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Assuming df is the DataFrame containing your incidents data\n\n# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Compute resolution time in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Calculate the average resolution time for each category\navg_resolution_time_per_category = df.groupby('category')['resolution_time'].mean()\n\n# Plotting the histogram\nplt.figure(figsize=(10, 6))\navg_resolution_time_per_category.plot(kind='bar', color='skyblue')\nplt.title('Average Time to Resolution Per Category')\nplt.xlabel('Category')\nplt.ylabel('Average Resolution Time (days)')\nplt.xticks(rotation=45)\nplt.grid(axis='y', linestyle='--', alpha=0.7)\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Average time to resolution for is generally decreasing over time for all categories.",
+            "insight_value": {
+                "x_val": "Time",
+                "y_val": "Decreasing Trend"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Trend of Time to Resolution for Hardware Incidents Over Time",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Timeline from start to end date of data",
+                    "description": "This represents the timeline across which the data was collected."
+                },
+                "y_axis": {
+                    "name": "Average Time to Resolution (days)",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the average time (in days) taken to resolve Hardware incidents, showing an increasing trend over time."
+                },
+                "description": "The line graph displays the trend in average time to resolution for over the data collection period."
+            },
+            "question": "Is the average time to resolution for Hardware incidents increasing over time?",
+            "actionable_insight": "Given the decreasing trend in resolution times for all categories, it is important to identify the factors contributing to this improvement. This could involve analyzing changes in processes, resource allocation, or training that have led to more efficient incident resolution.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is the DataFrame containing your incidents data\n\n# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Compute resolution time in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Extract date from 'opened_at'\ndf['date'] = df['opened_at'].dt.date\n\n# Group by category and date, calculate average resolution time\nresolution_data = df.groupby(['category', 'date'])['resolution_time'].mean().reset_index()\n\n# Convert 'date' back to datetime for better plotting\nresolution_data['date'] = pd.to_datetime(resolution_data['date'])\n\n# Plotting\nplt.figure(figsize=(14, 7))\n\n# Use lineplot to visualize the average resolution time for each category over time\nsns.lineplot(data=resolution_data, x='date', y='resolution_time', hue='category', marker='o')\n\n# Enhancing the plot\nplt.title('Average Resolution Time of Incidents Over Time by Category')\nplt.xlabel('Date')\nplt.ylabel('Average Resolution Time (days)')\nplt.legend(title='Category')\nplt.grid(True)\n\n# Show plot\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Uniform distribution of incidents closed by human agents indicates that earlier anomalies may not be productivity-related",
+            "insight_value": {
+                "x_val": "Agents",
+                "y_val": "Uniform Closure Rates"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Incidents Closed by Each Agent",
+                "x_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Beth",
+                        "Charlie",
+                        "Fred",
+                        "Howard",
+                        "Luke"
+                    ],
+                    "description": "This represents the different human agents responsible for handling incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents Closed",
+                    "value": "Uniform across agents",
+                    "description": "This shows the number of incidents each agent has closed, indicating a uniform distribution across all agents."
+                },
+                "description": "The bar chart illustrates the number of incidents closed by each agent, showing a uniform distribution. This uniformity suggests that the earlier observed anomalies in incident handling times or assignments may not stem from differences in agent productivity or capabilities."
+            },
+            "question": "Is the distribution of incidents closed by human agents uniform across all agents?",
+            "actionable_insight": "Given the uniform distribution of incident closures among agents, management should consider factors other than individual agent performance when addressing anomalies in incident handling times. This may include examining systemic issues, process inefficiencies, or resource allocations.",
+            "code": "agent_incident_count = df.groupby('closed_by')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Incident distribution across categories is more or less uniform",
+        "Average time to resolution for Software incidents is higher than for other categories. Avg TTR is also negative for Network and Inquiry/Help categories, which suggests possible errors in logging.",
+        "Average time to resolution for is generally decreasing over time for all categories.",
+        "Uniform distribution of incidents closed by human agents indicates that earlier anomalies may not be productivity-related"
+    ],
+    "summary": "\n1. **Correlation with Categories**: The time to resolution (TTR) of incidents shows no correlation with the category of the incident. \n   \n2. **Specific Challenges by Category:** There are no significant differences in the average time to resolution across different categories.\n   \n3. **Linear Trend in TTR**: The average resolution time of incidents across categories shows a linear decreasing trend over time, indicating an improvement in the resolution process."
+}

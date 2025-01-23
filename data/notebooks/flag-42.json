@@ -1,0 +1,170 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-42.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To detect and investigate instances of repeated identical expense claims by individual users, determining whether these repetitions are fraudulent or due to misunderstandings of the expense policy.",
+        "role": "Compliance and Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
+        "header": "Expense Claim Patterns and Fraud Analysis (Flag 42)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "Processing times vary significantly based on the state of the expenses",
+            "insight_value": {
+                "description": "Processed expenses tend to have shorter processing times compared to Declined expenses. This trend highlights the impact of the state of an expense on its processing efficiency."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Processing Time by State",
+                "x_axis": {
+                    "name": "State",
+                    "value": [
+                        "Processed",
+                        "Declined",
+                        "Submitted",
+                        "Pending"
+                    ],
+                    "description": "Different states of expense processing."
+                },
+                "y_axis": {
+                    "name": "Average Processing Time (hours)",
+                    "description": "Shows the average time taken to process expenses in different states, highlighting the differences in processing efficiency."
+                },
+                "description": "The bar plot provides a clear comparison of the average processing times for expenses in different states. Processed expenses have significantly lower average processing times, whereas Declined expenses take longer."
+            },
+            "question": "How do processing times vary based on the state of the expenses?",
+            "actionable_insight": {
+                "description": "The significant difference in processing times between Processed and Declined states suggests a need for reviewing the workflow for declined expenses. Streamlining the process for declined expenses could enhance overall efficiency. Additionally, automating certain aspects of the approval process for declined expenses may help reduce the processing time."
+            },
+            "code": "# Calculate average processing time for each state\navg_processing_time_by_state = data.groupby('state')['processing_time_hours'].mean().reset_index()\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for average processing time by state\nplt.figure(figsize=(12, 6))\nsns.barplot(x='state', y='processing_time_hours', data=avg_processing_time_by_state)\nplt.title('Average Processing Time by State')\nplt.xlabel('State')\nplt.ylabel('Average Processing Time (hours)')\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Amounts in expense reports vary significantly based on short description keywords",
+            "insight_value": {
+                "description": "Keywords in expense short descriptions such as 'Travel' are associated with lower expense amounts, while keywords like 'Service' are generally linked to higher amounts. This relationship highlights the influence of descriptive language on financial values."
+            },
+            "plot": {
+                "plot_type": "boxplot",
+                "title": "Amount Distribution by Short Description Category",
+                "x_axis": {
+                    "name": "Short Description Category",
+                    "value": [
+                        "Other",
+                        "Travel",
+                        "Service",
+                        "Asset",
+                        "Cloud"
+                    ],
+                    "description": "Categories based on keywords found in the short description."
+                },
+                "y_axis": {
+                    "name": "Amount",
+                    "description": "Displays the distribution of amounts for each category, highlighting the range and variability within each keyword category."
+                },
+                "description": "The boxplot provides a visual comparison of how different keywords in short descriptions correlate with expense amounts, showing the central tendency and spread of amounts for each keyword."
+            },
+            "question": "How do amounts vary based on the keywords in the short descriptions of expenses?",
+            "actionable_insight": {
+                "description": "The identified relationship between short description keywords and expense amounts provides an opportunity for targeted financial oversight. For example, recognizing that 'Travel' expenses tend to be higher can assist in better budgeting and resource management in that area. Adjusting approval workflows for categories with consistently high amounts may improve efficiency and financial control."
+            },
+            "code": "# Function to categorize descriptions based on keywords\ndef categorize_description(description):\n    keywords = {\"Travel\": 1.5, \"Service\": 1.2, \"Cloud\": 1.3, \"Asset\": 0.8, \"Equipment\": 0.9}\n    for keyword in keywords.keys():\n        if pd.notnull(description) and keyword.lower() in description.lower():\n            return keyword\n    return 'Other'\n\n# Apply the function to create a new column for categories\ndata['description_category'] = data['short_description'].apply(categorize_description)\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a boxplot for amount by description category\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='description_category', y='amount', data=data)\nplt.title('Amount Distribution by Short Description Category')\nplt.xlabel('Short Description Category')\nplt.ylabel('Amount')\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Average expense amounts vary significantly across different departments",
+            "insight_value": {
+                "description": "Departments such as Customer Support and Product Management have higher average expenses compared to others like HR and Development. This trend highlights the spending patterns within different departments."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Amount by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Customer Support",
+                        "Development",
+                        "Finance",
+                        "HR",
+                        "IT",
+                        "Product Management",
+                        "Sales"
+                    ],
+                    "description": "Different departments within the organization."
+                },
+                "y_axis": {
+                    "name": "Average Amount",
+                    "description": "Shows the average expense amount for each department, highlighting departmental spending patterns."
+                },
+                "description": "The bar plot provides a clear comparison of the average expense amounts for each department."
+            },
+            "question": "What are the expense patterns for different departments in terms of average amounts?",
+            "actionable_insight": {
+                "description": "Understanding departmental spending patterns can assist in making informed budgeting and resource allocation decisions. Departments with consistently high expenses may need closer monitoring or allocation adjustments to ensure optimal use of resources."
+            },
+            "code": "# Calculate average amount for each department\navg_amount_by_department = data.groupby('department')['amount'].mean().reset_index()\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for average amount by department\nplt.figure(figsize=(12, 6))\nsns.barplot(x='department', y='amount', data=avg_amount_by_department)\nplt.title('Average Amount by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Amount')\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The number of expense reports submitted varies significantly by user",
+            "insight_value": {
+                "description": "Certain users are more active in submitting expense reports compared to others. This trend highlights user behavior related to expense submissions."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Expense Reports by User",
+                "x_axis": {
+                    "name": "User",
+                    "value": [],
+                    "description": "Different users submitting expense reports."
+                },
+                "y_axis": {
+                    "name": "Number of Expense Reports",
+                    "description": "Shows the number of expense reports submitted by each user."
+                },
+                "description": "The bar plot provides a clear comparison of the number of expense reports submitted by each user."
+            },
+            "question": "How does the number of expense reports submitted vary by user?",
+            "actionable_insight": {
+                "description": "Understanding which users are most active in submitting expense reports can help in identifying potential areas for fraud detection, improving efficiency in processing, and understanding user behavior."
+            },
+            "code": "# Calculate the number of expense reports submitted by each user\nexpense_reports_by_user = data['user'].value_counts().reset_index()\nexpense_reports_by_user.columns = ['user', 'number_of_reports']\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for the number of expense reports by user\nplt.figure(figsize=(12, 6))\nsns.barplot(x='user', y='number_of_reports', data=expense_reports_by_user)\nplt.title('Number of Expense Reports by User')\nplt.xlabel('User')\nplt.ylabel('Number of Expense Reports')\nplt.xticks(rotation=90)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The distribution of expense categories shows which types of expenses are most common",
+            "insight_value": {
+                "description": "Certain expense categories are more prevalent than others. This trend highlights the types of expenses that are most common within the organization."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Categories",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [],
+                    "description": "Different categories of expenses."
+                },
+                "y_axis": {
+                    "name": "Count",
+                    "description": "Shows the count of expenses in each category, highlighting the distribution of expense types."
+                },
+                "description": "The bar plot provides a clear comparison of the number of expenses in each category."
+            },
+            "question": "What is the distribution of expense categories?",
+            "actionable_insight": {
+                "description": "Understanding the distribution of expense categories can assist in identifying areas for cost-saving opportunities and increased financial oversight. More prevalent categories may require closer monitoring to ensure adherence to budgets and policies."
+            },
+            "code": "# Calculate the distribution of expense categories\nexpense_categories_distribution = data['category'].value_counts().reset_index()\nexpense_categories_distribution.columns = ['category', 'count']\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for the distribution of expense categories\nplt.figure(figsize=(12, 6))\nsns.barplot(x='category', y='count', data=expense_categories_distribution)\nplt.title('Distribution of Expense Categories')\nplt.xlabel('Category')\nplt.ylabel('Count')\nplt.xticks(rotation=45)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Processing times vary significantly based on the state of the expenses",
+        "Amounts in expense reports vary significantly based on short description keywords",
+        "Average expense amounts vary significantly across different departments",
+        "The number of expense reports submitted varies significantly by user",
+        "The distribution of expense categories shows which types of expenses are most common"
+    ],
+    "summary": "\n\n1. **State-Based Processing Time Analysis**: The analysis reveals significant variations in processing times based on the state of expenses. Processed expenses tend to have shorter processing times compared to Declined expenses. This highlights the necessity of improving the workflow for declined expenses to enhance overall efficiency.\n\n2. **Impact of Keywords in Short Descriptions on Expense Amounts**: The expense amounts are significantly influenced by the keywords in the short descriptions. Keywords such as 'Travel' are associated with lower amounts, whereas 'Service' is linked to higher amounts. This relationship emphasizes the importance of descriptive language in financial oversight and budgeting.\n\n3. **Departmental and User Expense Patterns**: The dataset sheds light on departmental spending patterns, showing that certain departments have higher average expenses compared to others. Additionally, the number of expense reports submitted varies significantly"
+}

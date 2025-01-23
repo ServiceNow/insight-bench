@@ -1,0 +1,144 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-28.csv",
+    "user_dataset_csv_path": "data/notebooks/csvs/flag-28-sysuser.csv",
+    "metadata": {
+        "goal": "Examine and analyze elevated goal achievement rates in a certain department and to leverage these insights to improve goal management across all departments.",
+        "role": "Goal Management Analyst",
+        "category": "Goal Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow `sn_gf_goal` table, which details various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, and description, alongside metrics such as priority, percent complete, and target percentage. This data primarily tracks the progression and management of departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational objectives. Additionally, the table captures updates made to each goal, providing a timeline of modifications and the identity of individuals making these updates.",
+        "header": "Goal Achievement Rate Analysis in IT Department (Flag 28)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "There are significantly higher success rates in the IT department compared to other departments",
+            "insight_value": {
+                "x_val": "Departments",
+                "y_val": "Percentage of Goals Met",
+                "values": {
+                    "IT": "49%",
+                    "Finance": "16%",
+                    "Marketing": "15%",
+                    "HR": "23%"
+                }
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Comparison of Goal Success Rates Across Departments",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "IT, Finance, Marketing, HR",
+                    "description": "This represents different departments within the organization."
+                },
+                "y_axis": {
+                    "name": "Percentage of Goals Met",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the percentage of goals each department has successfully met."
+                },
+                "description": "The bar graph illustrates the success rates of meeting goals across different departments, highlighting a significantly higher rate in the IT department at 49%, compared to Finance at 16%, Marketing at 15%, and HR at 23%. This suggests that IT's focus on High or Critical priority goals might be contributing to its enhanced performance."
+            },
+            "question": "What is the distribution of success rate of goals met across departments?",
+            "actionable_insight": "The disparity in goal achievement rates could prompt a review of goal setting and resource allocation across departments to ensure equitable opportunities for success and optimal utilization of organizational resources.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\nimport numpy as np\n\n# Assuming 'goal_data' is the DataFrame created from the previous code\n\n# Calculate if each goal met its target percentage\ngoal_data['goal_met'] = goal_data.apply(lambda row: row['percent_complete'] >= row['target_percentage'], axis=1)\n\n# Group by department and calculate the percentage of goals met\ndepartment_goal_achievement = goal_data.groupby('department')['goal_met'].mean() * 100\n\n# Reset index to turn the series into a DataFrame\ndepartment_goal_achievement = department_goal_achievement.reset_index()\n\n# Rename columns for better readability in the plot\ndepartment_goal_achievement.columns = ['Department', 'Percentage of Goals Met']\n\n# Create a bar plot\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='Department', y='Percentage of Goals Met', data=department_goal_achievement, palette='viridis')\nplt.title('Percentage of Target Goals Achieved by Department')\nplt.xlabel('Department')\nplt.ylabel('Percentage of Goals Met')\nplt.ylim(0, 100)  # Set y-axis limits to make differences more evident\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'), \n                      (p.get_x() + p.get_width() / 2., p.get_height()), \n                      ha = 'center', va = 'center', \n                      xytext = (0, 9), \n                      textcoords = 'offset points')\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There are higher success rates in critical and high priority goals within the IT department",
+            "insight_value": {
+                "Critical": "61.1%",
+                "High": "51.8%",
+                "Medium": "0.0%",
+                "Low": "10.0%"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Proportion of Successful Goals by Priority in IT Department",
+                "x_axis": {
+                    "name": "Priority",
+                    "value": "Critical, High, Medium, Low",
+                    "description": "This represents the different priority levels assigned to goals within the IT department."
+                },
+                "y_axis": {
+                    "name": "Proportion of Successful Goals",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the proportion of goals successfully met within each priority category."
+                },
+                "description": "The bar graph illustrates the success rates of meeting goals within the IT department categorized by their priority. It highlights significantly higher success rates for goals categorized under Critical and High priorities at 61.1% and 51.8% respectively, compared to much lower success rates for Medium and Low priority goals. This disparity in success rates suggests a correlation between priority level and achievement rate."
+            },
+            "question": "What proportion of goals in the IT department are classified as High or Critical priority compared to other departments?",
+            "actionable_insight": "If this trend is consistent across other departments, it may indicate that departments with a higher proportion of Critical and High priority goals, like IT, are better at achieving their objectives. This could justify a review and potential realignment of priority settings across departments to ensure strategic goals are adequately supported and prioritized.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filter the data for the IT department\nit_goals = goal_data[goal_data['department'] == 'IT']\n\n# Define successful goals (assuming successful means percent_complete >= target_percentage)\nit_goals['is_successful'] = it_goals['percent_complete'] >= it_goals['target_percentage']\n\n# Calculate the proportion of successful goals by priority\nsuccess_rates = it_goals.groupby('priority')['is_successful'].mean()\n\n# Convert the series to a DataFrame for plotting\nsuccess_rates_df = success_rates.reset_index()\n\n# Plotting\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='priority', y='is_successful', data=success_rates_df, order=['Critical', 'High', 'Medium', 'Low'])\nplt.title('Proportion of Successful Goals by Priority in IT Department')\nplt.xlabel('Priority')\nplt.ylabel('Proportion of Successful Goals')\nplt.ylim(0, 1)  # Set the limit to show proportions from 0 to 1\n\n# Correctly format and annotate each bar with the proportion as a percentage\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.1%'),  # Format as a percentage with one decimal\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', \n                      xytext=(0, 9), \n                      textcoords='offset points')\nplt.show()"
+        },
+        {
+            "data_type": "Diagnostic",
+            "insight": "There is a consistent higher success rates for critical and high priority goals across departments",
+            "insight_value": {
+                "IT": {
+                    "Critical": "61.1%",
+                    "High": "51.8%"
+                },
+                "Other Departments": {
+                    "Critical": "Average 58.3%",
+                    "High": "Average 49.7%"
+                }
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Success Rates of High and Critical Priority Goals Across Departments",
+                "x_axis": {
+                    "name": "Department and Priority",
+                    "value": "Finance, HR, IT, Marketing",
+                    "description": "This categorizes the goals by department and priority level, comparing IT to other departments."
+                },
+                "y_axis": {
+                    "name": "Proportion of Successful Goals",
+                    "value": "Values based on data",
+                    "description": "This axis shows the percentage of goals met within different priority categories for each department."
+                },
+                "description": "The comparison bar graph demonstrates that both Critical and High priority goals generally achieve higher success rates across all departments. The IT department slightly outperforms the average of other departments, suggesting a possible advantage in how these priorities are managed or supported in IT."
+            },
+            "question": "Are there specific characteristics or patterns that differentiate High/Critical priority goals in the IT department from those in other departments, or is the trend consistent across departments?",
+            "actionable_insight": "Given the consistent success rates across departments for High and Critical priority goals, organizational strategies should further reinforce and possibly expand the practices that support these priorities. For departments underperforming relative to IT, adopting similar strategies or increasing support might enhance their success rates.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Define successful goals (assuming successful means percent_complete >= target_percentage)\ngoal_data['is_successful'] = goal_data['percent_complete'] >= goal_data['target_percentage']\n\n# Calculate the proportion of successful goals by priority and department\nsuccess_rates = goal_data.groupby(['department', 'priority'])['is_successful'].mean().reset_index()\n\n# Plotting\nplt.figure(figsize=(14, 8))\nbarplot = sns.barplot(x='department', y='is_successful', hue='priority', data=success_rates, hue_order=['Critical', 'High', 'Medium', 'Low'])\n\n# Annotate each bar\nfor p in barplot.patches:\n    barplot.annotate(format(p.get_height(), '.2f'),  # format as a percentage\n                     (p.get_x() + p.get_width() / 2., p.get_height()),\n                     ha = 'center', va = 'center',\n                     size=9,\n                     xytext = (0, 5),\n                     textcoords = 'offset points')\n\nplt.title('Proportion of Successful Goals by Priority Across Departments')\nplt.xlabel('Department')\nplt.ylabel('Proportion of Successful Goals')\nplt.ylim(0, 1)  # Set the limit to show proportions from 0 to 1\nplt.legend(title='Priority')\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "IT department exhibits a higher number of both Critical and High priority goals compared to other departments",
+            "insight_value": {
+                "IT": {
+                    "Critical": "54",
+                    "High": "56"
+                },
+                "Other Departments": {
+                    "Critical": "40",
+                    "High": "35"
+                }
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Critical and High Priority Goals: IT vs. Other Departments",
+                "x_axis": {
+                    "name": "Department Category",
+                    "value": "IT, Others",
+                    "description": "This represents the classification of departments into IT and all other departments combined."
+                },
+                "y_axis": {
+                    "name": "Number of Goals",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the count of goals classified as either Critical or High priority within each department category."
+                },
+                "description": "The bar graph illustrates that the IT department has higher counts of both Critical (54) and High (56) priority goals compared to other departments, which have 40 Critical and 35 High priority goals respectively. This indicates a heavier concentration of top-priority goals in IT, which may reflect its critical operational role within the organization."
+            },
+            "question": "What is the distribution of Critical and High goals in IT department versus other departments?",
+            "actionable_insight": "Given the higher concentration of Critical and High priority goals in the IT department, organizational strategies might need to consider reallocating resources or support to ensure that high-priority goals in other departments are not under-resourced. This could help in balancing goal achievement rates across the organization and ensuring strategic alignment of resources with organizational priorities.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Assume 'goal_data' is your DataFrame and already loaded\n\n# Filter the data to include only Critical and High priority goals\nfiltered_goals = goal_data[goal_data['priority'].isin(['Critical', 'High'])]\n\n# Create a new column 'IT_or_Other' to distinguish between IT and other departments\nfiltered_goals['IT_or_Other'] = filtered_goals['department'].apply(lambda x: 'IT' if x == 'IT' else 'Other')\n\n# Count the number of goals in each category\npriority_counts = filtered_goals.groupby(['IT_or_Other', 'priority']).size().reset_index(name='counts')\n\n# Plotting\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='IT_or_Other', y='counts', hue='priority', data=priority_counts)\nplt.title('Distribution of Critical and High Priority Goals: IT vs. Other Departments')\nplt.xlabel('Department Category')\nplt.ylabel('Number of Goals')\nplt.legend(title='Priority')\n\n# Annotate bars with the count of goals\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'), \n                      (p.get_x() + p.get_width() / 2., p.get_height()), \n                      ha='center', va='center', \n                      xytext=(0, 9), \n                      textcoords='offset points')\n\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There are significantly higher success rates in the IT department compared to other departments",
+        "There are higher success rates in critical and high priority goals within the IT department",
+        "There is a consistent higher success rates for critical and high priority goals across departments",
+        "IT department exhibits a higher number of both Critical and High priority goals compared to other departments"
+    ],
+    "summary": "\n\n1. **High Achievement Rate**: The dataset reveals a notably higher success rate in goal achievement within the IT department compared to other departments, largely influenced by the allocation of high or critical priority to goals within the department.\n   \n2. **Priority Impact**: Analysis indicates that goals with high or critical priorities not only dominate the IT department but also show significantly higher success rates across all departments, underscoring the impact of prioritization on goal outcomes.\n   \n3. **Comparative Success Across Departments**: While the IT department leads in achieving its goals, a comparative analysis with other departments will provide deeper insights into strategic alignments and possible improvements in goal management practices across the organization."
+}

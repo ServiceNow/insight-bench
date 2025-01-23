@@ -1,0 +1,142 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-23.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To detect and investigate instances of repeated identical expense claims by individual users, determining whether these repetitions are fraudulent or due to misunderstandings of the expense policy.",
+        "role": "Compliance and Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Expense Claim Patterns and Fraud Analysis (Flag 23)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "There is a significant variance in average Expenses across departments",
+            "insight_value": {
+                "description": "Product Management's average expense claim is significantly higher than that of other departments, indicating potential differences in departmental spending habits or the nature of expenses claimed. Look out for any scope of fraudulent reports"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Expense Amount by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Product Management",
+                        "Customer Support",
+                        "Sales",
+                        "IT",
+                        "Development",
+                        "Finance"
+                    ],
+                    "description": "This axis categorizes expenses into different departments to illustrate variations in average spending."
+                },
+                "y_axis": {
+                    "name": "Average Expense ($)",
+                    "value": {
+                        "Product Management": "8000$",
+                        "Customer Support": "3740.59$",
+                        "Sales": "3491.27$",
+                        "IT": "4030.10$",
+                        "Development": "3624.50$",
+                        "Finance": "3584.43$"
+                    },
+                    "description": "This axis displays the average expense amount in dollars for each department, highlighting the stark contrast in spending, particularly the high figures for Product Management."
+                },
+                "description": "The bar chart displays significant differences in average expenses across departments, with Product Management notably higher at $8000 compared to an average of around $4000 for other departments. This disparity may reflect unique departmental needs, the scope of projects, or possibly inefficient spending practices within Product Management."
+            },
+            "question": "What is the total and average expense by department?",
+            "actionable_insight": {
+                "description": "The substantial difference in average expenses by Product Management compared to other departments warrants a deeper investigation to ensure that these claims are justified and align with organizational policies. It may be beneficial to review the types of expenses being claimed, the approval processes in place, and whether any specific projects or operational demands justify this higher expenditure. If discrepancies or inefficiencies are found, implementing more stringent guidelines or approval processes for high-value claims, particularly in Product Management, could help normalize spending patterns and ensure fiscal responsibility across all departments."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming flag_data is your DataFrame containing expense data\n# Group data by department and calculate total and average expenses\ndepartment_expenses = flag_data.groupby('department')['amount'].agg(['sum', 'mean']).reset_index()\n\n# Sort data for better visualization (optional)\ndepartment_expenses.sort_values('sum', ascending=False, inplace=True)\n\n# Creating the plot\nfig, ax = plt.subplots(figsize=(14, 8))\n\n# Bar plot for total expenses\n# total_bars = ax.bar(department_expenses['department'], department_expenses['sum'], color='blue', label='Total Expenses')\n\n# Bar plot for average expenses\naverage_bars = ax.bar(department_expenses['department'], department_expenses['mean'], color='green', label='Average Expenses', alpha=0.6, width=0.5)\n\n# Add some labels, title and custom x-axis tick labels, etc.\nax.set_xlabel('Department')\nax.set_ylabel('Expenses ($)')\nax.set_title('Average Expenses by Department')\nax.set_xticks(department_expenses['department'])\nax.set_xticklabels(department_expenses['department'], rotation=45)\nax.legend()\n\n# Adding a label above each bar\ndef add_labels(bars):\n    for bar in bars:\n        height = bar.get_height()\n        ax.annotate(f'{height:.2f}',\n                    xy=(bar.get_x() + bar.get_width() / 2, height),\n                    xytext=(0, 3),  # 3 points vertical offset\n                    textcoords=\"offset points\",\n                    ha='center', va='bottom')\n\n# add_labels(total_bars)\nadd_labels(average_bars)\n\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a high incidence of repeated identical expense claims",
+            "insight_value": {
+                "description": "There are 100 instances where a single user has submitted identical claims with the same amount and category more than three times, which may indicate potential fraud or policy abuse within the expense management process."
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Distribution of Repeated Claims Frequency",
+                "x_axis": {
+                    "name": "Frequency of Same Amount Claims by Same User in Same Category",
+                    "value": "Frequency ranges",
+                    "description": "This axis represents the number of times the same expense claim has been submitted by the same user for the same amount in the same category."
+                },
+                "y_axis": {
+                    "name": "Count of Such Incidents",
+                    "value": "Number of occurrences",
+                    "description": "This axis counts the number of instances where repeated claims have occurred, highlighting the scale of potential repetitive claim submissions."
+                },
+                "description": "The histogram illustrates the frequency distribution of repeated expense claims, with a notable peak indicating 100 instances where claims have been repeatedly filed by the same user. This suggests a possible oversight or exploitation of the expense reporting system that warrants further investigation."
+            },
+            "question": "How many instances of repeated identical expense claims are there?",
+            "actionable_insight": {
+                "description": "Given the significant number of repeated claims, it is crucial for the organization to undertake a thorough review of these incidents to confirm their legitimacy and to determine if they reflect a pattern of fraud or abuse. Enhancing monitoring mechanisms, such as implementing automated flags for duplicate entries and conducting regular audits, could help prevent such behaviors. Training sessions emphasizing ethical practices and the consequences of policy violations should also be conducted to reinforce the seriousness of such actions. If fraudulent activities are confirmed, appropriate disciplinary measures should be enforced to maintain the integrity of the expense management system."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Group by user, category, and amount to count occurrences\ngrouped_data = flag_data.groupby(['user', 'category', 'amount']).size().reset_index(name='frequency')\n\n# Filter out normal entries to focus on potential anomalies\npotential_fraud = grouped_data[grouped_data['frequency'] > 3]  # Arbitrary threshold, adjust based on your data\n\n# Plot histogram of frequencies\nplt.figure(figsize=(10, 6))\nplt.hist(potential_fraud['frequency'], bins=30, color='red', alpha=0.7)\nplt.title('Distribution of Repeated Claims Frequency')\nplt.xlabel('Frequency of Same Amount Claims by Same User in Same Category')\nplt.ylabel('Count of Such Incidents')\nplt.grid(True)\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a significant repetition in expense claims by a single user",
+            "insight_value": {
+                "description": "A user named Mamie Mcintee has repeatedly submitted identical claims for $8000, suggesting potential issues of policy abuse or fraudulent behavior."
+            },
+            "plot": {
+                "plot_type": "scatter",
+                "title": "Repeated Expense Claims by User and Category",
+                "x_axis": {
+                    "name": "User",
+                    "value": "Unique user identifiers",
+                    "description": "This axis represents the users who have submitted expense claims."
+                },
+                "y_axis": {
+                    "name": "Amount ($)",
+                    "value": "Amount of each expense claim",
+                    "description": "This axis displays the monetary amount of the claims, highlighting repeated identical submissions by certain users."
+                },
+                "description": "The scatter plot visualizes the frequency and distribution of repeated expense claims, with emphasis on specific users like Mamie Mcintee who have submitted multiple identical claims. The use of different colors for categories and the annotations provide a clear visual indication of the problematic patterns that may require further investigation."
+            },
+            "question": "Which users are involved in the frequent cases?",
+            "actionable_insight": {
+                "description": "The consistent pattern of repeated identical high-value claims by a particular user warrants a thorough investigation to determine the legitimacy of these submissions. The organization should review the related documents and approval processes involved with these claims. Enhanced monitoring mechanisms and possibly revising the expense submission guidelines or training could prevent such potentially abusive practices. If fraudulent activity is confirmed, appropriate disciplinary actions should be taken to deter such behavior and uphold the integrity of the expense management process."
+            },
+            "code": "import matplotlib.pyplot as plt\n\n# Assume flag_data includes 'user', 'amount', 'category' columns\n# Group data by user, category, and amount to count frequencies\ngrouped_data = flag_data.groupby(['user', 'category', 'amount']).size().reset_index(name='count')\n\n# Filter to only include cases with more than one claim (to highlight potential fraud)\nrepeated_claims = grouped_data[grouped_data['count'] > 1]\n\n# Create a scatter plot with sizes proportional to the count of claims\nplt.figure(figsize=(14, 8))\ncolors = {'Travel': 'blue', 'Meals': 'green', 'Accommodation': 'red', 'Miscellaneous': 'purple'}  # Add more categories as needed\nfor ct in repeated_claims['category'].unique():\n    subset = repeated_claims[repeated_claims['category'] == ct]\n    plt.scatter(subset['user'], subset['amount'], s=subset['count'] * 100,  # Increased size factor for better visibility\n                color=colors.get(ct, 'gray'), label=f'Category: {ct}', alpha=0.6)\n\n# Customizing the plot\nplt.title('Repeated Expense Claims by User and Category')\nplt.xlabel('User')\nplt.ylabel('Amount ($)')\nplt.legend(title='Expense Categories')\nplt.xticks(rotation=45)  # Rotate x-axis labels for better readability\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\n\n# Highlighting significant cases\n# Let's annotate the specific user found in your description\nfor i, row in repeated_claims.iterrows():\n    if row['user'] == 'Mamie Mcintee' and row['amount'] == 8000:\n        plt.annotate(f\"{row['user']} (${row['amount']})\", (row['user'], row['amount']),\n                     textcoords=\"offset points\", xytext=(0,10), ha='center', fontsize=9, color='darkred')\n\n# Show plot\nplt.show()"
+        },
+        {
+            "data_type": "Descriptive",
+            "insight": "There is a concentration of repeated claims in the Travel category",
+            "insight_value": {
+                "description": "Mamie Mcintee\u2019s repeated identical expense claims are not only submitted under her department but are specifically concentrated in the Travel category, raising concerns about potential policy abuse or fraudulent activities within this particular expense category."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Expense Claims by Department and Category for Mamie Mcintee",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "Identified department(s)",
+                    "description": "This axis displays the department under which Mamie Mcintee has submitted her claims, with a focus on the Travel category."
+                },
+                "y_axis": {
+                    "name": "Number of Claims",
+                    "value": "Total claims segmented by category, highlighting Travel",
+                    "description": "This axis counts the claims, specifically highlighting the frequency of claims within the Travel category, demonstrating a significant focus in this area."
+                },
+                "description": "The stacked bar chart clearly illustrates that Mamie Mcintee's repeated expense claims are primarily within the Travel category. This specific concentration suggests a pattern that may require further investigation to ensure these claims are legitimate and within company policies."
+            },
+            "question": "Confirm that these expenses are submitted under the department?",
+            "actionable_insight": {
+                "description": "Given the concentration of repeated claims in the Travel category, it is advisable for the organization to conduct an in-depth review of all Travel-related expense submissions by Mamie Mcintee. This review should include verifying the authenticity of the claims and assessing compliance with the travel expense policies. Implementing more stringent controls and possibly providing additional training on appropriate expense reporting for travel could help mitigate the risk of fraud and ensure that such patterns do not indicate policy abuse. Regular audits and real-time monitoring of expense submissions in high-risk categories like Travel are also recommended to maintain the integrity of the expense management system."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'flag_data' includes 'user', 'department', 'amount', 'category' columns\n# and it's already loaded with the data\n\n# Filter for the specific user\nuser_data = flag_data[flag_data['user'] == 'Mamie Mcintee']\n\n# Group data by department and category to count frequencies\ndepartment_category_counts = user_data.groupby(['department', 'category']).size().unstack(fill_value=0)\n\n# Plotting\nplt.figure(figsize=(12, 7))\ndepartment_category_counts.plot(kind='bar', stacked=True, color=['blue', 'green', 'red', 'purple', 'orange'], alpha=0.7)\nplt.title('Distribution of Expense Claims by Department and Category for Mamie Mcintee')\nplt.xlabel('Department')\nplt.ylabel('Number of Claims')\nplt.xticks(rotation=0)  # Keep the department names horizontal for better readability\nplt.legend(title='Expense Categories')\nplt.grid(True, which='both', linestyle='--', linewidth=0.5)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is a significant variance in average Expenses across departments",
+        "There is a high incidence of repeated identical expense claims",
+        "There is a significant repetition in expense claims by a single user",
+        "There is a concentration of repeated claims in the Travel category"
+    ],
+    "summary": "\n\n1. **Pattern Recognition**: This dataset is focused on identifying patterns in expense submissions that may indicate potential fraud or policy abuse. It particularly flags cases where individual users submit multiple identical claims in terms of amount and category.\n   \n2. **Insight into User Behavior**: Analysis of the data reveals instances where users have repeatedly submitted identical claims, with specific focus on a user named Mamie Mcintee who has submitted multiple claims for the same amount, specifically categorized under Travel.\n   \n3. **Departmental Impact**: The repeated submissions have not only raised concerns on an individual level but also cast light on departmental practices, especially in how such actions are monitored and addressed by departmental oversight mechanisms."
+}

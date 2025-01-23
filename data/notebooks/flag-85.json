@@ -1,0 +1,40 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-85.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": null,
+        "role": null,
+        "category": null,
+        "dataset_description": null,
+        "header": null
+    },
+    "insight_list": [
+        {
+            "insight": "There was no column percent_complete to conduct any analysis",
+            "question": "What is the distribution of success rate of goals met across departments?",
+            "code": "# import matplotlib.pyplot as plt\n# import seaborn as sns\n# import pandas as pd\n# import numpy as np\n\n# # Assuming 'goal_data' is the DataFrame created from the previous code\n\n# # Calculate if each goal met its target percentage\n# goal_data['goal_met'] = goal_data.apply(lambda row: row['percent_complete'] >= row['target_percentage'], axis=1)\n\n# # Group by department and calculate the percentage of goals met\n# department_goal_achievement = goal_data.groupby('department')['goal_met'].mean() * 100\n\n# # Reset index to turn the series into a DataFrame\n# department_goal_achievement = department_goal_achievement.reset_index()\n\n# # Rename columns for better readability in the plot\n# department_goal_achievement.columns = ['Department', 'Percentage of Goals Met']\n\n# # Create a bar plot\n# plt.figure(figsize=(10, 6))\n# bar_plot = sns.barplot(x='Department', y='Percentage of Goals Met', data=department_goal_achievement, palette='viridis')\n# plt.title('Percentage of Target Goals Achieved by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Percentage of Goals Met')\n# plt.ylim(0, 100)  # Set y-axis limits to make differences more evident\n# for p in bar_plot.patches:\n#     bar_plot.annotate(format(p.get_height(), '.0f'), \n#                       (p.get_x() + p.get_width() / 2., p.get_height()), \n#                       ha = 'center', va = 'center', \n#                       xytext = (0, 9), \n#                       textcoords = 'offset points')\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column target_percentage to conduct any analysis",
+            "question": "How does achieving high completion in Cost Reduction impact the success metrics of related Revenue Growth tasks?",
+            "code": "# # Define categories where success in one category positively correlates with another\n# primary_category = \"Cost Reduction\"\n# secondary_category = \"Revenue Growth\"\n# # Filter data for primary and secondary categories\n# primary_data = df[df[\"category\"] == primary_category]\n# secondary_data = df[df[\"category\"] == secondary_category]\n\n# # Create a combined DataFrame for plotting\n# primary_data[\"Category Type\"] = primary_category\n# secondary_data[\"Category Type\"] = secondary_category\n# combined_data = pd.concat([primary_data, secondary_data])\n\n# # Set up the plotting style\n# sns.set(style=\"whitegrid\")\n\n# # Create the plot\n# plt.figure(figsize=(14, 7))\n\n# sns.histplot(data=combined_data, x=\"target_percentage\", hue=\"Category Type\", multiple=\"stack\", palette={primary_category: \"blue\", secondary_category: \"green\"})\n# plt.title('Target Percentage Distribution')\n# plt.xlabel('Target Percentage')\n# plt.ylabel('Count')\n\n# # Adjust layout\n# plt.tight_layout()\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column department to conduct any analysis",
+            "question": "What proportion of goals in the IT department are classified as High or Critical priority compared to other departments?",
+            "code": "# import matplotlib.pyplot as plt\n# import seaborn as sns\n\n# # Filter the data for the IT department\n# it_goals = goal_data[goal_data['department'] == 'IT']\n\n# # Define successful goals (assuming successful means percent_complete >= target_percentage)\n# it_goals['is_successful'] = it_goals['percent_complete'] >= it_goals['target_percentage']\n\n# # Calculate the proportion of successful goals by priority\n# success_rates = it_goals.groupby('priority')['is_successful'].mean()\n\n# # Convert the series to a DataFrame for plotting\n# success_rates_df = success_rates.reset_index()\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# bar_plot = sns.barplot(x='priority', y='is_successful', data=success_rates_df, order=['Critical', 'High', 'Medium', 'Low'])\n# plt.title('Proportion of Successful Goals by Priority in IT Department')\n# plt.xlabel('Priority')\n# plt.ylabel('Proportion of Successful Goals')\n# plt.ylim(0, 1)  # Set the limit to show proportions from 0 to 1\n\n# # Correctly format and annotate each bar with the proportion as a percentage\n# for p in bar_plot.patches:\n#     bar_plot.annotate(format(p.get_height(), '.1%'),  # Format as a percentage with one decimal\n#                       (p.get_x() + p.get_width() / 2., p.get_height()),\n#                       ha='center', va='center', \n#                       xytext=(0, 9), \n#                       textcoords='offset points')\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column percent_complete to conduct any analysis",
+            "question": "Are there specific characteristics or patterns that differentiate High/Critical priority goals in the IT department from those in other departments, or is the trend consistent across departments?",
+            "code": "# import matplotlib.pyplot as plt\n# import seaborn as sns\n\n# # Define successful goals (assuming successful means percent_complete >= target_percentage)\n# goal_data['is_successful'] = goal_data['percent_complete'] >= goal_data['target_percentage']\n\n# # Calculate the proportion of successful goals by priority and department\n# success_rates = goal_data.groupby(['department', 'priority'])['is_successful'].mean().reset_index()\n\n# # Plotting\n# plt.figure(figsize=(14, 8))\n# barplot = sns.barplot(x='department', y='is_successful', hue='priority', data=success_rates, hue_order=['Critical', 'High', 'Medium', 'Low'])\n\n# # Annotate each bar\n# for p in barplot.patches:\n#     barplot.annotate(format(p.get_height(), '.2f'),  # format as a percentage\n#                      (p.get_x() + p.get_width() / 2., p.get_height()),\n#                      ha = 'center', va = 'center',\n#                      size=9,\n#                      xytext = (0, 5),\n#                      textcoords = 'offset points')\n\n# plt.title('Proportion of Successful Goals by Priority Across Departments')\n# plt.xlabel('Department')\n# plt.ylabel('Proportion of Successful Goals')\n# plt.ylim(0, 1)  # Set the limit to show proportions from 0 to 1\n# plt.legend(title='Priority')\n# plt.show()\n\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "There was no column percent_complete to conduct any analysis",
+        "There was no column target_percentage to conduct any analysis",
+        "There was no column department to conduct any analysis",
+        "There was no column percent_complete to conduct any analysis"
+    ],
+    "summary": "\n\n1. **Missing Data on Goal Achievement**: The dataset indicates a lack of the `percent_complete` column, preventing any analysis on the distribution of success rates for goals met across departments. Consequently, insights into departmental performance cannot be generated.\n\n2. **Impact of Completion on Success Metrics**: There is no available data on the `target_percentage` column, which hinders the ability to analyze how achieving high completion in Cost Reduction tasks may impact the success metrics of related Revenue Growth tasks.\n\n3. **Departmental Prioritization Analysis**: The absence of a `department` column restricts analysis on the proportion of goals classified as High or Critical priority in the IT department compared to other departments. This limits understanding of how prioritization may differ across departments."
+}

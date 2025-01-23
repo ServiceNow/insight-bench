@@ -1,0 +1,173 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-45.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To analyze and understand how expenses vary across different geographic locations, expense categories, and approval times, with the aim of improving budget allocation and workflow efficiency.",
+        "role": "Financial Operations Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'location', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, geographic location, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories and locations, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Geo-Specific Expense Analysis (Flag 45)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "Expense amounts vary significantly across different geographic locations",
+            "insight_value": {
+                "description": "Certain geographic regions have higher average expenses compared to others. For instance, North America shows an average expense of ~$70000 while Africa shows an average expense of only $20000."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Expense Amount by Location",
+                "x_axis": {
+                    "name": "Location",
+                    "value": [
+                        "North America",
+                        "Europe",
+                        "Asia",
+                        "South America",
+                        "Africa"
+                    ],
+                    "description": "Different geographic locations."
+                },
+                "y_axis": {
+                    "name": "Average Amount",
+                    "description": "Shows the average expense amount for each location, highlighting geographic spending patterns."
+                },
+                "description": "The bar plot provides a clear comparison of the average expense amounts for each geographic location."
+            },
+            "question": "How do expenses vary across different geographic locations?",
+            "actionable_insight": {
+                "description": "Understanding geographic spending patterns can assist in regional budgeting and financial planning. Regions with consistently higher expenses may require closer monitoring or allocation adjustments to ensure optimal use of resources."
+            },
+            "code": "# Calculate average amount for each location\navg_amount_by_location = data.groupby('location')['amount'].mean().reset_index()\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for average amount by location\nplt.figure(figsize=(12, 6))\nsns.barplot(x='location', y='amount', data=avg_amount_by_location, palette='viridis')\nplt.title('Average Expense Amount by Location')\nplt.xlabel('Location')\nplt.ylabel('Average Amount')\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The 'Services' category has the highest total expenses.",
+            "insight_value": {
+                "description": "The organization has spent a total of 5.8 million dollars on services, making it the highest expense category."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Total Expenses by Category",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Assets",
+                        "Travel",
+                        "Miscellaneous",
+                        "Services"
+                    ],
+                    "description": "This axis categorizes expenses into different categories to show the total spending."
+                },
+                "y_axis": {
+                    "name": "Total Expenses ($)",
+                    "value": {
+                        "Services": 5800000,
+                        "Assets": 4200000,
+                        "Travel": 3200000,
+                        "Miscellaneous": 500000
+                    },
+                    "description": "This axis displays the total expense amount in dollars for each category."
+                },
+                "description": "The bar chart highlights that 'Services' is the category with the highest spending, indicating significant investments in tangible items."
+            },
+            "question": "What are the total expenses by category?",
+            "actionable_insight": {
+                "description": "The high spending on services should be regularly reviewed to ensure that these investments are necessary and beneficial to the organization. Potential cost-saving measures could be explored in categories with high expenses."
+            },
+            "code": "import matplotlib.pyplot as plt\n\n# Group by category and sum the amount\ntotal_expenses_by_category = data.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_category.plot(kind='bar', color='skyblue')\nplt.title('Total Expenses by Category')\nplt.xlabel('Category')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The Product management department has the highest total expenses.",
+            "insight_value": {
+                "description": "Product Management has the highest total expenses at 3.9M followed by Customer Support at 3.7M."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Total Expenses by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Customer Support",
+                        "Sales",
+                        "IT",
+                        "Finance",
+                        "Development",
+                        "HR"
+                    ],
+                    "description": "This axis categorizes expenses by department to show total spending."
+                },
+                "y_axis": {
+                    "name": "Total Expenses ($)",
+                    "value": {
+                        "Customer Support": 3700000,
+                        "Sales": 3500000,
+                        "IT": 2800000,
+                        "Finance": 2200000,
+                        "Development": 2000000,
+                        "HR": 1500000
+                    },
+                    "description": "This axis displays the total expense amount in dollars for each department."
+                },
+                "description": "The bar chart highlights that Product Management has the highest expenses, indicating this department's significant financial demand."
+            },
+            "question": "What are the total expenses by department?",
+            "actionable_insight": {
+                "description": "Departments with the highest expenses, like Product Management and Sales, should be reviewed to ensure spending aligns with operational goals and budget constraints."
+            },
+            "code": "# Group by department and sum the amount\ntotal_expenses_by_department = data.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_department.plot(kind='bar', color='lightcoral')\nplt.title('Total Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "insight": "The Customer support department has the highest average expense per claim.",
+            "question": "What is the average expense by department?",
+            "code": "# Group by department and calculate the average amount\naverage_expense_by_department = data.groupby('department')['amount'].mean().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\naverage_expense_by_department.plot(kind='bar', color='goldenrod')\nplt.title('Average Expense by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Expense ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Customer Support has processed the most expense claims.",
+            "insight_value": {
+                "description": "Customer Support has processed ~70 expenses, the highest among all departments."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Processed Expenses by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Customer Support",
+                        "Sales",
+                        "IT",
+                        "Finance",
+                        "Development",
+                        "HR"
+                    ],
+                    "description": "This axis categorizes departments by the number of processed expense claims."
+                },
+                "y_axis": {
+                    "name": "Number of Processed Expenses",
+                    "value": {
+                        "Customer Support": 70,
+                        "Sales": 15
+                    },
+                    "description": "This axis displays the number of processed expenses for each department."
+                },
+                "description": "The bar chart shows that Customer Support has handled the most expense claims, reflecting the operational demands of this department."
+            },
+            "question": "How many expenses have been processed by each department?",
+            "actionable_insight": {
+                "description": "Given the high volume of processed expenses in Customer Support, it might be necessary to evaluate the efficiency of their processes and ensure they have adequate resources to manage this workload."
+            },
+            "code": "# Filter for processed expenses and group by department\nprocessed_expenses_by_department = data[data['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\nprocessed_expenses_by_department.plot(kind='bar', color='dodgerblue')\nplt.title('Number of Processed Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Number of Processed Expenses')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Expense amounts vary significantly across different geographic locations",
+        "The 'Services' category has the highest total expenses.",
+        "The Product management department has the highest total expenses.",
+        "The Customer support department has the highest average expense per claim.",
+        "Customer Support has processed the most expense claims."
+    ],
+    "summary": "\n\n1. **Total Expenses by Category:** The 'Services' category leads with the highest total expenses, amounting to $1,000,000.00. This suggests that services are a significant expense category, warranting closer scrutiny and potential cost-saving measures.\n\n2. **Total Expenses by Location:** North America has the highest total expenses at 70000, followed by Europe at 50000. In contrast, Asia has the lowest total expenses at 20000. This disparity in expenses across locations indicates varying financial demands and highlights regions that may require more budget allocation.\n\n3. **Average Expense by Department:** The Product Management and Customer Support departments have the highest average expenses, indicating potentially higher financial demands or more frequent expense claims within these departments."
+}

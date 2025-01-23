@@ -1,0 +1,121 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-56.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the hardware-related incidents during an identified time window to pinpoint potential hiccups that could be causing any anomalies.",
+        "role": "DT Asset Manager",
+        "category": "Incident Management",
+        "dataset_description": "The dataset comprises 600 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Hardware Incident Analysis During Specific Time Windows (Flag 56)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "There is a uniform decreasing trend of TTR for all category incidents over time.",
+            "insight_value": {
+                "x_val": "Anomaly Periods",
+                "y_val": "No anomaly detected"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "TTR over time for different categories of Incidents",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Time periods",
+                    "description": "This represents the specific time  periods of interest."
+                },
+                "y_axis": {
+                    "name": "Time to Resolution",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the time taken to resolve incidents, grouped across category during the  period."
+                },
+                "description": "The line graph demonstrates an uniform trend in the TTR for incidents across all categories. The TTR is decreasing over time, indicating an improvement in service efficiency."
+            },
+            "question": "What is the trend in the time to resolution (TTR) for Hardware incidents, especially during the identified anomaly periods?",
+            "actionable_insight": "The decreasing trend in TTR for Hardware incidents indicates an improvement in service efficiency. This could be due to the implementation of new tools or processes. It is recommended to further investigate the factors contributing to this improvement and consider implementing similar strategies for other categories to enhance overall service delivery.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Create a new column 'month_year' to make the plot more readable\n# df['month_year'] = df['opened_at'].dt.to_period('M')\ndf[\"ttr\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n# Convert 'ttr' column to numeric and handle errors\ndf[\"ttr\"] = pd.to_numeric(df[\"ttr\"], errors=\"coerce\")\n\n# Create a lineplot\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) Over Time for Different Categories\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "All categories have the same number of incidents on average.",
+            "insight_value": {
+                "x_val": "All categories",
+                "y_val": 100
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Incidents by Category",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Hardware",
+                        "Software",
+                        "Network",
+                        "Inquiry / Help",
+                        "Database"
+                    ],
+                    "description": "This represents the different categories of incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": [
+                        100,
+                        100,
+                        100,
+                        100,
+                        100
+                    ],
+                    "description": "This represents the number of incidents in each category."
+                },
+                "description": "The histogram displays the distribution of incidents across different categories. Each bar represents a category and the length of the bar corresponds to the number of incidents in that category. The values are annotated on each bar. The categories have an equal number of incidents on average."
+            },
+            "question": "What is the distribution of incidents across all categories?",
+            "actionable_insight": "The equal distribution of incidents across all categories indicates that the workload is balanced among agents. This suggests that the incident management system is effectively routing incidents to the appropriate categories and agents. It is recommended to continue monitoring the distribution to ensure that the workload remains balanced and to identify any potential bottlenecks or inefficiencies in the incident management process.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is already loaded and has the necessary columns\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n\n# Group the data by 'assigned_to' and count the number of incidents for each agent\nagent_incident_counts = df.groupby('category').size()\n\n# Calculate the average number of incidents per agent\n# average_incidents_per_agent = agent_incident_counts.mean()\n\n# Create a DataFrame for plotting\nagent_average_df = pd.DataFrame({\n    'Agent': agent_incident_counts.index,\n    'Average Incidents': agent_incident_counts\n})\n\n# Plotting the average number of incidents per agent\nplt.figure(figsize=(10, 6))\nax = sns.barplot(x='Agent', y='Average Incidents', data=agent_average_df)\nplt.title('Overall Average Number of Incidents by Each Category')\nplt.ylabel('Average Number of Incidents')\nplt.xlabel('Agent')\nplt.xticks(rotation=45)\n\n# Annotate each bar with its value\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There are fluctuations in incident frequencies across categories, with slightly higher activity in September and October.",
+            "insight_value": {
+                "x_val": "Time",
+                "y_val": "Incident Count"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Incident Distribution Over Time by Category",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "2023-01-01 to 2024-02-01",
+                    "description": "This represents the timeline of the data collected."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Dynamic based on data",
+                    "description": "This represents the number of incidents occurring over time for each category."
+                },
+                "description": "The line graph shows the trend of incidents over time, divided by categories. It highlights periods with unusually high activity, particularly in the months of September and October."
+            },
+            "question": "How are incidents distributed across different categories over time?",
+            "actionable_insight": "The fluctuations in incident frequencies across categories suggest varying levels of activity and demand for support services. It is recommended to investigate the factors contributing to the increased activity in September and October to better allocate resources and optimize service delivery during peak periods.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Put the data into a DataFrame\n\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"category\")\nplt.title(\"Number of Incidents Created Over Time by Category\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "predictive",
+            "insight": "There is no trend detected in the number of hardware incidents over time.",
+            "insight_value": {
+                "trend": "No trend detected",
+                "prediction": "The linear regression model predicts a linear increase however, the prediction is not reliable due to the lack of trend in the historical data."
+            },
+            "description": "The predictive analysis using a linear regression model on historical hardware incident data indicates a continued linear increase in the number of such incidents over time; however, the prediction may not be reliable due to the absence of a clear trend in the historical data.",
+            "actionable_insight": "Given the lack of a clear trend in the historical data, it is recommended to monitor hardware incidents closely and reassess the predictive model as more data becomes available. Additionally, further analysis and consideration of other factors may be necessary to improve the accuracy of future predictions.",
+            "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\nfrom sklearn.linear_model import LinearRegression\n\n# Load data\ndataset_path = \"csvs/flag-56.csv\"\n# Load the dataset\ndf = pd.read_csv(dataset_path)\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Count the number of hardware incidents per month\nincident_counts = df.groupby(df['opened_at'].dt.to_period(\"M\")).size().reset_index(name='counts')\nincident_counts['date_ordinal'] = incident_counts['opened_at'].dt.start_time.apply(lambda x: x.toordinal())\n\n# Prepare data for linear regression\nX = incident_counts['date_ordinal'].values.reshape(-1, 1)  # Reshape for sklearn\ny = incident_counts['counts'].values  # Target variable: number of incidents\n\n# Fit the linear regression model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Predict future values\nfuture_dates = pd.date_range(start=incident_counts['opened_at'].max().to_timestamp(), periods=12, freq='M')  # Predicting for the next 10 years, monthly\nfuture_dates_ordinal = [d.toordinal() for d in future_dates]\nfuture_preds = model.predict(np.array(future_dates_ordinal).reshape(-1, 1))\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.scatter(incident_counts['opened_at'].dt.start_time, y, color='blue', label='Historical Incident Counts')\nplt.scatter(future_dates, future_preds, color='red', label='Predicted Incident Trend')\nplt.title('Projected Trends in Incidents')\nplt.xlabel('Date')\nplt.ylabel('Number of Incidents')\nplt.legend()\nplt.grid(True)\n\n# Formatting the x-axis to make it more readable\nplt.gca().xaxis.set_major_locator(mdates.YearLocator())\nplt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))\n\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is a uniform decreasing trend of TTR for all category incidents over time.",
+        "All categories have the same number of incidents on average.",
+        "There are fluctuations in incident frequencies across categories, with slightly higher activity in September and October.",
+        "There is no trend detected in the number of hardware incidents over time."
+    ],
+    "summary": "\n\n1. **No Trend in Frequency of Incidents**: There is no clear trend in the frequency of hardware incidents over time, indicating that the number of incidents remains relatively stable across different categories.\n2. **Occurance and Possible Causes**: The elevated frequency occurs particualy from 2023-09 to 2023-10. This could be linked to various factors such as new hardware deployments or changes in usage patterns. \n3. **Need for Detailed Investigation**: To address and mitigate the anomaly effectively, a thorough investigation into the specific causes of the increased frequency of hardware incidents is essential."
+}

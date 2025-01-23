@@ -1,0 +1,215 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-62.csv",
+    "user_dataset_csv_path": "data/notebooks/csvs/flag-62-sysuser.csv",
+    "metadata": {
+        "goal": "Utilize incident and user data to analyze  the distribution of incident assignments among agents to identify imbalances, especially during leave periods.",
+        "role": "Agent Manager",
+        "category": "User Management",
+        "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `incidents` table, each with 500 entries. The `incidents` table focuses on detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It effectively captures incident management activities with fields including 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'schedule', 'role', 'email', and 'department', providing insights into the user profiles managed within the ServiceNow system. Together, these tables are instrumental in understanding the workflow, user involvement and detailed tracking of incident resolution processes within an organization.",
+        "header": "Workload Distribution and Efficiency Analysis (Flag 62)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "All agents have the same number of incidents assigned to them.",
+            "insight_value": {
+                "agents": [
+                    "All agents"
+                ],
+                "average_incidents": "100"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Overall Average Number of Incidents Assigned to Each Agent",
+                "x_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Beth Anglin",
+                        "Luke Wilson",
+                        "Howard Johnson",
+                        "Charlie Whitherspoon",
+                        "Fred Luddy"
+                    ],
+                    "description": "This represents the agents handling incidents."
+                },
+                "y_axis": {
+                    "name": "Average Number of Incidents",
+                    "value": [
+                        100,
+                        100,
+                        100,
+                        100,
+                        100
+                    ],
+                    "description": "This represents the average number of incidents assigned to each agent, calculated over the recent period."
+                },
+                "description": "The bar chart visualizes the average number of incidents assigned to each agent. It shows that all agents have the same number of incidents assigned to them."
+            },
+            "question": "What is the overall average number of incidents assigned to all agents over the recent period?",
+            "actionable_insight": "The average number of incidents assigned to each agent is the same. This could indicate that the incidents are being distributed evenly among the agents. However, it is important to monitor this metric over time to ensure that the workload is balanced and that no agent is overwhelmed with incidents.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is already loaded and has the necessary columns\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n\n# Group the data by 'assigned_to' and count the number of incidents for each agent\nagent_incident_counts = df.groupby('assigned_to').size()\n\n# Calculate the average number of incidents per agent\n# average_incidents_per_agent = agent_incident_counts.mean()\n\n# Create a DataFrame for plotting\nagent_average_df = pd.DataFrame({\n    'Agent': agent_incident_counts.index,\n    'Average Incidents': agent_incident_counts\n})\n\n# Plotting the average number of incidents per agent\nplt.figure(figsize=(10, 6))\nax = sns.barplot(x='Agent', y='Average Incidents', data=agent_average_df)\nplt.title('Overall Number of Incidents Assigned to Each Agent')\nplt.ylabel('Number of Incidents')\nplt.xlabel('Agent')\nplt.xticks(rotation=45)\n\n# Annotate each bar with its value\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Specific leave periods for Howard Johnson, Charlie Whitherspoon, and Fred Luddy were identified",
+            "insight_value": {
+                "Howard Johnson": {
+                    "start_date": "2023-06-01",
+                    "end_date": "2023-06-28"
+                },
+                "Charlie Whitherspoon": {
+                    "start_date": "2023-06-14",
+                    "end_date": "2023-07-19"
+                },
+                "Fred Luddy": {
+                    "start_date": "2023-07-13",
+                    "end_date": "2023-08-28"
+                }
+            },
+            "plot": {
+                "plot_type": "timeline",
+                "title": "PTO Periods for Howard Johnson, Charlie Whitherspoon, and Fred Luddy",
+                "x_axis": {
+                    "name": "Date",
+                    "value": [
+                        "2023-06-01",
+                        "2023-08-15"
+                    ],
+                    "description": "This represents the timeline from the earliest start to the latest end of the PTO periods."
+                },
+                "y_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Howard Johnson",
+                        "Charlie Whitherspoon",
+                        "Fred Luddy"
+                    ],
+                    "description": "This axis represents the agents who were on leave."
+                },
+                "description": "The timeline plot visualizes the leave periods of Howard Johnson, Charlie Whitherspoon, and Fred Luddy with distinct colors. Howard's leave is shown in red, Charlie's in blue, and Fred's in green. These periods overlap, indicating a time frame from June 1, 2023, to August 15, 2023, when at least one of these agents was on leave."
+            },
+            "question": "What are the exact dates when the other three agents were on PTO?",
+            "actionable_insight": "Understanding the overlap in leave periods among these agents provides valuable insight into staffing challenges that may have contributed to the increased workload for Beth Anglin and Luke Wilson. To mitigate such impacts in the future, consider strategic leave planning and perhaps temporary staffing solutions during overlapping leave periods to maintain balanced incident handling capacity.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\n\nfrom pandas import Timestamp\n\nfred_schedule = df_usr[df_usr['name'] == 'Fred Luddy']['schedule'].iloc[0]\nfred_schedule = eval(fred_schedule)\nhoward_schedule = df_usr[df_usr['name'] == 'Howard Johnson']['schedule'].iloc[0]\nhoward_schedule = eval(howard_schedule)\ncharlie_schedule = df_usr[df_usr['name'] == 'Charlie Whitherspoon']['schedule'].iloc[0]\ncharlie_schedule = eval(charlie_schedule)\n\n# Assuming df is already defined and has 'opened_at' and 'closed_at' columns converted to datetime\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\ndf['closed_at'] = pd.to_datetime(df['closed_at'])\n\n# Define the current date for the analysis, simulate up to the last 'opened_at' date\ncurrent_date = df['opened_at'].max()\n# Create a range of dates from the start to the current date\ndate_range = pd.date_range(start=df['opened_at'].min(), end=current_date, freq='D')\n\n# Fred's PTO schedule as list of tuples with start and end dates\npto_schedule = fred_schedule\n\n# Plotting\nfig, ax = plt.subplots(figsize=(10, 2))  # Adjust the figure size as needed\n\n# Plot each leave period as a rectangle\nfor start, end in fred_schedule:\n    ax.axvspan(start, end, color='red', alpha=0.5, label='PTO (Leave Period)')\nfor start, end in howard_schedule:\n    ax.axvspan(start, end, color='blue', alpha=0.5, label='PTO (Leave Period)')\nfor start, end in charlie_schedule:\n    ax.axvspan(start, end, color='green', alpha=0.5, label='PTO (Leave Period)')\n\n# Set limits, labels, title and legend\nax.set_xlim([date_range.min(), date_range.max()])\nax.set_ylim(0, 1)  # Static Y limits as we are only plotting periods\nax.set_yticks([])  # Hide Y axis ticks\nax.set_xlabel('Date')\nax.set_title('Timeline of Fred Luddy\\'s Leave Periods')\nax.legend(loc='upper right')\n\n# Formatting the x-axis to make it more readable\nax.xaxis.set_major_locator(mdates.MonthLocator())\nax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))\n\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There was no significant change in the distribution of incident categories for Beth Anglin and Luke Wilson during the other agents' PTO,",
+            "insight_value": {
+                "categories": [
+                    "Network",
+                    "Software",
+                    "Hardware",
+                    "Inquiry / Help",
+                    "Database"
+                ],
+                "observation": "Consistent distribution across all periods"
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Distribution of Incident Categories Over Time",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Network",
+                        "Software",
+                        "Hardware",
+                        "Inquiry / Help",
+                        "Database"
+                    ],
+                    "description": "This represents the different categories of incidents handled by the agents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Count of incidents in each category",
+                    "description": "This represents the number of incidents per category over the entire time period."
+                },
+                "description": "The histogram displays the distribution of incidents across different categories over time, with a focus on the periods when other agents were on PTO. There is no noticeable change in the distribution of incident categories for Beth Anglin and Luke Wilson during the leave periods of other agents. "
+            },
+            "question": "Is there a change in the category of incidents assigned to Beth Anglin and Luke Wilson during the other agents' PTO?",
+            "actionable_insight": "Given that the distribution of incident categories remains consistent even during the absence of other agents, it suggests that Beth Anglin and Luke Wilson are equipped to handle a diverse range of incident types.  This could involve specific training for all agents in these areas or considering a reallocation of tasks to balance the workload more evenly across the team.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Put the data into a DataFrame\n\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"category\")\nplt.title(\"Number of Incidents Created Over Time by Category\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The distribution of incident assignments becomes uniform after the other agents return from their leave",
+            "insight_value": {
+                "observation": "Uniform distribution of assignments across all agents"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Incident Assignments Post Leave Period",
+                "x_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Beth Anglin",
+                        "Luke Wilson",
+                        "Howard Johnson",
+                        "Charlie Whitherspoon",
+                        "Fred Luddy"
+                    ],
+                    "description": "This represents the agents handling incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Count of incidents assigned per agent",
+                    "description": "This represents the number of incidents assigned to each agent in the post-leave period."
+                },
+                "description": "The bar chart displays the number of incidents assigned to each agent after the other agents returned from their leave. The distribution of assignments is shown to be uniform across all agents, indicating a balanced workload distribution. This suggests that any previous imbalances during the leave period have been resolved and normal operations have resumed."
+            },
+            "question": "What happens to the distribution of incident assignments after the other agents return from their leave?",
+            "actionable_insight": "Given the return to a uniform distribution of incident assignments post-leave, it is important to maintain this balance to ensure operational efficiency and fairness. Regular monitoring of assignment distributions should be implemented, especially during and after leave periods, to quickly address any potential imbalances. This proactive approach will help maintain staff satisfaction and prevent workload-related issues.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is already loaded and has the necessary columns\n# Define the post-leave period (assuming leave ends on 2023-08-15)\npost_leave_start_date = pd.to_datetime(\"2023-08-16\")\ndata_end_date = df['opened_at'].max()\n\n# Filter incidents that were opened after the leave period\npost_leave_incidents = df[(df['opened_at'] > post_leave_start_date) & (df['opened_at'] <= data_end_date)]\n\n# Count the number of incidents assigned to each agent in the post-leave period\npost_leave_counts = post_leave_incidents['assigned_to'].value_counts().reset_index()\npost_leave_counts.columns = ['Agent', 'Incident Count']\n\n# Plotting\nplt.figure(figsize=(10, 6))\nsns.barplot(x='Agent', y='Incident Count', data=post_leave_counts, palette='viridis')\nplt.title('Distribution of Incident Assignments Post Leave Period')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents')\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "analytical",
+            "insight": "The resolution time (TTR) for all is slightly decreasing over time",
+            "insight_value": {
+                "observation": "Consistent decrease in TTR for all agents"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Trend of Resolution Time (TTR) for Beth Anglin and Luke Wilson Over Time",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Timeline from the start to the end of the data set",
+                    "description": "This axis represents the timeline over which the TTR data is analyzed."
+                },
+                "y_axis": {
+                    "name": "Resolution Time (days)",
+                    "value": "Measured TTR in days",
+                    "description": "This represents the time taken to resolve incidents, measured in days."
+                },
+                "description": "The line plot illustrates the trend of resolution times all agents over time. The consistent decrease in resolution time indicates an improvement in incident handling efficiency. This trend suggests that the agents are becoming more adept at resolving incidents in a timely manner."
+            },
+            "question": "How does the resolution time (TTR) for incidents handled by agents during this period compare to other times?",
+            "actionable_insight": "The decreasing trend in resolution time is a positive indicator of improved efficiency in incident resolution. To maintain this trend, it is essential to identify the factors contributing to the decrease and implement best practices across the team. Regular training, knowledge sharing, and process improvements can help sustain and further improve the resolution time, leading to enhanced service quality and customer satisfaction.",
+            "code": "# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Compute resolution time in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\nsns.lineplot(x=df[\"opened_at\"], y=df[\"resolution_time\"], hue=df[\"assigned_to\"])\nplt.xlabel(\"Creation date\")\nplt.ylabel(\"Time to resolution\")\nplt.title(\"Time to resolution by creation date\")"
+        },
+        {
+            "data_type": "predictive",
+            "insight": "There is not sufficient data to predict the future workload for agents accurately",
+            "insight_value": {
+                "trend": "No trend can be identified due to the limited data available",
+                "prediction": "No reliable prediction can be made based on the current data"
+            },
+            "description": "The forecast model indicates no clear trend.",
+            "recommendation": {
+                "action": "Implement proactive workload management strategies",
+                "expected_outcome": "Prevent workload escalation and maintain balanced distribution",
+                "urgency": "High"
+            },
+            "actionable_insight": "Given the lack of a clear trend in the data, it is crucial to implement proactive workload management strategies to prevent potential workload escalation and maintain a balanced distribution of incidents among agents. This could involve real-time monitoring of incident assignments, dynamic workload allocation, and timely intervention to address any imbalances. By proactively managing the workload, the team can ensure efficient incident resolution and maintain high service levels.",
+            "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\nfrom sklearn.linear_model import LinearRegression\n\n# Load data\ndataset_path = \"csvs/flag-62.csv\"\n\n\n# Load the dataset\ndf = pd.read_csv(dataset_path)\ndf = df[df['assigned_to'] == 'Beth Anglin']\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Define the cutoff date for the training data\ncutoff_date = pd.to_datetime(\"2023-08-15\")\n\n# Filter the data to include only dates up to the cutoff date\ntraining_data = df[df['opened_at'] <= cutoff_date]\n\n# Count incidents over time for Beth Anglin in the training data\nincident_counts = training_data.groupby(training_data['opened_at'].dt.to_period(\"M\")).size().reset_index(name='counts')\nincident_counts['date_ordinal'] = incident_counts['opened_at'].dt.start_time.apply(lambda x: x.toordinal())\n\n# Prepare data for linear regression\nX = incident_counts['date_ordinal'].values.reshape(-1, 1)  # Reshape for sklearn\ny = incident_counts['counts'].values  # Target variable: number of incidents\n\n# Fit the linear regression model using only the training data\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Define the start date for forecasting\nforecast_start_date = pd.to_datetime(\"2023-08-16\")\n\n# Generate future dates from the specified start date\nfuture_dates = pd.date_range(start=forecast_start_date, periods=120, freq='D')  # 4 months into the future\nfuture_dates_ordinal = [d.toordinal() for d in future_dates]\nfuture_preds = model.predict(np.array(future_dates_ordinal).reshape(-1, 1))\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.scatter(incident_counts['opened_at'].dt.start_time, y, color='blue', label='Historical Incident Counts')\nplt.plot(future_dates, future_preds, color='red', linestyle='--', label='Predicted Incident Count Trend')\nplt.title('Projected Increase in Incident Assignments for Beth Anglin from August 16, 2023')\nplt.xlabel('Date')\nplt.ylabel('Number of Incidents Assigned')\nplt.legend()\nplt.grid(True)\n\n# Formatting the x-axis to make it more readable\nplt.gca().xaxis.set_major_locator(mdates.MonthLocator())\nplt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))\n\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "All agents have the same number of incidents assigned to them.",
+        "Specific leave periods for Howard Johnson, Charlie Whitherspoon, and Fred Luddy were identified",
+        "There was no significant change in the distribution of incident categories for Beth Anglin and Luke Wilson during the other agents' PTO,",
+        "The distribution of incident assignments becomes uniform after the other agents return from their leave",
+        "The resolution time (TTR) for all is slightly decreasing over time",
+        "There is not sufficient data to predict the future workload for agents accurately"
+    ],
+    "summary": "\n\n1. **No Disparity in Incident Assignments**: There is a relatively balanced distribution of incidents among agents, with no significant disparities in the number of assignments.\n2. **Impact of Leave Periods**: There is no significant impact on incident assignments during the leave periods of agents.\n3. **Efficiency Despite Increased Workload**: TTR is decreasing even with increased workload during other agents' leave periods."
+}

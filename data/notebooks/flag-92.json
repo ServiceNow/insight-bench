@@ -1,0 +1,76 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-92.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To analyze and understand how expenses vary across different geographic locations, expense categories, and approval times, with the aim of improving budget allocation and workflow efficiency.",
+        "role": "Financial Operations Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'location', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, geographic location, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories and locations, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Geo-Specific Expense Analysis (Flag 92)"
+    },
+    "insight_list": [
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be completed due to missing 'amount' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar plot was attempted but failed due to missing 'amount' column in the dataset"
+            },
+            "question": "How do expenses vary across different geographic locations?",
+            "actionable_insight": "No actionable insight could be generated due to missing 'amount' column in the dataset",
+            "code": "# # Calculate average amount for each location\n# avg_amount_by_location = data.groupby('location')['amount'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average amount by location\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='location', y='amount', data=avg_amount_by_location, palette='viridis')\n# plt.title('Average Expense Amount by Location')\n# plt.xlabel('Location')\n# plt.ylabel('Average Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "distribution",
+            "insight": "Analysis could not be completed due to missing 'amount' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted to show expense distribution by category but failed due to missing 'amount' column in the dataset"
+            },
+            "question": "How are expenses distributed across different categories?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# import matplotlib.pyplot as plt\n\n# # Group by category and sum the amount\n# total_expenses_by_category = data.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_category.plot(kind='bar', color='skyblue')\n# plt.title('Total Expenses by Category')\n# plt.xlabel('Category')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted but failed due to missing 'department' column in the dataset"
+            },
+            "question": "What are the total expenses by department?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# # Group by department and sum the amount\n# total_expenses_by_department = data.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_department.plot(kind='bar', color='lightcoral')\n# plt.title('Total Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "The analysis could not be completed due to a missing 'department' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted but failed due to the missing department column in the dataset"
+            },
+            "question": "What is the average expense by department?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# # Group by department and calculate the average amount\n# average_expense_by_department = data.groupby('department')['amount'].mean().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_expense_by_department.plot(kind='bar', color='goldenrod')\n# plt.title('Average Expense by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Expense ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar chart was attempted but failed due to missing 'department' column in the dataset"
+            },
+            "question": "How many expenses have been processed by each department?",
+            "actionable_insight": "No actionable insight could be generated due to missing data",
+            "code": "# # Filter for processed expenses and group by department\n# processed_expenses_by_department = data[data['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# processed_expenses_by_department.plot(kind='bar', color='dodgerblue')\n# plt.title('Number of Processed Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Processed Expenses')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "Analysis could not be completed due to missing 'amount' column in the dataset",
+        "Analysis could not be completed due to missing 'amount' column in the dataset",
+        "Analysis could not be completed due to missing 'department' column in the dataset",
+        "The analysis could not be completed due to a missing 'department' column in the dataset",
+        "Analysis could not be completed due to missing 'department' column in the dataset"
+    ],
+    "summary": "\n\n1. **Trend Analysis**: The analysis could not be done due to missing data.\n   \n2. **Employee Compliance Insight**: The study could not be conducted due to missing data.\n   \n3. **Departmental Insights**: The analysis could not be performed due to missing data."
+}

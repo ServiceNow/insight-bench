@@ -1,0 +1,160 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-61.csv",
+    "user_dataset_csv_path": "data/notebooks/csvs/flag-61-sysuser.csv",
+    "metadata": {
+        "goal": "Given the user and incidents tabular data, analyze discrepancies in the performance of human agents, particularly focusing on a certain human agent, to understand the underlying causes of performance dips and devise strategies to manage workload during absence periods.",
+        "role": "Team Lead",
+        "category": "User Management",
+        "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `incidents` table, each with 500 entries. The `incidents` table focuses on detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It effectively captures incident management activities with fields including 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'role', 'email', 'schedule', and 'department', providing insights into the user profiles managed within the ServiceNow system. Together, these tables are instrumental in understanding the workflow, user involvement and detailed tracking of incident resolution processes within an organization.",
+        "header": "Performance Trends in Employee Agents Management (Flag 61)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "Luke Wilson has highest average TTR among agents",
+            "insight_value": {
+                "x_val": "Luke Wilson",
+                "y_val": 24.69
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Average Time to Resolution (TTR) by Agent",
+                "x_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Beth Anglin",
+                        "Charlie Whitherspoon",
+                        "Fred Luddy",
+                        "Howard Johnson",
+                        "Luke Wilson"
+                    ],
+                    "description": "This represents the different agents assigned to resolve incidents."
+                },
+                "y_axis": {
+                    "name": "Average Resolution Time (days)",
+                    "value": [
+                        12.95,
+                        2.34,
+                        1.64,
+                        -5.32,
+                        24.69
+                    ],
+                    "description": "This represents the average time each agent takes to resolve incidents, measured in days."
+                },
+                "description": "The histogram displays the average resolution time for each agent. Each bar represents an agent and the height of the bar corresponds to the average time taken to resolve incidents. The values are annotated on each bar. Fred Luddy's bar is noticeably higher, indicating a longer average resolution time compared to his peers."
+            },
+            "question": "What is the average TTR of each agent as a histogram?",
+            "actionable_insight": "Given that Luke Wilson's average TTR is significantly higher than his peers, it may be beneficial to investigate the specific reasons behind this anomaly. Possible actions include reviewing the complexity of incidents assigned to him, checking for any personal or systemic issues during his shifts, or providing additional support or training to help him manage his workload more efficiently.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Assuming dataset_path is defined and points to the correct CSV file\ndf = pd.read_csv(dataset_path)\n\n# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Compute TTR in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Group by 'assigned_to' and compute the average resolution time for each agent\navg_ttr_by_agent = df.groupby(\"assigned_to\")[\"resolution_time\"].mean()\n\n# Plotting the average TTR of each agent as a histogram\nax = avg_ttr_by_agent.plot(kind='bar', figsize=(10, 6), color='skyblue')\n\nplt.title(\"Average Resolution Time (TTR) by Agent\")\nplt.xlabel(\"Agent\")\nplt.ylabel(\"Average Resolution Time (days)\")\nplt.xticks(rotation=45)\n\n# Annotate each bar with its value\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\n\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "TTR is slightly decreasing for all the agents over time",
+            "insight_value": {
+                "x_val": "Time Period",
+                "y_val": "Slight decrease"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Time to Resolution (TTR) Trend Comparison Among Agents",
+                "x_axis": {
+                    "name": "Month-Year",
+                    "value": [
+                        "Jan-2023",
+                        "Feb-2023",
+                        "Mar-2023",
+                        "Apr-2023",
+                        "May-2023",
+                        "..."
+                    ],
+                    "description": "This represents the timeline over which the TTR data is analyzed."
+                },
+                "y_axis": {
+                    "name": "Average Resolution Time (days)",
+                    "value": "line plot",
+                    "description": "This represents the average time taken to resolve incidents, measured in days, across different agents."
+                },
+                "description": "The line plot shows the TTR trends for each agent over several months. "
+            },
+            "question": "How does the TTR of the specific agent compare to other agents during the same time frame?",
+            "actionable_insight": "The decreasing trend in TTR for all agents indicates a potential improvement in incident resolution efficiency over time. However, it is essential to monitor this trend closely to ensure that the decrease is consistent and not due to external factors. If the trend continues, it may be beneficial to analyze the factors contributing to this improvement and implement best practices across the team to further optimize incident resolution times.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n\n\n# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Compute resolution time in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Extract month-year from opened_at and create a new column\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Group by month_year and category, then compute average resolution time\ndf_grouped = (\n    df.groupby([\"month_year\", \"assigned_to\"])[\"resolution_time\"].mean().unstack()\n)\n\n# Plot the data\ndf_grouped.plot(kind=\"line\", figsize=(12, 6))\nplt.title(\"Average Resolution Time by agent Over Time\")\nplt.xlabel(\"Month-Year\")\nplt.ylabel(\" Resolution Time (days) over time\")\nplt.xticks(rotation=45)\nplt.legend(title=\"Assigned_to\")\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The number of incidents assigned to each agent, including Fred Luddy, remains uniform over time",
+            "insight_value": {
+                "x_val": "Agents",
+                "y_val": "Uniform Distribution of Incident Assignment"
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Distribution of Incident Assignments Among Agents Over Time",
+                "x_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Beth Anglin",
+                        "Charlie Whitherspoon",
+                        "Fred Luddy",
+                        "Howard Johnson",
+                        "Luke Wilson"
+                    ],
+                    "description": "This represents the different agents handling incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": [
+                        100,
+                        100,
+                        100,
+                        100,
+                        100
+                    ],
+                    "description": "This represents the count of incidents assigned to each agent over the analyzed time period."
+                },
+                "description": "The histogram displays the number of incidents assigned to each agent over a specific time period. The distribution is relatively uniform across all agents, indicating that workload distribution in terms of number of incidents is even. This suggests that the increasing TTR for Fred Luddy is not due to an excessive number of assignments."
+            },
+            "question": "What is the pattern in the number of incidents assigned to the specific agent over time?",
+            "actionable_insight": "Since the distribution of incident assignments is uniform among all agents, the prolonged TTR for Fred Luddy is unlikely to be caused by an overload of assignments. It may be beneficial to explore other factors such as the complexity of the incidents assigned to Fred, his working methods, or potential personal or systemic issues that might be affecting his performance. Monitoring the trend in the number of open tickets for each agent over time could also provide additional insights into workload management and efficiency.",
+            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nax = agent_incident_count.plot(kind='bar', figsize=(10,6))\n\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.title('Number of Incidents Assigned Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Assigned')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "The number of open incidents follow an increasing then decreasing trend for all agents including Luke Wilson. The peak is reached around 2023-09.",
+            "insight_value": {
+                "x_val": "Time Period",
+                "y_val": "Increasing Number of Open Incidents"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Trend of Open Incidents for Fred Luddy Over Time",
+                "x_axis": {
+                    "name": "Month-Year",
+                    "value": [
+                        "Jan-2023",
+                        "Feb-2023",
+                        "Mar-2023",
+                        "Apr-2023",
+                        "May-2023"
+                    ],
+                    "description": "This represents the timeline over which the open incident data is analyzed."
+                },
+                "y_axis": {
+                    "name": "Number of Open Incidents",
+                    "description": "This represents the count of incidents still open and unresolved, assigned to Fred Luddy over the analyzed time period."
+                },
+                "description": "The line plot illustrates a clear increasing trend in the number of open incidents. The peak is reached around September 2023, followed by a decreasing trend. This pattern is consistent across all agents, including Luke Wilson."
+            },
+            "question": "What is the pattern in the number of open incidents assigned to the specific agent over time?",
+            "actionable_insight": "The increasing trend in the number of open incidents for all agents, including Luke Wilson, indicates a potential backlog in incident resolution. It is crucial to address this backlog promptly to prevent delays in incident resolution and maintain service levels. Investigating the reasons behind the peak in open incidents around September 2023 and implementing strategies to manage and reduce the backlog can help improve incident resolution efficiency and customer satisfaction.",
+            "code": "df['opened_at'] = pd.to_datetime(df['opened_at'])\ndf['closed_at'] = pd.to_datetime(df['closed_at'])\n# Define the current date for the analysis, simulate up to the last 'opened_at' date\ncurrent_date = df['opened_at'].max()\n\n# Create a range of dates from the start to the current date\ndate_range = pd.date_range(start=df['opened_at'].min(), end=current_date, freq='D')\n\n# Function to count open incidents per date\ndef count_open_incidents(date, agent_data):\n    # Incidents that are opened on or before 'date' and are not closed or closed after 'date'\n    open_incidents = agent_data[(agent_data['opened_at'] <= date) & ((agent_data['closed_at'].isna()) | (agent_data['closed_at'] > date))]\n    return len(open_incidents)\n\n# Initialize a DataFrame to store the results\nopen_incidents_data = pd.DataFrame()\n\n# Loop through each agent to calculate their open incidents over time\nfor agent in df['assigned_to'].unique():\n    agent_data = df[df['assigned_to'] == agent]\n    open_counts = [count_open_incidents(date, agent_data) for date in date_range]\n    temp_df = pd.DataFrame({\n        'Date': date_range,\n        'Open Incidents': open_counts,\n        'Agent': agent\n    })\n    open_incidents_data = pd.concat([open_incidents_data, temp_df], ignore_index=True)\n\n# Plotting the data\nplt.figure(figsize=(14, 7))\nsns.lineplot(data=open_incidents_data, x='Date', y='Open Incidents', hue='Agent', marker='o')\nplt.title('Number of Open Incidents Over Time for Each Agent')\nplt.xlabel('Date')\nplt.ylabel('Open Incidents')\nplt.xticks(rotation=45)\nplt.grid(True)\nplt.legend(title='Agent')\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Luke Wilson has highest average TTR among agents",
+        "TTR is slightly decreasing for all the agents over time",
+        "The number of incidents assigned to each agent, including Fred Luddy, remains uniform over time",
+        "The number of open incidents follow an increasing then decreasing trend for all agents including Luke Wilson. The peak is reached around 2023-09."
+    ],
+    "summary": "\n\n1. **Trend in Resolution Time**: The analysis reveals that the average Time to Resolution (TTR). However, there are significant variations in the TTR among different agents, with some agents resolving incidents faster than others. This indicates potential disparities in agent performance and efficiency in handling incidents.\n   \u00df\n2. **Correlation with Open Incidents**: The analysis also shows a correlation between the number of open incidents and the TTR for specific agents. Agents with a higher number of open incidents tend to have longer resolution times, indicating potential workload management issues or inefficiencies in handling incidents.\n   \n3. **Strategic Workload Management**: To address these performance disparities and workload management issues, it is essential to implement strategies that balance the workload among agents, provide additional support to agents with higher incident counts, and optimize incident handling processes to improve overall efficiency and performance."
+}

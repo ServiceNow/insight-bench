@@ -1,0 +1,121 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-24.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To understand the factors contributing to faster expense processing times in a specific department and evaluate whether these practices can be extended to improve efficiency across all departments.",
+        "role": "Operational Efficiency Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Expense Processing Time Analysis (Flag 24)"
+    },
+    "insight_list": [
+        {
+            "data_type": "analytical",
+            "insight": "There is variability in expense processing times across departments",
+            "insight_value": {
+                "description": "There is considerable variability in the average processing times for expense reports across departments. The HR department experiences the longest average processing time, significantly higher than other departments."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Processing Time by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Development",
+                        "Sales",
+                        "HR",
+                        "Customer Support",
+                        "Finance",
+                        "IT",
+                        "Product Management"
+                    ],
+                    "description": "This axis lists the departments within the organization, showcasing the diversity in their operational speeds for processing expenses."
+                },
+                "y_axis": {
+                    "name": "Average Processing Time (days)",
+                    "value": {
+                        "Development": "0.8 days",
+                        "Sales": "10.0 days",
+                        "HR": "15.8 days",
+                        "Customer Support": "10.7 days",
+                        "Finance": "8.9 days",
+                        "IT": "8.7 days",
+                        "Product Management": "13.6 days"
+                    },
+                    "description": "This axis displays the mean processing times for expenses in each department, highlighting significant differences that suggest varying levels of efficiency or complexity in expense management."
+                },
+                "description": "The bar chart illustrates a significant range in processing times, with HR showing the longest average at 15.8 days, which may indicate more complex or less efficient processing systems in place. In contrast, the Development department shows an exceptionally low average of 0.8 days, suggesting highly efficient operational processes."
+            },
+            "question": "Which department has faster expense processing times, and how significant is the difference compared to others?",
+            "actionable_insight": {
+                "description": "To address the disparities in processing times, it is recommended that the organization conducts a detailed review of the expense management workflows in departments with longer processing times, particularly HR. Best practices from departments like Development, which exhibits exceptionally fast processing times, should be analyzed and potentially adopted by other departments to streamline operations. Additionally, training and resource allocation should be considered to enhance efficiency across all departments, aiming to reduce bottlenecks and improve overall processing speeds."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport numpy as np\n\n# Assuming 'flag_data' contains 'department', 'processed_date', and 'opened_at'\n# Calculate processing period in days\nflag_data['processing_period'] = (pd.to_datetime(flag_data['processed_date']) - pd.to_datetime(flag_data['opened_at'])).dt.days\n\n# Filtering out None values for processing_period for valid plotting\nvalid_data = flag_data.dropna(subset=['processing_period'])\n\n# Creating the box plot with a color palette to differentiate departments\nplt.figure(figsize=(14, 8))\npalette = sns.color_palette(\"coolwarm\", n_colors=len(valid_data['department'].unique()))  # Create a color palette\nbox_plot = sns.boxplot(x='department', y='processing_period', data=valid_data, palette=palette)\n\nplt.title('Processing Period by Department')\nplt.xlabel('Department')\nplt.ylabel('Processing Period (days)')\nplt.xticks(rotation=45)  # Rotate labels for better readability\n\n# Add grid for easier analysis\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\n\n# Calculate means and ensure they're aligned with the x-axis labels\nmeans = valid_data.groupby(['department'])['processing_period'].mean()\nlabels = [tick.get_text() for tick in box_plot.get_xticklabels()]\nvertical_offset = valid_data['processing_period'].mean() * 0.05  # Offset from mean for annotation\n\n# Annotate mean values\nfor label in labels:\n    mean_value = means[label]\n    x_position = labels.index(label)\n    box_plot.text(x_position, mean_value + vertical_offset, f'{mean_value:.1f}', \n                  horizontalalignment='center', size='medium', color='black', weight='semibold')\n\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Processing Times are uniform across expense categories in departments",
+            "insight_value": {
+                "description": "The analysis reveals no significant differences in the processing times of various expense categories across departments, suggesting that the speed of processing is not influenced by the nature of the expenses themselves but may be attributed to other factors."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Categories by Department with Processing Times",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "All departments analyzed",
+                    "description": "This axis categorizes expenses into different departments to illustrate variations in expense submission patterns."
+                },
+                "y_axis": {
+                    "name": "Count of Expenses",
+                    "value": "Number of expenses segmented by category",
+                    "description": "This axis displays the count of expenses, categorized by types within each department, along with annotations showing average processing times."
+                },
+                "description": "The stacked bar chart displays the distribution of expenses across categories within departments, annotated with average processing times. The uniformity in processing times across different categories suggests that departmental efficiencies or specific operational practices may not be tied to the type of expenses processed."
+            },
+            "question": "Are there differences in the categories of expenses submitted by this department that could explain the faster processing?",
+            "actionable_insight": {
+                "description": "Given the uniform processing times across expense categories, it is advisable for the organization to look beyond the nature of expenses to understand departmental processing speed disparities. Factors such as departmental staffing, the efficiency of workflow systems, or even the use of automated tools could play a significant role. A further analysis of these operational aspects could provide more definitive answers and help in implementing strategies to enhance processing efficiency across all departments."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Assuming 'flag_data' contains 'department', 'category', and 'processing_period' columns\n# Calculate processing period in days if not already calculated\nflag_data['processed_date'] = pd.to_datetime(flag_data['processed_date'])\nflag_data['opened_at'] = pd.to_datetime(flag_data['opened_at'])\nflag_data['processing_period'] = (flag_data['processed_date'] - flag_data['opened_at']).dt.days\n\n# Group data by department and category to count frequencies and calculate average processing time\ncategory_counts = flag_data.groupby(['department', 'category']).size().reset_index(name='count')\ncategory_processing_times = flag_data.groupby(['department', 'category'])['processing_period'].mean().reset_index()\n\n# Merging counts with processing times for richer insights\ncategory_data = pd.merge(category_counts, category_processing_times, on=['department', 'category'])\n\n# Pivoting data for better visualization in stacked bar plot\npivot_data = category_data.pivot(index='department', columns='category', values='count').fillna(0)\n\n# Plotting\nplt.figure(figsize=(14, 8))\npivot_data.plot(kind='bar', stacked=True, colormap='viridis', alpha=0.7)\nplt.title('Distribution of Expense Categories by Department with Processing Times')\nplt.xlabel('Department')\nplt.ylabel('Count of Expenses')\nplt.xticks(rotation=45)\nplt.legend(title='Expense Categories')\n\nfor n, x in enumerate([*pivot_data.index.values]):\n    for (category, count), y in zip(pivot_data.loc[x].items(), pivot_data.loc[x].cumsum()):\n        # Filter the DataFrame based on the conditions\n        matching_values = category_processing_times.loc[\n            (category_processing_times[\"department\"] == x) & (category_processing_times[\"category\"] == category),\n            \"processing_period\"\n        ].values\n        \n        # Check if matching_values has any elements before accessing values[0]\n        if matching_values.size > 0:\n            plt.text(\n                n, y - (count / 2), f'{matching_values[0]:.1f} days',\n                ha='center', va='center', color='black', fontweight='bold', fontsize=9\n            )"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Lower expense brackets has faster processing",
+            "insight_value": {
+                "description": "Expenses under $100, which constitute 71.4% of the submissions from the Development department, are processed almost immediately (0 days), contributing significantly to the department's overall faster processing times. In contrast, expenses between $100 and $500, while constituting 19% of submissions, take considerably longer (2 days)."
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Expense Processing Times by Amount Brackets in Development Department",
+                "x_axis": {
+                    "name": "Expense Amount Brackets",
+                    "value": [
+                        "< $100",
+                        "$100-$500",
+                        "$500-$1000",
+                        "$1000-$5000"
+                    ],
+                    "description": "This axis categorizes expenses into distinct brackets to illustrate how processing times vary with the amount of the expense."
+                },
+                "y_axis": {
+                    "name": "Processing Time (days)",
+                    "value": "Variable processing times",
+                    "description": "This axis displays the processing time required for each expense bracket, highlighting the trend of quicker processing for lower amounts."
+                },
+                "description": "The analysis reveals a clear trend: lower expense amounts are processed more rapidly, contributing to the Development department's overall efficiency. The immediate processing of the smallest expense bracket, which makes up the majority of submissions, significantly lowers the average processing time for the department."
+            },
+            "question": "Are there any specific brackets of amounts these expenses from the Development department fall into that could explain the faster processing?",
+            "actionable_insight": {
+                "description": "Understanding that lower expense amounts are processed more quickly suggests that the Development department may be benefiting from streamlined approval processes for smaller amounts. To leverage this efficiency, other departments might consider adopting similar streamlined processes for lower-cost expenses. Additionally, investigating why expenses in the $100-$500 bracket take longer to process could help in identifying bottlenecks and implementing solutions to enhance processing times across all brackets."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Assuming 'flag_data' contains 'department', 'amount', and 'processing_period' columns\n# and is already loaded with the data\n\n# Filter data to only include the Development department\ndev_expenses = flag_data[flag_data['department'] == 'Development']\n\n# Define the amount brackets\nbins = [0, 100, 500, 1000, 5000, 10000, np.inf]\nlabels = ['< $100', '$100 - $500', '$500 - $1000', '$1000 - $5000', '$5000 - $10000', '> $10000']\ndev_expenses['amount_bracket'] = pd.cut(dev_expenses['amount'], bins=bins, labels=labels)\n\n# Calculate the proportion of expenses in each bracket\nbracket_counts = dev_expenses['amount_bracket'].value_counts(normalize=True) * 100\n\n# Create the box plot to visualize processing periods by amount brackets\nfig, ax1 = plt.subplots(figsize=(14, 8))\nsns.boxplot(x='amount_bracket', y='processing_period', data=dev_expenses, palette='coolwarm', ax=ax1)\nax1.set_title('Processing Period by Expense Amount Brackets in Development Department')\nax1.set_xlabel('Expense Amount Brackets')\nax1.set_ylabel('Processing Period (days)')\nax1.tick_params(axis='x', rotation=45)  # Rotate labels for better readability\n\n# Create a twin axis to show the proportion of expenses on the same plot\nax2 = ax1.twinx()\nax2.plot(bracket_counts.index, bracket_counts.values, color='k', marker='o', linestyle='-', linewidth=2, markersize=8)\nax2.set_ylabel('Proportion of Expenses (%)')\nax2.set_ylim(0, 100)  # Limit y-axis for proportion to 100%\nax2.grid(False)  # Turn off grid for the secondary axis to avoid visual clutter\n\n# Adding annotations for proportions\nfor i, val in enumerate(bracket_counts.values):\n    ax2.text(i, val + 3, f'{val:.1f}%', color='black', ha='center', va='bottom', fontweight='bold')\n\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is variability in expense processing times across departments",
+        "Processing Times are uniform across expense categories in departments",
+        "Lower expense brackets has faster processing"
+    ],
+    "summary": "\n\n1. **Departmental Analysis**: This dataset delves into the expense processing times across different departments, highlighting significant variances in efficiency. The focus is on understanding why certain departments, like Development, process expenses faster than others such as HR, which experiences notably longer processing times.\n2. \n3. **Expense Categories and Processing Times**: The dataset evaluates how different expense categories impact processing times within departments. For instance, expenses under $100 in the Development department are processed almost immediately, which sharply contrasts with longer processing times for slightly higher expense brackets.\n4. \n5. **Operational Insights**: Through analyzing expense submissions and their processing times, this dataset provides insights into operational practices that could potentially be optimized or adjusted to enhance overall efficiency in processing times across the board."
+}

@@ -1,0 +1,89 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-68.csv",
+    "user_dataset_csv_path": "data/notebooks/csvs/flag-68-sysuser.csv",
+    "metadata": {
+        "goal": "To determine how employment duration influences expense submission errors and rejections, with the aim of enhancing policy compliance and understanding among newer employees.",
+        "role": "HR Data Analyst",
+        "category": "Finance Management and User Management",
+        "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `fm_expense_line`. The fm_expense_line dataset consists of 500 entries from, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'title', 'email', 'start_date', and 'department', providing insights into the user profiles managed within the ServiceNow system.",
+        "header": "Expense Rejection Trends for New Employees (Flag 68)"
+    },
+    "insight_list": [
+        {
+            "insight": "The HR department exhibits the longest average processing time for requests compared to other departments.",
+            "question": "How does the completion time of processed requests vary across different departments?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load the data\ndata = pd.read_csv(\"csvs/flag-68.csv\")\n\n# Filter for processed requests and calculate processing time\nprocessed_data = data.dropna(subset=[\"processed_date\"])\nprocessed_data[\"opened_at\"] = pd.to_datetime(processed_data[\"opened_at\"])\nprocessed_data[\"processed_date\"] = pd.to_datetime(processed_data[\"processed_date\"])\nprocessed_data[\"processing_time_days\"] = (\n    processed_data[\"processed_date\"] - processed_data[\"opened_at\"]\n).dt.days\n\n# Aggregate to find the average processing time by department\ndepartment_processing_time = (\n    processed_data.groupby(\"department\")[\"processing_time_days\"].mean().reset_index()\n)\n\n# Plotting\nplt.figure(figsize=(10, 6))\nplt.barh(\n    department_processing_time[\"department\"],\n    department_processing_time[\"processing_time_days\"],\n    color=\"teal\",\n    edgecolor=\"black\",\n)\nplt.xlabel(\"Average Processing Time (Days)\")\nplt.ylabel(\"Department\")\nplt.title(\"Average Processing Time of Requests by Department\")\nplt.grid(axis=\"x\", linestyle=\"--\", alpha=0.7)\n\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There are higher expense rejection rates for Employees with a shorter tenure",
+            "insight_value": {
+                "description": "Employees with less than three years of tenure experience notably higher rejection rates for their expense submissions compared to those with longer tenure."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Expense Rejection Rates by Employee Tenure",
+                "x_axis": {
+                    "name": "Employee Tenure",
+                    "value": [
+                        "<1 Year",
+                        "1-3 Years",
+                        ">3 Years"
+                    ],
+                    "description": "This axis categorizes employees based on the duration of their tenure at the company."
+                },
+                "y_axis": {
+                    "name": "Rejection Rate",
+                    "value": {
+                        "<1 Year": "3.5",
+                        "1-3 Years": "2.5",
+                        ">3 Years": "0.0"
+                    },
+                    "description": "This axis displays the rejection rate of expense reports, showing a clear decrease in rejections as tenure increases."
+                },
+                "description": "The bar chart demonstrates a clear trend: employees with less than one year of tenure face the highest rejection rates at 3.5, which decrease to 2.5 for those with 1-3 years of tenure. Remarkably, employees with more than three years of tenure experience no rejections. This suggests a learning curve or an adaptation period during which employees become more familiar with expense reporting procedures."
+            },
+            "question": "How do rejection rates for expenses submitted by new hires compare to those submitted by established employees?",
+            "actionable_insight": {
+                "description": "To mitigate high rejection rates among newer employees, the organization should consider enhancing training and support for expense reporting procedures specifically targeted at new hires and employees with less than three years of tenure. Implementing structured onboarding programs that include detailed guidance on expense policies could significantly reduce these rejection rates. Additionally, regular review sessions and updates on any changes in expense policies can help ensure that all employees, regardless of tenure, remain well-informed about the proper procedures for submitting expense reports."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\nimport numpy as np\n\n# Assuming 'flag_data' and 'data_user_human_agents' are already defined and preprocessed correctly\n# Merge the expense data with user data to include employee start dates\nmerged_data = pd.merge(flag_data, data_user_human_agents, left_on='user', right_on='name', how='inner')\n\n# Ensure 'opened_at' and 'start_date' are datetime objects\nmerged_data['opened_at'] = pd.to_datetime(merged_data['opened_at'], errors='coerce')\nmerged_data['start_date'] = pd.to_datetime(merged_data['start_date'], errors='coerce')\n\n# Calculate the tenure in years at the time of expense submission\nmerged_data['tenure_years'] = (merged_data['opened_at'] - merged_data['start_date']).dt.days / 365.25\n\n# Define tenure groups\ntenure_bins = [0, 1, 3, 5, 10, np.inf]  # 0-1 year, 1-3 years, 3-5 years, 5-10 years, 10+ years\ntenure_labels = ['<1 Year', '1-3 Years', '3-5 Years', '5-10 Years', '>10 Years']\nmerged_data['tenure_group'] = pd.cut(merged_data['tenure_years'], bins=tenure_bins, labels=tenure_labels)\n\n# Filter for declined expenses\ndeclined_data = merged_data[merged_data['state'] == 'Declined']\n\n# Calculate the proportion of declined expenses within each tenure group\nrejection_rates = declined_data.groupby('tenure_group').size() / merged_data.groupby('tenure_group').size()\n\n# Plot the data\nfig, ax = plt.subplots(figsize=(10, 6))\nrejection_rates.plot(kind='bar', color='tomato', ax=ax)\n\n# Add titles and labels\nax.set_title('Rejection Rates of Expenses by Employee Tenure', fontsize=16)\nax.set_xlabel('Employee Tenure', fontsize=14)\nax.set_ylabel('Rejection Rate', fontsize=14)\nax.set_ylim(0, 1)  # Set y-axis limit to show proportions from 0 to 1\n\n# Show grid\nax.grid(True)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to prevent cutting off labels\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "analytical",
+            "insight": "Rejection rates for employees with less than 1 year of tenure align closely with the volume of expense reports submitted by each department, indicating that higher submission rates naturally correlate with more rejections.",
+            "insight_value": {
+                "description": "Rejection rates for employees with less than 1 year of tenure align closely with the volume of expense reports submitted by each department, indicating that higher submission rates naturally correlate with more rejections."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Rejection and Submission Rates for New Hires (<1 Year) by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "List of Departments",
+                    "description": "This axis categorizes the departments within the organization."
+                },
+                "y_axis": {
+                    "name": "Number of Expense Reports",
+                    "value": [
+                        "Number of Declined",
+                        "Total Submitted"
+                    ],
+                    "description": "This axis displays both the number of declined expense reports and the total number of submissions for each department among new hires."
+                },
+                "description": "The bar chart illustrates that the distribution of declined expense reports among new hires is proportional to their total submissions across departments. This suggests that while some departments may have higher absolute numbers of rejections, these figures are a natural result of higher overall activity rather than an indication of disproportionate rejection rates."
+            },
+            "question": "Do the rejection distribution for employees with less than 1 year of tenure skew to any particular department?",
+            "actionable_insight": {
+                "description": "Since the rejections are proportional to submissions, enhancing training and orientation specifically around expense management for new hires could effectively reduce these rejection rates. Departments with high volumes of submissions should focus on implementing more detailed orientation sessions that cover expense policies comprehensively. Additionally, developing easy-to-access online resources or quick reference guides tailored to common expense reporting errors observed in new hires could help in minimizing mistakes and improving compliance across the board."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'flag_data' and 'data_user_human_agents' are already defined and preprocessed correctly\n# Merge the expense data with user data to include employee start dates and department info\nmerged_data = pd.merge(flag_data, data_user_human_agents, left_on='user', right_on='name', how='inner')\n\n# Convert 'opened_at' and 'start_date' to datetime objects\nmerged_data['opened_at'] = pd.to_datetime(merged_data['opened_at'], errors='coerce')\nmerged_data['start_date'] = pd.to_datetime(merged_data['start_date'], errors='coerce')\n\n# Calculate tenure in years at the time of expense submission\nmerged_data['tenure_years'] = (merged_data['opened_at'] - merged_data['start_date']).dt.days / 365.25\n\n# Filter for employees with less than 1 year of tenure\nnew_hires_data = merged_data[merged_data['tenure_years'] < 1]\n\n# Group by department to get counts of declined and total reports\ndeclined_counts = new_hires_data[new_hires_data['state'] == 'Declined'].groupby('department_y').size()\ntotal_counts = new_hires_data.groupby('department_y').size()\n\n# Prepare the DataFrame for plotting\nplot_data = pd.DataFrame({\n    'Declined': declined_counts,\n    'Total Submitted': total_counts\n}).fillna(0)  # Fill NaN values with 0 where there are no declines\n\n# Create a bar plot for both declined and total submissions\nfig, ax1 = plt.subplots(figsize=(12, 8))\n\nplot_data.sort_values('Total Submitted', ascending=False).plot(kind='bar', ax=ax1, color=['red', 'blue'], alpha=0.75)\n\nax1.set_title('Expense Report Distribution for New Hires (<1 Year) by Department', fontsize=16)\nax1.set_xlabel('Department', fontsize=14)\nax1.set_ylabel('Number of Reports', fontsize=14)\nax1.grid(True)\n\nplt.xticks(rotation=45)\nplt.tight_layout()\n\nplt.show()"
+        }
+    ],
+    "insights": [
+        "The HR department exhibits the longest average processing time for requests compared to other departments.",
+        "There are higher expense rejection rates for Employees with a shorter tenure",
+        "Rejection rates for employees with less than 1 year of tenure align closely with the volume of expense reports submitted by each department, indicating that higher submission rates naturally correlate with more rejections."
+    ],
+    "summary": "\n\n1. **Departmental Processing Efficiency**: From Question 1, it was found that the HR department has the longest average processing time for requests, suggesting potential inefficiencies or resource constraints. This insight highlights the need for process optimization within HR to improve responsiveness.\n\n2. **Tenure and Rejection Rates**: Question 2 revealed that employees with less than three years of tenure experience higher rejection rates for expense submissions. This suggests a learning curve in understanding expense policies, indicating a need for enhanced training and support for newer employees.\n\n3. **Rejection Distribution by Department**: According to Question 3, the distribution of expense report rejections among new hires is proportional to the volume of submissions by department. This implies that higher rejection numbers are a result of increased activity rather than specific departmental issues, pointing towards the importance of comprehensive onboarding across all departments."
+}

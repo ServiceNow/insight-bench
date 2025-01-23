@@ -1,0 +1,64 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-89.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To detect and investigate instances of repeated identical expense claims by individual users, determining whether these repetitions are fraudulent or due to misunderstandings of the expense policy.",
+        "role": "Compliance and Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
+        "header": "Expense Claim Patterns and Fraud Analysis (Flag 89)"
+    },
+    "insight_list": [
+        {
+            "data_type": "comparative",
+            "insight": "The analysis could not be completed because the 'processing_time_hours' column was not found in the dataset, indicating either missing or incorrectly named data",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar plot was attempted to compare average processing times across different states, but failed due to missing column 'processing_time_hours'"
+            },
+            "question": "What are the differences in processing times for expenses in various states such as Processed, Declined, Submitted, and Pending?",
+            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
+            "code": "# # Calculate average processing time for each state\n# avg_processing_time_by_state = data.groupby('state')['processing_time_hours'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average processing time by state\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='state', y='processing_time_hours', data=avg_processing_time_by_state)\n# plt.title('Average Processing Time by State')\n# plt.xlabel('State')\n# plt.ylabel('Average Processing Time (hours)')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A boxplot was attempted to show the distribution of expense amounts across different description categories, but failed due to missing 'amount' column in the data"
+            },
+            "question": "How do specific keywords in the short descriptions of expense reports influence the amount of these expenses?",
+            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
+            "code": "# # Function to categorize descriptions based on keywords\n# def categorize_description(description):\n#     keywords = {\"Travel\": 1.5, \"Service\": 1.2, \"Cloud\": 1.3, \"Asset\": 0.8, \"Equipment\": 0.9}\n#     for keyword in keywords.keys():\n#         if pd.notnull(description) and keyword in description:\n#             return keyword\n#     return 'Other'\n\n# # Apply the function to create a new column for categories\n# data['description_category'] = data['short_description'].apply(categorize_description)\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a boxplot for amount by description category\n# plt.figure(figsize=(12, 6))\n# sns.boxplot(x='description_category', y='amount', data=data)\n# plt.title('Amount Distribution by Short Description Category')\n# plt.xlabel('Short Description Category')\n# plt.ylabel('Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be performed due to missing 'department' column in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "Bar plot could not be generated due to KeyError indicating missing 'department' column"
+            },
+            "question": "What are the expense patterns for different departments in terms of average amounts?",
+            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
+            "code": "# # Calculate average amount for each department\n# avg_amount_by_department = data.groupby('department')['amount'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average amount by department\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='department', y='amount', data=avg_amount_by_department)\n# plt.title('Average Amount by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "Analysis could not be performed because the 'user' column is not present in the dataset",
+            "insight_value": {},
+            "plot": {
+                "description": "A bar plot was attempted but failed due to missing 'user' column in the dataset"
+            },
+            "question": "How does the number of expense reports submitted vary by user?",
+            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
+            "code": "# # Calculate the number of expense reports submitted by each user\n# expense_reports_by_user = data['user'].value_counts().reset_index()\n# expense_reports_by_user.columns = ['user', 'number_of_reports']\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for the number of expense reports by user\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='user', y='number_of_reports', data=expense_reports_by_user)\n# plt.title('Number of Expense Reports by User')\n# plt.xlabel('User')\n# plt.ylabel('Number of Expense Reports')\n# plt.xticks(rotation=90)\n# plt.show()\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "The analysis could not be completed because the 'processing_time_hours' column was not found in the dataset, indicating either missing or incorrectly named data",
+        "The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset",
+        "Analysis could not be performed due to missing 'department' column in the dataset",
+        "Analysis could not be performed because the 'user' column is not present in the dataset"
+    ],
+    "summary": "\n\n1. **State-Based Processing Time Analysis**: The analysis could not be completed because the 'processing_time_hours' column was not found in the dataset, indicating either missing or incorrectly named data.\n\n2. **Impact of Keywords in Short Descriptions on Expense Amounts**: The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset. However, exploring the relationship between specific keywords in expense descriptions and the associated expense amounts can provide valuable insights into expense reporting practices and financial decision-making.\n\n3. **Departmental Expense Patterns**: Analysis could not be performed due to missing 'department' column in the dataset. Understanding departmental spending patterns can help in budgeting and resource allocation decisions.\n\n4. **User Expense Report Submission Patterns**: Analysis could not be performed because the 'user' column is not present in the dataset. Analyzing the number of expense reports submitted by different users can help identify the most active users in terms of expense submissions, aiding in understanding user behavior and identifying potential areas for fraud detection or efficiency improvements."
+}

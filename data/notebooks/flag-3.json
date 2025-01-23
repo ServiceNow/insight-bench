@@ -1,0 +1,78 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-3.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Find and highlight the imbalance in incident assignments and perhaps propose actionable_insights that could help redistribute tasks more evenly across agents, reducing the strain on any single agent.",
+        "role": "Workload Distribution Manager",
+        "category": "Incidents Management.",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Incident Assignment Distribution Dataset (Flag 3)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "One agent, Fred Luddy, is assigned significantly more incidents than others",
+            "insight_value": {
+                "agent": "Agent_X",
+                "incidents_assigned": 385
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Incidents Assigned To Each Agent",
+                "x_axis": {
+                    "name": "Agent",
+                    "description": "This represents each agent assigned to resolve incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents Assigned",
+                    "description": "This represents the number of incidents assigned to an agent."
+                },
+                "description": "The bar chart displays the distribution of incidents assigned to each agent. Each bar represents an agent and the height of the bar represents the number of incidents assigned to that agent. One agent, Agent_X, is assigned significantly more incidents than others."
+            },
+            "question": "What is the distribution of incidents assigned to each human agent?",
+            "actionable_insight": "The uneven distribution of incidents, with one agent being assigned significantly more incidents than others, suggests a potential issue with workload balancing. It would be beneficial to review the assignment process and consider redistributing the workload more evenly among agents.",
+            "code": "plot = df.groupby(\"assigned_to\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Distribution of Incidents Assigned To Each Agent')\n\n# Set x-axis label\nplt.xlabel('Agent')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is a specific agent, Fred Luddy, who is assigned significantly more incidents than others",
+            "insight_value": {
+                "agent": "Fred Luddy",
+                "incidents_assigned": 385
+            },
+            "question": "Is there a specific human agent who is assigned significantly more incidents than others?",
+            "actionable_insight": "Agent_X is assigned significantly more incidents than any other agent. This could potentially overwhelm the agent and affect their productivity and the resolution time of the incidents. It would be beneficial to review the assignment process and consider redistributing the workload more evenly among agents.",
+            "code": "# Group the data by 'assigned_to' and count the number of incidents for each agent\nincident_counts = df.groupby('assigned_to').size()\n\n# Find the agent with the maximum number of incidents\nmax_incidents_agent = incident_counts.idxmax()\nmax_incidents_count = incident_counts.max()\n\n# Print the agent with the most incidents\nprint(f\"The agent assigned the most incidents is {max_incidents_agent} with {max_incidents_count} incidents.\")"
+        },
+        {
+            "data_type": "time_series",
+            "insight": "The number of assignments for Fred Luddy is unbalanced throughout the whole time period",
+            "insight_value": {
+                "agent": "Fred",
+                "trend": "high increase compared to others roughly 9 times more"
+            },
+            "plot": {
+                "plot_type": "multiple_line",
+                "title": "Trend of Incident Assignments Per Agent Over Time",
+                "x_axis": {
+                    "name": "Opened At",
+                    "description": "This represents the date when the incident was assigned."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents Assigned",
+                    "description": "This represents the number of incidents assigned to an agent on a particular date."
+                },
+                "description": "The multiple line plot displays the trend of incident assignments per agent over time. Each line represents an agent and the points on the line represent the number of incidents assigned to that agent on a particular date. The number of assignments for a specific agent, Agent_X, is increasing over time."
+            },
+            "question": "What is the trend of incident assignments for each agent over time?",
+            "actionable_insight": "The unbalanced trend in assignments for Fred from the beginning suggests that this agent is being assigned more incidents constantly over time, which could potentially overwhelm them and affect their productivity. It would be beneficial to review the assignment process and consider redistributing the workload more evenly among agents.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Assuming df is the DataFrame loaded from your CSV file\n# Load your data\n# df = pd.read_csv('path_to_your_csv_file.csv')\n\n# Convert 'opened_at' to datetime if it's not already\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Extract year and month from 'opened_at' to create a 'Year-Month' column for grouping\ndf['Year-Month'] = df['opened_at'].dt.to_period('M')\n\n# Group by both 'assigned_to' and 'Year-Month' and count the number of incidents\ntrend_data = df.groupby(['assigned_to', 'Year-Month']).size().unstack(fill_value=0)\n\n# Plotting\nfig, ax = plt.subplots(figsize=(15, 7))\ntrend_data.T.plot(kind='line', marker='o', ax=ax)  # Transpose to have time on the x-axis\n\n# Enhancing the plot\nplt.title('Trend of Incident Assignments for Each Agent Over Time')\nplt.xlabel('Year-Month')\nplt.ylabel('Number of Incidents')\nplt.grid(True)\nplt.legend(title='Agent')\nplt.xticks(rotation=45)\n\n# Show plot\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "One agent, Fred Luddy, is assigned significantly more incidents than others",
+        "There is a specific agent, Fred Luddy, who is assigned significantly more incidents than others",
+        "The number of assignments for Fred Luddy is unbalanced throughout the whole time period"
+    ],
+    "summary": "\nThis dataset analysis aims to identify and understand the underlying trends and biases in task assignments to agents. \n\n1. **Imbalance in Incident Assignments:** The distribution of incident assignments among agents is highly imbalanced. Fred, one agent, handles about 75% of all tasks, which is a significantly disproportionate share compared to other agents.\n\n2. **Persistent Disparity Over Time:** Analysis of the trends over time shows that this imbalance is not a temporary issue but has been consistently present. Fred's assignment load has been significantly higher than that of other agents from the start of the recorded data.\n\n3. **Need for Redistribution of Workload:** The heavy imbalance in assignments suggests that operational adjustments are necessary to redistribute tasks more equitably among agents. This would help prevent potential burnout for Fred and ensure that all agents are utilized effectively."
+}

@@ -1,0 +1,46 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-83.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the impact of cross-departmental collaboration and seasonal timing on the success rates of organizational goals. Additionally, assess how task priority correlates with completion rates across different categories to optimize resource allocation and strategic planning.",
+        "role": "Strategic Performance Analyst",
+        "category": "Goal Management",
+        "dataset_description": "The dataset combines 1,050 entries from two simulated ServiceNow `sn_gf_goal` tables, capturing various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, descriptions, and key performance metrics such as priority, percent complete, and target percentage. The dataset offers a comprehensive view of goal management across departments, with a focus on cross-departmental collaboration, seasonal performance trends, and priority-level efficiency. The data also tracks updates to each goal, documenting the timeline of changes and the individuals responsible for these updates, providing a rich context for analyzing organizational efficiency and strategic goal alignment.",
+        "header": "Cross-Departmental and Temporal Performance Analysis (Flag 83)"
+    },
+    "insight_list": [
+        {
+            "insight": "There was no column description to conduct any analysis",
+            "question": "How do cross-departmental tasks perform in terms of completion and target achievement compared to non-cross-departmental tasks?",
+            "code": "# import pandas as pd\n# import matplotlib.pyplot as plt\n# import seaborn as sns\n\n# # Load the dataset\n# df = pd.read_csv('csvs/flag-83.csv')  # Replace with the correct path if needed\n\n# # Define cross-departmental keywords\n# cross_dept_keywords = ['collaborate', 'joint', 'integration', 'cross-departmental', 'partnership']\n\n# # Identify cross-departmental tasks\n# df['is_cross_departmental'] = df['description'].apply(\n#     lambda desc: any(keyword in desc.lower() for keyword in cross_dept_keywords)\n# )\n\n# # Calculate average completion and target percentage\n# avg_data = df.groupby('is_cross_departmental').agg({\n#     'percent_complete': 'mean',\n#     'target_percentage': 'mean'\n# }).reset_index()\n\n# # Rename columns for clarity\n# avg_data['is_cross_departmental'] = avg_data['is_cross_departmental'].map({True: 'Cross-Departmental', False: 'Non-Cross-Departmental'})\n\n# # Plot the average completion and target percentages\n# plt.figure(figsize=(10, 6))\n# sns.barplot(x='is_cross_departmental', y='value', hue='variable', \n#             data=pd.melt(avg_data, id_vars='is_cross_departmental', value_vars=['percent_complete', 'target_percentage']),\n#             palette='coolwarm')\n# plt.title('Completion and Target Achievement: Cross-Departmental vs Non-Cross-Departmental')\n# plt.xlabel('Task Type')\n# plt.ylabel('Percentage')\n# plt.ylim(0, 100)\n# plt.legend(title='Metric')\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column start_date to conduct any analysis",
+            "question": "",
+            "code": "# import pandas as pd\n# import matplotlib.pyplot as plt\n# import seaborn as sns\n\n# # Convert start_date to datetime format\n# df['start_date'] = pd.to_datetime(df['start_date'])\n\n# # Extract the month and quarter from the start_date\n# df['month'] = df['start_date'].dt.month\n# df['quarter'] = df['start_date'].dt.quarter\n\n# # Calculate the average percent_complete by quarter\n# avg_completion_by_quarter = df.groupby('quarter')['percent_complete'].mean().reset_index()\n\n# # Plot the average completion by quarter\n# plt.figure(figsize=(10, 6))\n# sns.barplot(x='quarter', y='percent_complete', data=avg_completion_by_quarter, palette='viridis')\n# plt.title('Average Completion Rate by Quarter')\n# plt.xlabel('Quarter')\n# plt.ylabel('Average Completion Percentage')\n# plt.ylim(0, 100)\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column percent_complete to conduct any analysis",
+            "question": "",
+            "code": "# # Calculate average completion by priority and category\n# avg_completion_by_priority_category = df.groupby(['priority', 'category'])['percent_complete'].mean().unstack().reset_index()\n\n# # Plot the average completion by priority and category\n# plt.figure(figsize=(12, 8))\n# avg_completion_by_priority_category.plot(kind='bar', x='priority', stacked=True, colormap='Set3', ax=plt.gca())\n# plt.title('Average Completion Rate by Priority and Category')\n# plt.xlabel('Priority Level')\n# plt.ylabel('Average Completion Percentage')\n# plt.ylim(0, 100)\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column start_date to conduct any analysis",
+            "question": "",
+            "code": "# # Calculate the average percent_complete by month\n# avg_completion_by_month = df.groupby(df['start_date'].dt.month)['percent_complete'].mean().reset_index()\n\n# # Plot the average completion by month\n# plt.figure(figsize=(10, 6))\n# sns.lineplot(x='start_date', y='percent_complete', data=avg_completion_by_month, marker='o')\n# plt.title('Average Completion Rate by Month')\n# plt.xlabel('Month')\n# plt.ylabel('Average Completion Percentage')\n# plt.ylim(0, 100)\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.show()\n\nprint(\"N/A\")"
+        },
+        {
+            "insight": "There was no column department to conduct any analysis",
+            "question": "",
+            "code": "# # Calculate the average percent_complete by department and metric\n# avg_completion_by_dept_metric = df.groupby(['department', 'metric'])['percent_complete'].mean().unstack().reset_index()\n\n# # Plot the average completion by department and metric\n# plt.figure(figsize=(14, 8))\n# avg_completion_by_dept_metric.set_index('department').plot(kind='bar', stacked=True, colormap='tab20', ax=plt.gca())\n# plt.title('Average Completion Rate by Department and Metric')\n# plt.xlabel('Department')\n# plt.ylabel('Average Completion Percentage')\n# plt.ylim(0, 100)\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.legend(title='Metric', bbox_to_anchor=(1.05, 1), loc='upper left')\n# plt.show()\n\nprint(\"N/A\")"
+        }
+    ],
+    "insights": [
+        "There was no column description to conduct any analysis",
+        "There was no column start_date to conduct any analysis",
+        "There was no column percent_complete to conduct any analysis",
+        "There was no column start_date to conduct any analysis",
+        "There was no column department to conduct any analysis"
+    ],
+    "summary": "\n\n1. **Cross-Departmental Collaboration Benefits**: The dataset reveals that tasks classified as cross-departmental, involving collaboration between multiple departments, could potentially exhibit higher completion rates and target achievement percentages compared to non-cross-departmental tasks. However, the absence of column descriptions has limited the ability to analyze this trend, indicating that collaborative efforts may enhance task performance across the organization.\n\n2. **Seasonal Performance Variations**: A notable trend is expected where tasks initiated in Q4 (October to December) may have higher average completion rates than those started in other quarters. Unfortunately, without a start_date column, it is impossible to evaluate this potential seasonal impact, which suggests that organizations may strategically plan critical tasks during this period.\n\n3. **Priority-Category Performance Discrepancies**: The analysis anticipates that the correlation between task priority levels and completion rates varies across different categories. For instance, tasks in some categories like 'Cost Reduction' could show that medium-priority tasks outperform high-priority tasks. However, the lack of percent_complete data prevents a thorough investigation of this relationship, highlighting potential inefficiencies in managing higher priority tasks and the need for a reassessment of task prioritization and resource allocation.\n\n4. **Departmental Performance Gaps**: The inquiry into which departments excel in specific metrics remains unanswered because of the absence of a department column, indicating the need for structured departmental data to assess performance variations effectively."
+}

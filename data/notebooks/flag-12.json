@@ -1,0 +1,129 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-12.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Find the discrepancy and imbalance in incidents assigned",
+        "role": "L1 Agent",
+        "category": "Incidents Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like  description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Hardware Incident Easy Dataset (Flag 12)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "The number of Hardware incidents is significantly higher than others",
+            "insight_value": {
+                "x_val": "Hardware",
+                "y_val": 406
+            },
+            "plot": {
+                "plot_type": "histogram",
+                "title": "Incidents by Category",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Hardware",
+                        "Software",
+                        "Network",
+                        "Inquiry / Help",
+                        "Database"
+                    ],
+                    "description": "This represents the different categories of incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": [
+                        406,
+                        33,
+                        22,
+                        20,
+                        19
+                    ],
+                    "description": "This represents the number of incidents in each category."
+                },
+                "description": "The histogram displays the distribution of incidents across different categories. Each bar represents a category and the length of the bar corresponds to the number of incidents in that category. The values are annotated on each bar. The 'Hardware' category has the highest number of incidents."
+            },
+            "question": "What is the distribution of incidents across all categories?",
+            "actionable_insight": "With the Hardware category having the highest number of incidents, it could be beneficial to allocate more resources or provide additional training to the team handling this category to effectively manage and resolve these incidents.",
+            "code": "plot = df.groupby(\"category\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Incidents by Category')\n\n# Set x-axis label\nplt.xlabel('Category')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Most of the hardware incidents are related to printer issues",
+            "insight_value": {
+                "x_val": "Printer",
+                "y_val": 166
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Frequency of Printer in Incident Descriptions",
+                "x_axis": {
+                    "name": "Keyword",
+                    "value": [
+                        "Printer"
+                    ],
+                    "description": "This represents the keyword in incident descriptions."
+                },
+                "y_axis": {
+                    "name": "Frequency",
+                    "value": [
+                        166
+                    ],
+                    "description": "This represents the frequency of the keyword 'Printer' in incident descriptions."
+                },
+                "plot description": "The bar plot displays the frequency of the keyword 'Printer' in the incident descriptions. The length of the bar corresponds to the frequency of the keyword. The 'Printer' keyword has a high frequency."
+            },
+            "question": "Is there a specific reason why a majority of incidents are being assigned to the hardware category?",
+            "actionable_insight": "The high frequency of 'Printer' in incident descriptions indicates a specific issue with printers. A focused investigation into the printer issues, possibly involving the printer manufacturer or service provider, could help in resolving these incidents.",
+            "code": "df = df[df['category'] == 'Hardware']\n# Count the frequency of 'Printer' in 'short_description'\nprinter_incidents = df['short_description'].apply(lambda x: 'Printer' in x).sum()\n\n# Create a DataFrame for plotting\ndf_plot = pd.DataFrame({'Keyword': ['Printer'], 'Frequency': [printer_incidents]})\n\n# Plot the frequency\nplot = df_plot.plot(kind='bar', x='Keyword', y='Frequency', legend=False, color='blue')\n\n# Get the current figure for further manipulation\nfig = plt.gcf()\n\n# Loop through the rectangles (i.e., bars)\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_x() + i.get_width() / 2\n    y_value = i.get_height()\n\n    # Use Y value as label and format number with one decimal place\n    label = \"{:.1f}\".format(y_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      # Use `label` as label\n        (x_value, y_value),         # Place label at end of the bar\n        xytext=(0, 5),              # Shift text slightly above bar\n        textcoords=\"offset points\", # Interpret `xytext` as offset in points\n        ha='center',                # Horizontally align label \n        va='bottom'                 # Vertically align label at bottom\n    )\n\n# Set plot title\nplt.title('Frequency of Printer in Incident Descriptions')\n\n# Set x-axis label\nplt.xlabel('Keyword')\n\n# Set y-axis label\nplt.ylabel('Frequency')\n\n# Display the figure\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "location is not specified in the dataset nor in the short description",
+            "insight_value": {
+                "x_val": "None",
+                "y_val": "None"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Incidents by Location",
+                "plot description": "The bar plot is currently empty."
+            },
+            "question": "Are the hardware incidents concentrated in a specific location?",
+            "actionable_insight": "Given that grographic location are not specified in the dataset,  ot is important to spend time and resources in identifying the possible locations the incidents are most occuring.",
+            "code": "# Count the frequency of incidents in each location\nlocation_counts = df[df['category'] == 'Hardware']['location'].value_counts()\n\n# Create a DataFrame from the counts for plotting\ndf_plot = location_counts.reset_index()\ndf_plot.columns = ['Location', 'Number of Incidents']\n\n# Plot the frequency\nplot = df_plot.plot(kind='bar', x='Location', y='Number of Incidents', legend=False, color='blue')\n\n# Get the current figure for further manipulation\nfig = plt.gcf()\n\n# Loop through the rectangles (i.e., bars)\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_x() + i.get_width() / 2\n    y_value = i.get_height()\n\n    # Use Y value as label and format number with one decimal place\n    label = \"{:.1f}\".format(y_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      # Use `label` as label\n        (x_value, y_value),         # Place label at end of the bar\n        xytext=(0, 5),              # Shift text slightly above bar\n        textcoords=\"offset points\", # Interpret `xytext` as offset in points\n        ha='center',                # Horizontally align label \n        va='bottom'                 # Vertically align label at bottom\n    )\n\n# Set plot title\nplt.title('Incidents by Location')\n\n# Set x-axis label\nplt.xlabel('Location')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is not a significant increase in hardware incidents over time, they are relatively stable and high compared to toher categories",
+            "insight_value": {
+                "x_val": "Time",
+                "y_val": "Number of Incidents"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Incidents Over Time by Category",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Time Series",
+                    "description": "This represents the timeline of incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Incident Count",
+                    "description": "This represents the number of incidents in each category over time."
+                },
+                "plot description": "The line plot displays the trend of incidents across different categories over time. Each line represents a category and the height of the line corresponds to the number of incidents in that category at a given time. The 'Hardware' category shows a significant increasing trend."
+            },
+            "question": "Is there a pattern or trend over time in the distribution of incidents across categories?",
+            "code": "# Convert 'opened_at' to datetime\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Resample the data by month and category, and count the number of incidents\ndf_resampled = df.groupby([pd.Grouper(key='opened_at', freq='M'), 'category']).size().unstack()\n\n# Plot the resampled data\nplot = df_resampled.plot(kind='line')\n\n# Set plot title\nplt.title('Incidents Over Time by Category')\n\n# Set x-axis label\nplt.xlabel('Time')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+        }
+    ],
+    "insights": [
+        "The number of Hardware incidents is significantly higher than others",
+        "Most of the hardware incidents are related to printer issues",
+        "location is not specified in the dataset nor in the short description",
+        "There is not a significant increase in hardware incidents over time, they are relatively stable and high compared to toher categories"
+    ],
+    "summary": "\n\n1. **Distribution of Incidents Across Categories:**\nThe distribution of incidents across the categories is heavily skewed towards the Hardware category. It accounts for 71% of all incidents, which is significantly higher than the other categories. The Software and Network categories each account for roughly 8.5% of incidents, the Database category also accounts for approximately 8.5%, while the Inquiry/Help category comprises the remaining 7%.\n \n2. **Reason for Majority of Incidents in the Hardware Category:**\nThe primary reason for the majority of incidents being assigned to the Hardware category is unclear, however there are significant issues that are printer related. Need to establish a concrete plaussible explanation for other cases."
+}

@@ -1,0 +1,93 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-54.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the workload distribution among agents to identify any overload situations, specifically focusing on any agent with increasing assignments.",
+        "role": "L2 Incident Analyst",
+        "category": "Incident Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Incident Assignment and Resolution Efficiency Analysis (Flag 54)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "All agents have the same number of incidents assigned to them.",
+            "insight_value": {
+                "agents": [
+                    "All agents"
+                ],
+                "average_incidents": "Highest: 100"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Overall Average Number of Incidents Assigned to Each Agent",
+                "x_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Beth Anglin",
+                        "Luke Wilson",
+                        "Howard Johnson",
+                        "Charlie Whitherspoon",
+                        "Fred Luddy"
+                    ],
+                    "description": "This represents the agents handling incidents."
+                },
+                "y_axis": {
+                    "name": "Average Number of Incidents",
+                    "value": [
+                        100,
+                        100,
+                        100,
+                        100,
+                        100
+                    ],
+                    "description": "This represents the average number of incidents assigned to each agent, calculated over the recent period."
+                },
+                "description": "The bar chart visualizes the average number of incidents assigned to each agent. It shows that all agents have the same number of incidents assigned to them, with the highest average number of incidents being 100."
+            },
+            "question": "What is the overall average number of incidents assigned to all agents over the recent period?",
+            "actionable_insight": "Given the high number of incidents assigned to each agent, it may be beneficial to review the workload distribution among agents and consider redistributing tasks to ensure a more balanced workload.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is already loaded and has the necessary columns\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n\n# Group the data by 'assigned_to' and count the number of incidents for each agent\nagent_incident_counts = df.groupby('assigned_to').size()\n\n# Calculate the average number of incidents per agent\n# average_incidents_per_agent = agent_incident_counts.mean()\n\n# Create a DataFrame for plotting\nagent_average_df = pd.DataFrame({\n    'Agent': agent_incident_counts.index,\n    'Average Incidents': agent_incident_counts\n})\n\n# Plotting the average number of incidents per agent\nplt.figure(figsize=(10, 6))\nax = sns.barplot(x='Agent', y='Average Incidents', data=agent_average_df)\nplt.title('Overall Average Number of Incidents Assigned to Each Agent')\nplt.ylabel('Average Number of Incidents')\nplt.xlabel('Agent')\nplt.xticks(rotation=45)\n\n# Annotate each bar with its value\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.show()"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "There is no visible trend in the number of incidents assigned to each agent over time.",
+            "insight_value": {
+                "agents": [
+                    "Beth Anglin"
+                ],
+                "time_period": "01-2023 to 01-2024",
+                "comparison": "no trend compared to other agents"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Incident Assignment Comparison Over time period",
+                "x_axis": {
+                    "name": "Agent",
+                    "value": [
+                        "Beth Anglin",
+                        "Luke Wilson",
+                        "Howard Johnson",
+                        "Charlie Whitherspoon",
+                        "Fred Luddy"
+                    ],
+                    "description": "This represents the agents handling incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Count of incidents assigned per agent",
+                    "description": "This represents the number of incidents assigned to each agent during the specified period."
+                },
+                "description": "The bar chart illustrates the distribution of incident assignments among agents from 01-2023 to 01-2024."
+            },
+            "question": "How do the incident assignments to Beth Anglin compare to other agents over the specific same time frame?",
+            "actionable_insight": "The lack of a visible trend in the number of incidents assigned to each agent over time suggests that the workload distribution among agents has been relatively consistent. However, it may be beneficial to periodically review the incident assignments to ensure that the workload remains balanced and that no agent is overwhelmed with tasks.",
+            "code": "# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"assigned_to\")\nplt.title(\"Number of Incidents Created Over Time for each Agent\")\nplt.xticks(rotation=45)\nplt.show()"
+        }
+    ],
+    "insights": [
+        "All agents have the same number of incidents assigned to them.",
+        "There is no visible trend in the number of incidents assigned to each agent over time."
+    ],
+    "summary": "\n\n1. **Uniform Assignments Over Time**: The analysis reveals that the average number of incidents assigned to each agent has been relatively consistent over the recent period, with minor variations observed. This indicates a balanced workload distribution among team members, which is essential for maintaining operational efficiency and performance.\n2. **Need for Intervention**: All agents face a high number of incidents (100) assigned to them. This suggests a potential overload situation that requires immediate attention to prevent burnout and ensure timely incident resolution."
+}

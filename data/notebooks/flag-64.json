@@ -1,0 +1,148 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-64.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze any uneven distribution and higher cost of assets in the certain department, with a particular focus on the HR department, to optimize asset management and enhance cost-effectiveness.",
+        "role": "Asset Manager",
+        "category": "Asset Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow alm_hardware table, detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The table effectively captures asset management activities, offering insights into the operational handling, allocation, and maintenance status of hardware resources across various departments within an organization.",
+        "header": "Asset Cost Analysis by Department (Flag 64)"
+    },
+    "insight_list": [
+        {
+            "insight": "The Finance department has the longest average warranty duration for assets, while Development has the shortest.",
+            "question": "Is there a noticeable trend between the timing of asset purchases and the warranty expiration dates for different departments?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\nimport matplotlib.dates as mdates\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-64.csv\")\n\n# Convert dates to datetime format for analysis\nflag_data[\"purchased_on\"] = pd.to_datetime(flag_data[\"purchased_on\"])\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\n\n# Calculate the warranty duration in days for each asset\nflag_data[\"warranty_duration_days\"] = (\n    flag_data[\"warranty_expiration\"] - flag_data[\"purchased_on\"]\n).dt.days\n\n# Aggregate the average warranty duration by department\nwarranty_data = (\n    flag_data.groupby(\"department\")[\"warranty_duration_days\"].mean().reset_index()\n)\n\n# Plot the average warranty duration by department\nplt.figure(figsize=(10, 6))\nplt.bar(\n    warranty_data[\"department\"],\n    warranty_data[\"warranty_duration_days\"],\n    color=\"skyblue\",\n)\nplt.title(\"Average Warranty Duration by Department\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Average Warranty Duration (Days)\")\nplt.xticks(rotation=45)\nplt.grid(axis=\"y\", linestyle=\"--\", alpha=0.7)\n\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "Computers, Servers, and Web Servers in HR Department have the highest cost contributions",
+            "insight_value": {
+                "Computers": {
+                    "Total Cost": "61215$",
+                    "Average Cost": "3221$"
+                },
+                "Server": {
+                    "Total Cost": "35264$",
+                    "Average Cost": "8816$"
+                },
+                "Web Server": {
+                    "Total Cost": "40000$",
+                    "Average Cost": "8000$"
+                }
+            },
+            "plot": {
+                "plot_type": "grouped_bar",
+                "title": "Total and Average Cost of Asset Types in HR Department",
+                "x_axis": {
+                    "name": "Model Category",
+                    "value": [
+                        "Computers",
+                        "Server",
+                        "Web Server"
+                    ],
+                    "description": "This represents different asset categories in the HR department."
+                },
+                "y_axis": {
+                    "name": "Cost in USD",
+                    "value": "Displays both total and average costs",
+                    "description": "This represents both the total and average costs of assets, highlighting which models contribute the most financially."
+                },
+                "description": "The grouped bar chart demonstrates that Computers, Servers, and Web Servers have the highest total costs in the HR department. Moreover, Servers and Web Servers exhibit higher average costs, indicating their high-end value and significant financial contribution to departmental assets."
+            },
+            "question": "What types of assets contribute to the higher average cost in the HR department?",
+            "actionable_insight": "Considering the high average costs associated with Servers and Web Servers, it is advisable for the HR department to evaluate the necessity and utilization of these high-end assets to ensure cost-effectiveness. Possible actions include reassessing the asset lifecycle, optimizing usage, and exploring cost-saving alternatives without compromising on required functionalities.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assume 'df' is your DataFrame containing the asset data\n# Filter the DataFrame for only the HR department\nhr_assets = df[df['department'] == 'HR']\n\n# Convert the 'cost' column to numeric, just in case it's not already\nhr_assets['cost'] = pd.to_numeric(hr_assets['cost'], errors='coerce')\n\n# Calculate total and average cost per model category\ntotal_cost = hr_assets.groupby('model_category')['cost'].sum().reset_index(name='Total Cost')\naverage_cost = hr_assets.groupby('model_category')['cost'].mean().reset_index(name='Average Cost')\n\n# Merge the total and average cost dataframes\ncost_data = pd.merge(total_cost, average_cost, on='model_category')\n\n# Melt the dataframe to suit the seaborn barplot format for grouped bars\nmelted_cost_data = cost_data.melt(id_vars='model_category', var_name='Type of Cost', value_name='Cost')\n\n# Create the bar plot\nplt.figure(figsize=(14, 7))\navg_bar_plot = sns.barplot(data=melted_cost_data, x='model_category', y='Cost', hue='Type of Cost')\n\nfor p in avg_bar_plot.patches:\n    avg_bar_plot.annotate(format(p.get_height(), '.2f'), \n                          (p.get_x() + p.get_width() / 2., p.get_height()), \n                          ha = 'center', va = 'center', \n                          xytext = (0, 9), \n                          textcoords = 'offset points')\n    \nplt.title('Total and Average Cost of Different Asset Types in HR Department')\nplt.xlabel('Model Category')\nplt.ylabel('Cost (USD)')\nplt.xticks(rotation=45)\nplt.legend(title='Type of Cost')\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a concentration of High-End Assets in the HR Department Compared to Other Departments",
+            "insight_value": {
+                "HR": {
+                    "Servers": "4",
+                    "Web Servers": "5"
+                },
+                "Customer Support": {
+                    "Servers": "0",
+                    "Web Servers": "1"
+                },
+                "Finance": {
+                    "Servers": "0",
+                    "Web Servers": "1"
+                },
+                "IT": {
+                    "Servers": "2",
+                    "Web Servers": "0"
+                },
+                "Other Departments": {
+                    "Servers": "0",
+                    "Web Servers": "0"
+                }
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of High-End Assets Across Departments",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "HR",
+                        "Customer Support",
+                        "Finance",
+                        "IT",
+                        "Other"
+                    ],
+                    "description": "This represents the various departments within the organization."
+                },
+                "y_axis": {
+                    "name": "Number of High-End Assets",
+                    "value": "Counts of Servers and Web Servers",
+                    "description": "This shows the count of high-end assets, specifically Servers and Web Servers, within each department."
+                },
+                "description": "This bar chart illustrates the distribution of high-end assets across departments, highlighting a significant concentration of Servers and Web Servers in the HR department compared to others. Customer Support and Finance have minimal Web Servers, while IT has a moderate number of Servers, and other departments lack these high-end assets entirely."
+            },
+            "question": "What is the contribution from high-end assets such as Server and Web Server across all departments to compare with HR department?",
+            "actionable_insight": "The HR department's higher allocation of Servers and Web Servers suggests a potential overinvestment in these high-end assets or specific operational needs that justify such investment. It is crucial for the organization to assess the utilization and necessity of these assets in HR compared to other departments. Possible actions include realigning asset distribution based on actual usage and needs, or redistributing underutilized assets to departments that may benefit from them, ensuring optimal asset utilization and cost efficiency across the organization.",
+            "code": "# Filter data for relevant categories (Server and Web Server)\nexpensive_assets = flag_data[flag_data['model_category'].isin(['Server', 'Web Server'])]\n\n# Count the number of each category within each department\ncategory_counts = expensive_assets.groupby(['department', 'model_category']).size().unstack(fill_value=0).reset_index()\n\n# Create a bar plot showing the counts of Server and Web Server by department\nplt.figure(figsize=(12, 8))\nsns.barplot(data=category_counts.melt(id_vars=[\"department\"], var_name=\"model_category\", value_name=\"count\"), \n            x='department', y='count', hue='model_category', palette=\"viridis\")\nplt.title('Distribution of Expensive Assets (Server and Web Server) by Department')\nplt.xlabel('Department')\nplt.ylabel('Count of Expensive Assets')\nplt.xticks(rotation=45)\n\n# Emphasize the HR department by changing the color of its bars\nfor bar in plt.gca().patches:\n    if bar.get_x() == category_counts.index[category_counts['department'] == 'HR'][0]:\n        bar.set_color('red')  # Change color to red for HR department\n\nplt.legend(title='Asset Category')\nplt.tight_layout()\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a weak correlation between mumber of users and high cost of computer assets in HR Department",
+            "insight_value": {
+                "Number of Users in HR": "4",
+                "Total Cost of Computers": "60000$",
+                "Average Cost per User": "15000$ per user"
+            },
+            "plot": {
+                "plot_type": "scatter",
+                "title": "Correlation Between Number of Users and Cost of Computers in HR Department",
+                "x_axis": {
+                    "name": "Number of Users",
+                    "value": "4",
+                    "description": "This represents the total number of users within the HR department."
+                },
+                "y_axis": {
+                    "name": "Cost of Computer Assets",
+                    "value": "60000$",
+                    "description": "This indicates the total cost of computer assets within the HR department, averaged per user."
+                },
+                "description": "This scatter plot visually represents the relationship between the number of users in the HR department and the total cost of their computer assets. Despite having the least number of users among all departments, the HR department shows a disproportionately high cost of computer assets, indicating a weak correlation between the number of users and asset costs."
+            },
+            "question": "Is there a correlation between the number of users and the cost of computer assets in the HR department?",
+            "actionable_insight": "Given the disproportionate cost of computer assets relative to the small number of users in the HR department, it is advisable to review the justification for such high expenses. The organization should consider evaluating the specific needs of the HR department's users to ensure that these assets are essential and effectively utilized. Further investigation into the procurement process may also reveal opportunities for cost optimization without compromising operational efficiency.",
+            "code": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Assuming 'flag_data' is the DataFrame that contains the entire asset dataset\n\n# Filter for entries where 'model_category' is 'Computer'\ncomputers_data = flag_data[flag_data['model_category'] == 'Computer']\n\n# Group by 'department' and count the number of computers per department\ncomputers_per_department = computers_data.groupby('department').size().reset_index(name='Total Computers')\n\n# Group by 'department' and count unique users per department\nusers_per_department = flag_data.groupby('department')['assigned_to'].nunique().reset_index(name='Total Users')\n\n# Merge the two dataframes on 'department'\ndepartment_summary = pd.merge(computers_per_department, users_per_department, on='department', how='outer')\n\n# Fill any NaN values which might appear if there are departments with no computers or users\ndepartment_summary.fillna(0, inplace=True)\n\n# Print the result\nprint(department_summary)\n\n# Plotting\nplt.figure(figsize=(12, 6))\nsns.barplot(data=department_summary, x='department', y='Total Users', color='blue', label='Total Users')\n# sns.barplot(data=department_summary, x='department', y='Total Computers', color='red', alpha=0.6, label='Total Computers')\n\nplt.title('Number of Users and Computers per Department')\nplt.xlabel('Department')\nplt.ylabel('Count')\nplt.legend(loc='upper right')\nplt.xticks(rotation=45)  # Rotates the x-axis labels to make them more readable\nplt.tight_layout()  # Adjusts plot parameters to give some padding\nplt.show()"
+        },
+        {
+            "insight": "Customer Support and Sales departments lead in investment in high-end Computers, while the HR department has notable spending on both Computers and Servers.",
+            "question": "How does the distribution of total asset costs compare between departments, especially focusing on high-end categories like 'Computer' and 'Server'?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Filter DataFrame for high-end assets: Computers and Servers\nhigh_end_assets = df[df[\"model_category\"].isin([\"Computer\", \"Server\"])]\n\n# Convert 'cost' to numeric to ensure accurate calculations\nhigh_end_assets[\"cost\"] = pd.to_numeric(high_end_assets[\"cost\"], errors=\"coerce\")\n\n# Group by department and model category to calculate the total cost for each category per department\ndepartment_costs = (\n    high_end_assets.groupby([\"department\", \"model_category\"])[\"cost\"]\n    .sum()\n    .reset_index()\n)\n\n# Pivot the table to have departments on the x-axis and model categories as the values\ndepartment_costs_pivot = department_costs.pivot(\n    index=\"department\", columns=\"model_category\", values=\"cost\"\n).fillna(0)\n\n# Plotting the data with a stacked bar chart to show total expenditure per department\nplt.figure(figsize=(12, 8))\ndepartment_costs_pivot.plot(kind=\"bar\", stacked=True, figsize=(12, 8))\n\n# Adding labels and title\nplt.title(\"Total Cost of High-End Assets (Computer and Server) by Department\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Total Cost (USD)\")\nplt.xticks(rotation=45)\nplt.legend(title=\"Model Category\", loc=\"upper right\")\n\n# Display the plot\nplt.show()"
+        }
+    ],
+    "insights": [
+        "The Finance department has the longest average warranty duration for assets, while Development has the shortest.",
+        "Computers, Servers, and Web Servers in HR Department have the highest cost contributions",
+        "There is a concentration of High-End Assets in the HR Department Compared to Other Departments",
+        "There is a weak correlation between mumber of users and high cost of computer assets in HR Department",
+        "Customer Support and Sales departments lead in investment in high-end Computers, while the HR department has notable spending on both Computers and Servers."
+    ],
+    "summary": "\n\n1. **Warranty Duration Disparities**: The Finance department enjoys the longest average warranty durations for its assets, suggesting a strategic focus on long-term asset stability. In contrast, the Development department has the shortest durations, possibly indicating a faster refresh cycle or higher asset turnover.\n\n2. **HR Department's High-End Asset Concentration**: The HR department shows a significant concentration of high-end assets, such as servers and web servers, compared to other departments. This suggests either a specific operational need or potential overinvestment, warranting a review of asset utilization and necessity.\n\n3. **Cost Discrepancies in High-End Assets**: Customer Support and Sales departments lead in investment in high-end computers, while the HR department has notable spending on both computers and servers. This highlights a potential area for optimizing asset allocation and ensuring cost-effectiveness across departments."
+}

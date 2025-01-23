@@ -1,0 +1,130 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-19.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To uncover and address the reasons behind the varying rates of expense rejections across departments to improve overall financial management within the organization.",
+        "role": "Financial Compliance Analyst",
+        "category": "Financial Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Expense Management Discrepancies (Flag 19)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "There is a significant variance in Expense Rejection Rates across departments",
+            "insight_value": {
+                "description": "The IT department exhibits a notably higher proportion of expense rejections compared to other departments with 44%, indicating potential issues with budget compliance or policy understanding."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Proportion of Declined Expenses by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "IT",
+                        "HR",
+                        "Finance",
+                        "Customer Support",
+                        "Development",
+                        "Sales",
+                        "Product Management"
+                    ],
+                    "description": "This axis categorizes expenses based on department affiliation."
+                },
+                "y_axis": {
+                    "name": "Proportion of Declined",
+                    "value": {
+                        "IT": "0.44",
+                        "HR": "0.14",
+                        "Finance": "0.09",
+                        "Customer Support": "0.06",
+                        "Development": "0.05",
+                        "Sales": "0.05",
+                        "Product Management": "0.00"
+                    },
+                    "description": "This axis displays the proportion of expenses declined within each department, highlighting the higher rejection rates particularly in the IT department."
+                },
+                "description": "The bar chart illustrates the discrepancies in expense rejection rates among departments, with IT facing the highest rejection rate at 44%. This outlier suggests a specific challenge within the IT department's expense management process that requires immediate attention to improve compliance and understanding of financial policies."
+            },
+            "question": "Which departments have higher proportions of expense rejections compared to the organizational average?",
+            "actionable_insight": "Given the high rejection rates in the IT department, a targeted review of expense submission procedures and training on policy compliance is recommended. This action should aim to align IT's expense management practices with organizational standards and reduce the high rate of declined expenses. Additionally, understanding the root causes of these rejections could inform broader improvements in expense processing protocols across the organization.",
+            "code": "import matplotlib.pyplot as plt\n\n# Group the data by department and state and count occurrences\ndepartment_state_counts = flag_data.groupby(['department', 'state']).size().unstack(fill_value=0)\n\n# Calculate proportions of each state within each department\ndepartment_state_proportions = department_state_counts.div(department_state_counts.sum(axis=1), axis=0)\n\n# Plot the data, focusing only on the 'Declined' state\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_state_proportions['Declined'].plot(kind='bar', color='red', ax=ax)\n\n# Add titles and labels\nax.set_title('Proportion of Declined Expenses by Department', fontsize=16)\nax.set_xlabel('Department', fontsize=14)\nax.set_ylabel('Proportion of Declined', fontsize=14)\nax.set_ylim(0, 1)  # Set y-axis limit to show proportions from 0 to 1\n\n# Show grid\nax.grid(True)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars\nfor p in ax.patches:\n    ax.annotate(f\"{p.get_height():.2f}\", (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha='center', va='center', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is no correlation between the number of expense reports submitted and rejection rates",
+            "insight_value": {
+                "description": "Despite having a lower volume of expense submissions, the IT department has the highest rejection rate, while departments with higher submission volumes like Customer Support exhibit lower rejection rates."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Reports by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Customer Support",
+                        "Sales",
+                        "IT",
+                        "Finance",
+                        "Development",
+                        "HR",
+                        "Product Management"
+                    ],
+                    "description": "This axis categorizes expenses based on department affiliation."
+                },
+                "y_axis": {
+                    "name": "Number of Expense Reports",
+                    "value": {
+                        "Customer Support": "267",
+                        "Sales": "122",
+                        "IT": "43",
+                        "Finance": "22",
+                        "Development": "20",
+                        "HR": "14",
+                        "Product Management": "12"
+                    },
+                    "description": "This axis displays the number of expense reports submitted by each department, revealing that Customer Support submits the most, while IT, despite its high rejection rate, submits far fewer."
+                },
+                "description": "The bar chart vividly illustrates the number of expense reports submitted by each department. The data highlight that the volume of submissions does not correlate with the proportion of rejections, as seen with the IT department, which submits fewer reports but faces a high rate of rejections."
+            },
+            "question": "What is the distribution of Expense Reports by Department?",
+            "actionable_insight": "This discrepancy in rejection rates despite lower submission volumes suggests underlying issues in IT\u2019s expense reporting process or stricter scrutiny of their reports. It would be prudent to conduct a detailed review of the IT department's submissions to understand the reasons behind the high rejection rates. Efforts should be focused on aligning IT\u2019s expense reporting practices with those departments exhibiting high compliance and low rejection rates, like Customer Support, to reduce unnecessary financial discrepancies and improve procedural compliance.",
+            "code": "import matplotlib.pyplot as plt\n\n# Count the number of expense reports per department\ndepartment_counts = flag_data['department'].value_counts()\n\n# Plot the data\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_counts.plot(kind='bar', color='skyblue', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Expense Reports by Department', fontsize=16)\nax.set_xlabel('Department', fontsize=14)\nax.set_ylabel('Number of Expense Reports', fontsize=14)\n\n# Show grid\nax.grid(axis='y')  # Only horizontal grid lines for readability\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars for clarity\nfor p in ax.patches:\n    ax.annotate(f\"{int(p.get_height())}\", (p.get_x() + p.get_width() / 2., p.get_height()),\n                ha='center', va='bottom', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "There is a concentration of Declined Expenses among specific users in IT Department",
+            "insight_value": {
+                "description": "Helene Iberg and Vernon Engelman each have 7 declined expense requests, significantly higher compared to other IT department members who have atleast one rejection, indicating potential issues with how expenses are submitted or understood by these individuals and the whole department."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Declined Expense Reports by User in IT Department",
+                "x_axis": {
+                    "name": "User",
+                    "value": [
+                        "Helene Iberg",
+                        "Vernon Engelman",
+                        "Other Members"
+                    ],
+                    "description": "This axis categorizes users within the IT department based on the number of their declined expense reports."
+                },
+                "y_axis": {
+                    "name": "Number of Declined Reports",
+                    "value": "Count of Declined Reports",
+                    "description": "This axis displays the count of declined expense reports for each user, with specific focus on those with the highest numbers."
+                },
+                "description": "The bar chart illustrates that while most IT department members have at least one declined expense report, Helene Iberg and Vernon Engelman stand out with seven each. This suggests a specific issue with the expense reporting practices of these two individuals."
+            },
+            "question": "Is there any specific user within the IT department with most declined requests, or is the trend more or less uniform across the department?",
+            "actionable_insight": "To address the high number of declined requests by Helene Iberg and Vernon Engelman, it is prescriptive to conduct a detailed review of the expense reporting guidelines and training provided to the IT department. Focusing specifically on the submission errors or misunderstandings by these users could lead to improved compliance and fewer rejections. Additionally, implementing a mentoring or peer review system for expense submissions within the IT department could help in reducing errors and ensuring better adherence to the company's reimbursement policies.",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'flag_data' is your DataFrame with the expense report data\n# Filter the data to include only IT department and declined expenses\nit_expenses = flag_data[(flag_data['department'] == 'IT') & (flag_data['state'] == 'Declined')]\n\n# Count occurrences of declined reports by each user in the IT department\nuser_declined_counts = it_expenses.groupby('user').size().sort_values(ascending=False)\n\n# Create a bar plot of the counts\nfig, ax = plt.subplots(figsize=(12, 8))\nuser_declined_counts.plot(kind='bar', color='crimson', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Declined Expense Reports by User in IT Department', fontsize=16)\nax.set_xlabel('User', fontsize=14)\nax.set_ylabel('Number of Declined Reports', fontsize=14)\n\n# Show grid\nax.grid(True)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Show the plot\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There is a significant variance in Expense Rejection Rates across departments",
+        "There is no correlation between the number of expense reports submitted and rejection rates",
+        "There is a concentration of Declined Expenses among specific users in IT Department"
+    ],
+    "summary": "\n\n1. **Expense Approval Trends**: This dataset provides an in-depth look at the patterns of expense rejections across various departments, which will be analyzed to uncover possible inconsistencies in budget compliance or policy adherence.\n   \n2. **Departmental Disparities**: It specifically focuses on identifying the departments that frequently encounter a higher proportion of expense rejections, suggesting potential issues in the understanding or application of financial management policies.\n   \n3. **Process Optimization**: The analysis aims to explore underlying factors that contribute to these discrepancies, offering insights that could help in refining expense approval processes and training programs."
+}

@@ -1,0 +1,104 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-69.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To analyze and understand how the cost of an expense influences its processing time, with the aim of improving the efficiency and equity of expense report processing across all cost brackets.",
+        "role": "Financial Operations Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Expense Processing Efficiency Analysis (Flag 69)"
+    },
+    "insight_list": [
+        {
+            "insight": "The duration of processed asset requests varies significantly across departments, with Finance showing the longest average processing time.",
+            "question": "How does the asset request timing differ across departments, particularly between requests that are processed and those that are pending or declined?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\nimport seaborn as sns\n\n# Load data and preprocess dates\ndata = pd.read_csv(\"csvs/flag-69.csv\")\ndata[\"opened_at\"] = pd.to_datetime(data[\"opened_at\"])\ndata[\"processed_date\"] = pd.to_datetime(data[\"processed_date\"])\n\n# Filter data to focus on relevant departments and statuses\nfiltered_data = data[(data[\"state\"].isin([\"Processed\", \"Pending\", \"Declined\"]))]\n\n# Calculate the time difference between 'opened_at' and 'processed_date' for each request\nfiltered_data[\"request_duration\"] = (\n    filtered_data[\"processed_date\"] - filtered_data[\"opened_at\"]\n).dt.days\n\n# Remove rows with NaN durations (unprocessed or future-dated records)\nfiltered_data = filtered_data.dropna(subset=[\"request_duration\"])\n\n# Plot the request duration distribution by department and status\nplt.figure(figsize=(12, 8))\nsns.boxplot(data=filtered_data, x=\"department\", y=\"request_duration\", hue=\"state\")\n\nplt.title(\"Distribution of Asset Request Duration by Department and Status\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Request Duration (days)\")\nplt.xticks(rotation=45)\nplt.legend(title=\"Request Status\")\n\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The processing outcomes vary across expense brackets",
+            "insight_value": {
+                "description": "Expenses within higher brackets not only encounter a higher volume of transactions but also experience a greater number of declines and pending statuses compared to lower brackets."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Detailed Distribution of Expense Processing Outcomes by Cost Bracket",
+                "x_axis": {
+                    "name": "Expense Bracket",
+                    "value": [
+                        "$100-$500",
+                        "$500-$1000",
+                        "$1000-$5000",
+                        ">$5000"
+                    ],
+                    "description": "Categorizes expenses into four distinct brackets based on amount."
+                },
+                "y_axis": {
+                    "name": "Number of Expenses",
+                    "value": {
+                        "$100-$500": {
+                            "Declined": "6",
+                            "Pending": "2",
+                            "Processed": "32"
+                        },
+                        "$500-$1000": {
+                            "Declined": "4",
+                            "Pending": "6",
+                            "Processed": "35"
+                        },
+                        "$1000-$5000": {
+                            "Declined": "26",
+                            "Pending": "37",
+                            "Processed": "190"
+                        },
+                        ">$5000": {
+                            "Declined": "10",
+                            "Pending": "11",
+                            "Processed": "87"
+                        }
+                    },
+                    "description": "Displays the count of expenses in each state (Declined, Pending, Processed) for each cost bracket, revealing trends in how financial magnitude influences processing outcomes."
+                },
+                "description": "The bar chart provides a detailed view of expense report outcomes within various cost brackets, illustrating how higher expense amounts correlate with not only more transactions but also a higher likelihood of encountering delays or rejections. This suggests more stringent scrutiny or complex approval processes for larger amounts."
+            },
+            "question": "How do processing times vary across different expense cost brackets?",
+            "actionable_insight": {
+                "description": "The disproportionate number of declines and pending statuses in higher expense brackets suggests a need for refining the approval workflows for larger amounts. Organizations could benefit from automating certain aspects of the approval process for lower-cost transactions to allocate more resources towards efficiently managing higher-cost expenses. Additionally, enhancing training for staff handling these larger transactions could reduce errors and speed up processing times. Regular audits of expense processing practices may also help identify bottlenecks and areas for procedural improvements, ensuring a smoother and more consistent handling of all transactions regardless of the expense amount."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'df' is your DataFrame containing the expense report data\n# Calculate the frequency of different states for each expense amount range\nexpense_brackets = [0, 100, 500, 1000, 5000, np.inf]\nlabels = ['< $100', '$100 - $500', '$500 - $1000', '$1000 - $5000', '> $5000']\ndf['expense_bracket'] = pd.cut(df['amount'], bins=expense_brackets, labels=labels, right=False)\n\n# Group by expense bracket and state, then count occurrences\nstate_distribution = df.groupby(['expense_bracket', 'state']).size().unstack().fillna(0)\n\n# Plotting\nfig, ax = plt.subplots(figsize=(12, 8))\nbars = state_distribution.plot(kind='bar', stacked=True, ax=ax, color=['green', 'red', 'blue', 'orange'])\n\nax.set_title('Distribution of Expense Amounts by State', fontsize=16)\nax.set_xlabel('Expense Bracket', fontsize=14)\nax.set_ylabel('Number of Expenses', fontsize=14)\nax.grid(True)\nplt.xticks(rotation=45)\nplt.tight_layout()\n\n# Add number labels on top of each bar\nfor bar in bars.containers:\n    ax.bar_label(bar, label_type='center')\n\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "The processing times are uniform across users and departments for High-Cost Expenses",
+            "insight_value": {
+                "description": "The processing time for very high-cost expenses (>$5000) shows a uniform trend across different users and departments, indicating that delays or efficiencies are generally related to the amount involved rather than specific departmental or individual user practices."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Processing Time by Department and User for Expenses > $5000",
+                "x_axis": {
+                    "name": "Department/User",
+                    "value": "Mixed categories including various departments and users",
+                    "description": "This axis represents both departments and individual users, categorized to show their respective processing times for high-cost expenses."
+                },
+                "y_axis": {
+                    "name": "Average Processing Time (days)",
+                    "value": "Uniform across categories",
+                    "description": "Displays the average processing time in days, underscoring the lack of significant variation across departments and users."
+                },
+                "description": "The bar charts, segmented by department and user, illustrate that processing times for expenses over $5000 are uniformly distributed. This suggests that the high cost of these expenses inherently requires a consistent processing approach across the organization, likely due to the need for thorough review and approval processes that are standard regardless of the department or user."
+            },
+            "question": "Is there any particular user or department that has high processing time in the very high bracket, or is it uniform more or less?",
+            "actionable_insight": {
+                "description": "Given that the trend of processing times is generally uniform and related to the high expense amounts, efforts to streamline or expedite processing should focus on improving the overall efficiency of handling high-cost expenses. This could involve reviewing and potentially simplifying the steps required for approving large expenditures, ensuring that such procedures are efficient yet robust enough to maintain financial control. Automating certain aspects of the approval process where feasible could also reduce the processing time while still adhering to necessary audit and control standards."
+            },
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'df' is your DataFrame containing the expense report data\n# Filter for expenses greater than $5000\nhigh_cost_expenses = df[df['amount'] > 5000]\n\n# Calculate processing time in days\nhigh_cost_expenses['processing_time'] = (pd.to_datetime(high_cost_expenses['processed_date']) - pd.to_datetime(high_cost_expenses['opened_at'])).dt.days\n\n# Plot for Departments\nplt.figure(figsize=(12, 7))\nplt.subplot(2, 1, 1)  # Two rows, one column, first subplot\ndepartment_processing = high_cost_expenses.groupby('department')['processing_time'].mean()\ndepartment_processing.plot(kind='bar', color='teal')\nplt.title('Average Processing Time by Department for Expenses > $5000')\nplt.ylabel('Average Processing Time (days)')\nplt.xlabel('Department')\nplt.xticks(rotation=45)\nplt.grid(True)\n\n# Plot for Users\nplt.subplot(2, 1, 2)  # Two rows, one column, second subplot\nuser_processing = high_cost_expenses.groupby('user')['processing_time'].mean()\nuser_processing.plot(kind='bar', color='orange')\nplt.title('Average Processing Time by User for Expenses > $5000')\nplt.ylabel('Average Processing Time (days)')\nplt.xlabel('User')\nplt.xticks(rotation=45)\nplt.grid(True)\n\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "The duration of processed asset requests varies significantly across departments, with Finance showing the longest average processing time.",
+        "The processing outcomes vary across expense brackets",
+        "The processing times are uniform across users and departments for High-Cost Expenses"
+    ],
+    "summary": "\n\n1. **Departmental Variance in Request Timing**: From Question 1, it was observed that the timing of asset requests varies significantly across departments, with Finance showing the longest average processing time. This suggests a need for process review within the Finance department to improve efficiency.\n\n2. **Expense Cost Bracket Impact on Processing**: Insights from Question 2 reveal that higher-cost expenses experience longer processing times, with the very high expense bracket (> $6000) averaging 27 days. This indicates a need for streamlining approval workflows for larger expenses to reduce delays.\n\n3. **Uniform Processing Times for High-Cost Expenses**: Question 3 highlights that processing times for expenses over $5000 are uniformly distributed across departments and users. This suggests that the high cost inherently requires a consistent processing approach, emphasizing the importance of efficient yet robust approval processes."
+}

@@ -1,0 +1,71 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-55.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the imbalance of incident tickets created by human callers, focusing particularly on the caller with increasing incident reports.",
+        "role": "Resource Manager Analyst",
+        "category": "Incidents Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Caller Incident Impact Analysis (Flag 55)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "All callers have a unifrom distribution of incidents raised",
+            "insight_value": {
+                "caller": "All callers",
+                "number_of_incidents": 125,
+                "total_incidents": 500
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Overall Average Number of Incidents Raised by Each Caller",
+                "x_axis": {
+                    "name": "Caller",
+                    "value": [
+                        "David Loo",
+                        "Bud Richman",
+                        "Don Goodliffe",
+                        "ITIL User"
+                    ],
+                    "description": "This represents the individuals who have reported incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": [
+                        125,
+                        125,
+                        125,
+                        125
+                    ],
+                    "description": "This represents the total number of incidents reported by each caller during the recent period."
+                },
+                "description": "The bar chart visualizes the number of incidents reported by each caller, highlighting that all callers raised the same number of incidents over the recent period."
+            },
+            "question": "What is the overall average number of incidents raised by callers over the recent period?",
+            "actionable_insight": "The uniform distribution of incidents raised by all callers indicates that the incident management process is consistent across all users. This consistency can be leveraged to identify common issues and implement standardized solutions that benefit all users.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is already loaded and has the necessary columns\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n\n# Group the data by 'assigned_to' and count the number of incidents for each agent\nagent_incident_counts = df.groupby('caller_id').size()\n\n# Calculate the average number of incidents per agent\n# average_incidents_per_agent = agent_incident_counts.mean()\n\n# Create a DataFrame for plotting\nagent_average_df = pd.DataFrame({\n    'Agent': agent_incident_counts.index,\n    'Average Incidents': agent_incident_counts\n})\n\n# Plotting the average number of incidents per agent\nplt.figure(figsize=(10, 6))\nax = sns.barplot(x='Agent', y='Average Incidents', data=agent_average_df)\nplt.title('Overall Average Number of Incidents created by Each Caller')\nplt.ylabel('Average Number of Incidents')\nplt.xlabel('Agent')\nplt.xticks(rotation=45)\n\n# Annotate each bar with its value\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.show()"
+        },
+        {
+            "data_type": "predictive",
+            "insight": "There is a no real trend in the number of incidents raised by the callers",
+            "insight_value": {
+                "trend": "Linear Increase",
+                "prediction": "Ongoing escalation in ticket submissions"
+            },
+            "description": "The predictive analysis based on the current trend data indicates a continued linear increase in the number of tickets submitted by David Loo. If this trend is not addressed, it could lead to several potential issues, including system overload, resource misallocation, and possible neglect of similar issues affecting other parts of the organization. This increasing trend suggests that underlying systemic issues or inefficiencies might be prompting repeated ticket submissions, which could impact the overall effectiveness and responsiveness of the IT support system.",
+            "recommendation": {
+                "action": "Implement proactive measures to address the increasing trend of ticket submissions",
+                "expected_outcome": "Stabilization of ticket volumes and improved system efficiency",
+                "urgency": "High"
+            },
+            "actionable_insight": "To mitigate the risks associated with the unaddressed increase in ticket submissions, it is critical to conduct a thorough investigation into the nature of the tickets and any common underlying causes. Potential actions include enhancing system infrastructure, providing additional training or resources to David Loo, and implementing more robust problem-solving protocols. By addressing the root causes, the organization can prevent potential system overloads and ensure a more balanced workload distribution. Regular monitoring and analysis of ticket submission trends should also be established to quickly identify and address similar anomalies in the future.",
+            "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\nfrom sklearn.linear_model import LinearRegression\n\n# Load data\ndataset_path = \"csvs/flag-55.csv\"\n\n\n# Load the dataset\ndf = pd.read_csv(dataset_path)\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Define the cutoff date for the training data\ncutoff_date = pd.to_datetime(\"2024-01-01\")\n\n# Filter the data to include only dates up to the cutoff date\ntraining_data = df[df['opened_at'] <= cutoff_date]\n\n# Count incidents over time for Beth Anglin in the training data\nincident_counts = training_data.groupby(training_data['opened_at'].dt.to_period(\"M\")).size().reset_index(name='counts')\nincident_counts['date_ordinal'] = incident_counts['opened_at'].dt.start_time.apply(lambda x: x.toordinal())\n\n# Prepare data for linear regression\nX = incident_counts['date_ordinal'].values.reshape(-1, 1)  # Reshape for sklearn\ny = incident_counts['counts'].values  # Target variable: number of incidents\n\n# Fit the linear regression model using only the training data\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Define the start date for forecasting\nforecast_start_date = pd.to_datetime(\"2024-01-02\")\n\n# Generate future dates from the specified start date\nfuture_dates = pd.date_range(start=forecast_start_date, periods=120, freq='D')  # 4 months into the future\nfuture_dates_ordinal = [d.toordinal() for d in future_dates]\nfuture_preds = model.predict(np.array(future_dates_ordinal).reshape(-1, 1))\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.scatter(incident_counts['opened_at'].dt.start_time, y, color='blue', label='Historical Incident Counts')\nplt.plot(future_dates, future_preds, color='red', linestyle='--', label='Predicted Incident Count Trend')\nplt.title('Projected Increase in Incident raised by David Loo')\nplt.xlabel('Date')\nplt.ylabel('Number of Incidents Assigned')\nplt.legend()\nplt.grid(True)\n\n# Formatting the x-axis to make it more readable\nplt.gca().xaxis.set_major_locator(mdates.MonthLocator())\nplt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))\n\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "All callers have a unifrom distribution of incidents raised",
+        "There is a no real trend in the number of incidents raised by the callers"
+    ],
+    "summary": "\n\n1. **Incidents by Caller**: Analysis shows that all callers have raised incidents over the recent period, with an average of 125 incidents per caller. This indicates a relatively balanced distribution of incident reports across different callers.\n2. **Need for Root Cause Analysis**: The consistent increase in incidents reported by this caller could indicate underlying issues that are not being adequately addressed, potentially pointing to larger systemic problems within the operational processes."
+}

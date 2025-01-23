@@ -1,0 +1,132 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-8.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "Analyze the imbalance of incident tickets created by human callers, focusing particularly on the caller with increasing incident reports.",
+        "role": "Resource Manager Analyst",
+        "category": "Incidents Management",
+        "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
+        "header": "Caller Incident Impact Analysis (Flag 8)"
+    },
+    "insight_list": [
+        {
+            "data_type": "descriptive",
+            "insight": "David Loo has raised a significantly higher number of incidents compared to other callers",
+            "insight_value": {
+                "caller": "David Loo",
+                "number_of_incidents": 266,
+                "total_incidents": 500
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Overall Average Number of Incidents Raised by Each Caller",
+                "x_axis": {
+                    "name": "Caller",
+                    "value": [
+                        "David Loo",
+                        "Bud Richman",
+                        "Don Goodliffe",
+                        "ITIL User"
+                    ],
+                    "description": "This represents the individuals who have reported incidents."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": [
+                        266,
+                        86,
+                        73,
+                        75
+                    ],
+                    "description": "This represents the total number of incidents reported by each caller during the recent period."
+                },
+                "description": "The bar chart visualizes the number of incidents reported by each caller, highlighting that David Loo has reported a disproportionately high number of incidents, 266 out of a total of 500. This indicates that he may be encountering more issues than typical or could be more diligent in reporting incidents."
+            },
+            "question": "What is the overall average number of incidents raised by callers over the recent period?",
+            "actionable_insight": "Given that David Loo has reported a significantly higher number of incidents, it is crucial to investigate the reasons behind this anomaly. Understanding whether these incidents are due to user errors, system issues, or a lack of training could help in addressing the root causes. Additionally, examining the types of incidents David is reporting may provide insights into potential areas of improvement within the organization's processes or systems. This focused approach could lead to more targeted and effective solutions, potentially reducing the number of incidents and improving operational efficiency.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is already loaded and has the necessary columns\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n\n# Group the data by 'assigned_to' and count the number of incidents for each agent\nagent_incident_counts = df.groupby('caller_id').size()\n\n# Calculate the average number of incidents per agent\n# average_incidents_per_agent = agent_incident_counts.mean()\n\n# Create a DataFrame for plotting\nagent_average_df = pd.DataFrame({\n    'Agent': agent_incident_counts.index,\n    'Average Incidents': agent_incident_counts\n})\n\n# Plotting the average number of incidents per agent\nplt.figure(figsize=(10, 6))\nax = sns.barplot(x='Agent', y='Average Incidents', data=agent_average_df)\nplt.title('Overall Average Number of Incidents created by Each Caller')\nplt.ylabel('Average Number of Incidents')\nplt.xlabel('Agent')\nplt.xticks(rotation=45)\n\n# Annotate each bar with its value\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.show()"
+        },
+        {
+            "data_type": "comparative",
+            "insight": "David Loo's incidents are significantly higher and show a linear increasing trend over time compared to other callers",
+            "insight_value": {
+                "caller": "David Loo",
+                "trend": "Linear Increase",
+                "comparison": "Higher than other callers"
+            },
+            "plot": {
+                "plot_type": "line",
+                "title": "Comparison of Incident Numbers Over Time: David Loo vs. Other Callers",
+                "x_axis": {
+                    "name": "Time",
+                    "value": "Specific time frame analyzed",
+                    "description": "This axis represents the timeline over which the incident data is analyzed."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Count of incidents reported",
+                    "description": "This axis shows the number of incidents reported by each caller over the analyzed period."
+                },
+                "description": "The line plot illustrates the trend of incidents reported by David Loo compared to other callers over the same time period. It highlights that not only does David Loo have a higher number of incidents, but there is also a noticeable linear increase in his incident reports over time. This trend starkly contrasts with the relatively stable or less significant trends observed for other callers."
+            },
+            "question": "How do the incidents raised by David Loo compare to other agents over the specific same time frame or time period?",
+            "actionable_insight": "The significant and increasing number of incidents reported by David Loo warrants a deeper investigation into the nature of these incidents and his working conditions. It is essential to determine whether these incidents are due to systemic issues, lack of adequate training, or perhaps inefficiencies in the tools or systems he uses. Addressing these factors could help in reducing the number of incidents and improving overall operational efficiency. Moreover, understanding this trend can guide targeted training or system improvements not just for David Loo but potentially for other team members who might face similar issues.",
+            "code": "# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"caller_id\")\nplt.title(\"Number of Incidents Created Over Time for each Agent\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Incidents raised by David Loo are predominantly in the Network category",
+            "insight_value": {
+                "dominant_category": "Network",
+                "proportion": "High and increasing proportion compared to other categories"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Incident Categories Raised by David Loo",
+                "x_axis": {
+                    "name": "Incident Category",
+                    "value": [
+                        "Network",
+                        "Software",
+                        "Hardware",
+                        "Inquiry/Help",
+                        "Database"
+                    ],
+                    "description": "This represents the different categories of incidents handled by David Loo."
+                },
+                "y_axis": {
+                    "name": "Number of Incidents",
+                    "value": "Count of incidents in each category",
+                    "description": "This shows the number of incidents assigned to each category by David Loo."
+                },
+                "description": "The bar chart visualizes the distribution of incident categories reported by David Loo, highlighting a significant dominance of incidents in the Network category that are also increasing linearly. This suggests a possible specialization or frequent interaction with network-related issues, which could be a focal point for further investigation."
+            },
+            "question": "Are there changes in the categories of incidents raised by David Loo over time?",
+            "actionable_insight": "Given the high proportion of Network-related incidents reported by David Loo, it may be beneficial to delve deeper into the reasons behind this trend. Understanding whether these incidents stem from systemic issues, specific changes in network infrastructure, or David's role-related responsibilities could help in addressing the root causes. Additionally, providing targeted training or resources to David and possibly other team members involved in network management could reduce the frequency and impact of such incidents. This approach could also help in preemptively managing potential escalations in this category.",
+            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Put the data into a DataFrame\n\n# Sort the DataFrame by the opened_at column\ndf = df[df['caller_id'] == 'David Loo']\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"category\")\nplt.title(\"Number of Incidents Created Over Time by Category\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "predictive",
+            "insight": "There is a continued linear increase in ticket submissions by David Loo",
+            "insight_value": {
+                "trend": "Linear Increase",
+                "prediction": "Ongoing escalation in ticket submissions"
+            },
+            "description": "The predictive analysis based on the current trend data indicates a continued linear increase in the number of tickets submitted by David Loo. If this trend is not addressed, it could lead to several potential issues, including system overload, resource misallocation, and possible neglect of similar issues affecting other parts of the organization. This increasing trend suggests that underlying systemic issues or inefficiencies might be prompting repeated ticket submissions, which could impact the overall effectiveness and responsiveness of the IT support system.",
+            "recommendation": {
+                "action": "Implement proactive measures to address the increasing trend of ticket submissions",
+                "expected_outcome": "Stabilization of ticket volumes and improved system efficiency",
+                "urgency": "High"
+            },
+            "actionable_insight": "To mitigate the risks associated with the unaddressed increase in ticket submissions by David Loo, it is critical to conduct a thorough investigation into the nature of the tickets and any common underlying causes. Potential actions include enhancing system infrastructure, providing additional training or resources to David Loo, and implementing more robust problem-solving protocols. By addressing the root causes, the organization can prevent potential system overloads and ensure a more balanced workload distribution. Regular monitoring and analysis of ticket submission trends should also be established to quickly identify and address similar anomalies in the future.",
+            "code": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates\nfrom sklearn.linear_model import LinearRegression\n\n# Load data\ndataset_path = \"csvs/flag-8.csv\"\n\n\n# Load the dataset\ndf = pd.read_csv(dataset_path)\ndf = df[df['caller_id'] == 'David Loo']\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Define the cutoff date for the training data\ncutoff_date = pd.to_datetime(\"2024-01-01\")\n\n# Filter the data to include only dates up to the cutoff date\ntraining_data = df[df['opened_at'] <= cutoff_date]\n\n# Count incidents over time for Beth Anglin in the training data\nincident_counts = training_data.groupby(training_data['opened_at'].dt.to_period(\"M\")).size().reset_index(name='counts')\nincident_counts['date_ordinal'] = incident_counts['opened_at'].dt.start_time.apply(lambda x: x.toordinal())\n\n# Prepare data for linear regression\nX = incident_counts['date_ordinal'].values.reshape(-1, 1)  # Reshape for sklearn\ny = incident_counts['counts'].values  # Target variable: number of incidents\n\n# Fit the linear regression model using only the training data\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Define the start date for forecasting\nforecast_start_date = pd.to_datetime(\"2024-01-02\")\n\n# Generate future dates from the specified start date\nfuture_dates = pd.date_range(start=forecast_start_date, periods=120, freq='D')  # 4 months into the future\nfuture_dates_ordinal = [d.toordinal() for d in future_dates]\nfuture_preds = model.predict(np.array(future_dates_ordinal).reshape(-1, 1))\n\n# Plotting\nplt.figure(figsize=(12, 6))\nplt.scatter(incident_counts['opened_at'].dt.start_time, y, color='blue', label='Historical Incident Counts')\nplt.plot(future_dates, future_preds, color='red', linestyle='--', label='Predicted Incident Count Trend')\nplt.title('Projected Increase in Incident raised by David Loo')\nplt.xlabel('Date')\nplt.ylabel('Number of Incidents Assigned')\nplt.legend()\nplt.grid(True)\n\n# Formatting the x-axis to make it more readable\nplt.gca().xaxis.set_major_locator(mdates.MonthLocator())\nplt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))\n\nplt.xticks(rotation=45)\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "David Loo has raised a significantly higher number of incidents compared to other callers",
+        "David Loo's incidents are significantly higher and show a linear increasing trend over time compared to other callers",
+        "Incidents raised by David Loo are predominantly in the Network category",
+        "There is a continued linear increase in ticket submissions by David Loo"
+    ],
+    "summary": "\n\n1. **Increasing Incidents by Caller**: Analysis shows a particular caller is consistently increasing the number of incident assignments over time. This trend points to a potential focal point for incident creation that may require further scrutiny.\n2. **Impact on Time to Resolution (TTR)**: Alongside the rise in incident volume from this caller, there is a corresponding increase in the average Time to Resolution (TTR) for these incidents. This pattern suggests that the growing number of incidents may be straining resources, impacting overall resolution efficiency.\n3. **Need for Root Cause Analysis**: The consistent increase in incidents reported by this caller could indicate underlying issues that are not being adequately addressed, potentially pointing to larger systemic problems within the operational processes."
+}

@@ -1,0 +1,124 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-46.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To identify and rectify the causes of high rejection rates in travel expenses while also detecting and addressing potential duplicate expense claims. This ensures that submissions align with organizational policies and reduces the risk of financial inefficiencies or unauthorized claims.",
+        "role": "Expense Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow `fm_expense_line` table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a clear view of organizational expenditures across different categories, highlighting both the timing and approval state of each financial entry. Additionally, the dataset captures patterns in expense submissions, including potential duplicate claims and their impact on financial management.",
+        "header": "Travel Expense Rejection Analysis (Flag 46)"
+    },
+    "insight_list": [
+        {
+            "data_type": "comparative",
+            "insight": "There are disproportionately high rejection rates for Travel expenses",
+            "insight_value": {
+                "description": "Travel expenses are rejected at a significantly higher rate than other categories, indicating potential issues with how these expenses are understood or submitted."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Rejection Rates by Expense Category",
+                "x_axis": {
+                    "name": "Expense Category",
+                    "value": [
+                        "Travel",
+                        "Assets",
+                        "Services",
+                        "Miscellaneous"
+                    ],
+                    "description": "This axis categorizes expenses into different types, highlighting the focus on Travel, Assets, Services, and Miscellaneous expenses."
+                },
+                "y_axis": {
+                    "name": "Rejection Rate",
+                    "value": [
+                        0.42,
+                        0.06,
+                        0.11,
+                        0.04
+                    ],
+                    "description": "This axis displays the proportion of expenses declined within each category, emphasizing the high rejection rate in the Travel category."
+                },
+                "description": "The bar chart clearly illustrates the rejection rates across different expense categories, with the Travel category experiencing a rejection rate of 42%, which is substantially higher than the rates for Assets (6%), Services (11%), and Miscellaneous (4%). This stark contrast suggests a specific challenge within the Travel expense category that may stem from complex policies or frequent non-compliance."
+            },
+            "question": "How do rejection rates for travel expenses compare to other categories within the expense reports?",
+            "actionable_insight": "To address the high rejection rates in the Travel category, it is crucial to review and possibly simplify the travel expense policies to ensure they are clearly understood and easy to follow. Additionally, providing more targeted training and resources for employees on how to properly file travel expenses could help reduce misunderstandings and improve compliance. Regular feedback sessions to discuss common errors and adjustments to the policy based on real-world issues could also be beneficial.",
+            "code": "import matplotlib.pyplot as plt\n\n# Group the data by category and state, then count occurrences\ncategory_state_counts = flag_data.groupby(['category', 'state']).size().unstack(fill_value=0)\n\n# Calculate proportions of each state within each category\ncategory_state_proportions = category_state_counts.div(category_state_counts.sum(axis=1), axis=0)\n\n# Plot the data, focusing only on the 'Declined' state\nfig, ax = plt.subplots(figsize=(12, 8))\ndeclined_proportions = category_state_proportions['Declined']\ndeclined_proportions.plot(kind='bar', color='red', ax=ax)\n\n# Add titles and labels\nax.set_title('Proportion of Declined Expenses by Category', fontsize=16)\nax.set_xlabel('Expense Category', fontsize=14)\nax.set_ylabel('Proportion of Declined', fontsize=14)\nax.set_ylim(0, 1)  # Set y-axis limit to show proportions from 0 to 1\n\n# Show grid\nax.grid(True, which='both', linestyle='--', linewidth=0.5)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars\nfor i, value in enumerate(declined_proportions):\n    ax.text(i, value, f\"{value:.2f}\", ha='center', va='bottom', fontsize=10, color='black')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is a variable distribution of Expense Reports across categories",
+            "insight_value": {
+                "description": "While Travel expenses are frequently rejected, they are not the most submitted category. Assets category dominates the submission volume."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Reports by Category",
+                "x_axis": {
+                    "name": "Expense Category",
+                    "value": [
+                        "Assets",
+                        "Travel",
+                        "Services",
+                        "Miscellaneous"
+                    ],
+                    "description": "This axis categorizes expenses into different types, including Assets, Travel, Services, and Miscellaneous."
+                },
+                "y_axis": {
+                    "name": "Number of Expense Reports",
+                    "value": {
+                        "Assets": "281",
+                        "Travel": "146",
+                        "Services": "47",
+                        "Miscellaneous": "26"
+                    },
+                    "description": "This axis displays the number of expense reports submitted within each category, indicating a higher volume of submissions for Assets than for other categories."
+                },
+                "description": "The bar chart illustrates that the Assets category has the highest number of submissions at 281, followed by Travel with 146, Services with 47, and Miscellaneous with 26. This distribution shows that despite high rejection rates, the Travel category does not lead in submission frequency but remains significant."
+            },
+            "question": "What is the distribution of Expense Reports by Category?",
+            "actionable_insight": "Understanding that Assets lead in the number of submissions, it's important to closely monitor and manage this category to ensure compliance and proper allocation of resources. For the Travel category, which has a high rejection rate but significant submission volume, refining submission guidelines and improving training on how to correctly file Travel expenses could help reduce rejections and streamline processing. This could involve clarifying allowable expenses within the Travel category and ensuring that all employees are aware of and understand these policies.",
+            "code": "import matplotlib.pyplot as plt\n\n# Count the number of expense reports per department\ndepartment_counts = flag_data['category'].value_counts()\n\n# Plot the data\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_counts.plot(kind='bar', color='skyblue', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Expense Reports by Category', fontsize=16)\nax.set_xlabel('Category', fontsize=14)\nax.set_ylabel('Number of Expense Reports', fontsize=14)\n\n# Show grid\nax.grid(axis='y')  # Only horizontal grid lines for readability\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars for clarity\nfor p in ax.patches:\n    ax.annotate(f\"{int(p.get_height())}\", (p.get_x() + p.get_width() / 2., p.get_height()),\n                ha='center', va='bottom', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "Certain users have submitted multiple duplicate expense claims.",
+            "insight_value": {
+                "description": "Users like Marianne Earman, Lacy Hyten, and Carolina Kinlaw have submitted multiple expense claims with identical amounts, categories, and descriptions, indicating potential fraud or errors in the expense submission process."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Number of Duplicate Expense Claims by User",
+                "x_axis": {
+                    "name": "User",
+                    "value": [
+                        "Marianne Earman",
+                        "Lacy Hyten",
+                        "Carolina Kinlaw"
+                    ],
+                    "description": "This axis lists the users who have submitted duplicate expense claims."
+                },
+                "y_axis": {
+                    "name": "Number of Duplicate Claims",
+                    "value": {
+                        "Marianne Earman": "<actual_count>",
+                        "Lacy Hyten": "<actual_count>",
+                        "Carolina Kinlaw": "<actual_count>"
+                    },
+                    "description": "This axis shows the number of duplicate expense claims submitted by each user."
+                },
+                "description": "The bar chart highlights the users who have submitted multiple duplicate expense claims, which could indicate a need for further investigation."
+            },
+            "question": "Which users have submitted duplicate expense claims?",
+            "actionable_insight": {
+                "description": "The identified users should be contacted to review their expense claims, and further investigation might be necessary to ensure compliance with company policies."
+            },
+            "code": "# Identify potential duplicates based on user, amount, category, and short description\nduplicate_entries = df[df.duplicated(subset=['user', 'amount', 'category', 'short_description'], keep=False)]\n\n# Count the number of duplicates per user\nduplicates_count = duplicate_entries['user'].value_counts()\n\n# Plot the number of duplicate claims per user\nplt.figure(figsize=(10, 6))\nduplicates_count.plot(kind='bar', color='tomato')\nplt.title('Number of Duplicate Expense Claims by User')\nplt.xlabel('User')\nplt.ylabel('Number of Duplicate Claims')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+        }
+    ],
+    "insights": [
+        "There are disproportionately high rejection rates for Travel expenses",
+        "There is a variable distribution of Expense Reports across categories",
+        "Certain users have submitted multiple duplicate expense claims."
+    ],
+    "summary": "\n\n1. **Duplicate Expense Claims:** This analysis reveals that certain users, such as Marianne Earman, Lacy Hyten, and Carolina Kinlaw, have submitted multiple duplicate expense claims, particularly in categories like \"Assets\" and \"Services.\" This trend could indicate potential fraud or errors in the expense submission process, warranting further investigation to ensure compliance with company policies.\n\n2. **Trend in Expense Rejections:** The 'Travel' category within the organization's expense reports shows higher rejection rates compared to other categories. This suggests that there may be common issues or misunderstandings about allowable expenses in this category, which need to be addressed.\n\n3. **Enhancing Policy Adherence:** By understanding the patterns of duplicate claims and rejections, the dataset provides a foundation for revising guidelines, improving training, and enhancing overall compliance with financial policies, thereby reducing the risk of financial wastage and unauthorized expense claims."
+}

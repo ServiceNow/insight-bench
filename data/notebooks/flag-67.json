@@ -1,0 +1,58 @@
+{
+    "dataset_csv_path": "data/notebooks/csvs/flag-67.csv",
+    "user_dataset_csv_path": null,
+    "metadata": {
+        "goal": "To identify and rectify the causes of high rejection rates in travel expenses to ensure that submissions  align with organizational policies.",
+        "role": "Expense Audit Analyst",
+        "category": "Finance Management",
+        "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
+        "header": "Travel Expense Rejection Analysis (Flag 67)"
+    },
+    "insight_list": [
+        {
+            "insight": "Processing times for high-value requests vary significantly across departments, with Customer Support showing the widest range in processing times.",
+            "question": "How does the processing time of requests differ across departments for high-value items?",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load data\nfile_path = \"csvs/flag-67.csv\"\ndata = pd.read_csv(file_path)\n\n# Preprocess data\ndata[\"opened_at\"] = pd.to_datetime(data[\"opened_at\"])\ndata[\"processed_date\"] = pd.to_datetime(data[\"processed_date\"], errors=\"coerce\")\n\n# Filter for high-value items (top 25% of 'amount')\ntop_value_threshold = data[\"amount\"].quantile(0.75)\nhigh_value_data = data[data[\"amount\"] >= top_value_threshold]\n\n# Calculate processing time in days\nhigh_value_data[\"processing_time\"] = (\n    high_value_data[\"processed_date\"] - high_value_data[\"opened_at\"]\n).dt.days\n\n# Drop rows with missing processing times\nhigh_value_data = high_value_data.dropna(subset=[\"processing_time\"])\n\n# Plot processing time distribution by department\nplt.figure(figsize=(12, 6))\nhigh_value_data.boxplot(column=\"processing_time\", by=\"department\", grid=False)\nplt.title(\"Processing Time Distribution by Department for High-Value Requests\")\nplt.suptitle(\"\")  # Remove the automatic title from boxplot\nplt.xlabel(\"Department\")\nplt.ylabel(\"Processing Time (Days)\")\nplt.xticks(rotation=45)\nplt.show()"
+        },
+        {
+            "data_type": "descriptive",
+            "insight": "There is a variable distribution of Expense Reports across categories",
+            "insight_value": {
+                "description": "While Travel expenses are frequently rejected, they are not the most submitted category. Assets category dominates the submission volume."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Reports by Category",
+                "x_axis": {
+                    "name": "Expense Category",
+                    "value": [
+                        "Assets",
+                        "Travel",
+                        "Services",
+                        "Miscellaneous"
+                    ],
+                    "description": "This axis categorizes expenses into different types, including Assets, Travel, Services, and Miscellaneous."
+                },
+                "y_axis": {
+                    "name": "Number of Expense Reports",
+                    "value": {
+                        "Assets": "281",
+                        "Travel": "146",
+                        "Services": "47",
+                        "Miscellaneous": "26"
+                    },
+                    "description": "This axis displays the number of expense reports submitted within each category, indicating a higher volume of submissions for Assets than for other categories."
+                },
+                "description": "The bar chart illustrates that the Assets category has the highest number of submissions at 281, followed by Travel with 146, Services with 47, and Miscellaneous with 26. This distribution shows that despite high rejection rates, the Travel category does not lead in submission frequency but remains significant."
+            },
+            "question": "What is the distribution of Expense Reports by Category?",
+            "actionable_insight": "Understanding that Assets lead in the number of submissions, it's important to closely monitor and manage this category to ensure compliance and proper allocation of resources. For the Travel category, which has a high rejection rate but significant submission volume, refining submission guidelines and improving training on how to correctly file Travel expenses could help reduce rejections and streamline processing. This could involve clarifying allowable expenses within the Travel category and ensuring that all employees are aware of and understand these policies.",
+            "code": "import matplotlib.pyplot as plt\n\n# Count the number of expense reports per department\ndepartment_counts = flag_data['category'].value_counts()\n\n# Plot the data\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_counts.plot(kind='bar', color='skyblue', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Expense Reports by Category', fontsize=16)\nax.set_xlabel('Category', fontsize=14)\nax.set_ylabel('Number of Expense Reports', fontsize=14)\n\n# Show grid\nax.grid(axis='y')  # Only horizontal grid lines for readability\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars for clarity\nfor p in ax.patches:\n    ax.annotate(f\"{int(p.get_height())}\", (p.get_x() + p.get_width() / 2., p.get_height()),\n                ha='center', va='bottom', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
+        }
+    ],
+    "insights": [
+        "Processing times for high-value requests vary significantly across departments, with Customer Support showing the widest range in processing times.",
+        "There is a variable distribution of Expense Reports across categories"
+    ],
+    "summary": "\n\n1. **Processing Time Variability**: From Question 1, it was found that processing times for high-value requests vary significantly across departments, with Customer Support showing the widest range. This suggests potential inefficiencies or a lack of standardized processes within this department.\n\n2. **Expense Report Distribution**: Question 2 revealed that the Assets category dominates the number of expense report submissions, while Travel, despite having a high rejection rate, is not the most submitted category. This indicates a need for focused management and compliance monitoring in the Assets category.\n\n3. **Complexity of Travel Expense Guidelines**: Question 3 highlighted the potential complexity of travel expense guidelines compared to other categories. This suggests a need for a thorough review of the guidelines and possibly simplifying them to reduce rejection rates and improve compliance."
+}

@@ -1,0 +1,501 @@
+purchased_on,asset_tag,model_category,cost,serial_number,sys_updated_on,assigned_to,department,warranty_expiration,display_name,ci
+2024-03-01 17:54:00,P1000000,Computer,3629,DZB-49193876,2024-04-25 17:54:00,Genevieve Kekiwi,Customer Support,2026-04-25 17:54:00,Dell Inspiron 3501 Computer,Inspiron 3501
+2024-02-12 23:13:00,P1000001,Computer,2970,LKQ-61403004,2024-03-29 23:13:00,Logan Muhl,Customer Support,2026-03-29 23:13:00,Dell Inspiron 7501 Laptop,Inspiron 7501
+2024-02-13 19:09:00,P1000002,Computer,4701,TYB-81675175,2024-04-12 19:09:00,Latisha Bahls,Customer Support,2025-04-12 19:09:00,Dell Inspiron 3580,Inspiron 3580
+2024-02-16 23:18:00,P1000003,Computer,2484,AFI-35627823,2024-03-29 23:18:00,Stephen Seiters,HR,2025-03-29 23:18:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-09 18:34:00,P1000004,Computer,1528,ADF-83782545,2024-03-15 18:34:00,Bertram Quertermous,IT,2025-03-15 18:34:00,Dell Optiplex 7080,Optiplex 7080
+2024-02-05 19:44:00,P1000005,Computer,4993,YTG-50706455,2024-03-17 19:44:00,Lizzie Torregrossa,IT,2025-03-17 19:44:00,Dell Inspiron 7000,Inspiron 7000
+2024-03-28 09:38:00,P1000006,Computer,4637,XCY-60366881,2024-04-14 09:38:00,Howard Johnson,Sales,2025-04-14 09:38:00,Dell Inspiron 3580 Computer,Inspiron 3580
+2024-03-28 11:27:00,P1000007,Computer,3880,FBI-31240092,2024-04-26 11:27:00,Elisa Gracely,Product Management,2026-04-26 11:27:00,Dell Inspiron 5491 2n1 Laptop,Inspiron 5491
+2023-12-27 16:06:00,P1000008,Computer,3527,MNT-09185332,2024-02-12 16:06:00,Sharlene Circelli,Sales,2025-02-12 16:06:00,Dell Latitude 7410 Computer,Latitude 7410
+2024-02-25 19:27:00,P1000009,Computer,1786,MOE-26456959,2024-03-23 19:27:00,Valerie Pou,Customer Support,2027-03-23 19:27:00,Dell OptiPlex 7040,OptiPlex 7040
+2024-03-07 23:44:00,P1000010,Computer,1854,VAP-93546739,2024-03-29 23:44:00,Allie Pumphrey,Product Management,2027-03-29 23:44:00,Dell Inspiron 14,Inspiron 14
+2024-03-15 03:46:00,P1000011,Computer,3512,ZGR-10186901,2024-03-17 03:46:00,Rita Center,Customer Support,2026-03-17 03:46:00,Dell Inspiron 15 3000,Inspiron 15 3000
+2024-03-09 19:21:00,P1000012,Computer,3823,YCD-21204920,2024-04-13 19:21:00,Heath Vanalphen,Sales,2025-04-13 19:21:00,Dell Inspiron 15R,Inspiron 15R
+2024-03-18 15:21:00,P1000013,Computer,4200,PCW-68477173,2024-03-25 15:21:00,Joe Employee,Sales,2027-03-25 15:21:00,Dell Inspiron 3580 Laptop Computer,Inspiron 3580
+2024-01-20 13:21:00,P1000014,Computer,2117,VFA-22323989,2024-02-13 13:21:00,Rolando Baumann,Sales,2026-02-13 13:21:00,Dell Precision 3550,Precision 3550
+2024-02-26 19:36:00,P1000015,Computer,2246,WFU-71812187,2024-03-06 19:36:00,Davin Czukowski,Sales,2025-03-06 19:36:00,Dell Optiplex 3070 Desktop Computer,Optiplex 3070
+2024-03-14 00:10:00,P1000016,Computer,2943,FIU-74217573,2024-04-23 00:10:00,Barton Friesner,IT,2026-04-23 00:10:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-02-03 10:54:00,P1000017,Computer,4940,OWF-27245801,2024-02-25 10:54:00,Rebekah Padley,Sales,2026-02-25 10:54:00,Dell Optiplex 7010 Desktop Computer,Optiplex 7010
+2024-02-28 03:15:00,P1000018,Computer,3634,RHN-63545338,2024-03-28 03:15:00,Emery Reek,Customer Support,2025-03-28 03:15:00,Dell Inspiron 5000 Computer,Inspiron 5000
+2024-02-19 16:46:00,P1000019,Computer,2827,LJS-34411781,2024-03-30 16:46:00,Diana Temple,Sales,2026-03-30 16:46:00,Dell Inspiron 5400 Computer,Inspiron 5400
+2024-03-04 05:11:00,P1000020,Computer,2916,SET-73751466,2024-03-05 05:11:00,Allyson Gillispie,Development,2025-03-05 05:11:00,Dell Inspiron 15 7000 Gaming Laptop,Inspiron 15 7000
+2023-12-22 10:42:00,P1000021,Computer,2817,GXQ-86974522,2024-02-03 10:42:00,Marta Horner,Customer Support,2026-02-03 10:42:00,Dell Inspiron 5584 Laptop,Inspiron 5584
+2024-01-04 01:31:00,P1000022,Computer,3858,ZQA-20012786,2024-02-03 01:31:00,Naomi Caetano,Customer Support,2027-02-03 01:31:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-02-29 18:42:00,P1000023,Computer,1884,HKF-59624908,2024-03-20 18:42:00,Mitch Schattner,Customer Support,2027-03-20 18:42:00,Dell XPS 15 Computer,XPS 15
+2024-02-22 14:22:00,P1000024,Computer,2951,NYN-77173623,2024-03-09 14:22:00,Lee Javens,Sales,2026-03-09 14:22:00,Dell Latitude Laptop,Dell Latitude
+2024-03-03 14:12:00,P1000025,Computer,3569,SNV-42370788,2024-03-21 14:12:00,Marquita Bousman,Customer Support,2026-03-21 14:12:00,Dell OptiPlex 3080 Micro,OptiPlex 3080
+2024-03-15 13:23:00,P1000026,Computer,3240,DDN-97795826,2024-04-09 13:23:00,Dollie Daquino,Customer Support,2026-04-09 13:23:00,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+2024-04-24 07:12:00,P1000027,Computer,3622,JWY-03675343,2024-04-25 07:12:00,Mitchel Harnar,Sales,2027-04-25 07:12:00,Dell OptiPlex 7090 Tower Computer,OptiPlex 7090
+2023-12-23 02:48:00,P1000028,Computer,4305,DTE-62454205,2024-02-11 02:48:00,Bridgett Retort,Finance,2026-02-11 02:48:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-03-03 13:00:00,P1000029,Computer,2505,SON-62000330,2024-04-21 13:00:00,John Retak,Sales,2027-04-21 13:00:00,Dell Latitude 7400 Laptop Computer,Latitude 7400
+2024-04-17 01:42:00,P1000030,Computer,3881,GJF-86856521,2024-04-25 01:42:00,Pierre Salera,IT,2027-04-25 01:42:00,Dell Latitude 5590 Computer,Latitude 5590
+2024-03-15 09:58:00,P1000031,Computer,1588,NSU-72890189,2024-04-01 09:58:00,Mamie Mcintee,Product Management,2025-04-01 09:58:00,Dell Inspiron 3580 Computer,Inspiron 3580
+2024-03-23 20:39:00,P1000032,Computer,4627,XUM-10855031,2024-03-27 20:39:00,Isaac Davensizer,Customer Support,2026-03-27 20:39:00,Dell Inspiron 15 - Computer,Inspiron 15
+2024-03-19 18:02:00,P1000033,Computer,4042,VZM-03489325,2024-03-27 18:02:00,Rena Griffeth,Customer Support,2026-03-27 18:02:00,Dell Inspiron 5501 Laptop,Inspiron 5501
+2024-03-16 16:07:00,P1000034,Computer,2300,KHN-67854182,2024-04-19 16:07:00,Viola Mcsorley,Customer Support,2026-04-19 16:07:00,Dell OptiPlex 7080 Desktop Computer,OptiPlex 7080
+2024-02-23 02:28:00,P1000035,Computer,4505,THP-05216745,2024-03-23 02:28:00,Shelley Groden,Customer Support,2027-03-23 02:28:00,Dell Inspiron 5000 Series Desktop Computer,Inspiron 5000 Series
+2024-02-03 20:28:00,P1000036,Computer,4232,YHB-74992786,2024-03-28 20:28:00,Lucien Iurato,Development,2027-03-28 20:28:00,Dell Inspiron 5481,Inspiron 5481
+2024-02-05 16:10:00,P1000037,Computer,3623,YAR-51928532,2024-02-24 16:10:00,Prince Kauk,Customer Support,2026-02-24 16:10:00,Dell Inspiron 3593 Laptop,Inspiron 3593
+2024-02-02 08:03:00,P1000038,Computer,2061,QIC-03088940,2024-03-27 08:03:00,Rebeca Brumet,Customer Support,2026-03-27 08:03:00,Dell Inspiron 15 Laptop,Inspiron 15
+2024-04-06 04:15:00,P1000039,Computer,1596,QCQ-64467128,2024-04-09 04:15:00,Reginald Lunan,HR,2025-04-09 04:15:00,Dell XPS 13 - Computer,Dell XPS 13
+2024-01-12 03:54:00,P1000040,Computer,3918,NTA-56475369,2024-02-21 03:54:00,Alyssa Biasotti,IT,2026-02-21 03:54:00,Dell Latitude 7420 Computer,Latitude 7420
+2024-02-04 16:06:00,P1000041,Computer,3317,FWT-98924953,2024-04-02 16:06:00,Jasmin Gum,Sales,2026-04-02 16:06:00,Dell Inspiron 3501 Laptop,Inspiron 3501
+2024-03-25 15:33:00,P1000042,Computer,2794,GQW-49677478,2024-04-15 15:33:00,Sam Sorokin,IT,2025-04-15 15:33:00,Dell Inspiron 13 Computer,Inspiron 13
+2024-02-19 19:34:00,P1000043,Computer,4045,HMD-41136686,2024-02-27 19:34:00,Jimmie Barninger,Customer Support,2027-02-27 19:34:00,Dell Latitude 7400 Laptop,Latitude 7400
+2024-02-04 05:08:00,P1000044,Computer,1885,GJP-70644257,2024-03-29 05:08:00,Sheila Holloran,Sales,2025-03-29 05:08:00,Dell Inspiron 14 Computer,Inspiron 14
+2024-01-04 08:05:00,P1000045,Computer,1994,XBK-34274482,2024-02-19 08:05:00,Kerry Evertt,Development,2027-02-19 08:05:00,Dell Optiplex 7080 Computer,Optiplex 7080
+2024-03-06 11:30:00,P1000046,Computer,2720,BWF-05727096,2024-04-23 11:30:00,Valentine Granberry,Customer Support,2026-04-23 11:30:00,Dell Inspiron 7000 Series Computer,Inspiron 7000 Series
+2024-03-13 03:47:00,P1000047,Computer,4613,YRQ-14729108,2024-04-06 03:47:00,Kurtis Asberry,Sales,2027-04-06 03:47:00,Dell Optiplex 3020,Optiplex 3020
+2024-02-23 21:33:00,P1000048,Computer,3127,AST-41016203,2024-04-21 21:33:00,Ella Pahnke,Customer Support,2026-04-21 21:33:00,Dell OptiPlex 7040 Desktop Computer,OptiPlex 7040
+2024-03-30 20:21:00,P1000049,Computer,4459,EOH-88178651,2024-04-18 20:21:00,Sue Haakinson,Customer Support,2027-04-18 20:21:00,Dell Inspiron 5680 Desktop Computer,Inspiron 5680
+2024-03-16 20:29:00,P1000050,Computer,1767,KFY-91513362,2024-03-22 20:29:00,Danny Dales,Customer Support,2026-03-22 20:29:00,Dell Inspiron 3583 Laptop,Inspiron 3583
+2023-12-06 07:03:00,P1000051,Computer,3204,MOC-76646136,2024-02-03 07:03:00,Byron Fortuna,IT,2026-02-03 07:03:00,Dell Inspiron 15 3000,Inspiron 15 3000
+2024-02-25 02:53:00,P1000052,Computer,2355,KJQ-44456695,2024-04-08 02:53:00,Luella Pliner,Sales,2025-04-08 02:53:00,Dell Inspiron 15 Gaming Computer,Inspiron 15
+2024-02-23 09:09:00,P1000053,Computer,3752,JHI-02574218,2024-03-19 09:09:00,Dorthy Alexy,Development,2025-03-19 09:09:00,Dell Inspiron 7486 2-in-1 Laptop Computer,Inspiron 7486 2-in-1
+2024-01-30 15:50:00,P1000054,Computer,2484,SHM-53373713,2024-02-02 15:50:00,Kira Staffon,Finance,2027-02-02 15:50:00,Dell Inspiron 7000 Computer,Inspiron 7000
+2024-02-09 17:56:00,P1000055,Computer,2833,LTH-31512092,2024-02-15 17:56:00,Tiffany Knust,Customer Support,2026-02-15 17:56:00,Dell Latitude E7470 Computer,Latitude E7470
+2024-02-07 08:27:00,P1000056,Computer,4679,MCF-68475758,2024-02-18 08:27:00,Edgardo Prudente,Sales,2027-02-18 08:27:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-03-29 20:02:00,P1000057,Computer,4813,NPC-58969963,2024-04-19 20:02:00,Mellissa Sule,IT,2027-04-19 20:02:00,Dell Alienware R10,Alienware R10
+2023-12-23 23:25:00,P1000058,Computer,1621,ULQ-02195704,2024-02-16 23:25:00,Lane Brantz,Sales,2026-02-16 23:25:00,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+2024-01-29 13:31:00,P1000059,Computer,4470,DXN-62457892,2024-02-19 13:31:00,Pilar Suddeth,Sales,2025-02-19 13:31:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-01-01 23:03:00,P1000060,Computer,4002,WUH-04903680,2024-02-07 23:03:00,Cherie Schronce,IT,2026-02-07 23:03:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2023-12-28 19:43:00,P1000061,Computer,4631,YAG-18726361,2024-02-07 19:43:00,Lacy Belmont,Customer Support,2027-02-07 19:43:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2023-12-22 21:48:00,P1000062,Computer,2105,FVB-42570927,2024-02-10 21:48:00,Valeria Lingbeek,Sales,2026-02-10 21:48:00,Dell Inspiron 13 Laptop,Inspiron 13
+2024-02-15 23:36:00,P1000063,Computer,3928,KPE-01310699,2024-02-18 23:36:00,Doug Matrisciano,Customer Support,2026-02-18 23:36:00,Dell Inspiron 15,Inspiron 15
+2024-02-08 10:13:00,P1000064,Computer,4649,UAP-49828401,2024-04-08 10:13:00,Lynette Setlock,Customer Support,2025-04-08 10:13:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-13 12:22:00,P1000065,Computer,2164,YGO-26383568,2024-02-28 12:22:00,Kira Papen,Customer Support,2027-02-28 12:22:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-23 23:42:00,P1000066,Computer,4228,BPM-78368213,2024-03-06 23:42:00,Elmo Dagenais,Sales,2025-03-06 23:42:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-07 23:59:00,P1000067,Computer,1780,GXH-73813748,2024-02-29 23:59:00,Ron Kettering,IT,2025-02-28 23:59:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-03-31 03:14:00,P1000068,Computer,3484,ZCT-39397926,2024-04-11 03:14:00,Shanna Numkena,Customer Support,2027-04-11 03:14:00,Dell Inspiron 3593 Computer,Inspiron 3593
+2024-01-26 16:39:00,P1000069,Computer,2124,DGQ-40827131,2024-02-03 16:39:00,Emilia Oxley,Customer Support,2025-02-03 16:39:00,Dell Inspiron 7000 Computer,Inspiron 7000
+2024-03-16 20:16:00,P1000070,Computer,4303,LEF-77774684,2024-04-15 20:16:00,Fabian Mcshaw,Sales,2026-04-15 20:16:00,Dell Inspiron 15 7501 Laptop,Inspiron 15 7501
+2024-01-12 22:55:00,P1000071,Computer,3907,EVT-91743988,2024-02-05 22:55:00,Tia Lino,Sales,2027-02-05 22:55:00,Dell Latitude E5450 Laptop,Latitude E5450
+2024-01-08 21:26:00,P1000072,Computer,3516,KPW-81278861,2024-03-02 21:26:00,Berta Karczewski,Sales,2025-03-02 21:26:00,Dell Inspiron 15 - Computer,Inspiron 15
+2024-02-26 18:13:00,P1000073,Computer,1899,BWZ-96720671,2024-03-27 18:13:00,Brendan Qin,Finance,2026-03-27 18:13:00,Dell Inspiron 15 3000 Computer,Inspiron 15 3000
+2024-01-19 21:12:00,P1000074,Computer,4616,HWH-99649706,2024-02-20 21:12:00,Kurtis Mcbay,Sales,2026-02-20 21:12:00,Dell Inspiron 15 7000 Series,Inspiron 15 7000 Series
+2024-02-10 15:25:00,P1000075,Computer,1643,NPW-40411251,2024-02-29 15:25:00,Melinda Carleton,Customer Support,2027-02-28 15:25:00,Dell Inspiron 15 3000 Series Laptop,Inspiron 15 3000
+2024-03-07 17:15:00,P1000076,Computer,2503,HCY-81857895,2024-03-14 17:15:00,Maryann Garnette,IT,2027-03-14 17:15:00,Dell Precision 5540 Computer,Precision 5540
+2024-02-20 23:23:00,P1000077,Computer,1513,TML-53398428,2024-03-14 23:23:00,Nadia Wilshire,Sales,2026-03-14 23:23:00,Dell OptiPlex 7010 Desktop Computer,OptiPlex 7010
+2024-02-03 08:01:00,P1000078,Computer,3612,QYR-31102352,2024-04-03 08:01:00,Judy Gartenmayer,IT,2027-04-03 08:01:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-01-31 18:30:00,P1000079,Computer,3658,JPO-34079849,2024-02-21 18:30:00,David Dan,Sales,2025-02-21 18:30:00,Dell Optiplex 9020 Computer,Optiplex 9020
+2024-03-26 13:23:00,P1000080,Computer,1917,ROB-19660554,2024-03-27 13:23:00,Nickolas Khosravi,Product Management,2025-03-27 13:23:00,Dell Inspiron 15 7000 Computer,Inspiron 15 7000
+2024-03-08 09:57:00,P1000081,Computer,4622,HZR-43116652,2024-04-03 09:57:00,Wes Fontanella,IT,2025-04-03 09:57:00,Dell Inspiron 15 3000 Series,Inspiron 15 3000
+2024-01-10 13:26:00,P1000082,Computer,4737,SEJ-12391778,2024-02-01 13:26:00,Merle Wyrosdick,Customer Support,2026-02-01 13:26:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-01-18 20:19:00,P1000083,Computer,1541,OAG-62204779,2024-03-06 20:19:00,Phil Hendrie,Sales,2025-03-06 20:19:00,HP Computer EliteDesk 800,EliteDesk 800
+2024-01-28 06:41:00,P1000084,Computer,2120,ZKV-72961648,2024-02-15 06:41:00,Darrel Ruffins,IT,2025-02-15 06:41:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-01-02 20:54:00,P1000085,Computer,1734,SFS-93707622,2024-02-23 20:54:00,Van Leanen,IT,2027-02-23 20:54:00,Dell XPS 13 Computer,XPS 13
+2024-02-03 08:38:00,P1000086,Computer,4200,AZV-08742040,2024-03-06 08:38:00,Reginald Humes,Sales,2026-03-06 08:38:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-01-24 01:52:00,P1000087,Computer,4671,FRC-81223174,2024-03-16 01:52:00,Mary Cruse,Sales,2027-03-16 01:52:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-08 13:55:00,P1000088,Computer,4388,TEQ-49358795,2024-02-11 13:55:00,Jeanie Dalen,Customer Support,2025-02-11 13:55:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-02-25 04:10:00,P1000089,Computer,3501,NFW-05192902,2024-04-21 04:10:00,Jacinto Gawron,Customer Support,2026-04-21 04:10:00,Dell Inspiron 3500 - Computer,Inspiron 3500
+2024-02-23 02:15:00,P1000090,Computer,2459,ZEZ-04188391,2024-04-20 02:15:00,Eli Bettner,IT,2027-04-20 02:15:00,Dell XPS 13 7390,XPS 13 7390
+2023-12-11 05:06:00,P1000091,Computer,1950,EFK-33447549,2024-02-08 05:06:00,Olga Yarovenko,Sales,2026-02-08 05:06:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-03-29 20:46:00,P1000092,Computer,3394,EOY-67650992,2024-04-04 20:46:00,Karyn Jinks,IT,2025-04-04 20:46:00,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+2024-01-01 06:32:00,P1000093,Computer,2337,UPW-09543196,2024-02-24 06:32:00,Devon Samrah,IT,2026-02-24 06:32:00,Dell Inspiron 15 3000 Computer,Inspiron 15 3000
+2023-12-06 09:05:00,P1000094,Computer,3759,WVT-48161241,2024-02-04 09:05:00,Doreen Sakurai,Sales,2026-02-04 09:05:00,Dell Inspiron Desktop Computer,Dell Inspiron Desktop
+2024-02-23 23:49:00,P1000095,Computer,3989,OUL-65517272,2024-04-19 23:49:00,Roman Simone,Sales,2027-04-19 23:49:00,Dell Inspiron 3576 Computer,Inspiron 3576
+2024-01-25 15:31:00,P1000096,Computer,3204,YVG-39110605,2024-03-14 15:31:00,Peggy Hohlstein,Customer Support,2026-03-14 15:31:00,Dell Inspiron 5501 Laptop,Inspiron 5501
+2024-03-01 17:29:00,P1000097,Computer,4556,CPX-30621824,2024-04-11 17:29:00,Vince Ettel,Customer Support,2026-04-11 17:29:00,Dell Optiplex 7040 Desktop Computer,Optiplex 7040
+2024-01-09 01:04:00,P1000098,Computer,3565,DJX-42663376,2024-03-05 01:04:00,Reva Lecates,Finance,2027-03-05 01:04:00,Dell XPS 13,XPS 13
+2024-01-20 03:07:00,P1000099,Computer,3487,VRR-26292352,2024-03-16 03:07:00,Rosalind Krenzke,Sales,2026-03-16 03:07:00,Dell Latitude E5570 Computer,Latitude E5570
+2024-03-08 04:52:00,P1000100,Computer,1811,MUA-17251114,2024-03-26 04:52:00,Robt Braithwaite,Sales,2025-03-26 04:52:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-02-22 09:36:00,P1000101,Computer,3622,BQH-50688861,2024-03-02 09:36:00,Alene Rabeck,Sales,2027-03-02 09:36:00,Dell Alienware Area-51m,Alienware Area-51m
+2024-01-29 02:24:00,P1000102,Computer,3246,CYT-74062402,2024-02-22 02:24:00,Claudio Loose,Customer Support,2025-02-22 02:24:00,Dell High Performance Desktop Computer,High Performance Desktop
+2024-01-24 21:21:00,P1000103,Computer,3411,AMN-81589946,2024-03-20 21:21:00,Jacklyn Emayo,Customer Support,2025-03-20 21:21:00,Dell Inspiron 7000 Computer,Inspiron 7000
+2024-04-03 18:16:00,P1000104,Computer,4619,WAE-89778133,2024-04-18 18:16:00,Terrance Nimmer,HR,2027-04-18 18:16:00,Dell Inspiron 5482 2-in-1 Computer,Inspiron 5482 2-in-1
+2024-01-12 04:12:00,P1000105,Computer,2719,JVL-24043314,2024-02-08 04:12:00,Jess Assad,Customer Support,2027-02-08 04:12:00,Dell OPTIPLEX 390 Desktop Computer,OPTIPLEX 390
+2024-02-16 08:58:00,P1000106,Computer,4067,JMQ-33796702,2024-04-04 08:58:00,Patty Bernasconi,Sales,2027-04-04 08:58:00,Dell Latitude E6430 Laptop,Latitude E6430
+2023-12-29 02:00:00,P1000107,Computer,3399,IVK-75719896,2024-02-05 02:00:00,David Loo,Development,2026-02-05 02:00:00,Dell Inspiron 15 Gaming Computer,Inspiron 15 Gaming
+2024-02-06 12:33:00,P1000108,Computer,2013,QAK-26539767,2024-03-18 12:33:00,Jonathon Waldall,IT,2026-03-18 12:33:00,Dell Inspiron 5400 Computer,Inspiron 5400
+2024-01-26 13:57:00,P1000109,Computer,2909,AHB-75731795,2024-03-10 13:57:00,Dennis Millar,Sales,2025-03-10 13:57:00,Dell Inspiron 3580 Computer,Inspiron 3580
+2024-02-18 21:33:00,P1000110,Computer,4256,AEI-85803699,2024-03-13 21:33:00,Delphine Helmich,Finance,2027-03-13 21:33:00,Dell Inspiron 15 3593,Inspiron 15 3593
+2024-04-06 01:55:00,P1000111,Computer,1930,PMF-56310639,2024-04-24 01:55:00,Miranda Hammitt,IT,2026-04-24 01:55:00,Dell OptiPlex Desktop Computer,OptiPlex Desktop
+2024-02-01 06:36:00,P1000112,Computer,3469,ISD-18106073,2024-02-02 06:36:00,Paul Shafer,Sales,2025-02-02 06:36:00,Dell Optiplex 7010 Desktop Computer,Optiplex 7010
+2024-03-31 22:09:00,P1000113,Computer,3820,DYZ-16944649,2024-04-12 22:09:00,Donald Sherretts,Customer Support,2026-04-12 22:09:00,Dell Inspiron 15 Computer,Inspiron 15
+2023-12-26 02:49:00,P1000114,Computer,4639,XIP-37745558,2024-02-05 02:49:00,Mandy Mcdonnell,Development,2026-02-05 02:49:00,Dell Inspiron 3593 Laptop,Inspiron 3593
+2024-02-16 04:48:00,P1000115,Computer,2297,SFY-63853519,2024-03-05 04:48:00,Renae Eldrige,Sales,2026-03-05 04:48:00,Dell Inspiron 3000 Desktop Computer,Inspiron 3000
+2024-03-09 04:33:00,P1000116,Computer,2586,JGV-19153531,2024-03-28 04:33:00,Martin Carley,Sales,2026-03-28 04:33:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-01-04 21:05:00,P1000117,Computer,2062,AZH-93933422,2024-02-01 21:05:00,Ted Keppel,IT,2027-02-01 21:05:00,Dell Inspiron 3000 Desktop Computer,Inspiron 3000
+2024-02-07 16:23:00,P1000118,Computer,3723,WOM-91300607,2024-02-09 16:23:00,Darrell Amrich,Customer Support,2025-02-09 16:23:00,Dell Inspiron 5505 Computer,Inspiron 5505
+2024-01-04 07:17:00,P1000119,Computer,3853,AAR-51020862,2024-02-18 07:17:00,Sal Pindell,Customer Support,2025-02-18 07:17:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-02-08 10:41:00,P1000120,Computer,2037,BBS-17506260,2024-02-09 10:41:00,Chuck Farley,Sales,2027-02-09 10:41:00,Dell Inspiron 15 7000 Computer,Inspiron 15 7000
+2024-01-26 06:45:00,P1000121,Computer,2309,OVK-49241434,2024-03-11 06:45:00,Titus Rodreguez,Finance,2025-03-11 06:45:00,Dell Optiplex 3070,Optiplex 3070
+2024-02-09 08:47:00,P1000122,Computer,4974,WRK-23020669,2024-04-04 08:47:00,Lora Lendor,IT,2027-04-04 08:47:00,Dell Precision T3620 Computer,Precision T3620
+2024-01-30 11:48:00,P1000123,Computer,4539,ISL-22014509,2024-02-24 11:48:00,Petra Clemmens,Sales,2025-02-24 11:48:00,Dell Latitude 7490 Laptop,Latitude 7490 Laptop
+2024-02-27 22:04:00,P1000124,Computer,4590,VAA-22139443,2024-03-16 22:04:00,Lona Scronce,Customer Support,2026-03-16 22:04:00,Dell Inspiron 5502 Laptop,Inspiron 5502
+2024-01-16 12:50:00,P1000125,Computer,3068,DSA-93967284,2024-02-27 12:50:00,Bradly Hasselvander,Sales,2026-02-27 12:50:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-01-19 18:03:00,P1000126,Computer,2124,HSG-31849586,2024-03-07 18:03:00,Jarvis Galas,Customer Support,2027-03-07 18:03:00,Dell Inspiron 15 Gaming,Inspiron 15 Gaming
+2023-12-26 22:16:00,P1000127,Computer,4911,KBX-26866718,2024-02-08 22:16:00,Teodoro Gaboury,Customer Support,2026-02-08 22:16:00,Dell OptiPlex 7010 Desktop,OptiPlex 7010
+2024-04-08 23:57:00,P1000128,Computer,4386,XXW-81756751,2024-04-20 23:57:00,Bud Richman,Sales,2026-04-20 23:57:00,Dell Inspiron 15 5000 (Computer),Inspiron 15 5000
+2024-01-15 19:31:00,P1000129,Computer,2314,HFX-44919124,2024-02-09 19:31:00,Felipe Mahone,Customer Support,2025-02-09 19:31:00,Dell Inspiron 15 7000 Gaming Computer,Inspiron 15 7000
+2024-01-31 19:11:00,P1000130,Computer,4773,GOJ-90334906,2024-02-22 19:11:00,Jewel Agresta,Customer Support,2026-02-22 19:11:00,Dell Inspiron 15 Gaming Laptop Computer,Inspiron 15
+2024-01-09 00:44:00,P1000131,Computer,3026,JVQ-08807889,2024-03-05 00:44:00,Lacy Hyten,Sales,2027-03-05 00:44:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-03-22 19:35:00,P1000132,Computer,3603,IHD-92993143,2024-04-01 19:35:00,Nathanial Phoenix,Customer Support,2027-04-01 19:35:00,Dell Inspiron 13 (Computer),Inspiron 13
+2024-03-14 09:44:00,P1000133,Computer,3689,UGL-03888543,2024-04-05 09:44:00,Cruz Roudabush,IT,2025-04-05 09:44:00,Dell XPS 13 Laptop,XPS 13
+2024-01-10 20:29:00,P1000134,Computer,2301,YNA-17015223,2024-02-01 20:29:00,System Administrator,Finance,2025-02-01 20:29:00,Dell OptiPlex 3070 Micro Computer,OptiPlex 3070 Micro
+2024-03-04 23:06:00,P1000135,Computer,1628,OQO-06710562,2024-03-19 23:06:00,Maurine Monroy,IT,2025-03-19 23:06:00,Dell Inspiron 5000 - Computer,Inspiron 5000
+2024-02-26 10:14:00,P1000136,Computer,3290,WUP-85681306,2024-04-06 10:14:00,Wayne Webb,IT,2027-04-06 10:14:00,Dell Inspiron 15,Inspiron 15
+2024-01-25 04:19:00,P1000137,Computer,4800,HDX-16297230,2024-02-29 04:19:00,Margaret Grey,Sales,2026-02-28 04:19:00,Dell Inspiron 5501 Laptop,Inspiron 5501
+2024-03-05 18:48:00,P1000138,Computer,4225,FFT-99498343,2024-04-17 18:48:00,Robin Schartz,Finance,2025-04-17 18:48:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-01-05 03:35:00,P1000139,Computer,2386,AHH-56732811,2024-02-05 03:35:00,Deandre Resendiz,Customer Support,2027-02-05 03:35:00,Dell Inspiron 15 3000,Inspiron 15 3000
+2024-02-01 04:52:00,P1000140,Computer,4675,SGM-52022620,2024-03-12 04:52:00,Denver Topete,Customer Support,2026-03-12 04:52:00,Dell Inspiron 14 3000 Series,Inspiron 14 3000 Series
+2023-12-26 07:21:00,P1000141,Computer,2868,WQT-66702032,2024-02-08 07:21:00,Naomi Mcraven,Customer Support,2026-02-08 07:21:00,Dell OptiPlex 780,OptiPlex 780
+2024-02-22 07:21:00,P1000142,Computer,2487,AAH-36045816,2024-03-06 07:21:00,Deshawn Inafuku,IT,2025-03-06 07:21:00,Dell Inspiron 5501 Laptop Computer,Inspiron 5501 Laptop
+2024-02-25 01:32:00,P1000143,Computer,4406,VRU-67792983,2024-04-18 01:32:00,Alva Pennigton,Development,2025-04-18 01:32:00,Dell Alienware M15 R3,Alienware M15 R3
+2024-01-08 21:08:00,P1000144,Computer,4331,CWM-74587996,2024-03-08 21:08:00,Zackary Mockus,Customer Support,2025-03-08 21:08:00,Dell Latitude Series Computer,Latitude Series
+2024-02-05 00:00:00,P1000145,Computer,4920,DYB-00469674,2024-03-30 00:00:00,Garfield Lijewski,IT,2026-03-30 00:00:00,Dell Inspiron 15 Gaming,Inspiron 15 Gaming
+2024-02-22 02:34:00,P1000146,Computer,4781,QDQ-75968378,2024-03-01 02:34:00,Kathie Argenti,Customer Support,2027-03-01 02:34:00,Dell Inspiron 15 Laptop Computer,Inspiron 15 Laptop
+2024-01-07 10:14:00,P1000147,Computer,4996,QPH-84288606,2024-02-28 10:14:00,Cristopher Wiget,Customer Support,2025-02-28 10:14:00,Dell Inspiron 3500 Computer,Inspiron 3500
+2024-03-12 02:13:00,P1000148,Computer,3242,ULK-19322465,2024-03-13 02:13:00,Ross Spurger,Customer Support,2025-03-13 02:13:00,Dell Inspiron 550,Inspiron 550
+2024-02-26 09:43:00,P1000149,Computer,1978,LNE-78698473,2024-03-02 09:43:00,Carla Sirbaugh,Product Management,2026-03-02 09:43:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-04-03 05:27:00,P1000150,Computer,3190,OMO-12459678,2024-04-12 05:27:00,Cherie Fuhri,Customer Support,2027-04-12 05:27:00,Dell OptiPlex 790 Computer,OptiPlex 790
+2024-02-23 19:38:00,P1000151,Computer,3704,SCG-48333335,2024-04-03 19:38:00,George Tukis,Customer Support,2026-04-03 19:38:00,Dell OptiPlex 780,OptiPlex 780
+2023-12-11 06:32:00,P1000152,Computer,2116,LDZ-55253895,2024-02-05 06:32:00,Efren Baucher,Sales,2027-02-05 06:32:00,Dell Inspiron N5050 Computer,Inspiron N5050
+2024-04-09 08:12:00,P1000153,Computer,4762,TXW-08385545,2024-04-19 08:12:00,Stacey Blow,IT,2027-04-19 08:12:00,Dell Latitude 3190 Computer,Latitude 3190
+2024-02-06 19:16:00,P1000154,Computer,4841,KGZ-78280569,2024-03-09 19:16:00,Carol Coughlin,Sales,2027-03-09 19:16:00,Dell Inspiron 15 3000 Series,Inspiron 15 3000
+2024-02-27 22:56:00,P1000155,Computer,4185,YVG-21306708,2024-03-09 22:56:00,Nelly Jakuboski,Customer Support,2027-03-09 22:56:00,Dell Inspiron 15 3000 Series,Inspiron 15 3000
+2023-12-30 01:35:00,P1000156,Computer,2503,ZNR-73164445,2024-02-10 01:35:00,Pamala Brodtmann,IT,2027-02-10 01:35:00,Dell OptiPlex 3070 Micro,OptiPlex 3070 Micro
+2024-01-22 18:50:00,P1000157,Computer,4080,ZYF-51803713,2024-02-04 18:50:00,Mabel Weeden,Customer Support,2027-02-04 18:50:00,Dell Latitude 7490 Computer,Latitude 7490
+2023-12-26 04:35:00,P1000158,Computer,2277,QPH-62751823,2024-02-08 04:35:00,Mayme Staub,IT,2027-02-08 04:35:00,Dell Inspiron 15,Inspiron 15
+2024-03-06 23:31:00,P1000159,Computer,4850,LZC-34107470,2024-04-01 23:31:00,Fred Luddy,Development,2025-04-01 23:31:00,Dell Latitude 7400 Computer,Latitude 7400
+2024-01-21 13:12:00,P1000160,Computer,1587,YPQ-02582389,2024-02-29 13:12:00,Elmo Gabouer,Sales,2026-02-28 13:12:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-03-15 12:04:00,P1000161,Computer,4594,TEI-03926669,2024-04-12 12:04:00,Carolina Kinlaw,Sales,2025-04-12 12:04:00,Dell OptiPlex 7070,OptiPlex 7070
+2024-03-11 04:34:00,P1000162,Computer,3233,EWR-36441122,2024-03-20 04:34:00,Kasey Nguyen,Customer Support,2027-03-20 04:34:00,Dell Inspiron 15 3000 Laptop,Inspiron 15 3000
+2024-01-05 00:49:00,P1000163,Computer,2839,FII-16857010,2024-02-08 00:49:00,Alejandro Mascall,Product Management,2026-02-08 00:49:00,Dell XPS 13 Computer,XPS 13
+2024-03-07 18:12:00,P1000164,Computer,3121,KUC-42898873,2024-04-06 18:12:00,Warren Speach,HR,2026-04-06 18:12:00,Dell Latitude 3410,Latitude 3410
+2024-03-27 16:52:00,P1000165,Computer,4883,CFV-79446347,2024-03-30 16:52:00,Roseann Jerko,Sales,2026-03-30 16:52:00,Dell Inspiron 3501 Laptop,Inspiron 3501
+2024-02-18 05:26:00,P1000166,Computer,4287,ASJ-34485670,2024-02-28 05:26:00,Megan Burke,Sales,2025-02-28 05:26:00,Dell Optiplex 9020 Desktop Computer,Optiplex 9020
+2023-12-30 23:27:00,P1000167,Computer,3447,OEP-53226930,2024-02-21 23:27:00,Corinne Cowan,Finance,2026-02-21 23:27:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-03-28 20:27:00,P1000168,Computer,2919,AQD-36589722,2024-04-20 20:27:00,Florine Willardson,Sales,2026-04-20 20:27:00,Dell Inspiron 3593 Laptop,Inspiron 3593 Laptop
+2024-02-18 14:31:00,P1000169,Computer,4585,OWF-14540690,2024-04-05 14:31:00,Darrel Tork,Customer Support,2027-04-05 14:31:00,Dell XPS 13 Laptop,XPS 13
+2024-01-29 20:03:00,P1000170,Computer,3493,QOE-84762340,2024-02-29 20:03:00,Haley Rocheford,Sales,2025-02-28 20:03:00,Dell Inspiron 7567,Inspiron 7567
+2024-03-29 04:37:00,P1000171,Computer,2260,EBD-48265726,2024-04-12 04:37:00,Bart Hachey,Product Management,2026-04-12 04:37:00,Dell Inspiron 15,Inspiron 15
+2024-02-22 14:58:00,P1000172,Computer,2355,RIT-96412724,2024-03-08 14:58:00,Eduardo Bellendir,IT,2025-03-08 14:58:00,Dell Optiplex 3070 Desktop Computer,Optiplex 3070
+2024-02-28 11:11:00,P1000173,Computer,2031,XAO-62686931,2024-03-26 11:11:00,Kyle Lindauer,IT,2027-03-26 11:11:00,Dell Inspiron 15 3000 Series,Inspiron 15 3000 Series
+2024-02-16 07:36:00,P1000174,Computer,1744,UVH-33745126,2024-04-05 07:36:00,Lynda Caraway,Customer Support,2027-04-05 07:36:00,Dell Inspiron 5000 Computer,Inspiron 5000
+2024-02-10 11:13:00,P1000175,Computer,3383,FUL-11092443,2024-04-05 11:13:00,Nanette Turansky,Customer Support,2027-04-05 11:13:00,Dell Optiplex 3040 Desktop Computer,Optiplex 3040
+2024-02-27 02:29:00,P1000176,Computer,3817,UZE-50427586,2024-04-21 02:29:00,Jimmy Hrobsky,Finance,2026-04-21 02:29:00,Dell Alienware Gaming Desktop,Alienware Gaming Desktop
+2023-12-25 22:58:00,P1000177,Computer,3944,TDP-52453333,2024-02-22 22:58:00,Mara Rineheart,Customer Support,2027-02-22 22:58:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-02-19 20:05:00,P1000178,Computer,4889,FED-22128029,2024-03-07 20:05:00,Guillermo Tsang,Customer Support,2027-03-07 20:05:00,Dell Optiplex 780 Desktop Computer,Optiplex 780
+2024-01-14 17:24:00,P1000179,Computer,3077,DQE-08965939,2024-02-24 17:24:00,Sean Bonnet,Customer Support,2025-02-24 17:24:00,Dell Inspiron 15 3000 Computer,Inspiron 15 3000
+2024-01-04 14:27:00,P1000180,Computer,3411,WCY-65967233,2024-02-13 14:27:00,Danette Fostervold,Finance,2027-02-13 14:27:00,Dell Inspiron 15,Inspiron 15
+2024-03-02 19:53:00,P1000181,Computer,3738,GFQ-10507073,2024-03-16 19:53:00,Fannie Steese,Customer Support,2027-03-16 19:53:00,Dell Inspiron 5481,Inspiron 5481
+2024-02-13 00:11:00,P1000182,Computer,2630,PIQ-09636500,2024-03-10 00:11:00,Colin Altonen,Development,2026-03-10 00:11:00,Dell Optiplex 7060 Desktop Computer,Optiplex 7060
+2024-02-17 17:03:00,P1000183,Computer Peripheral,382,,2024-04-03 17:03:00,Carla Sirbaugh,Product Management,2026-04-03 17:03:00,HP LaserJet Printer 1100,LaserJet 1100
+2024-03-14 15:14:00,P1000184,Printer,1065,NDS-25952984,2024-03-18 15:14:00,Rita Center,Customer Support,2026-03-18 15:14:00,HP LaserJet Pro M281fdw,LaserJet Pro M281fdw
+2024-02-17 18:12:00,P1000185,Printer,2394,OJM-91375476,2024-03-31 18:12:00,Devon Samrah,IT,2026-03-31 18:12:00,HP LaserJet Pro M402dn Printer,LaserJet Pro M402dn
+2024-03-06 23:32:00,P1000186,Rack,400,,2024-03-29 23:32:00,Patty Bernasconi,Sales,2027-03-29 23:32:00,HP ProLiant DL380 Rack Server,ProLiant DL380
+2024-03-20 06:55:00,P1000187,Rack,400,,2024-04-19 06:55:00,Eduardo Bellendir,IT,2025-04-19 06:55:00,Rackmount Server Dell PowerEdge R940,PowerEdge R940
+2024-03-31 10:54:00,P1000188,Printer,898,ZFJ-39811635,2024-04-03 10:54:00,Peggy Hohlstein,Customer Support,2027-04-03 10:54:00,HP OfficeJet Pro 6978 All-in-One Printer,OfficeJet Pro 6978
+2024-03-29 17:07:00,P1000189,Computer,4535,CVF-57412511,2024-04-19 17:07:00,Viola Mcsorley,Customer Support,2027-04-19 17:07:00,Dell Optiplex 7040 Desktop Computer,Optiplex 7040
+2024-01-28 21:23:00,P1000190,Computer,3126,VQI-37986212,2024-03-01 21:23:00,Stephen Seiters,HR,2025-03-01 21:23:00,Dell OptiPlex 7010 Desktop Computer,OptiPlex 7010
+2024-01-13 20:31:00,P1000191,Rack,400,,2024-03-06 20:31:00,Judy Gartenmayer,IT,2026-03-06 20:31:00,Dell PowerEdge R740 Rack Server,PowerEdge R740
+2024-02-02 11:08:00,P1000192,Printer,1806,UTD-84213486,2024-03-11 11:08:00,David Loo,Development,2025-03-11 11:08:00,HP LaserJet Pro Printer,LaserJet Pro Printer
+2024-02-20 13:15:00,P1000193,Storage Device,200,,2024-04-01 13:15:00,Luella Pliner,Sales,2027-04-01 13:15:00,Dell Storage Device 500GB,Dell SD 500GB
+2024-02-25 11:14:00,P1000194,Storage Device,335,,2024-03-05 11:14:00,Alejandro Mascall,Product Management,2027-03-05 11:14:00,Dell PowerVault MD3 Storage Device,PowerVault MD3
+2024-03-03 10:57:00,P1000195,Computer Peripheral,476,,2024-04-24 10:57:00,Deshawn Inafuku,IT,2026-04-24 10:57:00,Dell External Hard Drive 1TB,External Hard Drive 1TB
+2024-01-24 05:28:00,P1000196,Computer,4575,QSN-57681756,2024-03-16 05:28:00,Sam Sorokin,IT,2025-03-16 05:28:00,HP EliteBook 840 G3 Laptop,EliteBook 840 G3
+2024-03-14 20:21:00,P1000197,Storage Device,495,,2024-04-18 20:21:00,Sue Haakinson,Customer Support,2026-04-18 20:21:00,Dell EMC PowerEdge R740 Storage Device,PowerEdge R740
+2023-12-27 01:26:00,P1000198,Printer,2244,ROV-03225149,2024-02-03 01:26:00,Marta Horner,Customer Support,2025-02-03 01:26:00,HP LaserJet Pro M203dw,LaserJet Pro M203dw
+2024-03-01 20:15:00,P1000199,Rack,400,,2024-04-16 20:15:00,Sal Pindell,Customer Support,2027-04-16 20:15:00,Dell PowerEdge R740 Rack Server,PowerEdge R740
+2024-03-28 13:20:00,P1000200,Storage Device,309,,2024-04-21 13:20:00,Ella Pahnke,Customer Support,2026-04-21 13:20:00,Dell EMC PowerEdge R740XD Storage Device,EMC PowerEdge R740XD
+2024-01-18 00:35:00,P1000201,Computer Peripheral,121,,2024-02-04 00:35:00,Marquita Bousman,Customer Support,2026-02-04 00:35:00,Dell Monitor 27,Monitor 27
+2024-01-08 18:00:00,P1000202,Computer Peripheral,219,,2024-02-25 18:00:00,Brendan Qin,Finance,2026-02-25 18:00:00,Dell Laser Mouse Computer Peripheral,Laser Mouse
+2024-01-18 20:35:00,P1000203,Storage Device,168,,2024-02-05 20:35:00,Jacinto Gawron,Customer Support,2027-02-05 20:35:00,Seagate Expansion Desktop 8TB,Expansion Desktop 8TB
+2024-03-05 02:52:00,P1000204,Storage Device,342,,2024-03-21 02:52:00,Rebeca Brumet,Customer Support,2025-03-21 02:52:00,Western Digital HDD 1TB,HDD 1TB
+2024-01-03 15:48:00,P1000205,Computer Peripheral,124,,2024-02-07 15:48:00,Mitch Schattner,Customer Support,2027-02-07 15:48:00,Dell Computer Peripheral Monitor S2419H,Monitor S2419H
+2024-02-25 00:39:00,P1000206,Computer Peripheral,185,,2024-03-01 00:39:00,Darrel Tork,Customer Support,2027-03-01 00:39:00,HP LaserJet Printer P4015,LaserJet P4015
+2024-03-14 17:03:00,P1000207,Storage Device,278,,2024-04-11 17:03:00,Latisha Bahls,Customer Support,2025-04-11 17:03:00,Dell Inspiron 5502 SSD,Inspiron 5502 SSD
+2024-01-10 10:02:00,P1000208,Computer,4362,BCY-94844495,2024-02-16 10:02:00,Cristopher Wiget,Customer Support,2025-02-16 10:02:00,Dell OptiPlex 7040,OptiPlex 7040
+2024-02-23 16:32:00,P1000209,Computer,2288,QKP-31295687,2024-03-25 16:32:00,John Retak,Sales,2027-03-25 16:32:00,Dell Inspiron 7391 Computer,Inspiron 7391
+2024-03-16 00:30:00,P1000210,Rack,400,,2024-03-23 00:30:00,Pierre Salera,IT,2025-03-23 00:30:00,Dell PowerEdge Server Rack,PowerEdge Server Rack
+2023-12-25 15:04:00,P1000211,Computer,3912,YLH-93315185,2024-02-23 15:04:00,Delphine Helmich,Finance,2025-02-23 15:04:00,Dell OptiPlex 780 Desktop Computer,OptiPlex 780
+2024-03-28 21:45:00,P1000212,Storage Device,316,,2024-04-22 21:45:00,Megan Burke,Sales,2027-04-22 21:45:00,Western Digital HDD 1TB,HDD 1TB
+2024-01-12 13:24:00,P1000213,Computer Peripheral,146,,2024-03-07 13:24:00,David Loo,Development,2026-03-07 13:24:00,Dell Computer Peripheral,Dell Peripheral
+2024-04-14 13:44:00,P1000214,Rack,400,,2024-04-16 13:44:00,Shanna Numkena,Customer Support,2026-04-16 13:44:00,Dell PowerEdge 42U Rack,PowerEdge 42U
+2024-03-08 07:00:00,P1000215,Computer Peripheral,239,,2024-04-08 07:00:00,Lane Brantz,Sales,2025-04-08 07:00:00,Logitech MX Master 3 Computer Peripheral,MX Master 3
+2024-03-17 05:56:00,P1000216,Rack,400,,2024-03-25 05:56:00,David Loo,Development,2026-03-25 05:56:00,Dell PowerEdge R940 Rack server,PowerEdge R940
+2024-01-18 11:36:00,P1000217,Storage Device,197,,2024-03-12 11:36:00,Rebeca Brumet,Customer Support,2026-03-12 11:36:00,Dell EMC Storage Array X4000,EMC X4000
+2024-03-09 10:07:00,P1000218,Storage Device,349,,2024-04-07 10:07:00,Alene Rabeck,Sales,2025-04-07 10:07:00,Western Digital Hard Drive 2TB,WD Hard Drive 2TB
+2024-02-18 18:08:00,P1000219,Printer,1329,NAO-31158012,2024-03-08 18:08:00,Tiffany Knust,Customer Support,2026-03-08 18:08:00,HP LaserJet Pro M304a Printer,LaserJet Pro M304
+2024-03-14 17:41:00,P1000220,Storage Device,259,,2024-04-21 17:41:00,Cherie Schronce,IT,2025-04-21 17:41:00,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+2024-02-25 02:54:00,P1000221,Storage Device,317,,2024-03-23 02:54:00,Sheila Holloran,Sales,2027-03-23 02:54:00,Samsung SSD 970 EVO Plus,SSD 970 EVO Plus
+2024-01-06 06:15:00,P1000222,Printer,1842,XQD-75180349,2024-02-17 06:15:00,Karyn Jinks,IT,2026-02-17 06:15:00,Brother HL-L2380DW Monochrome Laser Printer,HL-L2380DW
+2023-12-25 04:03:00,P1000223,Rack,400,,2024-02-07 04:03:00,Bud Richman,Sales,2025-02-07 04:03:00,Dell PowerEdge Rack R640,PowerEdge R640
+2024-04-23 01:38:00,P1000224,Storage Device,155,,2024-04-25 01:38:00,Phil Hendrie,Sales,2025-04-25 01:38:00,Dell Storage Device PowerVault NX400,PowerVault NX400
+2024-01-28 21:23:00,P1000225,Computer,3898,MWP-79134466,2024-02-29 21:23:00,Reginald Lunan,HR,2026-02-28 21:23:00,Dell Latitude 7480 Computer,Latitude 7480
+2024-02-28 21:00:00,P1000226,Computer Peripheral,347,,2024-04-16 21:00:00,Kurtis Asberry,Sales,2027-04-16 21:00:00,Logitech Wireless Keyboard K230,Wireless Keyboard K230
+2024-01-22 02:44:00,P1000227,Storage Device,185,,2024-02-01 02:44:00,Lacy Hyten,Sales,2026-02-01 02:44:00,Toshiba Hard Disk Drive 2TB,Hard Disk Drive 2TB
+2024-02-04 14:38:00,P1000228,Storage Device,479,,2024-03-18 14:38:00,Kasey Nguyen,Customer Support,2026-03-18 14:38:00,Dell EMC PowerEdge Rack Storage,EMC PowerEdge
+2023-12-16 19:11:00,P1000229,Computer,3662,PSE-04820949,2024-02-04 19:11:00,Joe Employee,Sales,2025-02-04 19:11:00,Dell OptiPlex 5070 Micro,OptiPlex 5070 Micro
+2024-03-16 11:22:00,P1000230,Computer,4422,IOU-93409005,2024-04-05 11:22:00,Teodoro Gaboury,Customer Support,2026-04-05 11:22:00,Dell Inspiron 15 Gaming Computer,Inspiron 15
+2024-02-22 08:41:00,P1000231,Rack,400,,2024-03-03 08:41:00,Valentine Granberry,Customer Support,2025-03-03 08:41:00,Dell PowerEdge Rack Server,PowerEdge Rack
+2024-01-15 12:15:00,P1000232,Computer Peripheral,358,,2024-03-12 12:15:00,Jewel Agresta,Customer Support,2026-03-12 12:15:00,Dell Monitor UltraSharp 27,UltraSharp 27
+2024-02-23 10:01:00,P1000233,Storage Device,480,,2024-03-13 10:01:00,Elmo Gabouer,Sales,2025-03-13 10:01:00,Segate HDD 1TB Model 501X,501X Segate HDD 1TB
+2024-01-16 09:18:00,P1000234,Rack,400,,2024-02-16 09:18:00,Florine Willardson,Sales,2026-02-16 09:18:00,Dell PowerEdge Rack Server,PowerEdge Server
+2024-02-15 03:16:00,P1000235,Computer,3190,ENB-72449905,2024-03-27 03:16:00,Mabel Weeden,Customer Support,2026-03-27 03:16:00,Dell Inspiron 15 3000,Inspiron 15 3000
+2024-03-11 16:17:00,P1000236,Printer,2348,CJT-81633496,2024-03-19 16:17:00,Alene Rabeck,Sales,2027-03-19 16:17:00,HP LaserJet Pro M15w,LaserJet Pro M15w
+2024-03-02 09:03:00,P1000237,Printer,901,XHU-75646445,2024-04-07 09:03:00,Florine Willardson,Sales,2027-04-07 09:03:00,HP LaserJet 400 Printer,LaserJet 400
+2024-04-14 04:25:00,P1000238,Storage Device,236,,2024-04-22 04:25:00,Bud Richman,Sales,2027-04-22 04:25:00,Western Digital My Cloud EX2,My Cloud EX2
+2024-01-12 00:30:00,P1000239,Rack,400,,2024-02-25 00:30:00,Dorthy Alexy,Development,2026-02-25 00:30:00,Dell PowerEdge Rack Server R740,Rack Server R740
+2024-01-15 14:53:00,P1000240,Computer Peripheral,297,,2024-02-22 14:53:00,Titus Rodreguez,Finance,2027-02-22 14:53:00,Dell Monitor Ultrasharp 27,Monitor Ultrasharp 27
+2024-01-15 17:07:00,P1000241,Computer,1508,BWT-27673291,2024-02-01 17:07:00,Doreen Sakurai,Sales,2027-02-01 17:07:00,Dell Inspiron 14,Inspiron 14
+2024-01-18 19:20:00,P1000242,Rack,400,,2024-03-14 19:20:00,John Retak,Sales,2025-03-14 19:20:00,Dell PowerEdge Rack Server,PowerEdge Rack
+2024-02-07 18:38:00,P1000243,Rack,400,,2024-02-20 18:38:00,Darrel Ruffins,IT,2027-02-20 18:38:00,Dell PowerEdge Rack Server,PowerEdge Server
+2024-03-14 06:35:00,P1000244,Rack,400,,2024-04-19 06:35:00,Mitchel Harnar,Sales,2027-04-19 06:35:00,Dell PowerEdge T440 Rack,PowerEdge T440
+2024-02-11 19:35:00,P1000245,Computer,4295,LNR-93484932,2024-04-08 19:35:00,Petra Clemmens,Sales,2025-04-08 19:35:00,Dell Inspiron 15 Gaming Computer,Inspiron 15 Gaming
+2024-02-18 15:39:00,P1000246,Computer,2086,WVP-38714084,2024-02-25 15:39:00,Allie Pumphrey,Product Management,2025-02-25 15:39:00,Dell XPS 13 Laptop,XPS 13
+2024-03-06 07:10:00,P1000247,Printer,805,GQC-09005165,2024-03-20 07:10:00,George Tukis,Customer Support,2026-03-20 07:10:00,HP LaserJet Pro M402,LaserJet Pro M402
+2024-02-10 21:25:00,P1000248,Computer,3296,WIX-49958252,2024-02-25 21:25:00,Reginald Lunan,HR,2025-02-25 21:25:00,Dell Inspiron 15 7000 Series,Inspiron 15 7000
+2024-02-06 22:48:00,P1000249,Storage Device,106,,2024-04-01 22:48:00,Teodoro Gaboury,Customer Support,2025-04-01 22:48:00,Hitachi Storage Device HGST Deskstar NAS,HGST Deskstar NAS
+2024-03-08 15:55:00,P1000250,Computer Peripheral,192,,2024-04-20 15:55:00,Sharlene Circelli,Sales,2026-04-20 15:55:00,Logitech MX Master 3 Advanced Wireless Mouse,MX Master 3
+2024-01-02 23:23:00,P1000251,Rack,400,,2024-02-05 23:23:00,Valentine Granberry,Customer Support,2025-02-05 23:23:00,DELL PowerEdge Rack Server R640,PowerEdge R640
+2024-01-18 16:40:00,P1000252,Computer Peripheral,486,,2024-02-03 16:40:00,Wayne Webb,IT,2027-02-03 16:40:00,Dell Monitor UltraSharp 24,Monitor UltraSharp 24
+2024-02-15 10:12:00,P1000253,Storage Device,440,,2024-02-25 10:12:00,Felipe Mahone,Customer Support,2025-02-25 10:12:00,Western Digital My Passport 2TB,My Passport 2TB
+2024-01-23 09:11:00,P1000254,Computer Peripheral,387,,2024-02-15 09:11:00,Davin Czukowski,Sales,2026-02-15 09:11:00,Dell Laser Printer 1700,Laser Printer 1700
+2023-12-31 01:33:00,P1000255,Rack,400,,2024-02-15 01:33:00,Rosalind Krenzke,Sales,2027-02-15 01:33:00,Dell PowerEdge Rack,PowerEdge Rack
+2024-03-18 21:07:00,P1000256,Storage Device,275,,2024-04-24 21:07:00,Lucien Iurato,Development,2027-04-24 21:07:00,Dell External Hard Drive 2TB,External Hard Drive 2TB
+2024-02-22 10:53:00,P1000257,Printer,1807,IAA-54635221,2024-04-22 10:53:00,Barton Friesner,IT,2025-04-22 10:53:00,HP OfficeJet Pro 6970 Printer,OfficeJet Pro 6970
+2024-02-08 16:53:00,P1000258,Storage Device,315,,2024-03-25 16:53:00,Kasey Nguyen,Customer Support,2026-03-25 16:53:00,Seagate Expansion Desktop 8TB External Hard Drive,Expansion Desktop 8TB
+2023-12-26 14:02:00,P1000259,Printer,1558,VIH-53642738,2024-02-08 14:02:00,Zackary Mockus,Customer Support,2027-02-08 14:02:00,HP LaserJet Pro MFP M28w,LaserJet Pro M28w
+2024-04-16 04:42:00,P1000260,Computer Peripheral,480,,2024-04-23 04:42:00,Dennis Millar,Sales,2025-04-23 04:42:00,Dell Laser Printer 1100,Laser Printer 1100
+2024-02-19 16:35:00,P1000261,Printer,1981,SRM-11784340,2024-03-17 16:35:00,Wes Fontanella,IT,2025-03-17 16:35:00,HP LaserJet Pro Printer,LaserJet Pro
+2024-03-03 11:14:00,P1000262,Printer,484,XMU-54041019,2024-03-15 11:14:00,Mitch Schattner,Customer Support,2027-03-15 11:14:00,HP LaserJet Printer 5200,LaserJet 5200
+2024-01-05 13:33:00,P1000263,Computer,4262,ADK-76773415,2024-02-09 13:33:00,Reginald Humes,Sales,2025-02-09 13:33:00,Dell Inspiron 15 3000,Inspiron 15 3000
+2024-01-21 01:43:00,P1000264,Computer Peripheral,92,,2024-03-17 01:43:00,Naomi Caetano,Customer Support,2025-03-17 01:43:00,Logitech MX Keys - Computer Peripheral,MX Keys
+2024-03-02 03:17:00,P1000265,Storage Device,323,,2024-03-27 03:17:00,Mara Rineheart,Customer Support,2027-03-27 03:17:00,Samsung SSD 860 EVO 1TB,SSD 860 EVO 1TB
+2024-01-25 14:45:00,P1000266,Storage Device,357,,2024-02-23 14:45:00,Sean Bonnet,Customer Support,2027-02-23 14:45:00,Western Digital 2TB External Hard Drive,WD 2TB External HDD
+2024-03-02 20:40:00,P1000267,Storage Device,307,,2024-04-03 20:40:00,Prince Kauk,Customer Support,2025-04-03 20:40:00,Samsung SSD 860 EVO 1TB,SSD 860 EVO 1TB
+2024-01-08 08:09:00,P1000268,Computer Peripheral,460,,2024-02-27 08:09:00,Mary Cruse,Sales,2026-02-27 08:09:00,Dell Ultrasharp Monitor U2415,Ultrasharp U2415
+2024-04-07 15:34:00,P1000269,Computer,4813,IST-85105018,2024-04-24 15:34:00,Luella Pliner,Sales,2025-04-24 15:34:00,Dell Optiplex 3070 Desktop Computer,Optiplex 3070
+2024-01-05 06:21:00,P1000270,Computer Peripheral,300,,2024-02-01 06:21:00,Jacklyn Emayo,Customer Support,2026-02-01 06:21:00,Dell Optical Mouse,Optical Mouse
+2024-01-09 02:46:00,P1000271,Computer Peripheral,352,,2024-02-13 02:46:00,David Dan,Sales,2027-02-13 02:46:00,Dell USB Keyboard K15,USB Keyboard K15
+2024-01-16 11:16:00,P1000272,Computer Peripheral,486,,2024-02-07 11:16:00,Alva Pennigton,Development,2027-02-07 11:16:00,Dell Monitor E2420H,Monitor E2420H
+2024-03-09 12:53:00,P1000273,Computer Peripheral,403,,2024-03-21 12:53:00,Lee Javens,Sales,2026-03-21 12:53:00,Dell Monitor Screen 24-Inch,Monitor Screen 24-Inch
+2024-02-04 02:30:00,P1000274,Printer,1302,VIF-75527329,2024-03-14 02:30:00,Heath Vanalphen,Sales,2025-03-14 02:30:00,HP LaserJet Pro M404n,LaserJet Pro M404n
+2024-03-20 02:35:00,P1000275,Printer,405,OUL-89931294,2024-04-16 02:35:00,Lynda Caraway,Customer Support,2027-04-16 02:35:00,HP LaserJet Pro Printer,LaserJet Pro
+2024-01-17 15:16:00,P1000276,Printer,887,WRY-28661749,2024-03-05 15:16:00,Allie Pumphrey,Product Management,2027-03-05 15:16:00,HP LaserJet Pro M15 Printer,LaserJet Pro M15
+2024-01-10 21:04:00,P1000277,Rack,400,,2024-02-26 21:04:00,Colin Altonen,Development,2025-02-26 21:04:00,Dell PowerEdge Rack Server,PowerEdge Server
+2024-02-14 17:50:00,P1000278,Computer Peripheral,283,,2024-02-27 17:50:00,David Dan,Sales,2027-02-27 17:50:00,Logitech Mouse M185,Mouse M185
+2024-03-24 04:01:00,P1000279,Rack,400,,2024-04-01 04:01:00,Rebeca Brumet,Customer Support,2025-04-01 04:01:00,Dell PowerEdge Rack Server,PowerEdge Rack
+2024-02-07 11:31:00,P1000280,Computer Peripheral,333,,2024-02-17 11:31:00,Darrel Ruffins,IT,2025-02-17 11:31:00,HP Elite USB-C Dock G3 - Computer Peripheral,HP Elite USB-C Dock G3
+2024-04-08 13:35:00,P1000281,Rack,400,,2024-04-22 13:35:00,Mara Rineheart,Customer Support,2027-04-22 13:35:00,Dell PowerEdge 2950 Rack,PowerEdge 2950
+2023-12-12 14:28:00,P1000282,Storage Device,334,,2024-02-10 14:28:00,Emilia Oxley,Customer Support,2025-02-10 14:28:00,Dell EMC PowerVault ME4024 Storage Device,PowerVault ME4024
+2024-03-05 19:52:00,P1000283,Printer,1196,HOI-49339571,2024-03-27 19:52:00,Mitchel Harnar,Sales,2025-03-27 19:52:00,HP LaserJet Pro M404n Printer,LaserJet Pro M404n
+2024-02-10 12:24:00,P1000284,Storage Device,370,,2024-03-11 12:24:00,Ross Spurger,Customer Support,2025-03-11 12:24:00,Samsung SSD 970 EVO 1TB,SSD 970 EVO 1TB
+2024-03-13 14:36:00,P1000285,Printer,2074,DZC-44693884,2024-03-27 14:36:00,Heath Vanalphen,Sales,2025-03-27 14:36:00,HP LaserJet Pro M404dn Printer,LaserJet Pro M404
+2024-01-28 13:43:00,P1000286,Rack,400,,2024-03-22 13:43:00,Howard Johnson,Sales,2025-03-22 13:43:00,Dell PowerEdge Rack Server,PowerEdge Server
+2024-02-07 14:47:00,P1000287,Printer,844,XRB-82349033,2024-03-16 14:47:00,Maurine Monroy,IT,2025-03-16 14:47:00,HP LaserJet Pro M404n Printer,LaserJet Pro M404n
+2024-01-25 10:28:00,P1000288,Printer,2168,POO-12056022,2024-03-16 10:28:00,Danette Fostervold,Finance,2027-03-16 10:28:00,HP LaserJet 4000 Printer,LaserJet 4000
+2024-03-22 04:28:00,P1000289,Printer,1833,LKE-90501640,2024-04-06 04:28:00,Darrel Ruffins,IT,2026-04-06 04:28:00,HP LaserJet Professional P1102w,LaserJet Professional P1102w
+2023-12-14 04:45:00,P1000290,Printer,1786,EGX-87306396,2024-02-06 04:45:00,Prince Kauk,Customer Support,2026-02-06 04:45:00,HP LaserJet Pro M254dw Printer,LaserJet Pro M254dw
+2023-12-23 04:36:00,P1000291,Computer,4634,COR-41810854,2024-02-18 04:36:00,Jewel Agresta,Customer Support,2025-02-18 04:36:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-17 18:14:00,P1000292,Storage Device,360,,2024-03-19 18:14:00,Renae Eldrige,Sales,2026-03-19 18:14:00,Seagate Barracuda 1TB HDD,Barracuda 1TB HDD
+2023-12-14 05:32:00,P1000293,Computer Peripheral,488,,2024-02-03 05:32:00,Lane Brantz,Sales,2027-02-03 05:32:00,Logitech Wireless Mouse,Wireless Mouse
+2024-03-19 03:42:00,P1000294,Storage Device,387,,2024-04-23 03:42:00,Rena Griffeth,Customer Support,2026-04-23 03:42:00,Western Digital Disk Drive 1TB,WD Drive 1TB
+2024-01-17 20:33:00,P1000295,Printer,657,ILO-30663875,2024-03-03 20:33:00,John Retak,Sales,2025-03-03 20:33:00,HP LaserJet Pro M281fdw,LaserJet Pro M281fdw
+2024-02-29 19:51:00,P1000296,Storage Device,298,,2024-04-10 19:51:00,Bart Hachey,Product Management,2027-04-10 19:51:00,Samsung SSD 870 EVO,SSD 870 EVO
+2024-02-28 21:12:00,P1000297,Computer Peripheral,368,,2024-04-01 21:12:00,Marta Horner,Customer Support,2027-04-01 21:12:00,Dell Ultrasharp U2419H Computer Peripheral,Ultrasharp U2419H
+2024-01-13 07:47:00,P1000298,Printer,744,POV-21856763,2024-02-09 07:47:00,Cherie Schronce,IT,2025-02-09 07:47:00,HP LaserJet Pro MFP,LaserJet Pro MFP
+2024-03-11 21:10:00,P1000299,Rack,400,,2024-04-01 21:10:00,Florine Willardson,Sales,2026-04-01 21:10:00,Dell PowerEdge R740 Rack Server,PowerEdge R740
+2024-04-04 15:15:00,P1000300,Printer,2176,OUF-04870059,2024-04-09 15:15:00,Wayne Webb,IT,2027-04-09 15:15:00,HP LaserJet Pro M501,LaserJet Pro M501
+2024-04-10 14:26:00,P1000301,Computer Peripheral,172,,2024-04-24 14:26:00,Logan Muhl,Customer Support,2027-04-24 14:26:00,HP Elite USB-C Docking Station,Elite USB-C Docking
+2024-02-01 02:14:00,P1000302,Storage Device,243,,2024-02-16 02:14:00,Efren Baucher,Sales,2026-02-16 02:14:00,Dell Storage Array,Storage Array
+2023-12-29 11:56:00,P1000303,Computer Peripheral,420,,2024-02-07 11:56:00,Lane Brantz,Sales,2025-02-07 11:56:00,Dell Wireless Keyboard and Mouse,Wireless Keyboard and Mouse
+2023-12-28 03:33:00,P1000304,Printer,2478,SFX-92340258,2024-02-05 03:33:00,Reva Lecates,Finance,2025-02-05 03:33:00,HP LaserJet Color M476dn Printer,LaserJet M476dn
+2024-02-07 11:53:00,P1000305,Server,11475,ARV-92069998,2024-03-22 11:53:00,Terrance Nimmer,HR,2027-03-22 11:53:00,Dell PowerEdge R940 Server,PowerEdge R940
+2024-02-09 20:45:00,P1000306,Computer,2424,CAI-05274847,2024-02-20 20:45:00,Deandre Resendiz,Customer Support,2026-02-20 20:45:00,Dell Inspiron Computer,Dell Inspiron
+2024-01-14 12:41:00,P1000307,Computer,3270,PBY-99873828,2024-03-01 12:41:00,Kasey Nguyen,Customer Support,2026-03-01 12:41:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-03-03 08:20:00,P1000308,Rack,400,,2024-03-13 08:20:00,Sal Pindell,Customer Support,2027-03-13 08:20:00,Dell PowerEdge R240 Rack Server,PowerEdge R240
+2024-03-23 17:47:00,P1000309,Storage Device,405,,2024-04-24 17:47:00,Mandy Mcdonnell,Development,2025-04-24 17:47:00,Hitachi UltraStar 2TB,UltraStar 2TB
+2024-01-29 09:15:00,P1000310,Computer Peripheral,198,,2024-03-22 09:15:00,Marquita Bousman,Customer Support,2025-03-22 09:15:00,Dell Laser Printer C1760nw,Laser Printer C1760nw
+2024-03-19 08:05:00,P1000311,Computer,3638,HVL-65280156,2024-03-28 08:05:00,Denver Topete,Customer Support,2027-03-28 08:05:00,Dell Precision 7540 Workstation,Precision 7540
+2024-01-24 03:33:00,P1000312,Printer,1873,SPY-35413855,2024-03-10 03:33:00,Luella Pliner,Sales,2025-03-10 03:33:00,HP LaserJet Pro M404dn,LaserJet Pro M404dn
+2024-03-11 01:45:00,P1000313,Computer,2836,NYN-46257127,2024-04-21 01:45:00,Elmo Dagenais,Sales,2026-04-21 01:45:00,Dell Inspiron 15,Inspiron 15
+2024-02-16 13:57:00,P1000314,Storage Device,278,,2024-02-22 13:57:00,Elmo Dagenais,Sales,2025-02-22 13:57:00,Dell PowerVault RD1000 Storage Device,PowerVault RD1000
+2024-01-11 06:23:00,P1000315,Storage Device,469,,2024-02-05 06:23:00,Viola Mcsorley,Customer Support,2026-02-05 06:23:00,Dell EMC Storage Device SAN,EMC SAN
+2024-01-29 14:17:00,P1000316,Printer,921,DGG-36353036,2024-03-20 14:17:00,Danette Fostervold,Finance,2025-03-20 14:17:00,HP LaserJet Pro M452dn,LaserJet Pro M452dn
+2024-01-10 12:32:00,P1000317,Storage Device,100,,2024-02-04 12:32:00,Rebeca Brumet,Customer Support,2027-02-04 12:32:00,Seagate Hard Drive 2TB,Hard Drive 2TB
+2024-01-26 17:04:00,P1000318,Computer Peripheral,119,,2024-02-21 17:04:00,Mary Cruse,Sales,2027-02-21 17:04:00,Dell External Hard Drive S3200,External Hard Drive S3200
+2024-02-09 21:49:00,P1000319,Rack,400,,2024-03-15 21:49:00,Nanette Turansky,Customer Support,2026-03-15 21:49:00,Hewlett Packard Enterprise 42U Rack,42U Rack
+2023-12-05 03:50:00,P1000320,Server,11263,MXR-97814705,2024-02-03 03:50:00,Reginald Lunan,HR,2025-02-03 03:50:00,Dell PowerEdge R340 Server,PowerEdge R340
+2023-12-10 22:01:00,P1000321,Computer Peripheral,488,,2024-02-03 22:01:00,Viola Mcsorley,Customer Support,2026-02-03 22:01:00,Logitech MX Master 3 Mouse,MX Master 3
+2024-02-05 09:31:00,P1000322,Computer Peripheral,271,,2024-03-07 09:31:00,Fabian Mcshaw,Sales,2027-03-07 09:31:00,Dell External Hard Drive 2TB,External Hard Drive 2TB
+2024-03-12 07:47:00,P1000323,Storage Device,122,,2024-04-11 07:47:00,Darrel Tork,Customer Support,2026-04-11 07:47:00,Dell PowerVault MD3820f Storage Device,PowerVault MD3820f
+2024-01-23 00:25:00,P1000324,Computer Peripheral,432,,2024-03-14 00:25:00,John Retak,Sales,2025-03-14 00:25:00,Dell Computer Peripheral X110,X110
+2024-02-13 22:30:00,P1000325,Web Server,8000,,2024-04-05 22:30:00,Reginald Lunan,HR,2025-04-05 22:30:00,Dell PowerEdge Web Server,PowerEdge Web Server
+2024-03-11 10:11:00,P1000326,Computer Peripheral,357,,2024-04-26 10:11:00,Latisha Bahls,Customer Support,2027-04-26 10:11:00,Dell UltraSharp 27 4K Monitor,UltraSharp 27 4K
+2024-01-13 14:29:00,P1000327,Printer,2041,WNR-30621855,2024-03-07 14:29:00,Kira Papen,Customer Support,2025-03-07 14:29:00,HP LaserJet Pro M404n,LaserJet Pro M404n
+2024-02-13 09:42:00,P1000328,Computer,1631,LBS-15160657,2024-03-28 09:42:00,Terrance Nimmer,HR,2027-03-28 09:42:00,Dell Inspiron 3501,Inspiron 3501
+2024-03-27 18:55:00,P1000329,Printer,1040,JZZ-88848382,2024-04-22 18:55:00,Danette Fostervold,Finance,2025-04-22 18:55:00,HP LaserJet Pro M402dn Printer,LaserJet Pro M402dn
+2024-01-27 00:31:00,P1000330,Computer Peripheral,240,,2024-03-26 00:31:00,Tiffany Knust,Customer Support,2027-03-26 00:31:00,Dell UltraSharp Monitor U2415,U2415
+2023-12-25 04:15:00,P1000331,Storage Device,154,,2024-02-18 04:15:00,Emery Reek,Customer Support,2025-02-18 04:15:00,Seagate External HDD 2TB,External HDD 2TB
+2024-02-22 10:20:00,P1000332,Computer,4215,FXW-34991423,2024-03-25 10:20:00,Jasmin Gum,Sales,2027-03-25 10:20:00,Dell Inspiron 15 Gaming Laptop,Inspiron 15 Gaming
+2024-03-12 03:25:00,P1000333,Computer,3374,HTI-37519848,2024-03-25 03:25:00,Efren Baucher,Sales,2025-03-25 03:25:00,Dell Inspiron 3593 Laptop,Inspiron 3593
+2024-02-06 15:44:00,P1000334,Rack,400,,2024-03-29 15:44:00,Sue Haakinson,Customer Support,2025-03-29 15:44:00,HP ProLiant DL380 Rack Server,ProLiant DL380
+2024-04-01 08:31:00,P1000335,Rack,400,,2024-04-16 08:31:00,Patty Bernasconi,Sales,2026-04-16 08:31:00,Dell PowerEdge Rack,PowerEdge Rack
+2024-02-09 17:49:00,P1000336,Rack,400,,2024-02-25 17:49:00,Pierre Salera,IT,2025-02-25 17:49:00,Dell PowerEdge R230 Rack,PowerEdge R230
+2024-01-24 11:12:00,P1000337,Rack,400,,2024-02-26 11:12:00,Donald Sherretts,Customer Support,2027-02-26 11:12:00,Dell PowerEdge Rack Server R940,PowerEdge R940
+2024-01-25 23:04:00,P1000338,Computer Peripheral,282,,2024-02-19 23:04:00,Delphine Helmich,Finance,2027-02-19 23:04:00,Dell Computer Peripheral Mouse,Dell Mouse
+2024-03-14 06:30:00,P1000339,Computer,3036,WAB-78883551,2024-03-29 06:30:00,Guillermo Tsang,Customer Support,2027-03-29 06:30:00,Dell OptiPlex 790 Desktop Computer,OptiPlex 790
+2024-01-28 16:57:00,P1000340,Computer Peripheral,453,,2024-02-13 16:57:00,Petra Clemmens,Sales,2026-02-13 16:57:00,Dell UltraSharp 32 4K USB-C Monitor,UltraSharp 32 4K USB-C
+2024-02-04 13:49:00,P1000341,Server,9075,AWH-68963957,2024-02-20 13:49:00,Sam Sorokin,IT,2027-02-20 13:49:00,Dell PowerEdge R840 Server,PowerEdge R840
+2024-01-29 01:31:00,P1000342,Web Server,8000,,2024-03-02 01:31:00,Terrance Nimmer,HR,2027-03-02 01:31:00,Dell PowerEdge R830 Web Server,PowerEdge R830
+2024-01-20 18:37:00,P1000343,Computer Peripheral,147,,2024-03-09 18:37:00,Jimmie Barninger,Customer Support,2027-03-09 18:37:00,Dell 24 Monitor E2420H,E2420H
+2024-01-06 06:53:00,P1000344,Rack,400,,2024-02-13 06:53:00,Lacy Belmont,Customer Support,2026-02-13 06:53:00,Rack Server A1,Server A1
+2024-03-14 12:12:00,P1000345,Storage Device,243,,2024-04-26 12:12:00,John Retak,Sales,2025-04-26 12:12:00,Western Digital 1TB HDD,WD 1TB HDD
+2024-02-01 07:06:00,P1000346,Rack,400,,2024-03-26 07:06:00,Merle Wyrosdick,Customer Support,2026-03-26 07:06:00,Dell PowerEdge Rack,PowerEdge Rack
+2024-04-02 01:24:00,P1000347,Storage Device,138,,2024-04-18 01:24:00,Claudio Loose,Customer Support,2026-04-18 01:24:00,Western Digital External HDD 2TB,WD External HDD 2TB
+2024-01-24 14:10:00,P1000348,Storage Device,361,,2024-03-24 14:10:00,Lane Brantz,Sales,2026-03-24 14:10:00,Dell PowerVault MD Storage Device,PowerVault MD
+2024-01-29 17:16:00,P1000349,Storage Device,387,,2024-03-26 17:16:00,Isaac Davensizer,Customer Support,2025-03-26 17:16:00,Seagate Backup Plus Hub 8TB,Backup Plus Hub 8TB
+2024-03-06 01:07:00,P1000350,Computer,4074,AZP-75577467,2024-03-26 01:07:00,Terrance Nimmer,HR,2027-03-26 01:07:00,Dell Inspiron 5559 Laptop,Inspiron 5559
+2024-02-16 09:17:00,P1000351,Storage Device,487,,2024-03-27 09:17:00,Vince Ettel,Customer Support,2026-03-27 09:17:00,Dell EMC Isilon X210 Storage Device,Isilon X210
+2024-01-18 01:53:00,P1000352,Printer,822,UFD-72880987,2024-02-08 01:53:00,Byron Fortuna,IT,2025-02-08 01:53:00,HP LaserJet Pro M202nw Printer,LaserJet Pro M202nw
+2023-12-17 06:49:00,P1000353,Rack,400,,2024-02-01 06:49:00,Lee Javens,Sales,2025-02-01 06:49:00,Dell PowerEdge Rack Server,PowerEdge Rack
+2024-01-27 01:57:00,P1000354,Computer,2763,NZR-88293610,2024-02-20 01:57:00,Dollie Daquino,Customer Support,2025-02-20 01:57:00,Dell Inspiron Computer,Inspiron
+2024-01-17 08:14:00,P1000355,Computer,1573,PYS-97464448,2024-03-15 08:14:00,Jimmy Hrobsky,Finance,2025-03-15 08:14:00,Dell OptiPlex 3050 Desktop Computer,OptiPlex 3050
+2024-03-15 01:24:00,P1000356,Rack,400,,2024-04-24 01:24:00,Teodoro Gaboury,Customer Support,2025-04-24 01:24:00,Dell PowerEdge R640 Rack Server,PowerEdge R640
+2024-04-20 21:10:00,P1000357,Computer Peripheral,263,,2024-04-21 21:10:00,Teodoro Gaboury,Customer Support,2027-04-21 21:10:00,Logitech HD Webcam C310,HD Webcam C310
+2024-03-14 14:39:00,P1000358,Storage Device,480,,2024-04-11 14:39:00,Maryann Garnette,IT,2025-04-11 14:39:00,Western Digital My Passport Ultra 2TB,My Passport Ultra 2TB
+2024-01-11 01:22:00,P1000359,Rack,400,,2024-03-11 01:22:00,Rena Griffeth,Customer Support,2026-03-11 01:22:00,Dell PowerEdge Rack,PowerEdge Rack
+2024-04-10 21:43:00,P1000360,Storage Device,133,,2024-04-22 21:43:00,Doreen Sakurai,Sales,2025-04-22 21:43:00,Samsung SSD 870 EVO,SSD 870 EVO
+2024-02-02 16:38:00,P1000361,Computer,1926,UKL-52957034,2024-03-27 16:38:00,Reginald Lunan,HR,2026-03-27 16:38:00,Dell OptiPlex 780 Computer,OptiPlex 780
+2024-02-03 00:12:00,P1000362,Storage Device,135,,2024-03-18 00:12:00,Berta Karczewski,Sales,2025-03-18 00:12:00,Western Digital HDD 1TB,WD_HDD_1TB
+2024-03-20 16:08:00,P1000363,Storage Device,196,,2024-04-19 16:08:00,Cherie Fuhri,Customer Support,2026-04-19 16:08:00,Dell EMC Storage NX3240,EMC NX3240
+2024-02-13 19:39:00,P1000364,Printer,850,YSP-09027266,2024-02-21 19:39:00,Darrell Amrich,Customer Support,2025-02-21 19:39:00,HP LaserJet Pro M15w,LaserJet Pro M15w
+2024-01-03 09:31:00,P1000365,Storage Device,450,,2024-02-09 09:31:00,Patty Bernasconi,Sales,2026-02-09 09:31:00,WD Black 2TB Performance Desktop Hard Disk Drive - 7200 RPM,2TB WD Black HDD
+2024-03-10 02:02:00,P1000366,Computer Peripheral,236,,2024-04-16 02:02:00,Ted Keppel,IT,2025-04-16 02:02:00,Dell UltraSharp Monitor 27 Inch U2718Q,UltraSharp U2718Q
+2023-12-30 01:49:00,P1000367,Computer,2380,UND-87817945,2024-02-10 01:49:00,Dorthy Alexy,Development,2025-02-10 01:49:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-01-27 10:07:00,P1000368,Computer,2837,UNC-08225960,2024-02-05 10:07:00,Bud Richman,Sales,2026-02-05 10:07:00,Dell OptiPlex 780 Computer,OptiPlex 780
+2024-01-06 21:47:00,P1000369,Computer Peripheral,308,,2024-03-01 21:47:00,Diana Temple,Sales,2025-03-01 21:47:00,Dell UltraSharp Computer Peripheral,UltraSharp Peripheral
+2024-02-09 21:25:00,P1000370,Computer,2111,PGY-09738741,2024-03-22 21:25:00,Eduardo Bellendir,IT,2027-03-22 21:25:00,Dell Inspiron 15 Computer,Inspiron 15
+2023-12-23 01:06:00,P1000371,Computer,4710,EOV-95411577,2024-02-06 01:06:00,Kurtis Mcbay,Sales,2026-02-06 01:06:00,Dell Inspiron 15 5000 series,Inspiron 15 5000
+2023-12-26 06:23:00,P1000372,Rack,400,,2024-02-01 06:23:00,Devon Samrah,IT,2027-02-01 06:23:00,Dell PowerEdge Rack,PowerEdge
+2024-01-25 15:01:00,P1000373,Rack,400,,2024-03-05 15:01:00,Carol Coughlin,Sales,2027-03-05 15:01:00,HP ProLiant DL380 G10 Rack Server,ProLiant DL380 G10 Server
+2024-02-10 03:42:00,P1000374,Storage Device,182,,2024-03-24 03:42:00,Kathie Argenti,Customer Support,2026-03-24 03:42:00,Dell SSD Storage AB123,SSD Storage AB123
+2024-04-11 13:11:00,P1000375,Printer,1262,VMJ-24737079,2024-04-13 13:11:00,Pierre Salera,IT,2025-04-13 13:11:00,HP OfficeJet 3830 Printer,OfficeJet 3830
+2024-01-09 21:00:00,P1000376,Computer,4543,YYO-74685356,2024-02-11 21:00:00,Rebekah Padley,Sales,2026-02-11 21:00:00,Dell Inspiron 5400 Computer,Inspiron 5400
+2024-03-18 18:43:00,P1000377,Rack,400,,2024-04-26 18:43:00,Lacy Hyten,Sales,2025-04-26 18:43:00,Dell PowerEdge Rack R940,PowerEdge R940
+2024-02-18 03:12:00,P1000378,Computer,1530,WEL-93242674,2024-02-27 03:12:00,Vince Ettel,Customer Support,2027-02-27 03:12:00,Dell Inspiron 15,Inspiron 15
+2024-03-06 04:14:00,P1000379,Rack,400,,2024-03-11 04:14:00,Ross Spurger,Customer Support,2025-03-11 04:14:00,Dell PowerEdge T30 Rack,PowerEdge T30 Rack
+2024-03-17 03:43:00,P1000380,Web Server,8000,,2024-04-05 03:43:00,Stephen Seiters,HR,2027-04-05 03:43:00,Dell PowerEdge R740 Web Server,PowerEdge R740
+2024-02-27 04:08:00,P1000381,Storage Device,136,,2024-04-24 04:08:00,Vince Ettel,Customer Support,2027-04-24 04:08:00,Samsung SSD 860 EVO,SSD 860 EVO
+2024-03-24 03:36:00,P1000382,Computer,1923,MEV-76052964,2024-04-26 03:36:00,Rena Griffeth,Customer Support,2025-04-26 03:36:00,Dell XPS Desktop PC,XPS Desktop
+2024-03-09 14:02:00,P1000383,Rack,400,,2024-03-23 14:02:00,Ron Kettering,IT,2027-03-23 14:02:00,Dell PowerEdge R430 Rack Server,PowerEdge R430
+2024-03-25 19:45:00,P1000384,Computer,2276,IQO-67484631,2024-04-22 19:45:00,Lacy Belmont,Customer Support,2027-04-22 19:45:00,Dell Inspiron 15 5000 Series,Inspiron 15 5000 Series
+2024-02-02 10:48:00,P1000385,Computer Peripheral,459,,2024-03-07 10:48:00,Cherie Schronce,IT,2025-03-07 10:48:00,Logitech USB Wired Mouse,USB Mouse
+2024-03-29 23:09:00,P1000386,Computer,4940,FCC-14840994,2024-04-15 23:09:00,Terrance Nimmer,HR,2025-04-15 23:09:00,Dell Inspiron 7000 Computer,Inspiron 7000
+2024-03-27 01:33:00,P1000387,Rack,400,,2024-03-28 01:33:00,Bud Richman,Sales,2026-03-28 01:33:00,Dell PowerEdge 1U Rack,PowerEdge 1U
+2024-02-09 17:12:00,P1000388,Printer,562,QXZ-30869045,2024-03-06 17:12:00,Kyle Lindauer,IT,2025-03-06 17:12:00,Canon PIXMA TR8520 Printer,PIXMA TR8520
+2024-03-06 13:37:00,P1000389,Rack,400,,2024-03-09 13:37:00,Petra Clemmens,Sales,2025-03-09 13:37:00,Dell PowerEdge Rack Server,PowerEdge Rack
+2024-01-30 03:57:00,P1000390,Printer,1038,AWF-30106120,2024-03-30 03:57:00,Jarvis Galas,Customer Support,2025-03-30 03:57:00,HP LaserJet Pro M404n Printer,LaserJet Pro M404n
+2024-03-29 00:33:00,P1000391,Server,5009,SHP-91872711,2024-04-08 00:33:00,Reginald Lunan,HR,2026-04-08 00:33:00,Dell PowerEdge R740 Server,PowerEdge R740
+2024-02-28 02:39:00,P1000392,Computer,1892,FKS-80116252,2024-04-23 02:39:00,Megan Burke,Sales,2026-04-23 02:39:00,Dell Inspiron 15 Computer,Inspiron 15
+2024-02-08 14:33:00,P1000393,Printer,1765,ILW-37616586,2024-04-07 14:33:00,Doug Matrisciano,Customer Support,2026-04-07 14:33:00,HP LaserJet Pro Printer,LaserJet Pro
+2024-02-02 05:43:00,P1000394,Rack,400,,2024-03-04 05:43:00,Valerie Pou,Customer Support,2025-03-04 05:43:00,Rack - Dell PowerEdge R940,Dell PowerEdge R940
+2024-02-15 09:50:00,P1000395,Computer Peripheral,245,,2024-03-19 09:50:00,Elmo Dagenais,Sales,2027-03-19 09:50:00,Dell External Hard Drive 1TB,External Hard Drive 1TB
+2024-02-16 11:51:00,P1000396,Storage Device,163,,2024-04-03 11:51:00,Maryann Garnette,IT,2025-04-03 11:51:00,Dell EMC PowerVault NX Series,PowerVault NX Series
+2024-02-27 20:29:00,P1000397,Printer,1901,NVC-37979769,2024-03-09 20:29:00,Chuck Farley,Sales,2027-03-09 20:29:00,HP OfficeJet Pro 6978 All-in-One Printer,OfficeJet Pro 6978
+2024-02-03 19:28:00,P1000398,Computer Peripheral,458,,2024-03-08 19:28:00,Diana Temple,Sales,2027-03-08 19:28:00,Logitech Wireless Mouse M185,Wireless Mouse M185
+2024-02-14 11:07:00,P1000399,Storage Device,410,,2024-04-13 11:07:00,Shelley Groden,Customer Support,2026-04-13 11:07:00,Dell EMC PowerEdge R940 Storage Device,PowerEdge R940
+2024-03-01 16:41:00,P1000400,Storage Device,382,,2024-04-20 16:41:00,Fred Luddy,Development,2027-04-20 16:41:00,Dell EMC PowerStore Storage Device,EMC PowerStore
+2024-02-01 03:55:00,P1000401,Computer,3122,OUG-98690570,2024-03-21 03:55:00,Valentine Granberry,Customer Support,2025-03-21 03:55:00,Dell Precision 15 Computer,Precision 15
+2024-02-28 19:49:00,P1000402,Computer Peripheral,407,,2024-03-15 19:49:00,Eduardo Bellendir,IT,2026-03-15 19:49:00,Dell Monitor 32 inch,Monitor 32 inch
+2024-04-07 11:12:00,P1000403,Computer,3280,HNV-81455547,2024-04-09 11:12:00,Allyson Gillispie,Development,2025-04-09 11:12:00,Dell OptiPlex 7070 Desktop Computer,OptiPlex 7070
+2024-02-27 15:38:00,P1000404,Printer,581,EZY-79548270,2024-04-02 15:38:00,Deshawn Inafuku,IT,2025-04-02 15:38:00,HP LaserJet Pro M15w Printer,LaserJet Pro M15w
+2024-01-30 07:20:00,P1000405,Computer,4964,YAW-49692486,2024-03-18 07:20:00,Marquita Bousman,Customer Support,2025-03-18 07:20:00,Dell Inspiron 5567 Laptop,Inspiron 5567
+2024-01-30 10:57:00,P1000406,Web Server,8000,,2024-02-28 10:57:00,Stephen Seiters,HR,2026-02-28 10:57:00,Dell PowerEdge T340 Web Server,PowerEdge T340
+2024-03-21 22:22:00,P1000407,Web Server,8000,,2024-04-26 22:22:00,Jimmy Hrobsky,Finance,2025-04-26 22:22:00,Dell PowerEdge R740 Web Server,PowerEdge R740
+2024-01-10 23:42:00,P1000408,Computer,1708,YBS-86742618,2024-03-09 23:42:00,Danny Dales,Customer Support,2026-03-09 23:42:00,Dell Optiplex 7080,Optiplex 7080
+2024-02-18 16:41:00,P1000409,Printer,2402,UCL-99209892,2024-04-11 16:41:00,Rena Griffeth,Customer Support,2026-04-11 16:41:00,HP LaserJet Pro M404n,LaserJet Pro M404n
+2024-03-01 10:21:00,P1000410,Printer,1513,VAB-84622764,2024-03-20 10:21:00,Lee Javens,Sales,2026-03-20 10:21:00,HP LaserJet Pro M102,LaserJet Pro M102
+2024-01-30 17:38:00,P1000411,Computer,4346,ZFA-72433590,2024-02-08 17:38:00,Darrell Amrich,Customer Support,2027-02-08 17:38:00,Dell Optiplex 3060 Computer,Optiplex 3060
+2024-02-01 06:00:00,P1000412,Storage Device,106,,2024-02-20 06:00:00,Naomi Mcraven,Customer Support,2025-02-20 06:00:00,Dell PowerVault MD3210i Storage Device,PowerVault MD3210i
+2024-02-11 21:22:00,P1000413,Computer,4970,MHI-67985239,2024-03-08 21:22:00,Lizzie Torregrossa,IT,2027-03-08 21:22:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-08 10:52:00,P1000414,Computer,2427,ELV-45260678,2024-04-03 10:52:00,Lacy Hyten,Sales,2026-04-03 10:52:00,Dell Latitude E6520 Laptop,Latitude E6520
+2024-02-20 03:43:00,P1000415,Rack,400,,2024-03-08 03:43:00,Peggy Hohlstein,Customer Support,2027-03-08 03:43:00,Dell PowerEdge Rack Server,PowerEdge Rack Server
+2024-02-08 00:05:00,P1000416,Rack,400,,2024-03-26 00:05:00,Alva Pennigton,Development,2026-03-26 00:05:00,Cisco Data Center Rack,Data Center Rack
+2024-02-19 17:03:00,P1000417,Computer,4293,TJD-11280508,2024-03-09 17:03:00,Nathanial Phoenix,Customer Support,2026-03-09 17:03:00,Dell Precision 7550 Laptop,Precision 7550
+2024-01-09 09:08:00,P1000418,Printer,2114,ZMQ-86927834,2024-02-14 09:08:00,Pierre Salera,IT,2027-02-14 09:08:00,HP LaserJet Pro M452,LaserJet Pro M452
+2024-02-06 19:38:00,P1000419,Computer,3054,ARX-38945122,2024-03-07 19:38:00,Colin Altonen,Development,2026-03-07 19:38:00,Dell Optiplex 3060 Computer,Optiplex 3060
+2024-01-19 14:42:00,P1000420,Computer,2262,OAU-15695200,2024-02-20 14:42:00,System Administrator,Finance,2027-02-20 14:42:00,Dell OptiPlex 3070 Micro,OptiPlex 3070
+2024-04-09 04:59:00,P1000421,Storage Device,326,,2024-04-22 04:59:00,Alejandro Mascall,Product Management,2025-04-22 04:59:00,Seagate Hard Drive 1TB,Hard Drive 1TB
+2024-02-07 10:55:00,P1000422,Computer Peripheral,396,,2024-02-15 10:55:00,Jewel Agresta,Customer Support,2026-02-15 10:55:00,HP LaserJet P3015dn Printer,LaserJet P3015dn
+2024-02-26 17:29:00,P1000423,Computer,2445,XMK-56812134,2024-04-08 17:29:00,Darrel Tork,Customer Support,2025-04-08 17:29:00,Dell Inspiron 15 Computer,Inspiron 15
+2023-12-29 13:33:00,P1000424,Storage Device,381,,2024-02-01 13:33:00,Alyssa Biasotti,IT,2026-02-01 13:33:00,Western Digital Hard Drive 2TB,WD Hard Drive 2TB
+2024-02-24 17:19:00,P1000425,Storage Device,175,,2024-04-12 17:19:00,Danny Dales,Customer Support,2025-04-12 17:19:00,Western Digital My Passport 2TB,WD My Passport 2TB
+2024-01-10 14:54:00,P1000426,Computer Peripheral,122,,2024-02-19 14:54:00,Rosalind Krenzke,Sales,2026-02-19 14:54:00,Dell Monitor UltraSharp 27,UltraSharp 27
+2024-01-19 18:22:00,P1000427,Computer Peripheral,335,,2024-02-03 18:22:00,Marquita Bousman,Customer Support,2026-02-03 18:22:00,Dell Monitor 27-Inch,Monitor 27-Inch
+2024-04-04 10:27:00,P1000428,Printer,2048,KMX-20483821,2024-04-14 10:27:00,Kyle Lindauer,IT,2027-04-14 10:27:00,HP LaserJet Pro M15w,LaserJet Pro M15w
+2024-01-19 20:41:00,P1000429,Server,7517,ZGL-90668599,2024-02-15 20:41:00,Reginald Lunan,HR,2027-02-15 20:41:00,IBM Power System S922 Server,Power System S922
+2024-01-11 02:17:00,P1000430,Computer,3857,LGV-59223471,2024-02-10 02:17:00,Pilar Suddeth,Sales,2027-02-10 02:17:00,Dell Inspiron 15 7000 Series,Inspiron 15 7000
+2024-03-31 22:30:00,P1000431,Storage Device,121,,2024-04-19 22:30:00,Rolando Baumann,Sales,2027-04-19 22:30:00,Samsung SSD 1TB,SSD 1TB
+2024-01-26 18:45:00,P1000432,Printer,2489,DUB-72890755,2024-03-16 18:45:00,Wes Fontanella,IT,2027-03-16 18:45:00,HP LaserJet 3015 Printer,LaserJet 3015
+2024-01-20 15:39:00,P1000433,Storage Device,398,,2024-03-15 15:39:00,Lora Lendor,IT,2025-03-15 15:39:00,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+2024-02-28 06:32:00,P1000434,Computer Peripheral,125,,2024-03-26 06:32:00,Patty Bernasconi,Sales,2027-03-26 06:32:00,Logitech Wireless Keyboard K800,Wireless Keyboard K800
+2023-12-06 09:51:00,P1000435,Printer,1236,OMA-10175955,2024-02-01 09:51:00,Isaac Davensizer,Customer Support,2027-02-01 09:51:00,HP DeskJet 2755 Compact Printer,DeskJet 2755
+2024-01-08 18:54:00,P1000436,Printer,1597,IMS-67461112,2024-03-04 18:54:00,Robin Schartz,Finance,2025-03-04 18:54:00,HP LaserJet Pro MFP M428fdn,LaserJet Pro MFP M428
+2024-02-05 07:14:00,P1000437,Printer,1807,JFJ-74938896,2024-02-17 07:14:00,Sue Haakinson,Customer Support,2025-02-17 07:14:00,HP LaserJet Pro M428fdw Printer,LaserJet Pro M428fdw
+2024-02-11 09:18:00,P1000438,Web Server,8000,,2024-04-06 09:18:00,Terrance Nimmer,HR,2026-04-06 09:18:00,Apache Web Server Tomcat 7,Tomcat 7
+2024-02-02 01:32:00,P1000439,Storage Device,220,,2024-02-14 01:32:00,Jess Assad,Customer Support,2025-02-14 01:32:00,Seagate External Hard Drive 1TB,External Hard Drive 1TB
+2024-02-11 09:38:00,P1000440,Storage Device,320,,2024-03-20 09:38:00,Marquita Bousman,Customer Support,2025-03-20 09:38:00,Seagate Barracuda 2TB HDD,Barracuda 2TB
+2024-02-26 06:59:00,P1000441,Rack,400,,2024-03-15 06:59:00,Roseann Jerko,Sales,2026-03-15 06:59:00,Dell PowerEdge R740 Rack,PowerEdge R740
+2024-01-07 03:58:00,P1000442,Storage Device,374,,2024-02-01 03:58:00,Eduardo Bellendir,IT,2026-02-01 03:58:00,Seagate Expansion Portable Drive 1TB,Expansion 1TB
+2024-02-07 17:19:00,P1000443,Printer,677,WHL-22766525,2024-03-24 17:19:00,Haley Rocheford,Sales,2027-03-24 17:19:00,HP OfficeJet Pro 9015,OfficeJet Pro 9015
+2024-02-27 15:33:00,P1000444,Rack,400,,2024-04-23 15:33:00,Mayme Staub,IT,2027-04-23 15:33:00,Dell PowerEdge R720 Rack Server,PowerEdge R720
+2024-02-01 19:51:00,P1000445,Rack,400,,2024-03-21 19:51:00,Felipe Mahone,Customer Support,2025-03-21 19:51:00,Dell PowerEdge Rack Server,PowerEdge
+2024-02-29 15:39:00,P1000446,Computer,4982,XYV-67111413,2024-03-03 15:39:00,Stephen Seiters,HR,2025-03-03 15:39:00,Dell OptiPlex 7460 All-In-One Desktop Computer,OptiPlex 7460
+2024-02-18 04:08:00,P1000447,Computer,3253,WRX-94440436,2024-03-18 04:08:00,Stephen Seiters,HR,2027-03-18 04:08:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-02-29 21:54:00,P1000448,Storage Device,365,,2024-03-23 21:54:00,Jimmie Barninger,Customer Support,2026-03-23 21:54:00,Samsung SSD 860 EVO,SSD 860 EVO
+2024-03-01 07:42:00,P1000449,Storage Device,372,,2024-03-11 07:42:00,Prince Kauk,Customer Support,2026-03-11 07:42:00,Dell EMC PowerVault ME4084 Storage Device,PowerVault ME4084
+2024-02-01 22:19:00,P1000450,Storage Device,412,,2024-02-05 22:19:00,Rena Griffeth,Customer Support,2026-02-05 22:19:00,Seagate Backup Plus External Hard Drive 1TB,Backup Plus 1TB
+2024-02-07 06:21:00,P1000451,Storage Device,348,,2024-03-10 06:21:00,Megan Burke,Sales,2027-03-10 06:21:00,Seagate External Hard Drive 1TB,External Hard Drive 1TB
+2024-03-20 06:14:00,P1000452,Computer Peripheral,188,,2024-03-29 06:14:00,Patty Bernasconi,Sales,2025-03-29 06:14:00,Dell Alienware Gaming Mouse,Alienware Gaming Mouse
+2024-02-22 17:51:00,P1000453,Computer,4580,GGE-54496723,2024-03-15 17:51:00,Kurtis Asberry,Sales,2025-03-15 17:51:00,Dell Inspiron Desktop Computer,Insprion Desktop
+2024-03-05 06:02:00,P1000454,Storage Device,392,,2024-04-24 06:02:00,Bridgett Retort,Finance,2027-04-24 06:02:00,Seagate External Hard drive 1TB,External Hard drive 1TB
+2024-02-11 18:56:00,P1000455,Rack,400,,2024-02-23 18:56:00,Sharlene Circelli,Sales,2027-02-23 18:56:00,Dell PowerEdge Rack Server,PowerEdge Rack Server
+2024-02-07 17:12:00,P1000456,Rack,400,,2024-03-17 17:12:00,Valentine Granberry,Customer Support,2026-03-17 17:12:00,Dell PowerEdge Rack,PowerEdge Rack
+2024-02-08 12:51:00,P1000457,Storage Device,217,,2024-03-17 12:51:00,Fannie Steese,Customer Support,2027-03-17 12:51:00,WD Black 1TB HDD,1TB HDD
+2024-02-19 12:25:00,P1000458,Printer,1383,XFP-72301804,2024-03-03 12:25:00,Kyle Lindauer,IT,2027-03-03 12:25:00,HP LaserJet Pro M428fdn,LaserJet Pro M428fdn
+2024-03-13 08:18:00,P1000459,Rack,400,,2024-04-22 08:18:00,Allyson Gillispie,Development,2025-04-22 08:18:00,Dell PowerEdge 4220 Rack,PowerEdge 4220
+2024-01-24 01:45:00,P1000460,Storage Device,349,,2024-02-29 01:45:00,Elmo Gabouer,Sales,2027-02-28 01:45:00,WD Black 1TB Hard Drive,Black 1TB HDD
+2024-04-01 16:53:00,P1000461,Storage Device,291,,2024-04-09 16:53:00,Lynda Caraway,Customer Support,2026-04-09 16:53:00,Western Digital Storage Device 5TB,WD 5TB
+2024-02-08 11:58:00,P1000462,Computer,3109,FID-67784179,2024-02-23 11:58:00,Terrance Nimmer,HR,2026-02-23 11:58:00,Dell Inspiron 7450 Desktop Computer,Inspiron 7450
+2024-01-04 21:27:00,P1000463,Storage Device,353,,2024-02-13 21:27:00,Rebekah Padley,Sales,2025-02-13 21:27:00,Dell PowerEdge R740 Rack Storage Server,PowerEdge R740
+2024-01-29 14:44:00,P1000464,Computer,3853,DOY-97590803,2024-02-15 14:44:00,Peggy Hohlstein,Customer Support,2027-02-15 14:44:00,Dell OptiPlex 7040 Desktop Computer,OptiPlex 7040
+2024-02-20 03:50:00,P1000465,Computer Peripheral,326,,2024-03-19 03:50:00,Jewel Agresta,Customer Support,2027-03-19 03:50:00,HP LaserJet 1320 Printer,LaserJet 1320
+2024-01-28 02:04:00,P1000466,Computer Peripheral,349,,2024-02-21 02:04:00,Darrel Ruffins,IT,2026-02-21 02:04:00,Logitech Wireless Mouse G502,Wireless Mouse G502
+2024-01-15 22:13:00,P1000467,Rack,400,,2024-02-29 22:13:00,Van Leanen,IT,2027-02-28 22:13:00,Dell PowerEdge Rack Server,PowerEdge Server
+2024-01-02 21:07:00,P1000468,Printer,1722,IEG-12179427,2024-02-17 21:07:00,Bertram Quertermous,IT,2027-02-17 21:07:00,Brother HL-L2320D Mono Laser Printer,HL-L2320D
+2024-01-25 18:47:00,P1000469,Printer,455,ELN-81252224,2024-02-16 18:47:00,Delphine Helmich,Finance,2027-02-16 18:47:00,HP LaserJet Pro Printer,LaserJet Pro
+2024-01-29 04:12:00,P1000470,Computer,3099,LJC-55307810,2024-03-26 04:12:00,Terrance Nimmer,HR,2025-03-26 04:12:00,Dell OptiPlex 3070,OptiPlex 3070
+2024-01-05 17:45:00,P1000471,Computer Peripheral,443,,2024-03-01 17:45:00,Jacklyn Emayo,Customer Support,2025-03-01 17:45:00,Dell USB Keyboard SK-8115,USB Keyboard SK-8115
+2023-12-12 08:18:00,P1000472,Rack,400,,2024-02-10 08:18:00,Ron Kettering,IT,2027-02-10 08:18:00,Dell PowerEdge R440 Rack,PowerEdge R440
+2024-02-03 18:49:00,P1000473,Printer,778,WMQ-06694815,2024-03-21 18:49:00,Doug Matrisciano,Customer Support,2026-03-21 18:49:00,HP LaserJet 400 M401dn Printer,LaserJet 400 M401dn
+2024-03-01 02:33:00,P1000474,Computer Peripheral,127,,2024-03-27 02:33:00,Kurtis Mcbay,Sales,2025-03-27 02:33:00,Logitech Mouse G502,Mouse G502
+2024-02-24 23:11:00,P1000475,Rack,400,,2024-03-24 23:11:00,Marquita Bousman,Customer Support,2027-03-24 23:11:00,Dell PowerEdge Rack,PowerEdge Rack
+2024-02-26 18:58:00,P1000476,Computer,1643,BUA-81552584,2024-03-07 18:58:00,Reva Lecates,Finance,2027-03-07 18:58:00,Dell Inspiron 3593 Laptop,Inspiron 3593
+2024-01-29 11:41:00,P1000477,Web Server,8000,,2024-02-01 11:41:00,Rena Griffeth,Customer Support,2027-02-01 11:41:00,Dell PowerEdge R640 Web Server,PowerEdge R640
+2024-01-27 16:41:00,P1000478,Computer,2871,OXH-61498716,2024-03-12 16:41:00,Stephen Seiters,HR,2027-03-12 16:41:00,Dell OptiPlex 7080 Desktop Computer,OptiPlex 7080
+2024-03-10 01:38:00,P1000479,Server,6806,COA-48393848,2024-04-26 01:38:00,Lizzie Torregrossa,IT,2027-04-26 01:38:00,Dell PowerEdge R740 Server,PowerEdge R740
+2024-03-10 11:47:00,P1000480,Storage Device,374,,2024-03-31 11:47:00,Rebekah Padley,Sales,2025-03-31 11:47:00,Samsung SSD 860 EVO 1TB,SSD 860 EVO 1TB
+2024-01-12 05:53:00,P1000481,Computer,2011,NJY-72440238,2024-02-19 05:53:00,Terrance Nimmer,HR,2027-02-19 05:53:00,Dell Inspiron Laptop 3593,Inspiron 3593
+2024-03-30 04:15:00,P1000482,Computer Peripheral,275,,2024-04-01 04:15:00,Peggy Hohlstein,Customer Support,2026-04-01 04:15:00,Microsoft Wireless Mouse,Wireless Mouse
+2024-01-09 08:29:00,P1000483,Computer,1710,RYS-48924228,2024-02-20 08:29:00,Van Leanen,IT,2025-02-20 08:29:00,Dell Inspiron 5400 Laptop Computer,Inspiron 5400
+2024-01-31 19:06:00,P1000484,Computer,2666,VQS-97980909,2024-03-26 19:06:00,Dennis Millar,Sales,2027-03-26 19:06:00,Dell Inspiron 3000 Series,Inspiron 3000
+2024-01-09 18:46:00,P1000485,Computer Peripheral,290,,2024-02-02 18:46:00,Pierre Salera,IT,2026-02-02 18:46:00,Logitech Wireless Keyboard,Wireless Keyboard
+2024-02-05 03:43:00,P1000486,Computer,3952,MIU-65209031,2024-02-06 03:43:00,Warren Speach,HR,2025-02-06 03:43:00,Dell Optiplex 7090 Desktop,Optiplex 7090
+2024-01-17 07:55:00,P1000487,Computer,3227,EMZ-79324033,2024-02-26 07:55:00,Terrance Nimmer,HR,2027-02-26 07:55:00,Dell Inspiron Desktop Computer,Inspiron Desktop
+2024-03-02 08:25:00,P1000488,Printer,1385,VUC-51567961,2024-03-24 08:25:00,Kerry Evertt,Development,2027-03-24 08:25:00,Canon ImageClass D1650 Printer,ImageClass D1650
+2023-12-19 22:08:00,P1000489,Computer Peripheral,282,,2024-02-11 22:08:00,Jarvis Galas,Customer Support,2026-02-11 22:08:00,Dell Monitor - Computer Peripheral,Dell Monitor
+2024-02-10 11:35:00,P1000490,Computer Peripheral,143,,2024-02-20 11:35:00,Viola Mcsorley,Customer Support,2025-02-20 11:35:00,Dell Laser Mouse WM514,WM514
+2024-01-17 21:53:00,P1000491,Computer Peripheral,414,,2024-03-01 21:53:00,Sue Haakinson,Customer Support,2025-03-01 21:53:00,Dell Monitor UltraSharp 32,UltraSharp 32
+2024-01-05 10:04:00,P1000492,Computer Peripheral,457,,2024-02-27 10:04:00,Renae Eldrige,Sales,2027-02-27 10:04:00,Dell USB Keyboard 104,USB Keyboard 104
+2024-02-14 11:56:00,P1000493,Rack,400,,2024-03-03 11:56:00,Nadia Wilshire,Sales,2026-03-03 11:56:00,Dell PowerEdge R740 Rack Server,PowerEdge R740
+2024-03-24 08:15:00,P1000494,Printer,1251,EWK-91069784,2024-04-15 08:15:00,Felipe Mahone,Customer Support,2025-04-15 08:15:00,HP LaserJet Pro M281fdw,LaserJet Pro M281fdw
+2024-02-21 20:30:00,P1000495,Computer Peripheral,100,,2024-03-01 20:30:00,Joe Employee,Sales,2027-03-01 20:30:00,Dell USB Keyboard,USB Keyboard
+2024-02-27 07:57:00,P1000496,Computer Peripheral,349,,2024-02-28 07:57:00,Olga Yarovenko,Sales,2027-02-28 07:57:00,Dell USB Keyboard SK-8115,USB Keyboard SK-8115
+2024-02-26 17:31:00,P1000497,Storage Device,487,,2024-02-28 17:31:00,Vince Ettel,Customer Support,2025-02-28 17:31:00,Western Digital Hard Drive 2TB,WD HD 2TB
+2023-12-28 07:00:00,P1000498,Storage Device,271,,2024-02-02 07:00:00,Martin Carley,Sales,2027-02-02 07:00:00,Seagate External Hard Drive 2TB,External Hard Drive 2TB
+2024-02-11 22:50:00,P1000499,Storage Device,265,,2024-03-22 22:50:00,Bridgett Retort,Finance,2027-03-22 22:50:00,Seagate Barracuda 1TB HDD,Barracuda 1TB HDD
