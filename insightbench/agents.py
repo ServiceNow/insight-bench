@@ -46,6 +46,7 @@ class Agent:
             goal=goal,
             verbose=True,
             temperature=temperature,
+            n_retries=n_retries,
         )
         if dataset_csv_path is not None or table is not None:
             self.agent_poirot.set_table(
@@ -166,6 +167,7 @@ class AgentPoirot:
         goal="I want to find interesting trends in this dataset",
         verbose=False,
         temperature=0,
+        n_retries=2
     ):
         self.goal = goal
         if savedir is None:
@@ -178,6 +180,7 @@ class AgentPoirot:
 
         self.insights_history = []
         self.verbose = verbose
+        self.n_retries = n_retries
 
     def set_table(
         self,
@@ -345,6 +348,7 @@ class AgentPoirot:
         prompt_code_method="single",
         prompt_interpret_method="interpret",
     ):
+        n_retries = self.n_retries
         if self.verbose:
             print(f"Generating Code...")
         # Prompt 3: Generate Code
