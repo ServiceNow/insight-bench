@@ -229,7 +229,7 @@ class AgentPoirot:
             formatted_history = format_data(pred_insights)
 
             # summary = agent.summarize_insights(method="list")
-            system_prompt, content_prompt = prompts.get_summarize_prompt(
+            content_prompt, system_prompt = prompts.get_summarize_prompt(
                 method=prompt_summarize_method
             )
             messages = [
