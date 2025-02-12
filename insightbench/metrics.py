@@ -142,24 +142,3 @@ def compute_llama3_eval_o2m(pred_insights, gt_insights, return_scores=False):
         )
     score = np.mean([score["score"] for score in score_dict])
     return score, score_dict
-
-
-if __name__ == "__main__":
-    gt_insights = gt_boxes = [
-        "Prioritize tasks, delegate wisely.",
-        "Clear goals boost productivity.",
-        "Effective communication is key.",
-        "Foster a culture of trust.",
-        "Recognize and reward achievements.",
-    ]
-
-    pred_insights = pred_boxes = [
-        "Delegate tasks effectively.",
-        "Set clear, achievable goals.",
-        "Communication prevents misunderstandings.",
-        "Build a trusting environment.",
-        "Celebrate and acknowledge success.",
-    ]
-
-    score = compute_mAP(gt_boxes, pred_boxes, score_method="rouge1")
-    print("mAP: {:.4f}".format(score))
