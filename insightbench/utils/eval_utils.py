@@ -3,6 +3,7 @@ from insightbench import prompts
 import numpy as np, pandas as time, re, os
 import evaluate
 
+import requests
 
 import openai
 from openai import OpenAI
@@ -12,6 +13,43 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 def compute_g_eval(answer, gt_answer, model_name="gpt-4o", top_logprobs=None):
     client = OpenAI(api_key=OPENAI_API_KEY)
+    return compute_llm_eval(client, answer, gt_answer, model_name, top_logprobs)
+
+
+def is_llama_running(model_name):
+    status_code = requests.post(
+        "http://0.0.0.0:8085/v1/completions",
+        json={"prompt": "Hello!", "model": model_name},
+        headers={
+            "Content-Type": "application/json",
+            "Cookie": "sessiona=1687876608.234.49.972136|78cabb3f310793e5a58a141fe9058709",
+            "Authorization": "EMPTY",
+        },
+    ).status_code
+    return status_code == 200
+
+
+def compute_llama3_eval(
+    answer, gt_answer, model_name="meta-llama/Meta-Llama-3-70B", top_logprobs=None
+):
+    """Compute LLaMA-3-Eval score between answer and gt_answer"""
+    # check if llama3 is running locally
+    if is_llama_running(model_name):
+        client = OpenAI(api_key="EMPTY", base_url="http://0.0.0.0:8085/v1/")
+        return compute_llm_eval(client, answer, gt_answer, model_name, top_logprobs)
+    else:
+        raise RuntimeError(
+            """
+To use LLaMA-3-Eval, please first host a LLaMA-3 model locally using the vllm library:
+```
+pip install vllm
+python -u -m vllm.entrypoints.openai.api_server --host 0.0.0.0 --model meta-llama/Meta-Llama-3-70B --tensor-parallel-size 8 --load-format safetensors --port 8085 --dtype half --gpu-memory-utilization 0.8 --max-model-len 8000 --enforce-eager
+```
+"""
+        )
+
+
+def compute_llm_eval(client, answer, gt_answer, model_name="gpt-4o", top_logprobs=None):
     template, system_message = prompts.get_g_eval_prompt(method="basic")
 
     prompt = template.format(answer=answer, gt_answer=gt_answer)

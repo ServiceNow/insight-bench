@@ -1,4 +1,8 @@
-from insightbench.utils.eval_utils import compute_rouge_score, compute_g_eval
+from insightbench.utils.eval_utils import (
+    compute_rouge_score,
+    compute_g_eval,
+    compute_llama3_eval,
+)
 
 
 def score_insight(gt_insight, pred_insight, score_name):
