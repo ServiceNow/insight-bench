@@ -3,7 +3,7 @@
 ![Banner](data/banner.jpg)
 
 ## Evaluating Data Analytics Agents Through Multi-Step Insight Generation
-[[Paper]](https://insightbench.github.io/)[[Website]](https://insightbench.github.io/)[[Dataset]](https://huggingface.co/datasets/ServiceNow/insight_bench)
+[[Paper]](https://arxiv.org/pdf/2407.06423)[[Website]](https://insightbench.github.io/)[[Dataset]](https://huggingface.co/datasets/ServiceNow/insight_bench)
 
 
 Insight-Bench is a benchmark dataset designed to evaluate end-to-end data analytics by evaluating agents' ability to perform comprehensive data analysis across diverse use cases, featuring carefully curated insights, an evaluation mechanism based on LLaMA-3-Eval or G-EVAL, and a data analytics agent, AgentPoirot.
