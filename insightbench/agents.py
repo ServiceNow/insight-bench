@@ -10,6 +10,9 @@ from langchain.schema import HumanMessage, SystemMessage
 from insightbench.utils.metrics_utils import score_insight
 from insightbench import metrics
 from PIL import Image
+import pandas as pd
+from typing import Dict, List, Optional
+from scripts.pattern_design import PatternDesigner
 
 
 class Agent:
@@ -167,7 +170,7 @@ class AgentPoirot:
         goal="I want to find interesting trends in this dataset",
         verbose=False,
         temperature=0,
-        n_retries=2
+        n_retries=2,
     ):
         self.goal = goal
         if savedir is None:
@@ -482,3 +485,78 @@ class AgentPoirot:
     def load_state_dict(self, fname):
         with open(fname, "r") as f:
             self.insights_history = json.load(f)
+
+
+class AgentDataGen:
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        tasks_path: str = "insightbench/utils/domains_tasks.json",
+    ):
+        """Initialize the AgentDataGen with OpenAI API key and tasks path.
+
+        Args:
+            api_key: OpenAI API key. If not provided, will try to get from OPENAI_API_KEY environment variable.
+            tasks_path: Path to the domains_tasks.json file
+        """
+        self.pattern_designer = PatternDesigner(api_key)
+        self.tasks_path = tasks_path
+        self.tasks = self._load_tasks()
+
+    def _load_tasks(self) -> dict:
+        """Load tasks from domains_tasks.json."""
+        try:
+            with open(self.tasks_path, "r") as f:
+                return json.load(f)
+        except Exception as e:
+            raise ValueError(f"Failed to load tasks from {self.tasks_path}: {str(e)}")
+
+    def generate_patterns(self, data: pd.DataFrame, task: str) -> Dict[str, List[Dict]]:
+        """Generate patterns for the given data and task.
+
+        Args:
+            data: Input DataFrame containing the data to analyze
+            task: Description of the analytics task
+
+        Returns:
+            Dictionary mapping column names to lists of pattern suggestions
+        """
+        return self.pattern_designer.design_patterns(data, task)
+
+    def generate_all_patterns(
+        self, data: pd.DataFrame, output_dir: str = "results/Patterns"
+    ) -> None:
+        """Generate patterns for all tasks and save them to the output directory.
+
+        Args:
+            data: Input DataFrame containing the data to analyze
+            output_dir: Directory to save the generated patterns
+        """
+        os.makedirs(output_dir, exist_ok=True)
+
+        for domain, domain_tasks in self.tasks.items():
+            print(f"\nProcessing domain: {domain}")
+
+            # Create domain directory
+            domain_dir = os.path.join(output_dir, domain)
+            os.makedirs(domain_dir, exist_ok=True)
+
+            for task in domain_tasks:
+                print(f"\nGenerating patterns for task: {task}")
+
+                try:
+                    # Generate patterns
+                    patterns = self.generate_patterns(data, task)
+
+                    # Save patterns to file
+                    task_filename = task.lower().replace(" ", "_") + "_patterns.json"
+                    output_path = os.path.join(domain_dir, task_filename)
+
+                    with open(output_path, "w") as f:
+                        json.dump(patterns, f, indent=2)
+
+                    print(f"Saved patterns to: {output_path}")
+
+                except Exception as e:
+                    print(f"Error generating patterns for task '{task}': {str(e)}")
+                    continue
