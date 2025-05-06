@@ -67,38 +67,67 @@ class PatternDesigner:
         data_summary = self.analyze_data(data)
 
         prompt = f"""
-You are a data scientist creating a synthetic benchmark for a data analytics task. 
-You are given a summary of a dataset and an analytics task. 
-Your goal is to reason step-by-step and identify realistic patterns that can be injected into the data 
-to make it more suitable for evaluating the performance of models on this task.
+        You are a data-centric AI expert designing synthetic data benchmarks to evaluate analytics models.
 
-Please follow these steps for each column in the dataset:
-1. Think about what kind of information this column conveys.
-2. Consider how this column might affect or be related to the analytics task.
-3. Suggest 1–2 *practical and realistic* patterns that could be injected into the column values.
-4. Explain why injecting this pattern would help in evaluating the task.
-5. Describe how the pattern would influence model learning or performance on the analytics task.
+        Given a dataset summary and an analytics task, your job is to inject **2–3 realistic patterns across one or more columns** that:
+        - Mimic real-world behaviors or anomalies
+        - Interact with the dataset's structure and semantics
+        - Meaningfully impact model performance or insight extraction
+        - Allow for robust benchmarking of analytical reasoning
 
-Use a JSON output format with the following structure:
+        ---
 
-{{
-  "column_name_1": [
-    {{
-      "pattern": "description of the pattern",
-      "reasoning": "explanation of why this pattern is useful",
-      "relevance_to_task": "how this pattern helps with the task"
-    }},
-    ...
-  ],
-  ...
-}}
+        Please follow these explicit steps in your reasoning (Chain-of-Thought):
 
-Data Summary:
-{data_summary}
+        ### Step 1: Infer Key Performance Indicators (KPIs)
+        - Based on the dataset and task, identify 2–4 relevant KPIs that would be tracked by an analyst or model.
 
-Analytics Task:
-{task}
-"""
+        ### Step 2: Identify Influential Columns and Relationships
+        - Which columns most influence these KPIs?
+        - Are there any natural correlations, temporal dynamics, or category-based splits that could affect KPI computation?
+
+        ### Step 3: Design 2–3 Global Patterns
+        - Each pattern may involve **1 or more columns**, and should simulate a **plausible real-world event, behavior, or trend**.
+        - Avoid trivial noise (e.g., "random fluctuation"). Prefer **interpretable and benchmark-worthy** signals like:
+        - delayed effects
+        - conditionally induced trends
+        - cross-feature dependencies
+        - regime shifts
+        - temporal or category-driven anomalies
+
+        ### Step 4: Explain for Each Pattern:
+        - What exactly is the injected pattern?
+        - Why is it useful from a benchmarking or insight perspective?
+        - Which KPIs does it affect, and how?
+        - What kind of analytical or modeling challenges does it test?
+
+        ---
+
+        ### Output format (JSON):
+
+        {{
+        "kpis": ["list of important KPIs"],
+        "patterns": [
+            {{
+            "pattern": "Description of the injected pattern",
+            "columns_involved": ["list of columns affected"],
+            "reasoning": "Why this pattern is meaningful and realistic",
+            "relevance_to_kpi": "Which KPIs it affects and how",
+            "benchmark_value": "What kind of insight or model evaluation this pattern enables"
+            }},
+            ...
+        ]
+        }}
+
+        ---
+
+        ### Data Summary:
+        {data_summary}
+
+        ### Analytics Task:
+        {task}
+
+        """
 
         response = self.client.chat.completions.create(
             model="gpt-4o",  # Using GPT-4o (OpenAI Omni)
@@ -139,14 +168,18 @@ def main():
     try:
         patterns = designer.design_patterns(data, task)
 
-        print("\nSuggested Patterns for Each Column:")
-        for column, suggestions in patterns.items():
-            print(f"\n{column}:")
-            for suggestion in suggestions:
-                print(f"\nPattern: {suggestion['pattern']}")
-                print(f"Reasoning: {suggestion['reasoning']}")
-                print(f"Relevance to task: {suggestion['relevance_to_task']}")
-                print("-" * 80)
+        print("\nKey Performance Indicators (KPIs):")
+        for kpi in patterns.get("kpis", []):
+            print(f"- {kpi}")
+
+        print("\nSuggested Patterns:")
+        for pattern in patterns.get("patterns", []):
+            print(f"\nPattern: {pattern['pattern']}")
+            print(f"Columns Involved: {', '.join(pattern['columns_involved'])}")
+            print(f"Reasoning: {pattern['reasoning']}")
+            print(f"Relevance to KPI: {pattern['relevance_to_kpi']}")
+            print(f"Benchmark Value: {pattern['benchmark_value']}")
+            print("-" * 80)
 
     except Exception as e:
         print(f"Error: {e}")
