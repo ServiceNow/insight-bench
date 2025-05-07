@@ -1,0 +1,44 @@
+{
+  "kpis": [
+    "Resolution Time",
+    "Reassignment Count",
+    "Incidents Making SLA",
+    "High Priority Incidents"
+  ],
+  "patterns": [
+    {
+      "pattern": "A seasonal surge in incident reports with a higher-than-average urgency during the end-of-year period (December).",
+      "columns_involved": [
+        "Opened",
+        "Urgency",
+        "Priority",
+        "Impact"
+      ],
+      "reasoning": "This pattern mimics real-world scenarios where specific times of the year, such as the end-of-year holiday season, result in an increased number of incidents reported due to higher usage and change freezes. Typically, these incidents are of higher urgency and priority as they impact more users or critical systems.",
+      "relevance_to_kpi": "Affects 'High Priority Incidents' by increasing the number of incidents that need immediate attention during this period, potentially skewing the importance of related features.",
+      "benchmark_value": "Tests the model's ability to accurately identify temporal patterns and seasonal impacts on incident priority, influencing feature importance rankings."
+    },
+    {
+      "pattern": "Introduction of a new 'IT Securities' assignment group that experiences initial misrouting of incidents, leading to a higher reassignment count in the first two weeks.",
+      "columns_involved": [
+        "Assignment group",
+        "Reassignment count",
+        "Opened"
+      ],
+      "reasoning": "Newly formed teams or departments might face teething problems, such as incorrect incident routing, requiring frequent reassignment to the correct resolution group. This phenomenon impacts operational efficiency.",
+      "relevance_to_kpi": "Directly impacts the 'Reassignment Count', testing the model's ability to detect and adjust for feature importance when organizational changes occur.",
+      "benchmark_value": "Evaluates the model's robustness in handling cross-feature dependencies and organizational operational changes affecting feature importance."
+    },
+    {
+      "pattern": "A correlation between long unresolved incidents and specific incident categories, such as 'Network' issues, which are resolved more slowly than others.",
+      "columns_involved": [
+        "Category",
+        "Resolve time",
+        "Incident state"
+      ],
+      "reasoning": "Certain technical issues, like network outages, often take longer to resolve due to their complexity. Recognizing and adapting to such dynamics is crucial for accurate analytics.",
+      "relevance_to_kpi": "Affects 'Resolution Time', emphasizing the model's ability to associate incident categories with resolve time to adjust feature importance appropriately.",
+      "benchmark_value": "Tests the model's capability to discern category-based splits in feature importance associated with operational performance metrics."
+    }
+  ]
+}

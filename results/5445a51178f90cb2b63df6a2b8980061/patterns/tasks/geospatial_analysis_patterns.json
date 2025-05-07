@@ -1,0 +1,46 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Adherence",
+    "Incident Volume by Location",
+    "Impact of Incident by Category"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal Surge in Incidents Related to 'Network'",
+      "columns_involved": [
+        "Category",
+        "Opened",
+        "Closed",
+        "Location"
+      ],
+      "reasoning": "This pattern simulates real-world scenarios where certain categories, like 'Network', experience seasonal surges, for example, during certain times of the year or during specific events. Mimicking such trends helps assess how models deal with seasonality, which is common in many business domains.",
+      "relevance_to_kpi": "Affects 'Incident Volume by Location' and 'Impact of Incident by Category' by showing spikes in incidence volume and potentially impacting resource allocation decisions.",
+      "benchmark_value": "Checks the model's capability to accurately predict and understand seasonal patterns, providing insights into temporal dynamics of incidents."
+    },
+    {
+      "pattern": "Location-specific Resolution Delays",
+      "columns_involved": [
+        "Location",
+        "Resolve time",
+        "SLA due",
+        "Closed"
+      ],
+      "reasoning": "Injecting delays specific to certain locations could be indicative of infrastructure issues or workforce discrepancies. This pattern tests the model's ability to identify and analyze regional differences and their impact on resolution workflows.",
+      "relevance_to_kpi": "Directly affects 'Incident Resolution Time' and 'SLA Adherence', as regions with delays may consistently breach SLA targets.",
+      "benchmark_value": "Challenges the model to assess regional operational efficiency and identify geographic areas needing process improvements."
+    },
+    {
+      "pattern": "Regime Shift in Handling 'Critical' Priority Incidents",
+      "columns_involved": [
+        "Priority",
+        "Incident state",
+        "Assigned to",
+        "Resolve time"
+      ],
+      "reasoning": "A sudden change in how 'Critical' priority incidents are managed, possibly due to policy changes or strategic decision-making, can lead to new operational behaviors. This pattern helps evaluate a model's capability to detect and adapt to shifts in process management.",
+      "relevance_to_kpi": "Impacts 'Incident Resolution Time' and the overall volume of 'Impact of Incident by Category', potentially changing incident handling efficiency.",
+      "benchmark_value": "Encourages examining cause-and-effect relationships in operational policy changes, testing the model's reflexivity and adaptability to new management rules."
+    }
+  ]
+}

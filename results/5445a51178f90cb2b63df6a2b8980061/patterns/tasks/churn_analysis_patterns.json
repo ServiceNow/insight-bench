@@ -1,0 +1,45 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Compliance Rate",
+    "Incident Reassignment Count",
+    "Churn Prediction Accuracy"
+  ],
+  "patterns": [
+    {
+      "pattern": "A sudden increase in incidents without resolution ('On Hold' status) due to a major system upgrade affecting many assignments.",
+      "columns_involved": [
+        "Incident state",
+        "Assignment group",
+        "Reassignment count",
+        "Resolved"
+      ],
+      "reasoning": "This pattern simulates a scenario where a system upgrade leads to widespread incidents that remain unresolved for an extended period. Such situations are common in real business environments and can strain resources.",
+      "relevance_to_kpi": "This affects KPIs such as Incident Resolution Time and SLA Compliance Rate by increasing the average resolution time and potentially causing SLA breaches.",
+      "benchmark_value": "Tests the model's ability to predict the impact of systemic changes on incident management and resource allocation, and how these affect churn."
+    },
+    {
+      "pattern": "Introduction of a network issue causing a spike in incidents with high urgency during specific hours (business peak hours).",
+      "columns_involved": [
+        "Category",
+        "Channel",
+        "Opened",
+        "Urgency"
+      ],
+      "reasoning": "By injecting a network issue that occurs during peak hours, this pattern mimics the real-world scenario of time-specific operational bottlenecks affecting customer experiences.",
+      "relevance_to_kpi": "Directly affects the Churn Prediction Accuracy and Urgency distribution since such high-urgency incidents could lead to increased churn if not resolved swiftly.",
+      "benchmark_value": "Evaluates the model's capability to recognize time-sensitive incident patterns and correlate them with potential churn, identifying critical periods for intervention."
+    },
+    {
+      "pattern": "Consistent changes in assignment due to high reassignment in certain situations, linked to specific incidents, causing delays.",
+      "columns_involved": [
+        "Reassignment count",
+        "Assigned to",
+        "Assignment group"
+      ],
+      "reasoning": "Reflects operational inefficiency where incidents are passed between teams or individuals, leading to dissatisfaction and potentially increasing churn.",
+      "relevance_to_kpi": "Impacts the Incident Reassignment Count and indicates potential inefficiencies in handling certain types of incidents, affecting overall service quality perception and churn prediction.",
+      "benchmark_value": "Challenges models to uncover hidden inefficiencies within incident management processes that increase reassignments, delay resolutions, and impact customer retention."
+    }
+  ]
+}

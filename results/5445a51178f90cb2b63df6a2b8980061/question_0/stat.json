@@ -1,0 +1,26 @@
+{
+    "name": "Average Resolution Time by Category",
+    "description": "This shows the average time taken to resolve issues across different categories.",
+    "value": [
+        {
+            "category": "Database",
+            "resolution_time": 165.98189392466614
+        },
+        {
+            "category": "Hardware",
+            "resolution_time": 176.5831470620447
+        },
+        {
+            "category": "Inquiry / Help",
+            "resolution_time": 204.22736147879897
+        },
+        {
+            "category": "Network",
+            "resolution_time": 149.34099616426482
+        },
+        {
+            "category": "Software",
+            "resolution_time": 171.5450648327337
+        }
+    ]
+}

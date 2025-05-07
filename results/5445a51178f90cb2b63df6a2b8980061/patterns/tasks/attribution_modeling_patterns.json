@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Resolution Time",
+    "Business Impact",
+    "SLA Compliance",
+    "Incident Closure Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal Spike: Increase in incident count during major IT upgrades or maintenance periods.",
+      "columns_involved": [
+        "Opened",
+        "Category",
+        "Impact"
+      ],
+      "reasoning": "This pattern mimics real-world scenarios where IT services experience increased load and incidents during scheduled upgrades or maintenance windows. These spikes can test the model's ability to attribute incidents to specific events or upgrades.",
+      "relevance_to_kpi": "This affects the Incident Closure Rate by possibly increasing the number of pending incidents during these periods, which may delay closure times.",
+      "benchmark_value": "Tests the model's ability to correlate spikes in incidents with external scheduled events, evaluating its effectiveness in real-world resource allocation scenarios."
+    },
+    {
+      "pattern": "Delayed Resolution: Significant delay in resolving incidents when related to complex software issues.",
+      "columns_involved": [
+        "Short description",
+        "Resolution code",
+        "Resolve time"
+      ],
+      "reasoning": "Complex software incidents often require more time and expertise to resolve, which can lead to delays. This pattern is realistic and reflects the temporal challenges in incident management.",
+      "relevance_to_kpi": "Impacts Resolution Time and Business Impact since delays can increase downtime and affect business operations.",
+      "benchmark_value": "Challenges the model to recognize the link between incident complexity and resolution time, helping evaluate its capability to prioritize effectively."
+    },
+    {
+      "pattern": "Randomly assigned 'High Urgency' to certain incidents during peak hours without apparent cause.",
+      "columns_involved": [
+        "Opened",
+        "Urgency",
+        "Priority"
+      ],
+      "reasoning": "This pattern simulates organizational bias or procedural error where incidents are marked as high urgency during peak business hours to draw immediate attention, irrespective of the actual priority.",
+      "relevance_to_kpi": "Affects SLA Compliance and Priority by creating anomalies that may lead to unnecessary escalations or resource allocation.",
+      "benchmark_value": "Evaluates the model's efficacy in distinguishing between genuine and artificial urgency, thus enhancing decision-making insights regarding resource management during peak times."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Incident Response Time",
+    "Incident Resolution Time",
+    "Service Level Agreement Compliance",
+    "Incident Escalation Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "Emergence of a seasonal peak in network-related incidents around the end of the calendar year.",
+      "columns_involved": [
+        "Opened",
+        "Category",
+        "Short description"
+      ],
+      "reasoning": "It is common to see an increase in network issues during the end of year due to increased online activity and system upgrades. This pattern tests the model's ability to correlate temporal dynamics with incident types.",
+      "relevance_to_kpi": "Affects Incident Response Time and Incident Resolution Time by creating sudden surges that need to be managed efficiently.",
+      "benchmark_value": "Tests the system's ability to handle spikes, predict patterns based on historical data, and manage resource allocation efficiently during high-demand periods."
+    },
+    {
+      "pattern": "Introduction of cross-category dependencies where incidents in the 'Network' category lead to subsequent incidents in the 'Software' category.",
+      "columns_involved": [
+        "Category",
+        "Related Incidents",
+        "Short description"
+      ],
+      "reasoning": "In real-world scenarios, network issues often cause cascading effects on software services. This pattern helps in identifying and monitoring cause-effect relationships across different categories.",
+      "relevance_to_kpi": "Impacts Incident Escalation Rate by demonstrating complex dependencies and increase in re-assignment counts as incidents cascade across categories.",
+      "benchmark_value": "Challenges the model to identify and handle interdependencies and interconnected incidents, providing insights into root-causes and developing preventive measures."
+    },
+    {
+      "pattern": "A regime shift where a specific 'Configuration item' begins frequently failing leading to a marked increase in incidents.",
+      "columns_involved": [
+        "Configuration item",
+        "Incident state",
+        "Business impact"
+      ],
+      "reasoning": "A hardware or software component can become a common source of issues if not maintained or updated, reflecting a real-world sudden degradation in service levels due to specific technical failures.",
+      "relevance_to_kpi": "Directly influences Service Level Agreement Compliance and Business Impact by causing frequent breaches if not proactively managed.",
+      "benchmark_value": "Tests the analytics capability to quickly recognize and highlight critical areas of infrastructural weakness, facilitating faster decision making and repairs."
+    }
+  ]
+}

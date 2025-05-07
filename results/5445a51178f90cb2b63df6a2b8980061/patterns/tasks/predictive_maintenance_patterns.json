@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Time to Resolution",
+    "Incident Reopening Rate",
+    "Incident Severity",
+    "SLA Compliance"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce a temporal pattern where incidents opened during weekends (Fri 6 PM to Mon 6 AM) have a 30% longer resolve time.",
+      "columns_involved": [
+        "Opened",
+        "Resolve time",
+        "Closed"
+      ],
+      "reasoning": "This pattern reflects a common real-world scenario where support teams are less staffed during weekends, leading to slower response times. It tests a model's ability to identify time-based patterns and adjust predictions accordingly.",
+      "relevance_to_kpi": "Affects 'Time to Resolution', extending average resolution time and possibly impacting SLA Compliance if the delay pushes resolution beyond SLA limits.",
+      "benchmark_value": "Tests model ability to capture temporal dynamics and understand the impact of staffing patterns on incident resolution efficiency."
+    },
+    {
+      "pattern": "Introduce a surge in severity where incidents opened in the first week of every quarter have an increased probability of being marked as '1 - High' severity.",
+      "columns_involved": [
+        "Opened",
+        "Severity"
+      ],
+      "reasoning": "Organizations often have system updates and changes at the beginning of a quarter, leading to more critical incidents during this time. This pattern challenges a model to recognize periodic spikes in severity related to organizational cycles.",
+      "relevance_to_kpi": "Directly impacts 'Incident Severity', increasing the incidents categorized as high severity during these periods.",
+      "benchmark_value": "Challenges the model to identify and handle periodic structural changes in data that correlate with operational cycles."
+    },
+    {
+      "pattern": "Create a dependency where incidents assigned to \u2018IT Securities\u2019 have a higher reassignment count before resolution.",
+      "columns_involved": [
+        "Assignment group",
+        "Reassignment count",
+        "Resolve time"
+      ],
+      "reasoning": "Complex security incidents often require navigation through multiple teams, resulting in higher reassignments. This pattern tests a model's ability to detect intricate dependencies and manage the escalation process effectively.",
+      "relevance_to_kpi": "Affects 'Incident Reopening Rate' and 'Time to Resolution' by increasing potential delays due to multiple team involvement.",
+      "benchmark_value": "This pattern tests the model's understanding of process complexities and inter-team coordination challenges in handling incidents."
+    }
+  ]
+}

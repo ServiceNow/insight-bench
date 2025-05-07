@@ -1,0 +1,11 @@
+{
+    "name": "Categories",
+    "description": "Different categories of issues.",
+    "value": [
+        "Database",
+        "Hardware",
+        "Inquiry / Help",
+        "Network",
+        "Software"
+    ]
+}

@@ -1,0 +1,46 @@
+{
+  "kpis": [
+    "Average Resolve Time",
+    "SLA Compliance Rate",
+    "Reassignment Count",
+    "Incident Closure Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "Sudden increase in reassignment counts for Network related incidents following a major software update announcement.",
+      "columns_involved": [
+        "Category",
+        "Reassignment count",
+        "Updates",
+        "Configuration item"
+      ],
+      "reasoning": "A plausible scenario is when a new software update is rolled out; incidents related to the 'Network' category might experience more reassignments as the update could introduce unexpected issues needing collaboration across multiple teams.",
+      "relevance_to_kpi": "This affects KPIs like 'Reassignment Count' directly and can indirectly impact 'Average Resolve Time' due to delays introduced during handovers.",
+      "benchmark_value": "Tests the model's ability to track complex dependencies across updates and incident categories, and to predict resolution delays due to increased reassignments."
+    },
+    {
+      "pattern": "A period where a particular location experiences a high volume of 'High' priority incidents relating to IT Security.",
+      "columns_involved": [
+        "Priority",
+        "Location",
+        "Assignment group",
+        "Impact"
+      ],
+      "reasoning": "This could mimic a cybersecurity threat localized to a geographic area, thus increasing incident priority and impact due to its urgency.",
+      "relevance_to_kpi": "Impacts 'Average Resolve Time' and 'SLA Compliance Rate' because high priority incidents are expected to be resolved quicker, testing how the system prioritizes resources under stress.",
+      "benchmark_value": "Challenges models to recognize and prioritize incidents based on location-driven patterns, effectively allocating resources to maintain SLA compliance."
+    },
+    {
+      "pattern": "Gradual reduction in SLA compliance for incidents opened or updated by a specific user, aligning to a major project utilizing resources heavily.",
+      "columns_involved": [
+        "SLA due",
+        "Opened by",
+        "Updated by",
+        "Made SLA"
+      ],
+      "reasoning": "A major project could lead to resource allocation issues, thus someone heavily involved in this project could inadvertently delay or miss SLAs for other incidents.",
+      "relevance_to_kpi": "Directly affects 'SLA Compliance Rate' and 'Incident Closure Rate', as reduced resource availability can yield more SLA breaches.",
+      "benchmark_value": "Assesses models on detecting resource bottleneck implications and predicting future SLA irregularities based on personnel workload."
+    }
+  ]
+}

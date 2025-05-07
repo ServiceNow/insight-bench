@@ -13,6 +13,7 @@ from PIL import Image
 import pandas as pd
 from typing import Dict, List, Optional
 from scripts.pattern_design import PatternDesigner
+from scripts.pattern_inject import PatternInjector
 
 
 class Agent:
@@ -492,6 +493,7 @@ class AgentDataGen:
         self,
         api_key: Optional[str] = None,
         tasks_path: str = "insightbench/utils/domains_tasks.json",
+        dataset: pd.DataFrame = None,
     ):
         """Initialize the AgentDataGen with OpenAI API key and tasks path.
 
@@ -500,8 +502,10 @@ class AgentDataGen:
             tasks_path: Path to the domains_tasks.json file
         """
         self.pattern_designer = PatternDesigner(api_key)
+        self.pattern_injector = PatternInjector(api_key)
         self.tasks_path = tasks_path
         self.tasks = self._load_tasks()
+        self.dataset = dataset
 
     def _load_tasks(self) -> dict:
         """Load tasks from domains_tasks.json."""
@@ -524,13 +528,17 @@ class AgentDataGen:
         return self.pattern_designer.design_patterns(data, task)
 
     def generate_all_patterns(
-        self, data: pd.DataFrame, output_dir: str = "results/Patterns"
+        self,
+        data: pd.DataFrame,
+        output_dir: str = "results/Patterns",
+        hash_id: str = None,
     ) -> None:
         """Generate patterns for all tasks and save them to the output directory.
 
         Args:
             data: Input DataFrame containing the data to analyze
             output_dir: Directory to save the generated patterns
+            hash_id: The hash ID of the current experiment run
         """
         os.makedirs(output_dir, exist_ok=True)
 
@@ -556,6 +564,35 @@ class AgentDataGen:
                         json.dump(patterns, f, indent=2)
 
                     print(f"Saved patterns to: {output_path}")
+
+                    # Generate and inject pattern codes
+                    pattern_codes = self.pattern_injector.get_inject_codes(
+                        json.dumps(patterns)
+                    )
+
+                    # Inject patterns into the data
+                    injected_data = self.pattern_injector.inject_patterns(
+                        data_file_addr=self.dataset,
+                        pattern_codes=pattern_codes,
+                        hash_id=hash_id,
+                    )
+
+                    # Save injected data to data/IBExt
+                    injected_dir = "data/IBExt"
+                    os.makedirs(injected_dir, exist_ok=True)
+                    injected_filename = task.lower().replace(" ", "_") + "_injected.csv"
+                    injected_path = os.path.join(injected_dir, injected_filename)
+                    injected_data.to_csv(injected_path, index=False)
+                    print(f"Saved injected data to: {injected_path}")
+
+                    # Save pattern codes
+                    codes_filename = task.lower().replace(" ", "_") + "_codes.json"
+                    codes_path = os.path.join(domain_dir, codes_filename)
+
+                    with open(codes_path, "w") as f:
+                        json.dump(pattern_codes, f, indent=2)
+
+                    print(f"Saved pattern codes to: {codes_path}")
 
                 except Exception as e:
                     print(f"Error generating patterns for task '{task}': {str(e)}")

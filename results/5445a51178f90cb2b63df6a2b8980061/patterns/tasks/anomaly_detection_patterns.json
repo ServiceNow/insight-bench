@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Compliance",
+    "Urgency and Priority Discrepancy",
+    "Incident Escalation Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "Periodic spikes in 'Urgency' with correlated increases in 'Priority' and 'Impact' columns at the start of each month.",
+      "columns_involved": [
+        "Urgency",
+        "Priority",
+        "Impact"
+      ],
+      "reasoning": "This pattern mimics monthly maintenance periods or updates that typically elevate incident urgency, priority, and impact due to known systemic changes. Real-world organizations often have such scheduled activities, creating clustered high-priority incidents.",
+      "relevance_to_kpi": "Affects 'Urgency and Priority Discrepancy' and 'Incident Escalation Rate' by concentrating high-urgency cases, possibly leading to escalations if not managed timely.",
+      "benchmark_value": "Tests model's ability to identify seasonal patterns and differentiate them from random anomalies. Challenges the model to learn temporal associations and determine if high urgency is justified."
+    },
+    {
+      "pattern": "Sudden increase in 'Reassignment count' in the beginning of each quarter, especially in incidents within 'IT Securities' and 'Project Mgmt' assignment groups.",
+      "columns_involved": [
+        "Reassignment count",
+        "Assignment group"
+      ],
+      "reasoning": "Reflects organizational restructuring or policy changes at quarter start, causing more reassignment as roles and responsibilities are clarified. This is common during new project phases or audits.",
+      "relevance_to_kpi": "Influences 'Incident Resolution Time' by causing potential delays due to multiple reassignments before finding appropriate handlers.",
+      "benchmark_value": "Evaluates model's ability to detect shifts in resource allocation or operational inefficiencies. Highlights dependency between assignments and resolution processes."
+    },
+    {
+      "pattern": "A significant number of 'Critical' priority incidents open without closing within a week during unexpected system outages, reflected in 'Duration' and 'Resolve time'.",
+      "columns_involved": [
+        "Priority",
+        "Duration",
+        "Resolve time"
+      ],
+      "reasoning": "Simulates impact of unexpected critical system failures that lead to prolonged open incidents due to complexity in resolution. It's a common real-world scenario where critical tasks take longer to resolve.",
+      "relevance_to_kpi": "Affects 'SLA Compliance' and 'Incident Resolution Time', highlighting potential breaches in SLA due to prolonged resolutions.",
+      "benchmark_value": "Tests model's capability to identify prolonged incident durations stemming from genuine unforeseen circumstances rather than operational inefficiencies. Assesses model's prediction accuracy for anomalous backlogs."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "kpis": [
+    "Explainability of Components",
+    "Component Variance Contribution",
+    "Impact of Categorical Variables on PCA",
+    "Temporal Dynamics in PCA"
+  ],
+  "patterns": [
+    {
+      "pattern": "Temporal Shift Based on Location",
+      "columns_involved": [
+        "Location",
+        "Business duration",
+        "Opened",
+        "Closed"
+      ],
+      "reasoning": "Introduce a time-based pattern where specific locations experience longer business durations during particular time frames. For example, incidents from '33 East Midland Avenue, Paramus, NJ' might have unusually long 'Business duration' during winter months due to possible weather impacts, while other locations show normal trends. This simulates real-world scenarios of location-based operational challenges.",
+      "relevance_to_kpi": "This pattern affects 'Component Variance Contribution' and 'Temporal Dynamics in PCA' by introducing explainable variance attributed to temporal factors tied with location.",
+      "benchmark_value": "Challenges models to discern temporal patterns that are location-specific, helping evaluate a model's ability to separate noise from meaningful location-time interactions."
+    },
+    {
+      "pattern": "Category-Driven Seasonal Anomaly",
+      "columns_involved": [
+        "Category",
+        "Opened",
+        "Business resolve time"
+      ],
+      "reasoning": "Simulate a seasonal spike in 'Business resolve time' for a specific 'Category' during certain months. For instance, 'Network' issues peaking and having prolonged resolution times in 'Opened' months of April and May due to annual updates or testing. This pattern mirrors real life occurrences where certain categories can experience seasonal loads.",
+      "relevance_to_kpi": "Impacts 'Component Variance Contribution' and 'Explainability of Components' by adding predictable seasonal variance linked with incident category and time of year.",
+      "benchmark_value": "Tests a model's ability to extract and leverage category-season interactions, improving component explanation and interpretability."
+    },
+    {
+      "pattern": "Induced Correlation between Impact and Priority during Escalation",
+      "columns_involved": [
+        "Impact",
+        "Priority",
+        "Escalation"
+      ],
+      "reasoning": "Create a conditional pattern where escalated incidents ('High' or 'Overdue' in 'Escalation') have a strengthened correlation between 'Impact' and 'Priority'. For example, '1 - Critical' priority incidents often coincide with '1 - High' impact during escalations, unlike in normal cases.",
+      "relevance_to_kpi": "Affects 'Impact of Categorical Variables on PCA' by reinforcing a correlation pattern significant under specific conditions, influencing categorial variance contributions.",
+      "benchmark_value": "This evaluates the PCA's sensitivity to shifts in correlation structures conditioned by categorical escalations, challenging models to adjust components reflecting induced dependencies."
+    }
+  ]
+}

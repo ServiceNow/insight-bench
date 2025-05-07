@@ -1,0 +1,45 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Compliance",
+    "Incident Closure Rate",
+    "Escalation Frequency"
+  ],
+  "patterns": [
+    {
+      "pattern": "Weekend Slowdown",
+      "columns_involved": [
+        "Opened",
+        "Closed",
+        "Business duration",
+        "Category"
+      ],
+      "reasoning": "Many IT departments experience slower resolution times on weekends due to reduced staffing. Modeling this could show delayed closure rates during weekends compared to weekdays.",
+      "relevance_to_kpi": "Affects 'Incident Resolution Time' by increasing duration on weekends, and 'Incident Closure Rate' by reducing the number of incidents closed during weekends.",
+      "benchmark_value": "Tests model's ability to recognize and adjust for temporal impact on incident handling efficiency, highlighting models that can detect and compensate for cyclical patterns in resolution times."
+    },
+    {
+      "pattern": "High Urgency Campaign",
+      "columns_involved": [
+        "Priority",
+        "Urgency",
+        "Resolve time",
+        "Closed"
+      ],
+      "reasoning": "Simulate an urgent campaign where certain categories or incidents are prioritized due to an ongoing issue or executive mandate. This can change typical resolution patterns and bring front-loaded resources to particular incidents.",
+      "relevance_to_kpi": "Impacts 'SLA Compliance' by forcing some incidents to be resolved faster and 'Escalation Frequency' by potentially decreasing the need for escalation due to quicker resolution times.",
+      "benchmark_value": "Challenges models to discern between regular prioritization and fleeting attention spikes, ensuring they account for both persistent and transient priority shifts."
+    },
+    {
+      "pattern": "Inter-departmental Dependencies",
+      "columns_involved": [
+        "Assignment group",
+        "Reassignment count",
+        "Assignment group"
+      ],
+      "reasoning": "Certain incidents require coordination between multiple departments, causing reassignments. This pattern simulates these dependencies, possibly increasing resolution times and affecting assignment stability.",
+      "relevance_to_kpi": "Influences 'Reassignment Frequency' directly by increasing the number of reassignments and can also impact 'Incident Resolution Time' due to delays brought by dependencies.",
+      "benchmark_value": "Assesses the model's capability to identify and incorporate the impact of organizational dependencies on handling efficiency and team load balancing."
+    }
+  ]
+}

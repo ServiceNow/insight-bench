@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Adherence Rate",
+    "Priority Resolution Distribution",
+    "Customer Satisfaction"
+  ],
+  "patterns": [
+    {
+      "pattern": "Sudden spike in incident resolution times during a specific period.",
+      "columns_involved": [
+        "Opened",
+        "Closed",
+        "Resolve time"
+      ],
+      "reasoning": "This pattern simulates a real-world scenario where a sudden increase in incident resolution times might occur due to unforeseen circumstances such as increased workload or system failures. It provides a realistic test of a model's ability to handle and identify temporal anomalies and workload management.",
+      "relevance_to_kpi": "Impacts 'Incident Resolution Time' by increasing the variance and mean resolution duration during the period in question.",
+      "benchmark_value": "Tests the model's ability to incorporate temporal awareness and identify periods of operational stress, which are vital for both predictive accuracy and post-hoc analysis."
+    },
+    {
+      "pattern": "Differential impact of incident priority on resolution time based on the time of day or week.",
+      "columns_involved": [
+        "Priority",
+        "Resolve time",
+        "Opened"
+      ],
+      "reasoning": "Priority may influence resolution speed differently depending on when the incident is opened. For example, '1 - Critical' priority incidents may be resolved faster during business hours than outside them, reflecting resource availability.",
+      "relevance_to_kpi": "Directly affects 'Priority Resolution Distribution' and 'Incident Resolution Time' by introducing a time-dependent variance in how quickly different priorities are resolved.",
+      "benchmark_value": "Challenges the model's segmentation ability to differentiate temporal impacts on resolution based on priority, demanding nuanced understanding of temporal-categorical interactions."
+    },
+    {
+      "pattern": "Anomalous but significant batch of incidents closed as 'Solved (Work Around)' impacting a specific configuration item suddenly.",
+      "columns_involved": [
+        "Configuration item",
+        "Resolution code",
+        "Closed"
+      ],
+      "reasoning": "In the real-world, a workaround solution may be applied quickly when systemic issues with a particular configuration item arise. This reflects a scenario where temporary fixes are applied en masse, impacting analysis on closure trends.",
+      "relevance_to_kpi": "Impacts 'Customer Satisfaction' and indirectly 'SLA Adherence Rate' by temporarily improving SLA metrics at the potential cost of long-term satisfaction due to non-permanent solutions.",
+      "benchmark_value": "Provides a testing ground for assessing how models handle episodic spikes related to specific configuration items, underscoring resolution strategy and its impact on service quality perceptions."
+    }
+  ]
+}

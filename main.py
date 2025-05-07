@@ -41,11 +41,32 @@ def main(exp_dict, savedir, args):
         savedir=savedir,
     )
 
-    # load dataset
+    # Load incident data from Excel
+    incident_data = pd.read_excel("data/incident.xlsx", sheet_name="incident data")
+
+    # load pattern generation agent
+    pattern_agent = agents.AgentDataGen(
+        api_key=os.getenv("OPENAI_API_KEY"),
+        tasks_path="insightbench/utils/domains_tasks.json",
+        dataset=incident_data,
+    )
+
     score_list = []
     for dataset_json_path in dataset_list:
         # Load Dataset
         dataset_dict = benchmarks.load_dataset_dict(dataset_json_path=dataset_json_path)
+
+        # Convert timestamp columns to string format
+        for col in incident_data.columns:
+            if pd.api.types.is_datetime64_any_dtype(incident_data[col]):
+                incident_data[col] = incident_data[col].dt.strftime("%Y-%m-%d %H:%M:%S")
+
+        # Generate patterns for all tasks
+        pattern_agent.generate_all_patterns(
+            data=incident_data,
+            output_dir=os.path.join(savedir, "patterns"),
+            hash_id=hash_id,
+        )
 
         # Predict Insights
         pred_insights, pred_summary = agent.get_insights(

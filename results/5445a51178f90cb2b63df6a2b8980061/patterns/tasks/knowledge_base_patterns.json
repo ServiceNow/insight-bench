@@ -1,0 +1,46 @@
+{
+  "kpis": [
+    "Average Resolution Time",
+    "SLA Compliance Rate",
+    "Incident Reassignment Rate",
+    "Incident Closure Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "A sudden spike in 'Urgency' and 'Priority' for incidents opened via 'Self-service' channel from '2024-11-01' to '2024-11-15'.",
+      "columns_involved": [
+        "Opened",
+        "Urgency",
+        "Priority",
+        "Channel"
+      ],
+      "reasoning": "This pattern simulates a real-world scenario where users start using self-service options for reporting urgent incidents, possibly due to an internal campaign promoting self-service. It examines the system's ability to handle increased urgency through self-service channels.",
+      "relevance_to_kpi": "Affects 'Average Resolution Time' and 'SLA Compliance Rate' by increasing urgency, thus testing if the system can manage critical incidents in a timely manner.",
+      "benchmark_value": "Challenges models to quickly adapt to changing priorities in incident management and to optimize for SLA compliance during peak times."
+    },
+    {
+      "pattern": "Delayed resolution for incidents opened between '2024-07-01' and '2024-07-15', with the 'Impact' set as '1 - High'. This delay is attributed to a temporary resource constraint.",
+      "columns_involved": [
+        "Opened",
+        "Closed",
+        "Impact",
+        "Duration",
+        "Resolve time"
+      ],
+      "reasoning": "This pattern reflects a temporary bottleneck due to resource allocation issues, testing the system\u2019s resilience and ability to prioritize high-impact incidents despite constraints.",
+      "relevance_to_kpi": "Directly impacts the 'Average Resolution Time' and 'Incident Closure Rate', evaluating the effectiveness of resource management under stress.",
+      "benchmark_value": "Tests the system's capability in prioritizing and resolving high-impact incidents when under pressure and facing delays."
+    },
+    {
+      "pattern": "Anomaly in 'Business duration' and 'Business resolve time' for incidents related to 'E-Commerce' configuration items, creating a longer than usual resolution time.",
+      "columns_involved": [
+        "Configuration item",
+        "Business duration",
+        "Business resolve time"
+      ],
+      "reasoning": "This simulates a real-world operational hiccup in key business systems, prompting the need for efficient incident management strategies concerning critical business configurations.",
+      "relevance_to_kpi": "Impacts 'Business resolve time' and 'SLA Compliance Rate', highlighting potential vulnerabilities in business-critical system management.",
+      "benchmark_value": "Evaluates model robustness and strategic effectiveness in handling extended resolution durations for business-critical systems like 'E-Commerce'."
+    }
+  ]
+}

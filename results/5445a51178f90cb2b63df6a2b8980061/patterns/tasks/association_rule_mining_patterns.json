@@ -1,0 +1,44 @@
+{
+  "kpis": [
+    "Frequent Itemsets",
+    "Support",
+    "Confidence",
+    "Lift"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce a temporal trend where incidents opened during specific hours (like early morning or late night) have a higher chance of being resolved quickly.",
+      "columns_involved": [
+        "Opened",
+        "Resolved",
+        "Resolve time",
+        "Closed"
+      ],
+      "reasoning": "This pattern introduces temporal dynamics by simulating behavior where incidents opened at less busy hours are handled more efficiently due to potentially lower workload. This reflects real-world scenarios where the workload is lower during off-peak hours, potentially leading to quicker resolutions.",
+      "relevance_to_kpi": "Affects 'Frequent Itemsets' by potentially creating associations between 'Opened' times and quicker 'Resolve time', affecting the computation of 'Support' and 'Confidence' for these associations.",
+      "benchmark_value": "Tests the model's ability to capture and exploit temporal relationships when generating association rules, challenging the model to recognize non-explicit correlations introduced by time-based behavior patterns."
+    },
+    {
+      "pattern": "Simulate an increase in incidents related to 'Network' category, coinciding with resolved incidents having 'Normal' escalation and 'Low' severity.",
+      "columns_involved": [
+        "Category",
+        "Escalation",
+        "Severity"
+      ],
+      "reasoning": "This pattern mimics a scenario where a common event (such as a network upgrade) causes a surge in incidents, often handled without urgency, reflecting common responses in organizational incident management.",
+      "relevance_to_kpi": "Directly affects 'Support' and 'Lift' by influencing the frequency and strength of the association between 'Network', 'Normal' escalation, and 'Low' severity.",
+      "benchmark_value": "Pushes the analytics model to recognize category-driven spikes and assess its ability to determine the impact of such spikes on related KPI metrics, specifically in observing shifts in association rule strength."
+    },
+    {
+      "pattern": "Inject a cross-feature dependency such that incidents with 'High' impact are more likely to be 'On Hold' and reopened multiple times before closure.",
+      "columns_involved": [
+        "Impact",
+        "State",
+        "Reopen count"
+      ],
+      "reasoning": "This pattern reflects a plausible real-world case where significant issues ('High' impact) face delays and need revisiting ('On Hold', multiple 'Reopen count') as they require more thorough review or have recurring issues.",
+      "relevance_to_kpi": "Influences 'Confidence' and 'Lift' by increasing the co-occurrence of 'High' impact, 'On Hold' state, and high 'Reopen count', necessitating stronger inference mechanisms to identify underlying dependencies.",
+      "benchmark_value": "Encourages robust benchmarking of the model's capacity to uncover deeper interdependencies and conditional trends across different fields, posing challenges in detecting co-occurring patterns amidst varying data complexities."
+    }
+  ]
+}

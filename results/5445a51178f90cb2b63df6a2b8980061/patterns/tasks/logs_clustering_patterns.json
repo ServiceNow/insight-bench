@@ -1,0 +1,41 @@
+{
+  "kpis": [
+    "Cluster quality",
+    "Silhouette score",
+    "Time to resolution distribution",
+    "Frequency of incidents"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce a seasonal spike in 'Opened' dates corresponding to specific times of the year, such as the end of the fiscal quarters or significant holidays.",
+      "columns_involved": [
+        "Opened",
+        "Category"
+      ],
+      "reasoning": "This pattern is realistic as certain times of the year often see a surge in incidents due to increased system usage or scheduled updates. For instance, 'Network' or 'Software' categories might see a spike during these times.",
+      "relevance_to_kpi": "Affects 'Frequency of incidents' by creating distinct temporal clusters that models need to identify and account for.",
+      "benchmark_value": "Tests the model's ability to detect temporal patterns and understand the impact of external events on incident frequency."
+    },
+    {
+      "pattern": "Simulate a correlation between high priority incidents and reassignment count, where critical incidents ('1 - Critical') have higher reassignment counts due to their complexity.",
+      "columns_involved": [
+        "Priority",
+        "Reassignment count"
+      ],
+      "reasoning": "In real-world data, more urgent or complex incidents tend to bounce between teams as more expertise is sought to resolve them.",
+      "relevance_to_kpi": "Influences 'Time to resolution distribution' by increasing resolution time for critical incidents with higher reassignment counts.",
+      "benchmark_value": "Challenges the model to understand the relationship between incident priority and handling dynamics within teams, important for realistic cluster interpretation."
+    },
+    {
+      "pattern": "Introduce a trend where incidents resolved by 'Ron Kettering' have consistently lower 'Business resolve time' and higher 'Made SLA' success.",
+      "columns_involved": [
+        "Resolved by",
+        "Business resolve time",
+        "Made SLA"
+      ],
+      "reasoning": "Such a pattern mirrors scenarios where certain agents or teams are more effective at resolving incidents swiftly due to their skills or resources.",
+      "relevance_to_kpi": "Directly impacts 'Cluster quality' by creating clusters based on agent efficiency, influencing both resolution time and SLA success.",
+      "benchmark_value": "Assesses the model's capability to cluster logs based on agent performance and identify outliers or particularly effective agents."
+    }
+  ]
+}

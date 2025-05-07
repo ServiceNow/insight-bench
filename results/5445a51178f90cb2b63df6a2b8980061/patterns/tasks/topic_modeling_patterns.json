@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Topic Diversity",
+    "Document Clustering Accuracy",
+    "Topic Coherence",
+    "Topic Stability"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal spikes in incident categories related to holidays or company events.",
+      "columns_involved": [
+        "Opened",
+        "Category",
+        "Short description"
+      ],
+      "reasoning": "This pattern simulates real-world scenarios where specific incident types peak around predictable times such as holidays or company events (e.g., Christmas, Black Friday for e-commerce). By pressing certain categories' relevance during these periods, it creates non-uniform temporal distributions, a prevalent real-world phenomenon.",
+      "relevance_to_kpi": "Affects Topic Diversity by introducing season-bound topics, testing models' ability to capture short-term, high-relevance topics.",
+      "benchmark_value": "Challenges models on how well they adapt to periodic topic shifts and distinguish between season-specific anomalies and general trends."
+    },
+    {
+      "pattern": "Correlated incidents with joint resolution paths represented by unique resolution notes.",
+      "columns_involved": [
+        "Short description",
+        "Resolution notes",
+        "Comments and Work notes"
+      ],
+      "reasoning": "This pattern emerges when multiple incidents are interrelated (e.g., caused by the same underlying issue) and resolved through a similar protocol or commentary exchange. By adding dependencies within resolution texts, it tests topic models on their ability to detect shared resolution narratives.",
+      "relevance_to_kpi": "Impacts Document Clustering Accuracy by creating coherent subgroups within the textual data that should form tighter clusters in model outputs.",
+      "benchmark_value": "Evaluates models' proficiency in linking document semantics based on shared resolution paths, which is crucial for inferring topic networks."
+    },
+    {
+      "pattern": "Shift in incident types due to major policy changes or software updates.",
+      "columns_involved": [
+        "Category",
+        "Resolve time",
+        "Duration"
+      ],
+      "reasoning": "Reflects real-world dynamics where updates or policy shifts cause initial confusion, leading to a surge in particular incident types and longer resolution times. By expanding certain categories and resolution times post-update, it simulates the industry's typical adjustments to change.",
+      "relevance_to_kpi": "Affects Topic Coherence by challenging the model's adaptability to transitions between pre- and post-update incidents within the training data.",
+      "benchmark_value": "Tests model resilience in maintaining topic integrity over disruptive changes, a critical factor in dynamic environments."
+    }
+  ]
+}

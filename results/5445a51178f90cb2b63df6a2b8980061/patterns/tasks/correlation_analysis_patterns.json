@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Compliance Rate",
+    "Incident Reassignment Frequency",
+    "Priority Change Frequency"
+  ],
+  "patterns": [
+    {
+      "pattern": "Delayed Impact of Newly Assigned Personnel",
+      "columns_involved": [
+        "Assigned to",
+        "Reassignment count",
+        "Business resolve time"
+      ],
+      "reasoning": "Introduce a pattern where incidents initially experience a delay in resolve time after an assignment is made to new personnel with particular names appearing in 'Assigned to'. This simulates the real-world scenario where newly assigned individuals may take longer to resolve incidents due to a lack of familiarity with the specific case.",
+      "relevance_to_kpi": "Affects Incident Resolution Time and Reassignment Frequency by increasing the initial delay for cases where new personnel are involved, potentially leading to more frequent reassignments.",
+      "benchmark_value": "Tests the model's capability to identify personnel-related delays and adjusts incident handling strategy in dynamic environments."
+    },
+    {
+      "pattern": "Seasonal Surge in High Priority Incidents",
+      "columns_involved": [
+        "Created",
+        "Priority"
+      ],
+      "reasoning": "Inject a seasonal pattern where certain months see a surge in high priority incidents. For example, during the months near holidays, such as November and December, incidents with '1 - Critical' priority increase by 30%. This simulates real-world trends where key business periods experience increased demand or stress on systems.",
+      "relevance_to_kpi": "Affects Priority Change Frequency and SLA Compliance Rate as higher priority incidents may demand faster resolution but also risk more SLA breaches due to volume.",
+      "benchmark_value": "Assesses the model's ability to handle temporal patterns and adjust resource allocation during peak times."
+    },
+    {
+      "pattern": "Systematic Delays in Closing Incidents",
+      "columns_involved": [
+        "Closed",
+        "Closed by",
+        "Incident state"
+      ],
+      "reasoning": "Create a pattern where incidents closed by specific personnel, such as 'System Administrator', have systematic delays in moving to 'Closed' state. This reflects real-world organizational bottlenecks where specific roles encounter administrative delays.",
+      "relevance_to_kpi": "Directly impacts Incident Resolution Time as the delays inflate the time needed for final closure, affecting SLA Compliance.",
+      "benchmark_value": "Challenges the model to detect and adapt to systematic delays tied to human resource bottlenecks, improving incident management strategies."
+    }
+  ]
+}

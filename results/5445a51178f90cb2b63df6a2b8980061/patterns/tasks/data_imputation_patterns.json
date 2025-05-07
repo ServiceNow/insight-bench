@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Imputation accuracy",
+    "Imputation coverage",
+    "Consistency in temporal data",
+    "Categorical coherence"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce a sudden surge of incidents ('Number') during a specific time period ('Opened'), labeled with similar categories ('Category') but varied impact ('Impact') ratings.",
+      "columns_involved": [
+        "Number",
+        "Opened",
+        "Category",
+        "Impact"
+      ],
+      "reasoning": "This pattern mimics a real-world event where a system failure or a natural disaster results in a spike of incident reports. It tests how well the data imputation model handles sudden influxes and whether it can maintain category coherence while managing varied impacts.",
+      "relevance_to_kpi": "Affects 'Imputation accuracy' as models must correctly impute missing impact ratings or categories in a context where similar incidents are suddenly reported. Improved coverage on temporal surges is also a consideration.",
+      "benchmark_value": "This pattern challenges models to perform time-series imputation robustly and maintain consistency. It also tests the ability to handle multiple variables being affected simultaneously, reflecting real scenarios where similar incidents occur due to an underlying cause."
+    },
+    {
+      "pattern": "Simulate a category-driven delay in resolving incidents by introducing artificial 'Closed' dates for specific 'Categories' that consistently lag behind 'Opened' dates.",
+      "columns_involved": [
+        "Opened",
+        "Closed",
+        "Category"
+      ],
+      "reasoning": "Certain categories might inherently have longer resolution times due to complexity or resource allocation issues. By introducing consistent delays for these categories, this pattern examines how the model imputes missing 'Closed' dates based on categorical tendencies.",
+      "relevance_to_kpi": "Affects 'Consistency in temporal data' as the model must identify and maintain expected delays for certain categories. This is crucial for ensuring that imputed dates are realistic and maintain temporal relationships.",
+      "benchmark_value": "Testing models on their ability to capture temporal delays specific to certain categories enhances their efficiency in handling real-world scenarios where time-to-resolution is category-dependent. It also necessitates understanding and predicting trends rather than just point imputation."
+    },
+    {
+      "pattern": "Introduce cross-feature dependency by creating a correlation between 'Priority' and 'Reassignment count'. Incidents with 'High' priority demonstrate higher variability in 'Reassignment count'.",
+      "columns_involved": [
+        "Priority",
+        "Reassignment count"
+      ],
+      "reasoning": "This pattern reflects situations where high-priority incidents undergo multiple team assessments before resolution. It tests if the imputation model can leverage one column to predict another, maintaining logical dependencies while filling in missing 'Reassignment counts'.",
+      "relevance_to_kpi": "Impacts 'Categorical coherence' and 'Imputation accuracy' by testing how well models capture and utilize correlations between categories and numerical values to provide accurate imputations.",
+      "benchmark_value": "Evaluating the model's capacity to recognize and exploit inter-feature relationships is essential for advanced imputation requirements in datasets where ignore such correlations can lead to unrealistic data inputs."
+    }
+  ]
+}
