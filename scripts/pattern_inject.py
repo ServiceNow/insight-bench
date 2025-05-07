@@ -1,10 +1,11 @@
 from openai import OpenAI
 import json
 import os
-import uuid
 import shutil
 import re
 import subprocess
+import pandas as pd
+
 
 class PatternInjector:
     def __init__(self, api_key: str = None):
@@ -27,15 +28,17 @@ class PatternInjector:
         Args:
             patterns: The patterns to inject. It is a json file with the following format:
             {
-                "column_name_1": [
+                "kpis": [...],
+                "patterns": [
                     {
                         "pattern": "description of the pattern",
+                        "columns_involved": ["col1", "col2", ...],
                         "reasoning": "explanation of why this pattern is useful",
-                        "relevance_to_task": "how this pattern helps with the task"
+                        "relevance_to_kpi": "how this pattern helps with the task",
+                        "benchmark_value": "value to test against"
                     },
                     ...
-                ],
-                ...
+                ]
             }
 
         Returns:
@@ -44,32 +47,43 @@ class PatternInjector:
 
         print("Started getting inject codes ...")
 
-        patterns = json.loads(patterns)
-
+        patterns_dict = json.loads(patterns)
+        patterns_list = patterns_dict.get("patterns", [])
         output = {}
 
-        for column, pattern in patterns.items():
+        for pattern_index, pattern_info in enumerate(patterns_list):
+            columns = pattern_info.get("columns_involved", [])
+            pattern_description = pattern_info.get("pattern", "")
+            reasoning = pattern_info.get("reasoning", "")
+            relevance = pattern_info.get("relevance_to_kpi", "")
+
+            function_name = "modify_" + "_".join(columns)
+            columns_str = ""
+            for i, column in enumerate(columns):
+                columns_str += f"'{i+1}. {column}\n"
 
             prompt = f"""
-            You are given a pandas DataFrame named `df` that contains a column called `{column}`.
+            You are given a pandas DataFrame named `df` that contains the following columns: 
+            
+            `{columns_str}`
 
-            Your task is to write a Python function that analyzes the column based on specific patterns and data quality or relevance concerns.
+            Your task is to write a Python function that modifies the columns based on specific patterns.
 
             The function should:
-                - Be named `modify_{column}`
+                - Be named `{function_name}`
                 - Be a standalone function
                 - Take `df` as its only argument
-                - Implement logic that addresses all of the following patterns (described below)
-                - Use only standard libraries or common ones such as `pandas`, `numpy`, `re`, etc.
+                - Implement logic that addresses the following pattern:
+                    Pattern: {pattern_description}
+                    Reasoning: {reasoning}
+                    Relevance: {relevance}
+                - Use only standard libraries or common ones such as `numpy`, `re`, etc.
                 - Not use any complex or uncommon third-party libraries
 
             This is the signature of the function:
             ```python
-            def modify_{column}(df: pd.DataFrame) -> pd.DataFrame:
+            def {function_name}(df: pd.DataFrame) -> pd.DataFrame:
             ```
-
-            Here are the patterns you must handle:
-            {pattern}
 
             Output requirements:
                 - Only include the necessary `import` statements and the function definition.
@@ -78,15 +92,16 @@ class PatternInjector:
                 - Do not include usage examples or extra text.
                 - Function should have a return statement that returns the modified DataFrame.
 
-            This is an example of the expected output for a column called `age`:
+            This is an example of the expected output for columns called `age` and `height`:
+
             ```python
             import numpy as np
             # And importing any other necessary libraries
 
-            def modify_age(df: pd.DataFrame) -> pd.DataFrame:
+            def modify_age_height(df: pd.DataFrame) -> pd.DataFrame:
                 # Example logic to handle the patterns
                 df['age'] = df['age'].apply(lambda x: np.nan if x < 0 else x)
-                df['age'] = df['age'].fillna(df['age'].mean())
+                df['height'] = df['height'].fillna(df['height'].mean())
                 return df
             ```
 
@@ -101,7 +116,7 @@ class PatternInjector:
             """
 
             response = self.client.chat.completions.create(
-                model="gpt-4o",  # Using GPT-4o (OpenAI Omni)
+                model="gpt-4o",
                 messages=[
                     {
                         "role": "system",
@@ -111,77 +126,90 @@ class PatternInjector:
                 ],
             )
 
-            output[column] = response.choices[0].text.strip()
+            output["Pattern" + str(pattern_index+1) + "_".join(columns)] = response.choices[0].message.content.strip()
+            print(f"Finished getting inject codes for pattern on columns: {"_".join(columns)}")
 
-            print(f"Finished getting inject codes for column: {column}")
-
-        print("Finished getting inject codes for all columns.")
-
+        print("Finished getting inject codes for all patterns.")
         return output
-    
-    def inject_patterns(self, data_file_addr:str, pattern_codes: dict):
+
+    def inject_patterns(
+        self,
+        base_df: pd.DataFrame,
+        pattern_codes: dict,
+        hash_id: str = None,
+    ) -> pd.DataFrame:
         """Inject the patterns into the data.
 
         Args:
+            base_df: The base DataFrame to inject the patterns into.
             pattern_codes: The pattern codes to inject. It is a dictionary with the following format:
             {
-                "column_name_1": "code to inject the pattern",
+                "name1": "code to inject for pattern1",
+                "name1": "code to inject for pattern2",
                 ...
             }
-            data_file_addr: Address to the original CSV data file.
-
-        Returns:
-            Nothing. The function creates a temp folder with modified CSV and scripts.
+            hash_id: The hash ID to use for the temp directory. If not provided, will use "default".
         """
 
         print("Started injecting patterns ...")
 
-        # Step 1: Create temp directory
-        temp_dir = f"temp_{uuid.uuid4().hex}"
+        # Step 1: Create temp directory inside results/{hash_id}/codefiles/
+        if hash_id is None:
+            hash_id = "default"
+        temp_dir = os.path.join("results", hash_id, "codefiles")
         os.makedirs(temp_dir, exist_ok=True)
 
-        # Step 2: Copy the original CSV
-        filename = os.path.basename(data_file_addr)
-        temp_csv_path = os.path.join(temp_dir, filename)
-        shutil.copy2(data_file_addr, temp_csv_path)
+        # Step 2: Handle input data
+        if isinstance(base_df, pd.DataFrame):
+            df = base_df.copy()
+            filename = "temp_data.csv"
+            temp_csv_path = os.path.join(temp_dir, filename)
+            df.to_csv(temp_csv_path, index=False)
+        else:
+            raise ValueError(
+                "base_df should be a pandas DataFrame. Please provide a valid DataFrame."
+            )
 
         # Step 3: Create Python scripts for each column
-        for column, raw_code in pattern_codes.items():
-            print(f"Injecting pattern for column: {column}")
+        for pattern_name, raw_code in pattern_codes.items():
+            print(f"Injecting pattern: {pattern_name}")
 
             match = re.search(r"```python(.*?)```", raw_code, re.DOTALL)
             code = match.group(1).strip() if match else raw_code.strip()
 
-            code = re.sub(r"^\s*import\s+pandas\s+as\s+pd\s*\n?", "", code, flags=re.MULTILINE)
+            code = re.sub(
+                r"^\s*import\s+pandas\s+as\s+pd\s*\n?", "", code, flags=re.MULTILINE
+            )
 
-            func_name = f"modify_{column}"
+            func_name = f"modify_" + "_".join(pattern_name.split("_")[1:])
 
             final_code = "import pandas as pd\n" + code.strip() + "\n"
             final_code += """if __name__ == "__main__":\n"""
             final_code += f"""   df = pd.read_csv("{filename}")\n"""
-            final_code += f"""   df = {func_name}(df)")\n"""
+            final_code += f"""   df = {func_name}(df)\n"""
             final_code += f"""   df.to_csv("{filename}", index=False)"""
 
-            script_path = os.path.join(temp_dir, f"{func_name}.py")
+            # Create script in codefiles directory
+            script_name = f"{func_name}.py"
+            script_path = os.path.join(temp_dir, script_name)
+
             with open(script_path, "w") as f:
                 f.write(final_code)
 
-            print(f"Created script for column: {column} at {script_path}")
+            print(f"Created script for pattern: {pattern_name}")
 
             # Step 4: Run the script
-            subprocess.run(["python", script_path], check=True, cwd=temp_dir)
+            subprocess.run(["python3", script_name], check=True, cwd=temp_dir)
 
-            print(f"Injected pattern for column: {column}")
-            
-        print("Finished injecting patterns for all columns.")
-        
-        # Step 5: Copy modified CSV to original directory
-        original_dir = os.path.dirname(data_file_addr)
-        injected_filename = os.path.splitext(filename)[0] + "_injected.csv"
-        injected_path = os.path.join(original_dir, injected_filename)
-        shutil.copy2(temp_csv_path, injected_path)
+            # Update the DataFrame with the modified data
+            df = pd.read_csv(temp_csv_path)
 
-        # Step 6: Clean up
-        shutil.rmtree(temp_dir)
+            print(f"Injected pattern for pattern: {pattern_name}")
 
-        print(f"Injected CSV saved to: {injected_path}")
+        print("Finished injecting patterns for all patterns.")
+
+        # Step 5: Clean up
+        # Don't remove the directory since we want to keep the code files
+        # shutil.rmtree(temp_dir)
+
+        return df
