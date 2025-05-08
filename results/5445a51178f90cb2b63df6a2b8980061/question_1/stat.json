@@ -1,0 +1,31 @@
+{
+    "name": "Unresolved Issues Count by Category",
+    "description": "Counts of unresolved issues by category in Australia.",
+    "value": [
+        {
+            "location": "Australia",
+            "category": "Database",
+            "count": 6
+        },
+        {
+            "location": "Australia",
+            "category": "Hardware",
+            "count": 110
+        },
+        {
+            "location": "Australia",
+            "category": "Inquiry / Help",
+            "count": 2
+        },
+        {
+            "location": "Australia",
+            "category": "Network",
+            "count": 3
+        },
+        {
+            "location": "Australia",
+            "category": "Software",
+            "count": 7
+        }
+    ]
+}

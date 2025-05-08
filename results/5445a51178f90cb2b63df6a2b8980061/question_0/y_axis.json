@@ -1,5 +1,5 @@
 {
-    "name": "Average Resolution Time (hours)",
+    "name": "Average Time Taken (hours)",
     "description": "Average time taken to resolve issues in hours.",
     "value": [
         165.98189392466614,

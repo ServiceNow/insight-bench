@@ -550,50 +550,55 @@ class AgentDataGen:
             os.makedirs(domain_dir, exist_ok=True)
 
             for task in domain_tasks:
-                print(f"\nGenerating patterns for task: {task}")
+                print(f"\nProcessing task: {task}")
 
-                try:
-                    # Generate patterns
-                    patterns = self.generate_patterns(data, task)
+                # Check if patterns already exist
+                task_filename = task.lower().replace(" ", "_") + "_patterns.json"
+                output_path = os.path.join(domain_dir, task_filename)
 
-                    # Save patterns to file
-                    task_filename = task.lower().replace(" ", "_") + "_patterns.json"
-                    output_path = os.path.join(domain_dir, task_filename)
+                if os.path.exists(output_path):
+                    print(f"Skipping task '{task}' - patterns already exist")
+                    patterns = json.load(open(output_path, "r"))
+                else:
+                    try:
+                        # Generate patterns
+                        patterns = self.generate_patterns(data, task)
 
-                    with open(output_path, "w") as f:
-                        json.dump(patterns, f, indent=2)
+                        # Save patterns to file
+                        with open(output_path, "w") as f:
+                            json.dump(patterns, f, indent=2)
 
-                    print(f"Saved patterns to: {output_path}")
+                        print(f"Saved patterns to: {output_path}")
 
-                    # Generate and inject pattern codes
-                    pattern_codes = self.pattern_injector.get_inject_codes(
-                        json.dumps(patterns)
-                    )
+                    except Exception as e:
+                        print(f"Error generating patterns for task '{task}': {str(e)}")
+                        continue
 
-                    # Inject patterns into the data
-                    injected_data = self.pattern_injector.inject_patterns(
-                        data_file_addr=self.dataset,
-                        pattern_codes=pattern_codes,
-                        hash_id=hash_id,
-                    )
+                # Generate and inject pattern codes
+                pattern_codes = self.pattern_injector.get_inject_codes(
+                    json.dumps(patterns)
+                )
 
-                    # Save injected data to data/IBExt
-                    injected_dir = "data/IBExt"
-                    os.makedirs(injected_dir, exist_ok=True)
-                    injected_filename = task.lower().replace(" ", "_") + "_injected.csv"
-                    injected_path = os.path.join(injected_dir, injected_filename)
-                    injected_data.to_csv(injected_path, index=False)
-                    print(f"Saved injected data to: {injected_path}")
+                # Inject patterns into the data
+                injected_data = self.pattern_injector.inject_patterns(
+                    base_df=self.dataset,
+                    pattern_codes=pattern_codes,
+                    hash_id=hash_id,
+                )
 
-                    # Save pattern codes
-                    codes_filename = task.lower().replace(" ", "_") + "_codes.json"
-                    codes_path = os.path.join(domain_dir, codes_filename)
+                # Save injected data to data/IBExt
+                injected_dir = "data/IBExt"
+                os.makedirs(injected_dir, exist_ok=True)
+                injected_filename = task.lower().replace(" ", "_") + "_injected.csv"
+                injected_path = os.path.join(injected_dir, injected_filename)
+                injected_data.to_csv(injected_path, index=False)
+                print(f"Saved injected data to: {injected_path}")
 
-                    with open(codes_path, "w") as f:
-                        json.dump(pattern_codes, f, indent=2)
+                # Save pattern codes
+                codes_filename = task.lower().replace(" ", "_") + "_codes.json"
+                codes_path = os.path.join(domain_dir, codes_filename)
 
-                    print(f"Saved pattern codes to: {codes_path}")
+                with open(codes_path, "w") as f:
+                    json.dump(pattern_codes, f, indent=2)
 
-                except Exception as e:
-                    print(f"Error generating patterns for task '{task}': {str(e)}")
-                    continue
+                print(f"Saved pattern codes to: {codes_path}")

@@ -1,0 +1,16 @@
+[
+    {
+        "question": "What is the average time taken to resolve issues across different categories?",
+        "answer": "The average time taken to resolve issues varies by category, with 'Inquiry / Help' taking the longest at approximately 204.23 hours, while 'Network' issues are resolved the quickest at around 149.34 hours.",
+        "insight": "Interestingly, 'Inquiry / Help' issues take significantly longer to resolve compared to 'Network' issues, highlighting potential areas for process improvement in customer support.",
+        "justification": "The analysis shows that the average resolution times for different categories are as follows: Database (165.98 hours), Hardware (176.58 hours), Inquiry / Help (204.23 hours), Network (149.34 hours), and Software (171.55 hours), indicating significant differences in resolution efficiency across categories.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_0"
+    },
+    {
+        "question": "Which location has the highest number of unresolved issues, and what are their categories?",
+        "answer": "The location with the highest number of unresolved issues is Australia, with 110 unresolved issues categorized as Hardware, followed by 7 in Software, 6 in Database, 3 in Network, and 2 in Inquiry / Help.",
+        "insight": "In Australia, unresolved issues are predominantly related to Hardware, indicating a potential area for improvement in hardware support or resources, as it accounts for 110 out of the total unresolved issues.",
+        "justification": "According to the analysis, Australia has the most unresolved issues, particularly in the Hardware category, which significantly outnumbers the other categories.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_1"
+    }
+]

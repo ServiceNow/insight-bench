@@ -1,45 +1,42 @@
 {
   "kpis": [
-    "Resolution Time",
-    "Customer Satisfaction",
-    "Incident Priority Handling"
+    "Average Resolve Time",
+    "Incident Reassignment Rate",
+    "Customer Satisfaction Score"
   ],
   "patterns": [
     {
-      "pattern": "Introduction of a sudden influx of incidents on specific days, which affects resolution times dramatically due to overloaded support teams.",
+      "pattern": "Delayed resolution times during peak weekday hours",
       "columns_involved": [
         "Opened",
-        "Closed",
-        "Resolved",
-        "Business resolve time",
-        "Incident state"
+        "Resolve time"
       ],
-      "reasoning": "This pattern simulates a common real-world scenario where a system breakdown or a security breach causes a spike in incident reports. Resolving incidents quickly is critical but becomes challenging, testing the system's robustness under stress.",
-      "relevance_to_kpi": "Affects the 'Resolution Time' by increasing it during the spike period while possibly influencing 'Incident Priority Handling' as urgent incidents might be delayed due to the backlog.",
-      "benchmark_value": "Tests models on handling priority during high-load situations and assessing how well they differentiate between high and low-priority incidents under stress."
+      "reasoning": "A common real-world occurrence is that IT systems and services experience higher loads during peak business hours (e.g., 9 AM - 5 PM, Monday to Friday), leading to longer resolution times. Injecting this pattern can simulate a realistic operational bottleneck.",
+      "relevance_to_kpi": "Affects 'Average Resolve Time' by potentially inflating it during peak hours, providing insight into how well a recommendation system can advise preemptive resource allocation or incident prioritization.",
+      "benchmark_value": "Tests a model\u2019s ability to adapt recommendations based on temporal load, identifying key opportunities to improve operational efficiency."
     },
     {
-      "pattern": "Introduce variations in customer satisfaction levels based on the 'Assignment group' and 'Resolved by' columns, simulating differences in response effectiveness between groups.",
+      "pattern": "Category-based shifts in resolution strategies",
       "columns_involved": [
-        "Assignment group",
-        "Resolved by",
-        "Customer Satisfaction"
+        "Category",
+        "Resolution code",
+        "Resolved"
       ],
-      "reasoning": "Differences in group efficiencies are realistic as certain groups or individuals may have different skill sets or workloads, leading to varied customer outcomes.",
-      "relevance_to_kpi": "Directly impacts 'Customer Satisfaction', especially highlighting which groups or individuals may correlate with higher or lower satisfaction levels.",
-      "benchmark_value": "Enables analysis and benchmarking of recommendation models in understanding which team or assignee optimizes customer satisfaction best and advising on potential reassignments."
+      "reasoning": "This pattern involves frequent changes in the 'Resolution code' tied to specific 'Category' values reflecting policy updates or new solutions for common issues (e.g., 'Network' incidents resolved with a 'Known error' code). This mimics organizational learning or shifts in problem-solving approaches.",
+      "relevance_to_kpi": "Influences 'Incident Reassignment Rate', as effective category-based resolution strategies should reduce the need for incident reassignment.",
+      "benchmark_value": "Evaluates a recommendation system\u2019s effectiveness in leveraging learnings from past resolutions to inform future recommendations on resource assignment or procedural adherence."
     },
     {
-      "pattern": "Delayed effect of high-impact incidents on upcoming incident priorities, where certain 'Impact' categories influence future 'Priority' settings through latent dependencies.",
+      "pattern": "Spike in incidents with high 'Priority' and 'Urgency' due to unexpected system failures",
       "columns_involved": [
-        "Impact",
         "Priority",
+        "Urgency",
         "Created",
-        "Closed"
+        "Short description"
       ],
-      "reasoning": "High-impact incidents might cause non-critical subsequent incidents to be re-prioritized due to resource reallocation or strategic focus shifts.",
-      "relevance_to_kpi": "Affects 'Incident Priority Handling' as incidents with delayed impact might cause priority reassessment, causing prior 'less critical' incidents to be upgraded.",
-      "benchmark_value": "Tests the model's ability to recognize and adjust recommendations based on evolving incident dynamics and understand strategic adjustments in resource allocation under shifting priorities."
+      "reasoning": "Real-world incidents such as unexpected system downtimes can result in sudden spikes in incident reports marked with the highest 'Priority' and 'Urgency'.",
+      "relevance_to_kpi": "Directly impacts 'Customer Satisfaction Score', as effective and timely resolutions are crucial during such spikes.",
+      "benchmark_value": "Challenges a recommendation system\u2019s ability to dynamically prioritize and reprioritize tasks, ensuring continued customer satisfaction in times of crisis."
     }
   ]
 }

@@ -1,44 +1,42 @@
 {
   "kpis": [
-    "Incidents Resolved within SLA",
-    "Average Resolution Time",
-    "Incident Severity Distribution",
-    "Escalation Rate"
+    "Incident Resolution Time",
+    "SLA Compliance",
+    "Reassignment Frequency",
+    "Incident Volume Over Time"
   ],
   "patterns": [
     {
-      "pattern": "A sudden increase in 'Incidents' categorized under 'Network' due to a simulated real-world network outage, with associated rise in 'Urgency' and 'Impact' scores.",
+      "pattern": "Seasonal Increase in Incidents",
       "columns_involved": [
+        "Opened",
         "Category",
-        "Urgency",
-        "Impact",
-        "Time worked"
+        "Business resolve time"
       ],
-      "reasoning": "Network outages can lead to a significant increase in incident reports categorized under 'Network'. This scenario will test the system\u2019s ability to adjust and manage priorities based on the urgency and impact of the incidents, reflecting realistic IT support dynamics.",
-      "relevance_to_kpi": "This pattern will primarily affect the KPI of 'Incident Severity Distribution' and 'Incidents Resolved within SLA', as increased urgency may prioritize resolution efforts but pose a challenge to meet SLAs.",
-      "benchmark_value": "Evaluating model performance in recognizing and adapting to sudden shifts in incident priority and resource allocation, testing the model\u2019s ability to handle stress scenarios."
+      "reasoning": "Inject a seasonal pattern where incidents in certain categories (e.g., 'Network') spike during specific periods (e.g., end of Q4). This mimics real-world scenarios where systems under strain experience more technical issues.",
+      "relevance_to_kpi": "Affects 'Incident Volume Over Time' by showing spikes during certain periods, potentially impacting 'Incident Resolution Time' as the increased load could lead to resource strains.",
+      "benchmark_value": "Tests model's ability to identify and predict seasonal patterns and stresses the need for adaptable resource management solutions."
     },
     {
-      "pattern": "Introduction of a delay in the resolution of 'High' priority incidents when they overlap with weekend periods, simulating resource unavailability.",
+      "pattern": "High Impact Changes Cause Secondary Incident Spikes",
       "columns_involved": [
+        "Assignment group",
         "Priority",
-        "Resolved",
-        "Closed"
+        "Business duration"
       ],
-      "reasoning": "High priority incidents are usually resolved faster, but weekends can introduce unexpected resource shortages, leading to increased resolution times. This mirrors real-world challenges in resource scheduling.",
-      "relevance_to_kpi": "The 'Average Resolution Time' KPI will be affected as resolution times will inflate under these constraints, highlighting how well the system can schedule resources and adapt to temporal dynamics.",
-      "benchmark_value": "Examining the capacity of algorithms to predict and adjust timelines accurately based on historical patterns and resource availability."
+      "reasoning": "Introduce a pattern where changes in critical systems managed by 'IT Securities' lead to a spike in incident priority and extended resolution times, simulating ripple effects of high-impact changes.",
+      "relevance_to_kpi": "Direct impact on 'Incident Resolution Time' and 'SLA Compliance' due to increased incident priority, leading to longer business durations.",
+      "benchmark_value": "Challenges models to link cause and effect across multiple events and handle complex incident chains efficiently."
     },
     {
-      "pattern": "An increase in 'Child Incidents' being linked to a 'Parent Incident' for specific 'Configuration Items', simulating a chain reaction from a major malfunction in key software or hardware.",
+      "pattern": "Resolution-Time Reduction After Personnel Training",
       "columns_involved": [
-        "Configuration item",
-        "Child Incidents",
-        "Parent Incident"
+        "Resolved by",
+        "Business resolve time"
       ],
-      "reasoning": "Certain malfunctions can create cascading effects, leading to multiple related incidents being reported. This tests the model\u2019s ability to correctly link child incidents to a unified parent, critical for correct problem management.",
-      "relevance_to_kpi": "Affects the 'Escalation Rate' and 'Incidents Resolved within SLA' as grouped incidents require a coordinated response strategy, impacting the ability to meet SLAs and handle escalated issues.",
-      "benchmark_value": "Challenges the model\u2019s capability to recognize and group related issues, crucial for accurate root cause analysis and resolution clustering."
+      "reasoning": "Simulate a reduction in the average resolution time post-training session conducted for key personnel like 'System Administrator' and 'Ron Kettering'. This models an organizational improvement scenario.",
+      "relevance_to_kpi": "Directly decreases 'Incident Resolution Time', improves 'SLA Compliance' rates due to faster resolution.",
+      "benchmark_value": "Evaluates the model's ability to detect performance improvements over time, encouraging strategies focusing on personnel efficacy."
     }
   ]
 }

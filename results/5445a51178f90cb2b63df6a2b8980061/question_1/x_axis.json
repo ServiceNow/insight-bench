@@ -1,0 +1,11 @@
+{
+    "name": "Categories",
+    "description": "Categories of unresolved issues.",
+    "value": [
+        "Database",
+        "Hardware",
+        "Inquiry / Help",
+        "Network",
+        "Software"
+    ]
+}

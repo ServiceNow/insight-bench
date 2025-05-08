@@ -1,0 +1,11 @@
+{
+    "name": "Count of Unresolved Issues",
+    "description": "Count of unresolved issues for each category.",
+    "value": [
+        6,
+        110,
+        2,
+        3,
+        7
+    ]
+}

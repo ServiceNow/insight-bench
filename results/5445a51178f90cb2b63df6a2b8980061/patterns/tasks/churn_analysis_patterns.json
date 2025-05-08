@@ -1,45 +1,44 @@
 {
   "kpis": [
-    "Incident Resolution Time",
-    "SLA Compliance Rate",
-    "Incident Reassignment Count",
-    "Churn Prediction Accuracy"
+    "Churn Rate",
+    "Resolution Time",
+    "SLA Compliance",
+    "Escalation Rate"
   ],
   "patterns": [
     {
-      "pattern": "A sudden increase in incidents without resolution ('On Hold' status) due to a major system upgrade affecting many assignments.",
+      "pattern": "Introduce a seasonal surge in incidents for the 'Service' category, particularly 'Email', toward the end of the year.",
       "columns_involved": [
-        "Incident state",
-        "Assignment group",
-        "Reassignment count",
-        "Resolved"
-      ],
-      "reasoning": "This pattern simulates a scenario where a system upgrade leads to widespread incidents that remain unresolved for an extended period. Such situations are common in real business environments and can strain resources.",
-      "relevance_to_kpi": "This affects KPIs such as Incident Resolution Time and SLA Compliance Rate by increasing the average resolution time and potentially causing SLA breaches.",
-      "benchmark_value": "Tests the model's ability to predict the impact of systemic changes on incident management and resource allocation, and how these affect churn."
-    },
-    {
-      "pattern": "Introduction of a network issue causing a spike in incidents with high urgency during specific hours (business peak hours).",
-      "columns_involved": [
+        "Created",
+        "Service",
         "Category",
-        "Channel",
-        "Opened",
-        "Urgency"
+        "Closed"
       ],
-      "reasoning": "By injecting a network issue that occurs during peak hours, this pattern mimics the real-world scenario of time-specific operational bottlenecks affecting customer experiences.",
-      "relevance_to_kpi": "Directly affects the Churn Prediction Accuracy and Urgency distribution since such high-urgency incidents could lead to increased churn if not resolved swiftly.",
-      "benchmark_value": "Evaluates the model's capability to recognize time-sensitive incident patterns and correlate them with potential churn, identifying critical periods for intervention."
+      "reasoning": "Many businesses experience increased system usage during the end-of-year festive shopping period, leading to a rise in service requests related to email systems.",
+      "relevance_to_kpi": "This pattern affects the 'Churn Rate' and 'Resolution Time' by simulating a situation with increased load that could expose inefficiencies in handling seasonal workloads.",
+      "benchmark_value": "Tests model resilience to temporarily increased incident volumes and evaluates the impact of temporal factors on service performance."
     },
     {
-      "pattern": "Consistent changes in assignment due to high reassignment in certain situations, linked to specific incidents, causing delays.",
+      "pattern": "Create a pattern where incidents opened by 'Marscha Gilles-Piecukonis' using 'Phone' channel have a higher likelihood of being marked 'Overdue'.",
       "columns_involved": [
-        "Reassignment count",
-        "Assigned to",
-        "Assignment group"
+        "Opened by",
+        "Channel",
+        "Escalation"
       ],
-      "reasoning": "Reflects operational inefficiency where incidents are passed between teams or individuals, leading to dissatisfaction and potentially increasing churn.",
-      "relevance_to_kpi": "Impacts the Incident Reassignment Count and indicates potential inefficiencies in handling certain types of incidents, affecting overall service quality perception and churn prediction.",
-      "benchmark_value": "Challenges models to uncover hidden inefficiencies within incident management processes that increase reassignments, delay resolutions, and impact customer retention."
+      "reasoning": "This simulates a scenario where personal or systemic inefficiencies in handling certain kinds of requests escalate to overdue status.",
+      "relevance_to_kpi": "It impacts 'Escalation Rate' and 'SLA Compliance', introducing complexity in analyzing churn causes related to handling channels and specific users.",
+      "benchmark_value": "Tests the model's ability to handle personal inefficiencies and channel-specific delays in the churn analysis."
+    },
+    {
+      "pattern": "Introduce a trend where incidents from 'IT Securities' group during weekdays have consistently quicker resolution times.",
+      "columns_involved": [
+        "Assignment group",
+        "Created",
+        "Business resolve time"
+      ],
+      "reasoning": "Many real-world IT departments prioritize certain groups like IT Securities, especially during regular working hours, leading to faster resolutions.",
+      "relevance_to_kpi": "This impacts 'Resolution Time', providing insights into how organizational priorities can influence operational outcomes.",
+      "benchmark_value": "Tests the model's ability to detect and reason about organizational preferential treatment in incident management during specific periods."
     }
   ]
 }

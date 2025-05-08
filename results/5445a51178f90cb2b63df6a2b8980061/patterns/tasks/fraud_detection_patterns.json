@@ -1,43 +1,46 @@
 {
   "kpis": [
-    "Fraud Occurrence Rate",
-    "False Positive Rate",
-    "Detection Speed",
-    "Resolution Time"
+    "Incident Resolution Time",
+    "Fraud Detection Accuracy",
+    "Business Impact"
   ],
   "patterns": [
     {
-      "pattern": "Introduce a seasonal spike in fraud-related incidents during specific months, e.g., increase during October and November.",
+      "pattern": "Introduction of a 'fraud pattern' within certain incidents where incidents categorized under 'High Priority' and with an 'Unusual' caller or 'New' locations show significantly delayed resolutions and frequent reassignment counts.",
+      "columns_involved": [
+        "Priority",
+        "Caller",
+        "Location",
+        "Reassignment count",
+        "Resolve time"
+      ],
+      "reasoning": "This pattern mimics a potential fraud scenario where high-priority incidents might be intentionally delayed or complicated to inflate perceived workload or game the system, typical in fraudulent activities.",
+      "relevance_to_kpi": "This impacts both 'Incident Resolution Time' and 'Fraud Detection Accuracy' by creating challenging edge cases where the model must distinguish between legitimate incidents and manipulated scenarios.",
+      "benchmark_value": "Tests a model's ability to discern complex fraud patterns hiding in plausible operational anomalies, thereby improving robustness in fraud detection systems."
+    },
+    {
+      "pattern": "Sudden increase in incidents with 'Urgency' set to High, during a specific period due to simulated systemic issues stemming from a software update.",
       "columns_involved": [
         "Opened",
+        "Urgency",
         "Category",
-        "Priority"
+        "Resolve time"
       ],
-      "reasoning": "In many real-world scenarios, fraud incidents spike during certain periods, such as holidays or tax season. This pattern would realistically mimic these temporal dynamics by increasing fraud occurrences during specific months.",
-      "relevance_to_kpi": "This pattern directly impacts the Fraud Occurrence Rate and the Detection Speed by altering the temporal distribution of fraud cases.",
-      "benchmark_value": "Testing the model's ability to identify temporal spikes and refining strategies to address periods of increased fraud activities."
+      "reasoning": "Software updates can cause significant changes in incident patterns. This simulates a burst of high-urgency incidents aligned with a systemic issue post-update, capturing realistic operational shocks.",
+      "relevance_to_kpi": "Affects 'Incident Resolution Time' and testing 'Business Impact' as the burst of incidents can lead to bottlenecks and resource allocation challenges.",
+      "benchmark_value": "Evaluates a model's capacity to adapt to temporal spikes and correctly attribute them to non-fraudulent causes, honing temporal incident analysis capabilities."
     },
     {
-      "pattern": "Simulate correlated fraud incidents in specific assignment groups, causing cascading effects in workload and resolution time.",
+      "pattern": "Persistent change in SLA adherence where 'IT Securities' assignment group incidents experience a gradual but systematic increase in 'SLA breaches' over time.",
       "columns_involved": [
         "Assignment group",
+        "Made SLA",
         "Business resolve time",
-        "Priority"
+        "Business duration"
       ],
-      "reasoning": "A realistic phenomenon in fraud detection is the clustering of incidents affecting specific organizational groups, which can lead to resource strain and subsequent delays in resolution.",
-      "relevance_to_kpi": "Impacting the Resolution Time and potentially influencing the False Positive Rate due to incorrect prioritization or inadequate resource allocation.",
-      "benchmark_value": "Evaluate the model's capacity to handle correlated events and the consequent operational impacts, ensuring models or strategies can adapt to the clustering of incidents."
-    },
-    {
-      "pattern": "Introduce discrepancies in Duration based on escalation levels, where escalated cases show abnormally low or high durations compared to normal cases.",
-      "columns_involved": [
-        "Duration",
-        "Escalation",
-        "Resolved"
-      ],
-      "reasoning": "This pattern tests the model's robustness in distinguishing between genuine fraud cases and anomalies based on duration mismatches, particularly for escalated cases that should follow a distinct resolution timeline.",
-      "relevance_to_kpi": "Affects Decision Speed and Fraud Occurrence Rate by introducing complexity in recognizing abnormal duration associated with fraud.",
-      "benchmark_value": "Difficulties posed by manipulation in Duration akin to fraud incidents require discernment in identifying irregular activity patterns, thereby challenging detection capacities."
+      "reasoning": "Reflective of systemic drifts often overlooked in manual audits, this pattern enables examining changes possibly due to underlying, unnoticed operational inefficiencies.",
+      "relevance_to_kpi": "Impacts 'Business Impact' and 'Fraud Detection Accuracy' since the pattern questions the adequacy and reliability of current processes, testing model sensitivity to performance drifts.",
+      "benchmark_value": "Facilitates the evaluation of long-term predictive capabilities and drift detection within models, essential for proactive fraud analytics and operational improvements."
     }
   ]
 }

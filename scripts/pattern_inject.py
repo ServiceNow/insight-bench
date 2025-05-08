@@ -52,67 +52,43 @@ class PatternInjector:
         output = {}
 
         for pattern_index, pattern_info in enumerate(patterns_list):
-            columns = pattern_info.get("columns_involved", [])
+            # Strip serial numbers from column names
+            columns = [
+                col.split(". ", 1)[-1] if ". " in col else col
+                for col in pattern_info.get("columns_involved", [])
+            ]
             pattern_description = pattern_info.get("pattern", "")
             reasoning = pattern_info.get("reasoning", "")
             relevance = pattern_info.get("relevance_to_kpi", "")
 
             function_name = "modify_" + "_".join(columns)
             columns_str = ""
-            for i, column in enumerate(columns):
-                columns_str += f"'{i+1}. {column}\n"
+            for column in columns:
+                columns_str += f"'{column}\n"
 
             prompt = f"""
-            You are given a pandas DataFrame named `df` that contains the following columns: 
-            
-            `{columns_str}`
+            You are a highly skilled data scientist. Your task is to reason through a pattern injection task and generate a valid, executable Python function to apply the specified transformation.
 
-            Your task is to write a Python function that modifies the columns based on specific patterns.
+            You are given a pandas DataFrame named `df` with the following columns:
+                        
+                {columns_str}
 
-            The function should:
-                - Be named `{function_name}`
-                - Be a standalone function
-                - Take `df` as its only argument
-                - Implement logic that addresses the following pattern:
-                    Pattern: {pattern_description}
-                    Reasoning: {reasoning}
-                    Relevance: {relevance}
-                - Use only standard libraries or common ones such as `numpy`, `re`, etc.
-                - Not use any complex or uncommon third-party libraries
+            Your goal is to implement a data transformation that introduces the following pattern:
 
-            This is the signature of the function:
+            - **Pattern**: {pattern_description}
+            - **Reasoning**: {reasoning}
+            - **Relevance**: {relevance}
+
+            Please follow this **step-by-step reasoning process** internally before generating code:
+            1. Identify which of the columns in `{columns_str}` are directly involved in the pattern.
+            2. Determine what type of transformation needs to be applied (e.g., numeric shift, conditional flag, group-based anomaly).
+            3. Choose appropriate Python libraries and operations to implement the transformation.
+            4. Ensure the logic is valid, self-contained, and does not rely on any undefined variables or external dependencies.
+
+            Then, generate a complete **Python function** with the following signature:
+
             ```python
             def {function_name}(df: pd.DataFrame) -> pd.DataFrame:
-            ```
-
-            Output requirements:
-                - Only include the necessary `import` statements and the function definition.
-                - Do not include any explanation or comments.
-                - Only generate one function with all logic embedded.
-                - Do not include usage examples or extra text.
-                - Function should have a return statement that returns the modified DataFrame.
-
-            This is an example of the expected output for columns called `age` and `height`:
-
-            ```python
-            import numpy as np
-            # And importing any other necessary libraries
-
-            def modify_age_height(df: pd.DataFrame) -> pd.DataFrame:
-                # Example logic to handle the patterns
-                df['age'] = df['age'].apply(lambda x: np.nan if x < 0 else x)
-                df['height'] = df['height'].fillna(df['height'].mean())
-                return df
-            ```
-
-            IMPORTANT NOTES:
-                - The function should be valid Python code and should not include any comments or explanations.
-                - The function should be self-contained and not rely on any external context or variables.
-                - The function should be able to handle the patterns described above and return a modified DataFrame.
-                - There should be no additional code except for the function definition and necessary imports. You should not write and include other functions or call this functions (not even writing a main function).
-                - The function should not include any print statements or logging.
-
-            Please return only the code (imports + one function) in python environment. Nothing else.
             """
 
             response = self.client.chat.completions.create(
@@ -126,8 +102,12 @@ class PatternInjector:
                 ],
             )
 
-            output["Pattern" + str(pattern_index+1) + "_".join(columns)] = response.choices[0].message.content.strip()
-            print(f"Finished getting inject codes for pattern on columns: {"_".join(columns)}")
+            output["Pattern" + str(pattern_index + 1) + "_".join(columns)] = (
+                response.choices[0].message.content.strip()
+            )
+            print(
+                f"Finished getting inject codes for pattern on columns: {"_".join(columns)}"
+            )
 
         print("Finished getting inject codes for all patterns.")
         return output
@@ -181,22 +161,35 @@ class PatternInjector:
                 r"^\s*import\s+pandas\s+as\s+pd\s*\n?", "", code, flags=re.MULTILINE
             )
 
-            func_name = f"modify_" + "_".join(pattern_name.split("_")[1:])
+            func_name = f"modify_" + "_".join(pattern_name.split("_")[1:]).replace(
+                " ", "_"
+            )
+
+            # Ensure function name is consistent in the code
+            code = re.sub(
+                r"def\s+[a-zA-Z0-9_]+\(df: pd\.DataFrame\)",
+                f"def {func_name}(df: pd.DataFrame)",
+                code,
+            )
 
             final_code = "import pandas as pd\n" + code.strip() + "\n"
             final_code += """if __name__ == "__main__":\n"""
-            final_code += f"""   df = pd.read_csv("{filename}")\n"""
+            final_code += f"""   df = pd.read_csv("temp_data.csv")\n"""
             final_code += f"""   df = {func_name}(df)\n"""
-            final_code += f"""   df.to_csv("{filename}", index=False)"""
+            final_code += f"""   df.to_csv("temp_data.csv", index=False)"""
 
             # Create script in codefiles directory
             script_name = f"{func_name}.py"
             script_path = os.path.join(temp_dir, script_name)
 
-            with open(script_path, "w") as f:
-                f.write(final_code)
-
-            print(f"Created script for pattern: {pattern_name}")
+            if os.path.exists(script_path):
+                print(
+                    f"Skipping script creation for pattern: {pattern_name} - file already exists"  # For demo:Amrutha
+                )
+            else:
+                with open(script_path, "w") as f:
+                    f.write(final_code)
+                print(f"Created script for pattern: {pattern_name}")
 
             # Step 4: Run the script
             subprocess.run(["python3", script_name], check=True, cwd=temp_dir)

@@ -1,44 +1,41 @@
 {
   "kpis": [
-    "Frequent Itemsets",
-    "Support",
-    "Confidence",
-    "Lift"
+    "Rule Support",
+    "Rule Confidence",
+    "Rule Lift",
+    "Number of Strong Rules"
   ],
   "patterns": [
     {
-      "pattern": "Introduce a temporal trend where incidents opened during specific hours (like early morning or late night) have a higher chance of being resolved quickly.",
+      "pattern": "Introduction of a temporal anomaly where incidents opened during a specific month (e.g., October 2024) tend to have higher 'Priority'.",
       "columns_involved": [
         "Opened",
-        "Resolved",
-        "Resolve time",
-        "Closed"
+        "Priority"
       ],
-      "reasoning": "This pattern introduces temporal dynamics by simulating behavior where incidents opened at less busy hours are handled more efficiently due to potentially lower workload. This reflects real-world scenarios where the workload is lower during off-peak hours, potentially leading to quicker resolutions.",
-      "relevance_to_kpi": "Affects 'Frequent Itemsets' by potentially creating associations between 'Opened' times and quicker 'Resolve time', affecting the computation of 'Support' and 'Confidence' for these associations.",
-      "benchmark_value": "Tests the model's ability to capture and exploit temporal relationships when generating association rules, challenging the model to recognize non-explicit correlations introduced by time-based behavior patterns."
+      "reasoning": "Identifying whether temporal events coincide with changes in incident priority can reveal seasonal or periodic patterns in the data that might affect operational focus areas.",
+      "relevance_to_kpi": "This pattern is likely to increase the support and confidence metrics for rules that associate specific times with certain priorities, impacting the discovery of temporal correlation rules.",
+      "benchmark_value": "It tests the model's ability to detect temporal dependencies and conditional behaviors, such as the influence of specific time periods on priority levels."
     },
     {
-      "pattern": "Simulate an increase in incidents related to 'Network' category, coinciding with resolved incidents having 'Normal' escalation and 'Low' severity.",
+      "pattern": "A category-based split where incidents with 'Network' category disproportionately affect 'On Hold' state due to dependency on external resources.",
       "columns_involved": [
         "Category",
-        "Escalation",
-        "Severity"
+        "State"
       ],
-      "reasoning": "This pattern mimics a scenario where a common event (such as a network upgrade) causes a surge in incidents, often handled without urgency, reflecting common responses in organizational incident management.",
-      "relevance_to_kpi": "Directly affects 'Support' and 'Lift' by influencing the frequency and strength of the association between 'Network', 'Normal' escalation, and 'Low' severity.",
-      "benchmark_value": "Pushes the analytics model to recognize category-driven spikes and assess its ability to determine the impact of such spikes on related KPI metrics, specifically in observing shifts in association rule strength."
+      "reasoning": "Network-related issues often require external coordination, thus increasing the likelihood of being placed on hold. Mimicking this dependency benchmarks the model's sensitivity to real-world category-state dependencies.",
+      "relevance_to_kpi": "This pattern affects rule lift and confidence, particularly those involving 'Network' category and 'On Hold' state. It challenges the model's capacity to link organizational factors (like category dependencies) to state outcomes.",
+      "benchmark_value": "It enables testing on how well the model identifies operational hindrances tied to specific categories, useful for process improvement insights."
     },
     {
-      "pattern": "Inject a cross-feature dependency such that incidents with 'High' impact are more likely to be 'On Hold' and reopened multiple times before closure.",
+      "pattern": "A regime shift indicating that incidents resolved by 'System Administrator' tend more often to have a 'Critical' priority post-January 2025.",
       "columns_involved": [
-        "Impact",
-        "State",
-        "Reopen count"
+        "Resolved by",
+        "Priority",
+        "Resolved"
       ],
-      "reasoning": "This pattern reflects a plausible real-world case where significant issues ('High' impact) face delays and need revisiting ('On Hold', multiple 'Reopen count') as they require more thorough review or have recurring issues.",
-      "relevance_to_kpi": "Influences 'Confidence' and 'Lift' by increasing the co-occurrence of 'High' impact, 'On Hold' state, and high 'Reopen count', necessitating stronger inference mechanisms to identify underlying dependencies.",
-      "benchmark_value": "Encourages robust benchmarking of the model's capacity to uncover deeper interdependencies and conditional trends across different fields, posing challenges in detecting co-occurring patterns amidst varying data complexities."
+      "reasoning": "This pattern introduces a regime shift to test if models can capture changes over time based on organizational roles' involvement in task completion.",
+      "relevance_to_kpi": "It impacts rule confidence and lift involved with 'Resolved by' and 'Priority', examining how system administration influence shifts to higher urgency resolutions over time.",
+      "benchmark_value": "Tests models on their ability to detect changes in association strengths due to shifts in organizational roles and responsibilities."
     }
   ]
 }

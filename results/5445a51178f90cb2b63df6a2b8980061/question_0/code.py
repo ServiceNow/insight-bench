@@ -10,53 +10,59 @@ data_path = '/Users/avramesh/Documents/ServiceNow/BIBench/insight-bench-ext/data
 df = pd.read_csv(data_path)
 
 # Convert 'opened_at' and 'closed_at' to datetime
-# Convert the 'opened_at' and 'closed_at' columns to datetime format for time calculations
+# Columns for opening and closing timestamps
 df['opened_at'] = pd.to_datetime(df['opened_at'])
 df['closed_at'] = pd.to_datetime(df['closed_at'])
 
 # Calculate the time taken to resolve issues
-# Create a new column 'resolution_time' that calculates the difference between 'closed_at' and 'opened_at'
-df['resolution_time'] = (df['closed_at'] - df['opened_at']).dt.total_seconds() / 3600  # Convert to hours
+# New column for time taken in hours
+df['time_taken'] = (df['closed_at'] - df['opened_at']).dt.total_seconds() / 3600
 
-# Group by 'category' and calculate the average resolution time
-# Group the DataFrame by 'category' and calculate the mean of 'resolution_time'
-avg_resolution_time = df.groupby('category')['resolution_time'].mean().reset_index()
+# Group by category and calculate the average time taken
+# Grouping by 'category' and calculating mean of 'time_taken'
+avg_time_per_category = df.groupby('category')['time_taken'].mean().reset_index()
 
 # Prepare data for plotting
-# Prepare the x and y axis data for the plot
-x_axis_data = avg_resolution_time['category'].tolist()
-y_axis_data = avg_resolution_time['resolution_time'].tolist()
+# X-axis data (categories)
+x_axis_data = avg_time_per_category['category'].tolist()
+# Y-axis data (average time taken)
+y_axis_data = avg_time_per_category['time_taken'].tolist()
 
-# Plot the average resolution time across categories
-# Create a line plot of average resolution time by category
-plot_title = 'Average Resolution Time by Category'
-plot_lines(avg_resolution_time, 'category', ['resolution_time'], plot_title)
+# Plot the average time taken to resolve issues across different categories
+# Plot title
+plot_title = 'Average Time Taken to Resolve Issues by Category'
+# Create a line plot
+plot_lines(avg_time_per_category, 'category', ['time_taken'], plot_title)
 
-# Save stats data for the plot
-# Create a dictionary to store the stats data
+# Prepare stats for JSON
+# Stats data dictionary
 stats_data = {
-    'name': "Average Resolution Time by Category",
-    'description': "This shows the average time taken to resolve issues across different categories.",
-    'value': avg_resolution_time.to_dict(orient='records')
+    'name': "Average Time Taken to Resolve Issues",
+    'description': "Average time taken to resolve issues across different categories.",
+    'value': avg_time_per_category.to_dict(orient='records')
 }
+
+# Save stats JSON
 save_json(stats_data, "stat")
 
-# Save x-axis data
-# Create a dictionary for x-axis data
+# Prepare x_axis JSON
+# X-axis data dictionary
 x_axis_json = {
     'name': "Categories",
     'description': "Different categories of issues.",
     'value': x_axis_data[:50]  # Limit to 50 entries
 }
+# Save x_axis JSON
 save_json(x_axis_json, "x_axis")
 
-# Save y-axis data
-# Create a dictionary for y-axis data
+# Prepare y_axis JSON
+# Y-axis data dictionary
 y_axis_json = {
-    'name': "Average Resolution Time (hours)",
+    'name': "Average Time Taken (hours)",
     'description': "Average time taken to resolve issues in hours.",
     'value': y_axis_data[:50]  # Limit to 50 entries
 }
+# Save y_axis JSON
 save_json(y_axis_json, "y_axis")
 
 # Fix filenames for saved plots and stats

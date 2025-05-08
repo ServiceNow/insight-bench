@@ -1,43 +1,44 @@
 {
   "kpis": [
-    "Incident Response Time",
-    "Incident Resolution Time",
-    "Service Level Agreement Compliance",
-    "Incident Escalation Rate"
+    "Incident Volume by Category",
+    "Average Resolution Time",
+    "Reassignment Frequency",
+    "Impact of Incidents"
   ],
   "patterns": [
     {
-      "pattern": "Emergence of a seasonal peak in network-related incidents around the end of the calendar year.",
+      "pattern": "Sudden surge in Network category incidents and reassignment.",
+      "columns_involved": [
+        "Category",
+        "Reassignment count",
+        "Opened",
+        "Assigned to"
+      ],
+      "reasoning": "Simulating a real-world network outage can impact how organizations prepare for and respond to sudden network-related threats. This pattern serves to evaluate model effectiveness in pinpointing causality within volatile incident spikes.",
+      "relevance_to_kpi": "This impacts the 'Incident Volume by Category' KPI significantly, tests model reactivity in spike scenarios, and affects 'Reassignment Frequency' as rapid reassignments typically follow awareness of a network issue.",
+      "benchmark_value": "Tests the model's ability to recognize category-specific incident surge patterns and reassignments' impact on resolution strategies."
+    },
+    {
+      "pattern": "Higher incident impact value resulting in longer resolution times.",
+      "columns_involved": [
+        "Impact",
+        "Resolve time",
+        "Priority"
+      ],
+      "reasoning": "In high-impact cases, more resources are typically needed to troubleshoot and resolve the incidents, often resulting in extended resolution delays, a relevant behavior for the benchmarking of models predicting resolution times based on incident characteristics.",
+      "relevance_to_kpi": "Directly influences 'Average Resolution Time' by introducing a component where impact is predictive of increased resolution times, creating a perfect playground for testing time estimation algorithms.",
+      "benchmark_value": "Evaluates if the model can identify how impact and priority correlate to extended resolution times."
+    },
+    {
+      "pattern": "Delayed resolution for incidents opened on Fridays.",
       "columns_involved": [
         "Opened",
-        "Category",
-        "Short description"
+        "Resolve time",
+        "Category"
       ],
-      "reasoning": "It is common to see an increase in network issues during the end of year due to increased online activity and system upgrades. This pattern tests the model's ability to correlate temporal dynamics with incident types.",
-      "relevance_to_kpi": "Affects Incident Response Time and Incident Resolution Time by creating sudden surges that need to be managed efficiently.",
-      "benchmark_value": "Tests the system's ability to handle spikes, predict patterns based on historical data, and manage resource allocation efficiently during high-demand periods."
-    },
-    {
-      "pattern": "Introduction of cross-category dependencies where incidents in the 'Network' category lead to subsequent incidents in the 'Software' category.",
-      "columns_involved": [
-        "Category",
-        "Related Incidents",
-        "Short description"
-      ],
-      "reasoning": "In real-world scenarios, network issues often cause cascading effects on software services. This pattern helps in identifying and monitoring cause-effect relationships across different categories.",
-      "relevance_to_kpi": "Impacts Incident Escalation Rate by demonstrating complex dependencies and increase in re-assignment counts as incidents cascade across categories.",
-      "benchmark_value": "Challenges the model to identify and handle interdependencies and interconnected incidents, providing insights into root-causes and developing preventive measures."
-    },
-    {
-      "pattern": "A regime shift where a specific 'Configuration item' begins frequently failing leading to a marked increase in incidents.",
-      "columns_involved": [
-        "Configuration item",
-        "Incident state",
-        "Business impact"
-      ],
-      "reasoning": "A hardware or software component can become a common source of issues if not maintained or updated, reflecting a real-world sudden degradation in service levels due to specific technical failures.",
-      "relevance_to_kpi": "Directly influences Service Level Agreement Compliance and Business Impact by causing frequent breaches if not proactively managed.",
-      "benchmark_value": "Tests the analytics capability to quickly recognize and highlight critical areas of infrastructural weakness, facilitating faster decision making and repairs."
+      "reasoning": "Industries often witness delayed service responses over weekends, especially if incidents occur towards the end of a working week. This pattern enables the testing of temporal dynamics as they relate to incident resolution times.",
+      "relevance_to_kpi": "It affects 'Average Resolution Time' and 'Impact of Incidents', highlighting the temporal influence of incident initiation on time-sensitive resolutions.",
+      "benchmark_value": "Tests the model\u2019s adeptness at forecasting time-to-resolution under specific time and day-of-week conditions, vital for real-world scenario planning."
     }
   ]
 }

@@ -1,43 +1,46 @@
 {
   "kpis": [
-    "Incident Resolution Time",
-    "SLA Adherence Rate",
-    "Priority Resolution Distribution",
-    "Customer Satisfaction"
+    "Average Resolution Time",
+    "SLA Fulfillment Rate",
+    "High Priority Incident Count",
+    "Reassignment Frequency"
   ],
   "patterns": [
     {
-      "pattern": "Sudden spike in incident resolution times during a specific period.",
-      "columns_involved": [
-        "Opened",
-        "Closed",
-        "Resolve time"
-      ],
-      "reasoning": "This pattern simulates a real-world scenario where a sudden increase in incident resolution times might occur due to unforeseen circumstances such as increased workload or system failures. It provides a realistic test of a model's ability to handle and identify temporal anomalies and workload management.",
-      "relevance_to_kpi": "Impacts 'Incident Resolution Time' by increasing the variance and mean resolution duration during the period in question.",
-      "benchmark_value": "Tests the model's ability to incorporate temporal awareness and identify periods of operational stress, which are vital for both predictive accuracy and post-hoc analysis."
-    },
-    {
-      "pattern": "Differential impact of incident priority on resolution time based on the time of day or week.",
-      "columns_involved": [
-        "Priority",
-        "Resolve time",
-        "Opened"
-      ],
-      "reasoning": "Priority may influence resolution speed differently depending on when the incident is opened. For example, '1 - Critical' priority incidents may be resolved faster during business hours than outside them, reflecting resource availability.",
-      "relevance_to_kpi": "Directly affects 'Priority Resolution Distribution' and 'Incident Resolution Time' by introducing a time-dependent variance in how quickly different priorities are resolved.",
-      "benchmark_value": "Challenges the model's segmentation ability to differentiate temporal impacts on resolution based on priority, demanding nuanced understanding of temporal-categorical interactions."
-    },
-    {
-      "pattern": "Anomalous but significant batch of incidents closed as 'Solved (Work Around)' impacting a specific configuration item suddenly.",
+      "pattern": "Surge in incident reports related to a specific configuration item leading to high priority assignments.",
       "columns_involved": [
         "Configuration item",
-        "Resolution code",
+        "Priority",
+        "Category",
+        "Business duration"
+      ],
+      "reasoning": "A sudden increase in incidents related to a specific configuration item, such as 'Windows Mobile', can simulate a real-world scenario like a software bug or security vulnerability. This will test the model's ability to detect and respond to a critical incident surge.",
+      "relevance_to_kpi": "This pattern will directly impact 'High Priority Incident Count' by increasing the number of high priority incidents. It will also affect 'Average Resolution Time' and 'Reassignment Frequency', as such incidents typically require faster resolution and might involve multiple reassignments until resolution.",
+      "benchmark_value": "This pattern challenges the model's ability to identify emergent issues and cluster incidents effectively, which is essential for proactive incident management and customer segmentation."
+    },
+    {
+      "pattern": "Temporal anomalies in SLA fulfillment due to seasonal staffing changes.",
+      "columns_involved": [
+        "Business resolve time",
+        "SLA due",
+        "Resolved",
         "Closed"
       ],
-      "reasoning": "In the real-world, a workaround solution may be applied quickly when systemic issues with a particular configuration item arise. This reflects a scenario where temporary fixes are applied en masse, impacting analysis on closure trends.",
-      "relevance_to_kpi": "Impacts 'Customer Satisfaction' and indirectly 'SLA Adherence Rate' by temporarily improving SLA metrics at the potential cost of long-term satisfaction due to non-permanent solutions.",
-      "benchmark_value": "Provides a testing ground for assessing how models handle episodic spikes related to specific configuration items, underscoring resolution strategy and its impact on service quality perceptions."
+      "reasoning": "Seasonal variations in staffing levels can affect SLA fulfillment, for instance, during holidays when fewer staff members are available. This reflects real-world scenarios where businesses experience fluctuations in efficiency.",
+      "relevance_to_kpi": "This pattern will affect the 'SLA Fulfillment Rate' by creating distinct periods where SLA achievement drops. It will also shed light on 'Average Resolution Time' as fewer resources could lead to longer resolution times.",
+      "benchmark_value": "This tests the model's ability to account for and understand temporal patterns and anomalies, ensuring that customer segmentation models consider time-based effects on service levels."
+    },
+    {
+      "pattern": "Increase in multi-assignee tasks due to complex incident handling.",
+      "columns_involved": [
+        "Assigned to",
+        "Assignment group",
+        "Reassignment count",
+        "Activity due"
+      ],
+      "reasoning": "Certain complex issues might require collaboration across multiple departments or specialists, resulting in more complex assignment patterns. This is typical in real-world scenarios where intricate problems need cross-functional teamwork.",
+      "relevance_to_kpi": "Impacts 'Reassignment Frequency' as well as potentially affecting 'High Priority Incident Count' if the complexity correlates with severity or priority. It tests the segmentation process by requiring models to consider collaborations and handoffs as part of incident handling.",
+      "benchmark_value": "This allows evaluation of the model's capacity to handle scenarios with non-linear task and assignment structures, which is crucial for realistic customer segmentation involving collaborative problem-solving incidents."
     }
   ]
 }
