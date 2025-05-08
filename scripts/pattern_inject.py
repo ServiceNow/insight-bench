@@ -57,53 +57,43 @@ class PatternInjector:
             reasoning = pattern_info.get("reasoning", "")
             relevance = pattern_info.get("relevance_to_kpi", "")
 
-            function_name = "modify_" + "_".join(columns)
             columns_str = ""
             for i, column in enumerate(columns):
-                columns_str += f"'{i+1}. {column}\n"
+                columns_str += f"'{i+1}. {column} \t"
 
             prompt = f"""
-            You are given a pandas DataFrame named `df` that contains the following columns: 
-            
-            `{columns_str}`
+            Imagine you are given a pandas DataFrame named `df`.
 
-            Your task is to write a Python function that modifies the columns based on specific patterns.
-
-            The function should:
-                - Be named `{function_name}`
-                - Be a standalone function
-                - Take `df` as its only argument
-                - Implement logic that addresses the following pattern:
-                    Pattern: {pattern_description}
-                    Reasoning: {reasoning}
-                    Relevance: {relevance}
-                - Use only standard libraries or common ones such as `numpy`, `re`, etc.
-                - Not use any complex or uncommon third-party libraries
-
-            This is the signature of the function:
-            ```python
-            def {function_name}(df: pd.DataFrame) -> pd.DataFrame:
-            ```
+            You are tasked with writing a Python function that injects a pattern into the given pandas DataFrame named `df`.
+            Injecting a pattern means **modifying or adding values** in specific columns of the DataFrame to follow a certain logical structure, transformation rule, or simulated behavior. This may involve altering existing column values, adding new derived columns, or enforcing specific relationships between columns.
+            Here is what you need to do:
+                - The function **must be named** `pattern_{pattern_index+1}` (e.g., `pattern_3`)
+                - The signature of the function should be:
+                    ```python
+                    def pattern_{pattern_index+1}(df: pd.DataFrame) -> pd.DataFrame:
+                    ```
+                - It should be a **standalone function** (no external dependencies other than standard libraries and `pandas`, `numpy`, `re`)
+                - The function should:
+                    1. Take only one input: the DataFrame `df`
+                    2. **Modify `df` in-place** (i.e., apply transformations directly on `df`)
+                    3. Implement the following pattern injection:
+                        - **Pattern Description**: {pattern_description}
+                        - **Reasoning**: {reasoning}
+                        - **Relevance**: {relevance}
+                        - **Columns Involved**: {columns_str}
+                    4. Assume that the DataFrame already contains all columns listed in `Columns Involved`.
+                    5. Make sure your function is not using columns that are not listed in `Columns Involved`.
+                - If new columns need to be added as part of the pattern, ensure they are clearly named and added to `df`
+                - Handle errors gracefully (e.g., missing values, type mismatches)
+                - Return the modified `df` (even though it is modified in place, this improves flexibility)
 
             Output requirements:
                 - Only include the necessary `import` statements and the function definition.
                 - Do not include any explanation or comments.
                 - Only generate one function with all logic embedded.
+                - The code should be valid Python code and in python environment.
                 - Do not include usage examples or extra text.
                 - Function should have a return statement that returns the modified DataFrame.
-
-            This is an example of the expected output for columns called `age` and `height`:
-
-            ```python
-            import numpy as np
-            # And importing any other necessary libraries
-
-            def modify_age_height(df: pd.DataFrame) -> pd.DataFrame:
-                # Example logic to handle the patterns
-                df['age'] = df['age'].apply(lambda x: np.nan if x < 0 else x)
-                df['height'] = df['height'].fillna(df['height'].mean())
-                return df
-            ```
 
             IMPORTANT NOTES:
                 - The function should be valid Python code and should not include any comments or explanations.
@@ -145,7 +135,7 @@ class PatternInjector:
             pattern_codes: The pattern codes to inject. It is a dictionary with the following format:
             {
                 "name1": "code to inject for pattern1",
-                "name1": "code to inject for pattern2",
+                "name2": "code to inject for pattern2",
                 ...
             }
             hash_id: The hash ID to use for the temp directory. If not provided, will use "default".
@@ -171,6 +161,7 @@ class PatternInjector:
             )
 
         # Step 3: Create Python scripts for each column
+        pattern_index = 1
         for pattern_name, raw_code in pattern_codes.items():
             print(f"Injecting pattern: {pattern_name}")
 
@@ -181,13 +172,13 @@ class PatternInjector:
                 r"^\s*import\s+pandas\s+as\s+pd\s*\n?", "", code, flags=re.MULTILINE
             )
 
-            func_name = f"modify_" + "_".join(pattern_name.split("_")[1:])
+            func_name = "pattern_" + pattern_index
 
             final_code = "import pandas as pd\n" + code.strip() + "\n"
             final_code += """if __name__ == "__main__":\n"""
-            final_code += f"""   df = pd.read_csv("{filename}")\n"""
+            final_code += f"""   df = pd.read_csv("./{filename}")\n"""
             final_code += f"""   df = {func_name}(df)\n"""
-            final_code += f"""   df.to_csv("{filename}", index=False)"""
+            final_code += f"""   df.to_csv("./{filename}", index=False)"""
 
             # Create script in codefiles directory
             script_name = f"{func_name}.py"
@@ -205,6 +196,8 @@ class PatternInjector:
             df = pd.read_csv(temp_csv_path)
 
             print(f"Injected pattern for pattern: {pattern_name}")
+
+            pattern_index += 1
 
         print("Finished injecting patterns for all patterns.")
 
