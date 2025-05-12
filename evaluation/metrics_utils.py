@@ -1,7 +1,8 @@
-from insightbench.utils.eval_utils import (
+from evaluation.eval_utils import (
     compute_rouge_score,
     compute_g_eval,
     compute_llama3_eval,
+    compute_bleurt_score
 )
 
 
@@ -14,7 +15,9 @@ def score_insight(gt_insight, pred_insight, score_name):
     score (float): The score of the prediction based on the ground truth.
     """
     if score_name == "rouge1":
-        score = compute_rouge_score(pred_insight, gt_insight)
+        score = compute_rouge_score(pred_insight, gt_insight) 
+    elif score_name=="bleurt":
+        score = compute_bleurt_score(pred_insight,gt_insight)
     elif score_name == "g_eval":
         score = compute_g_eval(pred_insight, gt_insight, top_logprobs=5) / 10.0
     elif score_name == "llama3_eval":

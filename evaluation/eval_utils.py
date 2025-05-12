@@ -8,6 +8,8 @@ import requests
 import openai
 from openai import OpenAI
 
+from evaluate import load
+
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
@@ -122,3 +124,17 @@ def compute_rouge_score(answer, gt_answer, **kwargs):
         references=[gt_answer],
         rouge_types=["rouge1"],
     )["rouge1"]
+
+
+def compute_bleurt_score(answer, gt_answer, **kwargs):
+    """
+    Compute BLEURT score between answer and gt_answer.
+    """
+    bleurt = load("bleurt", config_name="bleurt-large-512")
+
+    result = bleurt.compute(
+        predictions=[answer],
+        references=[gt_answer]
+    )
+    
+    return result["scores"][0]
