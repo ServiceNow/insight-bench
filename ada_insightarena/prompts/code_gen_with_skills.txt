@@ -1,0 +1,72 @@
+Given the following DataFrame ('df') and question, generate Python code **based on the information given in the skill exemplars** using Matplotlib/Seaborn to create a plot that effectively answers the question by applying the appropriate data analytics technique. Think step by step. Reason out how the code is bug free before you write the code.
+
+---
+
+### Input Details:
+1. **DataFrame Information**:
+<df_info>
+{df_info}
+</df_info>
+
+2. **DataFrame Description**:
+<df_description>
+{df_description}
+</df_description>
+
+3. **First Few Rows of the DataFrame**:
+<df_head>
+{df_head}
+</df_head>
+
+4. **Skill Exemplar Summary**:
+The following describes the data analytics technique to be applied:
+{skill_exempler_summary}
+
+5. **Question**:
+{question}
+
+---
+
+### Instructions:
+Generate a complete Python script enclosed in triple backticks (```) that follows these guidelines:
+
+1. **Data Preparation & Cleaning**:
+- Use the provided DataFrame ('df') and ensure the data is in the required format. 
+- Assume that the data is loaded correctly in a pandas dataframe with variable name 'df'. **DO NOT CREATE YOUR OWN DATA **.
+- Apply necessary preprocessing steps (e.g., typecasting, handling missing values, removing problematic rows).
+- Implement transformations, feature engineering, or encoding. Ensure the data is cleaned and transformed to the required format.
+
+2. **Data Analytics Technique**:
+- Apply the methodology described in the skill exemplar to extract insights relevant to the question.
+- You should **use the data analytics technique described in the skill exemplar summary** to solve the question. Reason why this skill is useful.
+- If a model is required, implement it using the specified algorithm and parameters.
+- If model training is computationally expensive, limit training to **one epoch**.
+- The **evaluation** should always be reported on the **entire df** than just the val split.
+
+3. **Visualization & Answer Extraction**:
+- Ensure the visualization explicitly **incorporates and represents the results of the applied data analytics technique**.
+- Choose an appropriate plot type that best conveys insights from the model/analysis.
+- Include clear labels, a title, and an appropriate legend.
+- Ensure the visualization directly **answers the question based on the model's output**.
+- Before saving the plot, **check if the plot is valid** i.e. it is not empty. If it is empty, regenerate the code.
+- Save the plot as `{savedir}/plot.jpeg`.
+
+4. **Compute & Store Key Statistics**:
+- Create a dictionary named `stats` to store relevant quantitative values related to the analysis.
+- Include key metrics such as:
+    - Any computed statistical summaries or model performance metrics.
+    - Any values that were used to generate the visualization.
+    - Any values that are related to the data analytics skill used.
+- Ensure `stats` is clearly structured and printed at the end of the script.
+
+5. **Code Robustness & Readability**:
+- Use **try-except blocks** to handle potential exceptions during data processing, model execution, and visualization.
+- If an exceptions occurs, **raise an error** to stop the execution than continuing with the exceptions
+- Store intermediate results in well-named variables to avoid redundant calculations.
+- Provide concise, meaningful comments explaining how each step aligns with the skill exemplar.
+- Do **not** include `plt.show()` in the output.
+
+Your generated code should:
+1. Produce a visualization that effectively presents insights derived from the applied data analytics technique and answers the given question.
+2. Generate a `stats` dictionary containing all the key numerical values used in the analysis.
+3. Print the `stats` dictionary at the end of execution.

@@ -1,0 +1,21 @@
+Your task is to analyze the plot and **directly answer the question** based on the dataset while uncovering as many interesting patterns and insights as possible. Think step by step. Your response should be **insightful, data-driven, and well-justified**. 
+
+### Inputs:
+1. **Question**: "{question}"
+2. **Plot**: A plot generated based on the dataset and the question.
+3. **First Few Rows of the DataFrame**: "{df_head}"
+4. **Stats for the plot**: {stats}
+
+### Requirements:
+1. Extract **all notable insights** from the plot, including:
+- **Key Patterns & Trends**: Identify significant movements or relationships in the data.
+- **Anomalies & Outliers**: Highlight any unexpected deviations and their potential implications.
+- **Comparisons & Contrasts**: Discuss notable differences between categories, groups, or metrics.
+- **Hidden or Unexpected Findings**: Look for less obvious but meaningful insights that add depth to the analysis.
+2. Justify each insight with:
+- **Quantitative Evidence**: Use specific data points, statistics, or calculated metrics.
+- **Qualitative Explanation**: Provide logical reasoning and contextual interpretation.
+3. If applicable, determine and explain the **root cause** behind significant findings.
+4. Ensure your response is **actionable and meaningful**, highlighting real-world relevance where appropriate.
+5. Avoid generic descriptions of the plot itself—focus solely on what the data **implies** in relation to the question.
+6. If categories exist, **refer to them using actual dataset values** rather than generic labels.

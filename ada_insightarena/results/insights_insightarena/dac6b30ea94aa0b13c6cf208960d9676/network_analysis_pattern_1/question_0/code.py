@@ -1,0 +1,63 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+
+# Assume df is already loaded as per the input details
+# Data Preparation & Cleaning
+try:
+    # Convert 'Resolved' and 'Opened' columns to datetime
+    df['Resolved'] = pd.to_datetime(df['Resolved'], errors='coerce')
+    df['Opened'] = pd.to_datetime(df['Opened'], errors='coerce')
+
+    # Calculate resolution time in hours
+    df['Resolution Time (hours)'] = (df['Resolved'] - df['Opened']).dt.total_seconds() / 3600
+
+    # Drop rows with NaN resolution times
+    df_clean = df.dropna(subset=['Resolution Time (hours)', 'Category', 'Priority'])
+
+except Exception as e:
+    raise RuntimeError(f"Data preparation error: {e}")
+
+# Data Analytics Technique: Calculate average resolution times
+try:
+    # Group by 'Category' and 'Priority' and calculate mean resolution time
+    resolution_stats = df_clean.groupby(['Category', 'Priority'])['Resolution Time (hours)'].mean().reset_index()
+
+except Exception as e:
+    raise RuntimeError(f"Data analytics error: {e}")
+
+# Visualization
+try:
+    # Create a bar plot for average resolution times
+    plt.figure(figsize=(12, 8))
+    sns.barplot(data=resolution_stats, x='Category', y='Resolution Time (hours)', hue='Priority')
+    plt.title('Average Resolution Times by Category and Priority')
+    plt.xlabel('Category')
+    plt.ylabel('Average Resolution Time (hours)')
+    plt.xticks(rotation=45)
+    plt.legend(title='Priority')
+    plt.tight_layout()
+
+    # Save the plot
+    plot_path = 'results/insights_insightarena/dac6b30ea94aa0b13c6cf208960d9676/network_analysis_pattern_1/question_0/plot.jpeg'
+    plt.savefig(plot_path)
+
+except Exception as e:
+    raise RuntimeError(f"Visualization error: {e}")
+
+# Compute & Store Key Statistics
+try:
+    # Create a dictionary to store key statistics
+    stats = {
+        'average_resolution_times': resolution_stats.to_dict(orient='records'),
+        'total_categories': df_clean['Category'].nunique(),
+        'total_priorities': df_clean['Priority'].nunique(),
+        'total_incidents': len(df_clean)
+    }
+
+    # Print the stats dictionary
+    print(stats)
+
+except Exception as e:
+    raise RuntimeError(f"Statistics computation error: {e}")

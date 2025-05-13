@@ -1,0 +1,13 @@
+[
+    {
+        "question": "What percentage of incidents with a high impact meet their SLA requirements?",
+        "skill": [
+            "RFMAnalysis",
+            "RandomForestFeatureImportance",
+            "GrangerCausality"
+        ],
+        "predicted_insight": "\u2022 **Low SLA Compliance:** Only 4.41% of high-impact incidents met their SLA requirements, highlighting significant inefficiencies in incident management processes.\n\n\u2022 **Disproportionate SLA Failure:** Out of 204 total high-impact incidents, only 9 met the SLA, indicating a systemic problem potentially due to resource constraints or process inefficiencies.",
+        "plot": "insightarena/results/insights_insightarena/14b1364e50f66e237e05a8071a149e73/network_analysis_pattern_3/question_0/plot.jpeg",
+        "code_skill": "none"
+    }
+]
