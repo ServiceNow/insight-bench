@@ -69,8 +69,12 @@ print("score_summary: ", score_summary)
 python main.py --openai_api_key <openai_api_key>
                --savedir_base <savedir_base>
 ```
+## 4. Running AgentADA
 
-
+```bash
+cd  ada_insightarena
+python main_insightarena.py -e insights_insightarena
+```
 ## Citation
 
 ```bibtex
