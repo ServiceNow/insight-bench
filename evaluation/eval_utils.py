@@ -1,5 +1,6 @@
 from evaluation import prompts
 
+import logging 
 import numpy as np, pandas as time, re, os
 import evaluate
 
@@ -12,49 +13,50 @@ from evaluate import load
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-
+# 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
 def compute_g_eval(answer, gt_answer, model_name="gpt-4o", top_logprobs=None):
     client = OpenAI(api_key=OPENAI_API_KEY)
     return compute_llm_eval(client, answer, gt_answer, model_name, top_logprobs)
 
-
-def is_llama_running(model_name):
-    status_code = requests.post(
-        "http://0.0.0.0:8085/v1/completions",
-        json={"prompt": "Hello!", "model": model_name},
-        headers={
-            "Content-Type": "application/json",
-            "Cookie": "sessiona=1687876608.234.49.972136|78cabb3f310793e5a58a141fe9058709",
-            "Authorization": "EMPTY",
-        },
-    ).status_code
-    return status_code == 200
-
-
 def compute_llama3_eval(
-    answer, gt_answer, model_name="meta-llama/Meta-Llama-3-70B", top_logprobs=None
+    answer,
+    gt_answer,
+    model_name="nvidia/llama-3.1-nemotron-ultra-253b-v1:free",
+    top_logprobs=None,
 ):
-    """Compute LLaMA-3-Eval score between answer and gt_answer"""
-    # check if llama3 is running locally
-    if is_llama_running(model_name):
-        client = OpenAI(api_key="EMPTY", base_url="http://0.0.0.0:8085/v1/")
-        return compute_llm_eval(client, answer, gt_answer, model_name, top_logprobs)
-    else:
-        raise RuntimeError(
-            """
-To use LLaMA-3-Eval, please first host a LLaMA-3 model locally using the vllm library:
-```
-pip install vllm
-python -u -m vllm.entrypoints.openai.api_server --host 0.0.0.0 --model meta-llama/Meta-Llama-3-70B --tensor-parallel-size 8 --load-format safetensors --port 8085 --dtype half --gpu-memory-utilization 0.8 --max-model-len 8000 --enforce-eager
-```
-"""
+    """Compute LLaMA-3-Eval score between answer and gt_answer, with error handling."""
+    # Initialize client
+    try:
+        client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key="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"
         )
+    except Exception as e:
+        logging.error("Failed to initialize OpenAI client: %s", e)
+        raise RuntimeError(f"OpenAI client initialization error: {e}")
 
+    # Run the evaluation
+    try:
+        return compute_llm_eval(
+            client,
+            answer,
+            gt_answer,
+            model_name,
+            use_logprobs=True,
+            top_logprobs=top_logprobs,
+        )
+    except Exception as e:
+        logging.error("compute_llm_eval failed: %s", e)
+        raise RuntimeError(f"LLaMA-3 eval computation error: {e}")
 
-def compute_llm_eval(client, answer, gt_answer, model_name="gpt-4o", top_logprobs=None):
+def compute_llm_eval(client, answer, gt_answer, model_name="gpt-4o", detailed: bool = True,top_logprobs=None,max_retries: int = 5):
     template, system_message = prompts.get_g_eval_prompt(method="basic")
 
     prompt = template.format(answer=answer, gt_answer=gt_answer)
+    if model_name.startswith("nvidia/llama-3.1-nemotron-ultra-253b"):
+        system_message += f"\n\nDetailed thinking = {'ON' if detailed else 'OFF'}."
+    retries=0
+    backoff=10
     while True:
         try:
             response = client.chat.completions.create(
@@ -105,25 +107,29 @@ def compute_llm_eval(client, answer, gt_answer, model_name="gpt-4o", top_logprob
             except:
                 score = 0
             return score
-        except openai.RateLimitError as e:
-            print("RateLimitError, Sleeping for 100 seconds...")
-            time.sleep(100)
-        except openai.APIError as e:
-            print(f"APIError, {e}\nSleeping for 100 seconds...")
-            time.sleep(100)
+        except openai.error.RateLimitError as e:
+            retries += 1
+            if retries > max_retries:
+                logging.error("Rate limit exceeded after %d retries", retries)
+                raise
+            logging.warning("RateLimitError, retry %d/%d after %ds...", retries, max_retries, backoff)
+            time.sleep(backoff)
+            backoff *= 2
+
+        except openai.error.APIError as e:
+            retries += 1
+            if retries > max_retries:
+                logging.error("API error after %d retries: %s", retries, e)
+                raise
+            logging.warning("APIError (%s), retry %d/%d after %ds...", e, retries, max_retries, backoff)
+            time.sleep(backoff)
+            backoff *= 2
+
         except Exception as e:
-            print(f"{e}, Sleeping for 100 seconds...")
+            # non-OpenAI errors: probably a bug—don't retry endlessly
+            logging.error("Unexpected error in compute_llm_eval: %s", e, exc_info=True)
+            raise
 
-
-def compute_rouge_score(answer, gt_answer, **kwargs):
-    """Compute ROUGE-1 between answer and gt_answer"""
-    ROUGE_SCORE = evaluate.load("rouge")
-
-    return ROUGE_SCORE.compute(
-        predictions=[answer],
-        references=[gt_answer],
-        rouge_types=["rouge1"],
-    )["rouge1"]
 
 
 def compute_bleurt_score(answer, gt_answer, **kwargs):

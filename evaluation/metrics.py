@@ -5,38 +5,6 @@ from evaluation import eval_utils as eu
 from tqdm import tqdm
 
 
-def compute_rouge(pred_insights, gt_insights, return_scores=False):
-    """
-    Compute the ROUGE score for a list of predictions and ground truths.
-
-    Args:
-    -----
-    pred_insights (List[str]): The list of predicted insights.
-    gt_insights (List[str]): The list of ground truth insights.
-
-    Returns:
-    --------
-    score (float): The ROUGE score.
-    """
-    # Compute the ROUGE score for each prediction and ground truth pair
-    score_dict = defaultdict(list)
-    for gt_id, gt_insight in enumerate(gt_insights):
-        for pred_id, pred_insight in enumerate(pred_insights):
-            score = mu.score_insight(gt_insight, pred_insight, score_name="rouge1")
-            score_dict[gt_id].append(score)
-
-    best_pred_ids = [np.argmax(scores) for scores in score_dict.values()]
-    score_dict = [
-        {
-            "pred_insight": pred_insights[best_pred_ids[gt_id]],
-            "gt_insight": gt_insights[gt_id],
-            "score": scores[best_pred_ids[gt_id]],
-        }
-        for gt_id, scores in score_dict.items()
-    ]
-    score = np.mean([score["score"] for score in score_dict])
-    return score, score_dict
-
 
 def compute_bleurt_score(pred_insights, gt_insights, return_scores=False):
     """
