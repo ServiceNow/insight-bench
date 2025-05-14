@@ -65,67 +65,134 @@ class PatternDesigner:
     def design_patterns(self, data: pd.DataFrame, task: str) -> Dict[str, List[Dict]]:
         """Design patterns for each column based on the given analytics task."""
         data_summary = self.analyze_data(data)
+        num_questions = 3
 
         prompt = f"""
-        You are a data-centric AI expert designing synthetic data benchmarks to evaluate analytics models.
+        You are a data-centric AI expert designing synthetic data benchmarks to evaluate the reasoning ability of analytics models and agents.
 
-        Given a dataset summary and an analytics task, your job is to inject **2–3 realistic patterns across one or more columns** that:
-        - Mimic real-world behaviors or anomalies
+        Given a {data_summary} and {task}, your job is to design **2–3 realistic, global patterns** that alter the dataset in meaningful ways. These patterns should:
+        - Mimic plausible real-world behaviors or anomalies
         - Interact with the dataset's structure and semantics
-        - Meaningfully impact model performance or insight extraction
-        - Allow for robust benchmarking of analytical reasoning
+        - Affect how key analytical questions are answered
+        - Enable robust benchmarking of reasoning and insight extraction
+
+        To ensure rigor and alignment, proceed through the following reasoning steps:
 
         ---
 
-        Please follow these explicit steps in your reasoning (Chain-of-Thought):
-
-        ### Step 1: Infer Key Performance Indicators (KPIs)
+        ## 🔍 Phase 1: Identify Key Performance Indicators (KPIs)
         - Based on the dataset and task, identify 2–4 relevant KPIs that would be tracked by an analyst or model.
+        - For each KPI:
+          - Name the KPI
+          - Explain what it measures
+          - Identify the specific columns involved in its computation
 
-        ### Step 2: Identify Influential Columns and Relationships
-        - Which columns most influence these KPIs?
-        - Are there any natural correlations, temporal dynamics, or category-based splits that could affect KPI computation?
+        ---
 
-        ### Step 3: Design 2–3 Global Patterns
-        - Each pattern may involve **1 or more columns**, and should simulate a **plausible real-world event, behavior, or trend**.
-        - Avoid trivial noise (e.g., "random fluctuation"). Prefer **interpretable and benchmark-worthy** signals like:
-        - delayed effects
-        - conditionally induced trends
-        - cross-feature dependencies
+        ## 🧠 Phase 2: Generate Analytical Questions (No Answers Yet)
+        - Given the data summary and KPI, generate {num_questions} specific, quantitative data analytics questions that could be answered using this dataset. Focus on questions related to the {task}. 
+        - Questions must require non-trivial reasoning (e.g., aggregation, filtering, correlations, conditional logic).
+        - Do **not** answer them yet.
+        - For each question, specify:
+          - The question text
+          - The KPI it targets
+          - Which columns are needed to answer it
+
+        ---
+
+        ## 🧩 Phase 3: Analyze Column Interactions
+        - Analyze how the KPIs and questions depend on the dataset’s columns.
+        - Identify which columns are:
+          - Most influential in computing KPIs
+          - Likely to change the answer to multiple questions if perturbed
+          - Involved in any cross-feature interactions, temporal dynamics, or category splits
+
+        ---
+
+        ## 🔬 Phase 4: Design 2–3 Realistic Global Patterns
+        Each pattern should:
+        - Involve 1 or more of the identified columns
+        - Alter one or more KPIs in a way that causes at least one question's answer to change
+        - simulate a **plausible real-world event, behavior, or trend**, such as:
+          - A delayed effect (e.g., impact of feature A appears later in time)
+          - A conditional behavior (e.g., sales increase only for category X on weekends)
+          - A regime shift (e.g., before and after policy change)
+          - A hidden dependency (e.g., correlations between latent group and outcome)
+          - cross-feature dependencies
         - regime shifts
         - temporal or category-driven anomalies
 
-        ### Step 4: Explain for Each Pattern:
+        ### Phase 5: Explain for Each Pattern:
         - What exactly is the injected pattern?
         - Why is it useful from a benchmarking or insight perspective?
         - Which KPIs does it affect, and how?
         - What kind of analytical or modeling challenges does it test?
+        - Which questions it changes and why
+
+
+        ## 🧾 Phase 6: Post-Injection Answers
+        - Now assume the dataset has been modified using the patterns above.
+        - For each previously generated question, provide a **concise, numerically precise answer** based on the modified data.
+        - Your answer should include:
+          - Concrete values (e.g., counts, averages, rates, percentages) rather than vague statements
+        - For each answer, also indicate:
+          - Which pattern(s) caused the change
+          - How the injected data behavior led to this specific numeric result
+
 
         ---
 
-        ### Output format (JSON):
+        ## 💡 Output Format (JSON)
 
+        ```json
         {{
-        "kpis": ["list of important KPIs"],
-        "patterns": [
+          "ID": "Unique identifier for the pattern",
+          "data_summary": {data_summary},
+          "Analytics task": {task},
+          "kpis": [
             {{
-            "pattern": "Description of the injected pattern",
-            "columns_involved": ["list of columns affected"],
-            "reasoning": "Why this pattern is meaningful and realistic",
-            "relevance_to_kpi": "Which KPIs it affects and how",
-            "benchmark_value": "What kind of insight or model evaluation this pattern enables"
-            }},
-            ...
-        ]
+              "name": "KPI name",
+              "description": "What it measures and which columns are used"
+            }}
+          ],
+          "questions": [
+            {{
+              "Question_index": "Index of the question. eg.Q1,Q2 etc.",
+              "kpi": "KPI name",
+              "question": "A natural language analytical question",
+              "columns_required": ["list of columns"]
+            }}
+          ],
+          "patterns": [
+            {{
+              "pattern_index": "Index of the pattern. eg.P1,P2 etc.",
+              "pattern": "Description of the injected pattern",
+              "columns_involved": ["list of columns affected"],
+              "reasoning": "Why it's realistic and useful for benchmarking",
+              "relevance_to_kpi": "Which KPIs it affects and how",
+              "benchmark_value": "What kind of insight or model evaluation this pattern enables"
+              "qa_impact": [
+                {{
+                  "question": "Impacted question",
+                  "impact": "How the pattern changes the answer and why"
+                }}
+              ]
+            }}
+          ],
+          "answers": [
+            {{
+              "question": "Question text",
+              "answer_after_injection": "Correct answer based on injected data",
+              "caused_by_pattern": "Index or name of the pattern that caused the change"
+            }}
+          ]
         }}
 
-        ---
+                ### Data Summary:
+                {data_summary}
 
-        ### Data Summary:
-        {data_summary}
-
-        ### Analytics Task:
-        {task}
+                ### Analytics Task:
+                {task}
 
         """
 

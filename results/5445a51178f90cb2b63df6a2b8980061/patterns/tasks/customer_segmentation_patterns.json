@@ -1,46 +1,45 @@
 {
   "kpis": [
     "Average Resolution Time",
-    "SLA Fulfillment Rate",
-    "High Priority Incident Count",
-    "Reassignment Frequency"
+    "Incident Volume per Category",
+    "Customer Satisfaction Score",
+    "SLA Compliance Rate"
   ],
   "patterns": [
     {
-      "pattern": "Surge in incident reports related to a specific configuration item leading to high priority assignments.",
+      "pattern": "Introduce a delay in resolution times for incidents opened during the last quarter of 2024 compared to previous periods.",
       "columns_involved": [
-        "Configuration item",
-        "Priority",
+        "Opened",
+        "Closed",
+        "Resolve time",
+        "Business resolve time"
+      ],
+      "reasoning": "This simulates staffing or seasonal issues that could lead to prolonged incident handling, a common real-world scenario.",
+      "relevance_to_kpi": "Affects 'Average Resolution Time' by increasing the overall time taken for resolution in the dataset.",
+      "benchmark_value": "Tests the model's ability to detect temporal shifts and their impact on operational KPIs, crucial for crafting timely business interventions."
+    },
+    {
+      "pattern": "Create distinct incident handling behaviors depending on the 'Category' of the incident by introducing higher reassignment counts and longer resolve times for 'Software' related incidents.",
+      "columns_involved": [
         "Category",
-        "Business duration"
-      ],
-      "reasoning": "A sudden increase in incidents related to a specific configuration item, such as 'Windows Mobile', can simulate a real-world scenario like a software bug or security vulnerability. This will test the model's ability to detect and respond to a critical incident surge.",
-      "relevance_to_kpi": "This pattern will directly impact 'High Priority Incident Count' by increasing the number of high priority incidents. It will also affect 'Average Resolution Time' and 'Reassignment Frequency', as such incidents typically require faster resolution and might involve multiple reassignments until resolution.",
-      "benchmark_value": "This pattern challenges the model's ability to identify emergent issues and cluster incidents effectively, which is essential for proactive incident management and customer segmentation."
-    },
-    {
-      "pattern": "Temporal anomalies in SLA fulfillment due to seasonal staffing changes.",
-      "columns_involved": [
-        "Business resolve time",
-        "SLA due",
-        "Resolved",
-        "Closed"
-      ],
-      "reasoning": "Seasonal variations in staffing levels can affect SLA fulfillment, for instance, during holidays when fewer staff members are available. This reflects real-world scenarios where businesses experience fluctuations in efficiency.",
-      "relevance_to_kpi": "This pattern will affect the 'SLA Fulfillment Rate' by creating distinct periods where SLA achievement drops. It will also shed light on 'Average Resolution Time' as fewer resources could lead to longer resolution times.",
-      "benchmark_value": "This tests the model's ability to account for and understand temporal patterns and anomalies, ensuring that customer segmentation models consider time-based effects on service levels."
-    },
-    {
-      "pattern": "Increase in multi-assignee tasks due to complex incident handling.",
-      "columns_involved": [
-        "Assigned to",
-        "Assignment group",
         "Reassignment count",
-        "Activity due"
+        "Resolve time",
+        "Business resolve time"
       ],
-      "reasoning": "Certain complex issues might require collaboration across multiple departments or specialists, resulting in more complex assignment patterns. This is typical in real-world scenarios where intricate problems need cross-functional teamwork.",
-      "relevance_to_kpi": "Impacts 'Reassignment Frequency' as well as potentially affecting 'High Priority Incident Count' if the complexity correlates with severity or priority. It tests the segmentation process by requiring models to consider collaborations and handoffs as part of incident handling.",
-      "benchmark_value": "This allows evaluation of the model's capacity to handle scenarios with non-linear task and assignment structures, which is crucial for realistic customer segmentation involving collaborative problem-solving incidents."
+      "reasoning": "Different types of incidents often require varied handling processes, and software incidents can be more complex to resolve.",
+      "relevance_to_kpi": "Impacts 'Incident Volume per Category' and 'Average Resolution Time', offering insight into operational efficiency differences across categories.",
+      "benchmark_value": "Enables the evaluation of the model's ability to segment based on categorical influence and operational complexity."
+    },
+    {
+      "pattern": "Introduce sporadic higher 'Urgency' incidents tied to certain 'Companies', coinciding with significant 'Channel' use fluctuations (e.g., increased phone calls during system outages).",
+      "columns_involved": [
+        "Company",
+        "Urgency",
+        "Channel"
+      ],
+      "reasoning": "This pattern reflects real-world emergency situations where companies experience critical issues, prompting urgent action and specific channel use.",
+      "relevance_to_kpi": "Impacts 'Customer Satisfaction Score' and 'SLA Compliance Rate' as higher urgency incidents are prioritized differently.",
+      "benchmark_value": "Tests the model's handling of interrelated features, specifically its capability to tag different segments based on both urgency and communication channel patterns."
     }
   ]
 }

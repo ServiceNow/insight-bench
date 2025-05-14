@@ -1,46 +1,47 @@
 {
   "kpis": [
-    "Average Resolution Time",
+    "Incident Resolution Time",
+    "Active Incident Rate",
     "SLA Compliance Rate",
-    "Incident Reassignment Rate",
-    "Incident Closure Rate"
+    "Reassignment Count"
   ],
   "patterns": [
     {
-      "pattern": "A sudden spike in 'Urgency' and 'Priority' for incidents opened via 'Self-service' channel from '2024-11-01' to '2024-11-15'.",
+      "pattern": "Introduce random spikes in 'Business duration', 'Duration', and 'Resolve time' for tickets classified as '1 - Critical' and 'priority 1'. This should mimic urgent issues that take unexpectedly long to resolve.",
       "columns_involved": [
-        "Opened",
-        "Urgency",
-        "Priority",
-        "Channel"
-      ],
-      "reasoning": "This pattern simulates a real-world scenario where users start using self-service options for reporting urgent incidents, possibly due to an internal campaign promoting self-service. It examines the system's ability to handle increased urgency through self-service channels.",
-      "relevance_to_kpi": "Affects 'Average Resolution Time' and 'SLA Compliance Rate' by increasing urgency, thus testing if the system can manage critical incidents in a timely manner.",
-      "benchmark_value": "Challenges models to quickly adapt to changing priorities in incident management and to optimize for SLA compliance during peak times."
-    },
-    {
-      "pattern": "Delayed resolution for incidents opened between '2024-07-01' and '2024-07-15', with the 'Impact' set as '1 - High'. This delay is attributed to a temporary resource constraint.",
-      "columns_involved": [
-        "Opened",
-        "Closed",
-        "Impact",
-        "Duration",
-        "Resolve time"
-      ],
-      "reasoning": "This pattern reflects a temporary bottleneck due to resource allocation issues, testing the system\u2019s resilience and ability to prioritize high-impact incidents despite constraints.",
-      "relevance_to_kpi": "Directly impacts the 'Average Resolution Time' and 'Incident Closure Rate', evaluating the effectiveness of resource management under stress.",
-      "benchmark_value": "Tests the system's capability in prioritizing and resolving high-impact incidents when under pressure and facing delays."
-    },
-    {
-      "pattern": "Anomaly in 'Business duration' and 'Business resolve time' for incidents related to 'E-Commerce' configuration items, creating a longer than usual resolution time.",
-      "columns_involved": [
-        "Configuration item",
         "Business duration",
-        "Business resolve time"
+        "Duration",
+        "Resolve time",
+        "Priority",
+        "Incident state"
       ],
-      "reasoning": "This simulates a real-world operational hiccup in key business systems, prompting the need for efficient incident management strategies concerning critical business configurations.",
-      "relevance_to_kpi": "Impacts 'Business resolve time' and 'SLA Compliance Rate', highlighting potential vulnerabilities in business-critical system management.",
-      "benchmark_value": "Evaluates model robustness and strategic effectiveness in handling extended resolution durations for business-critical systems like 'E-Commerce'."
+      "reasoning": "In real-world scenarios, critical incidents often have spikes in resolution time due to complexity or resource availability. Mimicking this behavior can test a model's ability to adapt to outliers and recognize patterns that lead to extended resolutions.",
+      "relevance_to_kpi": "Incident Resolution Time will increase for critical incidents, affecting understanding of time management and resource allocation benchmarks.",
+      "benchmark_value": "This pattern challenges analytical models to distinguish between typical incidents and outliers, testing robustness in anomaly detection."
+    },
+    {
+      "pattern": "Create a temporal shift where incidents opened in specific time frames (e.g., weekends) show a delay in 'Resolved' and 'Closed' times. This depicts lower staff availability or prioritization issues during off-hours.",
+      "columns_involved": [
+        "Opened",
+        "Resolved",
+        "Closed",
+        "Incident state"
+      ],
+      "reasoning": "Operational bottlenecks during off-hours are common in support centers, affecting incident resolution rates. This pattern tests a model's capability to account for temporal variability in data analysis.",
+      "relevance_to_kpi": "SLA Compliance Rate and Incident Resolution Time will be impacted, as off-hours resolution rates tend to be slower.",
+      "benchmark_value": "Such patterns evaluate a model's ability to incorporate temporal dynamics into predictions and improve scheduling and staffing strategies."
+    },
+    {
+      "pattern": "Simulate a regime shift by segmenting data into two periods, where a new incident management strategy significantly lowers 'Reassignment count' and improves 'Active Incident Rate' in the later period.",
+      "columns_involved": [
+        "Reassignment count",
+        "Active",
+        "Opened",
+        "Incident state"
+      ],
+      "reasoning": "This pattern mimics the impact of a new policy or strategy, such as improved training or better resource allocation, providing realistic conditions for testing how changes are detected and their effectiveness measured.",
+      "relevance_to_kpi": "Active Incident Rate and Reassignment Count should reflect an observable decrease in the latter period, indicating improvements in incident handling.",
+      "benchmark_value": "This pattern tests a model's ability to detect regime shifts and accurately attribute performance changes to strategic interventions."
     }
   ]
 }

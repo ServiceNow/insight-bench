@@ -66,8 +66,11 @@ Given the following goal:
 Given the following schema:
 <schema>{schema}</schema>
 
+Given the following task:
+<task>{task}</task>
+
 Instructions:
-* Write a list of questions to be solved by the data scientists in your team to explore my data and reach my goal.
+* For a given task, write a list of questions to be solved by the data scientists in your team to explore my data and reach my goal.
 * Explore diverse aspects of the data, and ask questions that are relevant to my goal.
 * You must ask the right questions to surface anything interesting (trends, anomalies, etc.)
 * Make sure these can realistically be answered based on the data schema.
@@ -80,6 +83,7 @@ Instructions:
 Example response:
 <question>What is the average age of the customers?</question>
 <question>What is the distribution of the customers based on their age?</question>
+<question>What is the anomaly in the data?</question>
 
 ### Response:
 """

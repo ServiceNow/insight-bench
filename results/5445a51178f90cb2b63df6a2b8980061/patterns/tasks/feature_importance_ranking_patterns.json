@@ -1,44 +1,43 @@
 {
   "kpis": [
     "Resolution Time",
-    "Reassignment Count",
-    "Incidents Making SLA",
-    "High Priority Incidents"
+    "SLA Compliance",
+    "Incident Severity Adjustment Frequency",
+    "Reassignment Count"
   ],
   "patterns": [
     {
-      "pattern": "A seasonal surge in incident reports with a higher-than-average urgency during the end-of-year period (December).",
+      "pattern": "Introduce a trend where high-severity incidents ('1 - High') tend to have longer resolution times, especially when assigned to certain groups (e.g., 'IT Securities').",
       "columns_involved": [
-        "Opened",
-        "Urgency",
-        "Priority",
-        "Impact"
+        "Severity",
+        "Resolution Time",
+        "Assignment group"
       ],
-      "reasoning": "This pattern mimics real-world scenarios where specific times of the year, such as the end-of-year holiday season, result in an increased number of incidents reported due to higher usage and change freezes. Typically, these incidents are of higher urgency and priority as they impact more users or critical systems.",
-      "relevance_to_kpi": "Affects 'High Priority Incidents' by increasing the number of incidents that need immediate attention during this period, potentially skewing the importance of related features.",
-      "benchmark_value": "Tests the model's ability to accurately identify temporal patterns and seasonal impacts on incident priority, influencing feature importance rankings."
+      "reasoning": "In real-world scenarios, high-severity issues often take longer to resolve due to their complexity and the thoroughness required. This pattern is realistic as critical issues might necessitate more resources and verification steps.",
+      "relevance_to_kpi": "Affects 'Resolution Time' and 'Incident Severity Adjustment Frequency' by increasing the resolution time for high-severity cases.",
+      "benchmark_value": "Tests the model\u2019s ability to correctly rank feature importance, particularly understanding the impact of severity and assignment group interplay on resolution time."
     },
     {
-      "pattern": "Introduction of a new 'IT Securities' assignment group that experiences initial misrouting of incidents, leading to a higher reassignment count in the first two weeks.",
+      "pattern": "Introduce temporal spikes in 'SLA Compliance' failure rates, coinciding with specific months where maintenance or updates are historically scheduled.",
       "columns_involved": [
-        "Assignment group",
+        "SLA Compliance",
+        "Opened",
+        "Closed"
+      ],
+      "reasoning": "Scheduled maintenance or system updates can temporarily affect SLA compliance due to increased incident volume or complexity. This represents a realistic industry norm.",
+      "relevance_to_kpi": "Directly impacts 'SLA Compliance' by simulating the periodic challenges associated with external planned events.",
+      "benchmark_value": "Evaluates the model\u2019s capacity to detect and attribute temporal trends to specific external factors, challenging it to distinguish between random noise and genuine operational patterns."
+    },
+    {
+      "pattern": "Generate conditionally higher reassignment counts for incidents categorized under 'Network' during peak usage hours.",
+      "columns_involved": [
+        "Category",
         "Reassignment count",
         "Opened"
       ],
-      "reasoning": "Newly formed teams or departments might face teething problems, such as incorrect incident routing, requiring frequent reassignment to the correct resolution group. This phenomenon impacts operational efficiency.",
-      "relevance_to_kpi": "Directly impacts the 'Reassignment Count', testing the model's ability to detect and adjust for feature importance when organizational changes occur.",
-      "benchmark_value": "Evaluates the model's robustness in handling cross-feature dependencies and organizational operational changes affecting feature importance."
-    },
-    {
-      "pattern": "A correlation between long unresolved incidents and specific incident categories, such as 'Network' issues, which are resolved more slowly than others.",
-      "columns_involved": [
-        "Category",
-        "Resolve time",
-        "Incident state"
-      ],
-      "reasoning": "Certain technical issues, like network outages, often take longer to resolve due to their complexity. Recognizing and adapting to such dynamics is crucial for accurate analytics.",
-      "relevance_to_kpi": "Affects 'Resolution Time', emphasizing the model's ability to associate incident categories with resolve time to adjust feature importance appropriately.",
-      "benchmark_value": "Tests the model's capability to discern category-based splits in feature importance associated with operational performance metrics."
+      "reasoning": "Network incidents typically experience more reassignments during busy network traffic times due to complex issue diagnosis requiring expertise from different teams.",
+      "relevance_to_kpi": "Influences 'Reassignment Count' by increasing when peak usage conditions are identified, highlighting its correlation with business processes.",
+      "benchmark_value": "Tests the ability of models to grasp complex inter-feature dependencies, especially when temporality and category-specific expertise come into play, ensuring the model sensitivity to related conditions."
     }
   ]
 }

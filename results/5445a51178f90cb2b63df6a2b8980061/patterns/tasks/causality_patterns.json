@@ -1,45 +1,44 @@
 {
   "kpis": [
     "Incident Resolution Time",
-    "SLA Compliance Rate",
-    "Reassignment Count",
-    "Impact of Severity on Resolution Time"
+    "SLA Compliance",
+    "Priority Incidents Resolution",
+    "Escalation Rate"
   ],
   "patterns": [
     {
-      "pattern": "A cyclical increase in incident creation during the end of each quarter (e.g., March, June, September, December), possibly due to increased workload or system updates.",
-      "columns_involved": [
-        "Created",
-        "Category",
-        "Impact",
-        "Priority"
-      ],
-      "reasoning": "Quarter-end periods often coincide with increased business activities, leading to more system issues or updates. This pattern reflects realistic business cycles.",
-      "relevance_to_kpi": "This pattern affects the 'Incident Resolution Time' and 'SLA Compliance Rate' as more incidents could lead to resource strain, resulting in slower resolution and potential SLA breaches.",
-      "benchmark_value": "Tests model's ability to identify seasonal trends and resource allocation effectiveness. It challenges models to recognize patterns in temporal workload spikes."
-    },
-    {
-      "pattern": "Increased resolution times for incidents opened during weekends compared to weekdays, reinforcing operational challenges faced during non-office hours.",
+      "pattern": "Seasonal Spike in Incidents",
       "columns_involved": [
         "Opened",
-        "Resolved",
-        "Duration",
-        "Priority"
+        "Priority",
+        "Category"
       ],
-      "reasoning": "Support availability is generally reduced during weekends, causing delays in incident handling and resolution.",
-      "relevance_to_kpi": "This pattern influences the 'Incident Resolution Time' and might also affect 'Reassignment Count' due to escalations.",
-      "benchmark_value": "Evaluates model's capability to correlate operational capacity with incident handling efficiency across different time periods."
+      "reasoning": "In many organizations, certain periods, such as end of fiscal quarters, see a spike in incident reporting due to increased workloads and system use. By introducing a seasonal spike in incident creation during a particular time range, the model's ability to recognize temporal patterns and potential causative triggers like work stress or increased demand on systems can be evaluated.",
+      "relevance_to_kpi": "This pattern impacts both the Incident Resolution Time and SLA Compliance KPIs by potentially causing delays during high-load periods.",
+      "benchmark_value": "Tests a model's ability to recognize temporal patterns and predict time-sensitive behaviors, affecting incident resolution prioritization and resource allocation strategies."
     },
     {
-      "pattern": "A surge in reassignment counts linked to specific incident types or categories tied to specific teams (e.g., Network incidents having more reassignment due to multidisciplinary troubleshooting).",
+      "pattern": "Delayed Resolution due to Staffing Issues",
       "columns_involved": [
-        "Category",
         "Assignment group",
+        "Business resolve time",
         "Reassignment count"
       ],
-      "reasoning": "Incidents with complex dependencies might require input from multiple specialists, which results in multiple reassignments.",
-      "relevance_to_kpi": "Directly impacts 'Reassignment Count' and indirectly affects 'Incident Resolution Time' as more reassignments potentially lead to delays.",
-      "benchmark_value": "Challenges models to detect cross-functional dependencies and indirect causality in incident management processes, testing their insightfulness into operational inefficiencies."
+      "reasoning": "Introduce periods where certain assignment groups have a shortage of staff, resulting in delayed incident resolution and higher reassignment counts. This reflects real-world scenarios where unexpected events such as sick leaves or staffing transitions affect service delivery.",
+      "relevance_to_kpi": "This affects the Priority Incidents Resolution and Escalation Rate KPIs, as critical incidents might take longer to resolve, leading to escalations.",
+      "benchmark_value": "Challenges models to identify staffing-related bottlenecks in resolution processes and assess their impact on incident handling efficiency."
+    },
+    {
+      "pattern": "Priority Reprioritization Discrepancies",
+      "columns_involved": [
+        "Priority",
+        "Impact",
+        "Urgency",
+        "Comments and Work notes"
+      ],
+      "reasoning": "Occasionally, incidents might be logged with higher or lower priority than necessary due to initial misjudgment or communication errors. Introducing a pattern where priorities are adjusted post-facto tests the system's adaptive capabilities.",
+      "relevance_to_kpi": "Impacts SLA Compliance and Priority Incidents Resolution as incorrect initial prioritization could lead to SLA breaches.",
+      "benchmark_value": "Tests a model's ability to adjust predictions dynamically based on changes in incident context and correctness of original priority assignments."
     }
   ]
 }

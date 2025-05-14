@@ -1,45 +1,42 @@
 {
   "kpis": [
-    "Resolution Time",
-    "Incident Closure Rate",
-    "Average Business Impact",
-    "Reassignment Frequency"
+    "Incident Resolution Time",
+    "SLA Achievement",
+    "Escalation Rate",
+    "Incident Volume by Category"
   ],
   "patterns": [
     {
-      "pattern": "Unexpected surge in incidents related to the 'Network' category, peaking during certain times of the day.",
+      "pattern": "Introduction of a quarterly spike in incidents related to 'Network' category, occurring at the end of each quarter.",
       "columns_involved": [
         "Category",
         "Opened",
-        "Impact",
         "Incident state"
       ],
-      "reasoning": "This pattern simulates a real-world event where network issues occur more frequently during periods of high business activity, such as the beginning of workdays. It can reflect network congestion or maintenance failures, impacting IT service management.",
-      "relevance_to_kpi": "It affects 'Resolution Time' and 'Incident Closure Rate' as a higher volume of network-related incidents with high impact can lead to resolution delays and increased active incident counts.",
-      "benchmark_value": "Tests the model's ability to handle volume spikes, identify peak times, and predict future surges based on historical patterns."
+      "reasoning": "Quarterly spikes in network-related incidents can be realistic due to increased network usage as companies close financial quarters, leading to potential systems overload. This pattern helps observe how models cope with temporal spikes in incident volume.",
+      "relevance_to_kpi": "Increases 'Incident Volume by Category' temporarily, potentially affects 'Incident Resolution Time' and 'SLA Achievement' due to increased workload.",
+      "benchmark_value": "Tests the model's ability to identify temporal patterns in data and adapt predictions around high-volume periods."
     },
     {
-      "pattern": "Incidents with 'High' urgency resolved by 'System Administrator' result in repeated reopenings due to improper root cause resolution.",
+      "pattern": "Sudden increase in the 'Urgency' of incidents right after public holidays when backlog catches up.",
       "columns_involved": [
         "Urgency",
-        "Resolved by",
-        "Reopen count",
-        "Resolution code"
-      ],
-      "reasoning": "Illustrates a scenario where certain high-urgency incidents are closed prematurely and inefficiently due to the focus on speed over quality, reflecting the need for process overhauls or training.",
-      "relevance_to_kpi": "Directly impacts 'Reassignment Frequency' and 'Incident Closure Rate' causing a potential bottleneck if incidents repeatedly reopen.",
-      "benchmark_value": "Helps evaluate a model's proficiency in recognizing patterns of inefficient problem-solving and suggests process improvements based on historical resolution success."
-    },
-    {
-      "pattern": "Seasonal shift causing incidents in 'Software' category to show prolonged resolution times during end-of-year periods.",
-      "columns_involved": [
-        "Category",
-        "Business resolve time",
         "Opened"
       ],
-      "reasoning": "Represents a real-world trend where software-related issues are often deferred or prolonged during busy end-of-year periods due to resource allocation and holiday seasons.",
-      "relevance_to_kpi": "Affects 'Resolution Time' and 'Average Business Impact' as prolonged resolution times can overcome SLAs, potentially escalating business impact in those periods.",
-      "benchmark_value": "Evaluates a model's capability to adjust for seasonal variances, forecast resource needs, and prioritize scheduling to accommodate for temporal shifts in incident handling efficiency."
+      "reasoning": "Following public holidays, many companies experience a backlog of user requests, increasing the urgency as tasks accumulate. This pattern tests the model's ability to handle priority surges.",
+      "relevance_to_kpi": "Impacts the 'SLA Achievement' and 'Incident Resolution Time' KPIs by testing the ability to manage incidents under increased urgency conditions.",
+      "benchmark_value": "Evaluates how well models respond to changes in incident urgency and handle predictions in post-holiday periods."
+    },
+    {
+      "pattern": "Delayed resolution times in incidents opened after new software releases, particularly in 'Software' category.",
+      "columns_involved": [
+        "Category",
+        "Opened",
+        "Resolve time"
+      ],
+      "reasoning": "New software deployments often introduce unforeseen issues, resulting in longer incident resolution times. This reflects how real-world deployments affect resolution efficiency.",
+      "relevance_to_kpi": "Directly affects the 'Incident Resolution Time' KPI and may influence 'Escalation Rate' due to unresolved issues.",
+      "benchmark_value": "Challenges models to recognize the impact of external events (software releases) on incident resolution efficiency, a key aspect of real-world market analysis."
     }
   ]
 }

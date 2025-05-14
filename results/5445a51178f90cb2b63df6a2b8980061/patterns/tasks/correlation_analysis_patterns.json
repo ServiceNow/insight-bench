@@ -1,42 +1,46 @@
 {
   "kpis": [
-    "Incident Resolution Time",
-    "SLA Compliance Rate",
-    "Incident Reassignment Frequency",
-    "Priority Change Frequency"
+    "Resolution Time",
+    "Business Duration",
+    "Reassignment Count",
+    "SLA Compliance"
   ],
   "patterns": [
     {
-      "pattern": "Delayed Impact of Newly Assigned Personnel",
+      "pattern": "Regime shift in response speed due to a simulated policy change where incidents are resolved faster post-policy implementation.",
       "columns_involved": [
-        "Assigned to",
-        "Reassignment count",
-        "Business resolve time"
-      ],
-      "reasoning": "Introduce a pattern where incidents initially experience a delay in resolve time after an assignment is made to new personnel with particular names appearing in 'Assigned to'. This simulates the real-world scenario where newly assigned individuals may take longer to resolve incidents due to a lack of familiarity with the specific case.",
-      "relevance_to_kpi": "Affects Incident Resolution Time and Reassignment Frequency by increasing the initial delay for cases where new personnel are involved, potentially leading to more frequent reassignments.",
-      "benchmark_value": "Tests the model's capability to identify personnel-related delays and adjusts incident handling strategy in dynamic environments."
-    },
-    {
-      "pattern": "Seasonal Surge in High Priority Incidents",
-      "columns_involved": [
-        "Created",
-        "Priority"
-      ],
-      "reasoning": "Inject a seasonal pattern where certain months see a surge in high priority incidents. For example, during the months near holidays, such as November and December, incidents with '1 - Critical' priority increase by 30%. This simulates real-world trends where key business periods experience increased demand or stress on systems.",
-      "relevance_to_kpi": "Affects Priority Change Frequency and SLA Compliance Rate as higher priority incidents may demand faster resolution but also risk more SLA breaches due to volume.",
-      "benchmark_value": "Assesses the model's ability to handle temporal patterns and adjust resource allocation during peak times."
-    },
-    {
-      "pattern": "Systematic Delays in Closing Incidents",
-      "columns_involved": [
+        "Resolved",
         "Closed",
-        "Closed by",
-        "Incident state"
+        "Resolution notes",
+        "Business resolve time",
+        "SLA due"
       ],
-      "reasoning": "Create a pattern where incidents closed by specific personnel, such as 'System Administrator', have systematic delays in moving to 'Closed' state. This reflects real-world organizational bottlenecks where specific roles encounter administrative delays.",
-      "relevance_to_kpi": "Directly impacts Incident Resolution Time as the delays inflate the time needed for final closure, affecting SLA Compliance.",
-      "benchmark_value": "Challenges the model to detect and adapt to systematic delays tied to human resource bottlenecks, improving incident management strategies."
+      "reasoning": "Simulating a policy or procedural change that accelerates incident resolution is realistic as organizations often introduce efficiency measures. Observing incidents pre- and post-policy can evaluate a model's capacity to detect regime shifts and temporal effect correlations.",
+      "relevance_to_kpi": "Affects 'Resolution Time' and 'Business Duration' by possibly reducing these measures after the policy change.",
+      "benchmark_value": "Tests model's ability to detect shifts and temporal changes in data, crucial for strategic decisions and processing efficiency evaluations."
+    },
+    {
+      "pattern": "Delayed effect in incident reassignment where incidents are assigned multiple times within short time spans at random unexpected intervals.",
+      "columns_involved": [
+        "Reassignment count",
+        "Assigned to",
+        "Assignment group"
+      ],
+      "reasoning": "Real-world scenarios often show bottlenecks or confusion leading to a spike in reassignments over short intervals due to unexpected issues.",
+      "relevance_to_kpi": "Affects 'Reassignment Count' by increasing its value during specific periods that could contribute to analysis of stress points in the system.",
+      "benchmark_value": "Analyzes the model's ability to detect clustering of events and identify underlying latent issues causing rapid reassignment."
+    },
+    {
+      "pattern": "Periodic spikes in business duration due to a simulated external vendor issue affecting randomly selected cases.",
+      "columns_involved": [
+        "Business duration",
+        "Caused by Change",
+        "Category",
+        "Impact"
+      ],
+      "reasoning": "External dependencies like third-party vendor outages can cause delays, making this pattern realistic. It helps test model\u2019s ability to discern external vs. internal impact changes.",
+      "relevance_to_kpi": "Increases 'Business Duration' selectively, indicating periods of delayed resolutions due to external factors.",
+      "benchmark_value": "Assesses how models distinguish between internal and external factors and identify hidden trends due to third-party dependencies."
     }
   ]
 }

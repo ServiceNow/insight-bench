@@ -1,46 +1,45 @@
 {
   "kpis": [
-    "Average Resolve Time",
+    "Incident Resolution Time",
     "SLA Compliance Rate",
     "Reassignment Count",
-    "Incident Closure Rate"
+    "Incident Severity Distribution"
   ],
   "patterns": [
     {
-      "pattern": "Sudden increase in reassignment counts for Network related incidents following a major software update announcement.",
+      "pattern": "Periodic spike in incidents linked to a specific 'Configuration item' such as 'E-Commerce', with escalated priority and impact during a simulated shopping event period (e.g., Black Friday).",
+      "columns_involved": [
+        "Configuration item",
+        "Priority",
+        "Impact",
+        "Opened"
+      ],
+      "reasoning": "This reflects real-world scenarios where specific systems become critical during peak usage periods, such as e-commerce platforms during shopping events. It challenges the model to identify temporal spikes and understand their correlation with specific configuration items and business processes.",
+      "relevance_to_kpi": "It affects the 'Incident Resolution Time' due to potential overload and prioritization changes and impacts the 'SLA Compliance Rate' as urgent issues may require faster response.",
+      "benchmark_value": "Tests the model\u2019s ability to detect and correlate temporal patterns across multiple features, simulating how teams might allocate resources dynamically."
+    },
+    {
+      "pattern": "Delayed effect of 'Business impact' changes on 'Category': An increase in incidents categorized under 'Network' with a delay after a major regional update reported in business forums.",
       "columns_involved": [
         "Category",
+        "Business duration",
+        "Opened",
+        "Updates"
+      ],
+      "reasoning": "Projects real-world operational behavior where network issues arise following large updates or changes. The delay tests if the model can connect the temporal dots between cause and effect.",
+      "relevance_to_kpi": "Influences the 'Business Resolve Time' and 'Incident Severity Distribution' by varying resolution urgency and impact after this delayed pattern initiation.",
+      "benchmark_value": "Challenges the model to identify and connect latent variables and delayed impacts, providing insight into predictive maintenance opportunities."
+    },
+    {
+      "pattern": "Increased 'Reassignment count' for incidents with 'Resolved by' System Administrator during periods of high system alerts, reflecting resource shifts.",
+      "columns_involved": [
         "Reassignment count",
-        "Updates",
-        "Configuration item"
+        "Resolved by",
+        "Child Incidents"
       ],
-      "reasoning": "A plausible scenario is when a new software update is rolled out; incidents related to the 'Network' category might experience more reassignments as the update could introduce unexpected issues needing collaboration across multiple teams.",
-      "relevance_to_kpi": "This affects KPIs like 'Reassignment Count' directly and can indirectly impact 'Average Resolve Time' due to delays introduced during handovers.",
-      "benchmark_value": "Tests the model's ability to track complex dependencies across updates and incident categories, and to predict resolution delays due to increased reassignments."
-    },
-    {
-      "pattern": "A period where a particular location experiences a high volume of 'High' priority incidents relating to IT Security.",
-      "columns_involved": [
-        "Priority",
-        "Location",
-        "Assignment group",
-        "Impact"
-      ],
-      "reasoning": "This could mimic a cybersecurity threat localized to a geographic area, thus increasing incident priority and impact due to its urgency.",
-      "relevance_to_kpi": "Impacts 'Average Resolve Time' and 'SLA Compliance Rate' because high priority incidents are expected to be resolved quicker, testing how the system prioritizes resources under stress.",
-      "benchmark_value": "Challenges models to recognize and prioritize incidents based on location-driven patterns, effectively allocating resources to maintain SLA compliance."
-    },
-    {
-      "pattern": "Gradual reduction in SLA compliance for incidents opened or updated by a specific user, aligning to a major project utilizing resources heavily.",
-      "columns_involved": [
-        "SLA due",
-        "Opened by",
-        "Updated by",
-        "Made SLA"
-      ],
-      "reasoning": "A major project could lead to resource allocation issues, thus someone heavily involved in this project could inadvertently delay or miss SLAs for other incidents.",
-      "relevance_to_kpi": "Directly affects 'SLA Compliance Rate' and 'Incident Closure Rate', as reduced resource availability can yield more SLA breaches.",
-      "benchmark_value": "Assesses models on detecting resource bottleneck implications and predicting future SLA irregularities based on personnel workload."
+      "reasoning": "Simulates operational disruptions where unresolved incidents are shifted among teams due to fluctuating priorities, leading to reassignment.",
+      "relevance_to_kpi": "Impacts 'Reassignment Count' and eventually affects 'SLA Compliance Rate' as frequent reassignments often delay timely incident resolution.",
+      "benchmark_value": "Tests the robustness of models in understanding organizational workflow changes, measuring efficiency in handling fluctuating resource loads."
     }
   ]
 }

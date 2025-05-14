@@ -1,42 +1,46 @@
 {
   "kpis": [
-    "Incident Resolution Time",
+    "Average Resolution Time",
+    "Incident Closure Rate",
     "SLA Compliance",
-    "Reassignment Frequency",
-    "Incident Volume Over Time"
+    "Incident Reassignment Rate"
   ],
   "patterns": [
     {
-      "pattern": "Seasonal Increase in Incidents",
+      "pattern": "Temporal Delay in Resolutions",
       "columns_involved": [
-        "Opened",
-        "Category",
-        "Business resolve time"
-      ],
-      "reasoning": "Inject a seasonal pattern where incidents in certain categories (e.g., 'Network') spike during specific periods (e.g., end of Q4). This mimics real-world scenarios where systems under strain experience more technical issues.",
-      "relevance_to_kpi": "Affects 'Incident Volume Over Time' by showing spikes during certain periods, potentially impacting 'Incident Resolution Time' as the increased load could lead to resource strains.",
-      "benchmark_value": "Tests model's ability to identify and predict seasonal patterns and stresses the need for adaptable resource management solutions."
-    },
-    {
-      "pattern": "High Impact Changes Cause Secondary Incident Spikes",
-      "columns_involved": [
-        "Assignment group",
-        "Priority",
-        "Business duration"
-      ],
-      "reasoning": "Introduce a pattern where changes in critical systems managed by 'IT Securities' lead to a spike in incident priority and extended resolution times, simulating ripple effects of high-impact changes.",
-      "relevance_to_kpi": "Direct impact on 'Incident Resolution Time' and 'SLA Compliance' due to increased incident priority, leading to longer business durations.",
-      "benchmark_value": "Challenges models to link cause and effect across multiple events and handle complex incident chains efficiently."
-    },
-    {
-      "pattern": "Resolution-Time Reduction After Personnel Training",
-      "columns_involved": [
+        "Resolved",
         "Resolved by",
-        "Business resolve time"
+        "Resolution code",
+        "Resolution notes"
       ],
-      "reasoning": "Simulate a reduction in the average resolution time post-training session conducted for key personnel like 'System Administrator' and 'Ron Kettering'. This models an organizational improvement scenario.",
-      "relevance_to_kpi": "Directly decreases 'Incident Resolution Time', improves 'SLA Compliance' rates due to faster resolution.",
-      "benchmark_value": "Evaluates the model's ability to detect performance improvements over time, encouraging strategies focusing on personnel efficacy."
+      "reasoning": "Inject a pattern where, during certain times of the year (e.g., holiday season or fiscal year end), the 'Resolved' dates are significantly delayed compared to the 'Activity due' and 'SLA due' dates. This delay is due to reduced staffing or increased incident volume.",
+      "relevance_to_kpi": "Affects the 'Average Resolution Time' and 'SLA Compliance' KPIs by potentially increasing the average time taken to resolve incidents and decreasing compliance rates.",
+      "benchmark_value": "Tests the ability of models or analysts to identify temporal trends and their impact on resolution times, especially during specific periods or events, challenging their insight into cause-effect relationships."
+    },
+    {
+      "pattern": "Conditional Priority Escalation",
+      "columns_involved": [
+        "Priority",
+        "Impact",
+        "Urgency",
+        "Incident state",
+        "Business impact"
+      ],
+      "reasoning": "Create a rule where certain conditions (e.g., 'Impact' and 'Urgency' both marked as 'High') lead to an automatic escalation of 'Priority' levels, affecting 'Incident state' with more 'In Progress' or 'On Hold' statuses.",
+      "relevance_to_kpi": "Directly influences the 'Incident Closure Rate' as escalations may extend the time incidents remain open.",
+      "benchmark_value": "Challenges models to understand cross-feature dependencies that lead to status changes and requires analysts to decipher how impact, urgency, and priority dynamically interact."
+    },
+    {
+      "pattern": "Region-Specific Outages",
+      "columns_involved": [
+        "Location",
+        "Category",
+        "Impact"
+      ],
+      "reasoning": "Introduce outages that predominantly affect certain geographical regions, causing spikes in incidents within those areas, particularly in the 'Network' or 'Software' categories, and often marked with high 'Impact'.",
+      "relevance_to_kpi": "Can affect 'Average Resolution Time' and 'Incident Reassignment Rate' due to the sudden influx of incidents from specific locations needing different jurisdictional handling.",
+      "benchmark_value": "Evaluates a model's capability to detect regional anomalies and respond to location-based incident trends for detailed geographic analysis."
     }
   ]
 }

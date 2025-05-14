@@ -1,43 +1,44 @@
 {
   "kpis": [
-    "Topic Diversity",
-    "Document Clustering Accuracy",
+    "Diverse Topic Representations",
     "Topic Coherence",
-    "Topic Stability"
+    "Correlation with Incident Attributes",
+    "Timeliness of Resolution"
   ],
   "patterns": [
     {
-      "pattern": "Seasonal spikes in incident categories related to holidays or company events.",
+      "pattern": "Introduction of seasonal spikes in incident creation.",
       "columns_involved": [
         "Opened",
-        "Category",
-        "Short description"
-      ],
-      "reasoning": "This pattern simulates real-world scenarios where specific incident types peak around predictable times such as holidays or company events (e.g., Christmas, Black Friday for e-commerce). By pressing certain categories' relevance during these periods, it creates non-uniform temporal distributions, a prevalent real-world phenomenon.",
-      "relevance_to_kpi": "Affects Topic Diversity by introducing season-bound topics, testing models' ability to capture short-term, high-relevance topics.",
-      "benchmark_value": "Challenges models on how well they adapt to periodic topic shifts and distinguish between season-specific anomalies and general trends."
-    },
-    {
-      "pattern": "Correlated incidents with joint resolution paths represented by unique resolution notes.",
-      "columns_involved": [
         "Short description",
-        "Resolution notes",
-        "Comments and Work notes"
+        "Category"
       ],
-      "reasoning": "This pattern emerges when multiple incidents are interrelated (e.g., caused by the same underlying issue) and resolved through a similar protocol or commentary exchange. By adding dependencies within resolution texts, it tests topic models on their ability to detect shared resolution narratives.",
-      "relevance_to_kpi": "Impacts Document Clustering Accuracy by creating coherent subgroups within the textual data that should form tighter clusters in model outputs.",
-      "benchmark_value": "Evaluates models' proficiency in linking document semantics based on shared resolution paths, which is crucial for inferring topic networks."
+      "reasoning": "In many real-world scenarios, certain times of the year see increased incident reports due to specific events or seasonal spikes (e.g., end of the year system overloads, holiday-related system issues). By simulating such spikes, we can test the model's ability to discern topics that are more prevalent in certain seasons, thus enhancing its temporal awareness and improving the granularity of topic modeling.",
+      "relevance_to_kpi": "Affects 'Diverse Topic Representations' by introducing new seasonal topics, and enhances 'Timeliness of Resolution' due to potentially increased urgency during spikes.",
+      "benchmark_value": "Tests the model's capacity to detect temporal patterns and adapt its understanding of prevalent themes during peak times."
     },
     {
-      "pattern": "Shift in incident types due to major policy changes or software updates.",
+      "pattern": "Correlation between high 'Priority' incidents and changes in 'Resolved by' handling, simulating emergency protocol.",
       "columns_involved": [
-        "Category",
-        "Resolve time",
-        "Duration"
+        "Priority",
+        "Resolved by",
+        "Closed",
+        "Reassignment count"
       ],
-      "reasoning": "Reflects real-world dynamics where updates or policy shifts cause initial confusion, leading to a surge in particular incident types and longer resolution times. By expanding certain categories and resolution times post-update, it simulates the industry's typical adjustments to change.",
-      "relevance_to_kpi": "Affects Topic Coherence by challenging the model's adaptability to transitions between pre- and post-update incidents within the training data.",
-      "benchmark_value": "Tests model resilience in maintaining topic integrity over disruptive changes, a critical factor in dynamic environments."
+      "reasoning": "In high-priority cases, incidents might be rerouted to specific expert teams or individuals with specialized skills. This creates patterns where certain people handle a larger share of critical incidents, allowing for the evaluation of thematic shifts within these high-priority situations.",
+      "relevance_to_kpi": "Influences 'Correlation with Incident Attributes' by altering topic distributions based on handler expertise, and impacts 'Topic Coherence' by introducing resolution-centered language specific to expert teams.",
+      "benchmark_value": "Provides insights into how models handle topic shifts linked to operational protocols like expert handling, testing capabilities in associating personnel with specialized incident categories."
+    },
+    {
+      "pattern": "Gradual emergence of a new type of incident over time, creating a novel 'Subcategory'.",
+      "columns_involved": [
+        "Opened",
+        "Short description",
+        "Subcategory"
+      ],
+      "reasoning": "Simulating the emergence of new technological issues or cybersecurity threats mirrors real-world trends where new problem types gradually become more prevalent. This pattern challenges the model to recognize and integrate evolving incident types into existing frameworks, enhancing model foresight and adaptability.",
+      "relevance_to_kpi": "Affects 'Diverse Topic Representations' by adding new topics over time and impacts 'Topic Coherence' as the novel category gains prominence and interconnected themes.",
+      "benchmark_value": "Analyzes the model\u2019s ability to respond to novel inputs and expand its topic repertoire dynamically, testing resilience in the face of evolving datasets."
     }
   ]
 }

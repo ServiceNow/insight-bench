@@ -1,42 +1,43 @@
 {
   "kpis": [
     "Time to Resolution",
-    "Incident Reopening Rate",
-    "Incident Severity",
-    "SLA Compliance"
+    "Incident Reassignment Rate",
+    "SLA Adherence Rate",
+    "Incident Volume over Time"
   ],
   "patterns": [
     {
-      "pattern": "Introduce a temporal pattern where incidents opened during weekends (Fri 6 PM to Mon 6 AM) have a 30% longer resolve time.",
+      "pattern": "Seasonal Surge in Incidents",
       "columns_involved": [
         "Opened",
-        "Resolve time",
-        "Closed"
+        "Category",
+        "Priority"
       ],
-      "reasoning": "This pattern reflects a common real-world scenario where support teams are less staffed during weekends, leading to slower response times. It tests a model's ability to identify time-based patterns and adjust predictions accordingly.",
-      "relevance_to_kpi": "Affects 'Time to Resolution', extending average resolution time and possibly impacting SLA Compliance if the delay pushes resolution beyond SLA limits.",
-      "benchmark_value": "Tests model ability to capture temporal dynamics and understand the impact of staffing patterns on incident resolution efficiency."
+      "reasoning": "Introduce a seasonal surge in incidents related to 'Network' and 'Software' categories during particular months, like the end of the fiscal year or the beginning of school terms. This mimics a real-world scenario where service demands peak, and could lead to delays in resolution times due to increased volume.",
+      "relevance_to_kpi": "Affects Time to Resolution and Incident Volume over Time by potentially increasing the average time each incident takes to resolve during peak periods.",
+      "benchmark_value": "Tests how well models can predict and adapt to changes in incident volume and prioritize responses during known high-demand periods."
     },
     {
-      "pattern": "Introduce a surge in severity where incidents opened in the first week of every quarter have an increased probability of being marked as '1 - High' severity.",
+      "pattern": "Escalation Impact Pattern",
       "columns_involved": [
-        "Opened",
-        "Severity"
+        "Priority",
+        "Escalation",
+        "Duration"
       ],
-      "reasoning": "Organizations often have system updates and changes at the beginning of a quarter, leading to more critical incidents during this time. This pattern challenges a model to recognize periodic spikes in severity related to organizational cycles.",
-      "relevance_to_kpi": "Directly impacts 'Incident Severity', increasing the incidents categorized as high severity during these periods.",
-      "benchmark_value": "Challenges the model to identify and handle periodic structural changes in data that correlate with operational cycles."
+      "reasoning": "Implement a conditional pattern where incidents with '1 - Critical' priority that remain unresolved for more than a certain duration automatically escalate from 'Normal' to 'High'. This models real-world escalation policies in place to prevent critical issues from being overlooked.",
+      "relevance_to_kpi": "Directly affects the SLA Adherence Rate and Time to Resolution by forcing quicker resolutions when escalations occur. Incidents should resolve faster once escalated.",
+      "benchmark_value": "Tests model responsiveness to automatic escalation mechanisms and how well they can predict the resultant changes in SLA adherence."
     },
     {
-      "pattern": "Create a dependency where incidents assigned to \u2018IT Securities\u2019 have a higher reassignment count before resolution.",
+      "pattern": "Multi-Assignee Hand-off Delay",
       "columns_involved": [
+        "Assigned to",
         "Assignment group",
-        "Reassignment count",
-        "Resolve time"
+        "Reassignment count"
       ],
-      "reasoning": "Complex security incidents often require navigation through multiple teams, resulting in higher reassignments. This pattern tests a model's ability to detect intricate dependencies and manage the escalation process effectively.",
-      "relevance_to_kpi": "Affects 'Incident Reopening Rate' and 'Time to Resolution' by increasing potential delays due to multiple team involvement.",
-      "benchmark_value": "This pattern tests the model's understanding of process complexities and inter-team coordination challenges in handling incidents."
+      "reasoning": "Simulate incidents requiring multiple reassignments across different groups, as indicated by an increase in 'Reassignment count', which introduces artificial delays. This models complex incidents that need diverse expertise and experience expected logistical coordination lags.",
+      "relevance_to_kpi": "Impacts both the Time to Resolution and Incident Reassignment Rate by introducing delays due to increased hand-offs.",
+      "benchmark_value": "Evaluates the model's capacity to account for and manage hand-off-related delays and complexities in prediction models."
     }
   ]
 }

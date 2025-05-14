@@ -1,45 +1,42 @@
 {
   "kpis": [
-    "Resolution Time",
-    "Incident Closure Rate",
-    "SLA Compliance",
-    "Reassignment Frequency"
+    "Incident Resolution Time",
+    "SLA Compliance Rate",
+    "Reassignment Count",
+    "Incident Priority Distribution"
   ],
   "patterns": [
     {
-      "pattern": "Introduce periodic large-scale incidents (spikes in 'High' priority) affecting 'ITSM Engineering' Assignment group, occurring every 3 months with peaks in 'Opened' dates and grouped around certain 'Configuration item'. This periodic event causes a surge in the 'Incident state' being 'New' and increased 'Reassignment count'.",
+      "pattern": "Introduction of a seasonal trend where incidents related to 'Network' category double in volume during months that correspond to high travel periods (e.g., June and December) based on historical data in 'Opened' and 'Category'.",
       "columns_involved": [
-        "Priority",
-        "Assignment group",
         "Opened",
-        "Configuration item",
-        "Incident state",
+        "Category"
+      ],
+      "reasoning": "Seasonal trends can significantly impact resource allocation and incident response strategies. This pattern tests a model\u2019s ability to detect non-uniform distributions and account for fluctuating workloads.",
+      "relevance_to_kpi": "Impacts the 'Incident Resolution Time' and 'SLA Compliance Rate' as the sudden increase in incident volumes could delay resolutions and lead to more SLA breaches.",
+      "benchmark_value": "Evaluates a model's ability to recognize temporal patterns and adjust predictions or resource plans dynamically."
+    },
+    {
+      "pattern": "A delayed effect is introduced where incidents under 'Urgency' of '1 - High' experience an artificial delay in resolution during system maintenance periods, identifiable by specific dates in the 'Updated' column.",
+      "columns_involved": [
+        "Urgency",
+        "Updated",
+        "Resolve time"
+      ],
+      "reasoning": "System maintenance can inadvertently affect urgent tasks. This pattern helps assess a model\u2019s capability to incorporate system availability or maintenance schedules in predictive analytics.",
+      "relevance_to_kpi": "Directly affects 'Incident Resolution Time' and potentially 'Reassignment Count', as delays may lead to task reassignments.",
+      "benchmark_value": "Challenges the model's ability to integrate external timing disruptions into KPI forecasting."
+    },
+    {
+      "pattern": "Create a dependency where incidents opened by 'admin' on certain weekends (determined by 'Opened' and 'Opened by') have a higher reassignment count due to staffing issues.",
+      "columns_involved": [
+        "Opened",
+        "Opened by",
         "Reassignment count"
       ],
-      "reasoning": "This pattern mimics real-world scenario of recurring large-scale outages or security incidents impacting specific teams and configurations. Monitoring response to such spikes tests the adaptability and resource allocation efficiency.",
-      "relevance_to_kpi": "Increases resolution time, incident closure rate volatility, and can degrade SLA compliance due to backlog increase and reassignment needs.",
-      "benchmark_value": "Tests a model's ability to detect seasonal trends and handles sudden changes in workload distribution, affecting resource planning and prioritization strategies."
-    },
-    {
-      "pattern": "Correlate delayed incident resolutions to 'Assigned to' personnel changes where certain personnel frequently resolve incidents past due date, elevating average 'Business resolve time' for cases they handle.",
-      "columns_involved": [
-        "Resolved",
-        "Assigned to",
-        "Business resolve time"
-      ],
-      "reasoning": "This builds on individual performance trends affecting operational metrics, similar to how real-world variations in staff performance can impact key outcomes.",
-      "relevance_to_kpi": "Specifically affects Business resolve time and SLA compliance negatively, as delays in resolution by particular staff members can skew overall averages.",
-      "benchmark_value": "Tests model's proficiency in identifying personnel performance issues and their impact on operational KPIs, allowing for focus on improvement in HR and training policies."
-    },
-    {
-      "pattern": "Implement an anomalous regime shift in 'Channel' where a sudden preference shift occurs from 'Phone' to 'Self-service', affecting incident process flows. This shift also links to a decrease in 'Made SLA' for self-service incidents.",
-      "columns_involved": [
-        "Channel",
-        "Made SLA"
-      ],
-      "reasoning": "A real-world scenario where customer behavior changes, possibly due to new self-service technologies or policies, affecting service dynamics and efficiency.",
-      "relevance_to_kpi": "Impacts SLA compliance and incident resolution workflows, testing adaptability to changing customer interaction channels and the readiness of automated systems.",
-      "benchmark_value": "Challenges model assumptions about channel uniformity and tests its strength in learning new interactions, affecting operational strategies and system design."
+      "reasoning": "Specific roles might experience higher workload or reduced team support during off-hours, affecting operations. This pattern tests the model's skill in associating staffing variations with incident management efficiency.",
+      "relevance_to_kpi": "Influences 'Reassignment Count', as a high count could indicate inefficiencies or miscommunication in incident handling.",
+      "benchmark_value": "Tests the model's ability to incorporate team availability and staffing discrepancies into operational efficiency models."
     }
   ]
 }

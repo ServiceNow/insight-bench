@@ -1,43 +1,42 @@
 {
   "kpis": [
-    "Time to Resolve Incidents",
-    "Incident Volume Over Time",
-    "Reassignment Rate",
-    "SLA Fulfillment Rate"
+    "Resolution Time",
+    "Existence of Patterns in Incident Volume",
+    "SLA Compliance Rate",
+    "Priority Shifts"
   ],
   "patterns": [
     {
-      "pattern": "Seasonal Surge in Incident Reports",
+      "pattern": "Seasonal Pattern in Incident Volume",
       "columns_involved": [
-        "Opened",
-        "Category",
-        "Priority"
-      ],
-      "reasoning": "Introduce a seasonal trend in the 'Opened' timestamp indicating a surge in incident volume at specific times (e.g., end of financial quarters) where certain categories or priority incidents are more frequent.",
-      "relevance_to_kpi": "Affects 'Incident Volume Over Time' by showing periodic increases, and 'Time to Resolve Incidents' since more incidents can lead to delays.",
-      "benchmark_value": "Tests the model's ability to detect and decompose seasonal patterns and handle large spikes in data."
-    },
-    {
-      "pattern": "Delayed Resolution During System Maintenance",
-      "columns_involved": [
-        "Resolved",
-        "Configuration item",
-        "Activity due"
-      ],
-      "reasoning": "During scheduled maintenance periods, the resolution of incidents related to certain configuration items (e.g., SAP Human Resources) is systematically delayed, which can create a pattern of increased durations.",
-      "relevance_to_kpi": "Directly affects 'Time to Resolve Incidents' by introducing noticeable delays, and can impact 'SLA Fulfillment Rate' if incidents fall out of SLA compliance due to the delay.",
-      "benchmark_value": "Challenges model's capacity to identify and isolate the impact of external factors on incident resolution timelines."
-    },
-    {
-      "pattern": "Cyclic Reassignment Pattern",
-      "columns_involved": [
-        "Reassignment count",
-        "Assignment group",
         "Opened"
       ],
-      "reasoning": "Certain groups may experience cyclic patterns of high reassignment counts tied to their team rotations or shifts, causing incidents to be passed between groups before resolution.",
-      "relevance_to_kpi": "Increases 'Reassignment Rate' significantly during specific times, testing the model's detection of cyclic workforce behaviors.",
-      "benchmark_value": "Ensures models can capture and analyze patterns linked to workforce management or procedural inefficiencies leading to reassignment loops."
+      "reasoning": "Introducing a weekly or monthly seasonal pattern in the volume of incidents opened can reflect real-world scenarios like increased volume during certain business hours or months (e.g., financial year closing, holiday season).",
+      "relevance_to_kpi": "This pattern affects the 'Existence of Patterns in Incident Volume' KPI by introducing predictable fluctuations that can be analyzed for trend and seasonality recognition.",
+      "benchmark_value": "Tests a model's ability to identify and adapt to periodic patterns within a time series, requiring precise decomposition techniques."
+    },
+    {
+      "pattern": "Delayed Resolution Post High Priority Changes",
+      "columns_involved": [
+        "Priority",
+        "Closed",
+        "Resolved",
+        "Business resolve time"
+      ],
+      "reasoning": "Simulating scenarios where incidents initially marked as high priority face unforeseen delays in resolution, perhaps due to resource limitations or workflow bottlenecks.",
+      "relevance_to_kpi": "Impacts 'Resolution Time' and 'Priority Shifts' KPIs by testing the model's ability to capture delayed effects and shifts in incident handling priorities.",
+      "benchmark_value": "Challenges models to identify causal relationships between priority changes and resolution delays, a non-trivial time-lag effect that tests temporal flexibility in models."
+    },
+    {
+      "pattern": "Sudden Regime Shifts Due to Organizational Changes",
+      "columns_involved": [
+        "Assignment group",
+        "Impact",
+        "Escalation"
+      ],
+      "reasoning": "Introducing a sudden shift in incident handling due to a large restructuring or policy change (e.g., merging of departments) reflects real-world anomalies.",
+      "relevance_to_kpi": "Affects 'SLA Compliance Rate' by altering incident impact and escalation frequencies, thus modifying compliance patterns.",
+      "benchmark_value": "This examines a model's capacity to detect and adapt to regime shifts, pushing decompositions to account for structural, non-periodic changes."
     }
   ]
 }

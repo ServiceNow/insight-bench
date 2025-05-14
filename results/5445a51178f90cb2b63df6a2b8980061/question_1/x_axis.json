@@ -1,11 +1,11 @@
 {
-    "name": "Categories",
-    "description": "Categories of unresolved issues.",
+    "name": "Assignment Groups",
+    "description": "Different assignment groups with their corresponding mean business duration.",
     "value": [
-        "Database",
-        "Hardware",
-        "Inquiry / Help",
-        "Network",
-        "Software"
+        "Team1",
+        "Team2",
+        "Team3",
+        "Team4",
+        "Team5"
     ]
 }

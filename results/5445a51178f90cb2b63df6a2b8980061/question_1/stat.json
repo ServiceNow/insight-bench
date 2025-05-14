@@ -1,31 +1,26 @@
 {
-    "name": "Unresolved Issues Count by Category",
-    "description": "Counts of unresolved issues by category in Australia.",
+    "name": "Business Duration by Assignment Group",
+    "description": "This plot shows the variation of business duration across different assignment groups.",
     "value": [
         {
-            "location": "Australia",
-            "category": "Database",
-            "count": 6
+            "Assignment group": "Team1",
+            "Business duration": 435241.1781609195
         },
         {
-            "location": "Australia",
-            "category": "Hardware",
-            "count": 110
+            "Assignment group": "Team2",
+            "Business duration": 532190.9958333333
         },
         {
-            "location": "Australia",
-            "category": "Inquiry / Help",
-            "count": 2
+            "Assignment group": "Team3",
+            "Business duration": 823504.426724138
         },
         {
-            "location": "Australia",
-            "category": "Network",
-            "count": 3
+            "Assignment group": "Team4",
+            "Business duration": 462951.92913385824
         },
         {
-            "location": "Australia",
-            "category": "Software",
-            "count": 7
+            "Assignment group": "Team5",
+            "Business duration": 513121.6033057851
         }
     ]
 }

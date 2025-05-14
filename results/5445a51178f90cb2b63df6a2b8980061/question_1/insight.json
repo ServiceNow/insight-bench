@@ -1,7 +1,7 @@
 {
-    "answer": "The location with the highest number of unresolved issues is Australia, with 110 unresolved issues categorized as Hardware, followed by 7 in Software, 6 in Database, 3 in Network, and 2 in Inquiry / Help.",
-    "insight": "In Australia, unresolved issues are predominantly related to Hardware, indicating a potential area for improvement in hardware support or resources, as it accounts for 110 out of the total unresolved issues.",
-    "justification": "According to the analysis, Australia has the most unresolved issues, particularly in the Hardware category, which significantly outnumbers the other categories.",
+    "answer": "The mean business duration varies significantly across different assignment groups, with Team3 having the highest average duration of approximately 823,504.43, while Team1 has the lowest at around 435,241.18.",
+    "insight": "Team3's business duration is over 88% longer than Team1's, suggesting that this group may face more complex tasks or challenges that require additional time to resolve.",
+    "justification": "The analysis shows that Team3's business duration is notably higher than the other teams, indicating potential differences in workload or efficiency among the assignment groups.",
     "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_1",
-    "question": "Which location has the highest number of unresolved issues, and what are their categories?"
+    "question": "How does the business duration vary across different assignment groups?"
 }

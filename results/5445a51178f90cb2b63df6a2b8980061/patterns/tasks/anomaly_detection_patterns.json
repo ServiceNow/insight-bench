@@ -1,42 +1,43 @@
 {
   "kpis": [
-    "Incident Resolution Time",
-    "SLA Compliance",
-    "Urgency and Priority Discrepancy",
-    "Incident Escalation Rate"
+    "Average Resolution Time",
+    "SLA Compliance Rate",
+    "Incident Reopen Rate",
+    "High Priority Incident Count"
   ],
   "patterns": [
     {
-      "pattern": "Periodic spikes in 'Urgency' with correlated increases in 'Priority' and 'Impact' columns at the start of each month.",
+      "pattern": "Spike in High Priority incidents at the end of each quarter, reflecting real-world behavior of increased workload or system stress.",
       "columns_involved": [
-        "Urgency",
+        "Opened",
         "Priority",
-        "Impact"
+        "Incident state"
       ],
-      "reasoning": "This pattern mimics monthly maintenance periods or updates that typically elevate incident urgency, priority, and impact due to known systemic changes. Real-world organizations often have such scheduled activities, creating clustered high-priority incidents.",
-      "relevance_to_kpi": "Affects 'Urgency and Priority Discrepancy' and 'Incident Escalation Rate' by concentrating high-urgency cases, possibly leading to escalations if not managed timely.",
-      "benchmark_value": "Tests model's ability to identify seasonal patterns and differentiate them from random anomalies. Challenges the model to learn temporal associations and determine if high urgency is justified."
+      "reasoning": "In many companies, the end of the financial quarter is associated with an increase in workload due to audits, reporting, and system reviews. Simulating this pattern allows us to see how models detect and handle spikes in data.",
+      "relevance_to_kpi": "This pattern impacts 'High Priority Incident Count' by creating temporary surges in incidents, testing the model's ability to detect them.",
+      "benchmark_value": "Challenges models to distinguish between random fluctuations and high-impact events that follow predictable temporal patterns."
     },
     {
-      "pattern": "Sudden increase in 'Reassignment count' in the beginning of each quarter, especially in incidents within 'IT Securities' and 'Project Mgmt' assignment groups.",
+      "pattern": "Delayed resolution effect for high-impact incidents caused by system outages, where resolution time is prolonged.",
       "columns_involved": [
-        "Reassignment count",
-        "Assignment group"
+        "Impact",
+        "Resolve time",
+        "Incident state"
       ],
-      "reasoning": "Reflects organizational restructuring or policy changes at quarter start, causing more reassignment as roles and responsibilities are clarified. This is common during new project phases or audits.",
-      "relevance_to_kpi": "Influences 'Incident Resolution Time' by causing potential delays due to multiple reassignments before finding appropriate handlers.",
-      "benchmark_value": "Evaluates model's ability to detect shifts in resource allocation or operational inefficiencies. Highlights dependency between assignments and resolution processes."
+      "reasoning": "High-impact incidents often take longer to resolve, especially if they cause system-wide outages. This pattern tests how models identify and react to prolonged outliers in resolution times.",
+      "relevance_to_kpi": "Directly affects the 'Average Resolution Time' and 'SLA Compliance Rate' by introducing significant delays, impacting SLA adherence and resolution efficiency.",
+      "benchmark_value": "Models must accurately identify the delayed resolution characteristic of high-impact incidents, challenging their ability to differentiate based on impact severity."
     },
     {
-      "pattern": "A significant number of 'Critical' priority incidents open without closing within a week during unexpected system outages, reflected in 'Duration' and 'Resolve time'.",
+      "pattern": "Conditional trend where incidents opened by specific individuals are more likely to be reopened due to initial misclassification or inadequate resolution.",
       "columns_involved": [
-        "Priority",
-        "Duration",
-        "Resolve time"
+        "Opened by",
+        "Reopen count",
+        "Resolution code"
       ],
-      "reasoning": "Simulates impact of unexpected critical system failures that lead to prolonged open incidents due to complexity in resolution. It's a common real-world scenario where critical tasks take longer to resolve.",
-      "relevance_to_kpi": "Affects 'SLA Compliance' and 'Incident Resolution Time', highlighting potential breaches in SLA due to prolonged resolutions.",
-      "benchmark_value": "Tests model's capability to identify prolonged incident durations stemming from genuine unforeseen circumstances rather than operational inefficiencies. Assesses model's prediction accuracy for anomalous backlogs."
+      "reasoning": "Some users might have a pattern of filing tickets that are not fully resolved, leading to higher reopen rates. Testing models' capacity to detect patterns tied to specific user behavior allows for understanding biases in incident management.",
+      "relevance_to_kpi": "Influences 'Incident Reopen Rate' by highlighting cases where certain users' incidents are more prone to be reopened, impacting future predictions of resolution effectiveness.",
+      "benchmark_value": "Models need to identify correlations between specific users and incident reopen patterns, offering insights into potential user-specific workflow inefficiencies."
     }
   ]
 }
