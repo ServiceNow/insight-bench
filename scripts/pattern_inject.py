@@ -31,13 +31,20 @@ class PatternInjector:
                 "kpis": [...],
                 "patterns": [
                     {
+                        "id": "pattern_id",
                         "pattern": "description of the pattern",
                         "columns_involved": ["col1", "col2", ...],
                         "reasoning": "explanation of why this pattern is useful",
                         "relevance_to_kpi": "how this pattern helps with the task",
                         "benchmark_value": "value to test against"
-                    },
-                    ...
+                    }
+                ],
+                "Answers": [
+                    {
+                        "question": "question text",
+                        "answer_after_injection": "answer text",
+                        "caused_by_pattern": "pattern_id"
+                    }
                 ]
             }
 
@@ -48,89 +55,230 @@ class PatternInjector:
         print("Started getting inject codes ...")
 
         patterns_dict = json.loads(patterns)
-        patterns_list = patterns_dict.get("patterns", [])
-        output = {}
+        pattern_info = patterns_dict.get("patterns", [])[0]  # Get the single pattern
+        pattern_id = pattern_info.get("pattern_index", "")
 
-        for pattern_index, pattern_info in enumerate(patterns_list):
-            columns = pattern_info.get("columns_involved", [])
-            pattern_description = pattern_info.get("pattern", "")
-            reasoning = pattern_info.get("reasoning", "")
-            relevance = pattern_info.get("relevance_to_kpi", "")
+        # Find questions specific to this pattern from Answers
+        questions = [
+            q
+            for q in patterns_dict.get("answers", [])
+            if q.get("caused_by_pattern") == pattern_id
+        ]
 
-            function_name = "modify_" + "_".join(columns)
-            columns_str = ""
-            for i, column in enumerate(columns):
-                columns_str += f"'{i+1}. {column}\n"
+        # Format questions and answers
+        qa_context = ""
+        if questions:
+            qa_context = "\nQuestions and Answers for this pattern:\n"
+            for q_idx, qa in enumerate(questions, 1):
+                qa_context += f"\nQ{q_idx}: {qa.get('question', '')}\n"
+                qa_context += f"A{q_idx}: {qa.get('answer_after_injection', '')}\n"
 
-            prompt = f"""
-            You are given a pandas DataFrame named `df` that contains the following columns: 
-            
-            `{columns_str}`
+        # Strip serial numbers from column names
+        columns = [
+            col.split(". ", 1)[-1] if ". " in col else col
+            for col in pattern_info.get("columns_involved", [])
+        ]
+        pattern_description = pattern_info.get("pattern", "")
+        reasoning = pattern_info.get("reasoning", "")
+        relevance = pattern_info.get("relevance_to_kpi", "")
 
-            Your task is to write a Python function that modifies the columns based on specific patterns.
+        function_name = "modify_" + "_".join(columns)
+        columns_str = ""
+        for column in columns:
+            columns_str += f"'{column}\n"
 
-            The function should:
-                - Be named `{function_name}`
-                - Be a standalone function
-                - Take `df` as its only argument
-                - Implement logic that addresses the following pattern:
-                    Pattern: {pattern_description}
-                    Reasoning: {reasoning}
-                    Relevance: {relevance}
-                - Use only standard libraries or common ones such as `numpy`, `re`, etc.
-                - Not use any complex or uncommon third-party libraries
+        prompt = f"""
+        You are a highly skilled data scientist. Your task is to reason through a pattern injection task and generate a valid, executable Python function to apply the specified transformation.
 
-            This is the signature of the function:
-            ```python
-            def {function_name}(df: pd.DataFrame) -> pd.DataFrame:
-            ```
+        You are given a pandas DataFrame named `df` with the following columns:
+                    
+            {columns_str}
 
-            Output requirements:
-                - Only include the necessary `import` statements and the function definition.
-                - Do not include any explanation or comments.
-                - Only generate one function with all logic embedded.
-                - Do not include usage examples or extra text.
-                - Function should have a return statement that returns the modified DataFrame.
+        Your goal is to implement a data transformation that introduces the following pattern:
 
-            This is an example of the expected output for columns called `age` and `height`:
+        - **Pattern**: {pattern_description}
+        - **Reasoning**: {reasoning}
+        - **Relevance**: {relevance}
+        {qa_context}
 
-            ```python
-            import numpy as np
-            # And importing any other necessary libraries
+        Please follow this **step-by-step reasoning process** internally before generating code:
+        1. Identify which of the columns in `{columns_str}` are directly involved in the pattern.
+        2. Determine what type of transformation needs to be applied (e.g., numeric shift, conditional flag, group-based anomaly).
+        3. Ensure that the transformation **modifies the data while preserving the answer to the question** in the provided context.
+        4. Choose appropriate Python libraries and operations to implement the transformation.
+        5.  Validate that the logic is self-contained and does not rely on any undefined variables or external dependencies.
+        6. Review the provided questions and answers to ensure your transformation aligns with and maintains the expected behavior.
 
-            def modify_age_height(df: pd.DataFrame) -> pd.DataFrame:
-                # Example logic to handle the patterns
-                df['age'] = df['age'].apply(lambda x: np.nan if x < 0 else x)
-                df['height'] = df['height'].fillna(df['height'].mean())
-                return df
-            ```
+        Then, generate a complete **Python function** with the following signature:
 
-            IMPORTANT NOTES:
-                - The function should be valid Python code and should not include any comments or explanations.
-                - The function should be self-contained and not rely on any external context or variables.
-                - The function should be able to handle the patterns described above and return a modified DataFrame.
-                - There should be no additional code except for the function definition and necessary imports. You should not write and include other functions or call this functions (not even writing a main function).
-                - The function should not include any print statements or logging.
+        ```python
+        def {function_name}(df: pd.DataFrame) -> pd.DataFrame:
+        ```
+        """
 
-            Please return only the code (imports + one function) in python environment. Nothing else.
-            """
+        response = self.client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a data pattern injection coding expert. Your task is to write correct and simple codes to inject the given patterns to help accomplish specific analytics tasks. Always respond with valid Python Code.",
+                },
+                {"role": "user", "content": prompt},
+            ],
+        )
 
+        output = {
+            f"Pattern_{pattern_id}_{'_'.join(columns)}": response.choices[
+                0
+            ].message.content.strip()
+        }
+        print(
+            f"Finished getting inject codes for pattern {pattern_id} on columns: {'_'.join(columns)}"
+        )
+
+        return output
+
+    def test_inject(
+        self, injected_data: pd.DataFrame, question: str, expected_answer: str
+    ) -> bool:
+        """Test if the injected pattern maintains the expected answer to the question.
+
+        Args:
+            injected_data: The data after pattern injection
+            question: The question to test
+            expected_answer: The expected answer to the question
+
+        Returns:
+            bool: True if the answer matches the expected answer, False otherwise
+        """
+        print(f"\nTesting question: {question}")
+        print(f"Expected answer: {expected_answer}")
+
+        # Create a prompt to generate code that answers the question
+        prompt = f"""
+        You are a data analysis expert. Your task is to write code that answers the following question about a pandas DataFrame df.
+
+        Question: {question}
+        Expected Answer: {expected_answer}
+        df: {injected_data}
+
+        The DataFrame is named 'df' and contains the data after pattern injection.
+        Write a Python function that:
+        1. Takes the DataFrame as input
+        2. Analyzes the data to answer the question
+        3. Returns the answer in a clear, concise format
+
+        The code should be self-contained and only use the DataFrame 'df'.
+        Return only the Python code that answers the question, no explanations.
+        The function should be named 'answer_question' and take a pandas DataFrame as input.
+        """
+
+        try:
+            # Get code to answer the question
             response = self.client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are a data pattern injection coding expert. Your task is to write correct and simple codes to inject the given patterns to help accomplish specific analytics tasks. Always respond with valid Python Code.",
+                        "content": "You are a data analysis coding expert. Your task is to write code that answers questions about data. Always respond with valid Python Code.",
                     },
                     {"role": "user", "content": prompt},
                 ],
             )
 
-            output["Pattern" + str(pattern_index+1) + "_".join(columns)] = response.choices[0].message.content.strip()
-            print(f"Finished getting inject codes for pattern on columns: {"_".join(columns)}")
+            answer_code = response.choices[0].message.content.strip()
+            match = re.search(r"```python(.*?)```", answer_code, re.DOTALL)
+            if match:
+                answer_code = match.group(1).strip()
 
-        print("Finished getting inject codes for all patterns.")
-        return output
+            # print(f"\nGenerated code to answer the question:\n{answer_code}")
+
+            # Create a namespace to execute the code
+            namespace = {}
+
+            # Add the full code with main function
+            full_code = f"""
+import pandas as pd
+import sys
+from io import StringIO
+
+{answer_code}
+
+def main(df):
+    # Capture stdout
+    old_stdout = sys.stdout
+    sys.stdout = mystdout = StringIO()
+    
+    # Execute the function
+    result = answer_question(df)
+    
+    # Restore stdout
+    sys.stdout = old_stdout
+    
+    # Get the output
+    output = mystdout.getvalue().strip()
+    
+    # If there was printed output, use that, otherwise use the return value
+    return output if output else result
+"""
+
+            # Execute the code to define the function
+            exec(full_code, namespace)
+
+            # Get the main function from the namespace
+            main_function = namespace.get("main")
+
+            if main_function is None:
+                print("Error: Could not find main function in the generated code")
+                return False
+
+            # Execute the main function on the injected data
+            actual_answer = main_function(injected_data)
+            print(f"Actual answer from code execution: {actual_answer}")
+
+            # Create a prompt to check if the answers match
+            check_prompt = f"""
+            You are a data analysis expert. Your task is to determine if two answers to a data analysis question are equivalent.
+
+            Question: {question}
+            Expected Answer: {expected_answer}
+            Actual Answer: {actual_answer}
+
+            Please analyze if the actual answer matches the expected answer.
+            Consider:
+            1. Are the values numerically equivalent?
+            2. Are the units and format consistent?
+            3. Are the conclusions or findings the same?
+            4. Are there any minor differences that don't affect the meaning?
+
+            Respond with a clear explanation of whether the answers are equivalent, and why.
+            """
+
+            # Check if the answers match
+            check_response = self.client.chat.completions.create(
+                model="gpt-4o",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a data analysis expert. Your task is to compare and validate answers to data analysis questions.",
+                    },
+                    {"role": "user", "content": check_prompt},
+                ],
+            )
+
+            validation_result = check_response.choices[0].message.content.strip()
+            print(f"\nValidation result: {validation_result}")
+
+            # Extract the boolean result from the validation
+            is_valid = (
+                "equivalent" in validation_result.lower()
+                or "match" in validation_result.lower()
+            )
+            return is_valid
+
+        except Exception as e:
+            print(f"Error testing injection: {str(e)}")
+            return False
 
     def inject_patterns(
         self,
@@ -181,30 +329,93 @@ class PatternInjector:
                 r"^\s*import\s+pandas\s+as\s+pd\s*\n?", "", code, flags=re.MULTILINE
             )
 
-            func_name = f"modify_" + "_".join(pattern_name.split("_")[1:])
+            func_name = f"modify_" + "_".join(pattern_name.split("_")[1:]).replace(
+                " ", "_"
+            )
+
+            # Ensure function name is consistent in the code
+            code = re.sub(
+                r"def\s+[a-zA-Z0-9_]+\(df: pd\.DataFrame\)",
+                f"def {func_name}(df: pd.DataFrame)",
+                code,
+            )
 
             final_code = "import pandas as pd\n" + code.strip() + "\n"
             final_code += """if __name__ == "__main__":\n"""
-            final_code += f"""   df = pd.read_csv("{filename}")\n"""
+            final_code += f"""   df = pd.read_csv("temp_data.csv")\n"""
             final_code += f"""   df = {func_name}(df)\n"""
-            final_code += f"""   df.to_csv("{filename}", index=False)"""
+            final_code += f"""   df.to_csv("temp_data.csv", index=False)"""
 
             # Create script in codefiles directory
             script_name = f"{func_name}.py"
             script_path = os.path.join(temp_dir, script_name)
 
-            with open(script_path, "w") as f:
-                f.write(final_code)
+            # Retry logic for pattern injection
+            max_retries = 3
+            retry_count = 0
+            last_error = None
 
-            print(f"Created script for pattern: {pattern_name}")
+            while retry_count < max_retries:
+                try:
+                    # Always write the script file (in case of previous failures)
+                    with open(script_path, "w") as f:
+                        f.write(final_code)
+                    print(f"Created/Updated script for pattern: {pattern_name}")
 
-            # Step 4: Run the script
-            subprocess.run(["python3", script_name], check=True, cwd=temp_dir)
+                    # Step 4: Run the script
+                    subprocess.run(["python3", script_name], check=True, cwd=temp_dir)
 
-            # Update the DataFrame with the modified data
-            df = pd.read_csv(temp_csv_path)
+                    # Update the DataFrame with the modified data
+                    df = pd.read_csv(temp_csv_path)
+                    print(f"Successfully injected pattern: {pattern_name}")
+                    break
 
-            print(f"Injected pattern for pattern: {pattern_name}")
+                except Exception as e:
+                    last_error = e
+                    retry_count += 1
+                    print(
+                        f"Error injecting pattern (attempt {retry_count}/{max_retries}): {str(e)}"
+                    )
+
+                    if retry_count < max_retries:
+                        # Regenerate code with error information
+                        error_prompt = f"""
+                        Previous code failed with error: {str(e)}
+                        Please fix the following code to handle the error:
+                        {final_code}
+                        """
+
+                        response = self.client.chat.completions.create(
+                            model="gpt-4o",
+                            messages=[
+                                {
+                                    "role": "system",
+                                    "content": "You are a data pattern injection coding expert. Your task is to fix the code that failed with the given error. Always respond with valid Python Code.",
+                                },
+                                {"role": "user", "content": error_prompt},
+                            ],
+                        )
+
+                        # Update the code with the fixed version
+                        fixed_code = response.choices[0].message.content.strip()
+                        match = re.search(r"```python(.*?)```", fixed_code, re.DOTALL)
+                        if match:
+                            fixed_code = match.group(1).strip()
+
+                        # Update final_code with the fixed version
+                        final_code = "import pandas as pd\n" + fixed_code.strip() + "\n"
+                        final_code += """if __name__ == "__main__":\n"""
+                        final_code += f"""   df = pd.read_csv("temp_data.csv")\n"""
+                        final_code += f"""   df = {func_name}(df)\n"""
+                        final_code += f"""   df.to_csv("temp_data.csv", index=False)"""
+
+                        print(f"Regenerated code for pattern: {pattern_name}")
+                    else:
+                        print(
+                            f"Failed to inject pattern after {max_retries} attempts. Last error: {str(last_error)}"
+                        )
+                        print("Continuing with next pattern...")
+                        continue
 
         print("Finished injecting patterns for all patterns.")
 

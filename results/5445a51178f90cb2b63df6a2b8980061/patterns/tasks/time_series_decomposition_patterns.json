@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Resolution Time",
+    "Existence of Patterns in Incident Volume",
+    "SLA Compliance Rate",
+    "Priority Shifts"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal Pattern in Incident Volume",
+      "columns_involved": [
+        "Opened"
+      ],
+      "reasoning": "Introducing a weekly or monthly seasonal pattern in the volume of incidents opened can reflect real-world scenarios like increased volume during certain business hours or months (e.g., financial year closing, holiday season).",
+      "relevance_to_kpi": "This pattern affects the 'Existence of Patterns in Incident Volume' KPI by introducing predictable fluctuations that can be analyzed for trend and seasonality recognition.",
+      "benchmark_value": "Tests a model's ability to identify and adapt to periodic patterns within a time series, requiring precise decomposition techniques."
+    },
+    {
+      "pattern": "Delayed Resolution Post High Priority Changes",
+      "columns_involved": [
+        "Priority",
+        "Closed",
+        "Resolved",
+        "Business resolve time"
+      ],
+      "reasoning": "Simulating scenarios where incidents initially marked as high priority face unforeseen delays in resolution, perhaps due to resource limitations or workflow bottlenecks.",
+      "relevance_to_kpi": "Impacts 'Resolution Time' and 'Priority Shifts' KPIs by testing the model's ability to capture delayed effects and shifts in incident handling priorities.",
+      "benchmark_value": "Challenges models to identify causal relationships between priority changes and resolution delays, a non-trivial time-lag effect that tests temporal flexibility in models."
+    },
+    {
+      "pattern": "Sudden Regime Shifts Due to Organizational Changes",
+      "columns_involved": [
+        "Assignment group",
+        "Impact",
+        "Escalation"
+      ],
+      "reasoning": "Introducing a sudden shift in incident handling due to a large restructuring or policy change (e.g., merging of departments) reflects real-world anomalies.",
+      "relevance_to_kpi": "Affects 'SLA Compliance Rate' by altering incident impact and escalation frequencies, thus modifying compliance patterns.",
+      "benchmark_value": "This examines a model's capacity to detect and adapt to regime shifts, pushing decompositions to account for structural, non-periodic changes."
+    }
+  ]
+}

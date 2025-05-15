@@ -1,0 +1,49 @@
+{
+  "kpis": [
+    "Mean Time to Resolution",
+    "Percentage of SLAs Met",
+    "Incident Escalation Rate",
+    "Reassignment Count Variance"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal spike in incidents during December, particularly for network-related issues",
+      "columns_involved": [
+        "Opened",
+        "Category",
+        "Priority",
+        "Impact",
+        "Business Impact",
+        "Escalation"
+      ],
+      "reasoning": "During the holiday season, many companies face increased network demands due to end-of-year activities and sales spikes, leading to an uptick in network-related incidents. This pattern replicates realistic seasonal workload spikes.",
+      "relevance_to_kpi": "Affects the 'Mean Time to Resolution' and 'Incident Escalation Rate' KPIs due to higher load on resources causing potential delays and escalations.",
+      "benchmark_value": "Tests model's ability to handle temporal patterns and predict increased workload effects on operational KPIs."
+    },
+    {
+      "pattern": "Delayed resolution time for incidents with high priority and complex configuration items",
+      "columns_involved": [
+        "Priority",
+        "Configuration item",
+        "Resolve time",
+        "Business resolve time",
+        "Impact"
+      ],
+      "reasoning": "This pattern mimics real-world scenarios where high-priority incidents involving complex systems require more time and expertise to resolve, often leading to extended resolution times.",
+      "relevance_to_kpi": "Impacts 'Mean Time to Resolution' and 'Reassignment Count Variance' due to increased time needed to handle high complexity and likelihood of multiple reassignments.",
+      "benchmark_value": "Challenges models to discern the impact of priority and complexity on resolution time, valuable for assessing model's sensitivity to incident attributes."
+    },
+    {
+      "pattern": "Anomalously high reassignment counts when a new team member joins the assignment group, indicating potential training needs",
+      "columns_involved": [
+        "Assigned to",
+        "Assignment group",
+        "Reassignment count",
+        "Resolved by"
+      ],
+      "reasoning": "New team members often require time to acclimate, leading to possible increased incident reassignments due to knowledge transfer or skill mismatch issues.",
+      "relevance_to_kpi": "Specifically impacts 'Reassignment Count Variance', providing a realistic scenario to assess whether the model can identify patterns arising from human factors.",
+      "benchmark_value": "Tests the model's capacity to recognize category-driven anomalies related to team dynamics and adaptability, useful for evaluating team performance analytics."
+    }
+  ]
+}

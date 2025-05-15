@@ -740,6 +740,7 @@ def get_questions(
     max_questions=10,
     model_name="gpt-4o",
     temperature=0,
+    task=None,
 ):
     if prompt_method is None:
         prompt_method = "basic"
@@ -752,7 +753,11 @@ def get_questions(
         SystemMessage(content=system),
         HumanMessage(
             content=prompt.format(
-                context=context, goal=goal, schema=schema, max_questions=max_questions
+                context=context,
+                goal=goal,
+                schema=schema,
+                max_questions=max_questions,
+                task=task if task else "general analysis",
             )
         ),
     ]
@@ -951,6 +956,7 @@ def generate_code(
     prompt_method=None,
     model_name="gpt-4o",
     temperature=0,
+    task=None,
 ):
     """
     Solve a task using the naive single step approach
