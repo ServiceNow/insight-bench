@@ -1,0 +1,13 @@
+[
+    {
+        "question": "What are the average resolution times for incidents across various categories and priorities?",
+        "skill": [
+            "RFMAnalysis",
+            "arima",
+            "RandomForestFeatureImportance"
+        ],
+        "predicted_insight": "\u2022 **Inquiry / Help Outlier:** The \"3 - Moderate\" priority incidents in the Inquiry / Help category have an exceptionally high average resolution time of 8126.32 hours, indicating potential inefficiencies or resource allocation issues that need to be addressed.\n\n\u2022 **Software Critical Resolution Time:** \"1 - Critical\" priority incidents in the Software category have a high average resolution time of 2299.29 hours, suggesting a need for process optimization or increased resource allocation to handle complex software issues more efficiently.",
+        "plot": "results/insights_insightarena/dac6b30ea94aa0b13c6cf208960d9676/network_analysis_pattern_1/question_0/plot.jpeg",
+        "code_skill": "none"
+    }
+]

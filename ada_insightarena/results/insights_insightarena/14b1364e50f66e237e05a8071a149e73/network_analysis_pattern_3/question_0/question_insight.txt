@@ -1,0 +1,4 @@
+Question: What percentage of incidents with a high impact meet their SLA requirements?
+Insight: • **Low SLA Compliance:** Only 4.41% of high-impact incidents met their SLA requirements, highlighting significant inefficiencies in incident management processes.
+
+• **Disproportionate SLA Failure:** Out of 204 total high-impact incidents, only 9 met the SLA, indicating a systemic problem potentially due to resource constraints or process inefficiencies.
