@@ -191,25 +191,49 @@ class PatternInjector:
             if match:
                 answer_code = match.group(1).strip()
 
-            print(f"\nGenerated code to answer the question:\n{answer_code}")
+            # print(f"\nGenerated code to answer the question:\n{answer_code}")
 
             # Create a namespace to execute the code
             namespace = {}
 
+            # Add the full code with main function
+            full_code = f"""
+import pandas as pd
+import sys
+from io import StringIO
+
+{answer_code}
+
+def main(df):
+    # Capture stdout
+    old_stdout = sys.stdout
+    sys.stdout = mystdout = StringIO()
+    
+    # Execute the function
+    result = answer_question(df)
+    
+    # Restore stdout
+    sys.stdout = old_stdout
+    
+    # Get the output
+    output = mystdout.getvalue().strip()
+    
+    # If there was printed output, use that, otherwise use the return value
+    return output if output else result
+"""
+
             # Execute the code to define the function
-            exec(answer_code, namespace)
+            exec(full_code, namespace)
 
-            # Get the function from the namespace
-            answer_function = namespace.get("answer_question")
+            # Get the main function from the namespace
+            main_function = namespace.get("main")
 
-            if answer_function is None:
-                print(
-                    "Error: Could not find answer_question function in the generated code"
-                )
+            if main_function is None:
+                print("Error: Could not find main function in the generated code")
                 return False
 
-            # Execute the function on the injected data
-            actual_answer = answer_function(injected_data)
+            # Execute the main function on the injected data
+            actual_answer = main_function(injected_data)
             print(f"Actual answer from code execution: {actual_answer}")
 
             # Create a prompt to check if the answers match

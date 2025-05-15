@@ -652,25 +652,25 @@ class AgentDataGen:
 
                         print(f"Saved injected data to: {injected_path}")
 
-                    # # Test the injected data with questions from answers
-                    # pattern_answers = [
-                    #     ans
-                    #     for ans in patterns.get("answers", [])
-                    #     if ans.get("caused_by_pattern") == patternsID
-                    # ]
+                    # Test the injected data with questions from answers
+                    pattern_answers = [
+                        ans
+                        for ans in patterns.get("answers", [])
+                        if ans.get("caused_by_pattern") == patternsID
+                    ]
 
-                    # for answer_info in pattern_answers:
-                    #     print(f"\nTesting question for pattern {patternsID}:")
-                    #     print(f"Question: {answer_info['question']}")
-                    #     print(
-                    #         f"Expected Answer: {answer_info['answer_after_injection']}"
-                    #     )
-                    #     # Test if the injected pattern maintains the expected answer
-                    #     self.pattern_injector.test_inject(
-                    #         injected_data=injected_data,
-                    #         question=answer_info["question"],
-                    #         expected_answer=answer_info["answer_after_injection"],
-                    #     )
+                    for answer_info in pattern_answers:
+                        # print(f"\nTesting question for pattern {patternsID}:")
+                        print(f"Question: {answer_info['question']}")
+                        print(
+                            f"Expected Answer: {answer_info['answer_after_injection']}"
+                        )
+                        # Test if the injected pattern maintains the expected answer
+                        self.pattern_injector.test_inject(
+                            injected_data=injected_data,
+                            question=answer_info["question"],
+                            expected_answer=answer_info["answer_after_injection"],
+                        )
 
                 # Save pattern codes
                 codes_filename = task.lower().replace(" ", "_") + "_codes.json"
