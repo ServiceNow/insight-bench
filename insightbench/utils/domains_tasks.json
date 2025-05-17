@@ -1,4 +1,140 @@
 {
+    "SKILLS": {
+        "Sentiment Analysis": [
+            "BERT",
+            "LSTM",
+            "Naive Bayes"
+        ],
+        "A/B Testing": [
+            "Student's T-Test",
+            "Multi-Armed Bandit"
+        ],
+        "Forecasting": [
+            "ARIMA",
+            "Prophet",
+            "LSTM"
+        ],
+        "Fraud Detection": [
+            "Random Forest",
+            "Isolation Forest",
+            "Neural Networks"
+        ],
+        "Recommendation Systems": [
+            "Collaborative Filtering",
+            "Matrix Factorization",
+            "Deep Neural Networks"
+        ],
+        "Churn Analysis": [
+            "Gradient Boosting Machines",
+            "Random Forest"
+        ],
+        "Customer Segmentation": [
+            "K-means Clustering",
+            "RFM Analysis",
+            "Hierarchical Clustering"
+        ],
+        "Network Analysis": [
+            "PageRank",
+            "Louvain Method",
+            "Betweenness Centrality"
+        ],
+        "Association Rule Mining": [
+            "Apriori Algorithm",
+            "FP-Growth",
+            "ECLAT"
+        ],
+        "Dashboard Summary": [
+            "KPI Analysis",
+            "Interactive Visualization",
+            "Statistical Aggregation"
+        ],
+        "Predictive Maintenance": [
+            "LSTM",
+            "Random Forest",
+            "Gradient Boosting Machines"
+        ],
+        "Cohort Analysis": [
+            "Retention Analysis",
+            "Sequential Pattern Mining"
+        ],
+        "Attribution Modeling": [
+            "Markov Chains",
+            "Shapley Value Attribution",
+            "Multi-Touch Attribution"
+        ],
+        "Anomaly Detection": [
+            "Isolation Forest",
+            "Local Outlier Factor",
+            "One-Class SVM"
+        ],
+        "Feature Importance Ranking": [
+            "Random Forest Importance",
+            "SHAP Values",
+            "LASSO Regularization"
+        ],
+        "Geospatial Analysis": [
+            "Kernel Density Estimation",
+            "Spatial Autocorrelation",
+            "DBSCAN for Spatial Clustering"
+        ],
+        "Causality": [
+            "Structural Equation Modeling",
+            "Granger Causality",
+            "Propensity Score Matching"
+        ],
+        "Logs Clustering": [
+            "DBSCAN",
+            "LogCluster",
+            "Word2Vec with K-means"
+        ],
+        "Time Series Decomposition": [
+            "Seasonal-Trend Decomposition",
+            "Wavelet Decomposition"
+        ],
+        "Principal Component Analysis": [
+            "SVD",
+            "Eigenvalue Decomposition",
+            "Kernel PCA"
+        ],
+        "Correlation Analysis": [
+            "Pearson Correlation",
+            "Spearman Correlation",
+            "Kendall's Tau"
+        ],
+        "Knowledge Base": [
+            "BERT",
+            "Latent Semantic Analysis",
+            "PageRank"
+        ],
+        "Multi-table Search": [
+            "B+ Tree Indexing",
+            "Hash Join Algorithms",
+            "Bitmap Indexing"
+        ],
+        "Huge Table Analysis": [
+            "MapReduce",
+            "Columnar Storage Processing",
+            "Approximate Query Processing"
+        ],
+        "Topic Modeling": [
+            "Latent Dirichlet Allocation",
+            "Non-negative Matrix Factorization",
+            "Hierarchical Dirichlet Process"
+        ],
+        "Market Analysis": [
+            "Time Series Analysis",
+            "Market Basket Analysis",
+            "K-Means Segmentation"
+        ],
+        "Data Imputation": [
+            "MICE",
+            "KNN Imputation",
+            "Random Forest Imputation"
+        ],
+        "Basic Data Analysis": [
+            "Basic Data Analysis"
+        ]
+    },
     "tasks": [
         "Fraud Detection",
         "Recommendation Systems",

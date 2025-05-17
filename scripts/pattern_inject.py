@@ -39,7 +39,7 @@ class PatternInjector:
                         "benchmark_value": "value to test against"
                     }
                 ],
-                "Answers": [
+                "QA": [
                     {
                         "question": "question text",
                         "answer_after_injection": "answer text",
@@ -61,7 +61,7 @@ class PatternInjector:
         # Find questions specific to this pattern from Answers
         questions = [
             q
-            for q in patterns_dict.get("answers", [])
+            for q in patterns_dict.get("QA", [])
             if q.get("caused_by_pattern") == pattern_id
         ]
 

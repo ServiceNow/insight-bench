@@ -62,22 +62,27 @@ class PatternDesigner:
 
         return json.dumps(summary, indent=2)
 
-    def design_patterns(self, data: pd.DataFrame, task: str) -> Dict[str, List[Dict]]:
+    def design_patterns(
+        self, data: pd.DataFrame, task: str, skills: List[str]
+    ) -> Dict[str, List[Dict]]:
         """Design patterns for each column based on the given analytics task."""
         data_summary = self.analyze_data(data)
         num_questions = 3
 
         prompt = f"""
-        You are a data-centric AI expert designing synthetic data benchmarks to evaluate the reasoning ability of analytics models and agents.
+        You are a data-centric AI expert designing synthetic data benchmarks to evaluate the reasoning ability of analytics models and agents. Your goal is to design 2–3 realistic, global data patterns that can be injected into a dataset to rigorously evaluate reasoning and insight capabilities.
 
-        Given a {data_summary} and {task}, your job is to design **2–3 realistic, global patterns** that alter the dataset in meaningful ways. These patterns should:
+        You are provided with:
+        {data_summary} – a high-level overview of the dataset.
+        {task} – the analytical goal or task to be performed.
+        {skills} – a list of analytical skills required to solve the task.
+       These patterns should:
         - Mimic plausible real-world behaviors or anomalies
         - Interact with the dataset's structure and semantics
         - Affect how key analytical questions are answered
         - Enable robust benchmarking of reasoning and insight extraction
 
         To ensure rigor and alignment, proceed through the following reasoning steps:
-
         ---
 
         ## 🔍 Phase 1: Identify Key Performance Indicators (KPIs)
@@ -89,14 +94,28 @@ class PatternDesigner:
 
         ---
 
-        ## 🧠 Phase 2: Generate Analytical Questions (No Answers Yet)
-        - Given the data summary and KPI, generate {num_questions} specific, quantitative data analytics questions that could be answered using this dataset. Focus on questions related to the {task}. 
-        - Questions must require non-trivial reasoning (e.g., aggregation, filtering, correlations, conditional logic).
-        - Do **not** answer them yet.
-        - For each question, specify:
-          - The question text
-          - The KPI it targets
-          - Which columns are needed to answer it
+        ## 🧠 Phase 2: Generate Analytical Questions (Skill-Guided, No Answers Yet)
+        You are given:
+        - A high-level summary of the dataset
+        - A list of  Key Performance Indicators (KPIs)
+        - An analytics task: **`{task}`** (e.g., time series forecasting, anomaly detection, root cause analysis)
+        - A list of relevant skills and algorithms: {skills} (e.g., ARIMA, k-means, XGBoost, Granger causality)
+
+        Your job is to generate {num_questions} specific, quantitative, and algorithmically sophisticated analytical questions that meet the following criteria:
+
+        Each question must:
+        1. Be directly aligned with the task {task}
+        2. Target a specific KPI from the provided list
+        3. Be non-trivial — requiring more than basic group-by or filtering
+        4. Be answerable using one or more algorithms from the {skills} list. Each question must implicitly or explicitly necessitate the use of that skill.
+
+        ### For each question, return:
+        - The **question text**
+        - The **target KPI**
+        - The **required columns** (from the dataset schema)
+        - Associated skill/algorithm used
+        - Task alignment explanation (how it relates to {task})
+        - Algorithmic reasoning note (why this skill is appropriate or necessary)
 
         ---
 
@@ -110,17 +129,24 @@ class PatternDesigner:
         ---
 
         ## 🔬 Phase 4: Design 2–3 Realistic Global Patterns
-        Each pattern should:
-        - Involve 1 or more of the identified columns
-        - Alter one or more KPIs in a way that causes at least one question's answer to change
-        - simulate a **plausible real-world event, behavior, or trend**, such as:
-          - A delayed effect (e.g., impact of feature A appears later in time)
-          - A conditional behavior (e.g., sales increase only for category X on weekends)
-          - A regime shift (e.g., before and after policy change)
-          - A hidden dependency (e.g., correlations between latent group and outcome)
-          - cross-feature dependencies
-        - regime shifts
-        - temporal or category-driven anomalies
+        Your task is to design **2–3 realistic data-level patterns or behaviors** to inject into the dataset.
+
+        Each pattern must:
+
+        - Involve **one or more of the key columns** identified in Phase 3 (especially those influencing KPIs and questions)
+        - Be directly **relevant to the analytics task `{task}`** (e.g., trend shifts for forecasting, conditional breaks for anomaly detection, etc.)
+        - **Change the answer to at least one of the questions** generated in Phase 2
+        - Be detectable or analyzable using at least one algorithm from {skills}
+        - Simulate a **plausible, real-world phenomenon**, such as:
+          - **Delayed effects** (e.g., KPI changes occur with lag)
+          - **Conditional behavior** (e.g., a trend only applies under certain filters)
+          - **Regime shifts** (e.g., business logic or policy change at a time point)
+          - **Hidden group behavior** (e.g., latent segment drives outcomes)
+          - **Cross-feature interactions** (e.g., product type and time jointly affect behavior)
+          - **Anomalies** (e.g., outliers that break expected patterns)
+
+        Ensure that each pattern is **realistic and data-acquirable** (it must look like something that could exist in a real dataset).
+
 
         ### Phase 5: Explain for Each Pattern:
         - What exactly is the injected pattern?
@@ -130,14 +156,25 @@ class PatternDesigner:
         - Which questions it changes and why
 
 
-        ## 🧾 Phase 6: Post-Injection Answers
-        - Now assume the dataset has been modified using the patterns above.
-        - For each previously generated question, provide a **concise, numerically precise answer** based on the modified data.
-        - Your answer should include:
-          - Concrete values (e.g., counts, averages, rates, percentages) rather than vague statements
-        - For each answer, also indicate:
-          - Which pattern(s) caused the change
-          - How the injected data behavior led to this specific numeric result
+        ## 📊 Phase 6: Generate Insightful, Quantitative Answers Based on Modified Data
+
+        Assume the dataset has been modified using the patterns injected in Phase 4.
+
+        Your task is to revisit each of the previously generated questions and provide a **concise, natural-language answer** based solely on the modified dataset. The answers must sound like quantitative insights produced by a skilled analyst.
+
+        ### 🔹 Direct Answer Requirements:
+        - Express the answer as a **complete, natural-language insight** (not a list or number alone)
+        - Phrase the answer as if explaining to a business stakeholder
+        - Base the answer ** entirely on the modified dataset** (i.e., do not refer to any "change", "increase", or comparison to pre-injection values unless explicitly asked)
+        - Includes **precise numerical values** (e.g., percentages, averages, counts, correlations) wherever possible
+        - Avoids vague statements (e.g., "some improvement", "higher than usual")
+        - Each answer should implicitly require or reflect application of a skill from the provided list (e.g., regression, clustering, causal inference)
+
+
+        ### 🔹 Attribution and Explanation:
+        - For each answer, also specify:
+          - `patterns_triggered`: A list of injected pattern names that influenced the result
+          - `explanation`: A brief 1–2 sentence summary of **how** the pattern affected the data and led to the specific insight
 
 
         ---
@@ -146,8 +183,7 @@ class PatternDesigner:
 
         ```json
         {{
-          "ID": "Unique identifier for the pattern",
-          "data_summary": {data_summary},
+          "ID": "Unique identifier for the file",
           "Analytics task": {task},
           "kpis": [
             {{
@@ -183,7 +219,7 @@ class PatternDesigner:
             {{
               "question": "Question text",
               "answer_after_injection": "Correct answer based on injected data",
-              "caused_by_pattern": "Index or name of the pattern that caused the change"
+              "caused_by_pattern": "Index of the pattern that caused the change"
             }}
           ]
         }}
