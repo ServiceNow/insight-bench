@@ -25,7 +25,7 @@ class PatternInjector:
     def get_inject_codes(self, patterns: str) -> dict:
         """Get the code to inject the pattern into the data.
 
-        Args:
+        Args:in
             patterns: The patterns to inject. It is a json file with the following format:
             {
                 "kpis": [...],
@@ -154,23 +154,51 @@ class PatternInjector:
         print(f"\nTesting question: {question}")
         print(f"Expected answer: {expected_answer}")
 
-        # Create a prompt to generate code that answers the question
+        column_list = list(injected_data.columns)
+        summary_stats = injected_data.describe(include='all', datetime_is_numeric=True).to_string()
+
         prompt = f"""
-        You are a data analysis expert. Your task is to write code that answers the following question about a pandas DataFrame df.
+        You are a data analysis expert. Your task is to **write a Python function** that answers a specific question based on the structure and summary statistics of a pandas DataFrame named `df`. You will **not** be given the full data but will be provided with the **column names**, **summary statistics**, and a **textual description of the data context**.
 
-        Question: {question}
-        Expected Answer: {expected_answer}
-        df: {injected_data}
+        ### Provided Information:
+        - **Question:**  
+        `{question}`
 
-        The DataFrame is named 'df' and contains the data after pattern injection.
-        Write a Python function that:
-        1. Takes the DataFrame as input
-        2. Analyzes the data to answer the question
-        3. Returns the answer in a clear, concise format
+        - **Column Names:**  
+        `{column_list}`
 
-        The code should be self-contained and only use the DataFrame 'df'.
-        Return only the Python code that answers the question, no explanations.
-        The function should be named 'answer_question' and take a pandas DataFrame as input.
+        - **Summary Statistics:**  
+        `{summary_stats}`
+
+        ### Instructions:
+        Please follow this **step-by-step internal reasoning process** before generating the code:
+
+        1. Identify which of the columns in `{column_list}` are directly relevant to the question.
+        2. Determine the type of analysis required (e.g., aggregation, filtering, comparison, conditional logic).
+        3. Ensure the solution is **self-contained**, uses only the provided DataFrame `df`, and does not rely on any uncommon libraries (you can use numpy, pandas, or other common libraries).
+        4. In the end, put all your answers in single string variable `final_answer` and return it.
+        5. Ensure the output **directly answers the question** in a clear, concise format.
+
+        ---
+
+        ### Output Requirements:
+        - Generate a complete **Python function** with the following signature:
+
+        ```python
+        def answer_question(df: pd.DataFrame) -> str:
+        ```
+
+        - The function should:
+        1. Take the DataFrame as input.
+        2. Analyze it based on the given context.
+        3. Return only the **final answer** in a simple and concise format.
+
+        - The code should be self-contained and only use the DataFrame 'df'.
+        - Return only the Python code that answers the question, no explanations.
+        - The function should be named 'answer_question' and take a pandas DataFrame as input.
+        - **Only return the code**, no explanations, comments, or extra text.
+        - **Only return the function and the import statements**. Do not include any other code like making a main function other function or calling the created function.
+        - Include all the necessary imports at the top of the code.
         """
 
         try:
@@ -186,12 +214,13 @@ class PatternInjector:
                 ],
             )
 
-            answer_code = response.choices[0].message.content.strip()
-            match = re.search(r"```python(.*?)```", answer_code, re.DOTALL)
-            if match:
-                answer_code = match.group(1).strip()
+            raw_code = response.choices[0].message.content.strip()
+            match = re.search(r"```python(.*?)```", raw_code, re.DOTALL)
+            code = match.group(1).strip() if match else raw_code.strip()
 
-            # print(f"\nGenerated code to answer the question:\n{answer_code}")
+            code = re.sub(
+                r"^\s*import\s+pandas\s+as\s+pd\s*\n?", "", code, flags=re.MULTILINE
+            )
 
             # Create a namespace to execute the code
             namespace = {}
@@ -202,7 +231,7 @@ import pandas as pd
 import sys
 from io import StringIO
 
-{answer_code}
+{code}
 
 def main(df):
     # Capture stdout
@@ -243,15 +272,25 @@ def main(df):
             Question: {question}
             Expected Answer: {expected_answer}
             Actual Answer: {actual_answer}
+            The function used to answer the question:
+            ```python
+            {code}
+            ```
 
-            Please analyze if the actual answer matches the expected answer.
+            Please analyze if the actual answer and its respective code matches the expected answer.
             Consider:
             1. Are the values numerically equivalent?
             2. Are the units and format consistent?
             3. Are the conclusions or findings the same?
             4. Are there any minor differences that don't affect the meaning?
 
-            Respond with a clear explanation of whether the answers are equivalent, and why.
+            In your resspose, just return a JSON answer with the following format:
+            {
+                "is_equivalent": tree/false,
+                "reasoning": "explanation of why they are equivalent or not"
+            }
+
+            Just return the JSON answer in ```json``` , no other text, code, or explanations.
             """
 
             # Check if the answers match
@@ -267,14 +306,18 @@ def main(df):
             )
 
             validation_result = check_response.choices[0].message.content.strip()
-            print(f"\nValidation result: {validation_result}")
+            match = re.search(r"```json(.*?)```", raw_code, re.DOTALL | re.IGNORECASE)
+            if not match:
+                raise ValueError("No JSON code block found in the response.")
 
-            # Extract the boolean result from the validation
-            is_valid = (
-                "equivalent" in validation_result.lower()
-                or "match" in validation_result.lower()
-            )
-            return is_valid
+            json_str = match.group(1).strip()
+
+            try:
+                result = json.loads(json_str)
+                print(f"Validation result: {result}")
+                return result["is_equivalent"] 
+            except json.JSONDecodeError as e:
+                raise ValueError(f"Failed to parse JSON: {e}")
 
         except Exception as e:
             print(f"Error testing injection: {str(e)}")

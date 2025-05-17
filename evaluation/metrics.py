@@ -1,13 +1,14 @@
 from collections import defaultdict
 import numpy as np
-from insightbench.utils import metrics_utils as mu
-from insightbench.utils import eval_utils as eu
+from evaluation import metrics_utils as mu
+from evaluation import eval_utils as eu
 from tqdm import tqdm
 
 
-def compute_rouge(pred_insights, gt_insights, return_scores=False):
+
+def compute_bleurt_score(pred_insights, gt_insights, return_scores=False):
     """
-    Compute the ROUGE score for a list of predictions and ground truths.
+    Compute the BLEURT score for a list of predictions and ground truths.
 
     Args:
     -----
@@ -16,13 +17,13 @@ def compute_rouge(pred_insights, gt_insights, return_scores=False):
 
     Returns:
     --------
-    score (float): The ROUGE score.
+    score (float): The BLEURT score.
     """
     # Compute the ROUGE score for each prediction and ground truth pair
     score_dict = defaultdict(list)
     for gt_id, gt_insight in enumerate(gt_insights):
         for pred_id, pred_insight in enumerate(pred_insights):
-            score = mu.score_insight(gt_insight, pred_insight, score_name="rouge1")
+            score = mu.score_insight(gt_insight, pred_insight, score_name="bleurt")
             score_dict[gt_id].append(score)
 
     best_pred_ids = [np.argmax(scores) for scores in score_dict.values()]
@@ -37,24 +38,6 @@ def compute_rouge(pred_insights, gt_insights, return_scores=False):
     score = np.mean([score["score"] for score in score_dict])
     return score, score_dict
 
-
-def compute_g_eval_m2m(pred_insights, gt_insights, return_scores=False):
-    """
-    Compute the G-Eval score for a list of predictions and ground truths.
-
-    Args:
-    -----
-    pred_insights (List[str]): The list of predicted insights.
-    gt_insights (List[str]): The list of ground truth insights.
-
-    Returns:
-    --------
-    score (float): The G-Eval score.
-    """
-    # Compute the G-Eval (many-to-many version) score for each prediction and ground truth pair
-    return eu.compute_g_eval_m2m(pred_insights, gt_insights, top_logprobs=5)
-
-
 def compute_g_eval_o2m(pred_insights, gt_insights, return_scores=False):
     """
     Compute the G-Eval score for a list of predictions and ground truths.
@@ -68,7 +51,6 @@ def compute_g_eval_o2m(pred_insights, gt_insights, return_scores=False):
     --------
     score (float): The G-Eval score.
     """
-    # Compute the G-Eval (many-to-many version) score for each prediction and ground truth pair
     # Compute the G-Eval (one-to-many version) score for each prediction and ground truth pair
     scores_list = defaultdict(list)
 
@@ -91,21 +73,6 @@ def compute_g_eval_o2m(pred_insights, gt_insights, return_scores=False):
     score = np.mean([score["score"] for score in score_dict])
     return score, score_dict
 
-
-def compute_llama3_eval_m2m(pred_insights, gt_insights, return_scores=False):
-    """
-    Compute the G-Eval score for a list of predictions and ground truths.
-
-    Args:
-    -----
-    pred_insights (List[str]): The list of predicted insights.
-    gt_insights (List[str]): The list of ground truth insights.
-
-    Returns:
-    --------
-    score (float): The G-Eval score.
-    """
-    return eu.compute_llama3_eval_m2m(pred_insights, gt_insights, top_logprobs=5)
 
 
 def compute_llama3_eval_o2m(pred_insights, gt_insights, return_scores=False):

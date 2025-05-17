@@ -1,0 +1,42 @@
+### Summary of Neural Networks Implementation Template
+
+#### Data Preparation
+1. **Data Loading and Cleaning:**
+   - Load the dataset from a specified URL using `pandas`.
+   - Remove unnecessary columns (e.g., 'Unnamed: 0') from the dataset.
+   - Separate the dataset into input features (`X_train`) and target labels (`y_train`).
+   - Reset the indices of both `X_train` and `y_train` to ensure they are aligned.
+   - Convert the data into NumPy arrays for efficient numerical computations.
+
+#### Model Implementation
+2. **Perceptron Class:**
+   - **Initialization:**
+     - Initialize the input features and labels as NumPy arrays.
+     - Randomly initialize the weights for the model.
+     - Compute the initial dot product of inputs and weights.
+     - Apply the sigmoid activation function to the result.
+   - **Activation Function:**
+     - Implement the sigmoid function to map any real-valued number into the (0, 1) interval.
+     - Implement the derivative of the sigmoid function for use in backpropagation.
+   - **Forward Propagation:**
+     - Calculate the predicted output (`yhat`) by applying the sigmoid function to the dot product of inputs and weights.
+   - **Back Propagation:**
+     - Compute the gradient of the loss function with respect to the weights.
+     - Update the weights by subtracting the gradient to minimize the loss.
+
+#### Visualization
+3. **Plotting Results:**
+   - Implement a function to plot the training history.
+   - Use a line plot to visualize the Mean Squared Error (MSE) over training iterations.
+
+#### Evaluation
+4. **Training and Evaluation:**
+   - Execute the main function to prepare data and initialize the Perceptron model.
+   - Train the model over a specified number of iterations (e.g., 1000).
+   - During each iteration, perform forward and backward propagation.
+   - Record the MSE for each iteration to track the model's performance.
+
+#### Additional Notes
+5. **Future Enhancements:**
+   - Implement functionality to save the trained model and results.
+   - Modify the training process to dynamically determine the number of epochs based on convergence criteria rather than a static number.

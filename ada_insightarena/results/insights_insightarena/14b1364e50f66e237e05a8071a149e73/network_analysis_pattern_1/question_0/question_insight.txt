@@ -1,0 +1,4 @@
+Question: What are the average resolution times for incidents across various categories and priorities?
+Insight: • **Inquiry / Help Delays:** The "Inquiry / Help" category with "3 - Moderate" priority has the highest average resolution time of 8126.32 hours, indicating significant delays potentially due to resource allocation or complexity issues.
+
+• **Efficient Hardware Resolution:** "Hardware" incidents with "3 - Moderate" priority have an exceptionally low average resolution time of 0.03 hours, suggesting highly efficient processes or prioritization strategies for these issues.
