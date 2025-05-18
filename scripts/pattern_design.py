@@ -67,10 +67,10 @@ class PatternDesigner:
     ) -> Dict[str, List[Dict]]:
         """Design patterns for each column based on the given analytics task."""
         data_summary = self.analyze_data(data)
-        num_questions = 50
+        num_questions = 10
 
         prompt = f"""
-        You are a data-centric AI expert designing synthetic data benchmarks to evaluate the reasoning ability of analytics models and agents. Your goal is to design 50 realistic, global data patterns that can be injected into a dataset to rigorously evaluate reasoning and insight capabilities.
+        You are a data-centric AI expert designing synthetic data benchmarks to evaluate the reasoning ability of analytics models and agents. Your goal is to design **5**  realistic, global data patterns that can be injected into a dataset to rigorously evaluate reasoning and insight capabilities.
 
         You are provided with:
         {data_summary} – a high-level overview of the dataset.
@@ -128,8 +128,8 @@ class PatternDesigner:
 
         ---
 
-        ## 🔬 Phase 4: Design 2–3 Realistic Global Patterns
-        Your task is to design **2–3 realistic data-level patterns or behaviors** to inject into the dataset.
+        ## 🔬 Phase 4: Design **5** Realistic Global Patterns
+        Your task is to design **5 diverse realistic data-level patterns or behaviors** to inject into the dataset.
 
         Each pattern must:
 
