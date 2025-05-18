@@ -7,8 +7,9 @@ import pandas as pd
 from insightbench.utils import agent_utils as au
 from insightbench import prompts
 from langchain.schema import HumanMessage, SystemMessage
-from insightbench.utils.metrics_utils import score_insight
-from insightbench import metrics
+
+from evaluation.metrics_utils import score_insight
+from evaluation import metrics
 from PIL import Image
 import pandas as pd
 from typing import Dict, List, Optional
@@ -556,7 +557,7 @@ class AgentDataGen:
         """
         return self.pattern_designer.design_patterns(data, task, skills)
 
-    def generate_all_patterns(
+    def generate_benchmark_dataset(
         self,
         data: pd.DataFrame,
         output_dir: str = "results/Patterns",
@@ -620,7 +621,7 @@ class AgentDataGen:
                     "QA": patterns.get("answers", []),
                 }
                 # Get inject codes for this pattern
-                pattern_code = self.pattern_injector.get_inject_codes(
+                pattern_code, columns_str = self.pattern_injector.get_inject_codes(
                     json.dumps(single_pattern)
                 )
                 pattern_codes.update(pattern_code)
@@ -661,15 +662,64 @@ class AgentDataGen:
                     if ans.get("caused_by_pattern") == patternsID
                 ]
 
-                for answer_info in pattern_answers:
-                    # print(f"\nTesting question for pattern {patternsID}:")
-                    print(f"Question: {answer_info['question']}")
-                    print(f"Expected Answer: {answer_info['answer_after_injection']}")
-                    # Test if the injected pattern maintains the expected answer
-                    self.pattern_injector.test_inject(
-                        injected_data=injected_data,
-                        question=answer_info["question"],
-                        expected_answer=answer_info["answer_after_injection"],
+                max_retries = 3
+                retry_count = 0
+                is_passed = False
+
+                while retry_count < max_retries and not is_passed:
+                    if retry_count > 0:
+                        print(f"\nRetry attempt {retry_count + 1} of {max_retries}")
+                        # Regenerate inject codes
+                        pattern_code, columns_str = (
+                            self.pattern_injector.get_inject_codes(
+                                json.dumps(single_pattern)
+                            )
+                        )
+                        # Reinject patterns
+                        injected_data = self.pattern_injector.inject_patterns(
+                            base_df=self.dataset,
+                            pattern_codes=pattern_code,
+                            hash_id=hash_id,
+                        )
+                        # Save reinjected data
+                        injected_data.to_csv(injected_path, index=False)
+                        print(f"Reinjected and saved data to: {injected_path}")
+
+                    # Test each answer
+                    all_answers_passed = True
+                    for answer_info in pattern_answers:
+                        print(f"Question: {answer_info['question']}")
+                        print(
+                            f"Expected Answer: {answer_info['answer_after_injection']}"
+                        )
+                        # Test if the injected pattern maintains the expected answer
+                        answer_passed = self.pattern_injector.test_inject(
+                            columns_str=columns_str,
+                            injected_data=injected_data,
+                            question=answer_info["question"],
+                            expected_answer=answer_info["answer_after_injection"],
+                            hash_id=hash_id,
+                            pattern_id=patterns.get("ID"),
+                            injected_path=injected_path,
+                        )
+                        if not answer_passed:
+                            all_answers_passed = False
+                            break
+
+                    is_passed = all_answers_passed
+                    retry_count += 1
+
+                # If all retries failed, delete the injected file
+                if not is_passed:
+                    print(
+                        f"\nAll {max_retries} attempts failed. Deleting injected file: {injected_path}"
+                    )
+                    if os.path.exists(injected_path):
+                        os.remove(injected_path)
+                        print(f"Deleted file: {injected_path}")
+                else:
+                    print(
+                        f"\nSuccessfully injected and tested pattern after {retry_count} attempt(s)"
                     )
 
             # Save pattern codes

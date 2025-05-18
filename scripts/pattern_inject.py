@@ -87,34 +87,72 @@ class PatternInjector:
         for column in columns:
             columns_str += f"'{column}\n"
 
-        prompt = f"""
-        You are a highly skilled data scientist. Your task is to reason through a pattern injection task and generate a valid, executable Python function to apply the specified transformation.
+        prompt_template = """
+        You are a highly skilled data scientist. Your task is to carefully reason through a **pattern injection task** and generate a **valid, executable Python function** that modifies the provided DataFrame according to a given transformation specification.
 
-        You are given a pandas DataFrame named `df` with the following columns:
-                    
+        You are provided with a pandas DataFrame named `df` with the following columns:
+
             {columns_str}
 
-        Your goal is to implement a data transformation that introduces the following pattern:
+        Your objective is to **inject a specific pattern** into the dataset such that:
 
         - **Pattern**: {pattern_description}
         - **Reasoning**: {reasoning}
         - **Relevance**: {relevance}
+
+        The pattern must be introduced in a **realistic and data-consistent** way.
+
+        You are also given **question–answer pairs** that must hold true **after** the pattern is injected:
+
         {qa_context}
+        ---
 
-        Please follow this **step-by-step reasoning process** internally before generating code:
-        1. Identify which of the columns in `{columns_str}` are directly involved in the pattern.
-        2. Determine what type of transformation needs to be applied (e.g., numeric shift, conditional flag, group-based anomaly).
-        3. Ensure that the transformation **modifies the data while preserving the answer to the question** in the provided context.
-        4. Choose appropriate Python libraries and operations to implement the transformation.
-        5.  Validate that the logic is self-contained and does not rely on any undefined variables or external dependencies.
-        6. Review the provided questions and answers to ensure your transformation aligns with and maintains the expected behavior.
+       
+        ## 🔍 Step-by-Step Reasoning (Think step-by-step before coding)
 
-        Then, generate a complete **Python function** with the following signature:
+        1. **Understand the Pattern**
+        - Parse the **Pattern** and determine what statistical or structural change is needed.
+        - Identify which column(s) in `{columns_str}` should be modified to reflect this change.
+        Break down what type of transformation is needed:
+        - Is it numeric (e.g., add anomaly, inject trend)?
+        - Is it categorical (e.g., modify class labels)?
+        - Is it temporal (e.g., adjust timestamps)?
+        - Is it group-based, user-based, or global?
+
+        2. **Preserve Answer Validity**
+        - Read and interpret each question and expected answer in the QA context.
+        - Determine how to inject the pattern so that **answers are correct under the transformed dataset**.
+
+        3. **Plan the Injection Logic**
+        - Choose whether to modify, add, or shift rows or values.
+        - Ensure the transformation is realistic (e.g., no nulls unless part of the pattern, maintain types).
+
+        4. **Verify Consistency**
+        - After applying the transformation:
+            - The data should reflect the described pattern.
+            - All questions in the QA context must return the expected answers.
+
+        5. **Write Self-contained Code**
+        - Use only standard pandas, numpy, or datetime libraries.
+        - Do **not** rely on any external variables or undefined data.
+        - Your function should be deterministic and runnable independently.
+
+        ## ✅ Output Format
+
+        Generate a complete, **bug-free** Python function with this signature:
 
         ```python
         def {function_name}(df: pd.DataFrame) -> pd.DataFrame:
-        ```
+
         """
+        prompt = prompt_template.format(
+            columns_str=columns_str,
+            pattern_description=pattern_description,
+            reasoning=reasoning,
+            relevance=relevance,
+            qa_context=qa_context,
+            function_name=function_name,
+        )
 
         response = self.client.chat.completions.create(
             model="gpt-4o",
@@ -136,10 +174,92 @@ class PatternInjector:
             f"Finished getting inject codes for pattern {pattern_id} on columns: {'_'.join(columns)}"
         )
 
-        return output
+        return output, columns_str
+
+    def check_columns_modified(
+        self, preinject_data: pd.DataFrame, injected_data: pd.DataFrame, column_str: str
+    ) -> dict:
+        """Check if the specified columns were modified by comparing pre and post injection statistics.
+
+        Args:
+            preinject_data: DataFrame before pattern injection
+            injected_data: DataFrame after pattern injection
+            column_str: String containing column names to check
+
+        Returns:
+            dict: Dictionary mapping column names to their pass/fail status
+        """
+        # Get the columns to check from column_str
+        columns_to_check = []
+        for line in column_str.split("\n"):
+            if line.strip():
+                # Remove any quotes and whitespace
+                col = line.strip().strip("'").strip('"').strip()
+                if col:  # Only add non-empty strings
+                    columns_to_check.append(col)
+
+        # Validate columns exist in both DataFrames
+        valid_columns = []
+        for col in columns_to_check:
+            if col in preinject_data.columns and col in injected_data.columns:
+                valid_columns.append(col)
+        #     else:
+        #         print(f"Warning: Column '{col}' not found in one or both DataFrames")
+        #         print(f"Available columns: {list(preinject_data.columns)}")
+
+        if not valid_columns:
+            print("Error: No valid columns found to check")
+            return {col: "FAIL" for col in columns_to_check}
+
+        # Get stats for specific columns
+        pre_stats = preinject_data[valid_columns].describe(include="all")
+        post_stats = injected_data[valid_columns].describe(include="all")
+
+        # Compare stats for each column
+        results = {}
+        for col in columns_to_check:
+            if col in columns_to_check:
+                # Compare each statistic
+                is_modified = False
+                # Get available statistics for this column
+                available_stats = pre_stats.index.intersection(post_stats.index)
+                for stat in available_stats:
+                    try:
+                        pre_val = pre_stats.loc[stat, col]
+                        post_val = post_stats.loc[stat, col]
+                        # Handle different types of values
+                        if isinstance(pre_val, (int, float)) and isinstance(
+                            post_val, (int, float)
+                        ):
+                            # For numeric values, check if they're different
+                            if (
+                                abs(pre_val - post_val) > 1e-10
+                            ):  # Using small epsilon for float comparison
+                                is_modified = True
+                                break
+                        else:
+                            # For non-numeric values, use direct comparison
+                            if pre_val != post_val:
+                                is_modified = True
+                                break
+                    except (KeyError, TypeError):
+                        # Skip if statistic is not available for this column
+                        continue
+                results[col] = "PASS" if is_modified else "FAIL"
+            else:
+                results[col] = "FAIL"
+
+        return results
 
     def test_inject(
-        self, injected_data: pd.DataFrame, question: str, expected_answer: str
+        self,
+        columns_str: str,
+        injected_data: pd.DataFrame,
+        question: str,
+        expected_answer: str,
+        hash_id: str = None,
+        pattern_id: str = None,
+        injected_path: str = None,
     ) -> bool:
         """Test if the injected pattern maintains the expected answer to the question.
 
@@ -147,18 +267,95 @@ class PatternInjector:
             injected_data: The data after pattern injection
             question: The question to test
             expected_answer: The expected answer to the question
+            hash_id: The hash ID for saving test results
 
         Returns:
             bool: True if the answer matches the expected answer, False otherwise
         """
         print(f"\nTesting question: {question}")
         print(f"Expected answer: {expected_answer}")
+        Failed_dataset = []
+        preinject_data = pd.read_excel("data/incident.xlsx", sheet_name="incident data")
+
+        print("TEST 1: Are the intended columns modified?")
+        test1_results = self.check_columns_modified(
+            preinject_data, injected_data, columns_str
+        )
+
+        # Create results directory if it doesn't exist
+        os.makedirs("results", exist_ok=True)
+        if hash_id:
+            os.makedirs(f"results/{hash_id}", exist_ok=True)
+
+        # Calculate overall test result
+        modified_columns = sum(
+            1 for status in test1_results.values() if status == "PASS"
+        )
+        overall_result = "PASS" if modified_columns > 0 else "FAIL"
+        print(
+            f"\nOverall Test Result: {overall_result} (Modified columns: {modified_columns})"
+        )
+
+        # Prepare the test result entry
+        test_result = {
+            "pattern_id": pattern_id if "pattern_id" in locals() else "unknown",
+            "question": question,
+            "expected_answer": expected_answer,
+            "injection_results": {
+                "level_1": {
+                    "column_modifications": test1_results,
+                    "summary": {
+                        "total_columns": len(test1_results),
+                        "modified_columns": modified_columns,
+                        "unmodified_columns": sum(
+                            1 for status in test1_results.values() if status == "FAIL"
+                        ),
+                    },
+                    "overall_result": overall_result,
+                }
+            },
+        }
+
+        # Save or append results to JSON file
+        injectoutput_path = (
+            f"results/{hash_id}/Test_inject.json"
+            if hash_id
+            else "results/Test_inject.json"
+        )
+
+        # Load existing results if file exists
+        if os.path.exists(injectoutput_path):
+            with open(injectoutput_path, "r") as f:
+                try:
+                    existing_results = json.load(f)
+                    if not isinstance(existing_results, list):
+                        existing_results = [existing_results]
+                except json.JSONDecodeError:
+                    existing_results = []
+        else:
+            existing_results = []
+
+        # Append new result
+        existing_results.append(test_result)
+
+        # Save updated results
+        with open(injectoutput_path, "w") as f:
+            json.dump(existing_results, f, indent=4)
+
+        # Track failed datasets
+        if overall_result == "FAIL" and injected_path:
+            Failed_dataset.append(injected_path)
+            return False
 
         column_list = list(injected_data.columns)
-        summary_stats = injected_data.describe(include='all', datetime_is_numeric=True).to_string()
+        summary_stats = injected_data.describe(include="all").to_string()
+
+        print("TEST 2: Are the answers modified?")
 
         prompt = f"""
-        You are a data analysis expert. Your task is to **write a Python function** that answers a specific question based on the structure and summary statistics of a pandas DataFrame named `df`. You will **not** be given the full data but will be provided with the **column names**, **summary statistics**, and a **textual description of the data context**.
+        You are a data analysis expert. Your task is to **write a correct and bug-free Python function** that answers a specific question using only the **summary statistics**, **column names**, and **data context** provided for a pandas DataFrame named `df`.
+        You will **not** be given the full data, but you will reason about its structure from metadata and statistics.
+
 
         ### Provided Information:
         - **Question:**  
@@ -170,35 +367,39 @@ class PatternInjector:
         - **Summary Statistics:**  
         `{summary_stats}`
 
-        ### Instructions:
-        Please follow this **step-by-step internal reasoning process** before generating the code:
+        ### 🔍 Internal Step-by-Step Reasoning (Think carefully before coding)
 
-        1. Identify which of the columns in `{column_list}` are directly relevant to the question.
-        2. Determine the type of analysis required (e.g., aggregation, filtering, comparison, conditional logic).
-        3. Ensure the solution is **self-contained**, uses only the provided DataFrame `df`, and does not rely on any uncommon libraries (you can use numpy, pandas, or other common libraries).
-        4. In the end, put all your answers in single string variable `final_answer` and return it.
-        5. Ensure the output **directly answers the question** in a clear, concise format.
+        1. **Understand the Question**
+        - Identify the metric, aggregation, or condition the question is asking about.
+        - Determine whether the question refers to counts, proportions, averages, extremes, logical conditions, etc.
+
+        2. **Identify Relevant Columns**
+        - Examine which columns in `{column_list}` are directly involved in answering the question.
+        - Use summary statistics to infer possible column types (numeric, categorical, datetime).
+
+        3. **Design the Computation Logic**
+        - Based on `{summary_stats}`, estimate what operations will lead to the correct answer:
+            - Aggregation (e.g., mean, sum, count)
+            - Filtering (e.g., rows matching a condition)
+            - Grouping or comparison across categories
+        - Make conservative assumptions from the statistics — never use columns or values not mentioned.
+
+        4. **Write Clean, Self-Contained Code**
+        - Use only pandas and numpy.
+        - Do not make assumptions about external data or hardcoded values.
+        - Assume that `df` conforms to the described schema and statistics.
+
+        5. **Produce a Valid Return Value**
+        - Assign the result to a variable `final_answer` (as a string) and return it.
+        - Make sure `final_answer` answers the question **precisely and concisely** (e.g., `"42"`, `"Yes"`, `"25.3%"`).
 
         ---
+       ### ✅ Output Instructions:
 
-        ### Output Requirements:
-        - Generate a complete **Python function** with the following signature:
+        Generate a complete Python function with the following signature:
 
         ```python
         def answer_question(df: pd.DataFrame) -> str:
-        ```
-
-        - The function should:
-        1. Take the DataFrame as input.
-        2. Analyze it based on the given context.
-        3. Return only the **final answer** in a simple and concise format.
-
-        - The code should be self-contained and only use the DataFrame 'df'.
-        - Return only the Python code that answers the question, no explanations.
-        - The function should be named 'answer_question' and take a pandas DataFrame as input.
-        - **Only return the code**, no explanations, comments, or extra text.
-        - **Only return the function and the import statements**. Do not include any other code like making a main function other function or calling the created function.
-        - Include all the necessary imports at the top of the code.
         """
 
         try:
@@ -251,46 +452,154 @@ def main(df):
     return output if output else result
 """
 
-            # Execute the code to define the function
-            exec(full_code, namespace)
+            # Retry logic for code execution
+            max_code_retries = 3
+            code_retry_count = 0
+            code_execution_success = False
+            actual_answer = None
 
-            # Get the main function from the namespace
-            main_function = namespace.get("main")
+            while code_retry_count < max_code_retries and not code_execution_success:
+                try:
+                    if code_retry_count > 0:
+                        print(
+                            f"\nRetrying code execution (attempt {code_retry_count + 1} of {max_code_retries})"
+                        )
+                        # Regenerate code with error information
+                        error_prompt = f"""
+                        Previous code failed with error: {str(last_error)}
+                        Please fix the following code to handle the error:
+                        {code}
+                        """
 
-            if main_function is None:
-                print("Error: Could not find main function in the generated code")
-                return False
+                        response = self.client.chat.completions.create(
+                            model="gpt-4o",
+                            messages=[
+                                {
+                                    "role": "system",
+                                    "content": "You are a data analysis coding expert. Your task is to fix the code that failed with the given error. Always respond with valid Python Code.",
+                                },
+                                {"role": "user", "content": error_prompt},
+                            ],
+                        )
 
-            # Execute the main function on the injected data
-            actual_answer = main_function(injected_data)
-            print(f"Actual answer from code execution: {actual_answer}")
+                        # Update the code with the fixed version
+                        fixed_code = response.choices[0].message.content.strip()
+                        match = re.search(r"```python(.*?)```", fixed_code, re.DOTALL)
+                        if match:
+                            fixed_code = match.group(1).strip()
+
+                        # Update full_code with the fixed version
+                        full_code = f"""
+import pandas as pd
+import sys
+from io import StringIO
+
+{fixed_code}
+
+def main(df):
+    # Capture stdout
+    old_stdout = sys.stdout
+    sys.stdout = mystdout = StringIO()
+    
+    # Execute the function
+    result = answer_question(df)
+    
+    # Restore stdout
+    sys.stdout = old_stdout
+    
+    # Get the output
+    output = mystdout.getvalue().strip()
+    
+    # If there was printed output, use that, otherwise use the return value
+    return output if output else result
+"""
+
+                    # Execute the code to define the function
+                    exec(full_code, namespace)
+
+                    # Get the main function from the namespace
+                    main_function = namespace.get("main")
+
+                    if main_function is None:
+                        raise ValueError(
+                            "Could not find main function in the generated code"
+                        )
+
+                    # Execute the main function on the injected data
+                    actual_answer = main_function(injected_data)
+                    preinject_answer = main_function(preinject_data)
+                    code_execution_success = True
+
+                except Exception as e:
+                    last_error = e
+                    code_retry_count += 1
+                    print(
+                        f"Error in code execution (attempt {code_retry_count}/{max_code_retries}): {str(e)}"
+                    )
+
+                    if code_retry_count == max_code_retries:
+                        print(
+                            f"Failed to execute code after {max_code_retries} attempts"
+                        )
+                        break
+
+            # if not code_execution_success:
+            #     return False
 
             # Create a prompt to check if the answers match
             check_prompt = f"""
-            You are a data analysis expert. Your task is to determine if two answers to a data analysis question are equivalent.
+            You are a senior data analysis expert. Your task is to evaluate whether two answers to a data analysis question convey the same underlying insight, and whether a pattern injection successfully changed the answer's meaning.
 
-            Question: {question}
-            Expected Answer: {expected_answer}
-            Actual Answer: {actual_answer}
-            The function used to answer the question:
+            ---
+
+            ## 🔍 Input Context
+
+            - **Question**:  
+            {question}
+
+            - **Expected Answer (Post-injection Ground Truth)**:  
+            {expected_answer}
+
+            - **Actual Answer (Produced by the model/code)**:  
+            {actual_answer}
+
+            - **Pre-injection Answer (Original before data was modified)**:  
+            {preinject_answer}
+
+            - **Code used to produce Actual Answer**:
             ```python
             {code}
-            ```
 
-            Please analyze if the actual answer and its respective code matches the expected answer.
-            Consider:
-            1. Are the values numerically equivalent?
-            2. Are the units and format consistent?
-            3. Are the conclusions or findings the same?
-            4. Are there any minor differences that don't affect the meaning?
+            🧠 Step-by-Step Evaluation Criteria
+            Step 1: "Expected vs Actual Answer"
+            Focus on patterns, trends, and relationships expressed in the answer (e.g., X > Y, positive correlation, delay exists, drop in frequency).
 
-            In your resspose, just return a JSON answer with the following format:
-            {
-                "is_equivalent": tree/false,
-                "reasoning": "explanation of why they are equivalent or not"
-            }
+            Consider the answers "Similar" if:
 
-            Just return the JSON answer in ```json``` , no other text, code, or explanations.
+            They reflect the same analytical conclusion or pattern (e.g., "X takes longer than Y")
+
+            Even if specific numbers or stylistic commentary are different or missing
+
+            Consider them "Different" only if:
+
+            The core insight, trend, or relationship has changed
+
+            The actual answer implies a contradictory or unrelated conclusion
+
+            Step 2: "Pre-injection vs Actual Answer"
+            These should be Different — i.e., the Actual answer should reflect a change due to the injected pattern.
+
+            If Actual and Pre-injection express the same pattern or conclusion, mark as "Similar" (indicating the injection failed).
+
+            If the pattern or conclusion has shifted (e.g., from X < Y → X > Y), mark as "Different".
+
+            Return your evaluation in strict JSON format inside a json code block. Provide a step-by-step explanation for each judgment. Here is the format:
+            {{
+            "Expected vs Actual Answer": "Similar" or "Different",
+            "Pre-injection vs Actual Answer": "Similar" or "Different",
+            "reasoning": "Provide a short step-by-step explanation. Justify both comparisons using values or insights from the answers."
+            }}
+            ⚠️ Only return the JSON block. Do not include any extra explanation, markdown, or surrounding text.
             """
 
             # Check if the answers match
@@ -306,16 +615,67 @@ def main(df):
             )
 
             validation_result = check_response.choices[0].message.content.strip()
-            match = re.search(r"```json(.*?)```", raw_code, re.DOTALL | re.IGNORECASE)
+            match = re.search(
+                r"```json(.*?)```", validation_result, re.DOTALL | re.IGNORECASE
+            )
             if not match:
                 raise ValueError("No JSON code block found in the response.")
 
             json_str = match.group(1).strip()
 
             try:
-                result = json.loads(json_str)
-                print(f"Validation result: {result}")
-                return result["is_equivalent"] 
+                validation_data = json.loads(json_str)
+
+                # Update test_result with Test 2 results
+                test_result["injection_results"]["level_2"] = {
+                    "pre_injection_answer": preinject_answer,
+                    "actual_answer": actual_answer,
+                    "validation": validation_data,
+                    "overall_result": (
+                        "PASS"
+                        if validation_data["Expected vs Actual Answer"] == "Similar"
+                        or validation_data["Pre-injection vs Actual Answer"]
+                        == "Different"
+                        else "FAIL"
+                    ),
+                }
+                print(f"Test 2 results: {test_result['injection_results']['level_2']}")
+
+                # Save or append results to JSON file
+                injectoutput_path = (
+                    f"results/{hash_id}/Test_inject.json"
+                    if hash_id
+                    else "results/Test_inject.json"
+                )
+
+                # Load existing results if file exists
+                if os.path.exists(injectoutput_path):
+                    with open(injectoutput_path, "r") as f:
+                        try:
+                            existing_results = json.load(f)
+                            if not isinstance(existing_results, list):
+                                existing_results = [existing_results]
+                        except json.JSONDecodeError:
+                            existing_results = []
+                else:
+                    existing_results = []
+
+                # Append new result
+                existing_results.append(test_result)
+
+                # Save updated results
+                with open(injectoutput_path, "w") as f:
+                    json.dump(existing_results, f, indent=4)
+
+                # Return False if Test 2 failed
+                if (
+                    test_result["injection_results"]["level_2"]["overall_result"]
+                    == "FAIL"
+                ):
+                    return False
+
+                return True
+
             except json.JSONDecodeError as e:
                 raise ValueError(f"Failed to parse JSON: {e}")
 

@@ -1,8 +1,9 @@
 import os
 import pandas as pd
 from insightbench.utils.agent_utils import analysis_nb_to_gt
-from insightbench.utils.metrics_utils import score_insight
-from insightbench import metrics
+
+from evaluation.metrics_utils import score_insight
+from evaluation import metrics
 import nbformat, re, json
 
 
@@ -164,6 +165,8 @@ def evaluate_insights(pred_insights, gt_insights, score_name="rouge1"):
 
 
 def evaluate_summary(pred, gt, score_name="rouge1"):
-    score_summary = score_insight(pred_insight=pred, gt_insight=gt, score_name=score_name)
+    score_summary = score_insight(
+        pred_insight=pred, gt_insight=gt, score_name=score_name
+    )
 
     return score_summary

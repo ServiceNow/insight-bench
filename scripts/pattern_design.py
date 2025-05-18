@@ -67,10 +67,10 @@ class PatternDesigner:
     ) -> Dict[str, List[Dict]]:
         """Design patterns for each column based on the given analytics task."""
         data_summary = self.analyze_data(data)
-        num_questions = 3
+        num_questions = 50
 
         prompt = f"""
-        You are a data-centric AI expert designing synthetic data benchmarks to evaluate the reasoning ability of analytics models and agents. Your goal is to design 2–3 realistic, global data patterns that can be injected into a dataset to rigorously evaluate reasoning and insight capabilities.
+        You are a data-centric AI expert designing synthetic data benchmarks to evaluate the reasoning ability of analytics models and agents. Your goal is to design 50 realistic, global data patterns that can be injected into a dataset to rigorously evaluate reasoning and insight capabilities.
 
         You are provided with:
         {data_summary} – a high-level overview of the dataset.
@@ -170,12 +170,16 @@ class PatternDesigner:
         - Avoids vague statements (e.g., "some improvement", "higher than usual")
         - Each answer should implicitly require or reflect application of a skill from the provided list (e.g., regression, clustering, causal inference)
 
+      ### 🔸 Make the Pattern Effect Visibly Dominant:
+
+      - Choose **extreme, yet realistic** values that make the effect of the injected pattern highly visible and unambiguous.
+      - For example, if the expected rate could plausibly be 20%, modify the data so the answer becomes something like **60% or higher**, not just 22%
+      - Ensure the values remain **plausible within the dataset's structure** (e.g., not breaking column ranges, types, or distributions completely).
 
         ### 🔹 Attribution and Explanation:
         - For each answer, also specify:
           - `patterns_triggered`: A list of injected pattern names that influenced the result
           - `explanation`: A brief 1–2 sentence summary of **how** the pattern affected the data and led to the specific insight
-
 
         ---
 

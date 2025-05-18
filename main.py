@@ -58,7 +58,7 @@ def main(exp_dict, savedir, args):
             incident_data[col] = incident_data[col].dt.strftime("%Y-%m-%d %H:%M:%S")
 
     # Generate patterns for all tasks
-    pattern_agent.generate_all_patterns(
+    pattern_agent.generate_benchmark_dataset(
         data=incident_data,
         output_dir=os.path.join(savedir, "patterns"),
         hash_id=hash_id,
@@ -98,7 +98,9 @@ def main(exp_dict, savedir, args):
                 )
 
             pred_insights, pred_summary = agent.get_insights(
-                dataset_csv_path=dataset_csv_path, user_dataset_csv_path=None, task=task
+                dataset_csv_path=dataset_csv_path,
+                user_dataset_csv_path=None,
+                task=task,
             )
 
             # Evaluate
