@@ -56,15 +56,19 @@ def extract_notebook_info(notebook_path):
     # Process each cell
     for cell in nb.cells:
         # Look for metadata in markdown cells containing "Dataset Description"
-        if cell.cell_type == "markdown" and "Dataset Description" in cell.source:
+        if cell.cell_type == "markdown" and (
+            "Dataset Description" in cell.source or "Dataset Overview" in cell.source
+        ):
             content = cell.source
 
             # More flexible patterns for all metadata fields
             goal_match = re.search(
-                r"Goal[\s\*]*:[:\s]*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
+                r"(Goal|Objective)[\s\*]*:[:\s]*(.*?)(?=\n\n|\n\*\*|\*\*|$)",
+                content,
+                re.IGNORECASE,
             )
             if goal_match:
-                metadata["goal"] = goal_match.group(1).strip()
+                metadata["goal"] = goal_match.group(2).strip()
 
             role_match = re.search(
                 r"Role[\s\*]*:[:\s]*(.*?)(?=\n\n|\n\*\*|\*\*|$)", content, re.IGNORECASE
@@ -82,7 +86,7 @@ def extract_notebook_info(notebook_path):
 
             # More flexible dataset description pattern
             desc_match = re.search(
-                r"(?:###\s*Dataset Description|Dataset Description:?)\s*(.*?)(?=\n\n(?:\*\*|###)|$)",
+                r"(?:###\s*Dataset Description|Dataset Description|Dataset Overview:?)\s*(.*?)(?=\n\n(?:\*\*|###)|$)",
                 content,
                 re.IGNORECASE | re.DOTALL,
             )
@@ -164,6 +168,8 @@ def evaluate_insights(pred_insights, gt_insights, score_name="rouge1"):
 
 
 def evaluate_summary(pred, gt, score_name="rouge1"):
-    score_summary = score_insight(pred_insight=pred, gt_insight=gt, score_name=score_name)
+    score_summary = score_insight(
+        pred_insight=pred, gt_insight=gt, score_name=score_name
+    )
 
     return score_summary

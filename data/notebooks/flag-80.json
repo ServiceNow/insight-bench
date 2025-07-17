@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-80.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Examine the extended timelines of 'Cost Efficiency' objectives within the Finance department to identify root causes and propose strategies for improving the management of these objectives.",
+        "role": "Strategic Objectives Analyst",
+        "category": "Goal Management",
+        "dataset_description": "This dataset includes 500 entries simulating the ServiceNow `sn_gf_goal` table, which encompasses various attributes related to organizational objectives. These attributes cover goal status, responsible individuals, departmental association, start and end periods, and detailed descriptions. The dataset also includes metrics such as priority level, completion percentage, and target achievement rate. The primary focus is on monitoring and managing both departmental and individual objectives, providing insights into the effectiveness of these goals and their alignment with overall organizational strategies. Additionally, the dataset records updates to each objective, offering a historical log of changes and the identities of those responsible for these updates.",
+        "header": "Departmental Objective Monitoring and Evaluation (Flag 80)"
     },
     "insight_list": [
         {

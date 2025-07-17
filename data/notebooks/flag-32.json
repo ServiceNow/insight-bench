@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-32.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Investigate the extended durations of 'Cost Reduction' goals within the Finance department to uncover root causes and recommend strategies for improving goal management efficiency.",
+        "role": "Organizational Strategy Analyst",
+        "category": "Strategic Goal Management",
+        "dataset_description": "This dataset contains 500 records representing a simulated ServiceNow `sn_gf_goal` table, which captures various attributes associated with organizational objectives. These attributes encompass goal status, responsible party, department affiliation, start and end timelines, and detailed descriptions. Metrics such as priority, completion percentage, and target achievement percentage are also included. The primary focus of this data is on tracking and managing both departmental and individual goals, offering insights into the effectiveness of these goals and their alignment with the organization's broader strategies. Additionally, the table logs updates to each goal, providing a historical record of changes and the identities of those making the updates.",
+        "header": "Departmental Goal Tracking and Analysis (Flag 32)"
     },
     "insight_list": [
         {

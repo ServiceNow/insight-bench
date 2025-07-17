@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "comparative",
-            "insight": "There are disproportionately high rejection rates for Travel expenses",
+            "insight": "Disproportionately High Rejection Rates for Travel Expenses",
             "insight_value": {
                 "description": "Travel expenses are rejected at a significantly higher rate than other categories, indicating potential issues with how these expenses are understood or submitted."
             },
@@ -46,7 +46,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There is a variable distribution of Expense Reports across categories",
+            "insight": "Variable Distribution of Expense Reports Across Categories",
             "insight_value": {
                 "description": "While Travel expenses are frequently rejected, they are not the most submitted category. Assets category dominates the submission volume."
             },
@@ -81,8 +81,8 @@
         }
     ],
     "insights": [
-        "There are disproportionately high rejection rates for Travel expenses",
-        "There is a variable distribution of Expense Reports across categories"
+        "Disproportionately High Rejection Rates for Travel Expenses",
+        "Variable Distribution of Expense Reports Across Categories"
     ],
     "summary": "\n\n1. **Trend in Expense Rejections**: This analysis focuses on the 'Travel' category within the organization's expense reports, which has been observed to have higher rejection rates compared to other expense categories. \n   \n2. **Understanding Compliance Issues**: The data is essential for pinpointing lapses in policy compliance or misunderstandings about allowable expenses within the Travel category, which is crucial for managing financial resources effectively.\n   \n3. **Enhancing Policy Adherence**: By analyzing the patterns and reasons behind the rejections, the dataset serves as a foundation for modifying training or revising guidelines to improve compliance and reduce financial wastage."
 }

@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-39.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Examine how the cost of an expense impacts its processing time, with the goal of improving the efficiency and equity of expense report processing across all cost levels.",
+        "role": "Financial Operations Analyst",
+        "category": "Finance Management",
+        "dataset_description": "This dataset comprises 500 simulated entries from the ServiceNow `fm_expense_line` table, which tracks various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. The table provides a comprehensive record of financial transactions, capturing the expense amount, departmental allocation, and the nature of each expense. It offers a detailed view of organizational expenditures across various categories, highlighting both the timing and the approval status of each financial entry.",
+        "header": "Analysis of Expense Processing Dynamics (Flag 39)"
     },
     "insight_list": [
         {

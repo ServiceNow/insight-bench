@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "comparative",
-            "insight": "Cost reduction goals achieve significantly higher success rates compared to other categories",
+            "insight": "Cost Reduction goals achieve significantly higher success rates compared to other categories",
             "insight_value": {
                 "Cost Reduction": "82%",
                 "Customer Satisfaction": "24%",
@@ -40,7 +40,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "Unusually high success rates for low and medium priority 'Cost Reduction' goals compared to High and Critical",
+            "insight": "Unusually high success rates for Low and Medium priority 'Cost Reduction' goals compared to High and Critical",
             "insight_value": {
                 "Low": "87.3%",
                 "Medium": "91.5%",
@@ -128,8 +128,8 @@
         }
     ],
     "insights": [
-        "Cost reduction goals achieve significantly higher success rates compared to other categories",
-        "Unusually high success rates for low and medium priority 'Cost Reduction' goals compared to High and Critical",
+        "Cost Reduction goals achieve significantly higher success rates compared to other categories",
+        "Unusually high success rates for Low and Medium priority 'Cost Reduction' goals compared to High and Critical",
         "Widespread high success rates for Low and Medium priority goals across all categories",
         "Higher number of Low and Medium priority goals in 'Cost Reduction' compared to other categories"
     ],

@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "There is a linear Increase in TTR for Hardware incidents suspiciously from a particular time period",
+            "insight": "Linear Increase in TTR for Hardware incidents suspiciously from a particular time period",
             "insight_value": {
                 "x_val": "Anomaly Periods",
                 "y_val": "Increased TTR from 2023-07"
@@ -37,7 +37,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There are fluctuations in incident frequencies across categories and Hardware incidents suddenly increased from 2023-06 to 2023-08",
+            "insight": "Fluctuations observed in incident frequencies across categories and Increased Hardware incidents from 2023-06 to 2023-08",
             "insight_value": {
                 "x_val": "Time",
                 "y_val": "Incident Count"
@@ -63,7 +63,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There are specific time windows with elevated Hardware incidents",
+            "insight": "Specific time windows with elevated Hardware incidents identified",
             "insight_value": {
                 "x_val": "Time Window",
                 "y_val": "47, 43"
@@ -111,7 +111,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There is an increase in TTR for Hardware incidents during anomaly periods",
+            "insight": "Increase in TTR for Hardware incidents during anomaly periods",
             "insight_value": {
                 "x_val": "Anomaly Periods",
                 "y_val": "Increased TTR"
@@ -166,11 +166,11 @@
         }
     ],
     "insights": [
-        "There is a linear Increase in TTR for Hardware incidents suspiciously from a particular time period",
-        "There are fluctuations in incident frequencies across categories and Hardware incidents suddenly increased from 2023-06 to 2023-08",
-        "There are specific time windows with elevated Hardware incidents",
+        "Linear Increase in TTR for Hardware incidents suspiciously from a particular time period",
+        "Fluctuations observed in incident frequencies across categories and Increased Hardware incidents from 2023-06 to 2023-08",
+        "Specific time windows with elevated Hardware incidents identified",
         "Hardware incidents predominantly occur in Australia during spikes from 2023-06 to 2023-08",
-        "There is an increase in TTR for Hardware incidents during anomaly periods",
+        "Increase in TTR for Hardware incidents during anomaly periods",
         "Specific system outage types identified as problematic during anomalies"
     ],
     "summary": "\n\n1. **Increasing Trend in Resolution Time**: There is a noticeable linear increase in the Time to Resolution (TTR) for incidents within the Hardware category, starting from a specific date 2023-07-01. This trend suggests challenges in resolving these incidents efficiently.\n2. **Cause of Increased TTR**: The linear increase in TTR coincides with an increase in the volume of hardware incidents. where there is spike number of hardware incidents between July and August months in 2023. This surge may be attributed to factors such as new hardware deployments, software updates, or external influences like peak usage times and increased demand.\n3. **Location of the spikes**: Hardware incidents predominantly occur in Australia during spikes from 2023-06 to 2023-08.\n4. **Reason and Impact Assessment**: The growing frequency and prolonged resolution times of hardware incidents is mostly due to email server outage issue and could strain resources and affect overall service delivery, highlighting the need for adjustment and repairs."

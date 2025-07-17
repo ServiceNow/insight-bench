@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "There is a significant variance in Expense Rejection Rates across departments",
+            "insight": "Significant Variance in Expense Rejection Rates Across Departments",
             "insight_value": {
                 "description": "The IT department exhibits a notably higher proportion of expense rejections compared to other departments with 44%, indicating potential issues with budget compliance or policy understanding."
             },
@@ -52,7 +52,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There is no correlation between the number of expense reports submitted and rejection rates",
+            "insight": "No Correlation Between the Number of Expense Reports Submitted and Rejection Rates",
             "insight_value": {
                 "description": "Despite having a lower volume of expense submissions, the IT department has the highest rejection rate, while departments with higher submission volumes like Customer Support exhibit lower rejection rates."
             },
@@ -93,7 +93,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a concentration of Declined Expenses among specific users in IT Department",
+            "insight": "Concentration of Declined Expenses Among Specific Users in IT Department",
             "insight_value": {
                 "description": "Helene Iberg and Vernon Engelman each have 7 declined expense requests, significantly higher compared to other IT department members who have atleast one rejection, indicating potential issues with how expenses are submitted or understood by these individuals and the whole department."
             },
@@ -122,9 +122,9 @@
         }
     ],
     "insights": [
-        "There is a significant variance in Expense Rejection Rates across departments",
-        "There is no correlation between the number of expense reports submitted and rejection rates",
-        "There is a concentration of Declined Expenses among specific users in IT Department"
+        "Significant Variance in Expense Rejection Rates Across Departments",
+        "No Correlation Between the Number of Expense Reports Submitted and Rejection Rates",
+        "Concentration of Declined Expenses Among Specific Users in IT Department"
     ],
     "summary": "\n\n1. **Expense Approval Trends**: This dataset provides an in-depth look at the patterns of expense rejections across various departments, which will be analyzed to uncover possible inconsistencies in budget compliance or policy adherence.\n   \n2. **Departmental Disparities**: It specifically focuses on identifying the departments that frequently encounter a higher proportion of expense rejections, suggesting potential issues in the understanding or application of financial management policies.\n   \n3. **Process Optimization**: The analysis aims to explore underlying factors that contribute to these discrepancies, offering insights that could help in refining expense approval processes and training programs."
 }

@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "One agent, Fred Luddy, is assigned significantly more incidents than others",
+            "insight": "One agent is assigned significantly more incidents than others",
             "insight_value": {
                 "agent": "Agent_X",
                 "incidents_assigned": 385
@@ -35,7 +35,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There is a specific agent, Fred Luddy, who is assigned significantly more incidents than others",
+            "insight": "There is a specific agent who is assigned significantly more incidents than others",
             "insight_value": {
                 "agent": "Fred Luddy",
                 "incidents_assigned": 385
@@ -46,7 +46,7 @@
         },
         {
             "data_type": "time_series",
-            "insight": "The number of assignments for Fred Luddy is unbalanced throughout the whole time period",
+            "insight": "The number of assignments for a specific agent is pretty unbalanced from the beginning of the time",
             "insight_value": {
                 "agent": "Fred",
                 "trend": "high increase compared to others roughly 9 times more"
@@ -70,9 +70,9 @@
         }
     ],
     "insights": [
-        "One agent, Fred Luddy, is assigned significantly more incidents than others",
-        "There is a specific agent, Fred Luddy, who is assigned significantly more incidents than others",
-        "The number of assignments for Fred Luddy is unbalanced throughout the whole time period"
+        "One agent is assigned significantly more incidents than others",
+        "There is a specific agent who is assigned significantly more incidents than others",
+        "The number of assignments for a specific agent is pretty unbalanced from the beginning of the time"
     ],
     "summary": "\nThis dataset analysis aims to identify and understand the underlying trends and biases in task assignments to agents. \n\n1. **Imbalance in Incident Assignments:** The distribution of incident assignments among agents is highly imbalanced. Fred, one agent, handles about 75% of all tasks, which is a significantly disproportionate share compared to other agents.\n\n2. **Persistent Disparity Over Time:** Analysis of the trends over time shows that this imbalance is not a temporary issue but has been consistently present. Fred's assignment load has been significantly higher than that of other agents from the start of the recorded data.\n\n3. **Need for Redistribution of Workload:** The heavy imbalance in assignments suggests that operational adjustments are necessary to redistribute tasks more equitably among agents. This would help prevent potential burnout for Fred and ensure that all agents are utilized effectively."
 }

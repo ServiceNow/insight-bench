@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "The Hardware incidents is significantly higher in volume than others",
+            "insight": "hardware incidents is significantly higher than others",
             "insight_value": {
                 "x_val": "Hardware",
                 "y_val": 335
@@ -49,7 +49,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "Specific hardware issues related to Printer Malfunctioning are predominantly mentioned in incident descriptions",
+            "insight": "Specific hardware issues related Printer Malfucntioning are predominantly mentioned in incident descriptions",
             "insight_value": {
                 "category": "Hardware",
                 "common_words": [
@@ -213,8 +213,8 @@
         }
     ],
     "insights": [
-        "The Hardware incidents is significantly higher in volume than others",
-        "Specific hardware issues related to Printer Malfunctioning are predominantly mentioned in incident descriptions",
+        "hardware incidents is significantly higher than others",
+        "Specific hardware issues related Printer Malfucntioning are predominantly mentioned in incident descriptions",
         "Most of the hardware incidents are related to printer issues",
         "Most of the hardware incidents are occurring in the Australia location",
         "There is not a significant increase in hardware incidents over time, it is relatively stable and higher than others.",

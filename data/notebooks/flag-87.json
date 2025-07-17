@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-87.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Investigate the factors leading to quicker expense processing times within a specific department and assess whether these practices can be implemented to enhance efficiency across all departments.",
+        "role": "Operational Efficiency Analyst",
+        "category": "Finance Management",
+        "dataset_description": "This dataset contains 500 simulated entries from the ServiceNow `fm_expense_line` table, which captures various details of financial expenses. Key attributes include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. The table provides a comprehensive record of financial transactions, detailing the amount, departmental allocation, and nature of each expense. It offers a clear view of organizational expenditures across different categories, highlighting the timing and approval status of each financial entry.",
+        "header": "Analysis of Expense Processing Times (Flag 87)"
     },
     "insight_list": [
         {

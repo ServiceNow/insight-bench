@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "analytical",
-            "insight": "There are significantly shorter goal durations in the finance department compared to HR, Marketing, and IT",
+            "insight": "Significantly shorter goal durations in the Finance department compared to HR, Marketing, and IT",
             "insight_value": {
                 "Finance": "57.0 days",
                 "HR": "165.2 days",
@@ -40,7 +40,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a dominance of 'Cost Reduction' goals within the Finance department",
+            "insight": "Dominance of 'Cost Reduction' goals within the Finance department",
             "insight_value": {
                 "Cost Reduction": "50.7%",
                 "Revenue Growth": "14.1%",
@@ -69,7 +69,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a uniform distribution of goal priorities in the Finance department",
+            "insight": "Uniform distribution of goal priorities in the Finance department",
             "insight_value": {
                 "Critical": "23.9%",
                 "High": "24.4%",
@@ -97,7 +97,7 @@
         },
         {
             "data_type": "analytical",
-            "insight": "The cost reduction goals have significantly shorter average durations compared to other categories",
+            "insight": "Cost Reduction goals have significantly shorter average durations compared to other categories",
             "insight_value": {
                 "Most Prominent Value": "Cost Reduction goals average 33.8 days",
                 "Next Closest Category": "Employee Satisfaction at 178.3 days"
@@ -123,10 +123,10 @@
         }
     ],
     "insights": [
-        "There are significantly shorter goal durations in the finance department compared to HR, Marketing, and IT",
-        "There is a dominance of 'Cost Reduction' goals within the Finance department",
-        "There is a uniform distribution of goal priorities in the Finance department",
-        "The cost reduction goals have significantly shorter average durations compared to other categories"
+        "Significantly shorter goal durations in the Finance department compared to HR, Marketing, and IT",
+        "Dominance of 'Cost Reduction' goals within the Finance department",
+        "Uniform distribution of goal priorities in the Finance department",
+        "Cost Reduction goals have significantly shorter average durations compared to other categories"
     ],
     "summary": "\n\n1. **Efficiency in Goal Completion**: This dataset highlights an anomaly where 'Cost Reduction' goals across the organization, especially within the Finance department, are completed in notably shorter durations compared to other departments such as HR, Marketing, and IT.\n   \n2. **Concentration of Goals in Finance**: The Finance department not only hosts a higher count of 'Cost Reduction' goals but also completes these goals significantly quicker. This suggests a focused and efficient approach to achieving financial efficiency goals within the department.\n   \n3. **Uniform Goal Prioritization**: Despite the variance in completion time, the distribution of goal priorities within the Finance department remains uniform, indicating a consistent operational strategy across different priority levels."
 }

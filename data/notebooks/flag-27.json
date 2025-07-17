@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "There is a disparity in Managerial Distribution across departments",
+            "insight": "Disparity in Managerial Distribution Across Departments",
             "insight_value": {
                 "description": "The IT department is markedly understaffed in terms of managerial positions, having only 2 managers, whereas departments such as Sales, Customer Support, Finance, and HR each have 10 managers. This significant discrepancy may indicate potential challenges in leadership distribution and workload management within the IT department."
             },
@@ -44,7 +44,7 @@
         },
         {
             "data_type": "analytical",
-            "insight": "There is a disproportionate high number of reportees per manager in the IT Department",
+            "insight": "Disproportionate Number of Reportees per Manager in the IT Department",
             "insight_value": {
                 "description": "The average number of reportees per manager in the IT department is significantly higher at 50.5 compared to other departments. This is a stark contrast to Customer Support with 8.8, Finance with 11.6, HR with 12.8, and Sales with 13.0."
             },
@@ -77,7 +77,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a significant disparity among managers in terms of reportee numbers",
+            "insight": "Significant Disparity Among Managers in Terms of Reportee Numbers",
             "insight_value": {
                 "description": "Within the IT department, there is a notable disparity in the distribution of reportees among managers. Ed Gompf manages a significantly higher number of reportees, totaling 76, which starkly contrasts with Mariano Mauray, who oversees 25 reportees."
             },
@@ -107,9 +107,9 @@
         }
     ],
     "insights": [
-        "There is a disparity in Managerial Distribution across departments",
-        "There is a disproportionate high number of reportees per manager in the IT Department",
-        "There is a significant disparity among managers in terms of reportee numbers"
+        "Disparity in Managerial Distribution Across Departments",
+        "Disproportionate Number of Reportees per Manager in the IT Department",
+        "Significant Disparity Among Managers in Terms of Reportee Numbers"
     ],
     "summary": "\n\n\n1. **Managerial Disparity**: This dataset provides an analysis of the management structure within the IT department, highlighting a significant lack of managerial positions compared to other departments. It focuses on the number of managers and their distribution of reportees.\n   \n2. **Reportee Distribution**: It has been observed that the IT department is markedly understaffed in terms of managerial positions, with an average of 50.5 reportees per manager, which is considerably higher than in other departments. This raises concerns about workload distribution and managerial effectiveness.\n   \n3. **Individual Manager Analysis**: The dataset reveals a disparity within the IT department itself, where a manager named Ed Gompf handles a disproportionately high number of reportees, indicating potential issues in management workload and equity."
 }

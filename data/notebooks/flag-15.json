@@ -131,7 +131,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There was no significant change in the distribution of incident categories for Beth Anglin and Luke Wilson during the other agents' PTO,",
+            "insight": "No significant change in the distribution of incident categories for Beth Anglin and Luke Wilson during the other agents' PTO,",
             "insight_value": {
                 "categories": [
                     "Network",
@@ -225,7 +225,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "There would be a continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed",
+            "insight": "Continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Continued escalation in assignments"
@@ -244,10 +244,10 @@
         "Beth Anglin and Luke Wilson have a higher number of incident assignments compared to other agents. Beth has 116 and Luke has 150 incidents, while the other agents have lower on average.",
         "Beth Anglin and Luke Wilson received significantly higher incident assignments during a specific period",
         "Specific leave periods for Howard Johnson, Charlie Whitherspoon, and Fred Luddy were identified",
-        "There was no significant change in the distribution of incident categories for Beth Anglin and Luke Wilson during the other agents' PTO,",
+        "No significant change in the distribution of incident categories for Beth Anglin and Luke Wilson during the other agents' PTO,",
         "The distribution of incident assignments becomes uniform after the other agents return from their leave",
         "The resolution time (TTR) for Beth Anglin and Luke Wilson remains uniform over the entire timeline",
-        "There would be a continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed"
+        "Continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed"
     ],
     "summary": "\n\n1. **Disparity in Incident Assignments**: During the period from June to August 2023, Beth Anglin and Luke Wilson received significantly higher incident assignments compared to their peers. This disparity highlights potential issues in workload distribution among the team.\n2. **Impact of Leave Periods**: Specific leave periods for agents like Howard Johnson, Charlie Whitherspoon, and Fred Luddy were identified. The analysis suggests that these leave periods correlate with the increased assignments to Beth and Luke, indicating that their workload may be a direct consequence of the absence of other team members.\n3. **Efficiency Despite Increased Workload**: Despite the heavier workload, Beth Anglin and Luke Wilson have maintained consistent turnaround times. This efficiency suggests they are capable of managing a higher number of incidents effectively but also raises concerns about long-term sustainability and risk of burnout."
 }

@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-84.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Evaluate the distribution of managerial roles within the IT department to identify and rectify imbalances that may lead to management overload in system user administration.",
+        "role": "HR Data Analyst",
+        "category": "User Management",
+        "dataset_description": "This dataset contains 500 simulated records from the ServiceNow `sys_user` table. The `sys_user` table captures user-related information, detailing the profiles of employees or system users. Key fields include 'user_id', 'name', 'schedule', 'role', 'email', and 'department', offering a comprehensive view of the users managed within the ServiceNow system. This dataset is crucial for analyzing workflow, user involvement, and the detailed tracking of processes such as incident resolution within an organization.",
+        "header": "IT Department Management Staffing Analysis (Flag 84)"
     },
     "insight_list": [
         {

@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "There are significantly higher success rates in the IT department compared to other departments",
+            "insight": "Significantly higher success rates in the IT department compared to other departments",
             "insight_value": {
                 "x_val": "Departments",
                 "y_val": "Percentage of Goals Met",
@@ -43,7 +43,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There are higher success rates in critical and high priority goals within the IT department",
+            "insight": "Higher success rates in Critical and High priority goals within the IT department",
             "insight_value": {
                 "Critical": "61.1%",
                 "High": "51.8%",
@@ -71,7 +71,7 @@
         },
         {
             "data_type": "Diagnostic",
-            "insight": "There is a consistent higher success rates for critical and high priority goals across departments",
+            "insight": "Consistent higher success rates for Critical and High priority goals across departments",
             "insight_value": {
                 "IT": {
                     "Critical": "61.1%",
@@ -135,9 +135,9 @@
         }
     ],
     "insights": [
-        "There are significantly higher success rates in the IT department compared to other departments",
-        "There are higher success rates in critical and high priority goals within the IT department",
-        "There is a consistent higher success rates for critical and high priority goals across departments",
+        "Significantly higher success rates in the IT department compared to other departments",
+        "Higher success rates in Critical and High priority goals within the IT department",
+        "Consistent higher success rates for Critical and High priority goals across departments",
         "IT department exhibits a higher number of both Critical and High priority goals compared to other departments"
     ],
     "summary": "\n\n1. **High Achievement Rate**: The dataset reveals a notably higher success rate in goal achievement within the IT department compared to other departments, largely influenced by the allocation of high or critical priority to goals within the department.\n   \n2. **Priority Impact**: Analysis indicates that goals with high or critical priorities not only dominate the IT department but also show significantly higher success rates across all departments, underscoring the impact of prioritization on goal outcomes.\n   \n3. **Comparative Success Across Departments**: While the IT department leads in achieving its goals, a comparative analysis with other departments will provide deeper insights into strategic alignments and possible improvements in goal management practices across the organization."

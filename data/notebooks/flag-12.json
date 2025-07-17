@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "The number of Hardware incidents is significantly higher than others",
+            "insight": "hardware incidents is significantly higher than others",
             "insight_value": {
                 "x_val": "Hardware",
                 "y_val": 406
@@ -120,7 +120,7 @@
         }
     ],
     "insights": [
-        "The number of Hardware incidents is significantly higher than others",
+        "hardware incidents is significantly higher than others",
         "Most of the hardware incidents are related to printer issues",
         "location is not specified in the dataset nor in the short description",
         "There is not a significant increase in hardware incidents over time, they are relatively stable and high compared to toher categories"

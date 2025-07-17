@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "There is a uniform trend of TTR for all category incidents, however there is a dense cluster of incidents in the Hardware category during the period 2023-08.",
+            "insight": "Uniform trend of TTR for all category incidents, however there is a dense cluster of incidents in the Hardware category during the period 2023-08.",
             "insight_value": {
                 "x_val": "Anomaly Periods",
                 "y_val": "Increased TTR from 2023-07"
@@ -37,7 +37,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The Hardware incidents are significantly higher than others",
+            "insight": "hardware incidents are higher than others",
             "insight_value": {
                 "x_val": "Hardware",
                 "y_val": 182
@@ -75,7 +75,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There are fluctuations in incident frequencies across categories, particularly high hardware incident count for two months",
+            "insight": "Fluctuations observed in incident frequencies across categories, particularly high hardware incident count for two months",
             "insight_value": {
                 "x_val": "Time",
                 "y_val": "Incident Count"
@@ -143,9 +143,9 @@
         }
     ],
     "insights": [
-        "There is a uniform trend of TTR for all category incidents, however there is a dense cluster of incidents in the Hardware category during the period 2023-08.",
-        "The Hardware incidents are significantly higher than others",
-        "There are fluctuations in incident frequencies across categories, particularly high hardware incident count for two months",
+        "Uniform trend of TTR for all category incidents, however there is a dense cluster of incidents in the Hardware category during the period 2023-08.",
+        "hardware incidents are higher than others",
+        "Fluctuations observed in incident frequencies across categories, particularly high hardware incident count for two months",
         "Specific time windows with elevated Hardware incidents identified",
         "Continued trend of increasing hardware incidents could signify recurring hardware issues or outages"
     ],
