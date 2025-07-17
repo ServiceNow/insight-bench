@@ -151,7 +151,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "There is a continued linear increase in TTR if workload during leave periods is not balanced",
+            "insight": "Continued linear increase in TTR if workload during leave periods is not balanced",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Continued escalation in resolution times"
@@ -171,7 +171,7 @@
         "Fred Luddy's TTR begins to increase linearly over time compared to other agents who maintain a uniform TTR",
         "The number of incidents assigned to each agent, including Fred Luddy, remains uniform over time",
         "The number of open incidents for Fred Luddy is increasing over time, coinciding with the period where his TTR began to increase linearly",
-        "There is a continued linear increase in TTR if workload during leave periods is not balanced"
+        "Continued linear increase in TTR if workload during leave periods is not balanced"
     ],
     "summary": "\n\n1. **Linear Trend in TTR**: There is a linear trend in the time to resolution across human agents over time, with incidents assigned to certain agents, notably Fred Luddy, showing a progressively increasing TTR.\n\n2. **Open Incidents for Fred Luddy**: The number of open incidents assigned to Fred Luddy has also been increasing. This suggests that unresolved incidents continue to accumulate during his absence or low-productive time.\n\n3. **Predicted Future Trends**: Linear regression analysis predicts a continued increase in TTR,  highlighting the urgency of addressing this anomaly. Without intervention, the situation is likely to worsen, potentially leading to decreased overall team performance and customer satisfaction."
 }

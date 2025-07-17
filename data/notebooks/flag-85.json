@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-85.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Investigate the elevated goal achievement rates within a specific department and apply these findings to enhance goal management practices across all departments.",
+        "role": "Goal Performance Analyst",
+        "category": "Goal Management",
+        "dataset_description": "This dataset includes 500 simulated entries from the ServiceNow `sn_gf_goal` table, which captures various attributes related to organizational goals. These attributes encompass goal status, assigned owner, department affiliation, start and end dates, and detailed descriptions. The dataset also includes metrics such as priority level, percentage of completion, and target achievement rate. It primarily focuses on tracking the progress and management of both departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational strategies. Additionally, the dataset logs updates for each goal, providing a timeline of changes and the identities of those responsible for these modifications.",
+        "header": "IT Department Goal Achievement Rate Analysis (Flag 85)"
     },
     "insight_list": [
         {

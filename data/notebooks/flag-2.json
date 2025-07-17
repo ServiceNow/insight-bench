@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "diagnostic",
-            "insight": "The time to resolution of incidents is increasing linearly over time",
+            "insight": "The time to resolution of incidents is increasing over time",
             "insight_value": {
                 "trend": "increasing"
             },
@@ -81,7 +81,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There are no noticeable trends in the productivity levels among human agents",
+            "insight": "The productivity is more or less uniform across all agents",
             "plot": {
                 "plot_type": "bar",
                 "title": "Number of Incidents Resolved Per Agent",
@@ -101,10 +101,10 @@
         }
     ],
     "insights": [
-        "The time to resolution of incidents is increasing linearly over time",
+        "The time to resolution of incidents is increasing over time",
         "There is a negative correlation between the volume of incidents and the TTR",
         "The increase in TTR is uniform across all categories",
-        "There are no noticeable trends in the productivity levels among human agents"
+        "The productivity is more or less uniform across all agents"
     ],
     "summary": "\n   \nThis dataset focuses on the analysis of incident resolution times (TTR) where there is a linear increasing trend in TTR:\n\n1. **Uniform Increase in Resolution Times**: Incidents have a trend that shows time to resolution (TTR) increasing linearly over time across all categories of incidents. This suggests that the rising TTR is not isolated to any specific category but rather a systemic issue affecting the entire incident management process.\n\n2. **Plausible Reason:** This trend could be due to increasing incident volumes. However, the analysis indicates that there is no significant correlation between the volume of incidents and the time it takes to resolve them. This implies that the increase in TTR is not due to the accumulation of incidents but may be influenced by other factors such as the complexity of incidents or resource constraints.\n   \n3. **Other Factors:** Another aspect to consider is whether agents possess the required skills and capacity to handle these incidents effectively, indicating potential areas for capacity development or process enhancement.\n\n4. **Uniform Productivity Across Agents**: The distribution of incident resolutions among agents is relatively uniform, indicating that the workload is evenly distributed among the agents. \n\n5. **actionable_insights**:Given the uniform increase in TTR, it would be beneficial for the organization to review and potentially overhaul the incident management process to address systemic inefficiencies, Reseource allocation and regular monitoring of agent productivity and workload."
 }

@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "correlative",
-            "insight": "There is a linear positive correlation between new employee Start Dates and high expense rejection rates",
+            "insight": "Linear Positive Correlation Between New Employee Start Dates and High Expense Rejection Rates",
             "insight_value": {
                 "description": "Newer employees experience higher rates of expense rejections, likely due to unfamiliarity with company policies or lack of guidance on proper expense submission procedures."
             },
@@ -38,7 +38,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There are higher expense rejection rates for Employees with a shorter tenure",
+            "insight": "Higher Expense Rejection Rates for Employees with Shorter Tenure",
             "insight_value": {
                 "description": "Employees with less than three years of tenure experience notably higher rejection rates for their expense submissions compared to those with longer tenure."
             },
@@ -73,7 +73,7 @@
         },
         {
             "data_type": "analytical",
-            "insight": "Rejection rates for employees with less than 1 year of tenure align closely with the volume of expense reports submitted by each department, indicating that higher submission rates naturally correlate with more rejections.",
+            "insight": "Proportional Rejection Rates of New Hires Across Departments",
             "insight_value": {
                 "description": "Rejection rates for employees with less than 1 year of tenure align closely with the volume of expense reports submitted by each department, indicating that higher submission rates naturally correlate with more rejections."
             },
@@ -103,9 +103,9 @@
         }
     ],
     "insights": [
-        "There is a linear positive correlation between new employee Start Dates and high expense rejection rates",
-        "There are higher expense rejection rates for Employees with a shorter tenure",
-        "Rejection rates for employees with less than 1 year of tenure align closely with the volume of expense reports submitted by each department, indicating that higher submission rates naturally correlate with more rejections."
+        "Linear Positive Correlation Between New Employee Start Dates and High Expense Rejection Rates",
+        "Higher Expense Rejection Rates for Employees with Shorter Tenure",
+        "Proportional Rejection Rates of New Hires Across Departments"
     ],
     "summary": "\n\n1. **Trend Analysis**: This dataset investigates the correlation between the duration of employment and the rates of expense rejections among newly joined employees. The focus is to understand if less familiarity with the organization\u2019s expense policies contributes to higher rejection rates.\n   \n2. **Employee Compliance Insight**: The data illuminates how new hires adapt to expense submission guidelines and whether their inexperience results in a higher number of errors or policy non-compliance issues, compared to more tenured employees.\n   \n3. **Departmental Insights**: By analyzing the rejection rates across different departments, the study seeks to identify if certain areas are more prone to these issues or if it is a widespread phenomenon among all new hires."
 }

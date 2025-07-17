@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "There is a significant variance in average Expenses across departments",
+            "insight": "Significant Variance in Average Expenses Across Departments",
             "insight_value": {
                 "description": "Product Management's average expense claim is significantly higher than that of other departments, indicating potential differences in departmental spending habits or the nature of expenses claimed. Look out for any scope of fraudulent reports"
             },
@@ -52,7 +52,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a high incidence of repeated identical expense claims",
+            "insight": "High Incidence of Repeated Identical Expense Claims",
             "insight_value": {
                 "description": "There are 100 instances where a single user has submitted identical claims with the same amount and category more than three times, which may indicate potential fraud or policy abuse within the expense management process."
             },
@@ -79,7 +79,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a significant repetition in expense claims by a single user",
+            "insight": "Significant Repetition in Expense Claims by a Single User",
             "insight_value": {
                 "description": "A user named Mamie Mcintee has repeatedly submitted identical claims for $8000, suggesting potential issues of policy abuse or fraudulent behavior."
             },
@@ -106,7 +106,7 @@
         },
         {
             "data_type": "Descriptive",
-            "insight": "There is a concentration of repeated claims in the Travel category",
+            "insight": "Concentration of Repeated Claims in the Travel Category",
             "insight_value": {
                 "description": "Mamie Mcintee\u2019s repeated identical expense claims are not only submitted under her department but are specifically concentrated in the Travel category, raising concerns about potential policy abuse or fraudulent activities within this particular expense category."
             },
@@ -133,10 +133,10 @@
         }
     ],
     "insights": [
-        "There is a significant variance in average Expenses across departments",
-        "There is a high incidence of repeated identical expense claims",
-        "There is a significant repetition in expense claims by a single user",
-        "There is a concentration of repeated claims in the Travel category"
+        "Significant Variance in Average Expenses Across Departments",
+        "High Incidence of Repeated Identical Expense Claims",
+        "Significant Repetition in Expense Claims by a Single User",
+        "Concentration of Repeated Claims in the Travel Category"
     ],
     "summary": "\n\n1. **Pattern Recognition**: This dataset is focused on identifying patterns in expense submissions that may indicate potential fraud or policy abuse. It particularly flags cases where individual users submit multiple identical claims in terms of amount and category.\n   \n2. **Insight into User Behavior**: Analysis of the data reveals instances where users have repeatedly submitted identical claims, with specific focus on a user named Mamie Mcintee who has submitted multiple claims for the same amount, specifically categorized under Travel.\n   \n3. **Departmental Impact**: The repeated submissions have not only raised concerns on an individual level but also cast light on departmental practices, especially in how such actions are monitored and addressed by departmental oversight mechanisms."
 }

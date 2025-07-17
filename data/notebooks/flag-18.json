@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "correlative",
-            "insight": "There is a positive correlation between Asset Purchase Dates and Warranty Periods",
+            "insight": "Positive Correlation Between Asset Purchase Dates and Warranty Periods",
             "insight_value": {
                 "description": "Statistically significant. Recently purchased assets exhibit increasingly longer warranty periods compared to assets purchased earlier, indicating a trend towards extending warranties over time."
             },
@@ -36,7 +36,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "The Linear Regression Model is able to predicts Warranty Periods Based on Purchase Dates",
+            "insight": "Linear Regression Model Predicts Warranty Periods Based on Purchase Dates",
             "insight_value": {
                 "description": "The linear regression analysis confirms a predictable relationship between asset purchase dates and warranty periods, with a trend indicating longer warranties for more recently purchased assets."
             },
@@ -61,7 +61,7 @@
         },
         {
             "data_type": "correlative",
-            "insight": "There is a strong positive correlation between employee Start Dates and Asset Purchase dates",
+            "insight": "Strong Positive Correlation Between Employee Start Dates and Asset Purchase Dates",
             "insight_value": {
                 "description": "Assets are frequently purchased close to the start dates of new employees, indicating that recent hires are likely to receive newer assets with potentially longer warranties."
             },
@@ -86,9 +86,9 @@
         }
     ],
     "insights": [
-        "There is a positive correlation between Asset Purchase Dates and Warranty Periods",
-        "The Linear Regression Model is able to predicts Warranty Periods Based on Purchase Dates",
-        "There is a strong positive correlation between employee Start Dates and Asset Purchase dates"
+        "Positive Correlation Between Asset Purchase Dates and Warranty Periods",
+        "Linear Regression Model Predicts Warranty Periods Based on Purchase Dates",
+        "Strong Positive Correlation Between Employee Start Dates and Asset Purchase Dates"
     ],
     "summary": "\n\n1. **Correlation Exploration**: This dataset involves exploring the correlation between the warranty periods of assets and their purchase dates across different categories. The analysis also delves into how these factors align with the start dates of employees who are assigned these assets.\n   \n2. **Insight into Asset Management**: The dataset is crucial for understanding asset procurement strategies over time, particularly how warranty durations are structured relative to asset purchase dates. This is particularly relevant for optimizing lifecycle management and cost efficiency in asset procurement.\n   \n3. **Employee Integration**: By examining the relationship between asset allocation and employee start dates, the dataset provides insights into how new hires are equipped with necessary tools and resources, ensuring they are well-prepared from day one."
 }

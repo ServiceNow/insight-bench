@@ -86,7 +86,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is an increase in network category incidents assigned to Beth Anglin",
+            "insight": "Increase in network category incidents assigned to Beth Anglin",
             "insight_value": {
                 "category": "Network",
                 "trend": "Increasing assignment to Beth Anglin"
@@ -143,7 +143,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "There is a continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed",
+            "insight": "Continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Continued escalation in assignments"
@@ -161,9 +161,9 @@
     "insights": [
         "Beth Anglin has a higher average number of incident assignments compared to other agents",
         "Beth Anglin received significantly increasing incident assignments over the time period. We see a linearly increasing trend",
-        "There is an increase in network category incidents assigned to Beth Anglin",
+        "Increase in network category incidents assigned to Beth Anglin",
         "The resolution time (TTR) for Beth Anglin  remains uniform over the entire timeline",
-        "There is a continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed"
+        "Continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed"
     ],
     "summary": "\n\n1. **Increasing Assignments Over Time**: A particular human agent, Beth Anglin, has been observed to have a linear increase in the number of incident assignments over time. This trend highlights a potential imbalance in workload distribution.\n2. **Need for Intervention**: The observed trends indicate that without intervention, the agent\u2019s ability to manage and resolve incidents efficiently may deteriorate further. This could impact overall team performance and quality."
 }

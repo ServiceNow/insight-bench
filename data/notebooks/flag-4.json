@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "time_series",
-            "insight": "There is a slight increase in volume of incidents, but it needs further investigation to better understand the trend.",
+            "insight": "The increase in volume of incidents is seen slightly, need to investigate further to understand the trend.",
             "plot": {
                 "plot_type": "single_line",
                 "title": "Trend of number of incidents opened Over Time",
@@ -101,7 +101,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The productivity is uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
+            "insight": "The productivity is more or less uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
             "plot": {
                 "plot_type": "bar",
                 "title": "Number of Incidents Resolved Per Agent",
@@ -131,7 +131,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "Specific hardware issues mention Printer issues predominantly in the incident descriptions",
+            "insight": "Specific hardware issues are predominantly mentioned in incident descriptions",
             "insight_value": {
                 "category": "Hardware",
                 "common_words": [
@@ -159,14 +159,14 @@
         }
     ],
     "insights": [
-        "There is a slight increase in volume of incidents, but it needs further investigation to better understand the trend.",
+        "The increase in volume of incidents is seen slightly, need to investigate further to understand the trend.",
         "There is a no correlation between the volume of incidents and the TTR",
         "The time to resolution of incidents is uniform over time",
         "The increase in volume of incidents is seen only for one particular categpry i.e. Hardware",
-        "The productivity is uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
+        "The productivity is more or less uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
         "1. **Regular Updates and Maintenance**: Establish a routine for regular updates and maintenance of all systems and hardware. This can help prevent the uniform aging and degradation of infrastructure.\\\n2. **Proactive Monitoring and Predictive Maintenance**: Utilize tools for proactive monitoring and predictive maintenance to identify and address potential issues before they result in incidents. Machine learning models can predict failure points based on historical data. \\\n3. **Effective diagnosis**: Identify the location and reason for Hardware failure. ",
         "If the number of Hardware incidents over time is linearly increasing, it suggests a specific device issue or trend affecting the entire location or infrastructure. Here are some potential reasons why this might be happening and strategies to avoid or mitigate such trends: \\\n    1. **Aging Infrastructure**: Over time, systems and hardware can age and become more prone to failures, leading to a steady increase in incidents across all categories if regular updates and maintenance are not performed \\\n    2. **Lack of Proactive Maintenance**: Without proactive maintenance and updates, systems may deteriorate uniformly, leading to increased incidents.",
-        "Specific hardware issues mention Printer issues predominantly in the incident descriptions"
+        "Specific hardware issues are predominantly mentioned in incident descriptions"
     ],
     "summary": "\n There is a linear trend in the distribution of incidents across categories over time, indicating that the number of incidents is growing day by day.\n\n1. **Specific Category Growth**: Analysis reveals that the overall increase in the volume of incidents is not uniform across all categories. Incidents within the hardware category, for example, are showing a consistent linear increase over time, suggesting a growing issue or expanding needs in this area.\n2. **Impact on Human Agents**: The growing number of incidents has led to human agents working overtime recently, indicating an increased workload that might be impacting their efficiency and well-being.\n\nThese findings indicate a need to concentrate resources and troubleshooting efforts on the Hardware category to address and mitigate the rising trend of incidents."
 }

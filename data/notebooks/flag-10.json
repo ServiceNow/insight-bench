@@ -81,7 +81,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The productivity levels are similar for all agents",
+            "insight": "The productivity is more or less uniform across all agents",
             "plot": {
                 "plot_type": "bar",
                 "title": "Number of Incidents Resolved Per Agent",
@@ -104,7 +104,7 @@
         "The time to resolution of incidents is increasing over time",
         "There is a positive correlation between the volume of incidents and the TTR",
         "The increase in TTR is uniform across all categories",
-        "The productivity levels are similar for all agents"
+        "The productivity is more or less uniform across all agents"
     ],
     "summary": "\n\n1. **Distribution of Resolution Time:** Incidents have a trend that shows time to resolution (TTR) increasing linearly over time. This suggests it is taking longer to resolve incidents.\n   \n2. **Plausible Reason:** The analysis showed there is a correlation between the volume of incidents and the ttr. The positive correlation between the volume of incidents and the TTR suggests that as the volume of incidents increases, the TTR also tends to increase. This could be due to resource constraints or inefficiencies in handling a larger volume of incidents. Other potential reasons could include complexity of incidents, or resource constraints.\n   \n3. **Other Factors:** Another aspect to consider is whether agents possess the required skills and capacity to handle these incidents effectively, indicating potential areas for capacity development or process enhancement."
 }

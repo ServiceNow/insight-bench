@@ -39,7 +39,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The cost reduction goals dominate the goal types in the Finance department",
+            "insight": "Cost Reduction goals dominate the goal types in the Finance department",
             "insight_value": {
                 "Cost Reduction": "50.5%",
                 "Revenue Growth": "16.4%",
@@ -97,7 +97,7 @@
         },
         {
             "data_type": "trend diagnosis",
-            "insight": "There is an increasing trend in the duration of 'Cost Reduction' goals over time",
+            "insight": "Increasing trend in the duration of 'Cost Reduction' goals over time",
             "insight_value": {
                 "Trend": "Linear increase",
                 "Correlation": "Positive correlation between start date and goal duration"
@@ -150,9 +150,9 @@
     ],
     "insights": [
         "Finance department exhibits notably longer goal durations compared to other departments",
-        "The cost reduction goals dominate the goal types in the Finance department",
+        "Cost Reduction goals dominate the goal types in the Finance department",
         "Cost Reduction goals have the longest mean duration across all goal categories",
-        "There is an increasing trend in the duration of 'Cost Reduction' goals over time",
+        "Increasing trend in the duration of 'Cost Reduction' goals over time",
         "Continued linear increase in the duration of 'Cost Reduction' goals across all departments"
     ],
     "summary": "\n\n1. **Duration Discrepancies**: This dataset reveals significant variations in goal durations within the Finance department, primarily driven by the abundance of 'Cost Reduction' goals. These goals not only predominate within the department but also exhibit a trend of increasing durations over time.\n   \n2. **Insight into Strategic Prioritization**: The dataset provides critical insights into how the Finance department's focus on 'Cost Reduction' goals affects its overall strategic alignment and efficiency. It underscores the need to reassess the planning and execution of these goals to enhance departmental performance.\n   \n3. **Temporal Trends**: A notable finding is the linear increase in the duration of 'Cost Reduction' goals over time, suggesting evolving challenges or changing strategies that require detailed analysis to optimize goal management practices."

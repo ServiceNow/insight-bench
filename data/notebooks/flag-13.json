@@ -81,7 +81,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The productivity is similar for all agents, and all of them manage to resolve incidents even though the volume increases over time",
+            "insight": "The productivity is more or less uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
             "plot": {
                 "plot_type": "bar",
                 "title": "Number of Incidents Resolved Per Agent",
@@ -109,7 +109,7 @@
         "The time to resolution of incidents is uniform over time, so the overtime working of human agents is due to some other reason such increasing in number of incidents or complexity of incidents.",
         "There is no correlation between the volume of incidents and the TTR. Unlike TTR, the number of incidents is increasing over time. This indicates that as the volume of incidents increases, while the TTR tends to be uniform",
         "The increase in volume of incidents is more or less uniform across all categories, but more pronounced in network followed by database followed by software",
-        "The productivity is similar for all agents, and all of them manage to resolve incidents even though the volume increases over time",
+        "The productivity is more or less uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
         "1. **Implement Scalable Solutions**: As the organization grows, ensure that infrastructure and support systems are scalable. Invest in technology and processes that can handle increased loads efficiently. 2. **Regular Updates and Maintenance**: Establish a routine for regular updates and maintenance of all systems and hardware. This can help prevent the uniform aging and degradation of infrastructure 3. **Proactive Monitoring and Predictive Maintenance**: Utilize tools for proactive monitoring and predictive maintenance to identify and address potential issues before they result in incidents. Machine learning models can predict failure points based on historical data. 4. **Continual Training and Development**: Keep training programs for staff up-to-date with the latest technologies and best practices. This helps ensure that all employees are equipped to handle the systems they work with effectively."
     ],
     "summary": "\n1. **Uniform Time to Resolution**: Despite an increasing volume of incidents, the time to resolution (TTR) remains consistent across incidents, indicating that resolution times have not been directly impacted by the increase. This suggests that agents are maintaining efficiency despite growing demands.\n2. **Increasing Incident Volume**: There is a clear trend of increasing incident volumes over time. This trend is a significant factor contributing to overtime and potential agent burnout, as agents are required to handle more incidents without a proportional increase in resources etc.\n3. **Agent Productivity and Burnout**: While agents remain productive, the elevated number of incidents over time has led to increased working hours potentially impacting their wellbeing."

@@ -183,7 +183,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "There is a continued linear increase in TTR if workload during leave periods is not balanced",
+            "insight": "Continued linear increase in TTR if workload during leave periods is not balanced",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Continued escalation in resolution times"
@@ -204,7 +204,7 @@
         "The number of incidents assigned to each agent, including Fred Luddy, remains uniform over time",
         "The number of open incidents for Fred Luddy is increasing over time, coinciding with the period where his TTR began to increase linearly",
         "Fred Luddy's increasing TTR correlates with his PTO period",
-        "There is a continued linear increase in TTR if workload during leave periods is not balanced"
+        "Continued linear increase in TTR if workload during leave periods is not balanced"
     ],
     "summary": "\n\n1. **Trend in Resolution Time**: Analysis reveals that Fred Luddy's time to resolution (TTR) begins to increase linearly from a certain point, suggesting potential personal or systemic challenges impacting his performance.\n   \u00df\n2. **Correlation with Open Incidents**: The increase in TTR coincides with a rise in the number of open incidents assigned to Fred Luddy. \n   \n3. **Correlation with LEave Schedule**: This pattern is likely exacerbated by periods of his leave of absence, during which unresolved incidents accumulate.\n   \n4. **Strategic Workload Management**: Addressing these trends is crucial, especially during employee absences, to prevent workload imbalances and ensure consistent performance across the team. Implementing strategic workload balancing could mitigate the impact of such absences and maintain operational efficiency."
 }

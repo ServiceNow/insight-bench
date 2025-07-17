@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "diagnostic",
-            "insight": "There is a correlation between expense amount and processing time, lower-cost expenses are processed slower than higher-cost ones",
+            "insight": "Correlation Between Expense Amount and Processing Time, lower-cost expenses are processed slower than higher-cost ones",
             "insight_value": {
                 "description": "Contrary to typical expectations, lower-cost expenses are processed slower than higher-cost ones, indicating that expense amount significantly influences processing efficiency and disproportionately favors higher-cost expenses."
             },
@@ -38,7 +38,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "Expenses within lower cost brackets experience significantly longer processing times, with the longest delays occurring in the lowest bracket.",
+            "insight": "Processing Time Trend Across Expense Brackets",
             "insight_value": {
                 "description": "Contrary to what might be expected, expenses within lower cost brackets experience significantly longer processing times, with the longest delays occurring in the lowest bracket."
             },
@@ -75,7 +75,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There is varied processing outcomes across expense brackets",
+            "insight": "Varied Processing Outcomes Across Expense Brackets",
             "insight_value": {
                 "description": "Expenses within brackets (1000$ - 5000$) encounter a higher volume of transactions and typically higher brackets experience a lower number of pending statuses compared to lower brackets."
             },
@@ -128,7 +128,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "Processing times are uniform across users and departments for lower-cost expenses",
+            "insight": "Uniform Processing Times Across Users and Departments for lower-Cost Expenses",
             "insight_value": {
                 "description": "The processing time for lower-cost expenses (<$1000) shows a uniform trend across different users and departments, indicating that delays or efficiencies are generally related to the amount involved rather than specific departmental or individual user practices."
             },
@@ -155,10 +155,10 @@
         }
     ],
     "insights": [
-        "There is a correlation between expense amount and processing time, lower-cost expenses are processed slower than higher-cost ones",
-        "Expenses within lower cost brackets experience significantly longer processing times, with the longest delays occurring in the lowest bracket.",
-        "There is varied processing outcomes across expense brackets",
-        "Processing times are uniform across users and departments for lower-cost expenses"
+        "Correlation Between Expense Amount and Processing Time, lower-cost expenses are processed slower than higher-cost ones",
+        "Processing Time Trend Across Expense Brackets",
+        "Varied Processing Outcomes Across Expense Brackets",
+        "Uniform Processing Times Across Users and Departments for lower-Cost Expenses"
     ],
     "summary": "\n\n\n1. **Cost vs. Efficiency**: This dataset scrutinizes the unconventional trend where higher-cost expenses are processed more rapidly than lower-cost ones, challenging typical operational expectations. The analysis seeks to uncover whether specific prioritization policies or operational efficiencies are influencing these patterns.\n   \n2. **Processing Trends Across Brackets**: The dataset reveals that expenses within the middle brackets ($1000-$5000) experience higher transaction volumes, with higher brackets generally encountering fewer pending statuses. This suggests that the expense amount significantly impacts processing dynamics.\n   \n3. **Uniformity Across Users and Departments**: The analysis demonstrates that the processing time for lower-cost expenses (under $1000) displays a uniform trend across various users and departments. This indicates that delays or efficiencies are predominantly associated with the expense amount rather than specific departmental or individual practices."
 }

@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-34.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Analyze the factors (whether time-based or categorical) that influence goal completion rates and evaluate their impact on overall departmental performance.",
+        "role": "Enterprise Performance Analyst",
+        "category": "Strategic Goal Management",
+        "dataset_description": "This dataset includes 500 simulated entries from the ServiceNow `sn_gf_goal` table, detailing various aspects of organizational goals. Key attributes include goal status, responsible parties, associated departments, start and end dates, and detailed descriptions. The dataset also contains metrics such as priority ranking, percentage completion, and target achievement rate. It primarily focuses on tracking the progress and management of both departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational strategies. Additionally, the dataset logs updates to each goal, providing a record of modifications and the identities of those making these changes.",
+        "header": "Cost Efficiency Goals Analysis (Flag 34)"
     },
     "insight_list": [
         {

@@ -107,7 +107,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "There is a continued linear increase in ticket submissions by David Loo",
+            "insight": "Continued linear increase in ticket submissions by David Loo",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Ongoing escalation in ticket submissions"
@@ -126,7 +126,7 @@
         "David Loo has raised a significantly higher number of incidents compared to other callers",
         "David Loo's incidents are significantly higher and show a linear increasing trend over time compared to other callers",
         "Incidents raised by David Loo are predominantly in the Network category",
-        "There is a continued linear increase in ticket submissions by David Loo"
+        "Continued linear increase in ticket submissions by David Loo"
     ],
     "summary": "\n\n1. **Increasing Incidents by Caller**: Analysis shows a particular caller is consistently increasing the number of incident assignments over time. This trend points to a potential focal point for incident creation that may require further scrutiny.\n2. **Impact on Time to Resolution (TTR)**: Alongside the rise in incident volume from this caller, there is a corresponding increase in the average Time to Resolution (TTR) for these incidents. This pattern suggests that the growing number of incidents may be straining resources, impacting overall resolution efficiency.\n3. **Need for Root Cause Analysis**: The consistent increase in incidents reported by this caller could indicate underlying issues that are not being adequately addressed, potentially pointing to larger systemic problems within the operational processes."
 }

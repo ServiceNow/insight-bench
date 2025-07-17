@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "diagnostic",
-            "insight": "There is a positive correlation between expense amount and processing time, lower-cost expenses are processed faster than higher-cost ones",
+            "insight": "Positive Correlation Between Expense Amount and Processing Time, Lower-cost expenses are processed faster than higher-cost ones",
             "insight_value": {
                 "description": "Lower-cost expenses are processed faster than higher-cost ones, indicating that expense amount significantly influences processing efficiency."
             },
@@ -38,7 +38,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "There are longer processing times for Higher-Cost Expenses",
+            "insight": "Longer Processing Times for Higher-Cost Expenses",
             "insight_value": {
                 "description": "Expenses within higher cost brackets experience significantly longer processing times, with the longest delays occurring in the highest bracket."
             },
@@ -75,7 +75,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The processing outcomes vary across expense brackets",
+            "insight": "Varied Processing Outcomes Across Expense Brackets",
             "insight_value": {
                 "description": "Expenses within higher brackets not only encounter a higher volume of transactions but also experience a greater number of declines and pending statuses compared to lower brackets."
             },
@@ -128,7 +128,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The processing times are uniform across users and departments for High-Cost Expenses",
+            "insight": "Uniform Processing Times Across Users and Departments for High-Cost Expenses",
             "insight_value": {
                 "description": "The processing time for very high-cost expenses (>$5000) shows a uniform trend across different users and departments, indicating that delays or efficiencies are generally related to the amount involved rather than specific departmental or individual user practices."
             },
@@ -155,10 +155,10 @@
         }
     ],
     "insights": [
-        "There is a positive correlation between expense amount and processing time, lower-cost expenses are processed faster than higher-cost ones",
-        "There are longer processing times for Higher-Cost Expenses",
-        "The processing outcomes vary across expense brackets",
-        "The processing times are uniform across users and departments for High-Cost Expenses"
+        "Positive Correlation Between Expense Amount and Processing Time, Lower-cost expenses are processed faster than higher-cost ones",
+        "Longer Processing Times for Higher-Cost Expenses",
+        "Varied Processing Outcomes Across Expense Brackets",
+        "Uniform Processing Times Across Users and Departments for High-Cost Expenses"
     ],
     "summary": "\n\n1. **Cost Influence on Processing Efficiency**: This dataset examines the relationship between the cost of expenses and their processing times. It explores how varying expense brackets impact the speed and efficiency of the expense approval workflow.\n   \n2. **Analysis of Expense Brackets**: The insights gained from this analysis highlight significant differences in processing times across various cost brackets, with lower-cost expenses generally processed more rapidly than higher-cost ones. This trend points to the need for optimizing approval workflows, particularly for higher-cost expenses.\n   \n3. **Operational Challenges in Higher Brackets**: The dataset also indicates that expenses within higher brackets not only see a higher volume of transactions but also experience a greater number of delays and declines. This provides a crucial perspective on potential inefficiencies within the financial operations."
 }

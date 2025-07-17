@@ -11,7 +11,7 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "The HR Department has significantly Higher Asset Costs compared to other departments",
+            "insight": "Significantly Higher Asset Costs in HR Department",
             "insight_value": {
                 "HR": "4874.25",
                 "Finance": "2352.7",
@@ -50,7 +50,7 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "Computers, Servers, and Web Servers in HR Department have the highest cost contributions",
+            "insight": "High Cost Contributions by Computers, Servers, and Web Servers in HR Department",
             "insight_value": {
                 "Computers": {
                     "Total Cost": "61215$",
@@ -90,7 +90,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a concentration of High-End Assets in the HR Department Compared to Other Departments",
+            "insight": "Concentration of High-End Assets in the HR Department Compared to Other Departments",
             "insight_value": {
                 "HR": {
                     "Servers": "4",
@@ -140,7 +140,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a weak correlation between mumber of users and high cost of computer assets in HR Department",
+            "insight": "Weak Correlation Between Number of Users and High Cost of Computer Assets in HR Department",
             "insight_value": {
                 "Number of Users in HR": "4",
                 "Total Cost of Computers": "60000$",
@@ -167,7 +167,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is an excessive number of computers per user in HR Department",
+            "insight": "Excessive Number of Computers per User in HR Department",
             "insight_value": {
                 "HR": "4.5 computers per user",
                 "Other Departments": "Less than 2 computers per user"
@@ -201,11 +201,11 @@
         }
     ],
     "insights": [
-        "The HR Department has significantly Higher Asset Costs compared to other departments",
-        "Computers, Servers, and Web Servers in HR Department have the highest cost contributions",
-        "There is a concentration of High-End Assets in the HR Department Compared to Other Departments",
-        "There is a weak correlation between mumber of users and high cost of computer assets in HR Department",
-        "There is an excessive number of computers per user in HR Department"
+        "Significantly Higher Asset Costs in HR Department",
+        "High Cost Contributions by Computers, Servers, and Web Servers in HR Department",
+        "Concentration of High-End Assets in the HR Department Compared to Other Departments",
+        "Weak Correlation Between Number of Users and High Cost of Computer Assets in HR Department",
+        "Excessive Number of Computers per User in HR Department"
     ],
     "summary": "\n\n1. **High Asset Costs in HR**: This dataset reveals a trend where the average cost of assets in the HR department is notably higher compared to other departments. This includes significant investments in high-value assets such as servers and web servers.\n   \n2. **Anomalous Asset Distribution**: Additionally, the dataset points out an anomaly where the average number of computers per user in the HR department exceeds two, which is unusually high and demands further investigation.\n   \n3. **Data Insights**: The dataset encompasses asset management records from the ServiceNow alm_hardware table, detailing fields such as asset cost, department allocation, model category, and user assignments. It provides a comprehensive overview of asset distribution and cost across different departments, offering a basis for targeted asset management improvements."
 }

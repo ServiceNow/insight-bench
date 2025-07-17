@@ -2,11 +2,11 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-82.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": null,
-        "role": null,
-        "category": null,
-        "dataset_description": null,
-        "header": null
+        "goal": "Investigate the unexpectedly high success rates of Low and Medium priority 'Cost Optimization' goals, and utilize these findings to enhance goal management efficiency across all goal categories.",
+        "role": "Operational Effectiveness Analyst",
+        "category": "Goal Management",
+        "dataset_description": "This dataset comprises 500 simulated records from the ServiceNow `sn_gf_goal` table, detailing various aspects related to organizational goals. Key attributes include goal status, assigned owner, department affiliation, start and end dates, and comprehensive descriptions. The dataset also features metrics like priority level, percentage completed, and target achievement percentage. It primarily focuses on tracking and managing both departmental and individual goals, providing insights into the effectiveness of these goals and their alignment with overarching organizational strategies. Additionally, the dataset logs updates for each goal, offering a historical view of changes and the identities of those making these updates.",
+        "header": "Focused Analysis of Goal Management Categories (Flag 82)"
     },
     "insight_list": [
         {
