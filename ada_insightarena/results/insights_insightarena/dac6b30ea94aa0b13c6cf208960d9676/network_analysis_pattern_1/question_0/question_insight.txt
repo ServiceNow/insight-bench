@@ -1,0 +1,4 @@
+Question: What are the average resolution times for incidents across various categories and priorities?
+Insight: • **Inquiry / Help Outlier:** The "3 - Moderate" priority incidents in the Inquiry / Help category have an exceptionally high average resolution time of 8126.32 hours, indicating potential inefficiencies or resource allocation issues that need to be addressed.
+
+• **Software Critical Resolution Time:** "1 - Critical" priority incidents in the Software category have a high average resolution time of 2299.29 hours, suggesting a need for process optimization or increased resource allocation to handle complex software issues more efficiently.

@@ -1,0 +1,1 @@
+[{'question': 'What percentage of incidents with a high impact meet their SLA requirements?', 'task': 'Network Analysis', 'skill_notebooks': [{'file_name': 'RFMAnalysis'}, {'file_name': 'RandomForestFeatureImportance'}, {'file_name': 'GrangerCausality'}], 'predicted_skills': ['RFMAnalysis', 'RandomForestFeatureImportance', 'GrangerCausality']}]

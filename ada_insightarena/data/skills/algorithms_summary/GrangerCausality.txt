@@ -1,0 +1,23 @@
+### Granger Causality Pipeline Summary
+
+#### 1. Data Preparation
+- **Load Data**: Read a CSV file containing cryptocurrency data into a pandas DataFrame, ensuring the first column is parsed as a datetime index.
+
+#### 2. Data Manipulation
+- **Check Stationarity**: Use the Augmented Dickey-Fuller test to determine if the time series data for each cryptocurrency is stationary. If the p-value is greater than 0.05, the data is not stationary.
+- **Make Stationary**: If necessary, transform the data to make it stationary by differencing the series and removing any resulting NaN values.
+
+#### 3. Model Implementation
+- **Granger Causality Test**: For each pair of cryptocurrencies, perform Granger causality tests up to a specified number of lags. Store the results for each pair and lag.
+
+#### 4. Visualization
+- **Plot Results**: Create bar plots for each pair of cryptocurrencies, showing the negative log of the p-values for each lag. This helps visualize the strength of causality from one cryptocurrency to another.
+
+#### 5. Evaluation
+- **Evaluate Results**: Print the test statistics and p-values for each pair of cryptocurrencies and each lag, allowing for assessment of causality.
+
+#### 6. Save Results
+- **Save to File**: Serialize and save the Granger causality test results to a file using the pickle module for later use or analysis.
+
+#### 7. Main Execution
+- **Execution Flow**: Load the data, check and ensure stationarity, perform Granger causality tests, visualize and evaluate the results, and save the results to a file. This is encapsulated in a main function for streamlined execution.

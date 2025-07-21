@@ -1,8 +1,9 @@
 import os
 import pandas as pd
 from insightbench.utils.agent_utils import analysis_nb_to_gt
-from insightbench.utils.metrics_utils import score_insight
-from insightbench import metrics
+
+from evaluation.metrics_utils import score_insight
+from evaluation import metrics
 import nbformat, re, json
 
 

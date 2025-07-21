@@ -1,0 +1,39 @@
+### Summary of BERT Implementation Pipeline
+
+#### Data Preparation
+1. **Load Data**: Read the dataset from a CSV file using Pandas.
+2. **Split Data**: Divide the data into training, validation, and test sets using stratified sampling to maintain label distribution.
+
+#### Data Manipulation
+3. **Tokenization**: Use BERT's tokenizer to encode the text data into token IDs and attention masks, ensuring uniform sequence length with padding and truncation.
+4. **Tensor Conversion**: Convert the tokenized data and labels into PyTorch tensors.
+5. **DataLoader Setup**: Create `TensorDataset` and `DataLoader` objects for training and validation data, using random and sequential sampling respectively.
+
+#### Model Implementation
+6. **Load Pre-trained BERT**: Import the BERT model and freeze its parameters to prevent updates during training.
+7. **Define Model Architecture**: 
+   - Create a custom neural network class inheriting from `nn.Module`.
+   - Add a dropout layer, ReLU activation, and two dense layers, with the final layer using softmax for classification.
+8. **Model Initialization**: Instantiate the model and move it to the GPU if available.
+
+#### Training
+9. **Optimizer and Loss Function**: Use AdamW optimizer and negative log likelihood loss for training.
+10. **Training Loop**: 
+    - Iterate over epochs, performing forward and backward passes.
+    - Update model weights using the optimizer and calculate average loss per epoch.
+
+#### Evaluation
+11. **Model Evaluation**: 
+    - Set the model to evaluation mode and make predictions on the validation set.
+    - Use `classification_report` to generate performance metrics like precision, recall, and F1-score.
+
+#### Visualization
+12. **Confusion Matrix**: Plot a confusion matrix to visualize the model's performance on different classes.
+
+#### Save Results
+13. **Output Results**: Save the actual and predicted labels to a CSV file for further analysis.
+
+#### Main Execution
+14. **Execution Flow**: 
+    - Set device configuration (CPU/GPU).
+    - Execute the steps sequentially: data preparation, transformation, model definition, training, evaluation, saving results, and visualization.

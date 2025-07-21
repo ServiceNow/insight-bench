@@ -1,0 +1,13 @@
+[
+    {
+        "question": "How does the reassignment count influence the resolution time of high-priority incidents?",
+        "skill": [
+            "GrangerCausality",
+            "RandomForestFeatureImportance",
+            "RFMAnalysis"
+        ],
+        "predicted_insight": "\u2022 **Positive Correlation:** There is a strong positive correlation between reassignment count and resolution time, indicating that incidents with multiple reassignments tend to have significantly longer resolution times. This suggests that reducing reassignments could improve efficiency.\n\n\u2022 **Category Influence:** \"Software\" incidents, particularly with high reassignment counts, exhibit some of the longest resolution times among categories, highlighting a potential need for better resource allocation or specialized teams to handle these complex issues more effectively.",
+        "plot": "insightarena/results/insights_insightarena/14b1364e50f66e237e05a8071a149e73/network_analysis_pattern_2/question_0/plot.jpeg",
+        "code_skill": "GrangerCausality.txt"
+    }
+]

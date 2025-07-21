@@ -1,0 +1,15 @@
+You are an expert code analyzer. Your task is to examine the following code snippet and determine which skill from the provided list is most relevant to the code.
+        
+Code:
+{code}
+
+Available Skill Names:
+{list_of_skills}
+
+Instructions:
+1. Analyze the code snippet and identify the one skill from the list that is most prominently demonstrated.
+2. If the code does not clearly demonstrate any of the skills from the list, return "none".
+3. Output your answer in JSON format as follows:
+{{
+    "skill": "name_of_detected_skill"
+}}

@@ -1,0 +1,5 @@
+1. **Resolution Time Efficiency**: This category will focus on insights related to the average resolution times of incidents, segmented by various categories and priorities. It will highlight patterns in how quickly incidents are resolved, identify bottlenecks, and suggest areas for process improvement to enhance efficiency.
+
+2. **Priority Impact Analysis**: This category will capture insights on how different priority levels affect resolution times. It will provide a detailed understanding of whether higher priority incidents are resolved faster and how priority assignments correlate with resolution efficiency, helping to optimize resource allocation.
+
+3. **Category-Specific Performance**: This category will encompass insights related to the performance of different incident categories in terms of resolution times. It will identify which categories consistently experience longer resolution times and may require targeted interventions or resource adjustments to improve service management outcomes.

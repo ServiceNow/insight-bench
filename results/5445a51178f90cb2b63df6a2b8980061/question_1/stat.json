@@ -1,0 +1,26 @@
+{
+    "name": "Business Duration by Assignment Group",
+    "description": "This plot shows the variation of business duration across different assignment groups.",
+    "value": [
+        {
+            "Assignment group": "Team1",
+            "Business duration": 435241.1781609195
+        },
+        {
+            "Assignment group": "Team2",
+            "Business duration": 532190.9958333333
+        },
+        {
+            "Assignment group": "Team3",
+            "Business duration": 823504.426724138
+        },
+        {
+            "Assignment group": "Team4",
+            "Business duration": 462951.92913385824
+        },
+        {
+            "Assignment group": "Team5",
+            "Business duration": 513121.6033057851
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+1. **Reassignment Impact on Resolution Efficiency**: This category will focus on insights related to how the number of times an incident is reassigned affects the speed and efficiency of resolving high-priority incidents. It will capture patterns and correlations between reassignment counts and resolution times, providing actionable insights into process optimization.
+
+2. **Priority-Driven Resolution Dynamics**: This category will encompass insights that explore how the priority level of incidents influences their resolution dynamics, including time to resolution and the steps involved. It will help in understanding the urgency and resource allocation required for different priority levels, aiding in strategic planning and resource management.
+
+3. **Incident Workflow Bottlenecks**: This category will identify and analyze points in the incident management process where delays or inefficiencies occur, particularly in relation to high-priority incidents. Insights here will focus on uncovering stages in the workflow that contribute to extended resolution times, enabling targeted improvements in the incident management process.

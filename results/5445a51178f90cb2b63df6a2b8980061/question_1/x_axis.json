@@ -1,0 +1,11 @@
+{
+    "name": "Assignment Groups",
+    "description": "Different assignment groups with their corresponding mean business duration.",
+    "value": [
+        "Team1",
+        "Team2",
+        "Team3",
+        "Team4",
+        "Team5"
+    ]
+}

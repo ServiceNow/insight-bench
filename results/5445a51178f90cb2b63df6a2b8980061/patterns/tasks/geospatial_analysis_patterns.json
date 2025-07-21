@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Time to Resolve",
+    "Business Duration",
+    "Impact of Location on Incidents"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal Effect on Incident Volume",
+      "columns_involved": [
+        "Opened",
+        "Location",
+        "Impact"
+      ],
+      "reasoning": "In real-world scenarios, certain months or seasons can see spikes in incident reports due to environmental or social factors. For example, network outages may occur more frequently in storm-prone regions during certain seasons.",
+      "relevance_to_kpi": "This pattern affects 'Impact of Location on Incidents' as seasonal incidents could skew the incident density in certain locations.",
+      "benchmark_value": "Tests the model's ability to capture temporal and geospatial data interactions and to assess whether it can discern trends that align with seasonal patterns."
+    },
+    {
+      "pattern": "Delayed Resolution Linked to Specific Locations",
+      "columns_involved": [
+        "Location",
+        "Duration",
+        "Resolve time"
+      ],
+      "reasoning": "Some locations may inherently have longer resolution times due to factors such as infrastructure or resource availability. Injecting a pattern where certain locations consistently experience longer resolution times forces the model to consider geospatial variance.",
+      "relevance_to_kpi": "It directly impacts 'Time to Resolve' and 'Business Duration' KPIs by introducing location-based delays.",
+      "benchmark_value": "Challenges a model to identify and explain disparities in resolution times geographically, promoting geolocation-driven optimization suggestions."
+    },
+    {
+      "pattern": "Incident Reassigment Surge in Specific Geographies",
+      "columns_involved": [
+        "Location",
+        "Reassignment count",
+        "Assignment group"
+      ],
+      "reasoning": "Some geographic regions may struggle with adequate staffing or specialization, leading to higher reassignment rates. This could imply either a need for enhanced training or process improvements in these areas.",
+      "relevance_to_kpi": "Impacts 'Impact of Location on Incidents' by suggesting indirect location challenges that cause inefficiencies.",
+      "benchmark_value": "Prompts the analysis of resource allocation, guiding strategic decisions on staffing and training geographically."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+### Summary of Spearman's Rank Correlation Coefficient Pipeline
+
+1. **Data Preparation:**
+   - Load the dataset from a CSV file using a function that reads the file into a Pandas DataFrame.
+
+2. **Data Manipulation:**
+   - Prepare the data by selecting specific columns and removing any missing values to ensure clean data for analysis.
+
+3. **Model Implementation:**
+   - Implement the Spearman's Rank Correlation Coefficient calculation using a function that takes two columns from the data and computes the correlation and p-value using the `scipy.stats.spearmanr` method.
+
+4. **Visualization:**
+   - Visualize the relationship between the two variables using a scatter plot with Seaborn's `jointplot`, which also displays the Spearman correlation statistic.
+
+5. **Evaluation:**
+   - Print the Spearman's Rank Correlation Coefficient and the p-value to evaluate the strength and significance of the correlation.
+
+6. **Save Results:**
+   - Save the correlation results (correlation coefficient and p-value) to a JSON file for future reference or reporting.
+
+7. **Main Execution:**
+   - Execute the entire process in a main function that:
+     - Loads the data.
+     - Prepares the data by selecting relevant columns.
+     - Computes the Spearman correlation.
+     - Visualizes the correlation.
+     - Evaluates and prints the results.
+     - Saves the results to a file.

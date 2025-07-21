@@ -1,0 +1,46 @@
+{
+  "kpis": [
+    "Support Efficiency",
+    "Incident Resolution Time",
+    "Reassignment Rate",
+    "Service Level Agreement (SLA) Adherence"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduction of a pattern where the reassignment count spikes for incidents initially tagged with high priority but lacking a follow-up due time.",
+      "columns_involved": [
+        "Priority",
+        "Reassignment count",
+        "Business resolve time",
+        "SLA due"
+      ],
+      "reasoning": "This pattern simulates workflow inefficiencies where incidents marked as high priority initially do not have a clear resolution path and hence require multiple reassignments before resolution. This tests the model's ability to detect bottlenecks in incident handling and resolution processes.",
+      "relevance_to_kpi": "Affects the 'Incident Resolution Time' by potentially increasing the resolution time for such incidents, and 'Reassignment Rate' by increasing the number of handoffs due to priority misalignment.",
+      "benchmark_value": "Tests the model's capability to identify key bottlenecks in incident management workflows and how well it associates high-priority tags without proper follow-up guidance as a cause of inefficiency."
+    },
+    {
+      "pattern": "A trend where incidents resolved by certain individuals result in a consistent reduction in resolution time, regardless of priority or category.",
+      "columns_involved": [
+        "Resolved by",
+        "Business resolve time",
+        "Priority",
+        "Category"
+      ],
+      "reasoning": "This pattern reflects a real-world situation where specific employees exhibit exceptional efficiency. Identifying such patterns can help in capacity building and process optimization.",
+      "relevance_to_kpi": "Directly impacts 'Incident Resolution Time' by shortening the time to resolution for incidents handled by certain individuals.",
+      "benchmark_value": "Challenges models to recognize human factors and personal efficiency attributes within transactional data, allowing benchmarking of the model's capacity to recommend process improvements or training needs."
+    },
+    {
+      "pattern": "Temporal spikes in incidents related to a particular 'Configuration item' coinciding with updates recorded in the 'Updated' column.",
+      "columns_involved": [
+        "Configuration item",
+        "Opened",
+        "Updated",
+        "Category"
+      ],
+      "reasoning": "Simulates incidents rising from deployment or patch anomalies correlating with specific configuration items, especially during known update intervals.",
+      "relevance_to_kpi": "Impacts 'Incident Resolution Time' and 'Support Efficiency', as such spikes may lead to temporary inefficiencies.",
+      "benchmark_value": "Validates the model's ability to link temporal anomalies with particular actions or changes in the system, enhancing predictive maintenance strategies and root cause analysis."
+    }
+  ]
+}

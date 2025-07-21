@@ -1,0 +1,44 @@
+{
+  "kpis": [
+    "Fraudulent Incidents Identified",
+    "Incident Resolution Time",
+    "False Positive Rate",
+    "Incident Prioritization Accuracy"
+  ],
+  "patterns": [
+    {
+      "pattern": "Sudden surge in 'Incident state' changes followed by a delay in 'Resolve time' especially for incidents marked with 'High' or 'Critical' in 'Priority'.",
+      "columns_involved": [
+        "Incident state",
+        "Resolve time",
+        "Priority"
+      ],
+      "reasoning": "This pattern simulates a scenario where incidents might be getting manipulated or reprioritized after initial opening, suggesting potential fraudulent activity or tampering. This is realistic as such behaviors are common in fraud schemes where the intent is to delay or obscure true incident priorities.",
+      "relevance_to_kpi": "It directly affects 'Fraudulent Incidents Identified' as such manipulations can be an anomaly indicative of fraud. It also impacts 'Incident Resolution Time' as delays might reflect fraudulent interventions.",
+      "benchmark_value": "This tests a model's ability to detect anomalies in incident handling, specifically those that could hint at fraudulent behavior by observing patterns like changes in priority followed by resolution delays."
+    },
+    {
+      "pattern": "Clusters of incidents from the same 'Location' or 'Assigned to' person occurring within short periods, showing similar 'Short description' but with varying 'Category'.",
+      "columns_involved": [
+        "Location",
+        "Assigned to",
+        "Short description",
+        "Category"
+      ],
+      "reasoning": "This pattern mimics real-world situations where fraudulent activities target specific locations or employees, showing attempts to exploit certain vulnerabilities or gaps in oversight. The variability in 'Category' adds realism, as frauds often diversify their approaches.",
+      "relevance_to_kpi": "Influences 'Fraudulent Incidents Identified' and 'False Positive Rate' by introducing realistic clustering effects that models must identify without incorrectly flagging non-fraudulent incidents.",
+      "benchmark_value": "Enables models to be evaluated for their capacity to identify fraud clusters, distinguishing them from legitimate clusters by spotting subtle, consistent discrepancies across different categories."
+    },
+    {
+      "pattern": "Introduction of periodic spikes in 'Updates' with significant 'Reassignment count' for incidents that remain unresolved beyond their typical 'Business resolve time'.",
+      "columns_involved": [
+        "Updates",
+        "Reassignment count",
+        "Business resolve time"
+      ],
+      "reasoning": "This simulates scenarios where incidents are churned or obfuscated, potentially as a cover for misconduct or to artificially extend resolution times, which is a known fraud tactic.",
+      "relevance_to_kpi": "Affects 'Incident Resolution Time' and potentially 'Incident Prioritization Accuracy' as escalations or multiple updates without resolution indicate irregularities, possibly fraud.",
+      "benchmark_value": "Challenges models to recognize complex patterns involving excessive administrative actions that obfuscate incident handling, thereby testing models' effectiveness in not just detecting fraud but also reconstructing true incident trajectories."
+    }
+  ]
+}

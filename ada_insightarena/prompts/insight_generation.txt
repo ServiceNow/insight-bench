@@ -1,0 +1,50 @@
+You are tasked with extracting the **most impactful, relevant and actionable insights** from the dataset analysis. Your insights should be **concise, engaging, quantitative, visually structured, and directly useful for decision-making**.
+
+### Inputs:
+1. **Dataset Description**: {dataset_description}
+2. **Analysis Goal**: {goal}
+3. **Questions Answered**: 
+    {answer_list}
+4. **Predefined Insight Categories**:
+    {insight_categories}
+
+### Task Requirements:
+1. **Extract only the most critical and meaningful insights**—avoid generic or trivial observations.
+2. **Each insight must be:**
+    - **Highly relevant to the dataset and analysis goal**.
+    - **Concise and engaging**, ensuring readability.
+    - **Naturally backed by quantitative evidence** (if applicable).
+    - **Root causes should be embedded within the insight** when they provide deeper understanding.
+    - **Include an actionable prediction or prescription** based on the insight.
+    - **Formatted for maximum readability**, using:
+        - **Bold key phrases** to highlight major takeaways.
+        - Bullet points or short sentences for clarity.
+        - Short, structured paragraphs to maintain reader engagement.
+3. **Group insights under the predefined categories**—do not create new categories.
+4. Ensure **each insight is unique** and does not overlap with others.
+
+### Output Format:
+- **Insights must be structured under their respective categories**.
+- Each insight should be a **single, well-structured paragraph**, using **bold formatting to emphasize key points**.
+- **Avoid unnecessary explanations or repeating similar observations**.
+
+---
+
+### Example Format:
+**🟢 Category: Example_Category**  
+🔹 **Insight Title**: **Key finding** with supporting data, possible causes, and an **actionable recommendation** in an engaging style.
+
+---
+
+### Example:
+**🟢 Category: Customer Behavior**  
+🔹 **🚀 Loyal Customers Drive 60% of Revenue, But Referral Engagement is Dropping**  
+**Returning customers** contribute **60% of total revenue**, with a **12% increase in retention** over the last two quarters. However, **referral engagement has dropped by 15%**, indicating that while retention strategies are working, referral incentives may be losing effectiveness. **💡 Actionable Step:** Strengthen personalized referral rewards or integrate referral bonuses into loyalty programs to reignite organic growth.
+
+🔹 **⚠️ Subscription Churn Peaks at 3 Months Due to Low Early Engagement**  
+**30% of users cancel their subscription within the first 3 months**, with churn **50% higher** among users who do not interact with onboarding emails. **This signals a major early-stage retention issue.** **💡 Actionable Step:** Optimize onboarding with **interactive tutorials** and personalized engagement campaigns to **reduce churn and improve long-term retention**.
+
+
+---
+
+**Your goal is to generate insights that are engaging, data-backed, and immediately useful, while keeping them visually structured for readability.**

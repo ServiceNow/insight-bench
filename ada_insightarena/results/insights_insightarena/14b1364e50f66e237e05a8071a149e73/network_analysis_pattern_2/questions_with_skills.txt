@@ -1,0 +1,1 @@
+[{'question': 'How does the reassignment count influence the resolution time of high-priority incidents?', 'task': 'Network Analysis', 'skill_notebooks': [{'file_name': 'GrangerCausality'}, {'file_name': 'RandomForestFeatureImportance'}, {'file_name': 'RFMAnalysis'}], 'predicted_skills': ['GrangerCausality', 'RandomForestFeatureImportance', 'RFMAnalysis']}]

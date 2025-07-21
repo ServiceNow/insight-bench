@@ -1,0 +1,46 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Compliance",
+    "Incident Volume Over Time",
+    "Prioritization Impact"
+  ],
+  "patterns": [
+    {
+      "pattern": "Spike in incident volume caused by a planned system upgrade event leading to temporary increased workload during a specific short-term window.",
+      "columns_involved": [
+        "Opened",
+        "Category",
+        "Priority",
+        "Incident state"
+      ],
+      "reasoning": "In real-world settings, planned upgrades or deployments often result in temporary spikes in incidents due to system instability or configuration issues. This pattern reflects an occurrence that system administrators and support teams frequently encounter.",
+      "relevance_to_kpi": "This pattern affects 'Incident Volume Over Time' and can lead to increased 'Incident Resolution Time' due to the surge in volume. Such spikes challenge models to accurately assess workload and resource allocation efficiency during periods of high demand.",
+      "benchmark_value": "Tests the model's ability to identify and adapt to time-bound anomalies and highlights the importance of understanding temporal workload patterns for resource planning."
+    },
+    {
+      "pattern": "Delayed resolution effect where incidents classified as 'Network' or 'Software' experience a delay due to dependency on external resolution teams.",
+      "columns_involved": [
+        "Category",
+        "Business resolve time",
+        "Assignment group",
+        "Resolved"
+      ],
+      "reasoning": "Dependency on third-party or external teams often introduces delays in resolution for certain categories that require specialized knowledge or cross-departmental coordination.",
+      "relevance_to_kpi": "Directly impacts both 'Incident Resolution Time' and 'SLA Compliance' KPIs. It challenges models to incorporate dependency handling and to forecast resolution times considering external factors.",
+      "benchmark_value": "Simulates real-world friction points in cross-functional processes which are crucial for models that aim to predict and improve SLA adherence and operational efficiency."
+    },
+    {
+      "pattern": "Cyclic shift in priority levels with end-of-quarter business reviews leading to higher urgency incidents as enterprise systems undergo rigorous stress testing.",
+      "columns_involved": [
+        "Opened",
+        "Urgency",
+        "Priority",
+        "Resolved"
+      ],
+      "reasoning": "End-of-quarter business cycles often involve intensified system usage and stress testing, which raises the occurrence of high-priority issues. This replicates expected operational patterns within enterprise settings.",
+      "relevance_to_kpi": "Impacts 'Prioritization Impact' by demonstrating how external business cycles can shift incident urgency and priority levels, influencing resource allocation decisions and strategic KPI evaluations.",
+      "benchmark_value": "Tests the robustness of priority classification models in adapting to cyclical business impacts and supports analyses that correlate business cycles with operational metrics."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+    {
+        "question": "What are the average resolution times for incidents across various categories and priorities?",
+        "skill": [
+            "RFMAnalysis",
+            "RandomForestFeatureImportance",
+            "GrangerCausality"
+        ],
+        "predicted_insight": "\u2022 **Inquiry / Help Delays:** The \"Inquiry / Help\" category with \"3 - Moderate\" priority has the highest average resolution time of 8126.32 hours, indicating significant delays potentially due to resource allocation or complexity issues.\n\n\u2022 **Efficient Hardware Resolution:** \"Hardware\" incidents with \"3 - Moderate\" priority have an exceptionally low average resolution time of 0.03 hours, suggesting highly efficient processes or prioritization strategies for these issues.",
+        "plot": "insightarena/results/insights_insightarena/14b1364e50f66e237e05a8071a149e73/network_analysis_pattern_1/question_0/plot.jpeg",
+        "code_skill": "none"
+    }
+]

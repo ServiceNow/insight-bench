@@ -1,0 +1,15 @@
+You are an expert technical summarizer. Below is a skill exemplar that explains how to implement a specific data analytics technique in Python. Your task is to:
+1. Summarize the key steps in the skill exemplar, focusing on:
+- Data preparation (e.g., cleaning, transformations, encoding).
+- Data Manipulation (if needed)
+- Model implementation (e.g., algorithm, parameters).
+- Visualization (e.g., types of plots, insights).
+- Evaluation (e.g., metrics, outputs).
+2. Avoid copying code directly; instead, describe what the code is doing in a concise and clear way.
+3. Structure the summary in bullet points or numbered steps, making it easy to understand and follow.
+
+Here is the skill exemplar:
+
+{skill_exempler}
+
+Please provide a well-structured summary.

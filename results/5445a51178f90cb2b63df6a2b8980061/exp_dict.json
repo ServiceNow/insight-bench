@@ -1,0 +1,6 @@
+{
+    "benchmark_type": "toy",
+    "branch_depth": 1,
+    "max_questions": 2,
+    "model_name": "gpt-4o-mini"
+}

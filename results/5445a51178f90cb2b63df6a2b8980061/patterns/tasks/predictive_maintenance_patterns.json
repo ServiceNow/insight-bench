@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Time to Resolution",
+    "Incident Reassignment Rate",
+    "SLA Adherence Rate",
+    "Incident Volume over Time"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal Surge in Incidents",
+      "columns_involved": [
+        "Opened",
+        "Category",
+        "Priority"
+      ],
+      "reasoning": "Introduce a seasonal surge in incidents related to 'Network' and 'Software' categories during particular months, like the end of the fiscal year or the beginning of school terms. This mimics a real-world scenario where service demands peak, and could lead to delays in resolution times due to increased volume.",
+      "relevance_to_kpi": "Affects Time to Resolution and Incident Volume over Time by potentially increasing the average time each incident takes to resolve during peak periods.",
+      "benchmark_value": "Tests how well models can predict and adapt to changes in incident volume and prioritize responses during known high-demand periods."
+    },
+    {
+      "pattern": "Escalation Impact Pattern",
+      "columns_involved": [
+        "Priority",
+        "Escalation",
+        "Duration"
+      ],
+      "reasoning": "Implement a conditional pattern where incidents with '1 - Critical' priority that remain unresolved for more than a certain duration automatically escalate from 'Normal' to 'High'. This models real-world escalation policies in place to prevent critical issues from being overlooked.",
+      "relevance_to_kpi": "Directly affects the SLA Adherence Rate and Time to Resolution by forcing quicker resolutions when escalations occur. Incidents should resolve faster once escalated.",
+      "benchmark_value": "Tests model responsiveness to automatic escalation mechanisms and how well they can predict the resultant changes in SLA adherence."
+    },
+    {
+      "pattern": "Multi-Assignee Hand-off Delay",
+      "columns_involved": [
+        "Assigned to",
+        "Assignment group",
+        "Reassignment count"
+      ],
+      "reasoning": "Simulate incidents requiring multiple reassignments across different groups, as indicated by an increase in 'Reassignment count', which introduces artificial delays. This models complex incidents that need diverse expertise and experience expected logistical coordination lags.",
+      "relevance_to_kpi": "Impacts both the Time to Resolution and Incident Reassignment Rate by introducing delays due to increased hand-offs.",
+      "benchmark_value": "Evaluates the model's capacity to account for and manage hand-off-related delays and complexities in prediction models."
+    }
+  ]
+}

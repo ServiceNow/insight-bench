@@ -1,0 +1,5 @@
+1. **SLA Compliance and Impact Correlation**: This category will focus on insights related to the relationship between incident impact levels and their adherence to Service Level Agreements (SLAs). It will capture patterns and trends in how high-impact incidents perform against SLA requirements, providing a clear view of operational efficiency and areas needing improvement.
+
+2. **Incident Prioritization and Resolution Efficiency**: This category will encompass insights about the prioritization of incidents and the efficiency of their resolution processes. It will highlight how different priority levels affect resolution times and outcomes, offering actionable insights into optimizing resource allocation and improving service management processes.
+
+3. **Temporal Patterns in Incident Management**: This category will address insights related to the timing of incident occurrences and resolutions. It will include analysis of peak times for incidents, duration trends, and any temporal factors affecting SLA compliance and incident management efficiency, enabling stakeholders to better plan and allocate resources.

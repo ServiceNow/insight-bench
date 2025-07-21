@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Achievement",
+    "Escalation Rate",
+    "Incident Volume by Category"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduction of a quarterly spike in incidents related to 'Network' category, occurring at the end of each quarter.",
+      "columns_involved": [
+        "Category",
+        "Opened",
+        "Incident state"
+      ],
+      "reasoning": "Quarterly spikes in network-related incidents can be realistic due to increased network usage as companies close financial quarters, leading to potential systems overload. This pattern helps observe how models cope with temporal spikes in incident volume.",
+      "relevance_to_kpi": "Increases 'Incident Volume by Category' temporarily, potentially affects 'Incident Resolution Time' and 'SLA Achievement' due to increased workload.",
+      "benchmark_value": "Tests the model's ability to identify temporal patterns in data and adapt predictions around high-volume periods."
+    },
+    {
+      "pattern": "Sudden increase in the 'Urgency' of incidents right after public holidays when backlog catches up.",
+      "columns_involved": [
+        "Urgency",
+        "Opened"
+      ],
+      "reasoning": "Following public holidays, many companies experience a backlog of user requests, increasing the urgency as tasks accumulate. This pattern tests the model's ability to handle priority surges.",
+      "relevance_to_kpi": "Impacts the 'SLA Achievement' and 'Incident Resolution Time' KPIs by testing the ability to manage incidents under increased urgency conditions.",
+      "benchmark_value": "Evaluates how well models respond to changes in incident urgency and handle predictions in post-holiday periods."
+    },
+    {
+      "pattern": "Delayed resolution times in incidents opened after new software releases, particularly in 'Software' category.",
+      "columns_involved": [
+        "Category",
+        "Opened",
+        "Resolve time"
+      ],
+      "reasoning": "New software deployments often introduce unforeseen issues, resulting in longer incident resolution times. This reflects how real-world deployments affect resolution efficiency.",
+      "relevance_to_kpi": "Directly affects the 'Incident Resolution Time' KPI and may influence 'Escalation Rate' due to unresolved issues.",
+      "benchmark_value": "Challenges models to recognize the impact of external events (software releases) on incident resolution efficiency, a key aspect of real-world market analysis."
+    }
+  ]
+}

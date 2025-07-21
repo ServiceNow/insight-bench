@@ -1,0 +1,46 @@
+{
+  "kpis": [
+    "Resolution Time",
+    "Business Duration",
+    "Reassignment Count",
+    "SLA Compliance"
+  ],
+  "patterns": [
+    {
+      "pattern": "Regime shift in response speed due to a simulated policy change where incidents are resolved faster post-policy implementation.",
+      "columns_involved": [
+        "Resolved",
+        "Closed",
+        "Resolution notes",
+        "Business resolve time",
+        "SLA due"
+      ],
+      "reasoning": "Simulating a policy or procedural change that accelerates incident resolution is realistic as organizations often introduce efficiency measures. Observing incidents pre- and post-policy can evaluate a model's capacity to detect regime shifts and temporal effect correlations.",
+      "relevance_to_kpi": "Affects 'Resolution Time' and 'Business Duration' by possibly reducing these measures after the policy change.",
+      "benchmark_value": "Tests model's ability to detect shifts and temporal changes in data, crucial for strategic decisions and processing efficiency evaluations."
+    },
+    {
+      "pattern": "Delayed effect in incident reassignment where incidents are assigned multiple times within short time spans at random unexpected intervals.",
+      "columns_involved": [
+        "Reassignment count",
+        "Assigned to",
+        "Assignment group"
+      ],
+      "reasoning": "Real-world scenarios often show bottlenecks or confusion leading to a spike in reassignments over short intervals due to unexpected issues.",
+      "relevance_to_kpi": "Affects 'Reassignment Count' by increasing its value during specific periods that could contribute to analysis of stress points in the system.",
+      "benchmark_value": "Analyzes the model's ability to detect clustering of events and identify underlying latent issues causing rapid reassignment."
+    },
+    {
+      "pattern": "Periodic spikes in business duration due to a simulated external vendor issue affecting randomly selected cases.",
+      "columns_involved": [
+        "Business duration",
+        "Caused by Change",
+        "Category",
+        "Impact"
+      ],
+      "reasoning": "External dependencies like third-party vendor outages can cause delays, making this pattern realistic. It helps test model\u2019s ability to discern external vs. internal impact changes.",
+      "relevance_to_kpi": "Increases 'Business Duration' selectively, indicating periods of delayed resolutions due to external factors.",
+      "benchmark_value": "Assesses how models distinguish between internal and external factors and identify hidden trends due to third-party dependencies."
+    }
+  ]
+}

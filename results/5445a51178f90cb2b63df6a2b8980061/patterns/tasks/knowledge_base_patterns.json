@@ -1,0 +1,47 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "Active Incident Rate",
+    "SLA Compliance Rate",
+    "Reassignment Count"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce random spikes in 'Business duration', 'Duration', and 'Resolve time' for tickets classified as '1 - Critical' and 'priority 1'. This should mimic urgent issues that take unexpectedly long to resolve.",
+      "columns_involved": [
+        "Business duration",
+        "Duration",
+        "Resolve time",
+        "Priority",
+        "Incident state"
+      ],
+      "reasoning": "In real-world scenarios, critical incidents often have spikes in resolution time due to complexity or resource availability. Mimicking this behavior can test a model's ability to adapt to outliers and recognize patterns that lead to extended resolutions.",
+      "relevance_to_kpi": "Incident Resolution Time will increase for critical incidents, affecting understanding of time management and resource allocation benchmarks.",
+      "benchmark_value": "This pattern challenges analytical models to distinguish between typical incidents and outliers, testing robustness in anomaly detection."
+    },
+    {
+      "pattern": "Create a temporal shift where incidents opened in specific time frames (e.g., weekends) show a delay in 'Resolved' and 'Closed' times. This depicts lower staff availability or prioritization issues during off-hours.",
+      "columns_involved": [
+        "Opened",
+        "Resolved",
+        "Closed",
+        "Incident state"
+      ],
+      "reasoning": "Operational bottlenecks during off-hours are common in support centers, affecting incident resolution rates. This pattern tests a model's capability to account for temporal variability in data analysis.",
+      "relevance_to_kpi": "SLA Compliance Rate and Incident Resolution Time will be impacted, as off-hours resolution rates tend to be slower.",
+      "benchmark_value": "Such patterns evaluate a model's ability to incorporate temporal dynamics into predictions and improve scheduling and staffing strategies."
+    },
+    {
+      "pattern": "Simulate a regime shift by segmenting data into two periods, where a new incident management strategy significantly lowers 'Reassignment count' and improves 'Active Incident Rate' in the later period.",
+      "columns_involved": [
+        "Reassignment count",
+        "Active",
+        "Opened",
+        "Incident state"
+      ],
+      "reasoning": "This pattern mimics the impact of a new policy or strategy, such as improved training or better resource allocation, providing realistic conditions for testing how changes are detected and their effectiveness measured.",
+      "relevance_to_kpi": "Active Incident Rate and Reassignment Count should reflect an observable decrease in the latter period, indicating improvements in incident handling.",
+      "benchmark_value": "This pattern tests a model's ability to detect regime shifts and accurately attribute performance changes to strategic interventions."
+    }
+  ]
+}

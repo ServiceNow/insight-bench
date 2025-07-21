@@ -1,0 +1,41 @@
+{
+  "kpis": [
+    "Variance Explained Ratio",
+    "Principal Components Contribution",
+    "Outlier Detection"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduction of seasonal patterns in the 'Opened' and 'Closed' columns, with incidents opening more frequently during the end of the month.",
+      "columns_involved": [
+        "Opened",
+        "Closed"
+      ],
+      "reasoning": "Many organizations experience higher incidents of issues towards month-end due to reporting and system updates, mimicking real-world trends.",
+      "relevance_to_kpi": "Impacts KPI by potentially increasing the variance explained by fewer principal components due to temporal clustering.",
+      "benchmark_value": "Tests model's ability to capture and represent temporal trends and their impact on system dynamics, giving insight into temporal component detection."
+    },
+    {
+      "pattern": "Cross-feature dependency introduced where incidents with higher 'Priority' and 'Impact' also exhibit a higher frequency of 'Reassignment count'.",
+      "columns_involved": [
+        "Priority",
+        "Impact",
+        "Reassignment count"
+      ],
+      "reasoning": "Critical issues often require collaboration across multiple departments, leading to more reassignments, a common real-world scenario.",
+      "relevance_to_kpi": "Changes variance structure, possibly affecting the variance explained by each component and highlights dependencies in components.",
+      "benchmark_value": "Tests the model's capability to identify correlated features and handle dependencies, essential for accurate dimensionality reduction in feature-rich datasets."
+    },
+    {
+      "pattern": "Regime shift pattern in 'Business duration' and 'Business resolve time', with sudden shifts to prolonged durations after a major IT system update in 'Category'.",
+      "columns_involved": [
+        "Business duration",
+        "Business resolve time",
+        "Category"
+      ],
+      "reasoning": "IT system updates can introduce temporary inefficiencies, causing delays, a realistic scenario showing a non-stationary behavior.",
+      "relevance_to_kpi": "Affects outlier detection in KPI by changing the distribution and skewness, impacting the robustness of extracted insights.",
+      "benchmark_value": "Evaluates the model's adaptability to shifts in feature distributions, understanding effects of structural changes in process timelines."
+    }
+  ]
+}

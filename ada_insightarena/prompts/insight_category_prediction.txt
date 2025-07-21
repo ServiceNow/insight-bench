@@ -1,0 +1,25 @@
+As an expert data scientist, your task is to **predict the top 3 most important categories of insights** that will emerge from analyzing answers to the given questions. These categories should reflect the key themes in the insights that will be extracted.
+
+### Inputs:
+1. **Dataset Description**: {dataset_description}
+2. **Analysis Goal**: {goal}
+3. **Questions Analyzed**: 
+    {questions_list}
+
+### Task Requirements:
+1. **Predict the types of insights** that are most likely to be derived from answering these questions.
+2. Group these insights into **exactly three distinct categories** that:
+    - **Capture the most relevant insight themes** based on the dataset and goal.
+    - **Are broad enough to group multiple related insights** yet specific enough to be actionable.
+    - **Help structure extracted insights meaningfully** for stakeholders.
+3. Ensure that each category:
+    - **Reflects the key insight patterns likely to emerge** from answering the provided questions.
+    - **Avoids overlap**, ensuring each category has a unique analytical focus.
+    - **Aligns with the dataset and analysis goal**, making insights easier to interpret and act on.
+
+### Output Format:
+- Return a **concise list of three category names**.
+- Each category name should be **clear, precise, and directly tied to the expected insights**.
+- **Avoid generic or overly broad categories**—focus on those that will maximize insight clarity and usability.
+
+**Your response should ensure that the most critical insights are structured effectively, preventing any valuable findings from being overlooked.**

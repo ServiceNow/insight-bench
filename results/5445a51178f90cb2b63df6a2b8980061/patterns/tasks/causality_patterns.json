@@ -1,0 +1,44 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Compliance",
+    "Priority Incidents Resolution",
+    "Escalation Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal Spike in Incidents",
+      "columns_involved": [
+        "Opened",
+        "Priority",
+        "Category"
+      ],
+      "reasoning": "In many organizations, certain periods, such as end of fiscal quarters, see a spike in incident reporting due to increased workloads and system use. By introducing a seasonal spike in incident creation during a particular time range, the model's ability to recognize temporal patterns and potential causative triggers like work stress or increased demand on systems can be evaluated.",
+      "relevance_to_kpi": "This pattern impacts both the Incident Resolution Time and SLA Compliance KPIs by potentially causing delays during high-load periods.",
+      "benchmark_value": "Tests a model's ability to recognize temporal patterns and predict time-sensitive behaviors, affecting incident resolution prioritization and resource allocation strategies."
+    },
+    {
+      "pattern": "Delayed Resolution due to Staffing Issues",
+      "columns_involved": [
+        "Assignment group",
+        "Business resolve time",
+        "Reassignment count"
+      ],
+      "reasoning": "Introduce periods where certain assignment groups have a shortage of staff, resulting in delayed incident resolution and higher reassignment counts. This reflects real-world scenarios where unexpected events such as sick leaves or staffing transitions affect service delivery.",
+      "relevance_to_kpi": "This affects the Priority Incidents Resolution and Escalation Rate KPIs, as critical incidents might take longer to resolve, leading to escalations.",
+      "benchmark_value": "Challenges models to identify staffing-related bottlenecks in resolution processes and assess their impact on incident handling efficiency."
+    },
+    {
+      "pattern": "Priority Reprioritization Discrepancies",
+      "columns_involved": [
+        "Priority",
+        "Impact",
+        "Urgency",
+        "Comments and Work notes"
+      ],
+      "reasoning": "Occasionally, incidents might be logged with higher or lower priority than necessary due to initial misjudgment or communication errors. Introducing a pattern where priorities are adjusted post-facto tests the system's adaptive capabilities.",
+      "relevance_to_kpi": "Impacts SLA Compliance and Priority Incidents Resolution as incorrect initial prioritization could lead to SLA breaches.",
+      "benchmark_value": "Tests a model's ability to adjust predictions dynamically based on changes in incident context and correctness of original priority assignments."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+You are an expert data analyst. Given the following list of insights from a dataset analysis:
+
+{answer}
+
+Your task is to generate **up to 2 key bullet points** summarizing the most important findings. Each bullet point should:
+- Start with a **header** from the insight card you're referencing.
+- Provide a **clear, concise** summary of the insight.
+- Prioritize insights that have **strong quantitative backing** (e.g., percentages, counts, averages, variances).
+- Focus on **actionable or significant patterns**.
+
+Before selecting a summary point, **internally verify** that it is backed by quantitative evidence. If an insight lacks sufficient numerical support, choose a stronger one.
+
+Analysis is for the Question:
+{question}
+
+### **Example Output:**
+• **High Case Routing Rate:** 70% of cases require multiple reassignments, indicating systemic inefficiencies in initial routing.  
+
+• **Response Time Exceeds Target:** Average response times exceed target SLAs by 45%, with peak-hour delays between 2-4 PM.  

@@ -1,0 +1,32 @@
+================================================================================
+🔍 INSIGHTS COMPARISON REPORT 🔍
+================================================================================
+
+❓ QUESTIONS
+----------------------------------------
+• {'question': 'What percentage of incidents with a high impact meet their SLA requirements?', 'task': 'Network Analysis'}
+
+📌 METADATA
+----------------------------------------
+• dataset_description: The dataset includes 571 rows and 92 columns, many of which contain crucial information about incidents logged in a service management system. Columns capture diverse attributes including incident identifiers, times and dates of activity, incident state, impact, priority, and various textual descriptions and notes.
+
+📊 PREDICTIONS
+----------------------------------------
+• **🟢 Category: SLA Compliance and Impact Correlation**  
+🔹 **⚠️ Critical SLA Compliance Gap in High-Impact Incidents**  
+Only **4.41% of high-impact incidents** met their SLA requirements, with just **9 out of 204 incidents** achieving compliance. This stark disparity suggests **systemic inefficiencies**, potentially due to **resource constraints or inadequate prioritization strategies**. **💡 Actionable Step:** Conduct a thorough review of resource allocation and incident prioritization protocols to enhance SLA compliance for high-impact incidents.
+
+**🟢 Category: Incident Prioritization and Resolution Efficiency**  
+🔹 **🚀 Prioritization Misalignment Affects Resolution Times**  
+Analysis reveals that **high-priority incidents** are not resolved significantly faster than lower-priority ones, indicating a **misalignment in prioritization and resource allocation**. This inefficiency could stem from **inadequate prioritization criteria or resource bottlenecks**. **💡 Actionable Step:** Reassess and refine prioritization criteria and ensure that resources are aligned with priority levels to improve resolution efficiency.
+
+**🟢 Category: Temporal Patterns in Incident Management**  
+🔹 **⏰ Peak Incident Occurrence Times Strain Resources**  
+Incidents predominantly occur during **weekday afternoons**, leading to a **30% increase in resolution times** during these periods. This temporal pattern suggests that **resource allocation does not match demand peaks**, causing delays. **💡 Actionable Step:** Adjust staffing and resource allocation to better align with peak incident times, ensuring faster response and resolution during high-demand periods.
+
+
+📋 GROUND TRUTH
+----------------------------------------
+• The percentage of high-impact incidents meeting SLA requirements has decreased, indicating potential breaches even when resolve times are adequate.
+
+================================================================================

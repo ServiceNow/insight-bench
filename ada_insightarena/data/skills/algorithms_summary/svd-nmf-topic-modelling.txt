@@ -1,0 +1,29 @@
+### Summary of SVD & NMF Topic Modelling Pipeline
+
+#### Data Preparation
+1. **Load Data**: Use the `fetch_20newsgroups` function to load training and test datasets from specified categories, removing headers, footers, and quotes.
+2. **Output**: Print the number of documents in the training and test datasets.
+
+#### Data Manipulation
+3. **Vectorization**: Transform the text data into a document-term matrix using either `TfidfVectorizer` or `CountVectorizer` with English stop words removed.
+4. **Output**: Print the shape of the resulting document-term matrix.
+
+#### Model Implementation
+5. **NMF Model**: Implement Non-negative Matrix Factorization (NMF) with a specified number of topics, extracting the topic-term matrix and document-topic matrix.
+6. **SVD Model**: Implement Truncated Singular Value Decomposition (SVD) with the same number of topics, extracting similar matrices as NMF.
+
+#### Visualization
+7. **Plotting**: Create side-by-side plots of topic distributions for both NMF and SVD models, showing the weight of terms across topics.
+
+#### Evaluation
+8. **Topic Extraction**: Extract and display the top words for each topic from both NMF and SVD models.
+9. **Metrics**: Calculate and print the reconstruction error for NMF and the explained variance ratio for SVD.
+
+#### Save Results
+10. **Output to File**: Save the topics, NMF reconstruction error, and SVD explained variance ratio to a CSV file.
+
+#### Main Execution
+11. **Configuration**: Set the number of topics and top words, and specify the output file path.
+12. **Pipeline Execution**: Sequentially execute the steps of data preparation, transformation, model implementation, visualization, evaluation, and saving results.
+
+This structured approach provides a comprehensive pipeline for topic modeling using SVD and NMF, from data preparation to result evaluation and storage.

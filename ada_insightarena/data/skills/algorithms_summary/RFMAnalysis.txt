@@ -1,0 +1,29 @@
+### Summary of RFM Pipeline Implementation
+
+1. **Data Preparation:**
+   - Load transaction data from a CSV file, ensuring that transaction dates are parsed as date objects for further analysis.
+
+2. **Data Manipulation:**
+   - Calculate the recency, frequency, and monetary value (RFM) for each customer:
+     - **Recency:** Determine the number of days since the last transaction for each customer, considering only transactions from the last two years.
+     - **Frequency:** Count the number of transactions per customer.
+     - **Monetary Value:** Sum the transaction amounts for each customer.
+   - Aggregate these metrics into an RFM table grouped by customer ID.
+
+3. **Model Implementation:**
+   - Assign RFM scores to each customer by dividing the recency, frequency, and monetary value into quartiles:
+     - Recency is scored inversely (lower recency gets a higher score).
+     - Frequency and monetary value are scored directly (higher values get higher scores).
+
+4. **Visualization:**
+   - Create a bar plot to visualize the distribution of combined RFM scores, which are concatenated strings of the individual R, F, and M scores.
+   - Label the plot with appropriate titles and axis labels to convey insights about customer segmentation.
+
+5. **Evaluation:**
+   - Provide a statistical summary of the RFM scores using descriptive statistics to understand the distribution and central tendencies of the scores.
+
+6. **Save Results:**
+   - Export the RFM scores to a CSV file for further analysis or reporting.
+
+7. **Main Execution:**
+   - Execute the entire pipeline by loading the data, calculating RFM metrics, assigning scores, visualizing the distribution, analyzing the scores, and saving the results. This is encapsulated in a main function to streamline the process.

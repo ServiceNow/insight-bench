@@ -1,0 +1,35 @@
+### PCA Implementation Pipeline Summary
+
+1. **Data Preparation:**
+   - Load the dataset from a CSV file into a DataFrame.
+   - Separate features (X) from the target variable (y).
+   - Encode the target variable using label encoding to convert categorical labels into numerical format.
+
+2. **Data Manipulation:**
+   - Split the dataset into training and testing sets using a 70-30 split ratio to ensure the model is trained and evaluated on different data.
+
+3. **Model Implementation (PCA using SVD):**
+   - Define a custom PCA class (`SVDPCA`) that uses Singular Value Decomposition (SVD) for dimensionality reduction.
+   - Center the data by subtracting the mean of each feature.
+   - Perform SVD on the centered data to decompose it into U, S, and Vt matrices.
+   - Adjust the sign of the eigenvectors to ensure consistent output.
+   - Calculate explained variance and explained variance ratio for the selected components.
+   - Transform the data into a lower-dimensional space using the top principal components.
+
+4. **Visualization:**
+   - Create a scatter plot of the first two principal components to visualize the data in reduced dimensions.
+   - Label the axes as 'Principal Component 1' and 'Principal Component 2' and add a grid for better readability.
+
+5. **Evaluation:**
+   - Print the explained variance and explained variance ratio to assess how much variance is captured by the selected principal components.
+
+6. **Save Results:**
+   - Save the trained PCA model to a file using pickle for future use or deployment.
+
+7. **Main Execution:**
+   - Load the data and split it into training and testing sets.
+   - Initialize the PCA model with the desired number of components (e.g., 2).
+   - Fit and transform the training data using the PCA model.
+   - Visualize the transformed data.
+   - Evaluate the PCA model by printing the explained variance metrics.
+   - Save the PCA model to a file for later use.

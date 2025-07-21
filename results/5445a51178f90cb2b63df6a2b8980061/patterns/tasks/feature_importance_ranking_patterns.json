@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Resolution Time",
+    "SLA Compliance",
+    "Incident Severity Adjustment Frequency",
+    "Reassignment Count"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce a trend where high-severity incidents ('1 - High') tend to have longer resolution times, especially when assigned to certain groups (e.g., 'IT Securities').",
+      "columns_involved": [
+        "Severity",
+        "Resolution Time",
+        "Assignment group"
+      ],
+      "reasoning": "In real-world scenarios, high-severity issues often take longer to resolve due to their complexity and the thoroughness required. This pattern is realistic as critical issues might necessitate more resources and verification steps.",
+      "relevance_to_kpi": "Affects 'Resolution Time' and 'Incident Severity Adjustment Frequency' by increasing the resolution time for high-severity cases.",
+      "benchmark_value": "Tests the model\u2019s ability to correctly rank feature importance, particularly understanding the impact of severity and assignment group interplay on resolution time."
+    },
+    {
+      "pattern": "Introduce temporal spikes in 'SLA Compliance' failure rates, coinciding with specific months where maintenance or updates are historically scheduled.",
+      "columns_involved": [
+        "SLA Compliance",
+        "Opened",
+        "Closed"
+      ],
+      "reasoning": "Scheduled maintenance or system updates can temporarily affect SLA compliance due to increased incident volume or complexity. This represents a realistic industry norm.",
+      "relevance_to_kpi": "Directly impacts 'SLA Compliance' by simulating the periodic challenges associated with external planned events.",
+      "benchmark_value": "Evaluates the model\u2019s capacity to detect and attribute temporal trends to specific external factors, challenging it to distinguish between random noise and genuine operational patterns."
+    },
+    {
+      "pattern": "Generate conditionally higher reassignment counts for incidents categorized under 'Network' during peak usage hours.",
+      "columns_involved": [
+        "Category",
+        "Reassignment count",
+        "Opened"
+      ],
+      "reasoning": "Network incidents typically experience more reassignments during busy network traffic times due to complex issue diagnosis requiring expertise from different teams.",
+      "relevance_to_kpi": "Influences 'Reassignment Count' by increasing when peak usage conditions are identified, highlighting its correlation with business processes.",
+      "benchmark_value": "Tests the ability of models to grasp complex inter-feature dependencies, especially when temporality and category-specific expertise come into play, ensuring the model sensitivity to related conditions."
+    }
+  ]
+}

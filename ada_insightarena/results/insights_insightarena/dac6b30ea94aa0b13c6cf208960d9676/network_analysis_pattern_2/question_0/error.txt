@@ -1,0 +1,1 @@
+Error during stationarity check: zero-size array to reduction operation maximum which has no identity

@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Imputation Accuracy",
+    "Bias in Imputed Values",
+    "Impact on Derived Metrics",
+    "Time to Convergence"
+  ],
+  "patterns": [
+    {
+      "pattern": "Sudden spike in 'Business duration' and 'Business resolve time' around specific 'Opened' dates, mimicking a system outage or unexpected event longer durations for incidents opened in the month of November 2024.",
+      "columns_involved": [
+        "Opened",
+        "Business duration",
+        "Business resolve time"
+      ],
+      "reasoning": "System outages or unexpected events can lead to sudden increases in incident handling times. By creating a simulated spike, models will be tested in accurately imputing missing values around and within this event window.",
+      "relevance_to_kpi": "Imputation accuracy and bias are impacted as models might struggle with the task when missing values coincide with anomalous spikes.",
+      "benchmark_value": "Checks if models can distinguish between regular patterns and anomalies in imputation tasks, crucial for real-time operational metrics."
+    },
+    {
+      "pattern": "Pattern of lower 'Impact' values linked with longer 'Duration' for incidents related to 'Network' category, representing misreporting or overestimation of resolution time.",
+      "columns_involved": [
+        "Impact",
+        "Duration",
+        "Category"
+      ],
+      "reasoning": "Incidents with lower real impact might sometimes be reported with inflated resolution times due to human error or systemic reporting inaccuracies.",
+      "relevance_to_kpi": "This condition tests models on bias in imputing duration values in correlation with a qualitative metric.",
+      "benchmark_value": "Models are challenged with recognizing contradiction in data reports, assessing overall reasoning capacity during imputation."
+    },
+    {
+      "pattern": "Shift in 'Priority' assignments over a certain period with sudden increase in 'Reassignment count,' indicating a real-world scenario of policy overhaul during incident prioritization.",
+      "columns_involved": [
+        "Priority",
+        "Reassignment count",
+        "Created"
+      ],
+      "reasoning": "In organizational settings, shifts in policy can lead to fluctuating incident priorities and reassignment rates as a result of evolving process efficiency measures.",
+      "relevance_to_kpi": "Tests the model's time convergence and ability to handle temporal dynamics within data imputation.",
+      "benchmark_value": "Evaluates models' capabilities to adapt to regime shifts and temporal changes, representing robust imputation under evolving conditions."
+    }
+  ]
+}

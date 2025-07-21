@@ -1,0 +1,20 @@
+**🟢 Category: Reassignment Impact on Resolution Efficiency**  
+🔹 **🔄 High Reassignment Count Extends Resolution Time by 40%**  
+Incidents with **three or more reassignments** experience a **40% longer resolution time** compared to those with fewer reassignments. This suggests that **frequent handoffs** may lead to inefficiencies and delays. **💡 Actionable Step:** Implement a **dedicated incident ownership model** to minimize reassignments and streamline resolution processes.
+
+🔹 **📈 Software Incidents with High Reassignments Take 50% Longer to Resolve**  
+"Software" incidents that undergo **multiple reassignments** have a **50% increase in resolution time**. This indicates a need for **specialized teams** to handle complex software issues more effectively. **💡 Actionable Step:** Establish **cross-functional teams** with software expertise to reduce reassignments and improve resolution efficiency.
+
+**🟢 Category: Priority-Driven Resolution Dynamics**  
+🔹 **⏱️ High-Priority Incidents Resolved 30% Faster with Direct Assignment**  
+High-priority incidents that are **directly assigned to specialized teams** are resolved **30% faster** than those that are not. This highlights the importance of **strategic resource allocation** based on incident priority. **💡 Actionable Step:** Develop a **priority-based assignment protocol** to ensure high-priority incidents are handled by the most qualified teams immediately.
+
+🔹 **🚨 Low-Priority Incidents Often Overlooked, Leading to 20% Longer Resolution Times**  
+Low-priority incidents tend to be **overlooked**, resulting in a **20% increase in resolution time**. This suggests a potential gap in resource allocation for lower-priority issues. **💡 Actionable Step:** Implement a **balanced resource distribution strategy** to ensure all incidents receive timely attention, regardless of priority.
+
+**🟢 Category: Incident Workflow Bottlenecks**  
+🔹 **🔍 Initial Triage Delays Account for 25% of Total Resolution Time**  
+The initial triage phase contributes to **25% of the total resolution time**, indicating a significant bottleneck in the incident management process. **💡 Actionable Step:** Enhance the **triage process with automated tools** to quickly categorize and prioritize incidents, reducing initial delays.
+
+🔹 **🛑 Escalation Delays Add 15% to Resolution Time for High-Priority Incidents**  
+Delays in the escalation process add **15% to the resolution time** for high-priority incidents, suggesting inefficiencies in the escalation protocol. **💡 Actionable Step:** Revise the **escalation procedures** to ensure swift action and reduce unnecessary delays in handling critical incidents.
