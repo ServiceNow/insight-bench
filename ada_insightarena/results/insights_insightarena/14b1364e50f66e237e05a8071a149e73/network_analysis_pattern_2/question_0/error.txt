@@ -1,0 +1,1 @@
+An error occurred during the analysis: zero-size array to reduction operation maximum which has no identity

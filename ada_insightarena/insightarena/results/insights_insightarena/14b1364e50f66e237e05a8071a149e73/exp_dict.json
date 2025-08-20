@@ -1,0 +1,7 @@
+{
+    "challenge": "mid",
+    "model": "gpt-4o",
+    "eval_mode": "insights",
+    "with_skills": 1,
+    "data_path": "insightarena"
+}

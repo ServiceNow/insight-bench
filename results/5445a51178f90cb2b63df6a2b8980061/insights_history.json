@@ -1,0 +1,44 @@
+[
+    {
+        "question": "What are the most common short descriptions of incidents reported in the dataset?",
+        "answer": "The most common short descriptions of incidents reported in the dataset include 'Printing Issues' with 14 occurrences, followed by 'All Phones are Getting Busy Signals' with 10, and 'Entourage Not working correctly', 'parallels issues on mac', and 'MacBook Troubles', each with 9 occurrences.",
+        "insight": "Interestingly, the top five incident descriptions indicate a significant focus on printing and communication issues, which could suggest underlying systemic problems in these areas that may require targeted interventions.",
+        "justification": "The analysis revealed that 'Printing Issues' was the most frequently reported incident, highlighting a potential area for improvement in printing services, while the other common issues suggest recurring problems with communication tools and software.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_0"
+    },
+    {
+        "question": "How does the business duration vary across different assignment groups?",
+        "answer": "The mean business duration varies significantly across different assignment groups, with Team3 having the highest average duration of approximately 823,504.43, while Team1 has the lowest at around 435,241.18.",
+        "insight": "Team3's business duration is over 88% longer than Team1's, suggesting that this group may face more complex tasks or challenges that require additional time to resolve.",
+        "justification": "The analysis shows that Team3's business duration is notably higher than the other teams, indicating potential differences in workload or efficiency among the assignment groups.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_1"
+    },
+    {
+        "question": "What are the most common short descriptions of incidents reported in the dataset?",
+        "answer": "The most common short descriptions of incidents reported in the dataset include 'Printing Issues' with 14 occurrences, followed by 'All Phones are Getting Busy Signals' with 10, and 'MacBook Troubles', 'Entourage Not working correctly', and 'parallels issues on mac', each with 9 occurrences.",
+        "insight": "Interestingly, the dataset shows that printing issues are the most prevalent, indicating that organizations may need to focus on enhancing their printing infrastructure and support to reduce these incidents.",
+        "justification": "The analysis revealed that 'Printing Issues' was the most frequently reported incident, highlighting a potential area for improvement in printing services, while the other common issues suggest recurring problems with communication devices and software applications.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_2"
+    },
+    {
+        "question": "How does the business duration of incidents vary across different assignment groups?",
+        "answer": "The business duration of incidents varies significantly across different assignment groups, with the Service Desk group having the highest mean business duration at approximately 606,005 hours, while the Openspace group shows a business duration of zero hours.",
+        "insight": "Interestingly, the Service Desk has the highest mean business duration at 606,005 hours, while the Openspace group has a business duration of zero hours, highlighting a stark contrast in incident handling efficiency across assignment groups.",
+        "justification": "The analysis reveals that the mean business duration for the Service Desk is notably higher than other groups, indicating that incidents handled by this group may be more complex or time-consuming, while the Openspace group has no recorded business duration, suggesting either a lack of incidents or a different handling process.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_3"
+    },
+    {
+        "question": "What are the most common short descriptions of incidents reported in the dataset?",
+        "answer": "The most common short descriptions of incidents reported in the dataset include 'Printing Issues' with 14 occurrences, followed by 'All Phones are Getting Busy Signals' with 10, and 'Entourage Not working correctly', 'parallels issues on mac', and 'MacBook Troubles', each with 9 incidents.",
+        "insight": "Interestingly, the top five short descriptions account for a total of 52 incidents, highlighting a concentration of issues that could be targeted for resolution to enhance overall service quality.",
+        "justification": "The analysis reveals that 'Printing Issues' is the most frequently reported incident, indicating a potential area for improvement in printing services, while the other common issues suggest recurring problems with communication tools and devices.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_4"
+    },
+    {
+        "question": "How does the business duration vary across different assignment groups?",
+        "answer": "The mean business duration varies significantly across different assignment groups, with the 'Service Desk' group having the highest average duration of approximately 606,005 hours, while the 'Openspace' group has a business duration of zero hours.",
+        "insight": "Interestingly, the 'Service Desk' group has the highest mean business duration at 606,005 hours, suggesting it may deal with more complex or time-consuming issues compared to other groups, while 'Openspace' has a mean duration of zero, indicating no recorded business activity.",
+        "justification": "The analysis of business duration by assignment group revealed that while most groups have similar average durations around 442,137 hours, the 'Service Desk' stands out with a notably higher mean duration, indicating potential complexities or workload differences in handling incidents compared to other groups.",
+        "output_folder": "results/5445a51178f90cb2b63df6a2b8980061/question_5"
+    }
+]

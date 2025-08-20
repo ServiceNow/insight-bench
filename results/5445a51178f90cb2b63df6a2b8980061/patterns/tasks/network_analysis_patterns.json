@@ -1,0 +1,46 @@
+{
+  "kpis": [
+    "Incident Resolve Time",
+    "Escalation Incidents",
+    "SLA Compliance",
+    "Incident Priority Distribution"
+  ],
+  "patterns": [
+    {
+      "pattern": "Time-specific network congestion",
+      "columns_involved": [
+        "Opened",
+        "Resolve time",
+        "Category",
+        "Impact"
+      ],
+      "reasoning": "Simulating a scenario where network issues are primarily reported during specific peak business hours or days. This is realistic as network congestion often aligns with business activity peaks.",
+      "relevance_to_kpi": "Affects 'Incident Resolve Time' and 'Incident Priority Distribution' by potentially increasing the volume of high-priority incidents during these periods.",
+      "benchmark_value": "Tests model's ability to identify temporal patterns and the effect of network demand peaks on incident resolution and prioritization."
+    },
+    {
+      "pattern": "Recurring incidents triggered by a specific configuration item",
+      "columns_involved": [
+        "Configuration item",
+        "Category",
+        "Reassignment count",
+        "Resolved by"
+      ],
+      "reasoning": "Reflects real-world scenarios where certain systems or hardware consistently cause problems, leading to repeated incident loggings. It necessitates recognizing persistent issues with specific network components.",
+      "relevance_to_kpi": "Impacts 'Escalation Incidents' by frequently involving re-assignments and eventual escalations, thereby affecting resolution strategies.",
+      "benchmark_value": "Challenges models to correlate repeated incidents with particular network elements, assisting in prioritization and resource allocation optimizations."
+    },
+    {
+      "pattern": "Sudden surge in a specific network-related issue due to an external factor",
+      "columns_involved": [
+        "Short description",
+        "Impact",
+        "Priority",
+        "Business resolve time"
+      ],
+      "reasoning": "This simulates a realistic scenario where an external event (e.g., a cyber-attack on the network) causes a spike in certain types of incidents.",
+      "relevance_to_kpi": "Directly impacts 'Incident Priority Distribution' and 'SLA Compliance' as priority levels are adjusted and SLAs risk breach due to increased workload.",
+      "benchmark_value": "Tests the model's robustness in adapting to sudden influxes in incident reports and its ability to reprioritize and allocate resources effectively."
+    }
+  ]
+}

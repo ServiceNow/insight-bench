@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "SLA Compliance Rate",
+    "Reassignment Count",
+    "Incident Priority Distribution"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduction of a seasonal trend where incidents related to 'Network' category double in volume during months that correspond to high travel periods (e.g., June and December) based on historical data in 'Opened' and 'Category'.",
+      "columns_involved": [
+        "Opened",
+        "Category"
+      ],
+      "reasoning": "Seasonal trends can significantly impact resource allocation and incident response strategies. This pattern tests a model\u2019s ability to detect non-uniform distributions and account for fluctuating workloads.",
+      "relevance_to_kpi": "Impacts the 'Incident Resolution Time' and 'SLA Compliance Rate' as the sudden increase in incident volumes could delay resolutions and lead to more SLA breaches.",
+      "benchmark_value": "Evaluates a model's ability to recognize temporal patterns and adjust predictions or resource plans dynamically."
+    },
+    {
+      "pattern": "A delayed effect is introduced where incidents under 'Urgency' of '1 - High' experience an artificial delay in resolution during system maintenance periods, identifiable by specific dates in the 'Updated' column.",
+      "columns_involved": [
+        "Urgency",
+        "Updated",
+        "Resolve time"
+      ],
+      "reasoning": "System maintenance can inadvertently affect urgent tasks. This pattern helps assess a model\u2019s capability to incorporate system availability or maintenance schedules in predictive analytics.",
+      "relevance_to_kpi": "Directly affects 'Incident Resolution Time' and potentially 'Reassignment Count', as delays may lead to task reassignments.",
+      "benchmark_value": "Challenges the model's ability to integrate external timing disruptions into KPI forecasting."
+    },
+    {
+      "pattern": "Create a dependency where incidents opened by 'admin' on certain weekends (determined by 'Opened' and 'Opened by') have a higher reassignment count due to staffing issues.",
+      "columns_involved": [
+        "Opened",
+        "Opened by",
+        "Reassignment count"
+      ],
+      "reasoning": "Specific roles might experience higher workload or reduced team support during off-hours, affecting operations. This pattern tests the model's skill in associating staffing variations with incident management efficiency.",
+      "relevance_to_kpi": "Influences 'Reassignment Count', as a high count could indicate inefficiencies or miscommunication in incident handling.",
+      "benchmark_value": "Tests the model's ability to incorporate team availability and staffing discrepancies into operational efficiency models."
+    }
+  ]
+}

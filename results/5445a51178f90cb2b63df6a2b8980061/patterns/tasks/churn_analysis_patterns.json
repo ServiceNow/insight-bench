@@ -1,0 +1,44 @@
+{
+  "kpis": [
+    "Incidents resolved within SLA",
+    "Average resolution time",
+    "Incident churn rate",
+    "Reassignment count"
+  ],
+  "patterns": [
+    {
+      "pattern": "Seasonal fluctuations in incident priority",
+      "columns_involved": [
+        "Priority",
+        "Opened",
+        "Closed"
+      ],
+      "reasoning": "Introduce a seasonal pattern where certain times of year (e.g., end of fiscal quarters) see a spike in high-priority incidents due to organizational changes or system updates. This can reflect real-world organizational behaviors that influence priority settings.",
+      "relevance_to_kpi": "This pattern impacts the 'Incidents resolved within SLA' and 'Average resolution time' as high-priority incidents might require faster resolution and more resources, thus affecting resolution times and adherence to SLAs.",
+      "benchmark_value": "Tests the model's ability to handle temporal patterns and dynamic resource allocation against fluctuating workloads."
+    },
+    {
+      "pattern": "Influence of assignment group on resolution times",
+      "columns_involved": [
+        "Assignment group",
+        "Business resolve time",
+        "Resolved by"
+      ],
+      "reasoning": "Simulate a trend where certain assignment groups consistently take longer to resolve incidents than others. This may be due to expertise levels, resource allocations, or process inefficiencies.",
+      "relevance_to_kpi": "Affects 'Average resolution time' and 'Incident churn rate' by potentially increasing resolution times and decreasing efficiency, leading to higher churn if incidents are not resolved promptly.",
+      "benchmark_value": "Challenges models to identify cross-feature dependencies and inefficiency areas within the organization that contribute to prolonged resolution times."
+    },
+    {
+      "pattern": "Delayed effect of infrastructure changes on incident count",
+      "columns_involved": [
+        "Category",
+        "Short description",
+        "Created",
+        "Closed"
+      ],
+      "reasoning": "Introduce a 'delayed reaction' where updates or changes to infrastructure impact incident counts after a lag. This reflects the real-world scenario where changes might lead to unexpected issues detected only after some use.",
+      "relevance_to_kpi": "Influences 'Incident churn rate' as sudden increases in incidents could indicate dissatisfaction or instability post-update.",
+      "benchmark_value": "Enables the evaluation of a model's capability to recognize delayed effects and the causality between infrastructure changes and incident volume fluctuations."
+    }
+  ]
+}

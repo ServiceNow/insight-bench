@@ -1,0 +1,95 @@
+{
+  "data_summary": "The dataset includes 571 rows and 92 columns, many of which contain crucial information about incidents logged in a service management system. Columns capture diverse attributes including incident identifiers, times and dates of activity, incident state, impact, priority, and various textual descriptions and notes.",
+  "task": "Network Analysis",
+  "kpis": [
+    {
+      "name": "Incident Resolution Time",
+      "description": "Measures the time taken to resolve an incident. Derived from 'Resolve time', 'Created', and 'Resolved' columns. Important for understanding efficiency and throughput in network management."
+    },
+    {
+      "name": "Incident Prioritization Efficiency",
+      "description": "Evaluates how quickly high-priority incidents are being addressed. Computed using 'Priority', 'Business resolve time', and 'Reassignment count'. Essential for resource management and ensuring critical incidents are prioritized."
+    },
+    {
+      "name": "SLA Compliance Rate",
+      "description": "Indicates how often service level agreements are met, derived from the 'Made SLA', 'SLA due', and 'Resolved' columns. Important for measuring adherence to contractual obligations."
+    }
+  ],
+  "questions": [
+    {
+      "kpi": "Incident Resolution Time",
+      "question": "What are the average resolution times for incidents across various categories and priorities?"
+    },
+    {
+      "kpi": "Incident Prioritization Efficiency",
+      "question": "How does the reassignment count influence the resolution time of high-priority incidents?"
+    },
+    {
+      "kpi": "SLA Compliance Rate",
+      "question": "What percentage of incidents with a high impact meet their SLA requirements?"
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce random delays in the resolution time for incidents categorized as 'Network'.",
+      "columns_involved": [
+        "Resolve time",
+        "Category",
+        "Resolved"
+      ],
+      "reasoning": "In reality, network-related incidents may experience unexpected delays. Injecting random delays helps test models on their ability to handle such anomalies realistically.",
+      "qa_impact": [
+        {
+          "question": "What are the average resolution times for incidents across various categories and priorities?",
+          "impact": "This pattern will increase the average resolution time for 'Network' incidents, altering the comparison between categories."
+        }
+      ]
+    },
+    {
+      "pattern": "Correlate reassignment counts with resolution delays specifically for high-priority incidents.",
+      "columns_involved": [
+        "Reassignment count",
+        "Priority",
+        "Resolve time"
+      ],
+      "reasoning": "High-priority network incidents often involve multiple stakeholders, resulting in more reassignments, which can lead to delays. This pattern checks how models adjust predictions based on increased complexity.",
+      "qa_impact": [
+        {
+          "question": "How does the reassignment count influence the resolution time of high-priority incidents?",
+          "impact": "This pattern will likely increase the observed correlation between reassignments and delay in resolution for high-priority incidents."
+        }
+      ]
+    },
+    {
+      "pattern": "Randomly mark high-impact incidents as non-compliant with SLA regardless of resolve time.",
+      "columns_involved": [
+        "Made SLA",
+        "Impact"
+      ],
+      "reasoning": "This pattern tests the robustness of models to SLA compliance factors, reflecting real scenarios where SLAs are breached for non-obvious reasons.",
+      "qa_impact": [
+        {
+          "question": "What percentage of incidents with a high impact meet their SLA requirements?",
+          "impact": "This pattern will decrease the SLA compliance rate amongst high-impact incidents, potentially revealing biases in compliance evaluation mechanisms."
+        }
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "question": "What are the average resolution times for incidents across various categories and priorities?",
+      "answer_after_injection": "Average resolution times for 'Network' incidents have increased significantly due to introduced delays, whereas other categories remain roughly the same.",
+      "caused_by_pattern": "Pattern 1"
+    },
+    {
+      "question": "How does the reassignment count influence the resolution time of high-priority incidents?",
+      "answer_after_injection": "The reassignment count now shows a stronger influence on the delay in resolution times for high-priority incidents due to increased reassignments.",
+      "caused_by_pattern": "Pattern 2"
+    },
+    {
+      "question": "What percentage of incidents with a high impact meet their SLA requirements?",
+      "answer_after_injection": "The percentage of high-impact incidents meeting SLA requirements has decreased, indicating potential breaches even when resolve times are adequate.",
+      "caused_by_pattern": "Pattern 3"
+    }
+  ]
+}

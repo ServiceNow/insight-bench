@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Incident Resolution Time",
+    "Service Level Agreement (SLA) compliance",
+    "Priority-based Incident Handling"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce a temporal pattern where incidents reported during weekdays exhibit a systematic delay in resolution, potentially due to higher volume of requests or resource availability issues.",
+      "columns_involved": [
+        "Opened",
+        "Resolve time",
+        "Business resolve time"
+      ],
+      "reasoning": "This pattern mimics the real-world scenario where service departments might have different workload and efficiency profiles during weekdays versus weekends. It can simulate processing bottlenecks that are common in IT services during workdays.",
+      "relevance_to_kpi": "This pattern directly impacts Incident Resolution Time, potentially causing delays in weekday incidents compared to weekend ones, and impacts service quality analyses.",
+      "benchmark_value": "It tests the model's ability to capture temporal workload effects, allowing assessment of algorithms that optimize incident resolutions differently by day."
+    },
+    {
+      "pattern": "Introduce a category-based regime shift where incidents with high priority levels suddenly increase in frequency and must be resolved quicker due to regulatory changes or high-stakes incidents.",
+      "columns_involved": [
+        "Priority",
+        "Resolve time",
+        "Incident state",
+        "Category"
+      ],
+      "reasoning": "Such regime shifts are realistic as businesses sometimes face sudden changes in policy or environment, requiring immediate attention to high-priority incidents.",
+      "relevance_to_kpi": "It affects Priority-based Incident Handling KPI by increasing the pressure on high-priority incidents, impacting metrics like resolution time and state transitions.",
+      "benchmark_value": "This pattern evaluates the model's capacity to adjust for rapid changes in priority dynamics and ensures it can prioritize effectively under stress."
+    },
+    {
+      "pattern": "Introduce occasional misclassification or reassignment of incidents to different categories, prompting delays or multiple reassessments before resolution.",
+      "columns_involved": [
+        "Category",
+        "Assignment group",
+        "Reassignment count"
+      ],
+      "reasoning": "This anomaly reflects a common issue in incident management systems where misrouting or mislabeling can occur, impacting operational efficiency.",
+      "relevance_to_kpi": "It impacts both Incident Resolution Time and SLA compliance due to increased time needed for corrections and reprocessing.",
+      "benchmark_value": "This pattern challenges models to handle routing anomalies and incorporate historical corrective action into model learning and decision-making processes."
+    }
+  ]
+}

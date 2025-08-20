@@ -1,0 +1,42 @@
+{
+  "kpis": [
+    "Clustering Accuracy",
+    "Cluster Cohesion",
+    "Cluster Separation",
+    "Anomaly Detection Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce temporal clustering by creating multiple incidents around certain dates with similar descriptions and impact levels.",
+      "columns_involved": [
+        "Opened",
+        "Short description",
+        "Impact"
+      ],
+      "reasoning": "In real-world service desks, spikes in specific incident types can occur due to events like software releases or outages. By clustering incidents with similar descriptions and impacts around specific dates, we can create realistic testing scenarios for clustering algorithms.",
+      "relevance_to_kpi": "Affects Cluster Cohesion and Clustering Accuracy by ensuring temporal and content-based proximity of incidents.",
+      "benchmark_value": "Tests the model\u2019s ability to identify time-based clusters and accommodate similar incidents due to external events or anomalies."
+    },
+    {
+      "pattern": "Inject regime shifts in priority and escalation states by introducing a period where priorities and escalations rapidly change, simulating an emergency response scenario.",
+      "columns_involved": [
+        "Priority",
+        "Escalation"
+      ],
+      "reasoning": "In response to emergencies or high-stress conditions, the priority and escalation of incidents might change abruptly. Modeling such shifts tests the system's ability to adapt to different operating conditions.",
+      "relevance_to_kpi": "Affects Anomaly Detection Rate and Clustering Accuracy by introducing abrupt data shifts that challenge the model\u2019s adaptability.",
+      "benchmark_value": "Evaluates the model\u2019s ability to handle regime shifts and classify incidents differently when operational dynamics change rapidly."
+    },
+    {
+      "pattern": "Implement cross-feature dependencies by making the assignment groups correlate with resolved times and business impact during specific periods.",
+      "columns_involved": [
+        "Assignment group",
+        "Business impact",
+        "Resolve time"
+      ],
+      "reasoning": "Certain groups may demonstrate different efficiencies and impacts under varying conditions, reflecting realistic operational dependencies.",
+      "relevance_to_kpi": "Impacts Cluster Separation and Clustering Accuracy by ensuring certain clusters emerge from feature correlations, distinguishing operational efficiencies per group.",
+      "benchmark_value": "Challenges clustering models to recognize implicit correlations in the dataset, enabling a deeper understanding of operational performance."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "kpis": [
+    "Average Resolution Time",
+    "SLA Compliance Rate",
+    "Incident Reopen Rate",
+    "High Priority Incident Count"
+  ],
+  "patterns": [
+    {
+      "pattern": "Spike in High Priority incidents at the end of each quarter, reflecting real-world behavior of increased workload or system stress.",
+      "columns_involved": [
+        "Opened",
+        "Priority",
+        "Incident state"
+      ],
+      "reasoning": "In many companies, the end of the financial quarter is associated with an increase in workload due to audits, reporting, and system reviews. Simulating this pattern allows us to see how models detect and handle spikes in data.",
+      "relevance_to_kpi": "This pattern impacts 'High Priority Incident Count' by creating temporary surges in incidents, testing the model's ability to detect them.",
+      "benchmark_value": "Challenges models to distinguish between random fluctuations and high-impact events that follow predictable temporal patterns."
+    },
+    {
+      "pattern": "Delayed resolution effect for high-impact incidents caused by system outages, where resolution time is prolonged.",
+      "columns_involved": [
+        "Impact",
+        "Resolve time",
+        "Incident state"
+      ],
+      "reasoning": "High-impact incidents often take longer to resolve, especially if they cause system-wide outages. This pattern tests how models identify and react to prolonged outliers in resolution times.",
+      "relevance_to_kpi": "Directly affects the 'Average Resolution Time' and 'SLA Compliance Rate' by introducing significant delays, impacting SLA adherence and resolution efficiency.",
+      "benchmark_value": "Models must accurately identify the delayed resolution characteristic of high-impact incidents, challenging their ability to differentiate based on impact severity."
+    },
+    {
+      "pattern": "Conditional trend where incidents opened by specific individuals are more likely to be reopened due to initial misclassification or inadequate resolution.",
+      "columns_involved": [
+        "Opened by",
+        "Reopen count",
+        "Resolution code"
+      ],
+      "reasoning": "Some users might have a pattern of filing tickets that are not fully resolved, leading to higher reopen rates. Testing models' capacity to detect patterns tied to specific user behavior allows for understanding biases in incident management.",
+      "relevance_to_kpi": "Influences 'Incident Reopen Rate' by highlighting cases where certain users' incidents are more prone to be reopened, impacting future predictions of resolution effectiveness.",
+      "benchmark_value": "Models need to identify correlations between specific users and incident reopen patterns, offering insights into potential user-specific workflow inefficiencies."
+    }
+  ]
+}

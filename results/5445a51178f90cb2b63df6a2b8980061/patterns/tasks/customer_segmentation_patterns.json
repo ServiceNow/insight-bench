@@ -1,0 +1,45 @@
+{
+  "kpis": [
+    "Average Resolution Time",
+    "Incident Volume per Category",
+    "Customer Satisfaction Score",
+    "SLA Compliance Rate"
+  ],
+  "patterns": [
+    {
+      "pattern": "Introduce a delay in resolution times for incidents opened during the last quarter of 2024 compared to previous periods.",
+      "columns_involved": [
+        "Opened",
+        "Closed",
+        "Resolve time",
+        "Business resolve time"
+      ],
+      "reasoning": "This simulates staffing or seasonal issues that could lead to prolonged incident handling, a common real-world scenario.",
+      "relevance_to_kpi": "Affects 'Average Resolution Time' by increasing the overall time taken for resolution in the dataset.",
+      "benchmark_value": "Tests the model's ability to detect temporal shifts and their impact on operational KPIs, crucial for crafting timely business interventions."
+    },
+    {
+      "pattern": "Create distinct incident handling behaviors depending on the 'Category' of the incident by introducing higher reassignment counts and longer resolve times for 'Software' related incidents.",
+      "columns_involved": [
+        "Category",
+        "Reassignment count",
+        "Resolve time",
+        "Business resolve time"
+      ],
+      "reasoning": "Different types of incidents often require varied handling processes, and software incidents can be more complex to resolve.",
+      "relevance_to_kpi": "Impacts 'Incident Volume per Category' and 'Average Resolution Time', offering insight into operational efficiency differences across categories.",
+      "benchmark_value": "Enables the evaluation of the model's ability to segment based on categorical influence and operational complexity."
+    },
+    {
+      "pattern": "Introduce sporadic higher 'Urgency' incidents tied to certain 'Companies', coinciding with significant 'Channel' use fluctuations (e.g., increased phone calls during system outages).",
+      "columns_involved": [
+        "Company",
+        "Urgency",
+        "Channel"
+      ],
+      "reasoning": "This pattern reflects real-world emergency situations where companies experience critical issues, prompting urgent action and specific channel use.",
+      "relevance_to_kpi": "Impacts 'Customer Satisfaction Score' and 'SLA Compliance Rate' as higher urgency incidents are prioritized differently.",
+      "benchmark_value": "Tests the model's handling of interrelated features, specifically its capability to tag different segments based on both urgency and communication channel patterns."
+    }
+  ]
+}
