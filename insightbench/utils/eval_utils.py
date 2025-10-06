@@ -1,6 +1,6 @@
 from insightbench import prompts
 
-import numpy as np, pandas as time, re, os
+import numpy as np, pandas as pd, time, re, os
 import evaluate
 
 import requests
