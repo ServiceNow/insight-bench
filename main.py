@@ -1,10 +1,12 @@
 import os, argparse
 import pandas as pd
-
 from insightbench.utils import agent_utils as au
 from insightbench import agents, benchmarks
 from insightbench.utils import exp_utils as eu
 from insightbench.utils.exp_utils import hash_dict, save_json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def main(exp_dict, savedir, args):
@@ -82,7 +84,7 @@ if __name__ == "__main__":
     parser.add_argument("-sb", "--savedir_base", type=str, default="results")
     parser.add_argument("-r", "--reset", type=int, default=0)
     # add openai api key
-    parser.add_argument("-o", "--openai_api_key", type=str, default=None)
+    # parser.add_argument("-o", "--openai_api_key", type=str, default=None)
     # dataset path
     parser.add_argument("-d", "--datadir", type=str, default="data/notebooks")
 
@@ -102,7 +104,7 @@ if __name__ == "__main__":
             )
 
     # set open ai env
-    os.environ["OPENAI_API_KEY"] = args.openai_api_key
+    # os.environ["OPENAI_API_KEY"] =
 
     # Loop through experiments
     for exp_dict in exp_list:

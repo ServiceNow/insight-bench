@@ -1,0 +1,28 @@
+{
+    "tasks": [
+        "Fraud Detection",
+        "Recommendation Systems",
+        "Churn Analysis",
+        "Customer Segmentation",
+        "Network Analysis",
+        "Association Rule Mining",
+        "Dashboard Summary",
+        "Predictive Maintenance",
+        "Cohort Analysis",
+        "Attribution Modeling",
+        "Anomaly Detection",
+        "Feature Importance Ranking",
+        "Geospatial Analysis",
+        "Causality",
+        "Logs Clustering",
+        "Time Series Decomposition",
+        "Principal Component Analysis",
+        "Correlation Analysis",
+        "Knowledge Base",
+        "Multi-table Search",
+        "Huge Table Analysis",
+        "Topic Modeling",
+        "Market Analysis",
+        "Data Imputation"
+    ]
+}
