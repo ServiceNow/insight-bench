@@ -4,7 +4,7 @@
     "metadata": {
         "goal": "Identify and analyze increasing trends in the number of incidents assigned to understand the implications of these trends on workload and agent efficiency.",
         "role": "Strategic Planning Manager",
-        "category": "Incidents Management",
+        "category": "Incident Management",
         "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
         "header": "Incident Category Trends Over Time (Flag 4)"
     },
@@ -27,11 +27,12 @@
             },
             "question": "Do we observe any trend in the volume of incidents?",
             "actionable_insight": "The slight increase in volume across all categories suggests that the issue may be specific to one or fewer particular category. This could indicate a systemic issue in the incident management process. It would be beneficial to investigate the overall process and identify areas for improvement to reduce the trend.",
-            "code": "df[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n# Sort the DataFrame by the opened_at column\ndf[\"date\"] = df[\"opened_at\"].dt.date\n\n# Count the number of incidents per day\ndf_daily_count = df.groupby(\"date\").size().reset_index(name=\"counts\")\n\n# Count the number of incidents per day\ndf_daily_count[\"date\"] = pd.to_datetime(df_daily_count[\"date\"])\n\n# Resample the data to get the weekly count of incidents\ndf_weekly_count = df_daily_count.resample(\"W\", on=\"date\").sum().reset_index()\n\n# Plot the trend\nplt.figure(figsize=(12, 6))\nsns.lineplot(x=\"date\", y=\"counts\", data=df_weekly_count)\nplt.title(\"Trend in Volume of Incident Tickets Per Week\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents opened\")\nplt.show()"
+            "code": "df[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n# Sort the DataFrame by the opened_at column\ndf[\"date\"] = df[\"opened_at\"].dt.date\n\n# Count the number of incidents per day\ndf_daily_count = df.groupby(\"date\").size().reset_index(name=\"counts\")\n\n# Count the number of incidents per day\ndf_daily_count[\"date\"] = pd.to_datetime(df_daily_count[\"date\"])\n\n# Resample the data to get the weekly count of incidents\ndf_weekly_count = df_daily_count.resample(\"W\", on=\"date\").sum().reset_index()\n\n# Plot the trend\nplt.figure(figsize=(12, 6))\nsns.lineplot(x=\"date\", y=\"counts\", data=df_weekly_count)\nplt.title(\"Trend in Volume of Incident Tickets Per Week\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents opened\")\nplt.show()",
+            "insight_value": {}
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a no correlation between the volume of incidents and the TTR",
+            "insight": "There is a negative correlation between the volume of incidents and the TTR",
             "insight_value": {
                 "correlation": "negative"
             },
@@ -76,12 +77,12 @@
                 "description": "The line plot displays the trend of time to resolution (TTR) over time. Each point on the line represents the average TTR for incidents opened on a particular date. The line is generally stable and unform with average ttr of 10 days."
             },
             "question": "What is the trend of time to resolution (ttr) over time?",
-            "actionable_insight": "The increasing trend in TTR suggests that it is not taking any longer to resolve incidents over time or there is no anomaly over time.",
+            "actionable_insight": "The uniform TTR over time suggests that incident resolution efficiency has remained consistent, though monitoring should continue to detect any future changes.",
             "code": "# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Compute resolution time in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\nsns.lineplot(x=df[\"opened_at\"], y=df[\"resolution_time\"])\nplt.xlabel(\"Creation date\")\nplt.ylabel(\"Time to resolution\")\nplt.title(\"Time to resolution by creation date\")"
         },
         {
             "data_type": "time_series",
-            "insight": "The increase in volume of incidents is seen only for one particular categpry i.e. Hardware",
+            "insight": "The increase in volume of incidents is seen only for one particular category i.e. Hardware",
             "plot": {
                 "plot_type": "multiple_line",
                 "title": "Trend of number of incidents opened Across Categories Over Time",
@@ -96,8 +97,9 @@
                 "description": "The multiple line plot displays the trend of volume of incidents across different categories over time. Each line represents a category and the points on the line represent the average volume of incidents of that category opened on a particular date. The trend is seen for hardware category, indicating that the increase in trend is specific to one particular category."
             },
             "question": "Is the increase in incidents uniform across all categories of incidents or is it more pronounced in a specific category?",
-            "actionable_insight": "The uniform increase in volume across Hardware categories suggests that the issue  specific to one particular category. This could indicate a systemic issue in the Hardware incident management process. It would be beneficial to investigate any system outage or device issues across the company",
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is your DataFrame and it has columns 'opened_at' and 'category'\n\n# Convert 'opened_at' to datetime if it's not already\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Extract date from 'opened_at'\ndf['date'] = df['opened_at'].dt.date\n\n# Group by category and date, then count the number of incidents\ncategory_daily = df.groupby(['category', 'date']).size().reset_index(name='counts')\n\n# Convert 'date' back to datetime for resampling\ncategory_daily['date'] = pd.to_datetime(category_daily['date'])\n\n# Prepare an empty DataFrame to hold resampled data\ncategory_weekly = pd.DataFrame()\n\n# Loop through each category to resample separately\nfor category in category_daily['category'].unique():\n    temp_df = category_daily[category_daily['category'] == category]\n    resampled_df = temp_df.set_index('date').resample('W').sum().reset_index()\n    resampled_df['category'] = category  # add category column back after resampling\n    category_weekly = pd.concat([category_weekly, resampled_df], ignore_index=True)\n\n# Plot the trend for each category\nplt.figure(figsize=(14, 7))\nsns.lineplot(x='date', y='counts', hue='category', data=category_weekly, marker='o')\nplt.title(\"Trend in Volume of Incident Tickets Per Week by Category\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents Opened\")\nplt.legend(title='Category')\nplt.grid(True)\nplt.show()"
+            "actionable_insight": "The increase in incident volume concentrated in the Hardware category suggests a systemic issue specific to hardware. This could indicate aging equipment, a new hardware deployment with issues, or inadequate hardware maintenance processes that need investigation.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is your DataFrame and it has columns 'opened_at' and 'category'\n\n# Convert 'opened_at' to datetime if it's not already\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Extract date from 'opened_at'\ndf['date'] = df['opened_at'].dt.date\n\n# Group by category and date, then count the number of incidents\ncategory_daily = df.groupby(['category', 'date']).size().reset_index(name='counts')\n\n# Convert 'date' back to datetime for resampling\ncategory_daily['date'] = pd.to_datetime(category_daily['date'])\n\n# Prepare an empty DataFrame to hold resampled data\ncategory_weekly = pd.DataFrame()\n\n# Loop through each category to resample separately\nfor category in category_daily['category'].unique():\n    temp_df = category_daily[category_daily['category'] == category]\n    resampled_df = temp_df.set_index('date').resample('W').sum().reset_index()\n    resampled_df['category'] = category  # add category column back after resampling\n    category_weekly = pd.concat([category_weekly, resampled_df], ignore_index=True)\n\n# Plot the trend for each category\nplt.figure(figsize=(14, 7))\nsns.lineplot(x='date', y='counts', hue='category', data=category_weekly, marker='o')\nplt.title(\"Trend in Volume of Incident Tickets Per Week by Category\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents Opened\")\nplt.legend(title='Category')\nplt.grid(True)\nplt.show()",
+            "insight_value": {}
         },
         {
             "data_type": "descriptive",
@@ -117,17 +119,24 @@
             },
             "question": "Are there any trends in the productivity of the human agents over time? For instance, is there a decrease in the number of incidents resolved per agent over time?",
             "actionable_insight": "The uniform productivity across all agents suggests that the workload is evenly distributed and all agents are equally productive. This is a positive indicator of good workload management. However, it would still be beneficial to continually monitor agent productivity and workload to ensure this balance is maintained.",
-            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()",
+            "insight_value": {}
         },
         {
             "insight": "1. **Regular Updates and Maintenance**: Establish a routine for regular updates and maintenance of all systems and hardware. This can help prevent the uniform aging and degradation of infrastructure.\\\n2. **Proactive Monitoring and Predictive Maintenance**: Utilize tools for proactive monitoring and predictive maintenance to identify and address potential issues before they result in incidents. Machine learning models can predict failure points based on historical data. \\\n3. **Effective diagnosis**: Identify the location and reason for Hardware failure. ",
             "question": "",
-            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()",
+            "data_type": "prescriptive",
+            "insight_value": {},
+            "actionable_insight": ""
         },
         {
             "insight": "If the number of Hardware incidents over time is linearly increasing, it suggests a specific device issue or trend affecting the entire location or infrastructure. Here are some potential reasons why this might be happening and strategies to avoid or mitigate such trends: \\\n    1. **Aging Infrastructure**: Over time, systems and hardware can age and become more prone to failures, leading to a steady increase in incidents across all categories if regular updates and maintenance are not performed \\\n    2. **Lack of Proactive Maintenance**: Without proactive maintenance and updates, systems may deteriorate uniformly, leading to increased incidents.",
             "question": "",
-            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()",
+            "data_type": "predictive",
+            "insight_value": {},
+            "actionable_insight": ""
         },
         {
             "data_type": "descriptive",
@@ -160,9 +169,9 @@
     ],
     "insights": [
         "The increase in volume of incidents is seen slightly, need to investigate further to understand the trend.",
-        "There is a no correlation between the volume of incidents and the TTR",
+        "There is a negative correlation between the volume of incidents and the TTR",
         "The time to resolution of incidents is uniform over time",
-        "The increase in volume of incidents is seen only for one particular categpry i.e. Hardware",
+        "The increase in volume of incidents is seen only for one particular category i.e. Hardware",
         "The productivity is more or less uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time",
         "1. **Regular Updates and Maintenance**: Establish a routine for regular updates and maintenance of all systems and hardware. This can help prevent the uniform aging and degradation of infrastructure.\\\n2. **Proactive Monitoring and Predictive Maintenance**: Utilize tools for proactive monitoring and predictive maintenance to identify and address potential issues before they result in incidents. Machine learning models can predict failure points based on historical data. \\\n3. **Effective diagnosis**: Identify the location and reason for Hardware failure. ",
         "If the number of Hardware incidents over time is linearly increasing, it suggests a specific device issue or trend affecting the entire location or infrastructure. Here are some potential reasons why this might be happening and strategies to avoid or mitigate such trends: \\\n    1. **Aging Infrastructure**: Over time, systems and hardware can age and become more prone to failures, leading to a steady increase in incidents across all categories if regular updates and maintenance are not performed \\\n    2. **Lack of Proactive Maintenance**: Without proactive maintenance and updates, systems may deteriorate uniformly, leading to increased incidents.",

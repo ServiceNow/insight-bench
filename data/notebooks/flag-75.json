@@ -12,7 +12,10 @@
         {
             "insight": "Departments consistently achieve higher task completion rates for Critical and High priority tasks, with significant variance in progress on lower priorities.",
             "question": "How does the progress of tasks in different departments correlate with their priority levels?",
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-75.csv\")\n\n# Group by 'department' and 'priority' to calculate the average 'percent_complete' for each combination\ndepartment_priority_progress = (\n    flag_data.groupby([\"department\", \"priority\"])[\"percent_complete\"]\n    .mean()\n    .reset_index()\n)\n\n# Pivot data for easier plotting\npivot_data = department_priority_progress.pivot(\n    index=\"department\", columns=\"priority\", values=\"percent_complete\"\n)\n\n# Create a heatmap to visualize the average progress of tasks in each department by priority\nplt.figure(figsize=(10, 6))\nsns.heatmap(\n    pivot_data, annot=True, cmap=\"YlGnBu\", cbar_kws={\"label\": \"Average % Complete\"}\n)\nplt.title(\"Average Task Completion by Department and Priority Level\")\nplt.xlabel(\"Priority\")\nplt.ylabel(\"Department\")\nplt.show()"
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-75.csv\")\n\n# Group by 'department' and 'priority' to calculate the average 'percent_complete' for each combination\ndepartment_priority_progress = (\n    flag_data.groupby([\"department\", \"priority\"])[\"percent_complete\"]\n    .mean()\n    .reset_index()\n)\n\n# Pivot data for easier plotting\npivot_data = department_priority_progress.pivot(\n    index=\"department\", columns=\"priority\", values=\"percent_complete\"\n)\n\n# Create a heatmap to visualize the average progress of tasks in each department by priority\nplt.figure(figsize=(10, 6))\nsns.heatmap(\n    pivot_data, annot=True, cmap=\"YlGnBu\", cbar_kws={\"label\": \"Average % Complete\"}\n)\nplt.title(\"Average Task Completion by Department and Priority Level\")\nplt.xlabel(\"Priority\")\nplt.ylabel(\"Department\")\nplt.show()",
+            "data_type": "correlative",
+            "insight_value": {},
+            "actionable_insight": ""
         },
         {
             "data_type": "descriptive",
@@ -43,7 +46,7 @@
             "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filter the data for the IT department\nit_goals = goal_data[goal_data['department'] == 'IT']\n\n# Define successful goals (assuming successful means percent_complete >= target_percentage)\nit_goals['is_successful'] = it_goals['percent_complete'] >= it_goals['target_percentage']\n\n# Calculate the proportion of successful goals by priority\nsuccess_rates = it_goals.groupby('priority')['is_successful'].mean()\n\n# Convert the series to a DataFrame for plotting\nsuccess_rates_df = success_rates.reset_index()\n\n# Plotting\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='priority', y='is_successful', data=success_rates_df, order=['Critical', 'High', 'Medium', 'Low'])\nplt.title('Proportion of Successful Goals by Priority in IT Department')\nplt.xlabel('Priority')\nplt.ylabel('Proportion of Successful Goals')\nplt.ylim(0, 1)  # Set the limit to show proportions from 0 to 1\n\n# Correctly format and annotate each bar with the proportion as a percentage\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.1%'),  # Format as a percentage with one decimal\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', \n                      xytext=(0, 9), \n                      textcoords='offset points')\nplt.show()"
         },
         {
-            "data_type": "Diagnostic",
+            "data_type": "diagnostic",
             "insight": "There is a consistent higher success rates for critical and high priority goals across departments",
             "insight_value": {
                 "IT": {

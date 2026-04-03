@@ -10,15 +10,53 @@
     },
     "insight_list": [
         {
-            "insight": "",
-            "question": "",
+            "data_type": "descriptive",
+            "insight": "Average Expenses by Department",
+            "insight_value": {
+                "description": "The average expenses vary significantly across different departments, with Customer Support and Product Management having the highest average expenses."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Expenses by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Sales",
+                        "Customer Support",
+                        "Product Management",
+                        "Finance",
+                        "IT",
+                        "HR",
+                        "Development"
+                    ],
+                    "description": "This axis represents the different departments within the organization."
+                },
+                "y_axis": {
+                    "name": "Average Expense ($)",
+                    "value": [
+                        49584.73291925466,
+                        71992.63157894737,
+                        75524.07462686567,
+                        47298.84210526316,
+                        20749.95890410959,
+                        20010.72972972973,
+                        20187.436619718308
+                    ],
+                    "description": "This axis displays the average expense amount in dollars for each department."
+                },
+                "description": "The bar chart shows the average expenses for each department, highlighting significant differences in spending patterns. Customer Support and Product Management departments have notably higher average expenses compared to others."
+            },
+            "question": "What is the average expense by department?",
+            "actionable_insight": {
+                "description": "The significant differences in average expenses across departments suggest a need for reviewing the expense policies and spending habits of departments with higher averages. Implementing stricter expense controls and conducting regular audits could help ensure that expenses are justified and align with organizational policies."
+            },
             "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming flag_data is your DataFrame containing expense data\n# Group data by department and calculate total and average expenses\ndepartment_expenses = flag_data.groupby('department')['amount'].agg(['sum', 'mean']).reset_index()\n\n# Sort data for better visualization (optional)\ndepartment_expenses.sort_values('sum', ascending=False, inplace=True)\n\n# Creating the plot\nfig, ax = plt.subplots(figsize=(14, 8))\n\n# Bar plot for total expenses\n# total_bars = ax.bar(department_expenses['department'], department_expenses['sum'], color='blue', label='Total Expenses')\n\n# Bar plot for average expenses\naverage_bars = ax.bar(department_expenses['department'], department_expenses['mean'], color='green', label='Average Expenses', alpha=0.6, width=0.5)\n\n# Add some labels, title and custom x-axis tick labels, etc.\nax.set_xlabel('Department')\nax.set_ylabel('Expenses ($)')\nax.set_title('Average Expenses by Department')\nax.set_xticks(department_expenses['department'])\nax.set_xticklabels(department_expenses['department'], rotation=45)\nax.legend()\n\n# Adding a label above each bar\ndef add_labels(bars):\n    for bar in bars:\n        height = bar.get_height()\n        ax.annotate(f'{height:.2f}',\n                    xy=(bar.get_x() + bar.get_width() / 2, height),\n                    xytext=(0, 3),  # 3 points vertical offset\n                    textcoords=\"offset points\",\n                    ha='center', va='bottom')\n\n# add_labels(total_bars)\nadd_labels(average_bars)\n\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.show()"
         },
         {
             "data_type": "descriptive",
             "insight": "Processing times vary significantly based on the state of the expenses",
             "insight_value": {
-                "description": "Processed expenses tend to have shorter processing times compared to Declined expenses. This trend highlights the impact of the state of an expense on its processing efficiency."
+                "description": "Processed expenses tend to have longer processing times compared to Declined expenses. This trend highlights the impact of the state of an expense on its processing efficiency."
             },
             "plot": {
                 "plot_type": "bar",
@@ -37,7 +75,7 @@
                     "name": "Average Processing Time (hours)",
                     "description": "Shows the average time taken to process expenses in different states, highlighting the differences in processing efficiency."
                 },
-                "description": "The bar plot provides a clear comparison of the average processing times for expenses in different states. Processed expenses have significantly lower average processing times, whereas Declined expenses take longer."
+                "description": "The bar plot provides a clear comparison of the average processing times for expenses in different states. Processed expenses have longer average processing times, whereas Declined expenses have shorter processing times."
             },
             "question": "How do processing times vary based on the state of the expenses?",
             "actionable_insight": {
@@ -100,17 +138,55 @@
             "code": "import matplotlib.pyplot as plt\n\n# Assume flag_data includes 'user', 'amount', 'category' columns\n# Group data by user, category, and amount to count frequencies\ngrouped_data = flag_data.groupby(['user', 'category', 'amount']).size().reset_index(name='count')\n\n# Filter to only include cases with more than one claim (to highlight potential fraud)\nrepeated_claims = grouped_data[grouped_data['count'] > 1]\n\n# Create a scatter plot with sizes proportional to the count of claims\nplt.figure(figsize=(14, 8))\ncolors = {'Travel': 'blue', 'Meals': 'green', 'Accommodation': 'red', 'Miscellaneous': 'purple'}  # Add more categories as needed\nfor ct in repeated_claims['category'].unique():\n    subset = repeated_claims[repeated_claims['category'] == ct]\n    plt.scatter(subset['user'], subset['amount'], s=subset['count'] * 100,  # Increased size factor for better visibility\n                color=colors.get(ct, 'gray'), label=f'Category: {ct}', alpha=0.6)\n\n# Customizing the plot\nplt.title('Repeated Expense Claims by User and Category')\nplt.xlabel('User')\nplt.ylabel('Amount ($)')\nplt.legend(title='Expense Categories')\nplt.xticks(rotation=45)  # Rotate x-axis labels for better readability\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\n\n# Highlighting significant cases\n# Let's annotate the specific user found in your description\nfor i, row in repeated_claims.iterrows():\n    if row['user'] == 'Mamie Mcintee' and row['amount'] == 8000:\n        plt.annotate(f\"{row['user']} (${row['amount']})\", (row['user'], row['amount']),\n                     textcoords=\"offset points\", xytext=(0,10), ha='center', fontsize=9, color='darkred')\n\n# Show plot\nplt.show()"
         },
         {
-            "insight": "",
-            "question": "",
+            "data_type": "diagnostic",
+            "insight": "Distribution of Expense Claims by Department and Category for evanskevin",
+            "insight_value": {
+                "description": "The analysis reveals that evanskevin has submitted repeated expense claims across various departments, with a significant concentration in the Miscellaneous category under the Sales department."
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Expense Claims by Department and Category for evanskevin",
+                "x_axis": {
+                    "name": "Department",
+                    "value": [
+                        "Customer Support",
+                        "Development",
+                        "Finance",
+                        "HR",
+                        "IT",
+                        "Product Management",
+                        "Sales"
+                    ],
+                    "description": "This axis represents the departments under which evanskevin has submitted expense claims."
+                },
+                "y_axis": {
+                    "name": "Number of Claims",
+                    "value": [
+                        2,
+                        1,
+                        1,
+                        3,
+                        4,
+                        1,
+                        102
+                    ],
+                    "description": "This axis displays the number of expense claims submitted by evanskevin, segmented by category."
+                },
+                "description": "The bar chart shows the distribution of expense claims submitted by evanskevin across different departments and categories. The Miscellaneous category under the Sales department has the highest number of repeated claims."
+            },
+            "question": "What department and categories are most commonly involved in these repeated claims?",
+            "actionable_insight": {
+                "description": "Given the high frequency of claims in the Miscellaneous category under the Sales department, it is advisable to conduct a detailed review of these claims to ensure their legitimacy. Implementing stricter controls and regular audits for high-frequency categories can help prevent potential policy abuse or fraudulent activities."
+            },
             "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'flag_data' includes 'user', 'department', 'amount', 'category' columns\n# and it's already loaded with the data\n\n# Filter for the specific user\nuser_data = flag_data[flag_data['user'] == 'evanskevin']\n\n# Group data by department and category to count frequencies\ndepartment_category_counts = user_data.groupby(['department', 'category']).size().unstack(fill_value=0)\n\n# Plotting\nplt.figure(figsize=(12, 7))\ndepartment_category_counts.plot(kind='bar', stacked=True, color=['blue', 'green', 'red', 'purple', 'orange'], alpha=0.7)\nplt.title('Distribution of Expense Claims by Department and Category for Mamie Mcintee')\nplt.xlabel('Department')\nplt.ylabel('Number of Claims')\nplt.xticks(rotation=0)  # Keep the department names horizontal for better readability\nplt.legend(title='Expense Categories')\nplt.grid(True, which='both', linestyle='--', linewidth=0.5)\nplt.show()"
         }
     ],
     "insights": [
-        "",
+        "Average Expenses by Department",
         "Processing times vary significantly based on the state of the expenses",
         "There is a high incidence of repeated identical expense claims",
         "Significant repetition in expense claims by a single user",
-        ""
+        "Distribution of Expense Claims by Department and Category for evanskevin"
     ],
-    "summary": "\n\n1. **Pattern Recognition:** This dataset is focused on identifying patterns in expense submissions that may indicate potential fraud or policy abuse. It particularly flags cases where individual users submit multiple identical claims in terms of amount and category.\n\n2. **Insight into User Behavior:** Analysis of the data reveals instances where users have repeatedly submitted identical claims, with specific focus on a user named evanskevin who has submitted the same expense claim multiple times. This insight raises questions about the legitimacy of these claims and the potential for fraudulent activity.\n\n3. **State-Based Processing Time Analysis:** The dataset highlights significant differences in processing times for expenses based on their state. Processed expenses tend to have shorter slightly processing times compared to Declined expenses. This insight suggests that the state of an expense has a substantial impact on the processing efficiency, indicating potential areas for workflow optimization."
+    "summary": "\n\n1. **Pattern Recognition:** This dataset is focused on identifying patterns in expense submissions that may indicate potential fraud or policy abuse. It particularly flags cases where individual users submit multiple identical claims in terms of amount and category.\n\n2. **Insight into User Behavior:** Analysis of the data reveals instances where users have repeatedly submitted identical claims, with specific focus on a user named evanskevin who has submitted the same expense claim multiple times. This insight raises questions about the legitimacy of these claims and the potential for fraudulent activity.\n\n3. **State-Based Processing Time Analysis:** The dataset highlights significant differences in processing times for expenses based on their state. Processed expenses tend to have slightly longer processing times compared to Declined expenses. This insight suggests that the state of an expense has a substantial impact on the processing efficiency, indicating potential areas for workflow optimization."
 }

@@ -12,7 +12,10 @@
         {
             "insight": "Higher priority levels tend to have lower average completion rates across all departments.",
             "question": "How does project priority impact the average completion rate across different departments?",
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-76.csv\")\n\n# Calculate the average completion rate grouped by department and priority\navg_completion_by_priority = (\n    flag_data.groupby([\"department\", \"priority\"])[\"percent_complete\"].mean().unstack()\n)\n\n# Plotting the results\nplt.figure(figsize=(12, 8))\navg_completion_by_priority.plot(\n    kind=\"bar\", stacked=True, alpha=0.7, width=0.7, edgecolor=\"black\"\n)\nplt.title(\"Average Completion Rate by Project Priority Across Departments\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Average Completion Rate (%)\")\nplt.legend(title=\"Priority\")\nplt.xticks(rotation=45)\nplt.grid(axis=\"y\", linestyle=\"--\", alpha=0.7)\n\nplt.tight_layout()\nplt.show()"
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-76.csv\")\n\n# Calculate the average completion rate grouped by department and priority\navg_completion_by_priority = (\n    flag_data.groupby([\"department\", \"priority\"])[\"percent_complete\"].mean().unstack()\n)\n\n# Plotting the results\nplt.figure(figsize=(12, 8))\navg_completion_by_priority.plot(\n    kind=\"bar\", stacked=True, alpha=0.7, width=0.7, edgecolor=\"black\"\n)\nplt.title(\"Average Completion Rate by Project Priority Across Departments\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Average Completion Rate (%)\")\nplt.legend(title=\"Priority\")\nplt.xticks(rotation=45)\nplt.grid(axis=\"y\", linestyle=\"--\", alpha=0.7)\n\nplt.tight_layout()\nplt.show()",
+            "data_type": "comparative",
+            "insight_value": {},
+            "actionable_insight": ""
         },
         {
             "data_type": "descriptive",

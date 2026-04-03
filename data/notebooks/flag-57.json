@@ -77,7 +77,8 @@
             },
             "question": "Is the increase in ttr uniform across all categories of incidents or is it more pronounced in a specific category?",
             "actionable_insight": "The uniform decrase in TTR across all categories suggests that the decrease in resolution time is not specific to any particular category of incidents. This indicates that improvements in the incident resolution process or increased efficiency in resolving incidents are affecting all categories equally. To further investigate this trend, it may be beneficial to analyze the factors contributing to the decrease in resolution time and identify areas for further improvement.",
-            "code": "# Group by category and opened_at date, then calculate average ttr\ncategory_ttr_trend = df.groupby(['category', df['opened_at'].dt.date])['ttr_days'].mean().reset_index()\n\n# Plot the trend for each category\nfig, ax = plt.subplots(figsize=(10,6))\n\nfor category in category_ttr_trend['category'].unique():\n    ax.plot(category_ttr_trend[category_ttr_trend['category'] == category]['opened_at'], \n            category_ttr_trend[category_ttr_trend['category'] == category]['ttr_days'], \n            label=category)\n\nplt.title('Trend of TTR Across Categories Over Time')\nplt.xlabel('Opened At')\nplt.ylabel('Average TTR (Days)')\nplt.legend(loc='best')\nplt.grid(True)\nplt.show()"
+            "code": "# Group by category and opened_at date, then calculate average ttr\ncategory_ttr_trend = df.groupby(['category', df['opened_at'].dt.date])['ttr_days'].mean().reset_index()\n\n# Plot the trend for each category\nfig, ax = plt.subplots(figsize=(10,6))\n\nfor category in category_ttr_trend['category'].unique():\n    ax.plot(category_ttr_trend[category_ttr_trend['category'] == category]['opened_at'], \n            category_ttr_trend[category_ttr_trend['category'] == category]['ttr_days'], \n            label=category)\n\nplt.title('Trend of TTR Across Categories Over Time')\nplt.xlabel('Opened At')\nplt.ylabel('Average TTR (Days)')\nplt.legend(loc='best')\nplt.grid(True)\nplt.show()",
+            "insight_value": {}
         },
         {
             "data_type": "descriptive",
@@ -97,7 +98,8 @@
             },
             "question": "Are there any trends in the productivity of the human agents over time? For instance, is there a decrease in the number of incidents resolved per agent over time?",
             "actionable_insight": "The uniform productivity across all agents suggests that the workload is evenly distributed and all agents are equally productive. This is a positive indicator of good workload management. However, it would still be beneficial to continually monitor agent productivity and workload to ensure this balance is maintained.",
-            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()",
+            "insight_value": {}
         }
     ],
     "insights": [

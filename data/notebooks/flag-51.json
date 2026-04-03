@@ -4,7 +4,7 @@
     "metadata": {
         "goal": "Identify and analyze increasing trends in the number of incidents assigned to understand the implications of these trends on workload and agent efficiency.",
         "role": "Strategic Planning Manager",
-        "category": "Incidents Management",
+        "category": "Incident Management",
         "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
         "header": "Incident Category Trends Over Time (Flag 51)"
     },
@@ -27,11 +27,12 @@
             },
             "question": "Do we observe any trend in the volume of incidents?",
             "actionable_insight": "There is a no trend in the volume of incidents opened over time. The volume of incidents opened is relatively stable over time. There are no significant increases or decreases in the volume of incidents opened. Further analysis is required to understand the underlying causes of the stability in the volume of incidents.",
-            "code": "df[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n# Sort the DataFrame by the opened_at column\ndf[\"date\"] = df[\"opened_at\"].dt.date\n\n# Count the number of incidents per day\ndf_daily_count = df.groupby(\"date\").size().reset_index(name=\"counts\")\n\n# Count the number of incidents per day\ndf_daily_count[\"date\"] = pd.to_datetime(df_daily_count[\"date\"])\n\n# Resample the data to get the weekly count of incidents\ndf_weekly_count = df_daily_count.resample(\"W\", on=\"date\").sum().reset_index()\n\n# Plot the trend\nplt.figure(figsize=(12, 6))\nsns.lineplot(x=\"date\", y=\"counts\", data=df_weekly_count)\nplt.title(\"Trend in Volume of Incident Tickets Per Week\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents opened\")\nplt.show()"
+            "code": "df[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n# Sort the DataFrame by the opened_at column\ndf[\"date\"] = df[\"opened_at\"].dt.date\n\n# Count the number of incidents per day\ndf_daily_count = df.groupby(\"date\").size().reset_index(name=\"counts\")\n\n# Count the number of incidents per day\ndf_daily_count[\"date\"] = pd.to_datetime(df_daily_count[\"date\"])\n\n# Resample the data to get the weekly count of incidents\ndf_weekly_count = df_daily_count.resample(\"W\", on=\"date\").sum().reset_index()\n\n# Plot the trend\nplt.figure(figsize=(12, 6))\nsns.lineplot(x=\"date\", y=\"counts\", data=df_weekly_count)\nplt.title(\"Trend in Volume of Incident Tickets Per Week\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Number of Incidents opened\")\nplt.show()",
+            "insight_value": {}
         },
         {
             "data_type": "diagnostic",
-            "insight": "There is a no correlation between the volume of incidents and the TTR",
+            "insight": "There is a negative correlation between the volume of incidents and the TTR",
             "insight_value": {
                 "correlation": "negative"
             },
@@ -57,8 +58,49 @@
             "code": "df[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Group by opened_at date and calculate count of incidents and average ttr\ndf['ttr'] = df['closed_at'] - df['opened_at']\n\n# Convert ttr to days\ndf['ttr_days'] = df['ttr'].dt.days\nincident_ttr_trend = df.groupby(df['opened_at'].dt.date).agg({'number':'count', 'ttr_days':'mean'})\n\n# Plot the trend\nfig, ax1 = plt.subplots(figsize=(10,6))\n\ncolor = 'tab:red'\nax1.set_xlabel('Opened At')\nax1.set_ylabel('Number of Incidents', color=color)\nax1.plot(incident_ttr_trend.index, incident_ttr_trend['number'], color=color)\nax1.tick_params(axis='y', labelcolor=color)\n\nax2 = ax1.twinx()  \ncolor = 'tab:blue'\nax2.set_ylabel('Average TTR (Days)', color=color)  \nax2.plot(incident_ttr_trend.index, incident_ttr_trend['ttr_days'], color=color)\nax2.tick_params(axis='y', labelcolor=color)\n\nfig.tight_layout()  \nplt.title('Correlation Between Volume of Incidents And TTR')\nplt.grid(True)\nplt.show()"
         },
         {
-            "insight": "",
-            "question": "",
+            "data_type": "descriptive",
+            "insight": "The average time to resolution (TTR) varies significantly based on the priority level of incidents.",
+            "insight_value": {
+                "1 - Critical": {
+                    "Average TTR (days)": -6.731018498151745
+                },
+                "2 - High": {
+                    "Average TTR (days)": 2.819197792172718
+                },
+                "3 - Moderate": {
+                    "Average TTR (days)": 15.09276704249776
+                },
+                "4 - Low": {
+                    "Average TTR (days)": 17.871129396706205
+                }
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average Time to Resolution (TTR) by Priority Level",
+                "x_axis": {
+                    "name": "Priority Level",
+                    "value": [
+                        "1 - Critical",
+                        "2 - High",
+                        "3 - Moderate",
+                        "4 - Low"
+                    ],
+                    "description": "This represents different priority levels of incidents."
+                },
+                "y_axis": {
+                    "name": "Average Time to Resolution (Days)",
+                    "value": [
+                        -6.731018498151745,
+                        2.819197792172718,
+                        15.09276704249776,
+                        17.871129396706205
+                    ],
+                    "description": "This represents the average time to resolution in days, highlighting how quickly incidents of different priority levels are resolved."
+                },
+                "description": "The bar chart demonstrates that higher priority incidents tend to have a shorter average time to resolution, indicating that they are addressed more quickly compared to lower priority incidents."
+            },
+            "question": "What is the average time to resolution (TTR) for incidents based on their priority levels?",
+            "actionable_insight": "The analysis suggests that higher priority incidents are resolved faster, which is expected. However, it is important to ensure that lower priority incidents are not neglected and are resolved within a reasonable timeframe. Continuous monitoring and process improvements can help maintain a balanced resolution time across all priority levels.",
             "code": "# Convert 'opened_at' and 'closed_at' to datetime\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\ndf['closed_at'] = pd.to_datetime(df['closed_at'])\n\n# Calculate the time to resolution (TTR) in days\ndf['ttr_days'] = (df['closed_at'] - df['opened_at']).dt.total_seconds() / 86400\n\n# Group by priority and calculate the average TTR\navg_ttr_by_priority = df.groupby('priority')['ttr_days'].mean().reset_index()\n\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Create a bar plot\nplt.figure(figsize=(12, 6))\nbar_plot = sns.barplot(x='priority', y='ttr_days', data=avg_ttr_by_priority, palette=\"muted\")\n\n# Add title and labels to the plot\nplt.title('Average Time to Resolution (TTR) by Priority Level')\nplt.xlabel('Priority Level')\nplt.ylabel('Average Time to Resolution (Days)')\n\n# Optional: add the exact number on top of each bar\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.1f'), \n                      (p.get_x() + p.get_width() / 2., p.get_height()), \n                      ha = 'center', va = 'center', \n                      xytext = (0, 9), \n                      textcoords = 'offset points')\n\n# Show the plot\nplt.show()"
         },
         {
@@ -79,13 +121,14 @@
             },
             "question": "Are there any trends in the productivity of the human agents over time? For instance, is there a decrease in the number of incidents resolved per agent over time?",
             "actionable_insight": "The uniform productivity across all agents suggests that the workload is evenly distributed and all agents are equally productive. This is a positive indicator of good workload management. However, it would still be beneficial to continually monitor agent productivity and workload to ensure this balance is maintained.",
-            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
+            "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()",
+            "insight_value": {}
         }
     ],
     "insights": [
         "There is a no trend in the volume of incidents opened over time. The volume of incidents opened is relatively stable over time. There are no significant increases or decreases in the volume of incidents opened. Further analysis is required to understand the underlying causes of the stability in the volume of incidents.",
-        "There is a no correlation between the volume of incidents and the TTR",
-        "",
+        "There is a negative correlation between the volume of incidents and the TTR",
+        "The average time to resolution (TTR) varies significantly based on the priority level of incidents.",
         "The productivity is uniform across all agents, and all of them manage to resolve incidents even though the volume increases over time"
     ],
     "summary": "\n There is a linear trend in the distribution of incidents across categories over time, indicating that the number of incidents is growing day by day.\n\n1. **Specific Category Growth**: Analysis reveals that the there is no overall trends in the volume of incidents across all categories.\n2. **Impact on Human Agents**: The productivity of human agents is not significantly affected by the increasing trend in incidents.\n3. **Time to Resolution**: The average time to resolution (TTR) for incidents is consistent across different priority levels, suggesting that the urgency of incidents does not significantly impact their resolution time."

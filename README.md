@@ -10,7 +10,9 @@ Insight-Bench is a benchmark dataset designed to evaluate end-to-end data analyt
 
 ## Data
 
-All groundtruth notebooks are in `data/notebooks`. 
+The benchmark contains **97 flags** (analytical tasks) with **409 ground-truth insights** across 7 categories: Incident Management, Finance Management, Goal Management, User Management, Asset Management, and two cross-domain categories. Flags 80-87 are adversarial test cases that evaluate whether agents correctly identify when required data columns are unavailable.
+
+All ground-truth notebooks are in `data/notebooks`. See [DATASET.md](DATASET.md) for full schema documentation.
 
 An example notebook can be found here: `data/notebooks/flag-1.ipynb`
 
