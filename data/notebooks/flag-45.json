@@ -72,7 +72,7 @@
                 },
                 "description": "The bar chart highlights that 'Services' is the category with the highest spending, indicating significant investments in tangible items."
             },
-            "question": "What are the total expenses by category?",
+            "question": "How are expenses distributed across different categories?",
             "actionable_insight": {
                 "description": "The high spending on services should be regularly reviewed to ensure that these investments are necessary and beneficial to the organization. Potential cost-saving measures could be explored in categories with high expenses."
             },

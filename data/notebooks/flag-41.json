@@ -77,7 +77,7 @@
                 },
                 "description": "The bar plot provides a clear comparison of the average processing times for expenses in different states. Processed expenses have longer average processing times, whereas Declined expenses have shorter processing times."
             },
-            "question": "How do processing times vary based on the state of the expenses?",
+            "question": "What are the differences in processing times for expenses in various states such as Processed, Declined, Submitted, and Pending?",
             "actionable_insight": {
                 "description": "The significant difference in processing times between Processed and Declined states suggests a need for reviewing the workflow for declined expenses. Streamlining the process for declined expenses could enhance overall efficiency. Additionally, automating certain aspects of the approval process for declined expenses may help reduce the processing time."
             },

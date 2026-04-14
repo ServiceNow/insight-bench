@@ -125,7 +125,7 @@
                 },
                 "description": "The stacked bar chart clearly illustrates that Mamie Mcintee's repeated expense claims are primarily within the Travel category. This specific concentration suggests a pattern that may require further investigation to ensure these claims are legitimate and within company policies."
             },
-            "question": "Confirm that these expenses are submitted under the department?",
+            "question": "What department and categories are most commonly involved in these repeated claims?",
             "actionable_insight": {
                 "description": "Given the concentration of repeated claims in the Travel category, it is advisable for the organization to conduct an in-depth review of all Travel-related expense submissions by Mamie Mcintee. This review should include verifying the authenticity of the claims and assessing compliance with the travel expense policies. Implementing more stringent controls and possibly providing additional training on appropriate expense reporting for travel could help mitigate the risk of fraud and ensure that such patterns do not indicate policy abuse. Regular audits and real-time monitoring of expense submissions in high-risk categories like Travel are also recommended to maintain the integrity of the expense management system."
             },
