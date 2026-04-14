@@ -51,7 +51,7 @@
                     "name": "Average TTR (Days)",
                     "description": "This represents the average time to resolution (in days) of incidents opened on a particular date."
                 },
-                "description": "The dual-axis line plot displays the correlation between the volume of incidents and the TTR. The red line represents the number of incidents and the blue line represents the average TTR. As the number of incidents increases, the TTR also tends to increase, indicating a positive correlation."
+                "description": "The dual-axis line plot displays the correlation between the volume of incidents and the TTR. The red line represents the number of incidents and the blue line represents the average TTR. As the number of incidents increases, the TTR tends to decrease, indicating a negative correlation."
             },
             "question": "Is there a correlation between the volume of incidents and the ttr?",
             "actionable_insight": "The negative correlation between the volume of incidents and the TTR suggests that as the volume of incidents increases, while ttr is more or less uniform. This could suggest efficiencies in handling a larger volume of incidents. It would be beneficial to assess capacity planning and process efficiency to manage high volume of incidents.",
