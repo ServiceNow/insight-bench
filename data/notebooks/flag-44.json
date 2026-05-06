@@ -13,7 +13,7 @@
             "data_type": "descriptive",
             "insight": "Processing times vary significantly based on the state of the expenses",
             "insight_value": {
-                "description": "Processed expenses tend to have shorter processing times compared to Declined expenses. This trend highlights the impact of the state of an expense on its processing efficiency."
+                "description": "Processed expenses tend to have longer processing times compared to Declined expenses. This trend highlights the impact of the state of an expense on its processing efficiency."
             },
             "plot": {
                 "plot_type": "bar",
@@ -32,9 +32,9 @@
                     "name": "Average Processing Time (hours)",
                     "description": "Shows the average time taken to process expenses in different states, highlighting the differences in processing efficiency."
                 },
-                "description": "The bar plot provides a clear comparison of the average processing times for expenses in different states. Processed expenses have significantly lower average processing times, whereas Declined expenses take longer."
+                "description": "The bar plot provides a clear comparison of the average processing times for expenses in different states. Processed expenses have significantly longer average processing times, whereas Declined expenses are processed more quickly."
             },
-            "question": "How do processing times vary based on the state of the expenses?",
+            "question": "What are the differences in processing times for expenses in various states such as Processed, Declined, Submitted, and Pending?",
             "actionable_insight": {
                 "description": "The significant difference in processing times between Processed and Declined states suggests a need for reviewing the workflow for declined expenses. Streamlining the process for declined expenses could enhance overall efficiency. Additionally, automating certain aspects of the approval process for declined expenses may help reduce the processing time."
             },

@@ -12,7 +12,10 @@
         {
             "insight": "The HR department exhibits the highest average asset cost, while Customer Support and IT departments have greater variability with significant outliers.",
             "question": "How does the cost of assets vary by department, and are there any significant outliers in asset costs within each department?",
-            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load data\nflag_data = pd.read_csv(\"csvs/flag-73.csv\")\n\n# Convert `cost` to numeric in case of any non-numeric issues, and filter for positive costs only\nflag_data[\"cost\"] = pd.to_numeric(flag_data[\"cost\"], errors=\"coerce\")\nfiltered_data = flag_data[flag_data[\"cost\"] > 0]\n\n# Plotting boxplot to show cost distribution by department\nplt.figure(figsize=(12, 6))\nfiltered_data.boxplot(\n    column=\"cost\", by=\"department\", grid=False, showfliers=True, notch=True\n)\n\n# Enhancing the plot aesthetics\nplt.title(\"Asset Cost Distribution by Department with Outliers\")\nplt.suptitle(\"\")  # Remove the default pandas title\nplt.xlabel(\"Department\")\nplt.ylabel(\"Asset Cost\")\nplt.xticks(rotation=45)  # Rotate department names for readability\n\nplt.show()"
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load data\nflag_data = pd.read_csv(\"csvs/flag-73.csv\")\n\n# Convert `cost` to numeric in case of any non-numeric issues, and filter for positive costs only\nflag_data[\"cost\"] = pd.to_numeric(flag_data[\"cost\"], errors=\"coerce\")\nfiltered_data = flag_data[flag_data[\"cost\"] > 0]\n\n# Plotting boxplot to show cost distribution by department\nplt.figure(figsize=(12, 6))\nfiltered_data.boxplot(\n    column=\"cost\", by=\"department\", grid=False, showfliers=True, notch=True\n)\n\n# Enhancing the plot aesthetics\nplt.title(\"Asset Cost Distribution by Department with Outliers\")\nplt.suptitle(\"\")  # Remove the default pandas title\nplt.xlabel(\"Department\")\nplt.ylabel(\"Asset Cost\")\nplt.xticks(rotation=45)  # Rotate department names for readability\n\nplt.show()",
+            "data_type": "descriptive",
+            "insight_value": {},
+            "actionable_insight": ""
         },
         {
             "data_type": "descriptive",

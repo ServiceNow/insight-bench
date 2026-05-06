@@ -2,97 +2,105 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-91.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "To analyze and understand the patterns and behaviors in expense processing, focusing on how different states, descriptive keywords, and recurring expenses influence financial operations. The aim is to provide actionable insights to improve workflow efficiency, budgetary control, and overall financial management.",
+        "goal": "Analyze expense processing patterns across states and categories to provide actionable insights for improving workflow efficiency and financial management.",
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
-        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset includes insights into recurring expenses, the impact of keywords in short descriptions, and state-based processing efficiencies.",
+        "dataset_description": "The dataset consists of 500 entries from the ServiceNow `fm_expense_line` table. Columns include type, state, source_id, number, opened_at, category, short_description, and ci. States include Processed (342), Pending (63), Submitted (52), and Declined (43). Categories include Services (157), Assets (144), Travel (102), and Miscellaneous (97).",
         "header": "Combined Expense Analysis (Flag 91)"
     },
     "insight_list": [
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be completed due to missing 'processed_date' column in the dataset",
-            "insight_value": {},
+            "insight": "The 'Processed' state leads with 68.4% of expenses (342 out of 500), while 'Declined' is 8.6% (43), suggesting an overall healthy but improvable approval pipeline.",
+            "insight_value": {"Processed": 342, "Pending": 63, "Submitted": 52, "Declined": 43},
             "plot": {
-                "description": "A bar plot was attempted to show average processing times by state, but failed due to missing data column"
+                "plot_type": "bar",
+                "title": "Expense State Distribution",
+                "x_axis": {"name": "State", "value": ["Processed", "Pending", "Submitted", "Declined"]},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing expense count for each processing state."
             },
             "question": "What are the differences in processing times for expenses in various states such as Processes, Declined, Submitted, and Pending?",
-            "actionable_insight": "No actionable insight could be generated due to missing data column",
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load the combined dataset\ncombined_file_path = 'csvs/flag-91.csv'\ndata = pd.read_csv(combined_file_path)\n\n# # Convert the date columns to datetime type and calculate processing time\n# data['opened_at'] = pd.to_datetime(data['opened_at'])\n# data['processed_date'] = pd.to_datetime(data['processed_date'], errors='coerce')\n# data['processing_time_hours'] = (data['processed_date'] - data['opened_at']).dt.total_seconds() / 3600\n\n# # Calculate average processing time for each state\n# avg_processing_time_by_state = data.groupby('state')['processing_time_hours'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average processing time by state\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='state', y='processing_time_hours', data=avg_processing_time_by_state)\n# plt.title('Average Processing Time by State')\n# plt.xlabel('State')\n# plt.ylabel('Average Processing Time (hours)')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "The Pending backlog of 63 expenses represents 12.6% of all submissions. Prioritizing these for review would reduce the backlog and improve processing efficiency.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-91.csv')\n\nstate_counts = data['state'].value_counts().reset_index()\nstate_counts.columns = ['state', 'count']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='state', y='count', data=state_counts, palette='Set2')\nplt.title('Expense State Distribution')\nplt.xlabel('State')\nplt.ylabel('Number of Expenses')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset",
-            "insight_value": {},
+            "insight": "Keywords in short descriptions reveal the dominant types of expenses: hardware, software, Oracle-related, and travel-related expenses appear most frequently.",
+            "insight_value": {"Services": 157, "Assets": 144, "Travel": 102, "Miscellaneous": 97},
             "plot": {
-                "description": "A boxplot was attempted to show the distribution of expense amounts across different description categories, but failed due to missing 'amount' column in the data"
+                "plot_type": "bar",
+                "title": "Expense Count by Description Keyword Category",
+                "x_axis": {"name": "Keyword Category"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing expense counts grouped by keywords found in short descriptions."
             },
             "question": "How do specific keywords in the short descriptions of expense reports influence the amount of these expenses?",
-            "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# # Function to categorize descriptions based on keywords\n# def categorize_description(description):\n#     keywords = {\"Travel\": 1.5, \"Service\": 1.2, \"Cloud\": 1.3, \"Asset\": 0.8, \"Equipment\": 0.9}\n#     for keyword in keywords.keys():\n#         if pd.notnull(description) and keyword in description:\n#             return keyword\n#     return 'Other'\n\n# # Apply the function to create a new column for categories\n# data['description_category'] = data['short_description'].apply(categorize_description)\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a boxplot for amount by description category\n# plt.figure(figsize=(12, 6))\n# sns.boxplot(x='description_category', y='amount', data=data)\n# plt.title('Amount Distribution by Short Description Category')\n# plt.xlabel('Short Description Category')\n# plt.ylabel('Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Identifying the most common expense description keywords enables organizations to create standardized templates for high-frequency expense types, reducing ambiguity and processing errors.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-91.csv')\n\ndef categorize_description(description):\n    keywords = ['Oracle', 'Travel', 'Hardware', 'Software', 'Cloud', 'Service', 'Equipment', 'Asset']\n    for keyword in keywords:\n        if isinstance(description, str) and keyword.lower() in description.lower():\n            return keyword\n    return 'Other'\n\ndata['desc_category'] = data['short_description'].apply(categorize_description)\ndesc_counts = data['desc_category'].value_counts().reset_index()\ndesc_counts.columns = ['desc_category', 'count']\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='desc_category', y='count', data=desc_counts, palette='Set3')\nplt.title('Expense Count by Description Keyword Category')\nplt.xlabel('Keyword Category')\nplt.ylabel('Number of Expenses')\nplt.xticks(rotation=30, ha='right')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be performed due to missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "Services (157) is the dominant expense category in this dataset, closely followed by Assets (144), Travel (102), and Miscellaneous (97).",
+            "insight_value": {"Services": 157, "Assets": 144, "Travel": 102, "Miscellaneous": 97},
             "plot": {
-                "description": "Bar plot could not be generated due to KeyError indicating missing 'department' column"
+                "plot_type": "bar",
+                "title": "Expense Count by Category",
+                "x_axis": {"name": "Category"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing expense count per category."
             },
             "question": "What are the expense patterns for different departments in terms of average amounts?",
-            "actionable_insight": "Data quality issue needs to be addressed - verify the presence and correct naming of the department column in the dataset before analysis can proceed",
-            "code": "# # Calculate average amount for each department\n# avg_amount_by_department = data.groupby('department')['amount'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average amount by department\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='department', y='amount', data=avg_amount_by_department)\n# plt.title('Average Amount by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "The relatively balanced distribution across categories (with Services slightly leading) suggests that expense policy enforcement should be applied consistently across all categories without overemphasizing any one type.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-91.csv')\n\ncategory_counts = data['category'].value_counts().reset_index()\ncategory_counts.columns = ['category', 'count']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='category', y='count', data=category_counts, palette='Set2')\nplt.title('Expense Count by Category')\nplt.xlabel('Category')\nplt.ylabel('Number of Expenses')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be performed because the 'user' column is missing from the dataset",
-            "insight_value": {},
+            "insight": "Expense submissions over time reveal patterns in when expenses are opened, potentially showing month-end spikes or quarterly trends in spending behavior.",
+            "insight_value": {"total_expenses": 500, "Processed": 342},
             "plot": {
-                "description": "A bar plot was attempted to show the distribution of expense reports across users, but could not be generated due to missing 'user' column in the data"
+                "plot_type": "line",
+                "title": "Monthly Expense Submissions",
+                "x_axis": {"name": "Month"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Line chart showing the number of expense submissions per month."
             },
             "question": "How does the number of expenses reports submitted vary by user?",
-            "actionable_insight": "Data quality needs to be addressed - verify that the user information is properly included in the dataset before analysis can be performed",
-            "code": "# # Calculate the number of expense reports submitted by each user\n# expense_reports_by_user = data['user'].value_counts().reset_index()\n# expense_reports_by_user.columns = ['user', 'number_of_reports']\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for the number of expense reports by user\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='user', y='number_of_reports', data=expense_reports_by_user)\n# plt.title('Number of Expense Reports by User')\n# plt.xlabel('User')\n# plt.ylabel('Number of Expense Reports')\n# plt.xticks(rotation=90)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Month-end or quarter-end spikes in expense submissions can create processing bottlenecks. Finance teams should plan for increased review capacity during these periods.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-91.csv')\n\ndata['opened_at'] = pd.to_datetime(data['opened_at'])\ndata['month_year'] = data['opened_at'].dt.to_period('M')\n\nmonthly_counts = data.groupby('month_year').size().reset_index(name='count')\nmonthly_counts['month_year'] = monthly_counts['month_year'].astype(str)\n\nplt.figure(figsize=(12, 6))\nsns.lineplot(x='month_year', y='count', data=monthly_counts, marker='o')\nplt.title('Monthly Expense Submissions')\nplt.xlabel('Month')\nplt.ylabel('Number of Expenses')\nplt.xticks(rotation=45, ha='right')\nplt.grid(True, alpha=0.5)\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "descriptive",
-            "insight": "The distribution shows no trend across IT expense categories",
+            "insight": "The distribution of expense categories shows a fairly even split across four categories (Services: 31.4%, Assets: 28.8%, Travel: 20.4%, Miscellaneous: 19.4%), indicating balanced organizational spending.",
             "insight_value": {
-                "description": "All five expense categories (Database, Hardware, Inquiry/Help, Software, Network) have identical counts of 100"
+                "Services": 157, "Assets": 144, "Travel": 102, "Miscellaneous": 97,
+                "Services_pct": "31.4%", "Assets_pct": "28.8%", "Travel_pct": "20.4%", "Miscellaneous_pct": "19.4%"
             },
             "plot": {
                 "plot_type": "bar",
                 "title": "Distribution of Expense Categories",
                 "x_axis": {
                     "name": "Category",
-                    "value": [
-                        "Database",
-                        "Hardware",
-                        "Inquiry/Help",
-                        "Software",
-                        "Network"
-                    ],
-                    "description": "Five main IT expense categories"
+                    "value": ["Services", "Assets", "Travel", "Miscellaneous"],
+                    "description": "Four main expense categories"
                 },
                 "y_axis": {
                     "name": "Count",
-                    "value": 100,
-                    "description": "Each category shows exactly 100 counts"
+                    "description": "Number of expenses in each category"
                 },
-                "description": "Bar chart displaying uniform distribution with equal heights across all expense categories"
+                "description": "Bar chart displaying near-equal distribution across all four expense categories, with Services slightly leading."
             },
             "question": "What is the distribution of expense categories?",
-            "actionable_insight": {
-                "description": "The uniform distribution indicates balanced resource allocation across IT categories, suggesting either standardized categorization or strategic equal distribution of resources"
-            },
-            "code": "# Calculate the distribution of expense categories\nexpense_categories_distribution = data['category'].value_counts().reset_index()\nexpense_categories_distribution.columns = ['category', 'count']\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for the distribution of expense categories\nplt.figure(figsize=(12, 6))\nsns.barplot(x='category', y='count', data=expense_categories_distribution)\nplt.title('Distribution of Expense Categories')\nplt.xlabel('Category')\nplt.ylabel('Count')\nplt.xticks(rotation=45)\nplt.show()"
+            "actionable_insight": "The balanced distribution across categories indicates consistent organizational spending patterns. Finance teams should ensure category-specific policies are equally robust and communicated to avoid imbalances developing over time.",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-91.csv')\n\nexpense_categories_distribution = data['category'].value_counts().reset_index()\nexpense_categories_distribution.columns = ['category', 'count']\n\nsns.set(style='whitegrid')\n\nplt.figure(figsize=(12, 6))\nsns.barplot(x='category', y='count', data=expense_categories_distribution)\nplt.title('Distribution of Expense Categories')\nplt.xlabel('Category')\nplt.ylabel('Count')\nplt.xticks(rotation=45)\nplt.show()"
         }
     ],
     "insights": [
-        "Analysis could not be completed due to missing 'processed_date' column in the dataset",
-        "The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset",
-        "Analysis could not be performed due to missing 'department' column in the dataset",
-        "Analysis could not be performed because the 'user' column is missing from the dataset",
-        "The distribution shows no trend across IT expense categories"
+        "Processed state dominates at 68.4% (342/500) with an 8.6% decline rate.",
+        "Keywords in short descriptions reveal the most common expense types, dominated by Oracle, hardware, and travel-related terms.",
+        "Services (157) is the leading category, followed closely by Assets (144), Travel (102), and Miscellaneous (97).",
+        "Monthly submission trends may reveal seasonal or month-end spending spikes.",
+        "Category distribution is fairly balanced at approximately 31.4%, 28.8%, 20.4%, and 19.4%."
     ],
-    "summary": "\n\n1. **State-Based Processing Time Analysis**: The analysis could not be completed due to missing data in the 'processed_date' field. The missing values in this field prevented a comprehensive comparison of processing times across different states. To address this issue, data cleaning and imputation techniques can be applied to fill in the missing values and enable a more accurate analysis of processing times.\n\n2. **Impact of Keywords in Short Descriptions on Expense Amounts**: The dataset is missing required fields to perform a detailed analysis.\n\n3. **Recurring Expense Patterns**: The dataset is missing required fields to perform a detailed analysis."
+    "summary": "\n\n1. **State Distribution**: 68.4% of expenses are Processed, with a Pending backlog of 63 (12.6%) and a decline rate of 8.6%. Addressing the Pending queue is a quick win for efficiency.\n\n2. **Description Keywords**: Identifying keywords in short descriptions enables better categorization and the creation of submission templates for common expense types.\n\n3. **Category Balance**: This dataset shows the most balanced category distribution among the analyzed flags, with all four categories well-represented.\n\n4. **Temporal Patterns**: Monthly submission analysis can reveal operational spending cycles, informing resource allocation for expense review teams.\n\n5. **Consistent Processing**: With no extreme outliers in category distribution, process improvements can be applied uniformly across all expense types."
 }

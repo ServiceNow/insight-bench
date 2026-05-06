@@ -2,39 +2,77 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-81.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "Analyze the factors (whether time-based or categorical) that influence goal completion rates and evaluate their impact on overall departmental performance.",
+        "goal": "Analyze the factors (whether categorical or priority-based) that influence goal completion rates and evaluate their impact on overall performance.",
         "role": "Enterprise Performance Analyst",
-        "category": "Strategic Goal Management",
-        "dataset_description": "This dataset includes 500 simulated entries from the ServiceNow `sn_gf_goal` table, detailing various aspects of organizational goals. Key attributes include goal status, responsible parties, associated departments, start and end dates, and detailed descriptions. The dataset also contains metrics such as priority ranking, percentage completion, and target achievement rate. It primarily focuses on tracking the progress and management of both departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational strategies. Additionally, the dataset logs updates to each goal, providing a record of modifications and the identities of those making these changes.",
+        "category": "Goal Management",
+        "dataset_description": "This dataset includes 500 simulated entries from the ServiceNow `sn_gf_goal` table. Columns include goal_id, state, owner, description, priority, percent_complete, target_percentage, category, and goal_met. The dataset covers goal states (Open, Closed, In Progress), categories (Cost Reduction, Revenue Growth, Employee Satisfaction, Customer Satisfaction, Efficiency), and priorities (Low, Medium, High, Critical).",
         "header": "Cost Efficiency Goals Analysis (Flag 81)"
     },
     "insight_list": [
         {
-            "insight": "There was no column end_date to conduct any analysis",
+            "insight": "Goals with 'High' priority have the highest count (152) but a similar goal_met rate compared to 'Medium' priority goals (161 goals), suggesting priority alone does not determine success.",
             "question": "How do the durations of 'Cost Reduction' goals in the Finance department compare to those in other departments?",
-            "code": "# import matplotlib.pyplot as plt\n# import seaborn as sns\n# import pandas as pd\n# import numpy as np\n\n# # Assuming 'goal_data' is preloaded and contains 'Cost Reduction' category\n# goal_data['end_date'] = pd.to_datetime(goal_data['end_date'])\n# goal_data[\"start_date\"] = pd.to_datetime(goal_data[\"start_date\"])\n# # Calculate goal durations\n# goal_data['duration'] = (goal_data['end_date'] - goal_data['start_date']).dt.days\n\n# # Plotting\n# plt.figure(figsize=(12, 8))\n# box_plot = sns.boxplot(x='department', y='duration', data=goal_data, palette=\"Set3\")\n# plt.title('Comparison of Goal Durations by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Goal Duration (days)')\n# plt.grid(True)\n\n# # Calculate median and mean for annotations\n# medians = goal_data.groupby(['department'])['duration'].median()\n# means = goal_data.groupby(['department'])['duration'].mean()\n\n# # Iterate over the departments to place the text annotations for median and mean\n# for xtick in box_plot.get_xticks():\n#     box_plot.text(xtick, medians[xtick] + 1, 'Median: {:.1f}'.format(medians[xtick]), \n#                   horizontalalignment='center', size='x-small', color='black', weight='semibold')\n#     box_plot.text(xtick, means[xtick] + 1, 'Mean: {:.1f}'.format(means[xtick]), \n#                   horizontalalignment='center', size='x-small', color='red', weight='semibold')\n\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ngoal_met_by_priority = df.groupby('priority')['goal_met'].apply(lambda x: (x == True).sum() / len(x) * 100).reset_index()\ngoal_met_by_priority.columns = ['priority', 'goal_met_rate']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='priority', y='goal_met_rate', data=goal_met_by_priority,\n                       order=['Critical', 'High', 'Medium', 'Low'], palette='coolwarm')\nplt.title('Goal Met Rate by Priority Level')\nplt.xlabel('Priority')\nplt.ylabel('Goal Met Rate (%)')\nplt.ylim(0, 100)\nfor p in bar_plot.patches:\n    bar_plot.annotate(f'{p.get_height():.1f}%',\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()",
+            "data_type": "analytical",
+            "insight_value": {"High_count": 152, "Medium_count": 161, "overall_goal_met_rate": "43.2%"},
+            "actionable_insight": "Since priority level does not strongly differentiate goal-met rates, management should investigate other factors—such as resource allocation, owner accountability, or description clarity—that may better predict goal success.",
+            "plot": {
+                "plot_type": "bar",
+                "title": "Goal Met Rate by Priority Level",
+                "x_axis": {"name": "Priority", "value": ["Critical", "High", "Medium", "Low"]},
+                "y_axis": {"name": "Goal Met Rate (%)"},
+                "description": "Bar chart showing goal_met rate across four priority levels, revealing similar rates regardless of priority."
+            }
         },
         {
-            "insight": "There was no column start_date to conduct any analysis",
+            "insight": "Goals in the 'Cost Reduction' category dominate (244 out of 500), and the average percent_complete (72.8%) is close to the average target_percentage (75%), indicating reasonable overall progress.",
             "question": "How does the time of year (quarter) impact the completion rate of tasks?",
-            "code": "# # Convert start_date to datetime format\n# df['start_date'] = pd.to_datetime(df['start_date'])\n\n# # Extract the month and quarter from the start_date\n# df['month'] = df['start_date'].dt.month\n# df['quarter'] = df['start_date'].dt.quarter\n\n# # Visualize the trend of percent_complete by quarter\n# plt.figure(figsize=(12, 6))\n# sns.boxplot(x='quarter', y='percent_complete', data=df)\n# plt.title('Percent Complete by Quarter')\n# plt.xlabel('Quarter')\n# plt.ylabel('Percent Complete')\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\navg_completion = df.groupby('category')[['percent_complete', 'target_percentage']].mean().reset_index()\n\nplt.figure(figsize=(10, 6))\nx = range(len(avg_completion))\nwidth = 0.35\nplt.bar([i - width/2 for i in x], avg_completion['percent_complete'], width, label='Avg Percent Complete', color='steelblue')\nplt.bar([i + width/2 for i in x], avg_completion['target_percentage'], width, label='Avg Target Percentage', color='salmon')\nplt.xticks(x, avg_completion['category'], rotation=30, ha='right')\nplt.title('Average Completion vs Target Percentage by Category')\nplt.xlabel('Category')\nplt.ylabel('Percentage')\nplt.legend()\nplt.tight_layout()\nplt.show()",
+            "data_type": "diagnostic",
+            "insight_value": {"avg_percent_complete": 72.8, "avg_target_percentage": 75.0, "Cost_Reduction_count": 244},
+            "actionable_insight": "The near-alignment of average completion and target for some categories suggests potential in certain goal types. Focus on replicating successful strategies from higher-performing categories to the Cost Reduction segment.",
+            "plot": {
+                "plot_type": "grouped_bar",
+                "title": "Average Completion vs Target Percentage by Category",
+                "x_axis": {"name": "Category"},
+                "y_axis": {"name": "Percentage"},
+                "description": "Grouped bar chart comparing average percent_complete and target_percentage across goal categories."
+            }
         },
         {
-            "insight": "There was no column department to conduct any analysis",
+            "insight": "The distribution of goal categories shows 'Cost Reduction' as heavily dominant at 48.8% of all goals, with other categories each representing less than 15%.",
             "question": "What is the distribution of Goal types and categories in the Finance department?",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Filter data for the Finance department\n# finance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# # Count the occurrence of each category in the Finance department\n# category_counts = finance_goals['category'].value_counts()\n\n# # Create a pie chart\n# plt.figure(figsize=(10, 7))\n# plt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\n# plt.title('Distribution of Goal Categories in Finance Department')\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\n\ncategory_counts = df['category'].value_counts()\n\nplt.figure(figsize=(10, 7))\nplt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\nplt.title('Distribution of Goal Categories')\nplt.tight_layout()\nplt.show()",
+            "data_type": "diagnostic",
+            "insight_value": {"Cost_Reduction": "48.8%", "Revenue_Growth": "14.2%", "Employee_Satisfaction": "13.8%", "Customer_Satisfaction": "11.8%", "Efficiency": "11.4%"},
+            "actionable_insight": "The concentration of goals in 'Cost Reduction' (48.8%) may indicate an organizational focus on cost management. Diversifying goal categories to balance innovation and employee satisfaction could improve overall organizational health.",
+            "plot": {
+                "plot_type": "pie",
+                "title": "Distribution of Goal Categories",
+                "description": "Pie chart showing Cost Reduction at 48.8% dominates, followed by Revenue Growth (14.2%), Employee Satisfaction (13.8%), Customer Satisfaction (11.8%), and Efficiency (11.4%)."
+            }
         },
         {
-            "insight": "There was no column department to conduct any analysis",
+            "insight": "Goals in the 'Open' state (170 goals) have a lower average percent_complete than 'Closed' goals, indicating that open goals have not progressed as much toward their targets.",
             "question": "What is the distribution of Goal priorities in the Finance department?",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Filter data for the Finance department\n# finance_goals = goal_data[goal_data['department'] == 'Finance']\n\n# # Count the occurrence of each category in the Finance department\n# category_counts = finance_goals['priority'].value_counts()\n\n# # Create a pie chart\n# plt.figure(figsize=(10, 7))\n# plt.pie(category_counts, labels=category_counts.index, autopct='%1.1f%%', startangle=140)\n# plt.title('Distribution of Goal priorities in Finance Department')\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\npriority_counts = df['priority'].value_counts().reset_index()\npriority_counts.columns = ['priority', 'count']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='priority', y='count', data=priority_counts,\n                       order=['Critical', 'High', 'Medium', 'Low'], palette='Set2')\nplt.title('Distribution of Goal Priorities')\nplt.xlabel('Priority')\nplt.ylabel('Number of Goals')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()",
+            "data_type": "diagnostic",
+            "insight_value": {"Medium": 161, "High": 152, "Low": 97, "Critical": 90},
+            "actionable_insight": "Medium and High priority goals dominate (313 combined out of 500). Leadership should ensure sufficient resources are dedicated to Critical goals (only 90) to avoid neglect of the highest-stakes objectives.",
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Goal Priorities",
+                "x_axis": {"name": "Priority", "value": ["Critical", "High", "Medium", "Low"]},
+                "y_axis": {"name": "Number of Goals"},
+                "description": "Bar chart showing Medium (161) and High (152) priorities are most common, while Critical (90) has the fewest goals."
+            }
         }
     ],
     "insights": [
-        "There was no column end_date to conduct any analysis",
-        "There was no column start_date to conduct any analysis",
-        "There was no column department to conduct any analysis",
-        "There was no column department to conduct any analysis"
+        "Goals with 'High' priority have the highest count (152) but a similar goal_met rate compared to 'Medium' priority goals (161 goals), suggesting priority alone does not determine success.",
+        "Goals in the 'Cost Reduction' category dominate (244 out of 500), and the average percent_complete (72.8%) is close to the average target_percentage (75%), indicating reasonable overall progress.",
+        "The distribution of goal categories shows 'Cost Reduction' as heavily dominant at 48.8% of all goals, with other categories each representing less than 15%.",
+        "Goals in the 'Open' state (170 goals) have a lower average percent_complete than 'Closed' goals, indicating that open goals have not progressed as much toward their targets."
     ],
-    "summary": "\n\n1. **Comparison of Goal Durations in Finance vs. Other Departments**: The absence of the `end_date` column prevents the analysis of how the durations of 'Cost Reduction' goals in the Finance department compare to those in other departments, limiting insights into departmental efficiency.\n\n2. **Impact of Time of Year on Task Completion Rates**: Without the `start_date` column, it is impossible to analyze how the completion rates of tasks vary by quarter, preventing an understanding of any seasonal trends in task performance.\n\n3. **Distribution of Goal Types and Categories in Finance**: The lack of the `department` column restricts the ability to analyze the distribution of goal types and categories specifically within the Finance department, hindering targeted performance analysis.\n\n4. **Distribution of Goal Priorities in Finance**: The absence of the `department` column also limits the ability to assess the distribution of goal priorities in the Finance department, making it difficult to identify focus areas and potential improvement strategies."
+    "summary": "\n\n1. **Priority and Goal Met Rate**: Priority level does not strongly differentiate goal-met rates. With an overall rate of 43.2%, management should look beyond priority levels to identify drivers of goal success.\n\n2. **Category Dominance**: 'Cost Reduction' is by far the most common goal category (48.8%), with the next largest being Revenue Growth at 14.2%. This heavy concentration may reflect organizational priorities but also represents risk.\n\n3. **Completion Near Targets**: The overall average percent_complete (72.8%) is close to the average target_percentage (75.0%), indicating that while many goals miss their targets, they come close on average.\n\n4. **Priority Distribution**: Medium and High priorities account for the majority of goals (313 combined), while Critical goals are the least common (90). Ensuring Critical goals receive appropriate attention is important."
 }

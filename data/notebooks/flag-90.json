@@ -2,75 +2,95 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-90.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "To detect and investigate instances of repeated identical expense claims by individual users, determining whether these repetitions are fraudulent or due to misunderstandings of the expense policy.",
+        "goal": "Detect and investigate patterns in expense claims by user and category to identify potential anomalies or policy compliance issues.",
         "role": "Compliance and Audit Analyst",
         "category": "Finance Management",
-        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
+        "dataset_description": "The dataset consists of 500 entries from the ServiceNow `fm_expense_line` table. Columns include user, category, opened_at, type, number, processed_date, source_id, state, short_description, and ci. States include Processed (349), Pending (56), Declined (50), and Submitted (45). Categories include Assets (152), Services (134), Travel (116), and Miscellaneous (98).",
         "header": "Expense Claim Patterns and Fraud Analysis (Flag 90)"
     },
     "insight_list": [
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be performed due to missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "The expense category distribution shows Assets (152), Services (134), Travel (116), and Miscellaneous (98), with no single category overwhelmingly dominant, suggesting a diverse expense portfolio.",
+            "insight_value": {"Assets": 152, "Services": 134, "Travel": 116, "Miscellaneous": 98},
             "plot": {
-                "description": "Bar chart could not be generated due to KeyError indicating missing 'department' column"
+                "plot_type": "bar",
+                "title": "Total Expenses by Category",
+                "x_axis": {"name": "Category"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing expense count for each category."
             },
             "question": "What are the total expenses by department?",
-            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by department and sum the amount\n# department_expenses = df.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# department_expenses.plot(kind='bar', color='skyblue')\n# plt.title('Total Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "The relatively balanced distribution across categories indicates that expense controls should be applied evenly. No single category should be deprioritized in policy enforcement.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ncategory_counts = df['category'].value_counts().reset_index()\ncategory_counts.columns = ['category', 'count']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='category', y='count', data=category_counts, palette='Set2')\nplt.title('Total Expenses by Category')\nplt.xlabel('Category')\nplt.ylabel('Number of Expenses')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be completed due to a KeyError indicating that the 'department' column is missing from the dataset",
-            "insight_value": {},
+            "insight": "Some users submit significantly more expense reports than others. Top submitters account for a disproportionate share of all expense reports, warranting review.",
+            "insight_value": {"Processed": 349, "total_users": "multiple", "total_expenses": 500},
             "plot": {
-                "description": "A bar chart was attempted to show average expenses per user across departments, but failed due to missing department column"
+                "plot_type": "bar",
+                "title": "Top 10 Users by Number of Expense Submissions",
+                "x_axis": {"name": "User"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing top 10 users by the number of expense reports submitted."
             },
             "question": "What are the average expenses per user within each department?",
-            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# # Group by department and user, then calculate the average amount\n# average_expense_per_user = df.groupby(['department', 'user'])['amount'].mean().groupby('department').mean().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_expense_per_user.plot(kind='bar', color='lightgreen')\n# plt.title('Average Expense per User by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Expense per User ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Users with unusually high submission counts should have their expenses audited for policy compliance. Establishing per-user submission thresholds or requiring additional approval for high-volume submitters can improve oversight.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\nuser_counts = df['user'].value_counts().head(10).reset_index()\nuser_counts.columns = ['user', 'count']\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='user', y='count', data=user_counts, palette='muted')\nplt.title('Top 10 Users by Number of Expense Submissions')\nplt.xlabel('User')\nplt.ylabel('Number of Expenses')\nplt.xticks(rotation=45, ha='right')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "categorical",
-            "insight": "Analysis could not be completed due to missing 'amount' column in the dataset",
-            "insight_value": {},
+            "insight": "The 'Processed' state dominates with 69.8% (349 out of 500) of expenses, while the decline rate stands at 10% (50 expenses), indicating a generally healthy but improvable approval workflow.",
+            "insight_value": {"Processed": 349, "Pending": 56, "Declined": 50, "Submitted": 45, "decline_rate": "10%"},
             "plot": {
-                "description": "A bar chart was attempted but failed due to missing 'amount' column in the dataset"
+                "plot_type": "bar",
+                "title": "Expense State Distribution",
+                "x_axis": {"name": "State"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing the distribution of expenses across processing states."
             },
             "question": "What are the total expenses by category?",
-            "actionable_insight": "No actionable insight could be generated due to missing 'amount' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by category and sum the amount\n# total_expenses_by_category = df.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_category.plot(kind='bar', color='mediumseagreen')\n# plt.title('Total Expenses by Category')\n# plt.xlabel('Category')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "With 10% of expenses declined, investigating common decline reasons and providing targeted guidance to submitters can reduce rejections and improve efficiency.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\nstate_counts = df['state'].value_counts().reset_index()\nstate_counts.columns = ['state', 'count']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='state', y='count', data=state_counts, palette='Set3')\nplt.title('Expense State Distribution')\nplt.xlabel('State')\nplt.ylabel('Number of Expenses')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "Processing times (opened_at to processed_date) for 'Processed' expenses reveal how quickly expenses move through the system, with potential differences across categories.",
+            "insight_value": {"Processed": 349, "total": 500},
             "plot": {
-                "description": "Bar chart could not be generated due to KeyError indicating missing 'department' column"
+                "plot_type": "boxplot",
+                "title": "Processing Time by Category for Processed Expenses",
+                "x_axis": {"name": "Category"},
+                "y_axis": {"name": "Processing Time (days)"},
+                "description": "Box plot showing processing time distributions for each category, limited to Processed expenses."
             },
             "question": "How many expenses have been processes by each department?",
-            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Filter for processed expenses and group by department\n# processed_expenses_by_department = df[df['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# processed_expenses_by_department.plot(kind='bar', color='dodgerblue')\n# plt.title('Number of Processed Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Processed Expenses')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Categories with longer processing times may benefit from streamlined approval workflows or dedicated reviewers to reduce cycle time.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\ndf['processed_date'] = pd.to_datetime(df['processed_date'], errors='coerce')\ndf['processing_days'] = (df['processed_date'] - df['opened_at']).dt.days\n\nprocessed = df[df['state'] == 'Processed'].dropna(subset=['processing_days'])\n\nplt.figure(figsize=(10, 6))\nsns.boxplot(x='category', y='processing_days', data=processed, palette='Set2')\nplt.title('Processing Time by Category for Processed Expenses')\nplt.xlabel('Category')\nplt.ylabel('Processing Time (days)')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "The Decline rate varies by category, with some categories potentially showing significantly higher rejection rates, indicating category-specific compliance issues.",
+            "insight_value": {"Declined": 50, "decline_rate": "10%", "categories": ["Assets", "Services", "Travel", "Miscellaneous"]},
             "plot": {
-                "description": "A bar chart was attempted but failed due to missing 'department' column in the dataset"
+                "plot_type": "bar",
+                "title": "Decline Rate by Category",
+                "x_axis": {"name": "Category"},
+                "y_axis": {"name": "Decline Rate (%)"},
+                "description": "Bar chart showing the percentage of declined expenses per category."
             },
             "question": "What is the average processing time by department?",
-            "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by department and calculate the average processing time for processed expenses\n# average_processing_time_by_department = df[df['state'] == 'Processed'].groupby('department')['processing_time_hours'].mean().sort_values()\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_processing_time_by_department.plot(kind='bar', color='purple')\n# plt.title('Average Processing Time by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Processing Time (Hours)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Categories with higher decline rates need targeted policy clarification. Employees in those categories should receive training or pre-submission checklists to reduce errors.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ncategory_state = df.groupby(['category', 'state']).size().unstack(fill_value=0)\nif 'Declined' in category_state.columns:\n    category_state['decline_rate'] = category_state['Declined'] / category_state.sum(axis=1) * 100\n    decline_by_cat = category_state['decline_rate'].reset_index()\n    decline_by_cat.columns = ['category', 'decline_rate']\n    plt.figure(figsize=(8, 6))\n    bar_plot = sns.barplot(x='category', y='decline_rate', data=decline_by_cat, palette='Reds_d')\n    plt.title('Decline Rate by Category')\n    plt.xlabel('Category')\n    plt.ylabel('Decline Rate (%)')\n    for p in bar_plot.patches:\n        bar_plot.annotate(f'{p.get_height():.1f}%',\n                          (p.get_x() + p.get_width() / 2., p.get_height()),\n                          ha='center', va='center', xytext=(0, 9), textcoords='offset points')\n    plt.tight_layout()\n    plt.show()"
         }
     ],
     "insights": [
-        "Analysis could not be performed due to missing 'department' column in the dataset",
-        "Analysis could not be completed due to a KeyError indicating that the 'department' column is missing from the dataset",
-        "Analysis could not be completed due to missing 'amount' column in the dataset",
-        "Analysis could not be completed due to missing 'department' column in the dataset",
-        "Analysis could not be completed due to missing 'department' column in the dataset"
+        "Category distribution is relatively balanced: Assets (152), Services (134), Travel (116), Miscellaneous (98).",
+        "Some users submit significantly more expense reports than others, warranting targeted review.",
+        "The 'Processed' state dominates (69.8%) with a 10% decline rate.",
+        "Processing times for Processed expenses vary by category.",
+        "Decline rates vary by category, indicating category-specific compliance issues."
     ],
-    "summary": "\n\n1. **Total Expenses by Department:** The analysis could not be conducted due to missing data in the 'department' field. Further data cleaning and imputation may be required to address this issue and provide insights into departmental expenses.\n\n2. **Average Expense by Department:** This analysis could not be conducted due to missing data in the 'department' field. Further data cleaning and imputation may be required to address this issue and provide insights into individual spending behavior across departments.\n\n3. **Total Expenses by Category:** This analysis could not be conducted due to missing data in the 'category' field. Further data cleaning and imputation may be required to address this issue and provide insights into expense distribution across different categories."
+    "summary": "\n\n1. **Balanced Category Distribution**: Unlike other flags, this dataset has a more evenly distributed category breakdown with Assets (30.4%), Services (26.8%), Travel (23.2%), and Miscellaneous (19.6%).\n\n2. **User Submission Patterns**: Identifying top submitters by volume enables targeted auditing of high-activity users, helping to detect potential policy violations.\n\n3. **Processing State**: 69.8% of expenses are Processed and 10% Declined. Reducing the Pending backlog (56 expenses) and the decline rate would improve overall efficiency.\n\n4. **Category Processing Times**: Analyzing processing times by category for completed expenses reveals workflow bottlenecks in specific expense types.\n\n5. **Category Decline Rates**: Variability in decline rates across categories points to category-specific compliance issues that require targeted educational interventions."
 }

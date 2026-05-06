@@ -10,37 +10,148 @@
     },
     "insight_list": [
         {
-            "insight": "",
-            "question": "",
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load the dataset\ndf = pd.read_csv('csvs/flag-36.csv')  # Replace with the correct path if needed\n\n# Define cross-departmental keywords\ncross_dept_keywords = ['collaborate', 'joint', 'integration', 'cross-departmental', 'partnership']\n\n# Identify cross-departmental tasks\ndf['is_cross_departmental'] = df['description'].apply(\n    lambda desc: any(keyword in desc.lower() for keyword in cross_dept_keywords)\n)\n\n# Calculate average completion and target percentage\navg_data = df.groupby('is_cross_departmental').agg({\n    'percent_complete': 'mean',\n    'target_percentage': 'mean'\n}).reset_index()\n\n# Rename columns for clarity\navg_data['is_cross_departmental'] = avg_data['is_cross_departmental'].map({True: 'Cross-Departmental', False: 'Non-Cross-Departmental'})\n\n# Plot the average completion and target percentages\nplt.figure(figsize=(10, 6))\nsns.barplot(x='is_cross_departmental', y='value', hue='variable', \n            data=pd.melt(avg_data, id_vars='is_cross_departmental', value_vars=['percent_complete', 'target_percentage']),\n            palette='coolwarm')\nplt.title('Completion and Target Achievement: Cross-Departmental vs Non-Cross-Departmental')\nplt.xlabel('Task Type')\nplt.ylabel('Percentage')\nplt.ylim(0, 100)\nplt.legend(title='Metric')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+            "data_type": "comparative",
+            "insight": "Cross-departmental tasks exhibit higher completion percentages and target achievements compared to non-cross-departmental tasks.",
+            "insight_value": {
+                "Cross-Departmental Average Completion Percentage": "80.86%",
+                "Non-Cross-Departmental Average Completion Percentage": "58.05%",
+                "Cross-Departmental Average Target Percentage": "89.93%",
+                "Non-Cross-Departmental Average Target Percentage": "75.24%"
+            },
+            "plot": {
+                "plot_type": "barplot with annotations",
+                "title": "Average Completion and Target Percentage: Cross-Departmental vs Non-Cross-Departmental Tasks",
+                "x_axis": {
+                    "name": "Task Type",
+                    "value": "Cross-Departmental, Non-Cross-Departmental",
+                    "description": "This axis represents whether the task is cross-departmental or not."
+                },
+                "y_axis": {
+                    "name": "Percentage",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the average completion and target percentages for both task types."
+                },
+                "description": "The barplot shows that cross-departmental tasks have higher average completion percentages and target percentages compared to non-cross-departmental tasks. The plot includes actual percentage values on top of each bar for clarity."
+            },
+            "question": "How do cross-departmental tasks perform in terms of completion and target achievement compared to non-cross-departmental tasks?",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load the dataset\ndf = pd.read_csv('csvs/flag-36.csv')  # Replace with the correct path if needed\n\n# Define cross-departmental keywords\ncross_dept_keywords = ['collaborate', 'joint', 'integration', 'cross-departmental', 'partnership']\n\n# Identify cross-departmental tasks\ndf['is_cross_departmental'] = df['description'].apply(\n    lambda desc: any(keyword in desc.lower() for keyword in cross_dept_keywords)\n)\n\n# Calculate average completion and target percentage\navg_data = df.groupby('is_cross_departmental').agg({\n    'percent_complete': 'mean',\n    'target_percentage': 'mean'\n}).reset_index()\n\n# Rename columns for clarity\navg_data['is_cross_departmental'] = avg_data['is_cross_departmental'].map({True: 'Cross-Departmental', False: 'Non-Cross-Departmental'})\n\n# Plot the average completion and target percentages\nplt.figure(figsize=(10, 6))\nsns.barplot(x='is_cross_departmental', y='value', hue='variable', \n            data=pd.melt(avg_data, id_vars='is_cross_departmental', value_vars=['percent_complete', 'target_percentage']),\n            palette='coolwarm')\nplt.title('Completion and Target Achievement: Cross-Departmental vs Non-Cross-Departmental')\nplt.xlabel('Task Type')\nplt.ylabel('Percentage')\nplt.ylim(0, 100)\nplt.legend(title='Metric')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()",
+            "actionable_insight": "The higher success rates of cross-departmental tasks suggest that collaborative efforts across departments can lead to better outcomes. Organizations should consider encouraging cross-departmental initiatives to boost task performance."
         },
         {
-            "insight": "",
-            "question": "",
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Convert start_date to datetime format\ndf['start_date'] = pd.to_datetime(df['start_date'])\n\n# Extract the month and quarter from the start_date\ndf['month'] = df['start_date'].dt.month\ndf['quarter'] = df['start_date'].dt.quarter\n\n# Calculate the average percent_complete by quarter\navg_completion_by_quarter = df.groupby('quarter')['percent_complete'].mean().reset_index()\n\n# Plot the average completion by quarter\nplt.figure(figsize=(10, 6))\nsns.barplot(x='quarter', y='percent_complete', data=avg_completion_by_quarter, palette='viridis')\nplt.title('Average Completion Rate by Quarter')\nplt.xlabel('Quarter')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+            "data_type": "time_series",
+            "insight": "Tasks initiated in Q4 exhibit higher completion percentages compared to those started in other quarters.",
+            "insight_value": {
+                "Quarter 1 Average Completion Percentage": "63.95%",
+                "Quarter 2 Average Completion Percentage": "63.36%",
+                "Quarter 3 Average Completion Percentage": " 62.48%",
+                "Quarter 4 Average Completion Percentage": "70.23%"
+            },
+            "plot": {
+                "plot_type": "barplot",
+                "title": "Average Completion Rate by Quarter",
+                "x_axis": {
+                    "name": "Quarter",
+                    "value": "1, 2, 3, 4",
+                    "description": "This axis represents the quarters of the year, showing the average completion percentage for tasks initiated in each quarter."
+                },
+                "y_axis": {
+                    "name": "Average Completion Percentage",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the average completion percentage of tasks initiated in each quarter, highlighting differences in performance across the year."
+                },
+                "description": "The barplot reveals that tasks started in Q4 have a higher average completion percentage compared to those started in other quarters, suggesting a possible end-of-year performance push or seasonal effect."
+            },
+            "question": "How does the time of year (quarter) impact the completion rate of tasks?",
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Convert start_date to datetime format\ndf['start_date'] = pd.to_datetime(df['start_date'])\n\n# Extract the month and quarter from the start_date\ndf['month'] = df['start_date'].dt.month\ndf['quarter'] = df['start_date'].dt.quarter\n\n# Calculate the average percent_complete by quarter\navg_completion_by_quarter = df.groupby('quarter')['percent_complete'].mean().reset_index()\n\n# Plot the average completion by quarter\nplt.figure(figsize=(10, 6))\nsns.barplot(x='quarter', y='percent_complete', data=avg_completion_by_quarter, palette='viridis')\nplt.title('Average Completion Rate by Quarter')\nplt.xlabel('Quarter')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()",
+            "actionable_insight": "The higher completion rates observed in Q4 suggest that organizations may benefit from strategically planning critical tasks during this period to leverage the observed performance boost. Further analysis could explore the underlying factors driving this trend."
         },
         {
-            "insight": "",
-            "question": "",
-            "code": "# Calculate average completion by priority and category\navg_completion_by_priority_category = df.groupby(['priority', 'category'])['percent_complete'].mean().unstack().reset_index()\n\n# Plot the average completion by priority and category\nplt.figure(figsize=(12, 8))\navg_completion_by_priority_category.plot(kind='bar', x='priority', stacked=True, colormap='Set3', ax=plt.gca())\nplt.title('Average Completion Rate by Priority and Category')\nplt.xlabel('Priority Level')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.show()"
+            "data_type": "analytical",
+            "insight": "The correlation between priority levels and task completion rates varies significantly across different categories. For instance, in some categories, Medium-priority tasks outperform High-priority tasks in terms of completion percentage.",
+            "insight_value": {
+                "Critical Priority Completion Rate (Cost Reduction)": "64.7%",
+                "High Priority Completion Rate (Cost Reduction)": "70.6%",
+                "Medium Priority Completion Rate (Cost Reduction)": "69.3%",
+                "Low Priority Completion Rate (Cost Reduction)": "61.6%"
+            },
+            "plot": {
+                "plot_type": "stacked bar plot",
+                "title": "Average Completion Rate by Priority and Category",
+                "x_axis": {
+                    "name": "Priority Level",
+                    "value": "High, Medium, Low",
+                    "description": "This axis represents the priority level assigned to tasks."
+                },
+                "y_axis": {
+                    "name": "Average Completion Percentage",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the average completion percentage of tasks across different categories and priority levels."
+                },
+                "description": "The stacked bar plot shows how completion rates vary by priority level within different categories. This highlights areas where Medium or Low priority tasks may be receiving more focus or where High priority tasks might be facing challenges."
+            },
+            "question": "How do priority levels correlate with task completion rates across different categories?",
+            "code": "# Calculate average completion by priority and category\navg_completion_by_priority_category = df.groupby(['priority', 'category'])['percent_complete'].mean().unstack().reset_index()\n\n# Plot the average completion by priority and category\nplt.figure(figsize=(12, 8))\navg_completion_by_priority_category.plot(kind='bar', x='priority', stacked=True, colormap='Set3', ax=plt.gca())\nplt.title('Average Completion Rate by Priority and Category')\nplt.xlabel('Priority Level')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.show()",
+            "actionable_insight": "Organizations should review how they assign priorities to tasks and consider whether the resources allocated to High-priority tasks are sufficient to ensure their successful completion. Further analysis could help optimize resource distribution across priority levels."
         },
         {
-            "insight": "",
-            "question": "",
-            "code": "# Calculate the average percent_complete by month\navg_completion_by_month = df.groupby(df['start_date'].dt.month)['percent_complete'].mean().reset_index()\n\n# Plot the average completion by month\nplt.figure(figsize=(10, 6))\nsns.lineplot(x='start_date', y='percent_complete', data=avg_completion_by_month, marker='o')\nplt.title('Average Completion Rate by Month')\nplt.xlabel('Month')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+            "data_type": "time_series",
+            "insight": "The success rates of tasks vary based on the month they are initiated, with certain months showing higher average completion percentages.",
+            "insight_value": {
+                "Highest Completion Month": "10.0",
+                "Lowest Completion Month": "1.0"
+            },
+            "plot": {
+                "plot_type": "lineplot",
+                "title": "Average Completion Rate by Month",
+                "x_axis": {
+                    "name": "Month",
+                    "value": "1-12",
+                    "description": "This axis represents the month in which tasks are initiated."
+                },
+                "y_axis": {
+                    "name": "Average Completion Percentage",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the average completion percentage of tasks started in each month, highlighting potential seasonal trends."
+                },
+                "description": "The line plot shows variations in average task completion rates across different months, suggesting that the time of year can influence task success."
+            },
+            "question": "Is there a significant difference in the success rates of tasks based on the month they are initiated?",
+            "code": "# Calculate the average percent_complete by month\navg_completion_by_month = df.groupby(df['start_date'].dt.month)['percent_complete'].mean().reset_index()\n\n# Plot the average completion by month\nplt.figure(figsize=(10, 6))\nsns.lineplot(x='start_date', y='percent_complete', data=avg_completion_by_month, marker='o')\nplt.title('Average Completion Rate by Month')\nplt.xlabel('Month')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()",
+            "actionable_insight": "Organizations may consider scheduling critical tasks during months with historically higher success rates. Understanding the factors driving these seasonal variations can further optimize task scheduling."
         },
         {
-            "insight": "",
-            "question": "",
-            "code": "# Calculate the average percent_complete by department and metric\navg_completion_by_dept_metric = df.groupby(['department', 'priority'])['percent_complete'].mean().unstack().reset_index()\n\n# Plot the average completion by department and metric\nplt.figure(figsize=(14, 8))\navg_completion_by_dept_metric.set_index('department').plot(kind='bar', stacked=True, colormap='tab20', ax=plt.gca())\nplt.title('Average Completion Rate by Department and Priority')\nplt.xlabel('Department')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Metric', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.show()"
+            "data_type": "comparative",
+            "insight": "Certain departments consistently outperform others in specific metrics, showing strong alignment with their key objectives.",
+            "insight_value": {
+                "Top Performing Department (High Priority)": "Marketing - 77.68%",
+                "Lowest Performing Department (Low Priority)": "IT - 56.97%"
+            },
+            "plot": {
+                "plot_type": "stacked bar plot",
+                "title": "Average Completion Rate by Department and Priority",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "Dynamic based on data",
+                    "description": "This axis represents the different departments within the organization."
+                },
+                "y_axis": {
+                    "name": "Average Completion Percentage",
+                    "value": "Dynamic based on data",
+                    "description": "This shows the average completion percentage of tasks for each department across various priority levels."
+                },
+                "description": "The stacked bar plot highlights how different departments perform across various priority levels, revealing strong areas and potential gaps in performance."
+            },
+            "question": "Which departments excel in specific metrics, and how does performance vary across departments?",
+            "code": "# Calculate the average percent_complete by department and metric\navg_completion_by_dept_metric = df.groupby(['department', 'priority'])['percent_complete'].mean().unstack().reset_index()\n\n# Plot the average completion by department and metric\nplt.figure(figsize=(14, 8))\navg_completion_by_dept_metric.set_index('department').plot(kind='bar', stacked=True, colormap='tab20', ax=plt.gca())\nplt.title('Average Completion Rate by Department and Priority')\nplt.xlabel('Department')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Metric', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.show()",
+            "actionable_insight": "Departments should be aligned with their strengths in specific metrics, and resources should be allocated accordingly. This can help in focusing on core competencies and addressing areas that require improvement."
         }
     ],
     "insights": [
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Cross-departmental tasks exhibit higher completion percentages and target achievements compared to non-cross-departmental tasks.",
+        "Tasks initiated in Q4 exhibit higher completion percentages compared to those started in other quarters.",
+        "The correlation between priority levels and task completion rates varies significantly across different categories. For instance, in some categories, Medium-priority tasks outperform High-priority tasks in terms of completion percentage.",
+        "The success rates of tasks vary based on the month they are initiated, with certain months showing higher average completion percentages.",
+        "Certain departments consistently outperform others in specific metrics, showing strong alignment with their key objectives."
     ],
     "summary": "\n\n1. **Cross-Departmental Collaboration Benefits**: The dataset reveals that tasks classified as cross-departmental, involving collaboration between multiple departments, exhibit higher completion rates and target achievement percentages compared to non-cross-departmental tasks. This trend suggests that collaborative efforts can significantly enhance task performance across the organization.\n\n2. **Seasonal Performance Variations**: A notable trend is observed where tasks initiated in Q4 (October to December) have higher average completion rates than those started in other quarters. This suggests a seasonal push or end-of-year urgency, indicating that organizations may be strategically planning critical tasks during this period to leverage higher performance.\n\n3. **Priority-Category Performance Discrepancies**: The analysis shows that the correlation between task priority levels and completion rates varies across different categories. For example, in some categories like 'Cost Reduction,' Medium-priority tasks outperform High-priority tasks, indicating potential inefficiencies or challenges in managing higher priority tasks. This insight highlights the need for a reassessment of how tasks are prioritized and resources are allocated to ensure high-priority tasks achieve their desired outcomes. Additionally, departments should be aligned with their strengths in specific metrics, and resources should be allocated accordingly. This can help in focusing on core competencies and addressing areas that require improvement.\n\n4. **Departmental Performance Analysis**: Certain departments consistently outperform others in specific metrics, showing strong alignment with their key objectives. For instance, the Marketing department has the highest completion rate for high-priority tasks, while the IT department shows the lowest performance for low-priority tasks. This suggests that departments should focus on their strengths and allocate resources to address areas needing improvement."
 }

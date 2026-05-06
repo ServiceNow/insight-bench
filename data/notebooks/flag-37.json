@@ -43,7 +43,7 @@
             "code": "# Group by department and count unique managers\ndepartment_manager_counts = flag_data.groupby('department')['manager'].nunique().reset_index()\n\n# Set the aesthetic style of the plots\nsns.set_style(\"whitegrid\")\n\n# Create a bar plot\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='department', y='manager', data=department_manager_counts, palette=\"muted\")\n\n# Add title and labels to the plot\nplt.title('Number of Unique Managers per Department')\nplt.xlabel('Department')\nplt.ylabel('Number of Unique Managers')\n\n# Optional: add the exact number on top of each bar\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'), \n                      (p.get_x() + p.get_width() / 2., p.get_height()), \n                      ha = 'center', va = 'center', \n                      xytext = (0, 9), \n                      textcoords = 'offset points')\n\n# Show the plot\nplt.show()"
         },
         {
-            "data_type": "location-based retention analysis",
+            "data_type": "analytical",
             "insight": "Employees located in high-retention locations tend to have significantly longer tenures compared to those in other locations.",
             "insight_value": {
                 "High Retention Locations Average Tenure": "Approximately 1200 days",
@@ -65,10 +65,10 @@
                 "description": "The barplot shows a stark contrast in average tenure between high-retention locations and other locations, suggesting that geographic location plays a significant role in employee retention."
             },
             "question": "How does employee retention vary across different locations, particularly in high-retention areas?",
-            "actionable insight": {
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Convert 'schedule' back to datetime format for visualization\ndf['schedule'] = pd.to_datetime(df['schedule'], errors='coerce')\n\n# Filter data to include only the high-retention and other locations\ndf['location_category'] = df['location'].apply(lambda loc: 'High Retention' if 'Tokyo' in str(loc) or 'London' in str(loc) else 'Other')\n\n# Calculate the average schedule length by location category\ndf['tenure_days'] = (pd.Timestamp('2024-10-29')- df['schedule']).dt.days\navg_tenure_by_location = df.groupby('location_category')['tenure_days'].mean().reset_index()\n\n# Plot the average tenure by location category\nplt.figure(figsize=(10, 6))\nsns.barplot(x='location_category', y='tenure_days', data=avg_tenure_by_location, palette='coolwarm')\nplt.title('Average Employee Retention by Location Category')\nplt.xlabel('Location Category')\nplt.ylabel('Average Tenure (Days)')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()",
+            "actionable_insight": {
                 "description": "Organizations may consider investigating the specific factors that contribute to higher retention in high-retention locations and implementing similar practices or policies in other locations to improve overall retention rates."
-            },
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n\n# Convert 'schedule' back to datetime format for visualization\ndf['schedule'] = pd.to_datetime(df['schedule'], errors='coerce')\n\n# Filter data to include only the high-retention and other locations\ndf['location_category'] = df['location'].apply(lambda loc: 'High Retention' if 'Tokyo' in str(loc) or 'London' in str(loc) else 'Other')\n\n# Calculate the average schedule length by location category\ndf['tenure_days'] = (pd.Timestamp('2024-10-29')- df['schedule']).dt.days\navg_tenure_by_location = df.groupby('location_category')['tenure_days'].mean().reset_index()\n\n# Plot the average tenure by location category\nplt.figure(figsize=(10, 6))\nsns.barplot(x='location_category', y='tenure_days', data=avg_tenure_by_location, palette='coolwarm')\nplt.title('Average Employee Retention by Location Category')\nplt.xlabel('Location Category')\nplt.ylabel('Average Tenure (Days)')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+            }
         },
         {
             "data_type": "analytical",

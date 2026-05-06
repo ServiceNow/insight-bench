@@ -4,20 +4,47 @@
     "metadata": {
         "goal": "Analyze the factors (whether time-based or categorical) that influence goal completion rates and evaluate their impact on overall departmental performance.",
         "role": "Enterprise Performance Analyst",
-        "category": "Strategic Goal Management",
+        "category": "Goal Management",
         "dataset_description": "This dataset includes 500 simulated entries from the ServiceNow `sn_gf_goal` table, detailing various aspects of organizational goals. Key attributes include goal status, responsible parties, associated departments, start and end dates, and detailed descriptions. The dataset also contains metrics such as priority ranking, percentage completion, and target achievement rate. It primarily focuses on tracking the progress and management of both departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational strategies. Additionally, the dataset logs updates to each goal, providing a record of modifications and the identities of those making these changes.",
         "header": "Cost Efficiency Goals Analysis (Flag 34)"
     },
     "insight_list": [
         {
-            "insight": "",
-            "question": "",
+            "data_type": "analytical",
+            "insight": "Goal durations are relatively uniform across departments, with all departments averaging approximately 100-106 days. The IT department has slightly shorter average goal durations at 100 days.",
+            "insight_value": {
+                "Finance": "106.0 days",
+                "HR": "106.0 days",
+                "Marketing": "106.0 days",
+                "IT": "100.0 days",
+                "Key Finding": "Goal durations are relatively uniform across departments, with Finance, HR, and Marketing all at 106 days and IT slightly lower at 100 days."
+            },
+            "plot": {
+                "plot_type": "box",
+                "title": "Goal Durations by Department",
+                "x_axis": {
+                    "name": "Department",
+                    "value": "Finance, HR, Marketing, IT",
+                    "description": "This categorizes goals by the departments responsible for their completion."
+                },
+                "y_axis": {
+                    "name": "Goal Duration (days)",
+                    "value": "Finance: 106.0, HR: 106.0, Marketing: 106.0, IT: 100.0",
+                    "description": "This represents the median duration of goals in days, measured from start to end, across different departments."
+                },
+                "description": "The boxplot demonstrates that the median duration for completing goals is relatively uniform across departments, with Finance, HR, and Marketing all at 106 days and IT slightly lower at 100 days. The similarity in durations suggests comparable goal management practices across departments."
+            },
+            "question": "How do the durations of goals in the Finance department compare to those in other departments?",
+            "actionable_insight": "Given the relatively uniform goal durations across departments, it is recommended to investigate whether the slight difference in IT (100 days vs. 106 days) reflects more efficient processes or simpler goal structures that could be applied across other departments.",
             "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\nimport numpy as np\n\n# Assuming 'goal_data' is preloaded and contains 'Cost Reduction' category\ngoal_data['end_date'] = pd.to_datetime(goal_data['end_date'])\ngoal_data[\"start_date\"] = pd.to_datetime(goal_data[\"start_date\"])\n# Calculate goal durations\ngoal_data['duration'] = (goal_data['end_date'] - goal_data['start_date']).dt.days\n\n# Plotting\nplt.figure(figsize=(12, 8))\nbox_plot = sns.boxplot(x='department', y='duration', data=goal_data, palette=\"Set3\")\nplt.title('Comparison of Goal Durations by Department')\nplt.xlabel('Department')\nplt.ylabel('Goal Duration (days)')\nplt.grid(True)\n\n# Calculate median and mean for annotations\nmedians = goal_data.groupby(['department'])['duration'].median()\nmeans = goal_data.groupby(['department'])['duration'].mean()\n\n# Iterate over the departments to place the text annotations for median and mean\nfor xtick in box_plot.get_xticks():\n    box_plot.text(xtick, medians[xtick] + 1, 'Median: {:.1f}'.format(medians[xtick]), \n                  horizontalalignment='center', size='x-small', color='black', weight='semibold')\n    box_plot.text(xtick, means[xtick] + 1, 'Mean: {:.1f}'.format(means[xtick]), \n                  horizontalalignment='center', size='x-small', color='red', weight='semibold')\n\nplt.show()"
         },
         {
             "insight": "Tasks initiated in Q4 exhibit higher completion percentages compared to those started in other quarters.",
             "question": "How does the time of year (quarter) impact the completion rate of tasks?",
-            "code": "# Convert start_date to datetime format\ndf['start_date'] = pd.to_datetime(df['start_date'])\n\n# Extract the month and quarter from the start_date\ndf['month'] = df['start_date'].dt.month\ndf['quarter'] = df['start_date'].dt.quarter\n\n# Visualize the trend of percent_complete by quarter\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='quarter', y='percent_complete', data=df)\nplt.title('Percent Complete by Quarter')\nplt.xlabel('Quarter')\nplt.ylabel('Percent Complete')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()"
+            "code": "# Convert start_date to datetime format\ndf['start_date'] = pd.to_datetime(df['start_date'])\n\n# Extract the month and quarter from the start_date\ndf['month'] = df['start_date'].dt.month\ndf['quarter'] = df['start_date'].dt.quarter\n\n# Visualize the trend of percent_complete by quarter\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='quarter', y='percent_complete', data=df)\nplt.title('Percent Complete by Quarter')\nplt.xlabel('Quarter')\nplt.ylabel('Percent Complete')\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.show()",
+            "data_type": "diagnostic",
+            "insight_value": {},
+            "actionable_insight": ""
         },
         {
             "data_type": "diagnostic",
@@ -78,7 +105,7 @@
         }
     ],
     "insights": [
-        "",
+        "Goal durations are relatively uniform across departments, with all departments averaging approximately 100-106 days. The IT department has slightly shorter average goal durations at 100 days.",
         "Tasks initiated in Q4 exhibit higher completion percentages compared to those started in other quarters.",
         "There is a dominance of 'Cost Reduction' goals within the Finance department",
         "There is a uniform distribution of goal priorities in the Finance department"

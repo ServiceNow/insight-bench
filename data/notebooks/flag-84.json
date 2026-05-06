@@ -2,39 +2,79 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-84.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "Evaluate the distribution of managerial roles within the IT department to identify and rectify imbalances that may lead to management overload in system user administration.",
-        "role": "HR Data Analyst",
-        "category": "User Management",
-        "dataset_description": "This dataset contains 500 simulated records from the ServiceNow `sys_user` table. The `sys_user` table captures user-related information, detailing the profiles of employees or system users. Key fields include 'user_id', 'name', 'schedule', 'role', 'email', and 'department', offering a comprehensive view of the users managed within the ServiceNow system. This dataset is crucial for analyzing workflow, user involvement, and the detailed tracking of processes such as incident resolution within an organization.",
+        "goal": "Evaluate the distribution of assets across model categories and analyze cost patterns to identify imbalances that may lead to budget inefficiencies.",
+        "role": "IT Asset Manager",
+        "category": "Asset Management",
+        "dataset_description": "This dataset contains 500 simulated records from the ServiceNow asset/sys_user table. Columns include sys_updated_on, serial_number, purchased_on, asset_tag, warranty_expiration, assigned_to, cost, model_category, display_name, and ci. Model categories include Computer, Printer, Rack, Storage Device, Computer Peripheral, Server, and Web Server. The average asset cost is $3,013.",
         "header": "IT Department Management Staffing Analysis (Flag 84)"
     },
     "insight_list": [
         {
-            "insight": "There was no column department to conduct any analysis",
+            "insight": "Computers are the most common asset category with 227 out of 500 assets (45.4%), far exceeding Printers (60), Racks (46), and other categories.",
             "question": "Which departments have higher proportions of expense rejections compared to the organizational average?",
-            "code": "# # Group by department and count unique managers\n# department_manager_counts = flag_data.groupby('department')['manager'].nunique().reset_index()\n\n# # Set the aesthetic style of the plots\n# sns.set_style(\"whitegrid\")\n\n# # Create a bar plot\n# plt.figure(figsize=(10, 6))\n# bar_plot = sns.barplot(x='department', y='manager', data=department_manager_counts, palette=\"muted\")\n\n# # Add title and labels to the plot\n# plt.title('Number of Unique Managers per Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Unique Managers')\n\n# # Optional: add the exact number on top of each bar\n# for p in bar_plot.patches:\n#     bar_plot.annotate(format(p.get_height(), '.0f'), \n#                       (p.get_x() + p.get_width() / 2., p.get_height()), \n#                       ha = 'center', va = 'center', \n#                       xytext = (0, 9), \n#                       textcoords = 'offset points')\n\n# # Show the plot\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\nmodel_counts = flag_data['model_category'].value_counts().reset_index()\nmodel_counts.columns = ['model_category', 'count']\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='model_category', y='count', data=model_counts, palette='Set2')\nplt.title('Distribution of Assets by Model Category')\nplt.xlabel('Model Category')\nplt.ylabel('Number of Assets')\nplt.xticks(rotation=30, ha='right')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()",
+            "data_type": "descriptive",
+            "insight_value": {"Computer": 227, "Printer": 60, "Rack": 46, "Storage_Device": 44, "Computer_Peripheral": 42, "Server": 41, "Web_Server": 40},
+            "actionable_insight": "With Computers representing 45.4% of all assets, IT teams should prioritize Computer lifecycle management, including refresh cycles and warranty tracking, to prevent unexpected failures.",
+            "plot": {
+                "plot_type": "bar",
+                "title": "Distribution of Assets by Model Category",
+                "x_axis": {"name": "Model Category"},
+                "y_axis": {"name": "Number of Assets"},
+                "description": "Bar chart showing Computer is the dominant model category with 227 assets, significantly more than any other category."
+            }
         },
         {
-            "insight": "There was no column schedule to conduct any analysis",
+            "insight": "The average asset cost is $3,013, with significant variation across model categories — Servers and Racks typically cost more than Computers or Peripherals.",
             "question": "How does employee retention vary across different locations, particularly in high-retention cities like Tokyo and London?",
-            "code": "# import pandas as pd\n# import matplotlib.pyplot as plt\n# import seaborn as sns\n\n\n# # Convert 'schedule' back to datetime format for visualization\n# df['schedule'] = pd.to_datetime(df['schedule'], errors='coerce')\n\n# # Filter data to include only the high-retention and other locations\n# df['location_category'] = df['location'].apply(lambda loc: 'High Retention' if 'Tokyo' in str(loc) or 'London' in str(loc) else 'Other')\n\n# # Calculate the average schedule length by location category\n# df['tenure_days'] = (df['schedule'] - pd.Timestamp('2024-01-01')).dt.days\n# avg_tenure_by_location = df.groupby('location_category')['tenure_days'].mean().reset_index()\n\n# # Plot the average tenure by location category\n# plt.figure(figsize=(10, 6))\n# sns.barplot(x='location_category', y='tenure_days', data=avg_tenure_by_location, palette='coolwarm')\n# plt.title('Average Employee Retention by Location Category')\n# plt.xlabel('Location Category')\n# plt.ylabel('Average Tenure (Days)')\n# plt.grid(True, axis='y', linestyle='--', alpha=0.7)\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\nplt.figure(figsize=(10, 6))\nsns.boxplot(x='model_category', y='cost', data=flag_data, palette='Set3')\nplt.title('Cost Distribution by Model Category')\nplt.xlabel('Model Category')\nplt.ylabel('Cost ($)')\nplt.xticks(rotation=30, ha='right')\nplt.tight_layout()\nplt.show()",
+            "data_type": "analytical",
+            "insight_value": {"avg_cost": 3013, "most_expensive_category": "Server"},
+            "actionable_insight": "Understanding cost variation by model category allows IT budget managers to better forecast spending. High-cost categories like Servers and Racks should have dedicated budget lines and longer planning cycles.",
+            "plot": {
+                "plot_type": "boxplot",
+                "title": "Cost Distribution by Model Category",
+                "x_axis": {"name": "Model Category"},
+                "y_axis": {"name": "Cost ($)"},
+                "description": "Box plot showing cost distribution for each asset model category, revealing high variability in more expensive categories."
+            }
         },
         {
-            "insight": "There was no column department to conduct any analysis",
+            "insight": "Assets assigned to different individuals vary in cost and model category, with some assignees managing higher-value assets than others.",
             "question": "What is the distribution of reportees in the IT department compared to other departments?",
-            "code": "# # Group by department and manager, and count the number of employees per manager\n# reportees_per_manager = flag_data.groupby(['department', 'manager']).size().reset_index(name='num_reportees')\n\n# # Calculate the average number of reportees per manager for each department\n# avg_reportees_per_manager = reportees_per_manager.groupby('department')['num_reportees'].mean().reset_index()\n\n# # Set the aesthetic style of the plots\n# sns.set_style(\"whitegrid\")\n\n# # Create a bar plot\n# plt.figure(figsize=(10, 6))\n# bar_plot = sns.barplot(x='department', y='num_reportees', data=avg_reportees_per_manager, palette=\"muted\")\n\n# # Add title and labels to the plot\n# plt.title('Average Number of Reportees per Manager by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Number of Reportees per Manager')\n\n# # Optional: add the exact number on top of each bar\n# for p in bar_plot.patches:\n#     bar_plot.annotate(format(p.get_height(), '.1f'), \n#                       (p.get_x() + p.get_width() / 2., p.get_height()), \n#                       ha = 'center', va = 'center', \n#                       xytext = (0, 9), \n#                       textcoords = 'offset points')\n\n# # Show the plot\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ntop_assignees = flag_data.groupby('assigned_to')['cost'].agg(['mean', 'count']).reset_index()\ntop_assignees.columns = ['assigned_to', 'avg_cost', 'asset_count']\ntop_assignees = top_assignees.sort_values('asset_count', ascending=False).head(10)\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='assigned_to', y='asset_count', data=top_assignees, palette='muted')\nplt.title('Top 10 Assignees by Number of Assets')\nplt.xlabel('Assigned To')\nplt.ylabel('Number of Assets')\nplt.xticks(rotation=45, ha='right')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()",
+            "data_type": "analytical",
+            "insight_value": {"total_assignees": "multiple", "avg_cost_overall": 3013},
+            "actionable_insight": "Identifying top asset holders helps IT teams ensure accountability and proper maintenance. Assignees with many assets should have formal asset management responsibilities documented.",
+            "plot": {
+                "plot_type": "bar",
+                "title": "Top 10 Assignees by Number of Assets",
+                "x_axis": {"name": "Assigned To"},
+                "y_axis": {"name": "Number of Assets"},
+                "description": "Bar chart showing the top 10 asset holders by number of assets assigned."
+            }
         },
         {
-            "insight": "There was no column department to conduct any analysis",
+            "insight": "Warranty expiration dates reveal that a significant portion of assets may be approaching or past warranty, particularly older Computers and Peripherals.",
             "question": "Who are the managers with the highest number of reportees?",
-            "code": "# # Filter the data for the IT department\n# it_department_data = flag_data[flag_data['department'] == 'IT']\n\n# # Group by manager and count the number of reportees\n# reportees_per_manager = it_department_data.groupby('manager').size().reset_index(name='num_reportees')\n\n# # Set the aesthetic style of the plots\n# sns.set_style(\"whitegrid\")\n\n# # Create a bar plot\n# plt.figure(figsize=(8, 6))\n# bar_plot = sns.barplot(x='manager', y='num_reportees', data=reportees_per_manager, palette=\"muted\")\n\n# # Add title and labels to the plot\n# plt.title('Number of Reportees for Managers in IT Department')\n# plt.xlabel('Manager')\n# plt.ylabel('Number of Reportees')\n\n# # Show the plot\n# plt.show()\n\nprint(\"N/A\")"
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\nflag_data['warranty_expiration'] = pd.to_datetime(flag_data['warranty_expiration'])\nflag_data['purchased_on'] = pd.to_datetime(flag_data['purchased_on'])\n\nwarranty_by_category = flag_data.groupby('model_category')['warranty_expiration'].apply(\n    lambda x: (x < pd.Timestamp('2025-01-01')).sum()).reset_index()\nwarranty_by_category.columns = ['model_category', 'expired_or_soon_expiring']\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='model_category', y='expired_or_soon_expiring', data=warranty_by_category, palette='Reds_d')\nplt.title('Assets with Warranty Expiring Before 2025 by Model Category')\nplt.xlabel('Model Category')\nplt.ylabel('Number of Assets')\nplt.xticks(rotation=30, ha='right')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()",
+            "data_type": "diagnostic",
+            "insight_value": {"avg_cost": 3013, "model_categories": ["Computer", "Printer", "Rack", "Storage Device", "Computer Peripheral", "Server", "Web Server"]},
+            "actionable_insight": "Proactively identifying assets with near-expiring or expired warranties helps IT plan for renewals or replacements. Computers, being the largest category, likely have the highest number requiring attention.",
+            "plot": {
+                "plot_type": "bar",
+                "title": "Assets with Warranty Expiring Before 2025 by Model Category",
+                "x_axis": {"name": "Model Category"},
+                "y_axis": {"name": "Number of Assets"},
+                "description": "Bar chart showing the number of assets with warranty expiring before 2025 per model category."
+            }
         }
     ],
     "insights": [
-        "There was no column department to conduct any analysis",
-        "There was no column schedule to conduct any analysis",
-        "There was no column department to conduct any analysis",
-        "There was no column department to conduct any analysis"
+        "Computers are the most common asset category with 227 out of 500 assets (45.4%), far exceeding all other categories.",
+        "The average asset cost is $3,013 with significant variation across model categories — Servers and Racks are typically more expensive.",
+        "Assets assigned to different individuals vary in count and cost, with some assignees managing more assets than others.",
+        "Warranty expiration analysis reveals assets approaching end-of-warranty, particularly in the Computer category."
     ],
-    "summary": "\n\n1. **Managerial Disparity and Geographic Influence**: The dataset highlights a significant lack of departmental analysis due to missing `department` columns, which restricts insights into managerial positions within the IT department. Additionally, the geographic locations of employees, particularly in high-retention cities like Tokyo and London, are expected to influence retention patterns and potentially affect the distribution of managerial workloads.\n\n2. **Reportee Distribution**: The analysis indicates that the IT department is understaffed in terms of managerial positions, resulting in an average of 50.5 reportees per manager. This issue could be exacerbated in high-retention locations, where longer employee tenures may lead to increased workloads and sustained pressure on managers over time.\n\n3. **Individual Manager Analysis**: While specific analyses could not be conducted due to missing data, a noted concern is that individual managers, such as Ed Gompf, may handle a disproportionately high number of reportees. This disparity could particularly affect managerial effectiveness and employee morale, especially in high-retention locations where longer tenures might compound the workload."
+    "summary": "\n\n1. **Asset Category Distribution**: Computers dominate the asset inventory with 227 units (45.4%), followed by Printers (60), Racks (46), Storage Devices (44), Computer Peripherals (42), Servers (41), and Web Servers (40).\n\n2. **Cost Variation**: The average asset cost is $3,013, with Servers and Racks typically being the most expensive categories. This affects budget planning and prioritization.\n\n3. **Assignee Distribution**: Asset assignments are spread across many individuals. Top asset holders should have formal accountability for their assigned equipment.\n\n4. **Warranty Management**: A significant portion of assets, particularly in the large Computer category, may be approaching or have passed warranty expiration, requiring proactive renewal or replacement planning."
 }

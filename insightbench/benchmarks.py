@@ -1,3 +1,4 @@
+import ast
 import os
 import pandas as pd
 from insightbench.utils.agent_utils import analysis_nb_to_gt
@@ -52,6 +53,8 @@ def extract_notebook_info(notebook_path):
     }
     insight_list = []
     summary = None
+
+    code = ""
 
     # Process each cell
     for cell in nb.cells:
@@ -111,17 +114,29 @@ def extract_notebook_info(notebook_path):
 
         # Process code cells for insights
         elif cell.cell_type == "code" and cell.source.strip().startswith("{"):
+            data = None
             try:
                 data = json.loads(cell.source)
-                data["code"] = code
-                if isinstance(data, dict):
-                    insight_list.append(data)
-            except Exception as e:
-                # Extract insight and question directly from the text
-                source = cell.source.strip()
-                insight_match = re.search(r'"insight":\s*"([^"]*)"', source)
-                question_match = re.search(r'"question":\s*"([^"]*)"', source)
+            except (json.JSONDecodeError, ValueError):
+                try:
+                    data = ast.literal_eval(cell.source)
+                except (ValueError, SyntaxError):
+                    data = None
 
+            if data and isinstance(data, dict):
+                data["code"] = code
+                insight_list.append(data)
+            else:
+                # Regex fallback for malformed cells
+                source = cell.source.strip()
+                insight_match = (
+                    re.search(r'"insight":\s*"([^"]*)"', source)
+                    or re.search(r"'insight':\s*'([^']*)'", source)
+                )
+                question_match = (
+                    re.search(r'"question":\s*"([^"]*)"', source)
+                    or re.search(r"'question':\s*'([^']*)'", source)
+                )
                 insight_dict = {
                     "insight": insight_match.group(1) if insight_match else "",
                     "question": question_match.group(1) if question_match else "",

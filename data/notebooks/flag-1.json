@@ -4,9 +4,10 @@
     "metadata": {
         "goal": "Find the discrepancy and imbalance in distribution of incidents assigned across categories",
         "role": "L2 Support Agent",
-        "category": "Incidents Management",
+        "category": "Incident Management",
         "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
-        "header": "Hardware Incident Dataset (Flag 1)"
+        "header": "Hardware Incident Dataset (Flag 1)",
+        "difficulty": 4
     },
     "insight_list": [
         {
@@ -14,7 +15,7 @@
             "insight": "hardware incidents is significantly higher than others",
             "insight_value": {
                 "x_val": "Hardware",
-                "y_val": 335
+                "y_val": 336
             },
             "plot": {
                 "plot_type": "histogram",
@@ -168,7 +169,8 @@
                 "plot description": "The line plot displays the trend of incidents across different categories over time. Each line represents a category and the height of the line corresponds to the number of incidents in that category at a given time. The 'Hardware' category does not show any significant increasing trend. It is relatively stable and has a higher count than other categories."
             },
             "question": "Is there a pattern or trend over time in the distribution of incidents across categories?",
-            "code": "# Convert 'opened_at' to datetime\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Resample the data by month and category, and count the number of incidents\ndf_resampled = df.groupby([pd.Grouper(key='opened_at', freq='M'), 'category']).size().unstack()\n\n# Plot the resampled data\nplot = df_resampled.plot(kind='line')\n\n# Set plot title\nplt.title('Incidents Over Time by Category')\n\n# Set x-axis label\nplt.xlabel('Time')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+            "code": "# Convert 'opened_at' to datetime\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Resample the data by month and category, and count the number of incidents\ndf_resampled = df.groupby([pd.Grouper(key='opened_at', freq='M'), 'category']).size().unstack()\n\n# Plot the resampled data\nplot = df_resampled.plot(kind='line')\n\n# Set plot title\nplt.title('Incidents Over Time by Category')\n\n# Set x-axis label\nplt.xlabel('Time')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()",
+            "actionable_insight": ""
         },
         {
             "data_type": "diagnostic",
