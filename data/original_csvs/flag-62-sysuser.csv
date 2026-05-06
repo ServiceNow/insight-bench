@@ -1,0 +1,6 @@
+sys_id,schedule,manager,phone,user_name,name,location,department,title,email
+46b87022a9fe198101a78787e40d7547,"[(Timestamp('2023-06-14 00:00:00'), Timestamp('2023-07-19 00:00:00'))]",,,charlie.whitherspoon,Charlie Whitherspoon,"945 South Birch Street, Glendale,CO",Sales,,charlie.whitherspoon@example.com
+46ca0887a9fe19810191e08e51927ebf,"[(Timestamp('2023-06-01 00:00:00'), Timestamp('2023-06-28 00:00:00'))]",,,howard.johnson,Howard Johnson,"601 College Street, Clarksville,TN",Sales,,howard.johnson@example.com
+46d44a23a9fe19810012d100cca80666,,,,beth.anglin,Beth Anglin,"6304 Northwest Barry Road, Kansas City,MO",Sales,,beth.anglin@example.com
+46d96f57a9fe198101947a9620895886,,,,luke.wilson,Luke Wilson,"322 West 52nd Street, New York,NY",Sales,,luke.wilson@example.com
+5137153cc611227c000bbd1bd8cd2005,"[(Timestamp('2023-07-13 00:00:00'), Timestamp('2023-08-28 00:00:00'))]",,,fred.luddy,Fred Luddy,"650 Dennery Road #102, San Diego,CA",Development,Programmer,fred.luddy@example.com

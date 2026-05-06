@@ -1,0 +1,501 @@
+number,opened_at,state,amount,short_description,department,location,processing_time,processed_date,user
+af216d15-51d4-4ab1-8f7c-04cd36cb7940,2024-03-12 13:46:11,Declined,5050.344253799079,Share later act born just. Oracle,Product Management,Africa,0.0,,Jessica Anderson
+35db28f3-ef48-479b-8df9-682d22a8a3d3,2024-02-06 00:15:06,Processed,4100.35187705158,Standard nothing gas mean manage question sure. Automated,Sales,Europe,10.0,2024-02-16 00:15:06,Christopher Garcia
+f82c3d72-08d6-431c-841c-daafad220927,2024-02-16 12:52:34,Submitted,5939.789269680775,Nearly official bag set. Travel,IT,South America,0.0,,Angela Rodriguez
+e72048a6-67a5-4875-a5a8-9a5cab535308,2024-04-10 19:17:41,Pending,10846.34847559068,Account white kid civil. Cloud,Sales,Africa,0.0,,Robert Taylor
+fb6b2d5f-2080-42c0-a7c1-a8f735c4f876,2024-04-13 08:56:44,Submitted,3900.3606699880675,Anything really walk direction father. Server,Development,North America,0.0,,Barbara Martinez
+96196027-1248-4895-ad44-9806b61eeedf,2024-03-01 19:01:18,Declined,4585.129918688331,Try against plan street house.,Development,Europe,0.0,,Richard Thomas
+6e34b43b-d20c-4c26-8ec3-b20950266df7,2024-09-24 12:24:00,Declined,1467.7189586932288,Mention a Congress blood direction.,Customer Support,Europe,0.0,,Steven Clark
+3a6aa9fd-99e8-46d0-9f39-a2b77e80f581,2024-04-07 21:41:34,Declined,6715.725746690005,Mrs drug glass civil mission chance tree. Automated,HR,South America,0.0,,Richard Thomas
+91dd392e-9731-4f38-b285-fe10cf781996,2024-04-05 20:50:10,Pending,5687.676378957943,Agent wind alone forget among seat run.,IT,Europe,0.0,,Michael Johnson
+761beade-7efa-4ce8-bd8b-9ec6a00e6eeb,2024-05-23 22:29:26,Processed,7497.623544721402,News history and outside continue accept. Travel,Product Management,Europe,5.0,2024-05-28 22:29:26,William Brown
+f975c2a2-4950-4fff-994f-5f7e52b4d552,2024-01-21 12:03:56,Declined,2423.372056964802,Career huge season sometimes kid true detail.,Customer Support,Asia,0.0,,Karen Jackson
+47504a62-6e2f-49de-9457-095844c8bf89,2024-10-20 04:30:24,Declined,7895.281660073372,Investment material actually early explain nation still.,IT,South America,0.0,,William Brown
+b660daec-6cd0-405f-8009-4de1f3ed534c,2024-01-19 06:31:41,Processed,2520.6174833999553,Federal popular current build agree stand spring nothing. Travel,Finance,South America,9.0,2024-01-28 06:31:41,Jane Doe
+d68fb372-8be8-4293-9131-a2a1e2b65b41,2024-04-01 08:51:48,Declined,8873.8716607734,Discover reason certainly people speak science employee.,Development,North America,0.0,,Jessica Anderson
+e4b224ae-73c8-489c-a86f-a8c7dcf4f445,2024-04-11 07:03:21,Processed,5880.852610089328,Letter but them weight.,IT,Africa,9.0,2024-04-20 07:03:21,Robert Taylor
+6d73df13-bf03-4079-9585-f71e6fa814c9,2024-08-02 03:47:49,Submitted,7715.585966856624,Authority surface see total late important. Oracle,IT,Europe,0.0,,Robert Taylor
+e564788a-86d5-44bb-b059-60fbf79cf232,2024-03-22 17:41:29,Declined,11573.280939217695,Use school long part sense instead feel plan. Travel,Product Management,South America,0.0,,Christopher Garcia
+dd44eca9-3bbd-49ed-b6a8-5b7b949712ca,2024-07-11 02:37:10,Pending,1558.045122538465,Interest military can international child.,Sales,South America,0.0,,William Brown
+78843425-6431-4bd5-8336-8d28372e8a86,2024-05-13 14:53:16,Pending,6769.792448761233,Move difficult perhaps well again.,Sales,Africa,0.0,,Christopher Garcia
+de1c3c11-181d-4ea7-a491-5370707cac95,2024-09-20 10:38:51,Processed,3342.563498298482,Tonight deal reach daughter too.,HR,Asia,6.0,2024-09-26 10:38:51,David Wilson
+03dc3b06-ea96-44ef-a246-1e490454f228,2024-08-09 14:03:37,Processed,8172.569356083691,Everything base decision degree.,HR,South America,1.0,2024-08-10 14:03:37,Patricia Thompson
+63353367-09c8-47e6-a85c-51bff784e8c6,2024-06-05 00:27:17,Processed,2010.5004982705998,Down Mrs history everybody story maybe. Travel,IT,Europe,14.0,2024-06-19 00:27:17,Barbara Martinez
+41b09854-83da-48c9-93cb-3ab9396dd778,2024-05-29 14:51:17,Submitted,3024.7882242923915,Whose move power grow. Automated,IT,Europe,0.0,,Charles Martin
+0392d834-6bdb-4212-bf30-60bf7523aaca,2024-07-29 06:06:25,Processed,2995.2620312668896,Agreement summer hold space especially. Automated,Finance,Europe,10.0,2024-08-08 06:06:25,Lisa Harris
+fc98926f-bd17-49eb-8d11-c8b5293bac9a,2024-09-05 18:51:35,Submitted,8878.024582673126,Group already again maybe read represent security. Server,HR,Africa,0.0,,Patricia Thompson
+28c94b1b-a75c-41c6-8480-c5b149e44e40,2024-02-26 03:13:11,Pending,2334.324312669178,Kind employee watch reveal skin describe. Oracle,Product Management,Europe,0.0,,Linda Miller
+d9fee7d4-fe0a-4330-a972-c742694605cb,2024-02-22 15:21:52,Pending,6982.574964271815,Drive describe fact book position. Travel,Sales,South America,0.0,,William Brown
+2f37e42c-30cd-41d1-9efd-f4ca370eb135,2024-10-19 00:41:10,Submitted,5364.063740741621,Capital new prepare own identify page state effort. Cloud,Development,North America,0.0,,William Brown
+37b36079-1ec5-4aee-a0a9-69e5d5735e3d,2024-03-03 13:34:09,Submitted,1461.8183568187073,Hospital along goal however travel what learn. Cloud,IT,North America,0.0,,Christopher Garcia
+ee4caa7b-2599-4751-9333-9c0d931e9d41,2024-06-19 23:26:04,Declined,9368.94000615455,Method level provide knowledge west.,Customer Support,North America,0.0,,Patricia Thompson
+edc10d1f-9e29-4b5b-ac43-d978f7b82724,2024-03-27 03:26:10,Processed,5562.68633169898,Agency wear morning treatment plan attention during. Automated,Finance,Asia,5.0,2024-04-01 03:26:10,Patricia Thompson
+85ca714f-289f-48c6-9e72-fbca2578788d,2024-01-04 01:12:27,Submitted,492.3563401446927,Easy where total left.,Customer Support,Europe,0.0,,Jessica Anderson
+2d7ab5ab-bad9-4f1a-9519-f0ecd6c62421,2024-07-17 17:14:41,Processed,3679.4173909667998,News trial music. Server,Product Management,North America,9.0,2024-07-26 17:14:41,William Brown
+9b8c057f-4d63-4034-b84f-ef3bf0ff517f,2024-07-09 00:56:31,Submitted,2351.3862537249815,Traditional since establish build gun provide yet. Automated,HR,South America,0.0,,David Wilson
+18c43cf6-f39b-42fd-bd70-9cc220fbf7d9,2024-10-27 11:47:51,Submitted,4728.584380320336,Fine floor provide against. Automated,Sales,Europe,0.0,,Charles Martin
+3e36bd7e-8c98-44ad-a95e-e158ae98d8d6,2024-04-24 11:36:59,Pending,11901.27038989269,War forward without nature see decade. Oracle,HR,North America,0.0,,Sarah Moore
+f6326559-9e02-467a-9acb-2ebd13e515a8,2024-01-23 20:29:07,Pending,6516.94283425482,Firm painting focus study. Travel,HR,Europe,0.0,,Christopher Garcia
+8f2cfacc-06d8-419e-bab6-b9d5485e8f3f,2024-08-02 20:38:10,Submitted,2179.8196941748015,Analysis general month against arrive civil along kind. Travel,IT,Asia,0.0,,Charles Martin
+d28e3b70-98f9-4426-af44-c8e877edae59,2024-08-17 09:09:48,Processed,5451.833630965057,Wait huge spend what white.,Development,Asia,3.0,2024-08-20 09:09:48,Angela Rodriguez
+2363dca6-ae74-4b6c-8a5a-72b14ada0569,2024-06-24 14:56:53,Processed,6050.606120458129,Total health power.,Development,Europe,5.0,2024-06-29 14:56:53,Patricia Thompson
+1d861b8c-0d8b-4496-b0d7-86f970fa2a1a,2024-02-26 18:42:22,Processed,4623.4546244770745,Run doctor support just rate. Server,HR,Africa,4.0,2024-03-01 18:42:22,Richard Thomas
+59a2eeed-0d7a-4778-94cd-fbe38a755f7f,2024-10-20 08:12:34,Submitted,9588.89675191731,Author decade question there. Travel,Finance,North America,0.0,,Emily Davis
+e1429e89-3c1d-4353-a532-7c18e5c0e5e3,2024-07-01 04:03:32,Processed,9907.665797633952,Item develop inside person.,Finance,Africa,2.0,2024-07-03 04:03:32,Thomas White
+ff8bda64-1cc4-40fc-80ed-175f456c6e76,2024-06-02 07:46:38,Submitted,5003.625302825634,Those if customer myself add.,Sales,Europe,0.0,,Jessica Anderson
+359e24c6-1b48-449a-a7bf-1ef1163015dc,2024-04-25 12:31:05,Processed,2828.9060022759604,Street reality music among shake us hear.,Sales,South America,11.0,2024-05-06 12:31:05,Sarah Moore
+970d2822-f8ee-4452-a01a-354f9724f1d7,2024-01-23 11:16:30,Pending,7390.463603895592,May child sport sport. Oracle,Finance,Asia,0.0,,Michael Johnson
+8ab114e6-14bc-4272-9d96-d1677a697885,2024-02-18 18:42:31,Pending,5927.788499829664,Her subject woman together car store rise. Oracle,Customer Support,Europe,0.0,,Michael Johnson
+b43a38d3-31fd-43c1-b5df-72b33eb8f9f4,2024-01-29 22:21:51,Pending,11438.99050232105,Trial east difference sit force. Travel,HR,Europe,0.0,,Thomas White
+b4f0ec89-e6e0-4ba3-b663-6e2842134cd1,2024-06-21 00:58:05,Pending,14091.085817555311,Week form particularly school him Mr either much. Travel,IT,Africa,0.0,,Steven Clark
+8dc6da9d-9b29-4c9d-a5ed-581817335765,2024-04-18 10:46:54,Processed,14400.643449284542,Plan card tonight official through public speech. Travel,HR,Europe,1.0,2024-04-19 10:46:54,John Smith
+c4835be0-ad46-4e4d-a259-81f73b80d039,2024-01-10 21:20:52,Declined,1821.5338796772985,Call enough table else.,IT,Europe,0.0,,Barbara Martinez
+8847c2d3-9ec9-4358-8b99-813118243f80,2024-05-15 13:32:41,Pending,3050.326224842237,Few whom wish fight themselves fight.,Development,Africa,0.0,,Steven Clark
+331b594f-09d8-4076-8611-bc43fd7e44c7,2024-04-03 03:07:23,Pending,3467.6773121301717,Determine still until nor ever. Oracle,Product Management,South America,0.0,,Linda Miller
+f829966d-45a6-45f2-8a56-0e0da787f314,2024-06-01 04:09:11,Declined,818.3530418563547,Tell body picture minute develop me product. Oracle,IT,South America,0.0,,Karen Jackson
+c7069d0b-9c15-4461-92a1-e1bde4c3aa12,2024-01-30 12:42:41,Declined,675.0881261768187,Really send her write personal. Automated,Development,Asia,0.0,,David Wilson
+cc360a4a-6b67-4a1a-96c3-3ea8dfaec9e5,2024-05-16 04:33:37,Declined,6548.870036648148,Do traditional decade realize fire.,IT,Asia,0.0,,Angela Rodriguez
+06440b55-6b6f-44a3-9f9c-7a78a2b2efc3,2024-07-26 14:30:23,Submitted,4918.543734413545,Adult true respond different rather.,Sales,South America,0.0,,William Brown
+d685e589-df10-48f5-af68-e3e5e18d8ce0,2024-04-06 04:57:45,Submitted,2676.1435616878257,Step government policy beyond Mrs beat worker.,IT,North America,0.0,,Barbara Martinez
+2d93fe0c-af7f-47a5-a6d9-24f47b6ff701,2024-07-17 06:40:50,Processed,7599.519011940855,Fight fire staff likely item tell would. Automated,Customer Support,South America,3.0,2024-07-20 06:40:50,David Wilson
+7ea15b61-cc44-4d9f-90c8-50130df3e758,2024-03-19 21:11:26,Pending,7366.567500863616,Step network mind focus hear relate.,Customer Support,North America,0.0,,Christopher Garcia
+f39c884f-fdfb-484d-8349-f890529d1b31,2024-10-21 02:15:51,Pending,4434.802594459344,Cell debate Democrat let cultural go.,Finance,North America,0.0,,Sarah Moore
+7fe7bffc-252a-4c9c-bed4-e8282c5a89ea,2024-10-08 01:00:39,Declined,7044.158772281984,West serious true message away culture. Cloud,Finance,South America,0.0,,Linda Miller
+3f315ecb-e68e-40eb-878b-b1864267e926,2024-04-02 20:07:34,Submitted,2734.467957241916,Kitchen thousand every support hit.,Development,Africa,0.0,,David Wilson
+46b8b329-e9e9-4492-8cce-15ba8ac8bc69,2024-05-05 23:40:39,Pending,11988.13928119215,Without position production growth our back item hundred. Server,Development,North America,0.0,,Thomas White
+9f6b514d-fa49-40cd-b08b-d60fdad06fc9,2024-08-13 06:48:37,Pending,4393.12693740936,However clear parent born ball. Server,Finance,Africa,0.0,,Charles Martin
+e0768837-6047-4816-ab67-99c489ffd25e,2024-10-04 03:23:59,Processed,2961.305390950192,Pretty political case really. Oracle,Sales,Europe,5.0,2024-10-09 03:23:59,Steven Clark
+b231da34-ef63-4c17-8bea-b71bad84e957,2024-05-19 22:54:00,Pending,9349.492463188335,American help truth happen same dream suddenly.,Finance,Africa,0.0,,Robert Taylor
+3ad318f7-e2bf-4e42-a623-653caf42b06d,2024-02-27 06:45:53,Processed,7524.402635432942,Sea protect piece man. Automated,Sales,Asia,1.0,2024-02-28 06:45:53,Thomas White
+fd170da5-7981-4819-8439-262f054a1df0,2024-07-25 18:36:40,Processed,6528.191689182697,Than continue mission agent stock.,Finance,South America,2.0,2024-07-27 18:36:40,Emily Davis
+e90d1fe3-8a21-444f-be4c-d11b127f850f,2024-05-28 15:41:19,Declined,8162.801193998121,Fast particular already direction no kind TV age.,Development,Africa,0.0,,Angela Rodriguez
+23b6928f-d50f-4f26-9595-969d84bf8c3b,2024-03-26 21:01:22,Pending,4196.547501491853,Must source several fight record nice suddenly even.,HR,Asia,0.0,,Jane Doe
+11b2d0b0-8585-4a3a-983d-ff2f07478bdb,2024-02-03 22:57:00,Declined,4836.4197350799805,Institution own law drug bill.,Product Management,Africa,0.0,,John Smith
+1b0aa723-3475-4b13-b48f-8a1df72ba515,2024-10-19 22:20:11,Pending,10197.942446133657,Still professor small so daughter near simply. Cloud,Sales,North America,0.0,,Thomas White
+127f7dae-035b-4aa1-8d1d-4c509afc5498,2024-05-25 04:01:01,Pending,2905.7905700487495,Not road loss design onto program organization. Cloud,Customer Support,North America,0.0,,Emily Davis
+65c7c74c-e78f-4789-a827-760cf96bdcdf,2024-09-05 11:37:15,Processed,4319.17192745076,Past company question force role subject. Automated,Customer Support,Europe,7.0,2024-09-12 11:37:15,Barbara Martinez
+10933506-5c01-45b4-93a7-a3adce0b018e,2024-10-23 18:00:32,Processed,8002.939854180174,Model assume not woman realize stock east.,IT,Asia,5.0,2024-10-28 18:00:32,William Brown
+c5577f58-cb45-432e-9a17-a99ad65a5ee1,2024-01-01 04:54:23,Pending,6150.952257399947,Any current out hand admit. Travel,Sales,Europe,0.0,,Emily Davis
+ebb3628d-8e9e-44d6-993d-c8691ec9a4e2,2024-08-14 04:17:31,Pending,1645.8179728747168,Against never every idea top other.,Customer Support,North America,0.0,,Jessica Anderson
+bc605763-da66-4d82-aa28-ba579ab8ff74,2024-05-06 14:44:09,Processed,8931.511316522541,Every approach yet music. Oracle,Product Management,Africa,4.0,2024-05-10 14:44:09,Thomas White
+a9ce7908-6ef0-4a1a-9328-7bedf37f1906,2024-05-15 18:18:24,Pending,7782.201494283939,Describe level party relationship street bank society moment. Server,Product Management,Africa,0.0,,Charles Martin
+f81d0bba-3e5d-436d-b11f-3728da42dda6,2024-02-16 07:28:01,Processed,5781.297692332898,Billion stay type our war newspaper claim.,Development,South America,10.0,2024-02-26 07:28:01,Barbara Martinez
+c7764d4a-ed03-4fee-9f3b-7bfee5e887e8,2024-08-03 13:40:03,Submitted,8351.334703611488,Major far Mr local walk performance inside. Cloud,Product Management,South America,0.0,,Patricia Thompson
+6cf736a6-4f42-4317-aa6f-554f5231c155,2024-07-17 10:32:52,Pending,14785.85742242408,Food affect positive lead physical statement. Travel,Sales,Europe,0.0,,Robert Taylor
+7c103cf6-0c69-4242-9092-b67c97fe0444,2024-03-14 12:13:49,Processed,2730.879707882043,Answer its night property.,IT,Asia,7.0,2024-03-21 12:13:49,Patricia Thompson
+030d7abc-28f9-4499-9540-3950d4ff93f1,2024-06-18 23:39:03,Declined,3702.6519111544026,Growth factor consumer issue. Automated,Sales,South America,0.0,,Jane Doe
+4d8aa24d-bae9-4a5a-be11-df3c8549b957,2024-07-26 09:31:50,Processed,3544.4353541601977,Town soldier discover position example focus society.,HR,Africa,6.0,2024-08-01 09:31:50,Angela Rodriguez
+3c747ac5-8e0b-4974-81a7-fd146b538897,2024-04-12 01:04:48,Processed,4480.861178059883,Would ever able remain. Automated,IT,North America,7.0,2024-04-19 01:04:48,Thomas White
+db694fee-c55e-4201-9379-9d056bb622e0,2024-04-18 05:53:44,Declined,5364.06574407022,Anyone out early write safe. Travel,Customer Support,South America,0.0,,Robert Taylor
+c3f378a8-31aa-49f4-afd6-79b205bee523,2024-09-05 10:09:09,Declined,9966.292867795388,Call city early require center clearly. Server,Product Management,North America,0.0,,Richard Thomas
+e3ecc460-8ce1-4b3b-a41d-51a0dfc6c687,2024-01-31 11:45:10,Pending,1407.0968172258476,Available difficult level claim heart view agreement.,Sales,North America,0.0,,Angela Rodriguez
+62f59ab8-17c3-4e7c-b4b0-e8d64d63d8b6,2024-03-29 00:46:56,Submitted,3849.873951103914,Go network him imagine born. Automated,Sales,North America,0.0,,Patricia Thompson
+db011cd7-67ab-42e7-86c3-45cd3855803e,2024-04-03 00:39:26,Declined,14512.402830789371,Remain treat need realize practice. Travel,HR,North America,0.0,,Angela Rodriguez
+3bcc5215-41ef-459f-99b7-daff73df18c9,2024-09-15 10:00:09,Submitted,9556.867774929236,However less under space.,IT,Africa,0.0,,Patricia Thompson
+4ea58ed4-86e0-40ae-b4ba-2eab53ec9cc4,2024-10-12 20:39:16,Processed,6948.885980472051,Bed pressure attorney minute too north. Server,IT,Europe,3.0,2024-10-15 20:39:16,Lisa Harris
+1432beed-9a25-45ac-8432-ceeec8e3f5ea,2024-07-13 15:04:44,Declined,6814.132110594561,Station career employee team too.,Customer Support,North America,0.0,,Jane Doe
+32510b69-bf77-4634-ac71-6e54c5b1831b,2024-01-21 12:10:55,Submitted,10288.237180091572,Article house over social. Travel,Customer Support,North America,0.0,,Christopher Garcia
+131e46bc-b19a-47ab-bfe5-23d608779c43,2024-07-09 04:00:40,Processed,1151.554852547027,Ok drive here. Server,HR,Africa,8.0,2024-07-17 04:00:40,Jessica Anderson
+b86211db-6b46-41fe-9866-fc053297c23f,2024-10-01 10:47:13,Processed,4829.095073960872,Same beautiful data loss pay student. Travel,Finance,North America,4.0,2024-10-05 10:47:13,Linda Miller
+37392e28-0d8f-4997-881a-ed0076c8f7bc,2024-08-25 07:24:06,Pending,6402.027524999829,Most lay decision sister present actually matter.,IT,South America,0.0,,Linda Miller
+6f5f8ab6-6066-44c2-83c0-25a7be03091a,2024-08-23 04:29:22,Declined,4311.963728842783,Approach state share. Automated,IT,North America,0.0,,William Brown
+d36faa00-b327-46a5-a16b-b9e9dc5aa7e9,2024-07-23 11:53:36,Declined,7391.706533366265,Read even anyone whom two enter sea.,Sales,Asia,0.0,,Christopher Garcia
+b439e714-4f29-4764-866d-5cbd212d94c3,2024-02-09 06:13:55,Pending,2601.081862022436,Word believe with offer reach.,Sales,Europe,0.0,,Patricia Thompson
+4772b624-6b1f-4114-a100-5532e1b56723,2024-07-24 02:25:47,Pending,3508.94491717652,Ever window ever.,Product Management,Asia,0.0,,Charles Martin
+21c7f53d-ab85-4cae-802c-1a509dc8871c,2024-01-23 01:40:45,Submitted,1894.4380706077784,Establish short week of computer.,Sales,Europe,0.0,,Steven Clark
+4f2e618c-affc-4b57-967f-f1d1f4333d92,2024-09-11 12:40:38,Processed,7039.461398967805,Key off keep buy.,Product Management,Europe,5.0,2024-09-16 12:40:38,Linda Miller
+2354e9e5-82bd-43dd-b788-5516a242c906,2024-06-22 01:10:19,Submitted,7995.0606175264775,Executive floor enter control central option. Server,Sales,Africa,0.0,,Michael Johnson
+1f109404-8df3-4754-9f1e-ad62e573476c,2024-10-05 11:18:14,Declined,6650.24489147623,Fact draw speech threat wide physical management last.,HR,Africa,0.0,,Linda Miller
+827a039a-7cf5-4692-ab85-d16ec8aafc9a,2024-02-26 22:10:01,Submitted,3636.1419834281496,Station to receive walk now. Server,HR,Asia,0.0,,Lisa Harris
+328fbd12-e73d-4ce9-b62b-75d3edaae8cc,2024-07-06 01:20:31,Pending,13784.869808806683,Before again sit middle live ten leg. Travel,Customer Support,South America,0.0,,Patricia Thompson
+c15a1891-ea8e-46b1-9a66-a4813b67a717,2024-08-29 18:17:07,Processed,7414.484415468157,General class southern goal. Cloud,Customer Support,South America,3.0,2024-09-01 18:17:07,Jane Doe
+0914c7ab-70b1-49d9-bb68-7e069003d0ed,2024-06-10 07:08:30,Processed,7297.491386999958,Decade middle trade student vote. Travel,Product Management,Europe,4.0,2024-06-14 07:08:30,Emily Davis
+acef1de0-46e0-4b5d-90b2-90307b4b2018,2024-06-14 20:02:55,Declined,192.2659962516552,Already not none on similar measure similar or.,Finance,Africa,0.0,,Thomas White
+c3588562-3791-4ace-ad72-a8c4ea0515e6,2024-02-11 17:36:59,Submitted,862.5576417663265,Spend professional raise sea agent.,Development,South America,0.0,,Richard Thomas
+242178ff-2660-4273-9fc3-9b1e4cd87285,2024-05-05 01:26:17,Processed,9392.679509864336,College meeting read three expect require teacher. Cloud,Product Management,South America,3.0,2024-05-08 01:26:17,Christopher Garcia
+116275fc-26a5-4ff1-828a-c96f5189eda3,2024-07-07 18:19:09,Submitted,2035.112583494168,Fast course responsibility education point cold daughter. Automated,Development,Europe,0.0,,Patricia Thompson
+67c51dbd-1316-4541-8eed-75ed8ca0cb2a,2024-10-20 12:32:52,Processed,8055.401938553034,Level decision media rest know.,Finance,North America,1.0,2024-10-21 12:32:52,Angela Rodriguez
+7d093548-adfe-4d47-937b-59bf9dc4dd8c,2024-05-11 03:47:46,Processed,1754.5321315899953,Inside gun child focus. Oracle,IT,North America,5.0,2024-05-16 03:47:46,Michael Johnson
+7dda7e0c-f1bd-4dbb-aa37-70f1e844106c,2024-10-12 21:31:56,Declined,4089.3442057737957,Suddenly the young force.,HR,Europe,0.0,,Charles Martin
+c053e65e-aa9f-4635-8875-6875476e40c3,2024-08-31 08:48:18,Declined,9167.360178486791,Within crime reveal about it action reach or.,HR,Asia,0.0,,Thomas White
+a61da607-0152-4203-8ae2-2d6cd2ec6688,2024-09-20 23:43:04,Pending,4419.92195486003,Offer appear staff expert peace to above. Server,Finance,North America,0.0,,Thomas White
+8646ec47-4cfc-475e-a85d-fe201dcad7bd,2024-07-06 15:43:43,Processed,4651.102917808933,Answer attack letter draw worker.,Development,Africa,4.0,2024-07-10 15:43:43,Linda Miller
+60b568c5-3df1-4ea9-b4ba-b33428a6a8ef,2024-10-24 20:11:40,Processed,739.9370786814084,Social keep citizen. Travel,HR,North America,17.0,2024-11-10 20:11:40,David Wilson
+1dece221-48e6-41ad-9dd7-38353a2bd6a5,2024-05-16 15:47:34,Submitted,4097.508907253401,Address figure stop eye bad mean.,Sales,Asia,0.0,,Barbara Martinez
+ac27ce12-801e-45c1-b6e4-0c1de1e0f3d3,2024-08-06 13:38:38,Declined,2695.2618353345347,Public heavy why time everybody throughout worker. Oracle,IT,Africa,0.0,,Patricia Thompson
+3f303a42-8afe-4549-b30d-1f401c9c4586,2024-10-12 04:59:47,Pending,10063.130778643032,Which the forward rate order opportunity. Oracle,Sales,South America,0.0,,Charles Martin
+e7b7d446-32db-462e-ad3a-2cb91ea8904a,2024-06-05 23:46:26,Submitted,6496.695472811411,Foot street example current finish billion rich.,IT,South America,0.0,,Emily Davis
+3c80fb67-c120-4605-8e27-0dd323150e97,2024-01-20 09:45:32,Submitted,7698.6562619139,Watch himself though. Travel,Development,Europe,0.0,,Jane Doe
+72ab6520-014a-40aa-9493-78af92fc504a,2024-02-06 02:06:04,Declined,8031.121883409668,Own great table particular president.,Product Management,North America,0.0,,Jane Doe
+af4a4fdf-31f7-4b8e-9124-88edb5c6122f,2024-02-12 16:21:00,Submitted,2837.8954202825184,Cell by responsibility various fact leg natural. Travel,Product Management,Asia,0.0,,Jane Doe
+9a0d38b9-04da-49e0-bc34-2574f69ae1e4,2024-05-24 19:01:20,Processed,4339.546554293006,Better pull morning especially. Automated,IT,Asia,5.0,2024-05-29 19:01:20,Barbara Martinez
+fe379fe9-1b64-4eb8-a74e-7e3c2bfa4e2e,2024-05-26 16:11:05,Pending,9127.583687606404,Consider environment onto present price different. Oracle,Sales,South America,0.0,,Barbara Martinez
+4ada0ef5-a396-4301-aadf-e9a51380453b,2024-01-08 00:35:57,Processed,3762.751459045717,Thought inside risk for recent become rate.,HR,Europe,4.0,2024-01-12 00:35:57,Lisa Harris
+4bf17449-4753-4461-ba6e-7a47644b931b,2024-08-27 06:06:06,Pending,8152.026514498443,Drop see power same I.,Development,Africa,0.0,,Emily Davis
+3802baa7-1786-4e72-8ec9-06fed85b510e,2024-04-22 01:06:46,Processed,3911.5041286374585,Her front agreement before.,Finance,Europe,6.0,2024-04-28 01:06:46,Barbara Martinez
+bad2385b-01f6-4d78-ba92-bf391d17518c,2024-05-20 05:53:03,Submitted,11116.719867409316,Responsibility PM maintain until part blood citizen house. Server,Finance,Europe,0.0,,Jane Doe
+9d3acd5a-20ae-49be-bd18-00d5633ad3dd,2024-06-18 00:52:08,Pending,6890.369480796215,Participant center low take must issue.,HR,Africa,0.0,,Angela Rodriguez
+52c1817c-f756-49ba-a942-7e44add0c229,2024-09-07 16:29:38,Submitted,3392.09454599074,Year edge teach serve enjoy scene senior. Server,Product Management,North America,0.0,,Richard Thomas
+5b1941d3-4d78-48c5-becf-b22b047a0961,2024-09-09 22:38:50,Pending,4870.25926123896,Near hospital account week possible agree girl. Automated,Finance,North America,0.0,,David Wilson
+dd995b21-fa60-441f-8f42-958493c00884,2024-05-08 16:52:05,Pending,12493.048475104339,Each wide impact senior let majority. Server,Sales,Europe,0.0,,Charles Martin
+62386afd-b921-4990-b930-adf5081da22a,2024-09-12 04:46:45,Submitted,6963.736035510223,Must wait support choose white. Server,Customer Support,Asia,0.0,,Karen Jackson
+c814d345-9c99-485d-bce8-78300f792312,2024-04-08 10:50:13,Declined,3572.9108416800414,Bring focus almost degree author.,IT,Africa,0.0,,Patricia Thompson
+09678e76-a6aa-4ceb-9e6f-b94071815a44,2024-07-23 11:44:37,Processed,1775.7378265146572,Church enter support star partner power. Travel,Sales,Asia,12.0,2024-08-04 11:44:37,Barbara Martinez
+e84336b5-4509-46cb-875b-bb6708aeda43,2024-09-01 13:32:29,Processed,3416.5119078742564,Great four grow yard.,Customer Support,Africa,4.0,2024-09-05 13:32:29,Karen Jackson
+01eb6b9b-e7d8-4d4e-887e-cce95a0cad24,2024-06-28 15:36:19,Declined,5531.482442132885,Real party theory energy adult wonder do plan.,Development,South America,0.0,,William Brown
+954f1e7f-0e04-4746-b135-30b29ae29884,2024-03-01 15:36:19,Submitted,2857.6646413323897,Property page care center effect.,Finance,South America,0.0,,Robert Taylor
+24a79eeb-2b21-4604-a190-ec38f939cd1e,2024-08-20 22:31:48,Declined,6313.020916208959,Never seek involve despite without less imagine.,Customer Support,Africa,0.0,,Angela Rodriguez
+71e23456-b8e5-4b71-9aae-a89deb420ec1,2024-06-11 07:02:45,Declined,8470.645118886314,Eye employee community wind what close window. Oracle,Finance,Europe,0.0,,Angela Rodriguez
+291220d1-f3ad-4ec2-914e-927b8730d58e,2024-03-30 18:59:18,Processed,4229.563162464971,Others left usually floor author so born dinner.,Customer Support,North America,10.0,2024-04-09 18:59:18,Christopher Garcia
+3db7f955-819f-414d-9242-89ea6adaf3db,2024-08-31 09:58:20,Submitted,6547.258387248336,Executive place throw risk event agree.,Customer Support,Africa,0.0,,Angela Rodriguez
+12e04835-8574-4f97-aa98-e1bf321bcbbe,2024-04-03 18:06:15,Declined,8010.557137399251,Light remember television remain low a.,IT,South America,0.0,,William Brown
+aa71cfbf-a367-4e69-988c-3dd10e6cdce9,2024-02-18 06:03:16,Pending,1351.3608721166515,Well man clearly set brother system around.,Sales,North America,0.0,,David Wilson
+dc1f37a8-0ffb-40e4-9986-aff8a082ef41,2024-06-27 09:49:37,Pending,5391.247014184432,Alone behind outside fund hear reduce blood. Automated,Sales,Asia,0.0,,David Wilson
+74009d97-8d61-41d8-a7a3-c306f3e99470,2024-08-26 12:57:52,Pending,1941.888142940142,Knowledge community at night price least.,Customer Support,Europe,0.0,,Angela Rodriguez
+89c12a27-6494-4fb8-85bf-2d1a6f2d4da8,2024-01-22 06:28:45,Declined,9526.694523711643,Board science important outside modern notice call.,IT,North America,0.0,,Linda Miller
+826834ac-ca2a-4dfe-ad45-fca0f032ab6a,2024-03-23 15:57:53,Declined,4136.9047721026445,No their mind position language.,Finance,North America,0.0,,Jane Doe
+718abc01-a249-43f2-bf5a-9d3834699a35,2024-08-05 16:04:11,Declined,9286.87920905645,Develop them woman begin morning occur.,Product Management,North America,0.0,,Steven Clark
+2b30b3cf-f3fa-4bb1-bc08-d8f2a5ad967c,2024-02-24 21:14:32,Processed,1163.1664003611695,Week respond general project.,Customer Support,South America,10.0,2024-03-05 21:14:32,Barbara Martinez
+cafa5388-ddbc-4f7f-b43e-744e784e9b80,2024-03-12 04:22:52,Submitted,302.6680096260557,Seek if sister college charge.,Customer Support,South America,0.0,,Karen Jackson
+fe2c7c62-1ca4-4586-a5ca-65086361402a,2024-05-23 11:26:25,Pending,1835.8609884021776,Physical card future various set.,Product Management,South America,0.0,,Michael Johnson
+e84b813f-01bb-46a1-8057-9b4179b17f05,2024-05-25 16:46:37,Submitted,172.37466261731254,Law understand consumer ahead same cell.,Finance,Europe,0.0,,Michael Johnson
+d38001d2-464c-4114-acff-30008dbdb077,2024-05-02 16:02:17,Processed,8807.455436765202,Position girl collection.,Development,South America,1.0,2024-05-03 16:02:17,Barbara Martinez
+adbe8b86-641a-41d1-9f24-a5eb75a8e54f,2024-07-01 03:04:58,Submitted,8444.344754143804,Drive PM protect than decide.,Customer Support,Europe,0.0,,Richard Thomas
+41113324-a811-416f-9717-66ec4ff222dd,2024-07-30 12:12:39,Declined,3515.1267279522563,Modern staff pretty PM most degree team.,HR,Africa,0.0,,Christopher Garcia
+3d1cc4d3-32d4-4506-9467-09e42f21e2d8,2024-05-01 04:21:31,Submitted,9080.36389877649,To military message family. Oracle,Development,Asia,0.0,,Charles Martin
+4f9a0e7d-cf15-4f64-a65a-c84379d300e3,2024-09-20 05:17:13,Submitted,7613.774205705809,White difference kitchen week.,IT,Africa,0.0,,Patricia Thompson
+7e688b6b-ba3e-4092-842a-5d4e68e026fa,2024-02-21 08:06:13,Pending,2349.8766310555893,Lose fear beautiful simple. Oracle,Development,South America,0.0,,William Brown
+3821a178-eeb7-40d5-b27c-2698c7dd9370,2024-07-08 13:40:45,Submitted,2815.150886760214,Focus ground discussion.,Development,Asia,0.0,,Richard Thomas
+fcc2fbe1-e744-492d-b6ac-e17d744707e2,2024-05-08 09:34:37,Declined,5828.053778336149,Official both enough leg voice. Automated,Sales,North America,0.0,,Sarah Moore
+c7688302-af75-4ef5-ba45-e4484353afb0,2024-03-17 04:37:32,Pending,9838.985509709471,Wrong color more possible. Cloud,IT,Africa,0.0,,Richard Thomas
+b001a546-319b-4efa-b145-3b0f7ee36616,2024-03-16 02:40:52,Processed,8101.485478666,Store direction discussion since participant certain.,Finance,North America,5.0,2024-03-21 02:40:52,Robert Taylor
+430f8653-258a-46d4-b252-4181c769795a,2024-02-24 12:28:47,Declined,2569.1966292990764,Floor why quite son page right.,Sales,South America,0.0,,Lisa Harris
+e1ee379a-aa32-48cf-b73d-954242b2d0d7,2024-03-05 12:21:41,Pending,1736.7580976364598,Same than prevent moment will artist paper. Oracle,Development,Europe,0.0,,John Smith
+676e2111-d49c-400b-8e9a-546cacfada5e,2024-08-22 09:19:00,Processed,1592.089160089875,Oil quality soldier wife. Oracle,Development,Africa,9.0,2024-08-31 09:19:00,Christopher Garcia
+63fdd52d-d23a-4a31-8170-3d65421b72cf,2024-08-08 19:57:06,Submitted,6996.085070399334,Artist late level key. Cloud,Sales,Asia,0.0,,Thomas White
+7708341f-3704-4df0-8cb9-47d60db08beb,2024-05-26 14:29:01,Declined,2093.669604297149,Behavior somebody matter imagine environmental listen soon along. Server,Product Management,South America,0.0,,Angela Rodriguez
+3ae34855-9f2a-41cb-a6bb-396c35b51a66,2024-01-27 00:04:03,Processed,9314.907346652426,Focus place always statement avoid. Travel,HR,Africa,1.0,2024-01-28 00:04:03,Thomas White
+69f61ca8-47d5-4fcd-9754-256e13753465,2024-08-06 00:55:40,Pending,6454.727671722528,Program exactly record serve candidate yeah. Travel,HR,Africa,0.0,,John Smith
+e8edc9e5-4cae-43a8-b015-3faeb9c65adb,2024-05-12 16:26:54,Processed,743.8145762347358,Building shake yourself table hair. Automated,IT,Africa,21.0,2024-06-02 16:26:54,Charles Martin
+c0fd8618-bed4-4208-9074-995efd12d3f2,2024-03-12 14:27:22,Processed,4511.286164157989,Center create nation what five. Server,Finance,Asia,2.0,2024-03-14 14:27:22,Steven Clark
+df7fcf57-15a3-485a-8807-71ae7b016af9,2024-08-31 02:27:21,Processed,4582.834052318161,Song knowledge bank few.,Customer Support,North America,8.0,2024-09-08 02:27:21,Richard Thomas
+01ff95cb-3459-4ee9-bad3-c4ec81ed552e,2024-09-11 14:45:42,Processed,7196.4599383812765,Himself condition traditional indicate war. Automated,Product Management,Europe,2.0,2024-09-13 14:45:42,Jane Doe
+b56a04be-4a5c-4fcd-afe9-e90d155148df,2024-07-25 15:54:09,Pending,4461.182892912577,Middle decade away old sense clear will. Automated,Development,Africa,0.0,,Lisa Harris
+6c4d7eba-8707-4936-9408-2d43f97432a5,2024-04-25 22:23:29,Submitted,11008.423914548728,Mind difficult common on. Server,HR,Asia,0.0,,Karen Jackson
+a5504518-771e-4379-8d8b-26174a74903d,2024-01-31 03:36:12,Processed,612.5800372138414,Unit especially you stuff table Democrat. Automated,Customer Support,North America,17.0,2024-02-17 03:36:12,Emily Davis
+04920339-fc5a-405f-9ff0-3122efb6a741,2024-04-25 07:15:54,Pending,10701.192040511076,Not need war on test then home. Cloud,Development,Europe,0.0,,Christopher Garcia
+1534e4ea-3274-4864-ae44-eeb975a0b8a5,2024-02-17 07:22:01,Pending,3795.117365468817,Full large seven opportunity want.,Finance,North America,0.0,,Linda Miller
+b5add0db-fdbc-43a2-a25f-0f20bb3218c8,2024-01-12 03:53:05,Processed,6192.483126809703,Particular answer fear there. Oracle,Finance,Africa,5.0,2024-01-17 03:53:05,Jane Doe
+19572b46-bd5f-4a6d-9683-84f12d800724,2024-10-16 19:15:57,Pending,9219.389538277715,Skin create fast campaign event.,IT,Asia,0.0,,Emily Davis
+3aa66200-9de0-4901-91e3-fe4a3d8cbb6d,2024-08-02 06:18:50,Pending,9752.48070298956,Consumer herself population eight forward war manage month.,Sales,North America,0.0,,Karen Jackson
+3ffdced4-c495-4617-a8dc-f27dbc6e161a,2024-04-28 07:35:57,Pending,3865.8161848830587,Rise fill type safe.,IT,Asia,0.0,,Jane Doe
+be675ce8-f203-4484-a2bd-40f1f92c1748,2024-03-03 08:14:12,Submitted,9888.220123633982,Quickly recently up window. Travel,IT,South America,0.0,,Lisa Harris
+93dc130c-b205-4fd7-a4ea-773a3b414e43,2024-03-08 15:33:19,Processed,5525.44425365502,Condition radio per travel instead fine method or.,Sales,Europe,4.0,2024-03-12 15:33:19,Michael Johnson
+fe5dd05e-d50b-4335-b6f4-7d1c7e397893,2024-06-18 11:18:46,Declined,6159.782183436161,Control join fund local music himself.,Development,South America,0.0,,William Brown
+90d49d1b-613c-40c0-9fad-7ed9d6bd4607,2024-04-16 02:36:12,Pending,9351.388996691463,Impact often increase stage allow wear. Travel,IT,South America,0.0,,Lisa Harris
+23dfafe5-742f-4c7e-bea7-f47727419194,2024-09-21 10:53:25,Declined,7226.456621198699,None find force move human concern way.,Sales,Asia,0.0,,Christopher Garcia
+5476726b-3942-40e1-90c9-bfc480aeb7ac,2024-09-16 11:32:51,Pending,6019.858244916212,Argue laugh letter hundred wall certainly.,IT,Europe,0.0,,Jane Doe
+c4b602d9-4fcf-43ff-b1c6-d81a5257b603,2024-02-06 15:58:44,Processed,7536.836088128809,Sound fly firm indicate save performance product moment.,Sales,Asia,4.0,2024-02-10 15:58:44,Robert Taylor
+963f0922-51c9-4d79-b65a-94371a176fae,2024-05-14 06:59:00,Submitted,9684.769075198285,Interesting use those while. Oracle,Product Management,North America,0.0,,Richard Thomas
+ff8c6414-c4dd-4f7d-942c-ce29d663ece9,2024-02-03 03:34:32,Processed,9850.936884716883,Determine standard high detail my effort ask.,Development,South America,1.0,2024-02-04 03:34:32,Charles Martin
+9d1880c9-47d0-4b5b-83cd-889586bb8ce4,2024-01-10 11:08:37,Declined,8196.369905338866,Couple high build reality before.,Product Management,South America,0.0,,David Wilson
+050dd0f0-5919-447e-93db-9423df6c1f22,2024-06-10 09:53:11,Submitted,1383.0300887370445,Data prevent society war child chair trade.,Customer Support,Asia,0.0,,David Wilson
+4d4076cf-5c7c-47ca-9b7e-622501a24273,2024-04-13 00:14:51,Pending,5602.163129396619,Site number try owner take.,IT,South America,0.0,,Michael Johnson
+a7627264-66bf-45c8-bbfd-21945eab9077,2024-06-04 20:37:30,Submitted,3469.1579316678394,Country its little home really never approach.,Sales,Africa,0.0,,Robert Taylor
+bfbe40c7-d452-4294-bbdb-6ca8607db582,2024-08-04 15:52:03,Declined,1226.325375051078,Hour then real if positive. Automated,Customer Support,Asia,0.0,,Richard Thomas
+24f34145-79e8-4c3c-8f99-c40214d346c4,2024-09-21 22:16:59,Processed,7008.056155340193,Majority site hear look. Oracle,IT,Africa,2.0,2024-09-23 22:16:59,Patricia Thompson
+d95a5f0b-b440-4b97-976c-0c1ac1f45576,2024-08-20 15:37:34,Processed,7834.465345610352,Mr show from others share use sometimes.,Customer Support,North America,4.0,2024-08-24 15:37:34,Barbara Martinez
+c7c3674f-f10b-45af-9fc5-abfcf0199ea6,2024-08-03 05:47:36,Declined,8108.04711309605,Almost trouble end. Oracle,Customer Support,Africa,0.0,,Jessica Anderson
+9f0c6c27-7b92-4b26-b74b-7997e905a598,2024-10-18 22:19:25,Pending,408.9250865645234,Miss however them radio all scene.,Customer Support,Africa,0.0,,Robert Taylor
+9422a8f1-202a-4221-bbb0-f9bfb952e5a7,2024-08-10 02:57:41,Declined,6885.735683720835,To management nothing range brother.,HR,South America,0.0,,Michael Johnson
+133306f7-8967-4f3d-a146-3c5c79a12b83,2024-03-23 01:21:32,Pending,7197.701522628729,Avoid hospital owner bar. Oracle,Finance,Asia,0.0,,Karen Jackson
+7889228a-3f90-4156-87bf-e7c088556ce3,2024-02-16 13:46:59,Submitted,11128.081500063694,Market week trip day newspaper partner. Travel,Finance,Europe,0.0,,John Smith
+a04e7002-c6a8-48ff-8ec6-012d92aa3ad7,2024-01-26 21:32:57,Processed,10908.58068681184,Sing offer radio determine manage. Server,Sales,Asia,5.0,2024-01-31 21:32:57,Linda Miller
+482b779c-840c-404b-8878-3242a57c25f7,2024-03-24 20:31:39,Pending,9425.926218214878,Heavy religious poor draw good wear walk station.,Finance,Africa,0.0,,Richard Thomas
+cea8e31d-904a-4d05-ab74-4e4a714c6f35,2024-09-27 20:08:25,Pending,7187.389026265427,Young meet economy feel institution. Cloud,IT,Asia,0.0,,Michael Johnson
+11be72c6-ad83-48e2-8fdd-395a3a18a9e6,2024-07-15 15:32:51,Pending,3596.39705732118,Loss wall serve.,HR,Africa,0.0,,Lisa Harris
+e088bb00-c84c-43de-9d7a-867f27ae57c1,2024-01-03 20:55:55,Declined,3551.008563555522,Another expert company project mother people. Automated,Customer Support,Asia,0.0,,David Wilson
+900dcb65-7502-4170-8b92-2372488145d5,2024-01-22 16:10:45,Processed,9419.056358951268,Movie former budget eat simple stand certainly.,Development,South America,1.0,2024-01-23 16:10:45,Patricia Thompson
+af4c62e9-71c2-4800-8aa3-600dff17c73d,2024-05-11 04:29:54,Declined,3896.279225886509,Beyond we cut certain bed meet.,HR,North America,0.0,,Patricia Thompson
+04d86bba-3af8-425d-9c58-162c52405780,2024-05-23 04:13:34,Submitted,1288.8963315902633,Describe detail skin defense hit.,IT,North America,0.0,,Steven Clark
+d2d95911-7804-4de2-a240-99c6e34795b5,2024-06-29 03:07:01,Submitted,5781.2928987969235,Tend act soon base test. Automated,Finance,North America,0.0,,Linda Miller
+b284e266-96c3-45e6-a710-9fd1f481cd8b,2024-07-11 03:38:56,Declined,7909.404020945728,Next once hold your physical few.,Finance,Africa,0.0,,Karen Jackson
+eb576a8c-59d6-4e32-b0d7-f957cb544fce,2024-06-11 05:53:01,Pending,8835.73550834001,Own writer know area. Travel,Sales,North America,0.0,,Karen Jackson
+36fbafa7-d2e3-425c-98f9-174d99c09dcd,2024-04-22 13:31:35,Declined,2273.8727963282204,Democrat specific my industry.,Finance,North America,0.0,,Steven Clark
+cb8fdb88-bf98-4b77-8961-3b160ec2baed,2024-02-01 22:42:54,Processed,10058.261972504408,Foreign really capital trip position themselves. Server,Customer Support,Asia,1.0,2024-02-02 22:42:54,Karen Jackson
+6ff00050-a966-4ab1-b01f-26ce083fd840,2024-10-20 05:16:31,Pending,470.1761813444589,Adult sound decade out along.,Product Management,South America,0.0,,John Smith
+2e8c34ce-f449-4053-b82c-118002fe506b,2024-08-22 16:25:31,Processed,2655.1455440147233,Prove policy affect probably clearly general line. Server,Finance,Asia,8.0,2024-08-30 16:25:31,David Wilson
+d120b94d-57a7-4c57-9da7-918751046baa,2024-01-28 02:47:16,Declined,788.8940685418302,Professor end anything. Server,Product Management,Africa,0.0,,Barbara Martinez
+1d77cbc0-38cc-4284-9a26-8052bae90276,2024-01-18 10:44:06,Submitted,292.04665434399476,Politics west relationship possible allow somebody.,Customer Support,Africa,0.0,,Patricia Thompson
+aac5cb02-9ceb-406b-8cee-8eb6a19726f7,2024-02-22 17:58:26,Declined,10862.381808136834,Never enter company list fine least. Oracle,HR,Africa,0.0,,Sarah Moore
+daa071aa-b840-434b-b471-e582705b8997,2024-10-06 01:23:04,Declined,6624.881466170611,Still type partner base pick hear.,Product Management,Europe,0.0,,Patricia Thompson
+a33c384e-282e-40ce-8a90-f6e769e09003,2024-04-29 04:18:08,Processed,6737.517489254828,Voice such public eight.,IT,Europe,3.0,2024-05-02 04:18:08,Jessica Anderson
+47c09bc9-d781-4c2c-a1b6-e94fe4c3cf6a,2024-07-12 11:41:21,Submitted,5916.810394098354,Ready say mother course never final.,Finance,Asia,0.0,,Patricia Thompson
+12aa64f3-275c-4c35-be62-89ef8c4f819e,2024-02-28 07:50:09,Submitted,6251.127558976213,Your particular ago often growth.,Development,Africa,0.0,,Michael Johnson
+1ad46a72-45a5-43cc-99b1-22e5df2e24aa,2024-08-06 07:23:54,Processed,2407.008951298322,Upon down land media natural season fly. Travel,HR,North America,15.0,2024-08-21 07:23:54,Emily Davis
+9e9ed8f4-4e04-45eb-a8d4-aeb2180c7086,2024-05-20 07:42:39,Processed,1246.9954575197194,Our western color for ten. Server,Finance,South America,8.0,2024-05-28 07:42:39,Angela Rodriguez
+fbdf72d5-3cd6-4c6f-affd-ff1180a3e338,2024-02-04 09:05:09,Processed,8287.361498242823,Traditional quite law six answer enough. Travel,Product Management,Europe,2.0,2024-02-06 09:05:09,Jessica Anderson
+86d0fa61-df5c-48c1-a55c-83d15d5b988e,2024-10-22 16:43:53,Pending,2018.14222008047,Idea able eight role. Server,Product Management,North America,0.0,,Karen Jackson
+5155e772-7eb3-4193-a1b6-bd0cb447b818,2024-01-02 12:37:46,Submitted,7117.10114686952,Success never late anything firm.,HR,Africa,0.0,,Charles Martin
+26f88c12-acf7-40d4-899b-03d614e6c06d,2024-07-08 11:42:35,Declined,4722.997686951348,Beautiful analysis have six artist itself break.,Customer Support,Europe,0.0,,Lisa Harris
+e2d258f3-d8ae-4bb2-82a8-19b819e55314,2024-03-28 14:17:14,Pending,6045.31895217918,Staff list now up.,IT,Africa,0.0,,Jane Doe
+c2b6940a-b591-41d7-ac09-032f3e210cfd,2024-02-06 16:20:24,Processed,6488.516744358196,Professional theory yeah practice. Oracle,HR,South America,1.0,2024-02-07 16:20:24,Steven Clark
+5ef14b90-f731-4bcf-ab16-d7fc5f632813,2024-04-10 14:01:41,Pending,2305.7581668607654,Unit former race crime turn pattern. Cloud,Product Management,North America,0.0,,Angela Rodriguez
+017a0b1c-ff2a-4081-a0ae-9c2995384398,2024-08-13 19:46:47,Submitted,1262.8977429827048,Article huge until charge clear record win morning. Automated,Sales,South America,0.0,,Barbara Martinez
+b9ee4119-b10e-4069-9c69-7ab567adbe71,2024-03-11 18:27:00,Processed,5811.3232447105265,Candidate culture shoulder. Automated,Development,South America,2.0,2024-03-13 18:27:00,Sarah Moore
+0f0d47bf-b339-40f7-aec0-6c8c24a9b898,2024-08-07 22:36:02,Declined,6364.842913960052,Final old run good perhaps expect. Oracle,HR,Africa,0.0,,Linda Miller
+1e83779f-100e-4227-bc5d-30e6990984aa,2024-07-11 09:42:42,Pending,977.5618713525442,More woman crime property.,Finance,Europe,0.0,,Linda Miller
+88eb31a5-1fb6-4684-9578-83e3ad57282b,2024-03-30 06:38:03,Declined,3261.3315659858986,Item detail nature stand message building attention western. Server,Sales,Africa,0.0,,Richard Thomas
+eef421f8-98b8-4594-bf75-231f8651deb4,2024-10-12 17:48:05,Submitted,6550.190685858718,Tax often machine stop.,Product Management,South America,0.0,,Jessica Anderson
+be2ff400-eece-4ef2-a173-d8f8ceffaf76,2024-01-09 03:45:20,Submitted,4725.075879303053,Four recently child tax. Travel,Development,Asia,0.0,,Linda Miller
+8808c6c3-3638-41b9-8e91-e591f0082421,2024-04-02 14:46:17,Declined,8662.564649423039,Team sport specific. Cloud,Customer Support,South America,0.0,,John Smith
+397ba7a8-d1d0-4da3-b3a0-81fc9c76795e,2024-03-02 09:45:23,Declined,8992.37443688387,Theory cut little full push across defense.,Customer Support,Europe,0.0,,Angela Rodriguez
+197a4b76-2d4d-47b6-902e-39caf710d1f7,2024-03-01 14:09:33,Submitted,7777.166659882119,Our blue stay sort teacher. Travel,Finance,Europe,0.0,,Richard Thomas
+c8da536d-fdaa-40a8-a393-bfbaa6ffc8d7,2024-06-05 04:29:21,Pending,996.6879809257061,Specific pull while in friend finish.,IT,Africa,0.0,,Jessica Anderson
+6f00066c-ff65-430c-b700-54d2d64ab1f7,2024-02-21 19:55:11,Pending,4987.509115336718,Mind something improve walk century great majority election. Server,Sales,Asia,0.0,,Michael Johnson
+ec0980f7-4345-4146-85b9-e01f9d3375a7,2024-03-20 12:37:03,Processed,1099.070619666389,See sign hair she full.,Finance,North America,13.0,2024-04-02 12:37:03,Michael Johnson
+1bc42b4d-f793-46e3-ab10-16238591852d,2024-09-08 04:07:39,Pending,1590.8633886697337,Us at another audience red number clear. Automated,Development,North America,0.0,,Karen Jackson
+5ae0d005-7b61-42fa-b56f-668b8d23ca7e,2024-08-28 18:22:46,Processed,5025.536400712704,Back about church room.,Customer Support,Asia,4.0,2024-09-01 18:22:46,Karen Jackson
+f4bc545a-f1f0-490b-9363-807e36be4a69,2024-05-21 06:54:58,Processed,696.7241990419399,Seat white rich too deal.,Sales,South America,20.0,2024-06-10 06:54:58,Michael Johnson
+7bb105cf-cf6d-49b8-b5ba-71db063fd205,2024-01-05 01:01:16,Submitted,5614.548125173578,Note customer way behavior include once main. Travel,Product Management,Asia,0.0,,Thomas White
+f706e0da-1032-4016-89bb-79a7debd1929,2024-02-15 02:59:31,Pending,10795.433682357661,Try cause better process boy. Server,IT,Asia,0.0,,Emily Davis
+bb377876-f777-4f5f-879c-4e3386826d10,2024-06-12 18:12:02,Declined,4498.609309743603,Pretty bad record total. Travel,IT,Asia,0.0,,Patricia Thompson
+fcd3e927-26f2-4814-95d2-720b7372d242,2024-10-02 18:20:52,Declined,14259.452342718338,Thousand stage interest place just send. Travel,HR,North America,0.0,,Steven Clark
+d7c2dc08-9255-4161-97ae-7c3190f79ca7,2024-04-16 21:02:45,Declined,3710.624619357279,Charge say research those government. Oracle,HR,Asia,0.0,,David Wilson
+038e4a20-82e0-43cc-b402-29fa3dcbf231,2024-04-28 03:52:05,Submitted,13905.77001020383,Movement enjoy approach would year high billion sister. Travel,Product Management,South America,0.0,,Christopher Garcia
+bbad9536-fbc7-418d-ab65-9c08b6d8e19f,2024-05-13 01:25:35,Processed,7916.117106482233,Recent pretty relationship heavy end.,Customer Support,Asia,5.0,2024-05-18 01:25:35,William Brown
+b439fbd3-b764-4583-a93c-2fa452b843b8,2024-05-03 07:15:45,Declined,9373.660219605521,Budget high place drug wish management from. Cloud,HR,Asia,0.0,,John Smith
+8b9d16bd-c76f-4dde-8d3a-c190efdf3294,2024-08-12 21:04:36,Processed,7912.549194100765,Win bring while also all serve matter very.,HR,North America,1.0,2024-08-13 21:04:36,Michael Johnson
+41f3e072-d285-42ed-8bdb-40760e438ab1,2024-08-11 13:39:04,Declined,9082.606075914255,Animal company suggest serious because politics although. Server,Sales,North America,0.0,,Charles Martin
+07f3a404-6dff-44b4-aa30-a8ccf7eb1aaa,2024-09-05 09:56:21,Declined,1386.4353271191162,Design edge thank.,IT,Europe,0.0,,David Wilson
+c6053b0e-f84e-4ebe-bb7e-4aa2f9dd2c95,2024-10-03 08:28:27,Processed,13095.436014611421,Expert meet here blood future accept. Travel,Sales,South America,1.0,2024-10-04 08:28:27,Angela Rodriguez
+9ba52041-feb8-4ecb-992c-9870dc35bb75,2024-01-10 21:30:50,Pending,5084.234135346718,Daughter still time year just single whatever.,Product Management,Africa,0.0,,Michael Johnson
+fa5b0082-44ca-41f4-a52e-56425b614f97,2024-10-05 15:28:41,Pending,11400.384284168324,Season however real window know stop. Oracle,IT,North America,0.0,,Jessica Anderson
+572bbf08-6ed9-4858-a890-49bc81da82ee,2024-07-31 11:22:23,Declined,10919.062495815699,Remain arrive similar tend. Cloud,Customer Support,Africa,0.0,,Karen Jackson
+00a34115-f7ab-4bf8-8e56-7f065d895b83,2024-09-21 17:32:38,Declined,217.89770787193382,Radio necessary up often. Cloud,Finance,Africa,0.0,,Patricia Thompson
+fe727955-7e0a-4854-b053-0aad0983ddf1,2024-10-23 00:04:16,Declined,4461.75550861075,Field others not thank western road smile help.,Development,South America,0.0,,William Brown
+4ae41333-61cc-453f-b2b4-eca50c09859b,2024-02-04 14:06:17,Declined,1965.9428890442207,Sport might let process market respond expert. Server,Product Management,Europe,0.0,,Barbara Martinez
+4f9c56e6-11a2-4fed-8962-63cbff0b494f,2024-05-27 03:13:43,Pending,5734.571989055012,Another office again. Server,Finance,South America,0.0,,Thomas White
+40a2a8e4-7861-45e2-9481-8595e33c281e,2024-03-06 04:59:39,Pending,5726.361138938664,Provide wonder letter peace especially form so.,Finance,North America,0.0,,David Wilson
+df62a170-fb4a-4def-8808-c68faabe386d,2024-07-04 04:10:02,Declined,5595.776761501674,Candidate movement stop laugh consumer executive discussion. Server,HR,South America,0.0,,Jessica Anderson
+45bc8122-e493-4839-85ba-69a046ba610f,2024-05-14 15:58:10,Declined,11195.610720523666,Such responsibility direction. Travel,HR,Europe,0.0,,Steven Clark
+c3e40c0f-91f9-431b-8702-632a4f87cbae,2024-07-04 23:49:15,Pending,7597.23956020989,Reveal between apply herself hold international. Automated,Sales,Europe,0.0,,Thomas White
+5c38d073-096e-42ab-923a-f063546751eb,2024-01-15 11:40:24,Declined,7685.3477232732175,Property throw white beat hope. Automated,Customer Support,Europe,0.0,,Christopher Garcia
+77d8906e-d83a-47c9-bd4f-5d3d286e4b74,2024-07-27 14:14:15,Submitted,6195.294042290853,Ahead common special parent hour create morning. Cloud,Finance,Africa,0.0,,John Smith
+15cd6390-809f-4167-90be-11ede1839dc2,2024-04-27 07:28:15,Declined,9906.993010529428,Join audience least art.,IT,Asia,0.0,,Richard Thomas
+fdbf9a15-015b-4f8d-b74c-2b146eafea22,2024-06-02 19:07:46,Processed,7960.331311992214,Bit from hand matter meet those.,Development,Europe,5.0,2024-06-07 19:07:46,Karen Jackson
+b90aadab-181a-4161-a1ee-eb887de2b389,2024-05-05 03:42:55,Processed,4916.469402172141,Various law pass or.,IT,Africa,9.0,2024-05-14 03:42:55,Sarah Moore
+cf5ccd81-661a-47b6-9977-f23f4db8648e,2024-02-22 10:46:31,Processed,9826.65794318388,Year where why include.,Sales,North America,3.0,2024-02-25 10:46:31,Linda Miller
+bac3e8e7-a114-436c-9f4e-a1e44894a626,2024-10-05 13:46:04,Declined,7887.976952502189,Thought young less bank as experience pass place.,Product Management,Europe,0.0,,Lisa Harris
+37698d92-4092-414e-aa32-a9930424e745,2024-06-08 14:32:45,Submitted,5302.073187075766,Person become Mrs parent. Travel,Sales,North America,0.0,,Lisa Harris
+9b158e80-d66a-4650-a4c6-f8935e908f3c,2024-10-20 11:35:03,Processed,9557.947777290532,Smile technology great former. Travel,Customer Support,North America,5.0,2024-10-25 11:35:03,Steven Clark
+1c7f70d3-b0c3-4709-9142-0c7ed37505da,2024-01-29 12:02:06,Processed,6634.737100390227,Beyond accept I determine. Automated,IT,South America,3.0,2024-02-01 12:02:06,William Brown
+8af3350b-7323-46d8-add6-30959fa13d2f,2024-02-06 00:40:17,Processed,568.9051335890929,Billion stock begin clearly open guy second. Oracle,Development,North America,11.0,2024-02-17 00:40:17,Angela Rodriguez
+bf264ca7-39ae-49af-9d84-8fcccd561df8,2024-07-31 19:21:23,Processed,9053.961315999617,Possible along audience write.,Customer Support,Europe,3.0,2024-08-03 19:21:23,Linda Miller
+2ca0951b-a7ce-49a5-85b6-3f768132fd4f,2024-09-25 20:23:40,Pending,7133.2503179996875,Huge follow even final choose part.,Product Management,North America,0.0,,Jessica Anderson
+2246e1da-68da-4ef2-86e8-bb06e62d1f89,2024-05-23 03:27:50,Submitted,9748.09672400535,Large compare store general try.,Development,Africa,0.0,,Steven Clark
+1d60f353-7937-4b51-a1fc-8133640f052f,2024-08-19 10:07:57,Processed,987.0917741190789,Rather by lay Republican sign.,Development,South America,26.0,2024-09-14 10:07:57,Patricia Thompson
+14f8ac59-b7e0-4d1f-b2bc-224b0b13b59a,2024-04-25 23:25:35,Processed,5494.00208294976,Store while once student despite arrive.,Customer Support,Europe,7.0,2024-05-02 23:25:35,Robert Taylor
+3e199130-ef61-45e1-bce3-3c2286f8fa3e,2024-07-16 15:45:45,Submitted,6036.166878835952,Audience couple story daughter wonder really base. Server,Sales,South America,0.0,,Angela Rodriguez
+78e2b9b4-e97b-4960-a29d-2d20c33d04ee,2024-06-04 09:40:04,Submitted,9584.554092544675,Congress score main cover leg ok staff heavy.,HR,Europe,0.0,,William Brown
+7473e898-f435-4bff-89f2-bb6bccc91882,2024-06-13 21:05:46,Pending,9665.802172408758,Table pay industry forward. Travel,IT,Africa,0.0,,Sarah Moore
+6a090698-88ca-49c6-ad4d-4cda8b030199,2024-05-02 11:26:25,Pending,7474.258195192196,Deep over minute cut join.,Finance,North America,0.0,,William Brown
+743481ad-d819-4c52-b0ba-6f71ed350b5f,2024-07-12 23:55:47,Pending,9944.620667024792,Congress financial class here voice type. Server,Finance,North America,0.0,,Christopher Garcia
+f8bf57f0-3cb1-4284-8ce3-0af18172907f,2024-07-20 16:40:39,Declined,5361.843409902112,She food see style talk huge animal.,Sales,Asia,0.0,,Richard Thomas
+e9001ddf-795a-488a-8adf-27c331e02c98,2024-07-22 03:00:34,Declined,2815.6250749909136,Data receive paper stage social least. Server,Development,Asia,0.0,,Angela Rodriguez
+244e3a46-ae93-46fd-a68f-6a0c82ba0651,2024-07-12 17:47:13,Pending,6461.430065307933,Call drive cover open.,HR,Asia,0.0,,Jane Doe
+9b480dc8-676c-4556-9f99-300be211e1ec,2024-07-17 17:18:06,Declined,6723.186164539468,Effort require task. Cloud,Customer Support,Africa,0.0,,William Brown
+480882f8-b750-4344-a617-8aea3aa989e6,2024-06-29 12:58:36,Declined,2322.913545851013,Since at high teacher commercial.,Development,North America,0.0,,David Wilson
+fe21f237-4395-4084-876e-4048b272544d,2024-03-01 14:14:04,Submitted,5384.816669302971,Decide health policy act director response this.,HR,Europe,0.0,,Richard Thomas
+70bebbff-b537-45ee-a5cd-1cd6cd3cc279,2024-02-28 19:25:26,Declined,3766.5636367387424,Them better later letter. Travel,Development,Europe,0.0,,Michael Johnson
+42b286fa-e9fa-4f87-8bdd-a33b6fdb27d2,2024-08-12 22:10:50,Pending,2955.5629998843983,I play wide doctor however.,Customer Support,South America,0.0,,Robert Taylor
+f47ecda3-04e6-4e47-8960-f97e602133eb,2024-07-08 16:29:48,Pending,8503.052925634704,Thank form tell when. Cloud,Customer Support,Europe,0.0,,Angela Rodriguez
+f930204e-eaab-4ce7-a54b-ad75ffcdb675,2024-03-03 19:59:45,Submitted,1653.2004355869287,Stop coach kid election exactly common.,Finance,North America,0.0,,Barbara Martinez
+2e5731e3-e526-48b4-b9bf-b70fc987c437,2024-02-15 05:44:41,Submitted,1862.8413023531466,Hotel something three right war. Automated,IT,North America,0.0,,Linda Miller
+62f71acb-2bdf-4418-ad06-da229ffa10ce,2024-02-01 19:35:37,Processed,2569.9389547310893,Catch fire wall floor.,Development,Europe,7.0,2024-02-08 19:35:37,Angela Rodriguez
+b378e2e9-679a-4927-b5d3-d0944b58bccd,2024-03-18 19:56:08,Submitted,6860.254866185693,Hear but how listen generation.,Finance,North America,0.0,,Linda Miller
+fe4f9c99-8fb8-4952-8461-a9dca336e4d2,2024-10-18 18:21:35,Processed,3698.0202880773163,Field history whatever push.,Customer Support,Europe,7.0,2024-10-25 18:21:35,Lisa Harris
+237d113d-b482-4622-96da-7566f28c6a7c,2024-07-14 02:50:21,Processed,4152.347918868363,Responsibility above into field. Server,Sales,Asia,6.0,2024-07-20 02:50:21,Sarah Moore
+2c1bb548-3d68-41d5-a422-2768e966241c,2024-03-25 06:04:53,Pending,3801.1321191668753,Method management better yeah.,Development,Asia,0.0,,Emily Davis
+c6c6ecea-fa53-4137-8a90-26795e465c73,2024-05-22 13:29:29,Declined,13918.504792026544,Up politics ball hand wife. Travel,Product Management,Africa,0.0,,Patricia Thompson
+80c557f9-6d43-4262-a571-9cb19832c4e8,2024-04-29 07:20:58,Submitted,8420.31905737073,Analysis social goal without culture. Cloud,Product Management,South America,0.0,,Michael Johnson
+ff450850-2c3a-4e89-89d7-8a586525cd50,2024-05-21 11:34:56,Submitted,9945.663001591267,Single interview shoulder really war house. Oracle,Product Management,Africa,0.0,,Jane Doe
+c08062fc-760a-452e-a147-dd63a0747ca7,2024-10-12 10:12:53,Pending,4397.157572753785,Computer worry dog executive firm most. Cloud,Product Management,South America,0.0,,Robert Taylor
+1f129f1e-b390-44c8-831e-e468d0c6e050,2024-03-23 07:14:00,Declined,9076.89116439204,Yard remember fill already answer event response.,Product Management,South America,0.0,,Jane Doe
+5e491801-15f7-4246-aae8-f3c11623b4bd,2024-06-03 09:48:48,Declined,3263.388207414789,Challenge glass organization two woman simple member.,Development,Asia,0.0,,Angela Rodriguez
+8ae605f7-a15b-4534-9d98-1ef7afef9057,2024-09-10 00:28:14,Submitted,8302.502658784206,Sit participant establish.,Finance,Africa,0.0,,Linda Miller
+b7dc6e1c-4807-4793-8208-0e4e164094b6,2024-09-29 01:07:27,Declined,11543.911009126654,Center need again sell sit necessary. Oracle,Product Management,Africa,0.0,,Sarah Moore
+1a170349-ca81-422e-9f7c-f529fb4ffc2d,2024-02-02 12:51:05,Pending,3555.077794444218,Give land wrong can stop office country behind. Server,Finance,North America,0.0,,Michael Johnson
+1533a9fa-c3f8-49e6-95ce-20be2d26bd3d,2024-07-12 23:21:11,Pending,5807.110753242656,Loss high head let your.,Finance,Europe,0.0,,John Smith
+09c0f4c5-3681-4a18-82ad-3bfb9714cce0,2024-04-02 22:23:47,Submitted,7521.80336490861,Opportunity up share shake represent. Server,Development,Africa,0.0,,Barbara Martinez
+3485d10a-e004-45e3-b78c-41db64a1fd25,2024-03-11 08:02:59,Declined,5942.368638660098,Beautiful there word gas relationship.,Sales,North America,0.0,,Lisa Harris
+0b96e378-b197-49bf-9b8a-d9e113b12b4a,2024-07-13 04:29:49,Declined,1599.6369603825929,Natural total thought add score both conference.,Customer Support,Africa,0.0,,Sarah Moore
+cb8f0026-4225-493f-83b8-d93167695acb,2024-07-13 22:48:55,Declined,2725.9399336108295,Girl too drug.,Development,Asia,0.0,,Michael Johnson
+fb085a9a-4f25-4120-8710-37946ded3aa7,2024-07-28 19:19:09,Pending,3213.315811983641,Card population improve green different challenge exactly.,Finance,Africa,0.0,,Barbara Martinez
+507a5f14-cdaf-4a05-aa15-9981cb08ba44,2024-03-16 11:57:48,Declined,2913.04112887025,Image watch country challenge.,HR,Africa,0.0,,John Smith
+36a55c7e-3fa5-45f6-9a14-96e1985e7d8a,2024-02-21 21:52:58,Submitted,4993.653249717213,Paper mention up even.,Development,Africa,0.0,,Karen Jackson
+2541b61b-13c8-4b57-a4ea-fd5720f22ca6,2024-03-22 06:52:26,Submitted,5262.396045757552,Join mention address huge a begin practice.,HR,Asia,0.0,,David Wilson
+b55d131d-e4de-4ea0-bb75-b6b6b86d9ff9,2024-02-08 22:48:59,Declined,10967.405318431072,People center stay the police month. Cloud,Product Management,North America,0.0,,Robert Taylor
+1b7cad18-027d-44d2-93a1-59a0163c6697,2024-06-16 03:34:54,Pending,1251.0760086631585,Network with book spend south fight myself. Travel,Product Management,Europe,0.0,,Richard Thomas
+ca441aae-28b1-428c-aa9d-2ea53524c5c4,2024-06-27 20:07:41,Submitted,7705.454695501176,Attorney nor allow mother record. Server,Product Management,North America,0.0,,Jessica Anderson
+87c3e304-6163-42e6-b06a-e702098862bf,2024-10-17 02:55:57,Submitted,6004.399475411846,Loss herself politics. Server,Development,South America,0.0,,Barbara Martinez
+217efa70-aa86-4d45-a8a7-d1c478331d21,2024-08-28 10:31:25,Declined,7221.88839835261,Military fire suffer support investment if nature. Travel,Product Management,Europe,0.0,,Christopher Garcia
+6efaad4d-587c-4a76-b8c2-029e12c1f5aa,2024-05-20 05:21:07,Submitted,4857.985604416611,Partner place enough floor reach inside right. Automated,Development,South America,0.0,,Linda Miller
+e8e48fb2-0fd2-42c5-8958-0f5e83bbd04f,2024-07-24 17:51:05,Processed,4399.173030676123,Smile office which everybody receive.,Development,South America,8.0,2024-08-01 17:51:05,Lisa Harris
+1a33e908-43b6-49bb-bcc6-ea556815a7c6,2024-04-29 14:59:41,Processed,7547.844188637566,Responsibility similar course country soon that make. Automated,Product Management,North America,4.0,2024-05-03 14:59:41,Lisa Harris
+181649c0-96bd-48a5-9f75-1ac1144172be,2024-07-13 23:15:38,Submitted,1744.983917549966,Director if give third base sure. Automated,Product Management,North America,0.0,,David Wilson
+485cfece-88ff-4a22-97ac-7b983326d373,2024-10-03 02:58:39,Declined,896.1013285044866,His too store official successful any. Cloud,HR,North America,0.0,,Lisa Harris
+e236784a-e3aa-4557-9e5f-1c167c58a252,2024-02-08 04:50:41,Pending,2468.1685504127004,Surface power drive. Cloud,Sales,North America,0.0,,Michael Johnson
+e7272089-cb62-4760-949c-723546ad2685,2024-08-30 07:39:17,Submitted,7965.454312325693,Pressure travel feel world nearly rule. Travel,Sales,South America,0.0,,John Smith
+b6b7079d-c2cf-40a0-adec-3ad97f0bc97b,2024-03-22 17:54:03,Submitted,2884.7003170160338,Place method easy onto nothing much would.,Sales,Asia,0.0,,Jessica Anderson
+cdb9334f-0a27-44f0-a2ec-67b11893abd9,2024-09-10 06:19:05,Submitted,3952.0533060607218,Theory reveal reason low strong eat. Oracle,IT,Europe,0.0,,Steven Clark
+57bb39ef-7e3c-43fc-9eeb-975f33228abc,2024-01-02 20:31:11,Processed,7222.212024755202,Deep exactly begin visit executive not environmental. Travel,Product Management,North America,5.0,2024-01-07 20:31:11,Michael Johnson
+c2f1d85b-1337-46f4-a5c5-46ad5d4cd8dd,2024-09-30 06:57:42,Processed,2341.12135430573,Smile summer left but firm provide.,Product Management,Asia,10.0,2024-10-10 06:57:42,Karen Jackson
+79d2757f-f611-483c-bce6-566af9ffc5c6,2024-07-27 00:12:47,Submitted,7689.731509052489,Water traditional feeling shake.,Development,South America,0.0,,Linda Miller
+38f0900d-bcdb-4c0e-83d1-511f641b3b72,2024-04-25 11:10:00,Declined,6391.960816218583,Anyone bag girl quality. Automated,Finance,Asia,0.0,,John Smith
+d8155148-9737-4e09-944d-148f3c10e446,2024-08-05 21:24:17,Declined,7503.243077717625,Medical high amount here. Oracle,IT,Asia,0.0,,Richard Thomas
+64513a98-092f-47c0-98e8-c9931118e472,2024-03-30 03:51:20,Submitted,5614.938134917107,Eye trial evening student after son wall.,Product Management,North America,0.0,,Karen Jackson
+e289cb7f-57a9-4477-8785-2a0fda0daff7,2024-04-09 08:51:47,Processed,8949.580111597452,Level own consumer program. Oracle,Product Management,North America,5.0,2024-04-14 08:51:47,Karen Jackson
+bbe58845-cd4b-4d0e-9f46-5446b21675f1,2024-03-17 02:43:54,Submitted,7252.054061562515,Against animal room once treat move.,Development,Asia,0.0,,Michael Johnson
+9c4b04bf-6fb5-42da-a19d-b5c0ee8162c3,2024-04-01 21:04:18,Processed,5938.670478000283,Mind among think quite question director lawyer. Travel,Customer Support,Asia,4.0,2024-04-05 21:04:18,Charles Martin
+c325cdd1-e065-4b1b-ac30-2d646a4c72bc,2024-04-17 13:14:52,Pending,657.0753341979282,Budget wrong stand.,IT,Asia,0.0,,Barbara Martinez
+0a087638-8d60-49f2-b740-76e61b8d7c2c,2024-04-06 00:54:10,Submitted,769.8833058982417,Fire police coach article pick may.,Development,Africa,0.0,,Jane Doe
+7c9aea57-92f3-434e-8645-3b02cf1304cb,2024-06-30 20:37:42,Pending,7355.762053905947,Account information modern.,IT,North America,0.0,,Charles Martin
+09bacbc7-55c3-4dbc-89e5-a60bd9d71b97,2024-02-20 06:15:29,Submitted,2672.3171333087066,Pass travel game animal key eat it.,Product Management,Africa,0.0,,Lisa Harris
+130d452b-6bad-46e3-80fe-e987b13b0443,2024-02-22 09:10:32,Submitted,6555.793310854341,Perform consider image brother teach while. Oracle,HR,North America,0.0,,Michael Johnson
+04843222-3621-4fc2-8b62-5f6cd84dbda0,2024-03-28 13:01:31,Submitted,7549.544605632784,Us ahead firm organization challenge.,Sales,Europe,0.0,,William Brown
+c90141d6-866c-4edf-9317-f3d485ff179c,2024-08-22 14:22:14,Processed,6922.052139060409,State keep whom book. Cloud,IT,South America,5.0,2024-08-27 14:22:14,Christopher Garcia
+21eb11e7-a4c4-4933-bb5c-20f7227496cf,2024-04-09 13:51:32,Submitted,6479.087337743704,Perhaps deal since wait. Oracle,Development,Asia,0.0,,Karen Jackson
+96d6572e-9848-4baf-90b5-92b9aabefdc7,2024-04-06 10:59:14,Pending,9973.896038796434,Would two test let.,Product Management,Asia,0.0,,Lisa Harris
+e8ef7917-8b5f-4ed7-92bd-5246aae56ef9,2024-01-12 01:30:18,Processed,2005.7510853192368,Military news media along season door serious.,Sales,North America,11.0,2024-01-23 01:30:18,Jessica Anderson
+a2d61435-495e-4dba-b053-91ebc9ef59d9,2024-02-13 12:17:27,Pending,1099.0753304379816,Exist science focus. Oracle,Customer Support,Africa,0.0,,Robert Taylor
+71ca40b5-2490-4846-a741-3337e1cb4d07,2024-03-09 19:22:25,Submitted,9956.384071779716,Magazine amount through leave structure technology southern. Cloud,Sales,Africa,0.0,,Patricia Thompson
+ed4b01f7-a75c-4ef1-893a-fe60c7d6d4c5,2024-10-10 09:01:52,Pending,5672.399299176065,Manage benefit again bar century.,Sales,Europe,0.0,,Angela Rodriguez
+8a89b401-7ca5-4759-8820-afe545c209b6,2024-07-24 01:21:02,Declined,5535.423846636177,Kitchen push exactly white believe. Automated,Sales,Africa,0.0,,Christopher Garcia
+98cd88b7-938d-451c-be40-3fe37f32ff0e,2024-10-05 19:29:20,Submitted,9226.298524396076,View produce game onto. Server,Finance,South America,0.0,,Christopher Garcia
+1d46c301-4acb-4df3-a356-40ebcbd585c1,2024-10-20 18:11:17,Pending,7466.986885161192,You mean base with them history vote. Automated,Sales,South America,0.0,,John Smith
+ab2238b9-52d1-46fc-a721-475af342d86f,2024-10-01 12:16:27,Processed,1611.8344545142397,Pull theory organization. Server,HR,South America,13.0,2024-10-14 12:16:27,David Wilson
+d35e6fca-eb4b-4ef0-8e50-fa446e533d7a,2024-03-24 05:12:04,Processed,6826.995521403226,Bring school pattern me house improve six.,Customer Support,Asia,4.0,2024-03-28 05:12:04,Lisa Harris
+029b4482-c662-4a75-a4b5-540086d3cee1,2024-10-11 23:38:27,Submitted,3064.4598025220257,Senior data business. Automated,Development,Asia,0.0,,Steven Clark
+dd871fa7-c241-4700-93ea-de24d5673412,2024-08-22 01:15:24,Submitted,6965.174840764731,Rule increase gas save see under resource.,Sales,Africa,0.0,,Karen Jackson
+4bdf7f25-4f3f-4760-be78-a9badfed0673,2024-04-26 10:34:43,Declined,6190.587116442494,Trip before life education bed weight manage. Oracle,Sales,Europe,0.0,,Sarah Moore
+713dba89-f315-42c9-81d4-d73a97d2bce2,2024-07-04 20:22:12,Declined,1820.9110939460313,Can pass customer heart. Travel,Development,South America,0.0,,Thomas White
+652f3a11-3abb-4f16-98d2-c0ff687391c1,2024-01-01 12:10:23,Processed,2608.6341672019157,Check tonight catch. Automated,Development,North America,14.0,2024-01-15 12:10:23,Lisa Harris
+9a979674-ba77-4ab4-922b-384788952357,2024-01-13 23:34:24,Submitted,312.32354038144194,Concern two second forget others join. Automated,HR,South America,0.0,,Sarah Moore
+6b130f79-8333-460e-9688-06b78ca39673,2024-09-19 00:37:59,Processed,9563.739061398692,Amount civil anything because product minute report.,Customer Support,North America,5.0,2024-09-24 00:37:59,Linda Miller
+312ebaa7-039a-4500-b519-83b696321fc7,2024-06-20 14:55:39,Submitted,6107.815163917014,Employee itself seven image. Oracle,Customer Support,Asia,0.0,,John Smith
+b2b06415-50c8-4186-a468-7186704d23c5,2024-10-04 03:09:34,Declined,5031.651665121728,Ability property scientist bar cell modern no. Automated,Product Management,South America,0.0,,Thomas White
+9ebb32ec-f033-4827-8217-540c523bf71e,2024-03-07 04:06:55,Declined,6875.170795030763,News thing director tree thousand boy. Automated,Sales,North America,0.0,,Lisa Harris
+d1587208-42d7-4d3d-b85c-662b16a9cab8,2024-04-15 11:15:46,Pending,2902.322924016455,Sea play enter good name. Server,Product Management,Africa,0.0,,Charles Martin
+d775b0b8-6dc1-4890-befb-5479227cb7bb,2024-08-08 11:35:33,Submitted,3724.3157299256886,Son couple note other goal low condition. Server,Product Management,South America,0.0,,Jessica Anderson
+8a3f900b-6211-4b7f-b8f6-2cc6b0e0906c,2024-08-31 04:20:07,Submitted,3077.72614718217,On back they sound media.,Customer Support,Asia,0.0,,Angela Rodriguez
+2eb3f5b9-addb-4b15-a8ed-f8e041a935a4,2024-05-10 06:08:59,Declined,9884.514236365147,Computer total although better project upon western.,Development,Asia,0.0,,John Smith
+985e6428-cf98-4ca0-bda5-a51231ab77f9,2024-03-06 23:06:38,Processed,3769.7881537925446,Ball study plant believe.,IT,North America,7.0,2024-03-13 23:06:38,Angela Rodriguez
+90fe3f19-1b36-412c-8429-eca402884545,2024-05-09 09:23:25,Submitted,3667.9217774000017,View subject occur recently.,Product Management,Africa,0.0,,Karen Jackson
+496d93a0-709e-423e-9778-e89656896270,2024-05-29 03:17:35,Processed,7180.5324699928715,Movement government keep his campaign. Oracle,Finance,Africa,2.0,2024-05-31 03:17:35,Michael Johnson
+15d71e0e-a919-4a57-a594-089cf9476288,2024-07-05 02:40:05,Pending,296.9526708165882,Prove water particularly hair stuff key create particular. Automated,Development,Africa,0.0,,Sarah Moore
+c41a7868-7fec-4627-99e7-211c7210b5c6,2024-09-08 16:06:39,Submitted,10596.181161784045,Let assume accept run. Server,HR,Asia,0.0,,William Brown
+f160f050-f951-4733-8c6a-967404756f53,2024-09-06 21:56:20,Submitted,5952.293936969189,Either glass few moment.,IT,Africa,0.0,,David Wilson
+e6a71b11-ca15-47bc-b3e9-8d96a48ae813,2024-04-15 21:59:53,Pending,9626.163004131651,Every always act across his skin.,IT,South America,0.0,,Jane Doe
+76a68f0c-d18d-47b1-8513-8a48e17d5e70,2024-02-16 14:12:06,Declined,1835.6264074951023,Push fire remain actually office. Automated,Finance,Europe,0.0,,Lisa Harris
+fc82e3f3-94c1-4f8a-a808-f0efbd1ff558,2024-01-14 23:00:52,Declined,5096.083068237324,Many local air music. Server,Development,South America,0.0,,Robert Taylor
+f7427643-83a0-4052-9e1c-2c8d9224523a,2024-09-29 18:39:45,Processed,6011.941740320302,Account step money source actually region.,Product Management,Africa,4.0,2024-10-03 18:39:45,Linda Miller
+e3d7ee39-760d-42d0-9d33-28546575e7f9,2024-02-13 05:56:09,Pending,93.77268044908323,Against car set whether hot. Automated,Finance,Asia,0.0,,Sarah Moore
+524a1e46-d553-40cb-9f2b-a26a0e8ace86,2024-06-22 21:23:40,Pending,1292.3153481818088,Concern pay official treat.,Customer Support,Asia,0.0,,Jane Doe
+e850d31e-35c0-449c-b625-b8207b0056e9,2024-04-26 21:11:39,Processed,5190.787236351897,Police move federal behind case add next. Server,Finance,Europe,3.0,2024-04-29 21:11:39,Sarah Moore
+4455e37d-6775-48d1-9dad-f83394acb36b,2024-06-03 05:53:17,Declined,703.4752184011654,Pattern affect modern case today source forget. Cloud,Sales,Europe,0.0,,Patricia Thompson
+a2fd4fea-70ab-443a-8c94-b0ed6a1e2836,2024-06-01 12:27:01,Pending,6802.149373525246,His hotel treatment start cell me present network. Oracle,IT,North America,0.0,,Charles Martin
+15c4d9dc-0c44-4f02-91b0-233e2e84a268,2024-09-29 07:42:20,Processed,4512.677203762669,Ask director loss important own sea.,HR,Europe,9.0,2024-10-08 07:42:20,Emily Davis
+d0148676-3b9c-4c72-ac91-0865bec93cbe,2024-03-11 12:06:13,Processed,8657.311498276511,Author young successful stage news not her. Travel,Development,Africa,1.0,2024-03-12 12:06:13,Karen Jackson
+ca63b253-4750-4d5e-9e38-72d67be1d70b,2024-02-19 10:25:37,Declined,4621.715093936618,Able third pattern condition most.,HR,Africa,0.0,,Thomas White
+a37abb1f-fa61-4245-9d94-f9f70aa7eeba,2024-09-15 03:22:37,Processed,643.2373904512524,Sport among become decade near raise. Oracle,Sales,South America,28.0,2024-10-13 03:22:37,Patricia Thompson
+057fdd30-4164-4b9b-8683-fadacdbe3b35,2024-01-07 00:28:15,Pending,100.50448547027482,Security us catch including idea. Automated,HR,Africa,0.0,,Lisa Harris
+90e9a85c-865f-484d-911d-abc04839c968,2024-04-09 21:08:18,Declined,7077.354375071887,Five actually every example high summer there responsibility.,Product Management,North America,0.0,,William Brown
+102c1a55-22a3-4073-b9c5-1d6baa6ec993,2024-08-20 04:57:35,Processed,2566.633561787451,Cell reach notice until over play. Automated,Product Management,South America,10.0,2024-08-30 04:57:35,Charles Martin
+2b560fad-2ad0-4093-8f34-4d2beeedc386,2024-07-24 06:01:04,Pending,10686.700913067072,Grow generation new laugh though despite. Cloud,Sales,Asia,0.0,,Jane Doe
+5facf84b-6767-4a34-9828-c0eed8b3abe8,2024-06-20 03:01:29,Submitted,8362.700873607253,Leave because end move.,Finance,Europe,0.0,,Sarah Moore
+a8a3485f-562e-4c6b-ba58-692c996d8b11,2024-04-11 20:16:43,Submitted,854.8648459767647,Network decade your produce quickly.,IT,South America,0.0,,John Smith
+8a6ccfd2-584a-4c97-9006-0ec2e1d154f6,2024-02-26 23:19:24,Processed,4654.079817404474,Show lead eye training such American.,Customer Support,North America,4.0,2024-03-01 23:19:24,Angela Rodriguez
+f4292781-308d-4750-b181-6e1eb4640850,2024-06-01 17:54:48,Declined,8154.708708017883,Study test modern end industry indeed along mean.,Development,North America,0.0,,Steven Clark
+184f70d9-dd62-4f9c-b2c4-04b9087468e3,2024-04-05 03:55:40,Pending,11046.309520742127,Top state senior three want. Oracle,HR,South America,0.0,,Michael Johnson
+10e2b728-bc18-4647-8411-883b5a8f7165,2024-02-27 10:26:34,Pending,3011.8252794471327,Keep job media as. Oracle,IT,Europe,0.0,,Patricia Thompson
+074ce46b-874b-4ddd-b9f9-70c84cdfc8ee,2024-04-04 05:07:46,Processed,9961.95890354908,Position out through shake training keep. Cloud,Sales,South America,2.0,2024-04-06 05:07:46,Christopher Garcia
+305513ce-558d-484e-b2fd-6e580d9c3ce6,2024-02-18 07:45:09,Declined,4588.092107698218,Be effect cost per. Cloud,Finance,North America,0.0,,Barbara Martinez
+e878ddd5-ce83-4e9b-99ef-db348cd85d81,2024-04-17 18:08:22,Pending,5726.272553783104,School rock culture enough modern off.,Product Management,Asia,0.0,,Thomas White
+9b58e35f-b47c-484c-9d9f-9543ac11b464,2024-08-06 22:10:06,Processed,1606.9875512766769,Quickly party list beautiful. Automated,Sales,Europe,12.0,2024-08-18 22:10:06,Karen Jackson
+9d73d2ed-74bb-4149-9d4d-fdcbab85f555,2024-04-17 05:54:07,Declined,3886.381371642944,Want about eat challenge next teacher third most.,Customer Support,Asia,0.0,,Steven Clark
+d44451c6-2011-4ae6-8d6e-8304a78f4874,2024-07-30 18:03:22,Pending,10677.465500729253,Long then shake out again news. Oracle,Customer Support,Africa,0.0,,Lisa Harris
+5ca76a72-07a3-4375-a0ac-8b7dd7b3c3ce,2024-02-24 04:55:53,Processed,6374.960250666368,Relate two much base.,IT,Europe,5.0,2024-02-29 04:55:53,Lisa Harris
+0aaf92d7-1360-4215-860c-19026a5477b6,2024-07-15 00:03:04,Processed,9886.922542322709,Consumer point foot travel involve. Travel,IT,North America,2.0,2024-07-17 00:03:04,Barbara Martinez
+58a36597-d10c-4b07-ad71-740da6c95d19,2024-06-01 20:13:23,Declined,4605.142587678451,Even only television give gun.,Finance,Asia,0.0,,Jane Doe
+a0fab63d-41ca-4e46-95a4-429093fdb39b,2024-07-17 19:11:16,Submitted,1753.9291445991303,End court member but music wear popular.,HR,Asia,0.0,,John Smith
+58dd660f-80d3-48dd-b6fa-ff63d5525f72,2024-07-05 07:39:08,Declined,5829.284062066332,Father describe sense value me worry nearly.,HR,South America,0.0,,John Smith
+857e7fe6-9844-4204-911e-5ca0e23410b7,2024-08-20 17:29:02,Processed,14094.313002399864,Hear ready support continue. Travel,Development,Asia,3.0,2024-08-23 17:29:02,Christopher Garcia
+80e11afe-4573-44a4-9914-d5c689fbe5ac,2024-02-19 18:21:43,Declined,5965.300145451273,Race recognize national today none maybe cost. Server,HR,North America,0.0,,Thomas White
+70e31fc5-e194-4e1e-83b2-b0fafe15134f,2024-10-11 06:58:17,Declined,8635.639710977573,Environmental allow use open. Travel,IT,Africa,0.0,,Robert Taylor
+fc8a0e79-ecb2-4c5c-847a-962dc1a02643,2024-09-06 04:53:10,Submitted,5370.049180663968,Former rule ready all game between agreement. Automated,HR,South America,0.0,,Michael Johnson
+23cde49c-89ff-4696-b532-fa5b3ddcd84e,2024-01-21 08:11:58,Pending,7415.203164910801,Clear throughout without might.,IT,Africa,0.0,,Emily Davis
+a40d2eec-52c5-4fd1-afca-c5af4c8e59bb,2024-08-21 00:48:44,Submitted,7760.382193599846,Whose can whatever end. Oracle,Product Management,Africa,0.0,,Lisa Harris
+5085c68b-9e93-4ad5-a20e-a2f78f50b7ad,2024-03-05 16:23:44,Pending,6593.73303095521,Parent practice green.,Sales,Africa,0.0,,Charles Martin
+7c13716e-c042-44cf-a46f-5980503b8f3b,2024-04-19 23:59:02,Submitted,7151.746401319237,East fear section able of positive.,IT,North America,0.0,,Charles Martin
+97642806-fb9e-40ce-87a0-8d61371bb623,2024-05-28 20:46:12,Pending,1044.322668969001,Mouth five our most approach.,HR,Africa,0.0,,Michael Johnson
+ad4d5b20-3320-4748-b948-63bd9ad8da49,2024-01-17 05:14:06,Submitted,1963.9652919668447,Attention suggest establish dark threat about simple none.,Development,Europe,0.0,,John Smith
+0e2eaae4-d423-4a50-97f9-3722caad6c2b,2024-01-17 04:30:02,Pending,8951.267419475158,Allow chair involve meeting gun president thousand Mrs.,Sales,South America,0.0,,Thomas White
+039e4cff-1761-47ca-9af4-0d58b9b47909,2024-01-27 07:27:25,Pending,2092.4691131332056,Market finally window player part how officer girl.,Development,Asia,0.0,,Thomas White
+408abd16-893f-41e6-9d93-e69b7c4d3d41,2024-08-31 03:29:15,Pending,1629.739621633837,Bank up rest often security best lose. Automated,HR,South America,0.0,,Michael Johnson
+9d22f020-ab53-49e7-9566-50e4bc279633,2024-10-22 08:28:48,Processed,3211.8677350918006,Picture vote draw movement free. Travel,HR,Africa,6.0,2024-10-28 08:28:48,Angela Rodriguez
+e2037d97-decc-47b4-a304-9244bb587d40,2024-09-08 01:08:20,Declined,4065.7929683510506,Successful list type south along only family.,IT,Europe,0.0,,Sarah Moore
+ef8557c5-74a9-4548-bc51-207a809c274b,2024-08-03 00:57:45,Pending,5834.519592233248,Radio interest baby best southern reason. Oracle,Customer Support,Asia,0.0,,William Brown
+d8ab53af-b7b0-40ab-bf43-23f2c62b4be8,2024-02-11 05:12:28,Declined,9389.933330776641,Around task drop fear even similar thought. Cloud,Customer Support,Asia,0.0,,Jessica Anderson
+71f357da-351c-474f-8c51-03f97cfb351a,2024-03-28 08:53:07,Declined,6817.369263648587,Feeling bank listen. Travel,Customer Support,Africa,0.0,,William Brown
+6ed7ffe6-05d0-498b-bfb3-38efc32cd6a8,2024-07-31 12:57:11,Declined,2279.391344837333,Hospital government set mean good.,Sales,South America,0.0,,Karen Jackson
+b2542213-833b-4019-945a-906d008c607c,2024-06-24 03:51:20,Processed,13599.007708623813,Name believe win whole him. Travel,IT,Europe,3.0,2024-06-27 03:51:20,Charles Martin
+567432f0-9407-44bf-a11f-67d86441354f,2024-06-17 07:13:41,Pending,4851.487186851869,Mean foot professional area attention property animal. Oracle,Sales,Asia,0.0,,Charles Martin
+0c94b5e2-c58a-4036-80f2-e51a328a3db5,2024-04-25 02:20:54,Pending,10822.751979223856,Agency policy sell the. Server,Development,Africa,0.0,,John Smith
+749bbb0e-3f33-411f-a640-b6e25d488a78,2024-01-22 20:25:24,Submitted,10152.01134336622,Knowledge simple nearly talk treat. Oracle,Sales,South America,0.0,,Jane Doe
+16b04f12-7747-4daf-a5ca-3d1dddc6751e,2024-02-23 14:47:44,Submitted,6045.976436424726,Law open cover usually production pick.,Development,North America,0.0,,Jessica Anderson
+6595f3df-f616-44e2-9444-cc736882552e,2024-07-13 23:54:23,Processed,1943.2430081831096,Source question modern measure.,Product Management,Asia,13.0,2024-07-26 23:54:23,Emily Davis
+adf2c146-715f-4f40-8fa4-2ce09009d022,2024-02-05 00:19:39,Pending,4436.427921261948,Force answer money difference.,Product Management,Africa,0.0,,Patricia Thompson
+fd3cb13a-594a-4b91-943c-30d6eb1b98ea,2024-10-11 13:38:43,Submitted,676.6762126132257,Loss sort think it key save. Automated,Finance,South America,0.0,,David Wilson
+144ae046-04e8-4390-8277-f11a95e8d6c6,2024-01-21 20:39:43,Submitted,3694.737423998048,Suddenly they page indeed feel something order place.,Customer Support,Europe,0.0,,Richard Thomas
+6db05dfa-5da7-4bb2-b673-a66db15e8b04,2024-01-04 01:54:27,Pending,490.89045894432985,Total whether across away low everyone. Cloud,HR,Asia,0.0,,Sarah Moore
+e309cf7f-89ea-479a-942f-1e0beb9b7f58,2024-04-05 11:19:34,Declined,6626.434135666085,Draw garden indicate music.,Finance,Asia,0.0,,Charles Martin
+dc6b970d-f5b7-4e08-89d0-3c7ea94817bc,2024-10-06 07:35:15,Submitted,8336.040477311073,Allow material carry clear data strategy.,Sales,Africa,0.0,,David Wilson
+26038861-2132-4ead-8cba-b53f65f1df8a,2024-02-25 07:21:37,Declined,9271.994118207085,Threat size agree just.,Finance,Africa,0.0,,Lisa Harris
+652a3f5d-341c-4ffc-9401-042a1d64a14b,2024-08-29 14:00:08,Processed,13994.212690156344,Happen region share reach work action meeting mind. Travel,Sales,North America,4.0,2024-09-02 14:00:08,John Smith
+13875a00-2740-4902-8d7a-0813a7c12c6a,2024-01-18 09:37:30,Declined,3794.759072738241,Car site property live score I culture. Cloud,Finance,North America,0.0,,Angela Rodriguez
+f742c9bb-a3df-4697-a696-0eda71c7d8cf,2024-08-04 08:21:42,Submitted,13616.288352440351,Commercial people manage believe his. Travel,Customer Support,Asia,0.0,,Linda Miller
+2a9472f5-c5c8-47ed-95e5-339bf057e694,2024-02-24 03:57:09,Processed,9981.72534079524,These senior us whether under system response company. Oracle,HR,Africa,4.0,2024-02-28 03:57:09,Christopher Garcia
+f90f0b8e-0432-47ab-8137-8ca0e6df211e,2024-02-17 08:19:53,Processed,9933.367937846555,Our ready behind develop room money middle real.,Customer Support,South America,5.0,2024-02-22 08:19:53,Barbara Martinez
+e788583b-510d-489e-8a69-befe3ff7e983,2024-05-22 15:42:16,Declined,6372.498213772487,Factor eat provide help book. Oracle,Product Management,Africa,0.0,,William Brown
+2da855d3-460d-462f-a2b7-3ec10231deae,2024-10-25 18:03:08,Declined,6319.09123998848,Girl control senior per industry. Oracle,HR,Africa,0.0,,Michael Johnson
+dacfe8b8-4b1a-482c-85b5-b36ad2c029ef,2024-05-15 07:55:14,Declined,9978.922146638248,Term condition bank purpose receive still also.,IT,South America,0.0,,Michael Johnson
+2e569870-e4f4-42d1-ac94-4896c794ff2a,2024-08-08 15:42:26,Declined,7993.222318256847,Exactly involve investment. Oracle,Development,North America,0.0,,John Smith
+b56eaaf2-edf0-4833-9712-fc6c2f996034,2024-08-21 20:26:53,Processed,5084.056410167956,Either reality cause nation gas learn someone station. Automated,Finance,Europe,5.0,2024-08-26 20:26:53,Thomas White
+5b32bbbd-e615-4f22-8295-44a75d02fffa,2024-02-15 06:59:42,Pending,624.6012361196968,Cause notice grow pull everyone them. Automated,Sales,Africa,0.0,,Patricia Thompson
+fc73c8d9-803b-45a1-ac4e-577141ec4d2b,2024-10-15 09:03:44,Declined,1986.5753913242452,Mind keep receive year.,Finance,Asia,0.0,,Charles Martin
+02a67c6a-aa05-47af-863d-8152f7e2630f,2024-09-11 20:28:00,Pending,4688.599379839451,The notice cut several worry. Automated,Sales,South America,0.0,,Barbara Martinez
+ce89eea6-baff-4366-8ad4-00f769de9b57,2024-06-14 06:45:43,Processed,2467.770088350452,Out during scene environmental program increase. Automated,Product Management,Asia,13.0,2024-06-27 06:45:43,Richard Thomas
+6c5776e4-54b6-49b2-a2f5-21e4fc3922e8,2024-03-21 01:30:57,Processed,6966.885281172727,Song career director appear defense civil.,HR,Europe,5.0,2024-03-26 01:30:57,Christopher Garcia
+93eb3ade-6302-4ff6-b4f1-684efba31798,2024-09-30 10:49:08,Processed,11523.240884025066,Movement black brother. Oracle,Sales,North America,4.0,2024-10-04 10:49:08,John Smith
+aaead445-a63a-4d4c-b684-67c75e6a1fe1,2024-03-08 08:36:14,Processed,8789.113184285394,Door structure start.,Development,North America,3.0,2024-03-11 08:36:14,Linda Miller
+6e5b1078-5075-46fa-9f3b-84ac9aea395f,2024-02-09 18:55:45,Processed,5506.019495433488,Letter author question few arrive owner recently pass.,HR,North America,4.0,2024-02-13 18:55:45,Richard Thomas
+00e5bd51-c072-49d1-81eb-bf1d0e72ef62,2024-08-17 10:04:04,Submitted,593.5281222912533,Mission turn our white wind standard statement.,Development,North America,0.0,,Richard Thomas
+0285b0b9-1f69-45a2-a0bf-46433195c0c1,2024-03-27 10:11:13,Declined,1845.064314225384,Develop market may while bar. Travel,Product Management,Africa,0.0,,Richard Thomas
+5bfd660e-8be1-4478-8041-1a01907d09a6,2024-05-31 17:23:01,Declined,1596.8014145073078,Remain land loss break. Cloud,Finance,Asia,0.0,,Karen Jackson
+772f6f6f-eacd-499c-93b3-b8b47dcb1312,2024-10-07 13:02:43,Declined,1655.964861709633,Last everything machine.,Product Management,North America,0.0,,Thomas White
+21566162-d783-408a-834c-c1e6573ea5cb,2024-06-30 01:44:58,Submitted,1141.2033500284458,Physical green site experience score. Travel,Development,Europe,0.0,,Jessica Anderson
+46e2be56-0ba4-4964-8f52-f6c4618b70da,2024-09-17 02:08:05,Declined,2106.263790546519,Represent manager game true.,Finance,Europe,0.0,,William Brown
+30f7c1e9-acb3-4336-9dbe-86ddc5ee37c0,2024-08-21 00:09:22,Pending,6285.4087548745,Hospital popular partner truth product side deal go.,Finance,North America,0.0,,Michael Johnson
+bb248cd8-edee-43ee-b5ce-4052349242eb,2024-03-22 14:37:13,Processed,6712.596092167396,Majority oil onto great defense forget reach. Cloud,Product Management,South America,3.0,2024-03-25 14:37:13,David Wilson
+c18d7427-4e06-4c42-a4c8-d4b4e33f43ce,2024-09-30 08:56:34,Submitted,7905.350477709508,Happy leg list arrive eight. Automated,Customer Support,Asia,0.0,,Jane Doe
+de2d176d-02c4-4e67-ad01-9df42991f340,2024-06-24 08:53:49,Processed,6613.027063550492,Gun wonder company change table eight very.,Development,North America,5.0,2024-06-29 08:53:49,David Wilson
+02ba77e6-a2c7-43c6-865d-3075f7aee1ae,2024-09-30 10:45:01,Pending,2322.585227288935,Born pass the later federal crime. Travel,Development,South America,0.0,,Barbara Martinez
+fb8401f5-e829-49c0-aae2-25136d65d5f2,2024-09-02 17:33:32,Processed,1607.0228300746996,Spring surface which tonight perform half song. Oracle,Customer Support,Africa,13.0,2024-09-15 17:33:32,Richard Thomas
+ae4e0fa5-8ff0-4030-8dc2-5b76c897cf95,2024-09-18 06:47:56,Pending,5553.833723922079,Record foreign adult.,Finance,Asia,0.0,,David Wilson
+d5c28b6b-d267-4aa5-85c1-90511a002675,2024-04-26 19:20:13,Processed,10388.143410077408,Whom listen herself pull argue. Oracle,Sales,Europe,4.0,2024-04-30 19:20:13,David Wilson
+9204a2fb-e77f-4bcf-82bb-f9e7d8e4572e,2024-01-25 21:58:52,Processed,5555.527883327332,Thing seek future civil reach middle any.,Finance,Europe,6.0,2024-01-31 21:58:52,Patricia Thompson
+805bb5ad-8932-4f44-addb-22e4c0f7cd4b,2024-08-01 16:13:48,Processed,9605.49117290121,Yourself responsibility piece trouble.,Customer Support,Europe,2.0,2024-08-03 16:13:48,Charles Martin
+85e88fea-e06b-4a99-bab3-3611f74582a0,2024-09-06 18:52:51,Processed,9327.60130175765,Guess specific strategy meeting. Travel,Product Management,North America,5.0,2024-09-11 18:52:51,Linda Miller
+c1633c54-6a8b-4c81-a55e-f2d7a95f4e0f,2024-06-05 19:22:43,Processed,1758.060931187641,Different accept foot long.,IT,Africa,12.0,2024-06-17 19:22:43,Angela Rodriguez
+0f0cf3c6-2304-421b-b0da-c24615b1e072,2024-06-16 01:12:49,Submitted,114.6385128895518,Real to throw light western foot respond partner.,Finance,Europe,0.0,,Karen Jackson

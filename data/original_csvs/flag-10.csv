@@ -1,0 +1,501 @@
+sys_updated_on,assigned_to,caller_id,number,state,closed_by,opened_at,closed_at,sys_updated_by,short_description,assignment_group,priority,category
+2023-01-11 21:52:59.999999999,Luke Wilson,Don Goodliffe,INC0000000000,Resolved,Howard Johnson,2023-01-10 00:17:00,2023-01-11 21:52:59.999999999,admin,Cannot connect to wifi,Network,2 - High,Network
+2023-01-28 23:35:00.000000000,Luke Wilson,ITIL User,INC0000000001,Closed,Luke Wilson,2023-01-25 13:59:00,2023-01-28 23:35:00.000000000,employee,Unable to connect to the VPN,Network,2 - High,Network
+2023-01-29 01:38:00.000000000,Fred Luddy,Bud Richman,INC0000000002,Resolved,Luke Wilson,2023-01-25 16:02:00,2023-01-29 01:38:00.000000000,employee,Connection issue with VPN,Network,2 - High,Network
+2023-02-03 06:18:00.000000000,Beth Anglin,ITIL User,INC0000000003,Resolved,Luke Wilson,2023-01-30 08:42:00,2023-02-03 06:18:00.000000000,admin,Cannot access the database server,Database,2 - High,Database
+2023-02-04 15:25:00.000000000,Howard Johnson,ITIL User,INC0000000004,Closed,Howard Johnson,2023-01-31 15:25:00,2023-02-04 15:25:00.000000000,admin,Cannot access email server,Network,2 - High,Network
+2023-02-08 14:23:00.000000000,Luke Wilson,David Loo,INC0000000005,Resolved,Charlie Whitherspoon,2023-02-04 04:47:00,2023-02-08 14:23:00.000000000,system,Email client not syncing,Network,3 - Moderate,Software
+2023-02-12 23:15:00.000000000,Luke Wilson,Don Goodliffe,INC0000000006,Resolved,Fred Luddy,2023-02-08 04:03:00,2023-02-12 23:15:00.000000000,system,Unable to connect to wifi,Network,1 - Critical,Network
+2023-02-23 09:15:00.000000000,Howard Johnson,ITIL User,INC0000000007,Closed,Luke Wilson,2023-02-17 16:27:00,2023-02-23 09:15:00.000000000,employee,Email system not working properly,Network,2 - High,Software
+2023-02-24 16:30:00.000000000,Charlie Whitherspoon,David Loo,INC0000000008,Resolved,Charlie Whitherspoon,2023-02-18 21:18:00,2023-02-24 16:30:00.000000000,system,Intranet access issue in department,Network,3 - Moderate,Network
+2023-02-25 13:23:00.000000000,Beth Anglin,David Loo,INC0000000009,Closed,Fred Luddy,2023-02-19 15:47:00,2023-02-25 13:23:00.000000000,employee,Can't connect to the company VPN,Network,2 - High,Network
+2023-02-26 18:40:00.000000000,Howard Johnson,David Loo,INC0000000010,Resolved,Beth Anglin,2023-02-20 18:40:00,2023-02-26 18:40:00.000000000,admin,Internet connection issue,Network,2 - High,Network
+2023-03-01 18:05:00.000000000,Beth Anglin,Bud Richman,INC0000000011,Closed,Howard Johnson,2023-02-23 10:53:00,2023-03-01 18:05:00.000000000,system,Cannot connect to VPN,Network,3 - Moderate,Software
+2023-03-09 10:23:00.000000000,Beth Anglin,Don Goodliffe,INC0000000012,Resolved,Luke Wilson,2023-03-02 10:23:00,2023-03-09 10:23:00.000000000,system,Database connection lost,Database,1 - Critical,Database
+2023-03-11 13:39:00.000000000,Charlie Whitherspoon,David Loo,INC0000000013,Resolved,Charlie Whitherspoon,2023-03-04 08:51:00,2023-03-11 13:39:00.000000000,admin,Software update caused system crash,Software,2 - High,Software
+2023-03-20 10:08:00.000000000,Beth Anglin,Don Goodliffe,INC0000000014,Closed,Fred Luddy,2023-03-12 10:08:00,2023-03-20 10:08:00.000000000,employee,Unable to access database server,Database,2 - High,Database
+2023-03-21 19:48:00.000000000,Luke Wilson,ITIL User,INC0000000015,Resolved,Charlie Whitherspoon,2023-03-13 17:24:00,2023-03-21 19:48:00.000000000,system,Slow internet connection,Network,3 - Moderate,Network
+2023-03-22 18:00:59.999999999,Howard Johnson,ITIL User,INC0000000016,Resolved,Howard Johnson,2023-03-14 13:13:00,2023-03-22 18:00:59.999999999,system,Software upgrade request,Software,4 - Low,Software
+2023-03-23 18:22:00.000000000,Luke Wilson,Bud Richman,INC0000000017,Resolved,Fred Luddy,2023-03-15 11:10:00,2023-03-23 18:22:00.000000000,employee,Unable to access network drive,Network,2 - High,Network
+2023-03-24 02:55:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000018,Closed,Fred Luddy,2023-03-15 19:43:00,2023-03-24 02:55:00.000000000,employee,Email server malfunctioning,Network,1 - Critical,Hardware
+2023-03-30 15:33:00.000000000,Luke Wilson,ITIL User,INC0000000019,Resolved,Charlie Whitherspoon,2023-03-21 17:57:00,2023-03-30 15:33:00.000000000,system,Issues with database connectivity,Database,2 - High,Database
+2023-04-01 09:41:59.999999999,Luke Wilson,Don Goodliffe,INC0000000020,Closed,Charlie Whitherspoon,2023-03-23 07:18:00,2023-04-01 09:41:59.999999999,employee,Internet connection issue in the IT department,Network,2 - High,Network
+2023-04-03 09:06:00.000000000,Beth Anglin,David Loo,INC0000000021,Closed,Luke Wilson,2023-03-25 01:54:00,2023-04-03 09:06:00.000000000,employee,Unable to access the intranet,Network,1 - Critical,Network
+2023-04-04 11:50:00.000000000,Luke Wilson,ITIL User,INC0000000022,Resolved,Howard Johnson,2023-03-26 02:14:00,2023-04-04 11:50:00.000000000,system,Unable to connect to the company VPN,Network,2 - High,Network
+2023-04-07 08:19:59.999999999,Beth Anglin,Bud Richman,INC0000000023,Closed,Charlie Whitherspoon,2023-03-28 17:56:00,2023-04-07 08:19:59.999999999,system,Network server offline,Network,1 - Critical,Network
+2023-04-08 00:44:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000024,Resolved,Howard Johnson,2023-03-29 07:56:00,2023-04-08 00:44:00.000000000,admin,Can't connect to office WiFi,Network,2 - High,Network
+2023-04-08 21:18:00.000000000,Beth Anglin,David Loo,INC0000000025,Resolved,Luke Wilson,2023-03-30 02:06:00,2023-04-08 21:18:00.000000000,admin,Can't connect to VPN,Network,2 - High,Network
+2023-04-11 09:37:00.000000000,Howard Johnson,Don Goodliffe,INC0000000026,Closed,Fred Luddy,2023-04-01 09:37:00,2023-04-11 09:37:00.000000000,employee,SQL server not responding,Database,2 - High,Database
+2023-04-14 04:46:00.000000000,Fred Luddy,Don Goodliffe,INC0000000027,Resolved,Fred Luddy,2023-04-03 23:58:00,2023-04-14 04:46:00.000000000,admin,Server outage in New York branch,Network,1 - Critical,Hardware
+2023-04-18 06:43:00.000000000,Charlie Whitherspoon,David Loo,INC0000000028,Resolved,Charlie Whitherspoon,2023-04-07 16:19:00,2023-04-18 06:43:00.000000000,system,Unable to connect to the VPN,Network,1 - Critical,Network
+2023-04-18 19:20:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000029,Closed,Charlie Whitherspoon,2023-04-08 02:32:00,2023-04-18 19:20:00.000000000,employee,Email system not working in the marketing department,Network,2 - High,Software
+2023-04-20 05:06:00.000000000,Howard Johnson,Don Goodliffe,INC0000000030,Resolved,Howard Johnson,2023-04-09 09:54:00,2023-04-20 05:06:00.000000000,employee,Unable to connect to database,Database,2 - High,Database
+2023-04-20 09:54:00.000000000,Luke Wilson,Don Goodliffe,INC0000000031,Closed,Beth Anglin,2023-04-09 14:42:00,2023-04-20 09:54:00.000000000,admin,Unable to access the network drive,Network,2 - High,Network
+2023-04-21 06:10:00.000000000,Beth Anglin,ITIL User,INC0000000032,Resolved,Fred Luddy,2023-04-10 08:34:00,2023-04-21 06:10:00.000000000,system,Unable to access the corporate VPN network,Network,2 - High,Network
+2023-04-24 13:57:00.000000000,Howard Johnson,David Loo,INC0000000033,Resolved,Fred Luddy,2023-04-13 09:09:00,2023-04-24 13:57:00.000000000,employee,Email client not working properly,Service Desk,2 - High,Software
+2023-04-28 08:12:00.000000000,Fred Luddy,Bud Richman,INC0000000034,Closed,Beth Anglin,2023-04-16 20:12:00,2023-04-28 08:12:00.000000000,employee,Email system not working,Network,2 - High,Software
+2023-05-01 09:15:00.000000000,Charlie Whitherspoon,David Loo,INC0000000035,Closed,Howard Johnson,2023-04-19 14:03:00,2023-05-01 09:15:00.000000000,system,Email application is not loading,Software,2 - High,Software
+2023-05-02 05:46:00.000000000,Howard Johnson,Bud Richman,INC0000000036,Closed,Howard Johnson,2023-04-20 08:10:00,2023-05-02 05:46:00.000000000,admin,Email system is not working,Network,2 - High,Software
+2023-05-02 12:23:00.000000000,Luke Wilson,David Loo,INC0000000037,Closed,Charlie Whitherspoon,2023-04-20 14:47:00,2023-05-02 12:23:00.000000000,admin,Unable to access database server,Database,2 - High,Database
+2023-05-02 19:54:00.000000000,Fred Luddy,ITIL User,INC0000000038,Closed,Charlie Whitherspoon,2023-04-20 22:18:00,2023-05-02 19:54:00.000000000,admin,Internet connectivity issues on floor 7,Network,2 - High,Network
+2023-05-04 10:18:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000039,Resolved,Beth Anglin,2023-04-22 07:54:00,2023-05-04 10:18:00.000000000,system,Unable to access Database,Database,3 - Moderate,Database
+2023-05-06 12:30:00.000000000,Fred Luddy,ITIL User,INC0000000040,Resolved,Howard Johnson,2023-04-24 05:18:00,2023-05-06 12:30:00.000000000,admin,Database connection issue,Database,2 - High,Database
+2023-05-06 12:50:00.000000000,Howard Johnson,Don Goodliffe,INC0000000041,Resolved,Beth Anglin,2023-04-24 05:38:00,2023-05-06 12:50:00.000000000,admin,VPN connection issue,Network,2 - High,Network
+2023-05-10 11:54:00.000000000,Beth Anglin,David Loo,INC0000000042,Closed,Luke Wilson,2023-04-27 21:30:00,2023-05-10 11:54:00.000000000,employee,Unable to connect to VPN,Network,2 - High,Network
+2023-05-11 15:22:00.000000000,Beth Anglin,Bud Richman,INC0000000043,Closed,Luke Wilson,2023-04-28 22:34:00,2023-05-11 15:22:00.000000000,admin,Unable to connect to WiFi,Network,2 - High,Network
+2023-05-14 23:29:00.000000000,Beth Anglin,Don Goodliffe,INC0000000044,Closed,Luke Wilson,2023-05-01 23:29:00,2023-05-14 23:29:00.000000000,admin,Can't connect to corporate VPN,Network,2 - High,Network
+2023-05-15 05:53:00.000000000,Howard Johnson,Bud Richman,INC0000000045,Resolved,Beth Anglin,2023-05-02 03:29:00,2023-05-15 05:53:00.000000000,system,Email server outage,Network,1 - Critical,Network
+2023-05-15 09:48:00.000000000,Luke Wilson,ITIL User,INC0000000046,Resolved,Luke Wilson,2023-05-02 07:24:00,2023-05-15 09:48:00.000000000,admin,Email server not responding,Network,1 - Critical,Hardware
+2023-05-18 23:40:00.000000000,Luke Wilson,ITIL User,INC0000000047,Closed,Beth Anglin,2023-05-05 14:04:00,2023-05-18 23:40:00.000000000,system,Unable to connect to the server,Network,2 - High,Network
+2023-05-20 16:28:00.000000000,Charlie Whitherspoon,David Loo,INC0000000048,Resolved,Charlie Whitherspoon,2023-05-07 02:04:00,2023-05-20 16:28:00.000000000,system,Database connection issue,Database,2 - High,Database
+2023-05-21 10:52:00.000000000,Howard Johnson,Bud Richman,INC0000000049,Closed,Fred Luddy,2023-05-07 20:28:00,2023-05-21 10:52:00.000000000,employee,Internet connection issue,Network,2 - High,Network
+2023-05-23 12:07:00.000000000,Fred Luddy,Don Goodliffe,INC0000000050,Resolved,Beth Anglin,2023-05-09 16:55:00,2023-05-23 12:07:00.000000000,system,Cannot connect to VPN,Network,2 - High,Network
+2023-05-24 16:20:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000051,Closed,Fred Luddy,2023-05-10 18:44:00,2023-05-24 16:20:00.000000000,employee,Unable to connect to VPN,Network,2 - High,Network
+2023-05-25 04:12:00.000000000,Fred Luddy,Don Goodliffe,INC0000000052,Closed,Luke Wilson,2023-05-11 04:12:00,2023-05-25 04:12:00.000000000,admin,Unable to login to the email server,Network,2 - High,Network
+2023-05-26 05:52:00.000000000,Charlie Whitherspoon,David Loo,INC0000000053,Resolved,Luke Wilson,2023-05-12 03:28:00,2023-05-26 05:52:00.000000000,employee,Wi-fi not connecting to my device,Network,3 - Moderate,Network
+2023-05-27 10:58:00.000000000,Beth Anglin,Bud Richman,INC0000000054,Closed,Luke Wilson,2023-05-13 06:10:00,2023-05-27 10:58:00.000000000,employee,Database connection issues,Database,2 - High,Database
+2023-05-27 11:40:00.000000000,Beth Anglin,ITIL User,INC0000000055,Resolved,Beth Anglin,2023-05-13 06:52:00,2023-05-27 11:40:00.000000000,system,Email server not responding,Network,2 - High,Network
+2023-05-29 14:17:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000056,Resolved,Howard Johnson,2023-05-15 04:41:00,2023-05-29 14:17:00.000000000,system,Unable to connect to VPN,Network,2 - High,Network
+2023-05-31 23:22:00.000000000,Luke Wilson,David Loo,INC0000000057,Closed,Charlie Whitherspoon,2023-05-17 08:58:00,2023-05-31 23:22:00.000000000,admin,Email server is down,Network,1 - Critical,Network
+2023-06-01 09:03:00.000000000,Howard Johnson,ITIL User,INC0000000058,Resolved,Fred Luddy,2023-05-17 18:39:00,2023-06-01 09:03:00.000000000,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-06-01 10:28:00.000000000,Fred Luddy,ITIL User,INC0000000059,Resolved,Luke Wilson,2023-05-17 20:04:00,2023-06-01 10:28:00.000000000,admin,Server down in the network room,Network,1 - Critical,Hardware
+2023-06-05 10:19:00.000000000,Howard Johnson,ITIL User,INC0000000060,Closed,Charlie Whitherspoon,2023-05-21 10:19:00,2023-06-05 10:19:00.000000000,admin,Cannot connect to the VPN,Network,2 - High,Network
+2023-06-06 20:07:00.000000000,Howard Johnson,David Loo,INC0000000061,Resolved,Beth Anglin,2023-05-22 17:43:00,2023-06-06 20:07:00.000000000,employee,Software update failed on several workstations,Software,2 - High,Software
+2023-06-07 14:42:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000062,Closed,Beth Anglin,2023-05-23 09:54:00,2023-06-07 14:42:00.000000000,system,Cannot connect to company VPN,Network,2 - High,Network
+2023-06-09 23:25:00.000000000,Beth Anglin,Don Goodliffe,INC0000000063,Closed,Fred Luddy,2023-05-25 13:49:00,2023-06-09 23:25:00.000000000,employee,Unable to connect to VPN,Network,2 - High,Network
+2023-06-10 18:41:00.000000000,Howard Johnson,Bud Richman,INC0000000064,Closed,Luke Wilson,2023-05-26 06:41:00,2023-06-10 18:41:00.000000000,system,Internet connection is unstable,Network,2 - High,Network
+2023-06-11 03:05:00.000000000,Howard Johnson,ITIL User,INC0000000065,Closed,Luke Wilson,2023-05-26 15:05:00,2023-06-11 03:05:00.000000000,admin,Cannot connect to company VPN,Network,2 - High,Network
+2023-06-14 02:08:00.000000000,Luke Wilson,Don Goodliffe,INC0000000066,Closed,Luke Wilson,2023-05-29 06:56:00,2023-06-14 02:08:00.000000000,admin,SQL server connectivity issue,Database,2 - High,Database
+2023-06-14 12:14:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000067,Closed,Charlie Whitherspoon,2023-05-29 17:02:00,2023-06-14 12:14:00.000000000,employee,Cannot connect to printer,Hardware,3 - Moderate,Hardware
+2023-06-16 10:20:00.000000000,Howard Johnson,Bud Richman,INC0000000068,Resolved,Fred Luddy,2023-05-31 10:20:00,2023-06-16 10:20:00.000000000,employee,Email service is not working,Network,2 - High,Software
+2023-06-16 17:43:00.000000000,Beth Anglin,David Loo,INC0000000069,Resolved,Beth Anglin,2023-05-31 17:43:00,2023-06-16 17:43:00.000000000,employee,System update failed,Software,2 - High,Software
+2023-06-18 10:08:00.000000000,Fred Luddy,Don Goodliffe,INC0000000070,Resolved,Charlie Whitherspoon,2023-06-02 05:20:00,2023-06-18 10:08:00.000000000,admin,Email service interruption,Network,2 - High,Software
+2023-06-18 10:19:00.000000000,Howard Johnson,ITIL User,INC0000000071,Closed,Charlie Whitherspoon,2023-06-02 05:31:00,2023-06-18 10:19:00.000000000,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-06-20 09:50:59.999999999,Charlie Whitherspoon,Don Goodliffe,INC0000000072,Closed,Howard Johnson,2023-06-04 00:15:00,2023-06-20 09:50:59.999999999,admin,Cannot connect to the server,Network,2 - High,Network
+2023-06-20 22:13:59.999999999,Fred Luddy,David Loo,INC0000000073,Resolved,Charlie Whitherspoon,2023-06-04 12:38:00,2023-06-20 22:13:59.999999999,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-06-21 14:52:00.000000000,Fred Luddy,David Loo,INC0000000074,Closed,Beth Anglin,2023-06-05 02:52:00,2023-06-21 14:52:00.000000000,system,Database server connectivity issues,Database,1 - Critical,Database
+2023-06-21 22:07:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000075,Resolved,Fred Luddy,2023-06-05 10:07:00,2023-06-21 22:07:00.000000000,system,Email service downtime,Network,2 - High,Inquiry / Help
+2023-06-23 13:22:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000076,Closed,Beth Anglin,2023-06-06 22:58:00,2023-06-23 13:22:00.000000000,employee,Can't access company network from my workstation,Network,2 - High,Network
+2023-06-24 08:36:00.000000000,Luke Wilson,David Loo,INC0000000077,Resolved,Luke Wilson,2023-06-07 15:48:00,2023-06-24 08:36:00.000000000,employee,Cannot connect to VPN,Network,2 - High,Network
+2023-06-24 14:45:00.000000000,Beth Anglin,Bud Richman,INC0000000078,Closed,Luke Wilson,2023-06-07 21:57:00,2023-06-24 14:45:00.000000000,admin,Internet connectivity issue on 3rd floor,Network,2 - High,Network
+2023-06-25 13:30:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000079,Resolved,Beth Anglin,2023-06-08 18:18:00,2023-06-25 13:30:00.000000000,employee,Unable to establish VPN connection,Network,1 - Critical,Network
+2023-06-26 05:02:59.999999999,Beth Anglin,Bud Richman,INC0000000080,Closed,Beth Anglin,2023-06-09 07:27:00,2023-06-26 05:02:59.999999999,employee,Unable to connect to VPN,Network,2 - High,Network
+2023-06-29 11:15:59.999999999,Beth Anglin,Don Goodliffe,INC0000000081,Closed,Luke Wilson,2023-06-12 06:28:00,2023-06-29 11:15:59.999999999,system,Database connection issue in application X,Database,2 - High,Database
+2023-06-30 02:45:59.999999999,Beth Anglin,ITIL User,INC0000000082,Closed,Howard Johnson,2023-06-12 21:58:00,2023-06-30 02:45:59.999999999,admin,Can't connect to VPN,Network,2 - High,Network
+2023-06-30 07:53:00.000000000,Beth Anglin,Bud Richman,INC0000000083,Resolved,Luke Wilson,2023-06-13 00:41:00,2023-06-30 07:53:00.000000000,employee,Unable to access the VPN,Network,2 - High,Network
+2023-07-03 04:02:00.000000000,Luke Wilson,ITIL User,INC0000000084,Closed,Beth Anglin,2023-06-15 16:02:00,2023-07-03 04:02:00.000000000,employee,Unable to access email account,Service Desk,2 - High,Software
+2023-07-03 10:06:00.000000000,Beth Anglin,David Loo,INC0000000085,Resolved,Howard Johnson,2023-06-15 22:06:00,2023-07-03 10:06:00.000000000,system,Cannot connect to the office VPN,Network,3 - Moderate,Network
+2023-07-04 12:18:00.000000000,Beth Anglin,David Loo,INC0000000086,Resolved,Fred Luddy,2023-06-16 21:54:00,2023-07-04 12:18:00.000000000,employee,Unable to access the company database,Database,2 - High,Database
+2023-07-06 22:42:00.000000000,Luke Wilson,Bud Richman,INC0000000087,Closed,Beth Anglin,2023-06-19 01:06:00,2023-07-06 22:42:00.000000000,employee,VPN connection issues,Network,2 - High,Network
+2023-07-07 02:12:00.000000000,Luke Wilson,Don Goodliffe,INC0000000088,Closed,Howard Johnson,2023-06-19 04:36:00,2023-07-07 02:12:00.000000000,system,Unable to access the company's intranet,Network,3 - Moderate,Network
+2023-07-07 09:48:00.000000000,Howard Johnson,Don Goodliffe,INC0000000089,Resolved,Howard Johnson,2023-06-19 12:12:00,2023-07-07 09:48:00.000000000,admin,Outage in main server,Network,1 - Critical,Database
+2023-07-08 09:21:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000090,Closed,Howard Johnson,2023-06-20 09:21:00,2023-07-08 09:21:00.000000000,admin,Cannot connect to the database,Database,2 - High,Database
+2023-07-10 12:24:59.999999999,Howard Johnson,David Loo,INC0000000091,Closed,Luke Wilson,2023-06-22 07:37:00,2023-07-10 12:24:59.999999999,system,Database connection issue,Database,2 - High,Database
+2023-07-11 02:24:59.999999999,Charlie Whitherspoon,ITIL User,INC0000000092,Closed,Beth Anglin,2023-06-22 21:37:00,2023-07-11 02:24:59.999999999,admin,Database connection issue,Database,2 - High,Database
+2023-07-12 03:22:00.000000000,Howard Johnson,Don Goodliffe,INC0000000093,Resolved,Charlie Whitherspoon,2023-06-23 20:10:00,2023-07-12 03:22:00.000000000,system,Email server is down,Network,1 - Critical,Network
+2023-07-12 12:31:00.000000000,Fred Luddy,ITIL User,INC0000000094,Closed,Beth Anglin,2023-06-24 02:55:00,2023-07-12 12:31:00.000000000,system,Unable to connect to office wifi,Network,2 - High,Inquiry / Help
+2023-07-13 18:14:00.000000000,Beth Anglin,ITIL User,INC0000000095,Resolved,Howard Johnson,2023-06-25 06:14:00,2023-07-13 18:14:00.000000000,system,Cannot connect to VPN,Network,1 - Critical,Network
+2023-07-14 23:25:00.000000000,Howard Johnson,ITIL User,INC0000000096,Closed,Howard Johnson,2023-06-26 09:01:00,2023-07-14 23:25:00.000000000,system,Unable to access application due to server error,Database,2 - High,Software
+2023-07-15 05:19:00.000000000,Luke Wilson,Bud Richman,INC0000000097,Resolved,Charlie Whitherspoon,2023-06-26 14:55:00,2023-07-15 05:19:00.000000000,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-07-19 05:34:00.000000000,Charlie Whitherspoon,David Loo,INC0000000098,Resolved,Fred Luddy,2023-06-30 05:34:00,2023-07-19 05:34:00.000000000,system,Internet connectivity issue,Network,2 - High,Network
+2023-07-19 09:44:00.000000000,Fred Luddy,ITIL User,INC0000000099,Closed,Fred Luddy,2023-06-30 09:44:00,2023-07-19 09:44:00.000000000,admin,Database connection issues,Database,2 - High,Database
+2023-07-19 12:26:00.000000000,Fred Luddy,Don Goodliffe,INC0000000100,Closed,Howard Johnson,2023-06-30 12:26:00,2023-07-19 12:26:00.000000000,employee,VPN connection issue,Network,2 - High,Network
+2023-07-19 22:26:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000101,Closed,Luke Wilson,2023-06-30 22:26:00,2023-07-19 22:26:00.000000000,system,Unable to access email,Service Desk,2 - High,Software
+2023-07-20 08:22:00.000000000,Luke Wilson,Bud Richman,INC0000000102,Closed,Luke Wilson,2023-07-01 05:58:00,2023-07-20 08:22:00.000000000,system,Failed to connect to the server,Network,2 - High,Network
+2023-07-21 14:55:59.999999999,Fred Luddy,Don Goodliffe,INC0000000103,Resolved,Charlie Whitherspoon,2023-07-02 10:08:00,2023-07-21 14:55:59.999999999,admin,Email server is down,Network,1 - Critical,Network
+2023-07-22 15:11:00.000000000,Beth Anglin,David Loo,INC0000000104,Resolved,Luke Wilson,2023-07-03 07:59:00,2023-07-22 15:11:00.000000000,system,Database connection issue,Database,2 - High,Database
+2023-07-23 00:27:00.000000000,Beth Anglin,Don Goodliffe,INC0000000105,Resolved,Charlie Whitherspoon,2023-07-03 17:15:00,2023-07-23 00:27:00.000000000,system,Unable to connect to Database Server,Database,2 - High,Database
+2023-07-26 11:45:00.000000000,Luke Wilson,Bud Richman,INC0000000106,Resolved,Fred Luddy,2023-07-06 21:21:00,2023-07-26 11:45:00.000000000,employee,Database server outage,Database,1 - Critical,Database
+2023-07-26 17:34:59.999999999,Howard Johnson,David Loo,INC0000000107,Closed,Beth Anglin,2023-07-07 00:47:00,2023-07-26 17:34:59.999999999,employee,Internet connection issue on 3rd floor,Network,2 - High,Network
+2023-07-26 18:48:59.999999999,Fred Luddy,ITIL User,INC0000000108,Closed,Howard Johnson,2023-07-07 02:01:00,2023-07-26 18:48:59.999999999,employee,Cannot connect to the corporate VPN,Network,2 - High,Network
+2023-07-27 03:21:59.999999999,Charlie Whitherspoon,Don Goodliffe,INC0000000109,Resolved,Howard Johnson,2023-07-07 10:34:00,2023-07-27 03:21:59.999999999,employee,Cannot connect to the VPN,Network,1 - Critical,Network
+2023-07-27 09:53:59.999999999,Howard Johnson,David Loo,INC0000000110,Closed,Howard Johnson,2023-07-07 17:06:00,2023-07-27 09:53:59.999999999,employee,Cannot access email,Service Desk,2 - High,Software
+2023-07-27 10:09:59.999999999,Fred Luddy,David Loo,INC0000000111,Resolved,Beth Anglin,2023-07-07 17:22:00,2023-07-27 10:09:59.999999999,system,Wi-Fi network connectivity issue,Network,2 - High,Network
+2023-07-27 20:06:00.000000000,Luke Wilson,David Loo,INC0000000112,Resolved,Howard Johnson,2023-07-08 00:54:00,2023-07-27 20:06:00.000000000,employee,Email server downtime,Network,2 - High,Network
+2023-07-27 21:35:00.000000000,Fred Luddy,ITIL User,INC0000000113,Resolved,Howard Johnson,2023-07-08 02:23:00,2023-07-27 21:35:00.000000000,system,Unable to connect to VPN,Network,2 - High,Network
+2023-07-30 16:46:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000114,Resolved,Charlie Whitherspoon,2023-07-10 16:46:00,2023-07-30 16:46:00.000000000,admin,Mail server is down,Network,1 - Critical,Network
+2023-07-30 17:49:00.000000000,Beth Anglin,Bud Richman,INC0000000115,Resolved,Beth Anglin,2023-07-10 17:49:00,2023-07-30 17:49:00.000000000,employee,Cannot connect to Wi-Fi network,Network,2 - High,Network
+2023-07-31 14:01:00.000000000,Luke Wilson,David Loo,INC0000000116,Closed,Charlie Whitherspoon,2023-07-11 11:37:00,2023-07-31 14:01:00.000000000,system,Cannot access company server,Network,1 - Critical,Hardware
+2023-08-02 15:54:00.000000000,Beth Anglin,Don Goodliffe,INC0000000117,Closed,Charlie Whitherspoon,2023-07-13 08:42:00,2023-08-02 15:54:00.000000000,admin,Internet connection is unstable,Network,3 - Moderate,Network
+2023-08-04 18:15:00.000000000,Fred Luddy,ITIL User,INC0000000118,Resolved,Beth Anglin,2023-07-15 06:15:00,2023-08-04 18:15:00.000000000,system,Cannot connect to VPN,Network,1 - Critical,Software
+2023-08-05 02:17:00.000000000,Beth Anglin,David Loo,INC0000000119,Resolved,Fred Luddy,2023-07-15 14:17:00,2023-08-05 02:17:00.000000000,employee,Need help with database error,Database,2 - High,Database
+2023-08-05 05:32:00.000000000,Luke Wilson,David Loo,INC0000000120,Resolved,Howard Johnson,2023-07-15 17:32:00,2023-08-05 05:32:00.000000000,employee,Email server is not responding,Network,1 - Critical,Network
+2023-08-05 07:49:00.000000000,Howard Johnson,ITIL User,INC0000000121,Closed,Beth Anglin,2023-07-15 19:49:00,2023-08-05 07:49:00.000000000,system,Unable to access email account,Service Desk,2 - High,Software
+2023-08-07 01:33:00.000000000,Beth Anglin,ITIL User,INC0000000122,Closed,Howard Johnson,2023-07-17 08:45:00,2023-08-07 01:33:00.000000000,system,System running very slow,Software,2 - High,Hardware
+2023-08-07 02:45:00.000000000,Luke Wilson,David Loo,INC0000000123,Resolved,Fred Luddy,2023-07-17 09:57:00,2023-08-07 02:45:00.000000000,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-08-07 07:51:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000124,Resolved,Howard Johnson,2023-07-17 15:03:00,2023-08-07 07:51:00.000000000,system,Cannot access company VPN,Network,2 - High,Network
+2023-08-07 21:14:00.000000000,Luke Wilson,Bud Richman,INC0000000125,Resolved,Fred Luddy,2023-07-18 02:02:00,2023-08-07 21:14:00.000000000,employee,Network drive connectivity issue,Network,2 - High,Network
+2023-08-08 02:27:00.000000000,Luke Wilson,Bud Richman,INC0000000126,Resolved,Beth Anglin,2023-07-18 07:15:00,2023-08-08 02:27:00.000000000,system,Cannot connect to the office VPN,Network,2 - High,Network
+2023-08-08 06:51:00.000000000,Howard Johnson,Bud Richman,INC0000000127,Resolved,Luke Wilson,2023-07-18 11:39:00,2023-08-08 06:51:00.000000000,admin,Email system not syncing,Service Desk,3 - Moderate,Software
+2023-08-08 10:39:00.000000000,Fred Luddy,Bud Richman,INC0000000128,Resolved,Fred Luddy,2023-07-18 15:27:00,2023-08-08 10:39:00.000000000,employee,Unable to access the company portal,Network,2 - High,Inquiry / Help
+2023-08-10 08:30:00.000000000,Luke Wilson,David Loo,INC0000000129,Resolved,Charlie Whitherspoon,2023-07-20 08:30:00,2023-08-10 08:30:00.000000000,system,Unable to access company VPN,Network,2 - High,Network
+2023-08-10 15:10:00.000000000,Fred Luddy,Don Goodliffe,INC0000000130,Closed,Fred Luddy,2023-07-20 15:10:00,2023-08-10 15:10:00.000000000,employee,Failed network connectivity in building M,Network,2 - High,Network
+2023-08-10 18:16:00.000000000,Howard Johnson,Bud Richman,INC0000000131,Resolved,Howard Johnson,2023-07-20 18:16:00,2023-08-10 18:16:00.000000000,admin,Unable to access the database,Database,1 - Critical,Database
+2023-08-11 10:53:00.000000000,Beth Anglin,Bud Richman,INC0000000132,Resolved,Beth Anglin,2023-07-21 08:29:00,2023-08-11 10:53:00.000000000,employee,Internet connection issue in department 23,Network,2 - High,Network
+2023-08-11 14:24:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000133,Resolved,Beth Anglin,2023-07-21 12:00:00,2023-08-11 14:24:00.000000000,system,Database server error 404,Database,1 - Critical,Database
+2023-08-11 15:31:00.000000000,Howard Johnson,Don Goodliffe,INC0000000134,Closed,Luke Wilson,2023-07-21 13:07:00,2023-08-11 15:31:00.000000000,employee,Email server not responding,Network,2 - High,Network
+2023-08-12 06:42:00.000000000,Beth Anglin,ITIL User,INC0000000135,Closed,Howard Johnson,2023-07-22 01:54:00,2023-08-12 06:42:00.000000000,admin,Cannot connect to office VPN,Network,2 - High,Network
+2023-08-12 15:56:00.000000000,Howard Johnson,ITIL User,INC0000000136,Resolved,Beth Anglin,2023-07-22 11:08:00,2023-08-12 15:56:00.000000000,employee,Unable to log into my email,Service Desk,2 - High,Software
+2023-08-13 14:05:00.000000000,Luke Wilson,David Loo,INC0000000137,Closed,Luke Wilson,2023-07-23 06:53:00,2023-08-13 14:05:00.000000000,admin,Login issue on enterprise application,Software,2 - High,Software
+2023-08-15 18:26:00.000000000,Luke Wilson,David Loo,INC0000000138,Resolved,Fred Luddy,2023-07-25 06:26:00,2023-08-15 18:26:00.000000000,employee,Cannot connect to the company VPN,Network,3 - Moderate,Network
+2023-08-16 18:17:00.000000000,Beth Anglin,David Loo,INC0000000139,Closed,Charlie Whitherspoon,2023-07-26 03:53:00,2023-08-16 18:17:00.000000000,system,Cannot connect to office VPN,Network,2 - High,Network
+2023-08-16 21:39:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000140,Closed,Charlie Whitherspoon,2023-07-26 07:15:00,2023-08-16 21:39:00.000000000,system,Email system not working properly,Network,2 - High,Software
+2023-08-17 09:22:00.000000000,Fred Luddy,David Loo,INC0000000141,Closed,Charlie Whitherspoon,2023-07-26 18:58:00,2023-08-17 09:22:00.000000000,admin,Cannot connect to office VPN,Network,2 - High,Network
+2023-08-17 22:56:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000142,Resolved,Beth Anglin,2023-07-27 06:08:00,2023-08-17 22:56:00.000000000,admin,Unable to access database,Database,2 - High,Database
+2023-08-18 14:19:00.000000000,Beth Anglin,Don Goodliffe,INC0000000143,Resolved,Charlie Whitherspoon,2023-07-27 21:31:00,2023-08-18 14:19:00.000000000,system,Cannot connect to the WiFi,Network,2 - High,Network
+2023-08-19 16:50:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000144,Closed,Fred Luddy,2023-07-28 21:38:00,2023-08-19 16:50:00.000000000,employee,Unable to connect to office VPN,Network,2 - High,Network
+2023-08-21 02:42:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000145,Resolved,Luke Wilson,2023-07-30 02:42:00,2023-08-21 02:42:00.000000000,employee,Email application not responding,Service Desk,2 - High,Software
+2023-08-21 07:29:00.000000000,Howard Johnson,ITIL User,INC0000000146,Closed,Beth Anglin,2023-07-30 07:29:00,2023-08-21 07:29:00.000000000,employee,Unable to connect to VPN,Network,2 - High,Network
+2023-08-21 12:56:00.000000000,Fred Luddy,Bud Richman,INC0000000147,Resolved,Beth Anglin,2023-07-30 12:56:00,2023-08-21 12:56:00.000000000,admin,Database connection error,Database,1 - Critical,Database
+2023-08-22 03:48:00.000000000,Luke Wilson,David Loo,INC0000000148,Closed,Fred Luddy,2023-07-31 01:24:00,2023-08-22 03:48:00.000000000,admin,Cannot connect to VPN,Network,2 - High,Network
+2023-08-22 03:58:00.000000000,Beth Anglin,ITIL User,INC0000000149,Resolved,Beth Anglin,2023-07-31 01:34:00,2023-08-22 03:58:00.000000000,employee,Cannot access email account,Service Desk,3 - Moderate,Software
+2023-08-22 05:33:00.000000000,Howard Johnson,David Loo,INC0000000150,Resolved,Howard Johnson,2023-07-31 03:09:00,2023-08-22 05:33:00.000000000,system,Outlook email sync issue,Service Desk,2 - High,Software
+2023-08-22 22:00:00.000000000,Fred Luddy,David Loo,INC0000000151,Closed,Howard Johnson,2023-07-31 19:36:00,2023-08-22 22:00:00.000000000,employee,Problems with Network Router Connectivity,Network,2 - High,Network
+2023-08-24 00:14:00.000000000,Fred Luddy,David Loo,INC0000000152,Closed,Charlie Whitherspoon,2023-08-01 19:26:00,2023-08-24 00:14:00.000000000,employee,Email server is not responding,Network,2 - High,Hardware
+2023-08-24 21:16:00.000000000,Beth Anglin,David Loo,INC0000000153,Closed,Beth Anglin,2023-08-02 14:04:00,2023-08-24 21:16:00.000000000,admin,Email service is down,Network,1 - Critical,Network
+2023-08-26 18:05:00.000000000,Luke Wilson,Don Goodliffe,INC0000000154,Closed,Luke Wilson,2023-08-04 06:05:00,2023-08-26 18:05:00.000000000,admin,Cannot connect to office VPN,Network,2 - High,Network
+2023-08-27 05:21:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000155,Resolved,Howard Johnson,2023-08-04 17:21:00,2023-08-27 05:21:00.000000000,admin,Unable to fetch data from SQL Server,Database,2 - High,Database
+2023-08-27 05:57:00.000000000,Howard Johnson,Bud Richman,INC0000000156,Closed,Luke Wilson,2023-08-04 17:57:00,2023-08-27 05:57:00.000000000,admin,Email service not responding,Network,2 - High,Hardware
+2023-08-29 05:42:00.000000000,Beth Anglin,Bud Richman,INC0000000157,Closed,Beth Anglin,2023-08-06 12:54:00,2023-08-29 05:42:00.000000000,system,Trouble connecting to the VPN,Network,2 - High,Network
+2023-08-31 04:58:00.000000000,Howard Johnson,Don Goodliffe,INC0000000158,Closed,Fred Luddy,2023-08-08 07:22:00,2023-08-31 04:58:00.000000000,employee,Unable to access company VPN,Network,1 - Critical,Network
+2023-08-31 16:02:00.000000000,Luke Wilson,Don Goodliffe,INC0000000159,Resolved,Charlie Whitherspoon,2023-08-08 18:26:00,2023-08-31 16:02:00.000000000,employee,Email system malfunctioning,Network,2 - High,Software
+2023-08-31 21:34:00.000000000,Fred Luddy,ITIL User,INC0000000160,Resolved,Charlie Whitherspoon,2023-08-08 23:58:00,2023-08-31 21:34:00.000000000,admin,Email client not syncing,Service Desk,2 - High,Software
+2023-09-01 04:32:00.000000000,Luke Wilson,ITIL User,INC0000000161,Resolved,Charlie Whitherspoon,2023-08-09 04:32:00,2023-09-01 04:32:00.000000000,admin,Email system not responding,Network,2 - High,Inquiry / Help
+2023-09-02 03:55:00.000000000,Fred Luddy,Don Goodliffe,INC0000000162,Resolved,Charlie Whitherspoon,2023-08-10 01:31:00,2023-09-02 03:55:00.000000000,admin,Database connectivity issues,Database,2 - High,Database
+2023-09-02 23:24:00.000000000,Luke Wilson,Don Goodliffe,INC0000000163,Closed,Charlie Whitherspoon,2023-08-10 21:00:00,2023-09-02 23:24:00.000000000,system,Email system not functioning,Network,2 - High,Software
+2023-09-03 11:51:00.000000000,Luke Wilson,Don Goodliffe,INC0000000164,Closed,Howard Johnson,2023-08-11 07:03:00,2023-09-03 11:51:00.000000000,admin,Can't access office network vpn,Network,2 - High,Network
+2023-09-05 02:04:00.000000000,Beth Anglin,David Loo,INC0000000165,Resolved,Fred Luddy,2023-08-12 18:52:00,2023-09-05 02:04:00.000000000,employee,Slow performance on Database server,Database,2 - High,Database
+2023-09-05 07:10:00.000000000,Howard Johnson,David Loo,INC0000000166,Closed,Luke Wilson,2023-08-12 23:58:00,2023-09-05 07:10:00.000000000,admin,Unable to connect to the database server,Database,2 - High,Database
+2023-09-06 08:01:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000167,Closed,Beth Anglin,2023-08-13 22:25:00,2023-09-06 08:01:00.000000000,system,Cannot connect to the database,Database,3 - Moderate,Database
+2023-09-06 08:05:00.000000000,Luke Wilson,David Loo,INC0000000168,Resolved,Charlie Whitherspoon,2023-08-13 22:29:00,2023-09-06 08:05:00.000000000,admin,Issues with database connectivity,Database,2 - High,Network
+2023-09-06 15:30:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000169,Resolved,Beth Anglin,2023-08-14 03:30:00,2023-09-06 15:30:00.000000000,admin,Database connection error on website,Database,1 - Critical,Database
+2023-09-06 16:59:00.000000000,Luke Wilson,Don Goodliffe,INC0000000170,Closed,Fred Luddy,2023-08-14 04:59:00,2023-09-06 16:59:00.000000000,admin,Email server connectivity issue,Network,2 - High,Network
+2023-09-07 08:49:00.000000000,Luke Wilson,ITIL User,INC0000000171,Resolved,Howard Johnson,2023-08-14 20:49:00,2023-09-07 08:49:00.000000000,system,Unable to connect to VPN,Network,2 - High,Network
+2023-09-07 15:54:00.000000000,Fred Luddy,ITIL User,INC0000000172,Resolved,Howard Johnson,2023-08-15 01:30:00,2023-09-07 15:54:00.000000000,system,VPN connection issues,Network,2 - High,Network
+2023-09-07 21:27:00.000000000,Luke Wilson,David Loo,INC0000000173,Closed,Luke Wilson,2023-08-15 07:03:00,2023-09-07 21:27:00.000000000,admin,Network server error,Network,1 - Critical,Network
+2023-09-08 13:02:00.000000000,Beth Anglin,Bud Richman,INC0000000174,Resolved,Fred Luddy,2023-08-15 22:38:00,2023-09-08 13:02:00.000000000,employee,Database connection issue reported,Database,2 - High,Database
+2023-09-09 05:53:00.000000000,Luke Wilson,David Loo,INC0000000175,Closed,Beth Anglin,2023-08-16 13:05:00,2023-09-09 05:53:00.000000000,system,Cannot connect to company VPN,Network,2 - High,Network
+2023-09-09 11:32:00.000000000,Luke Wilson,ITIL User,INC0000000176,Resolved,Charlie Whitherspoon,2023-08-16 18:44:00,2023-09-09 11:32:00.000000000,admin,Internet connection issue on the 3rd floor,Network,2 - High,Network
+2023-09-09 16:23:00.000000000,Fred Luddy,ITIL User,INC0000000177,Closed,Fred Luddy,2023-08-16 23:35:00,2023-09-09 16:23:00.000000000,admin,Cannot connect to company VPN,Network,2 - High,Network
+2023-09-11 01:55:00.000000000,Fred Luddy,Bud Richman,INC0000000178,Resolved,Howard Johnson,2023-08-18 04:19:00,2023-09-11 01:55:00.000000000,admin,Database server is not responding,Database,2 - High,Database
+2023-09-11 10:29:00.000000000,Charlie Whitherspoon,David Loo,INC0000000179,Closed,Luke Wilson,2023-08-18 12:53:00,2023-09-11 10:29:00.000000000,employee,Cannot connect to database server,Database,1 - Critical,Database
+2023-09-12 12:51:00.000000000,Howard Johnson,David Loo,INC0000000180,Resolved,Charlie Whitherspoon,2023-08-19 12:51:00,2023-09-12 12:51:00.000000000,employee,Can't connect to the VPN,Network,2 - High,Network
+2023-09-12 22:40:00.000000000,Beth Anglin,Don Goodliffe,INC0000000181,Resolved,Beth Anglin,2023-08-19 22:40:00,2023-09-12 22:40:00.000000000,admin,Unable to access the database,Database,2 - High,Database
+2023-09-13 06:33:00.000000000,Beth Anglin,David Loo,INC0000000182,Resolved,Howard Johnson,2023-08-20 04:09:00,2023-09-13 06:33:00.000000000,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-09-14 16:13:00.000000000,Howard Johnson,Bud Richman,INC0000000183,Closed,Luke Wilson,2023-08-21 11:25:00,2023-09-14 16:13:00.000000000,employee,SQL server connection issue,Database,2 - High,Database
+2023-09-15 19:58:00.000000000,Beth Anglin,Don Goodliffe,INC0000000184,Closed,Luke Wilson,2023-08-22 12:46:00,2023-09-15 19:58:00.000000000,system,Email server not responding,Network,2 - High,Network
+2023-09-16 02:15:00.000000000,Fred Luddy,David Loo,INC0000000185,Resolved,Charlie Whitherspoon,2023-08-22 19:03:00,2023-09-16 02:15:00.000000000,employee,Unable to connect to the VPN,Network,2 - High,Network
+2023-09-16 15:07:00.000000000,Luke Wilson,ITIL User,INC0000000186,Resolved,Luke Wilson,2023-08-23 05:31:00,2023-09-16 15:07:00.000000000,system,Email client not functioning properly,Software,3 - Moderate,Software
+2023-09-18 23:48:00.000000000,Howard Johnson,ITIL User,INC0000000187,Resolved,Fred Luddy,2023-08-25 09:24:00,2023-09-18 23:48:00.000000000,employee,Connection issue in server room,Network,1 - Critical,Network
+2023-09-20 10:08:00.000000000,Luke Wilson,Bud Richman,INC0000000188,Resolved,Charlie Whitherspoon,2023-08-26 17:20:00,2023-09-20 10:08:00.000000000,admin,Unable to access the internal database,Database,2 - High,Database
+2023-09-20 12:05:00.000000000,Beth Anglin,David Loo,INC0000000189,Closed,Beth Anglin,2023-08-26 19:17:00,2023-09-20 12:05:00.000000000,admin,Unable to connect to the company Wifi,Network,2 - High,Network
+2023-09-20 16:10:00.000000000,Fred Luddy,ITIL User,INC0000000190,Closed,Luke Wilson,2023-08-26 23:22:00,2023-09-20 16:10:00.000000000,admin,Email client crashing repeatedly,Software,2 - High,Software
+2023-09-20 19:38:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000191,Resolved,Beth Anglin,2023-08-27 00:26:00,2023-09-20 19:38:00.000000000,system,Unable to access email,Network,2 - High,Network
+2023-09-21 02:03:00.000000000,Beth Anglin,ITIL User,INC0000000192,Resolved,Fred Luddy,2023-08-27 06:51:00,2023-09-21 02:03:00.000000000,system,Error installing new software update,Software,2 - High,Software
+2023-09-21 05:00:00.000000000,Howard Johnson,David Loo,INC0000000193,Resolved,Howard Johnson,2023-08-27 09:48:00,2023-09-21 05:00:00.000000000,system,Email client not syncing,Service Desk,2 - High,Software
+2023-09-21 22:33:00.000000000,Beth Anglin,David Loo,INC0000000194,Resolved,Luke Wilson,2023-08-28 00:57:00,2023-09-21 22:33:00.000000000,admin,Cannot access company database,Database,1 - Critical,Database
+2023-09-22 07:27:00.000000000,Fred Luddy,Don Goodliffe,INC0000000195,Closed,Fred Luddy,2023-08-28 09:51:00,2023-09-22 07:27:00.000000000,employee,Unable to connect to the internet,Network,2 - High,Network
+2023-09-22 13:15:00.000000000,Fred Luddy,Don Goodliffe,INC0000000196,Resolved,Luke Wilson,2023-08-28 15:39:00,2023-09-22 13:15:00.000000000,employee,Cannot connect to company VPN,Network,2 - High,Network
+2023-09-22 17:43:00.000000000,Howard Johnson,David Loo,INC0000000197,Closed,Beth Anglin,2023-08-28 20:07:00,2023-09-22 17:43:00.000000000,employee,Email service outage,Openspace,2 - High,Network
+2023-09-23 01:37:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000198,Closed,Fred Luddy,2023-08-29 01:37:00,2023-09-23 01:37:00.000000000,system,Network outage in office,Network,1 - Critical,Network
+2023-09-24 05:23:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000199,Resolved,Fred Luddy,2023-08-30 02:59:00,2023-09-24 05:23:00.000000000,employee,Email system is not working properly,Network,1 - Critical,Software
+2023-09-24 07:32:00.000000000,Luke Wilson,Bud Richman,INC0000000200,Resolved,Howard Johnson,2023-08-30 05:08:00,2023-09-24 07:32:00.000000000,employee,Can't connect to VPN,Network,2 - High,Network
+2023-09-24 16:53:00.000000000,Luke Wilson,ITIL User,INC0000000201,Resolved,Howard Johnson,2023-08-30 14:29:00,2023-09-24 16:53:00.000000000,employee,Database connectivity issue reported,Database,2 - High,Database
+2023-09-25 15:24:00.000000000,Luke Wilson,David Loo,INC0000000202,Closed,Howard Johnson,2023-08-31 10:36:00,2023-09-25 15:24:00.000000000,employee,Email system malfunctioning,Network,2 - High,Software
+2023-09-26 02:24:00.000000000,Fred Luddy,ITIL User,INC0000000203,Closed,Luke Wilson,2023-08-31 21:36:00,2023-09-26 02:24:00.000000000,system,Unable to connect to VPN,Network,2 - High,Network
+2023-09-27 16:47:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000204,Closed,Charlie Whitherspoon,2023-09-02 07:11:00,2023-09-27 16:47:00.000000000,admin,Email server is not responding,Network,2 - High,Network
+2023-09-29 10:04:00.000000000,Howard Johnson,Bud Richman,INC0000000205,Resolved,Beth Anglin,2023-09-03 22:04:00,2023-09-29 10:04:00.000000000,admin,Email server not responding,Network,2 - High,Network
+2023-09-29 20:20:00.000000000,Luke Wilson,David Loo,INC0000000206,Closed,Beth Anglin,2023-09-04 05:56:00,2023-09-29 20:20:00.000000000,employee,Email server down,Network,1 - Critical,Network
+2023-09-30 06:10:00.000000000,Beth Anglin,David Loo,INC0000000207,Resolved,Fred Luddy,2023-09-04 15:46:00,2023-09-30 06:10:00.000000000,admin,Unable to access email account,Service Desk,2 - High,Inquiry / Help
+2023-09-30 10:03:00.000000000,Fred Luddy,Don Goodliffe,INC0000000208,Resolved,Howard Johnson,2023-09-04 19:39:00,2023-09-30 10:03:00.000000000,system,Cannot connect to the company VPN,Network,2 - High,Network
+2023-09-30 10:13:00.000000000,Luke Wilson,ITIL User,INC0000000209,Closed,Beth Anglin,2023-09-04 19:49:00,2023-09-30 10:13:00.000000000,admin,Cannot connect to office wi-fi,Network,2 - High,Network
+2023-09-30 22:14:00.000000000,Luke Wilson,Don Goodliffe,INC0000000210,Resolved,Howard Johnson,2023-09-05 05:26:00,2023-09-30 22:14:00.000000000,employee,Unable to access email,Network,2 - High,Inquiry / Help
+2023-10-02 15:00:00.000000000,Luke Wilson,ITIL User,INC0000000211,Closed,Luke Wilson,2023-09-06 19:48:00,2023-10-02 15:00:00.000000000,system,Unable to access VPN from home,Network,2 - High,Network
+2023-10-02 18:09:00.000000000,Beth Anglin,Bud Richman,INC0000000212,Resolved,Howard Johnson,2023-09-06 22:57:00,2023-10-02 18:09:00.000000000,admin,Database connection failure,Database,1 - Critical,Database
+2023-10-05 20:42:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000213,Closed,Fred Luddy,2023-09-09 18:18:00,2023-10-05 20:42:00.000000000,system,Unable to access email,Network,3 - Moderate,Inquiry / Help
+2023-10-06 00:11:00.000000000,Beth Anglin,Don Goodliffe,INC0000000214,Closed,Fred Luddy,2023-09-09 21:47:00,2023-10-06 00:11:00.000000000,system,Unable to connect to the office Wi-Fi,Network,2 - High,Network
+2023-10-06 08:12:00.000000000,Beth Anglin,Don Goodliffe,INC0000000215,Resolved,Fred Luddy,2023-09-10 03:24:00,2023-10-06 08:12:00.000000000,system,Email client is not syncing properly,Service Desk,3 - Moderate,Software
+2023-10-06 12:03:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000216,Resolved,Charlie Whitherspoon,2023-09-10 07:15:00,2023-10-06 12:03:00.000000000,system,VPN connection issue,Network,2 - High,Network
+2023-10-07 09:43:00.000000000,Howard Johnson,David Loo,INC0000000217,Closed,Beth Anglin,2023-09-11 02:31:00,2023-10-07 09:43:00.000000000,system,Email system is not working properly,Network,2 - High,Software
+2023-10-07 16:53:00.000000000,Beth Anglin,Bud Richman,INC0000000218,Closed,Howard Johnson,2023-09-11 09:41:00,2023-10-07 16:53:00.000000000,employee,Email server down,Network,1 - Critical,Network
+2023-10-08 02:49:00.000000000,Howard Johnson,Don Goodliffe,INC0000000219,Resolved,Beth Anglin,2023-09-11 19:37:00,2023-10-08 02:49:00.000000000,employee,Email client not syncing,Service Desk,3 - Moderate,Software
+2023-10-09 07:27:00.000000000,Howard Johnson,Don Goodliffe,INC0000000220,Closed,Howard Johnson,2023-09-12 21:51:00,2023-10-09 07:27:00.000000000,system,Cannot access the company intranet,Network,2 - High,Network
+2023-10-10 01:03:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000221,Resolved,Fred Luddy,2023-09-13 13:03:00,2023-10-10 01:03:00.000000000,admin,Email server connection issue,Network,2 - High,Network
+2023-10-10 01:36:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000222,Resolved,Howard Johnson,2023-09-13 13:36:00,2023-10-10 01:36:00.000000000,admin,Outlook email not syncing,Service Desk,2 - High,Software
+2023-10-10 07:42:00.000000000,Luke Wilson,Don Goodliffe,INC0000000223,Closed,Fred Luddy,2023-09-13 19:42:00,2023-10-10 07:42:00.000000000,admin,Cannot connect to office intranet,Network,2 - High,Network
+2023-10-11 22:04:00.000000000,Fred Luddy,ITIL User,INC0000000224,Resolved,Fred Luddy,2023-09-15 05:16:00,2023-10-11 22:04:00.000000000,system,Email client not responding,Software,2 - High,Software
+2023-10-12 13:38:00.000000000,Luke Wilson,ITIL User,INC0000000225,Closed,Luke Wilson,2023-09-15 20:50:00,2023-10-12 13:38:00.000000000,system,Email system is not responding,Network,2 - High,Network
+2023-10-14 11:03:00.000000000,Fred Luddy,David Loo,INC0000000226,Resolved,Luke Wilson,2023-09-17 13:27:00,2023-10-14 11:03:00.000000000,admin,Unable to access database,Database,2 - High,Database
+2023-10-14 16:55:00.000000000,Howard Johnson,Bud Richman,INC0000000227,Resolved,Fred Luddy,2023-09-17 19:19:00,2023-10-14 16:55:00.000000000,system,Email server is down,Network,1 - Critical,Network
+2023-10-16 11:28:00.000000000,Beth Anglin,Don Goodliffe,INC0000000228,Resolved,Beth Anglin,2023-09-19 09:04:00,2023-10-16 11:28:00.000000000,employee,Database connectivity issues,Database,2 - High,Database
+2023-10-17 07:20:00.000000000,Howard Johnson,ITIL User,INC0000000229,Closed,Howard Johnson,2023-09-20 02:32:00,2023-10-17 07:20:00.000000000,admin,Email server down,Network,1 - Critical,Network
+2023-10-18 02:27:00.000000000,Beth Anglin,Bud Richman,INC0000000230,Resolved,Beth Anglin,2023-09-20 21:39:00,2023-10-18 02:27:00.000000000,employee,Cannot connect to the wifi,Network,2 - High,Network
+2023-10-18 13:12:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000231,Resolved,Fred Luddy,2023-09-21 06:00:00,2023-10-18 13:12:00.000000000,system,Email client not syncing,Service Desk,3 - Moderate,Software
+2023-10-19 00:48:00.000000000,Howard Johnson,ITIL User,INC0000000232,Closed,Luke Wilson,2023-09-21 17:36:00,2023-10-19 00:48:00.000000000,system,Email system not working properly,Network,2 - High,Inquiry / Help
+2023-10-20 03:06:00.000000000,Beth Anglin,ITIL User,INC0000000233,Resolved,Beth Anglin,2023-09-22 17:30:00,2023-10-20 03:06:00.000000000,admin,Network connectivity issues in office 4B,Network,2 - High,Network
+2023-10-20 19:01:00.000000000,Beth Anglin,ITIL User,INC0000000234,Closed,Luke Wilson,2023-09-23 07:01:00,2023-10-20 19:01:00.000000000,employee,Database Connectivity Issue,Database,1 - Critical,Database
+2023-10-22 02:54:00.000000000,Fred Luddy,David Loo,INC0000000235,Closed,Beth Anglin,2023-09-24 12:30:00,2023-10-22 02:54:00.000000000,system,Internet connectivity issue,Network,2 - High,Network
+2023-10-22 17:00:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000236,Closed,Beth Anglin,2023-09-25 00:12:00,2023-10-22 17:00:00.000000000,admin,Unable to access company database,Database,3 - Moderate,Database
+2023-10-23 15:17:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000237,Closed,Howard Johnson,2023-09-25 22:29:00,2023-10-23 15:17:00.000000000,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-10-24 01:13:00.000000000,Luke Wilson,David Loo,INC0000000238,Resolved,Luke Wilson,2023-09-26 06:01:00,2023-10-24 01:13:00.000000000,employee,Email server not responding,Network,2 - High,Network
+2023-10-24 07:14:00.000000000,Luke Wilson,David Loo,INC0000000239,Resolved,Fred Luddy,2023-09-26 12:02:00,2023-10-24 07:14:00.000000000,admin,Issue with connecting to network,Network,2 - High,Network
+2023-10-25 02:46:00.000000000,Beth Anglin,Don Goodliffe,INC0000000240,Resolved,Beth Anglin,2023-09-27 05:10:00,2023-10-25 02:46:00.000000000,system,Unable to connect to database,Database,2 - High,Database
+2023-10-26 13:56:00.000000000,Fred Luddy,Don Goodliffe,INC0000000241,Closed,Fred Luddy,2023-09-28 13:56:00,2023-10-26 13:56:00.000000000,admin,Database Server Outage,Database,1 - Critical,Database
+2023-10-26 17:21:00.000000000,Howard Johnson,David Loo,INC0000000242,Closed,Luke Wilson,2023-09-28 17:21:00,2023-10-26 17:21:00.000000000,admin,Can't connect to office wifi,Network,2 - High,Network
+2023-10-27 04:13:00.000000000,Luke Wilson,David Loo,INC0000000243,Resolved,Beth Anglin,2023-09-29 01:49:00,2023-10-27 04:13:00.000000000,admin,Unable to access database,Database,1 - Critical,Database
+2023-10-27 08:12:00.000000000,Luke Wilson,David Loo,INC0000000244,Resolved,Beth Anglin,2023-09-29 05:48:00,2023-10-27 08:12:00.000000000,admin,Email server is not responding,Network,2 - High,Network
+2023-10-27 15:13:00.000000000,Howard Johnson,Don Goodliffe,INC0000000245,Resolved,Beth Anglin,2023-09-29 12:49:00,2023-10-27 15:13:00.000000000,system,Unable to access company database,Database,2 - High,Database
+2023-10-27 18:29:00.000000000,Fred Luddy,Bud Richman,INC0000000246,Closed,Howard Johnson,2023-09-29 16:05:00,2023-10-27 18:29:00.000000000,system,Unable to access server database,Database,2 - High,Network
+2023-10-28 13:52:00.000000000,Beth Anglin,Bud Richman,INC0000000247,Resolved,Beth Anglin,2023-09-30 09:04:00,2023-10-28 13:52:00.000000000,employee,Database Connection Error,Database,1 - Critical,Database
+2023-10-29 03:17:00.000000000,Fred Luddy,Bud Richman,INC0000000248,Resolved,Luke Wilson,2023-09-30 22:29:00,2023-10-29 03:17:00.000000000,employee,Email system experiencing intermittent outages,Network,2 - High,Software
+2023-10-29 17:18:00.000000000,Howard Johnson,ITIL User,INC0000000249,Resolved,Luke Wilson,2023-10-01 10:06:00,2023-10-29 17:18:00.000000000,admin,Outlook application not starting,Software,2 - High,Software
+2023-10-29 18:45:00.000000000,Howard Johnson,Don Goodliffe,INC0000000250,Closed,Charlie Whitherspoon,2023-10-01 11:33:00,2023-10-29 18:45:00.000000000,system,Server connectivity issue,Network,2 - High,Network
+2023-10-31 05:25:00.000000000,Charlie Whitherspoon,David Loo,INC0000000251,Closed,Charlie Whitherspoon,2023-10-02 19:49:00,2023-10-31 05:25:00.000000000,admin,Unable to connect to the database,Database,2 - High,Database
+2023-11-01 02:44:00.000000000,Charlie Whitherspoon,David Loo,INC0000000252,Resolved,Charlie Whitherspoon,2023-10-03 14:44:00,2023-11-01 02:44:00.000000000,admin,Database is unresponsive,Database,1 - Critical,Database
+2023-11-01 22:20:00.000000000,Luke Wilson,ITIL User,INC0000000253,Closed,Fred Luddy,2023-10-04 07:56:00,2023-11-01 22:20:00.000000000,system,WiFi connection is unstable,Network,2 - High,Network
+2023-11-02 09:46:00.000000000,Luke Wilson,ITIL User,INC0000000254,Resolved,Charlie Whitherspoon,2023-10-04 19:22:00,2023-11-02 09:46:00.000000000,employee,Email client crashes on startup,Software,2 - High,Software
+2023-11-03 04:39:00.000000000,Luke Wilson,Don Goodliffe,INC0000000255,Resolved,Luke Wilson,2023-10-05 11:51:00,2023-11-03 04:39:00.000000000,system,Cannot access company database,Database,2 - High,Database
+2023-11-04 00:52:00.000000000,Howard Johnson,Don Goodliffe,INC0000000256,Resolved,Luke Wilson,2023-10-06 05:40:00,2023-11-04 00:52:00.000000000,system,Unable to connect to VPN,Network,2 - High,Network
+2023-11-04 04:15:00.000000000,Howard Johnson,Don Goodliffe,INC0000000257,Resolved,Fred Luddy,2023-10-06 09:03:00,2023-11-04 04:15:00.000000000,employee,Cannot access the database,Database,2 - High,Database
+2023-11-04 09:20:00.000000000,Beth Anglin,ITIL User,INC0000000258,Resolved,Fred Luddy,2023-10-06 14:08:00,2023-11-04 09:20:00.000000000,system,Unable to access VPN,Network,2 - High,Network
+2023-11-05 01:31:00.000000000,Beth Anglin,Don Goodliffe,INC0000000259,Closed,Howard Johnson,2023-10-07 03:55:00,2023-11-05 01:31:00.000000000,employee,Email client crashes unexpectedly,Software,2 - High,Software
+2023-11-05 02:01:00.000000000,Beth Anglin,ITIL User,INC0000000260,Closed,Luke Wilson,2023-10-07 04:25:00,2023-11-05 02:01:00.000000000,system,Can't connect to the office VPN,Network,2 - High,Network
+2023-11-05 04:24:00.000000000,Fred Luddy,Bud Richman,INC0000000261,Resolved,Fred Luddy,2023-10-07 06:48:00,2023-11-05 04:24:00.000000000,admin,Database connectivity issue,Database,1 - Critical,Database
+2023-11-05 12:09:00.000000000,Beth Anglin,Bud Richman,INC0000000262,Resolved,Luke Wilson,2023-10-07 14:33:00,2023-11-05 12:09:00.000000000,employee,Internet connectivity issue,Network,2 - High,Network
+2023-11-05 20:15:00.000000000,Beth Anglin,David Loo,INC0000000263,Closed,Charlie Whitherspoon,2023-10-07 22:39:00,2023-11-05 20:15:00.000000000,admin,Database connection issue in HR application,Database,2 - High,Database
+2023-11-06 02:18:00.000000000,Fred Luddy,Bud Richman,INC0000000264,Resolved,Howard Johnson,2023-10-08 02:18:00,2023-11-06 02:18:00.000000000,employee,Email system failure,Network,1 - Critical,Software
+2023-11-06 04:39:00.000000000,Howard Johnson,Bud Richman,INC0000000265,Resolved,Luke Wilson,2023-10-08 04:39:00,2023-11-06 04:39:00.000000000,system,Cannot connect to company VPN,Network,2 - High,Network
+2023-11-06 05:56:00.000000000,Howard Johnson,David Loo,INC0000000266,Resolved,Beth Anglin,2023-10-08 05:56:00,2023-11-06 05:56:00.000000000,system,Email server is down,Network,1 - Critical,Network
+2023-11-06 23:03:00.000000000,Beth Anglin,ITIL User,INC0000000267,Closed,Beth Anglin,2023-10-08 23:03:00,2023-11-06 23:03:00.000000000,employee,Unable to connect to the VPN,Network,2 - High,Network
+2023-11-07 07:32:00.000000000,Charlie Whitherspoon,David Loo,INC0000000268,Closed,Charlie Whitherspoon,2023-10-09 05:08:00,2023-11-07 07:32:00.000000000,employee,Unable to access office Network,Network,2 - High,Network
+2023-11-08 07:51:00.000000000,Luke Wilson,David Loo,INC0000000269,Resolved,Luke Wilson,2023-10-10 03:03:00,2023-11-08 07:51:00.000000000,system,Email client not syncing properly,Service Desk,2 - High,Software
+2023-11-09 07:37:00.000000000,Howard Johnson,Don Goodliffe,INC0000000270,Closed,Charlie Whitherspoon,2023-10-11 00:25:00,2023-11-09 07:37:00.000000000,employee,Email server connectivity issue,Network,2 - High,Network
+2023-11-09 23:22:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000271,Resolved,Howard Johnson,2023-10-11 16:10:00,2023-11-09 23:22:00.000000000,system,Unable to login to the database,Database,2 - High,Database
+2023-11-10 17:10:00.000000000,Howard Johnson,David Loo,INC0000000272,Resolved,Luke Wilson,2023-10-12 07:34:00,2023-11-10 17:10:00.000000000,employee,Cannot connect to VPN,Network,2 - High,Network
+2023-11-11 05:02:00.000000000,Luke Wilson,David Loo,INC0000000273,Resolved,Beth Anglin,2023-10-12 19:26:00,2023-11-11 05:02:00.000000000,employee,Unable to connect to VPN,Network,2 - High,Network
+2023-11-11 05:22:00.000000000,Fred Luddy,David Loo,INC0000000274,Closed,Beth Anglin,2023-10-12 19:46:00,2023-11-11 05:22:00.000000000,employee,Unable to connect to VPN,Network,2 - High,Network
+2023-11-12 07:47:00.000000000,Luke Wilson,Bud Richman,INC0000000275,Resolved,Beth Anglin,2023-10-13 19:47:00,2023-11-12 07:47:00.000000000,employee,Cannot connect to VPN,Network,2 - High,Network
+2023-11-13 05:44:00.000000000,Howard Johnson,David Loo,INC0000000276,Closed,Fred Luddy,2023-10-14 15:20:00,2023-11-13 05:44:00.000000000,admin,Email service malfunction,Network,2 - High,Database
+2023-11-13 08:51:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000277,Closed,Howard Johnson,2023-10-14 18:27:00,2023-11-13 08:51:00.000000000,employee,Software update caused system crash,Software,2 - High,Software
+2023-11-14 21:57:00.000000000,Howard Johnson,Don Goodliffe,INC0000000278,Closed,Howard Johnson,2023-10-16 02:45:00,2023-11-14 21:57:00.000000000,system,Can't connect to the server,Network,2 - High,Network
+2023-11-18 15:31:00.000000000,Beth Anglin,ITIL User,INC0000000279,Closed,Beth Anglin,2023-10-19 13:07:00,2023-11-18 15:31:00.000000000,admin,Database connection interrupted,Database,2 - High,Database
+2023-11-18 20:15:00.000000000,Howard Johnson,ITIL User,INC0000000280,Closed,Beth Anglin,2023-10-19 17:51:00,2023-11-18 20:15:00.000000000,system,Email client not syncing,Software,2 - High,Software
+2023-11-20 08:55:00.000000000,Beth Anglin,David Loo,INC0000000281,Closed,Charlie Whitherspoon,2023-10-21 01:43:00,2023-11-20 08:55:00.000000000,admin,Server connectivity issues,Network,2 - High,Network
+2023-11-20 23:10:00.000000000,Howard Johnson,David Loo,INC0000000282,Closed,Beth Anglin,2023-10-21 15:58:00,2023-11-20 23:10:00.000000000,admin,Email client crashes repeatedly,Software,2 - High,Software
+2023-11-21 21:48:00.000000000,Charlie Whitherspoon,David Loo,INC0000000283,Closed,Beth Anglin,2023-10-22 12:12:00,2023-11-21 21:48:00.000000000,employee,Software update causes instability,Software,2 - High,Software
+2023-11-22 02:45:00.000000000,Luke Wilson,Bud Richman,INC0000000284,Resolved,Howard Johnson,2023-10-22 17:09:00,2023-11-22 02:45:00.000000000,employee,Database connectivity issue,Database,2 - High,Database
+2023-11-22 14:30:00.000000000,Beth Anglin,ITIL User,INC0000000285,Resolved,Charlie Whitherspoon,2023-10-23 02:30:00,2023-11-22 14:30:00.000000000,system,Email client not syncing,Service Desk,2 - High,Software
+2023-11-23 20:01:00.000000000,Beth Anglin,David Loo,INC0000000286,Closed,Howard Johnson,2023-10-24 05:37:00,2023-11-23 20:01:00.000000000,system,Database connectivity issue on server2,Database,1 - Critical,Database
+2023-11-25 00:29:00.000000000,Howard Johnson,David Loo,INC0000000287,Closed,Luke Wilson,2023-10-25 07:41:00,2023-11-25 00:29:00.000000000,employee,Application failure in production,Software,1 - Critical,Hardware
+2023-11-25 02:31:00.000000000,Beth Anglin,David Loo,INC0000000288,Resolved,Fred Luddy,2023-10-25 09:43:00,2023-11-25 02:31:00.000000000,admin,Email client not syncing,Software,2 - High,Software
+2023-11-26 02:26:00.000000000,Fred Luddy,ITIL User,INC0000000289,Resolved,Beth Anglin,2023-10-26 07:14:00,2023-11-26 02:26:00.000000000,employee,Unable to access emails,Service Desk,2 - High,Software
+2023-11-26 10:22:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000290,Resolved,Charlie Whitherspoon,2023-10-26 15:10:00,2023-11-26 10:22:00.000000000,employee,Internet connection unstable,Network,2 - High,Network
+2023-11-27 00:04:00.000000000,Beth Anglin,Don Goodliffe,INC0000000291,Closed,Beth Anglin,2023-10-27 02:28:00,2023-11-27 00:04:00.000000000,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-11-28 22:38:00.000000000,Beth Anglin,David Loo,INC0000000292,Resolved,Beth Anglin,2023-10-28 22:38:00,2023-11-28 22:38:00.000000000,admin,Server downtime issue,Network,1 - Critical,Hardware
+2023-11-29 15:27:00.000000000,Howard Johnson,ITIL User,INC0000000293,Resolved,Beth Anglin,2023-10-29 13:03:00,2023-11-29 15:27:00.000000000,employee,Email application fails to load,Software,4 - Low,Software
+2023-11-30 12:13:00.000000000,Charlie Whitherspoon,David Loo,INC0000000294,Closed,Howard Johnson,2023-10-30 07:25:00,2023-11-30 12:13:00.000000000,admin,Database connection issue,Database,2 - High,Database
+2023-11-30 17:02:00.000000000,Howard Johnson,David Loo,INC0000000295,Closed,Howard Johnson,2023-10-30 12:14:00,2023-11-30 17:02:00.000000000,employee,Unable to access the corporate VPN,Network,2 - High,Network
+2023-11-30 19:01:00.000000000,Beth Anglin,David Loo,INC0000000296,Resolved,Fred Luddy,2023-10-30 14:13:00,2023-11-30 19:01:00.000000000,admin,Cannot connect to WiFi,Network,2 - High,Network
+2023-12-01 13:59:00.000000000,Beth Anglin,David Loo,INC0000000297,Closed,Howard Johnson,2023-10-31 06:47:00,2023-12-01 13:59:00.000000000,system,Unable to access VPN service,Network,2 - High,Network
+2023-12-02 11:33:00.000000000,Howard Johnson,David Loo,INC0000000298,Resolved,Beth Anglin,2023-11-01 01:57:00,2023-12-02 11:33:00.000000000,employee,Unable to connect to the VPN,Network,2 - High,Hardware
+2023-12-02 18:31:00.000000000,Fred Luddy,Bud Richman,INC0000000299,Resolved,Beth Anglin,2023-11-01 08:55:00,2023-12-02 18:31:00.000000000,system,Email server not responding,Network,1 - Critical,Network
+2023-12-05 03:54:00.000000000,Fred Luddy,Bud Richman,INC0000000300,Resolved,Fred Luddy,2023-11-03 13:30:00,2023-12-05 03:54:00.000000000,employee,Email system not working properly,Software,2 - High,Software
+2023-12-05 18:49:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000301,Closed,Beth Anglin,2023-11-04 02:01:00,2023-12-05 18:49:00.000000000,system,Unable to establish VPN connection,Network,2 - High,Network
+2023-12-05 21:16:00.000000000,Luke Wilson,ITIL User,INC0000000302,Closed,Fred Luddy,2023-11-04 04:28:00,2023-12-05 21:16:00.000000000,employee,Email server down,Network,1 - Critical,Network
+2023-12-07 01:27:00.000000000,Beth Anglin,Bud Richman,INC0000000303,Closed,Luke Wilson,2023-11-05 06:15:00,2023-12-07 01:27:00.000000000,employee,Unable to access email,Network,2 - High,Software
+2023-12-07 02:28:00.000000000,Beth Anglin,ITIL User,INC0000000304,Resolved,Fred Luddy,2023-11-05 07:16:00,2023-12-07 02:28:00.000000000,admin,Outage in the database server,Database,1 - Critical,Database
+2023-12-09 05:07:00.000000000,Beth Anglin,ITIL User,INC0000000305,Closed,Fred Luddy,2023-11-07 05:07:00,2023-12-09 05:07:00.000000000,system,Email system not working properly,Network,2 - High,Software
+2023-12-09 10:05:00.000000000,Beth Anglin,Bud Richman,INC0000000306,Resolved,Beth Anglin,2023-11-07 10:05:00,2023-12-09 10:05:00.000000000,employee,Email client is not working properly,Software,3 - Moderate,Software
+2023-12-09 16:11:00.000000000,Howard Johnson,Don Goodliffe,INC0000000307,Resolved,Charlie Whitherspoon,2023-11-07 16:11:00,2023-12-09 16:11:00.000000000,system,Server connectivity issue,Network,2 - High,Network
+2023-12-10 17:59:00.000000000,Fred Luddy,Don Goodliffe,INC0000000308,Closed,Luke Wilson,2023-11-08 15:35:00,2023-12-10 17:59:00.000000000,employee,Database connection issue,Database,2 - High,Database
+2023-12-11 06:45:00.000000000,Beth Anglin,Bud Richman,INC0000000309,Resolved,Howard Johnson,2023-11-09 01:57:00,2023-12-11 06:45:00.000000000,employee,Cannot log in to CRM software,Software,2 - High,Software
+2023-12-11 19:30:00.000000000,Beth Anglin,David Loo,INC0000000310,Resolved,Beth Anglin,2023-11-09 14:42:00,2023-12-11 19:30:00.000000000,employee,Unable to connect to shared drive,Network,2 - High,Hardware
+2023-12-12 02:05:00.000000000,Howard Johnson,ITIL User,INC0000000311,Closed,Charlie Whitherspoon,2023-11-09 21:17:00,2023-12-12 02:05:00.000000000,employee,Unexpected system shutdown,Hardware,2 - High,Hardware
+2023-12-12 17:17:59.999999999,Luke Wilson,Don Goodliffe,INC0000000312,Closed,Charlie Whitherspoon,2023-11-10 10:06:00,2023-12-12 17:17:59.999999999,admin,Unable to login to the VPN,Network,2 - High,Network
+2023-12-13 13:15:00.000000000,Howard Johnson,ITIL User,INC0000000313,Closed,Luke Wilson,2023-11-11 03:39:00,2023-12-13 13:15:00.000000000,system,Unable to login to VPN,Network,2 - High,Software
+2023-12-14 17:43:00.000000000,Fred Luddy,David Loo,INC0000000314,Resolved,Howard Johnson,2023-11-12 05:43:00,2023-12-14 17:43:00.000000000,admin,Cannot connect to server,Network,2 - High,Network
+2023-12-14 20:02:00.000000000,Howard Johnson,Bud Richman,INC0000000315,Resolved,Fred Luddy,2023-11-12 08:02:00,2023-12-14 20:02:00.000000000,system,Email system is not sending messages,Network,2 - High,Software
+2023-12-14 22:00:00.000000000,Beth Anglin,David Loo,INC0000000316,Closed,Fred Luddy,2023-11-12 10:00:00,2023-12-14 22:00:00.000000000,system,Unable to connect to VPN,Network,2 - High,Network
+2023-12-15 07:05:00.000000000,Charlie Whitherspoon,David Loo,INC0000000317,Closed,Beth Anglin,2023-11-12 19:05:00,2023-12-15 07:05:00.000000000,admin,Unable to access company's VPN,Network,2 - High,Network
+2023-12-15 16:56:00.000000000,Luke Wilson,ITIL User,INC0000000318,Resolved,Luke Wilson,2023-11-13 02:32:00,2023-12-15 16:56:00.000000000,employee,Cannot connect to office WiFi,Network,3 - Moderate,Network
+2023-12-15 18:18:00.000000000,Beth Anglin,Don Goodliffe,INC0000000319,Closed,Charlie Whitherspoon,2023-11-13 03:54:00,2023-12-15 18:18:00.000000000,employee,Cannot connect to office network,Network,3 - Moderate,Network
+2023-12-15 20:19:00.000000000,Beth Anglin,Bud Richman,INC0000000320,Resolved,Howard Johnson,2023-11-13 05:55:00,2023-12-15 20:19:00.000000000,system,Unable to access the database,Database,2 - High,Database
+2023-12-16 07:47:00.000000000,Howard Johnson,David Loo,INC0000000321,Closed,Fred Luddy,2023-11-13 17:23:00,2023-12-16 07:47:00.000000000,admin,Unable to access internal database,Database,2 - High,Database
+2023-12-16 20:03:00.000000000,Howard Johnson,ITIL User,INC0000000322,Closed,Luke Wilson,2023-11-14 03:15:00,2023-12-16 20:03:00.000000000,system,Unable to connect to database,Database,1 - Critical,Database
+2023-12-16 20:43:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000323,Resolved,Charlie Whitherspoon,2023-11-14 03:55:00,2023-12-16 20:43:00.000000000,employee,Database server not responding,Database,1 - Critical,Database
+2023-12-16 21:35:00.000000000,Howard Johnson,David Loo,INC0000000324,Closed,Luke Wilson,2023-11-14 04:47:00,2023-12-16 21:35:00.000000000,employee,Database server connection issue,Database,2 - High,Database
+2023-12-17 00:13:00.000000000,Fred Luddy,Bud Richman,INC0000000325,Resolved,Beth Anglin,2023-11-14 07:25:00,2023-12-17 00:13:00.000000000,system,Unable to connect to database,Database,2 - High,Database
+2023-12-17 08:09:00.000000000,Fred Luddy,David Loo,INC0000000326,Closed,Charlie Whitherspoon,2023-11-14 15:21:00,2023-12-17 08:09:00.000000000,system,Cannot login to my email,Service Desk,3 - Moderate,Inquiry / Help
+2023-12-18 12:20:59.999999999,Fred Luddy,Bud Richman,INC0000000327,Closed,Charlie Whitherspoon,2023-11-15 17:09:00,2023-12-18 12:20:59.999999999,admin,Database connection issue on server X,Database,2 - High,Database
+2023-12-19 05:03:00.000000000,Luke Wilson,Don Goodliffe,INC0000000328,Resolved,Fred Luddy,2023-11-16 07:27:00,2023-12-19 05:03:00.000000000,system,Cannot connect to VPN,Network,2 - High,Network
+2023-12-20 01:43:00.000000000,Luke Wilson,David Loo,INC0000000329,Closed,Charlie Whitherspoon,2023-11-17 01:43:00,2023-12-20 01:43:00.000000000,employee,Issues with database connection,Database,2 - High,Database
+2023-12-20 14:39:00.000000000,Fred Luddy,David Loo,INC0000000330,Resolved,Fred Luddy,2023-11-17 14:39:00,2023-12-20 14:39:00.000000000,system,Email system malfunctioning,Network,2 - High,Hardware
+2023-12-20 19:40:00.000000000,Beth Anglin,Don Goodliffe,INC0000000331,Closed,Howard Johnson,2023-11-17 19:40:00,2023-12-20 19:40:00.000000000,system,Database connection issue,Database,2 - High,Network
+2023-12-21 17:27:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000332,Resolved,Charlie Whitherspoon,2023-11-18 15:03:00,2023-12-21 17:27:00.000000000,system,Cannot connect to VPN,Network,2 - High,Network
+2023-12-21 23:17:00.000000000,Howard Johnson,Bud Richman,INC0000000333,Resolved,Beth Anglin,2023-11-18 20:53:00,2023-12-21 23:17:00.000000000,admin,Database connection failure,Database,2 - High,Database
+2023-12-22 00:55:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000334,Closed,Howard Johnson,2023-11-18 22:31:00,2023-12-22 00:55:00.000000000,system,Cannot connect to VPN,Network,2 - High,Network
+2023-12-23 19:20:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000335,Closed,Luke Wilson,2023-11-20 12:08:00,2023-12-23 19:20:00.000000000,employee,Unable to access application XYZ,Software,2 - High,Software
+2023-12-24 20:09:59.999999999,Beth Anglin,Don Goodliffe,INC0000000336,Resolved,Howard Johnson,2023-11-21 10:34:00,2023-12-24 20:09:59.999999999,system,Unable to access database,Database,2 - High,Database
+2023-12-24 21:44:59.999999999,Charlie Whitherspoon,Bud Richman,INC0000000337,Resolved,Luke Wilson,2023-11-21 12:09:00,2023-12-24 21:44:59.999999999,admin,Email application not syncing properly,Service Desk,2 - High,Software
+2023-12-25 02:54:59.999999999,Charlie Whitherspoon,ITIL User,INC0000000338,Resolved,Luke Wilson,2023-11-21 17:19:00,2023-12-25 02:54:59.999999999,system,Email server is not responding,Network,2 - High,Hardware
+2023-12-25 18:10:00.000000000,Luke Wilson,Bud Richman,INC0000000339,Closed,Howard Johnson,2023-11-22 06:10:00,2023-12-25 18:10:00.000000000,system,Cannot connect to VPN,Network,2 - High,Network
+2023-12-26 09:58:00.000000000,Luke Wilson,David Loo,INC0000000340,Closed,Beth Anglin,2023-11-22 21:58:00,2023-12-26 09:58:00.000000000,system,Database connection issue in employee portal,Database,2 - High,Database
+2023-12-26 15:09:00.000000000,Howard Johnson,David Loo,INC0000000341,Resolved,Luke Wilson,2023-11-23 00:45:00,2023-12-26 15:09:00.000000000,system,Cannot connect to database,Database,2 - High,Database
+2023-12-26 19:48:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000342,Resolved,Charlie Whitherspoon,2023-11-23 05:24:00,2023-12-26 19:48:00.000000000,system,Application XYZ is not responding,Software,2 - High,Software
+2023-12-26 22:25:00.000000000,Howard Johnson,ITIL User,INC0000000343,Closed,Beth Anglin,2023-11-23 08:01:00,2023-12-26 22:25:00.000000000,system,Software update failure,Software,2 - High,Software
+2023-12-27 06:12:00.000000000,Beth Anglin,ITIL User,INC0000000344,Closed,Luke Wilson,2023-11-23 15:48:00,2023-12-27 06:12:00.000000000,system,WiFi connection failure in third floor,Network,2 - High,Network
+2023-12-27 12:00:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000345,Resolved,Beth Anglin,2023-11-23 21:36:00,2023-12-27 12:00:00.000000000,employee,Cannot connect to office VPN,Network,2 - High,Network
+2023-12-28 05:12:00.000000000,Luke Wilson,Don Goodliffe,INC0000000346,Resolved,Luke Wilson,2023-11-24 12:24:00,2023-12-28 05:12:00.000000000,employee,Database connection issues,Database,2 - High,Database
+2023-12-28 08:46:00.000000000,Howard Johnson,ITIL User,INC0000000347,Closed,Luke Wilson,2023-11-24 15:58:00,2023-12-28 08:46:00.000000000,admin,Cannot connect to the company VPN,Network,2 - High,Network
+2023-12-28 19:48:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000348,Closed,Howard Johnson,2023-11-25 00:36:00,2023-12-28 19:48:00.000000000,system,Printer not working,Hardware,2 - High,Hardware
+2023-12-28 21:10:00.000000000,Beth Anglin,David Loo,INC0000000349,Closed,Howard Johnson,2023-11-25 01:58:00,2023-12-28 21:10:00.000000000,system,Cannot connect to the internet,Network,3 - Moderate,Network
+2023-12-29 03:31:00.000000000,Fred Luddy,Bud Richman,INC0000000350,Closed,Charlie Whitherspoon,2023-11-25 08:19:00,2023-12-29 03:31:00.000000000,employee,Email system is not working,Network,1 - Critical,Software
+2023-12-29 22:08:59.999999999,Luke Wilson,David Loo,INC0000000351,Resolved,Luke Wilson,2023-11-26 00:33:00,2023-12-29 22:08:59.999999999,admin,Cannot access the company's secure network,Network,1 - Critical,Network
+2023-12-30 14:25:59.999999999,Beth Anglin,David Loo,INC0000000352,Closed,Charlie Whitherspoon,2023-11-26 16:50:00,2023-12-30 14:25:59.999999999,system,Server Connection Issue,Network,2 - High,Network
+2023-12-30 15:01:59.999999999,Fred Luddy,ITIL User,INC0000000353,Closed,Howard Johnson,2023-11-26 17:26:00,2023-12-30 15:01:59.999999999,admin,Unable to connect to VPN,Network,2 - High,Network
+2023-12-31 07:33:00.000000000,Beth Anglin,Don Goodliffe,INC0000000354,Closed,Luke Wilson,2023-11-27 07:33:00,2023-12-31 07:33:00.000000000,system,Email server is down,Network,1 - Critical,Network
+2023-12-31 09:31:00.000000000,Fred Luddy,ITIL User,INC0000000355,Resolved,Fred Luddy,2023-11-27 09:31:00,2023-12-31 09:31:00.000000000,system,Unable to access database,Database,2 - High,Database
+2023-12-31 10:19:00.000000000,Luke Wilson,Bud Richman,INC0000000356,Resolved,Fred Luddy,2023-11-27 10:19:00,2023-12-31 10:19:00.000000000,employee,Internet connection dropping intermittently,Network,2 - High,Network
+2023-12-31 21:30:00.000000000,Fred Luddy,Don Goodliffe,INC0000000357,Resolved,Luke Wilson,2023-11-27 21:30:00,2023-12-31 21:30:00.000000000,admin,Email system not functioning,Network,1 - Critical,Software
+2024-01-01 19:20:00.000000000,Beth Anglin,David Loo,INC0000000358,Closed,Luke Wilson,2023-11-28 16:56:00,2024-01-01 19:20:00.000000000,system,Email system not working properly,Network,3 - Moderate,Software
+2024-01-01 21:16:00.000000000,Fred Luddy,Don Goodliffe,INC0000000359,Resolved,Luke Wilson,2023-11-28 18:52:00,2024-01-01 21:16:00.000000000,employee,Unable to connect to the database,Database,2 - High,Database
+2024-01-02 07:07:00.000000000,Howard Johnson,David Loo,INC0000000360,Closed,Luke Wilson,2023-11-29 02:19:00,2024-01-02 07:07:00.000000000,employee,Email server is not responding,Network,2 - High,Network
+2024-01-02 13:48:00.000000000,Charlie Whitherspoon,David Loo,INC0000000361,Closed,Charlie Whitherspoon,2023-11-29 09:00:00,2024-01-02 13:48:00.000000000,system,Unable to connect to the database server,Database,2 - High,Database
+2024-01-02 18:53:00.000000000,Luke Wilson,Bud Richman,INC0000000362,Closed,Luke Wilson,2023-11-29 14:05:00,2024-01-02 18:53:00.000000000,employee,Frequent database disconnections reported,Database,2 - High,Database
+2024-01-02 22:12:00.000000000,Beth Anglin,Bud Richman,INC0000000363,Resolved,Luke Wilson,2023-11-29 17:24:00,2024-01-02 22:12:00.000000000,employee,Unable to access corporate VPN,Network,2 - High,Network
+2024-01-03 21:38:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000364,Resolved,Charlie Whitherspoon,2023-11-30 14:26:00,2024-01-03 21:38:00.000000000,admin,SQL database not responding,Database,2 - High,Database
+2024-01-04 22:11:59.999999999,Fred Luddy,Don Goodliffe,INC0000000365,Closed,Beth Anglin,2023-12-01 12:36:00,2024-01-04 22:11:59.999999999,employee,Unable to access VPN,Network,2 - High,Network
+2024-01-05 14:11:00.000000000,Fred Luddy,Don Goodliffe,INC0000000366,Resolved,Howard Johnson,2023-12-02 02:11:00,2024-01-05 14:11:00.000000000,employee,Email client is not syncing,Software,2 - High,Software
+2024-01-05 19:14:00.000000000,Howard Johnson,David Loo,INC0000000367,Closed,Beth Anglin,2023-12-02 07:14:00,2024-01-05 19:14:00.000000000,employee,SMTP server not responding,Network,2 - High,Software
+2024-01-06 10:51:00.000000000,Fred Luddy,Bud Richman,INC0000000368,Closed,Howard Johnson,2023-12-02 22:51:00,2024-01-06 10:51:00.000000000,admin,Software update caused system error,Software,2 - High,Software
+2024-01-06 15:26:00.000000000,Howard Johnson,Bud Richman,INC0000000369,Closed,Charlie Whitherspoon,2023-12-03 01:02:00,2024-01-06 15:26:00.000000000,system,The printer is not responding,Service Desk,2 - High,Hardware
+2024-01-06 23:49:00.000000000,Fred Luddy,Bud Richman,INC0000000370,Closed,Luke Wilson,2023-12-03 09:25:00,2024-01-06 23:49:00.000000000,employee,Cannot connect to VPN,Network,2 - High,Network
+2024-01-07 01:37:00.000000000,Fred Luddy,David Loo,INC0000000371,Resolved,Charlie Whitherspoon,2023-12-03 11:13:00,2024-01-07 01:37:00.000000000,admin,VPN Connection Issue,Network,2 - High,Network
+2024-01-07 18:58:00.000000000,Fred Luddy,Don Goodliffe,INC0000000372,Resolved,Beth Anglin,2023-12-04 02:10:00,2024-01-07 18:58:00.000000000,system,Unable to access company database,Database,2 - High,Database
+2024-01-08 12:18:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000373,Resolved,Fred Luddy,2023-12-04 19:30:00,2024-01-08 12:18:00.000000000,admin,Database connectivity issue reported,Database,2 - High,Database
+2024-01-11 15:18:00.000000000,Charlie Whitherspoon,David Loo,INC0000000374,Closed,Howard Johnson,2023-12-07 15:18:00,2024-01-11 15:18:00.000000000,employee,Unable to access the internal database,Database,2 - High,Database
+2024-01-11 22:12:00.000000000,Luke Wilson,Don Goodliffe,INC0000000375,Closed,Luke Wilson,2023-12-07 22:12:00,2024-01-11 22:12:00.000000000,system,Web app loading error on different browsers,Software,2 - High,Software
+2024-01-12 18:37:00.000000000,Luke Wilson,Don Goodliffe,INC0000000376,Resolved,Howard Johnson,2023-12-08 16:13:00,2024-01-12 18:37:00.000000000,employee,"Email server is down, affecting multiple departments",Network,1 - Critical,Network
+2024-01-12 19:23:00.000000000,Fred Luddy,Bud Richman,INC0000000377,Resolved,Charlie Whitherspoon,2023-12-08 16:59:00,2024-01-12 19:23:00.000000000,system,Database connection issue,Database,2 - High,Database
+2024-01-13 12:37:00.000000000,Beth Anglin,ITIL User,INC0000000378,Closed,Luke Wilson,2023-12-09 07:49:00,2024-01-13 12:37:00.000000000,system,Internet connection issue,Network,2 - High,Network
+2024-01-14 18:21:00.000000000,Fred Luddy,ITIL User,INC0000000379,Resolved,Charlie Whitherspoon,2023-12-10 11:09:00,2024-01-14 18:21:00.000000000,employee,Internet connection issue,Network,2 - High,Network
+2024-01-15 06:42:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000380,Resolved,Howard Johnson,2023-12-10 23:30:00,2024-01-15 06:42:00.000000000,admin,Website loading extremely slow,Network,2 - High,Software
+2024-01-15 17:25:59.999999999,Howard Johnson,David Loo,INC0000000381,Resolved,Luke Wilson,2023-12-11 07:50:00,2024-01-15 17:25:59.999999999,admin,Email server not responding,Network,2 - High,Network
+2024-01-16 12:13:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000382,Closed,Fred Luddy,2023-12-12 00:13:00,2024-01-16 12:13:00.000000000,admin,Cannot connect to the internet,Network,2 - High,Network
+2024-01-16 15:04:00.000000000,Fred Luddy,ITIL User,INC0000000383,Resolved,Luke Wilson,2023-12-12 03:04:00,2024-01-16 15:04:00.000000000,admin,Cannot connect to WiFi,Network,2 - High,Network
+2024-01-16 23:46:00.000000000,Howard Johnson,David Loo,INC0000000384,Resolved,Luke Wilson,2023-12-12 11:46:00,2024-01-16 23:46:00.000000000,system,Internal server error on company website,Network,2 - High,Hardware
+2024-01-17 10:00:00.000000000,Howard Johnson,David Loo,INC0000000385,Closed,Luke Wilson,2023-12-12 22:00:00,2024-01-17 10:00:00.000000000,employee,Server connectivity issues,Network,2 - High,Network
+2024-01-17 17:24:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000386,Closed,Luke Wilson,2023-12-13 03:00:00,2024-01-17 17:24:00.000000000,admin,Database server connection issue,Database,2 - High,Database
+2024-01-17 18:08:00.000000000,Beth Anglin,ITIL User,INC0000000387,Resolved,Howard Johnson,2023-12-13 03:44:00,2024-01-17 18:08:00.000000000,admin,Cannot connect to office WiFi,Network,3 - Moderate,Network
+2024-01-18 17:45:00.000000000,Luke Wilson,David Loo,INC0000000388,Closed,Beth Anglin,2023-12-14 00:57:00,2024-01-18 17:45:00.000000000,admin,Cannot connect to VPN,Network,2 - High,Network
+2024-01-20 12:19:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000389,Closed,Howard Johnson,2023-12-15 17:07:00,2024-01-20 12:19:00.000000000,system,Email client not working properly,Software,2 - High,Software
+2024-01-20 16:57:00.000000000,Beth Anglin,Bud Richman,INC0000000390,Resolved,Beth Anglin,2023-12-15 21:45:00,2024-01-20 16:57:00.000000000,system,Database connection lost,Database,1 - Critical,Database
+2024-01-21 06:50:59.999999999,Charlie Whitherspoon,Bud Richman,INC0000000391,Resolved,Beth Anglin,2023-12-16 09:15:00,2024-01-21 06:50:59.999999999,admin,Unable to access email client,Service Desk,2 - High,Software
+2024-01-21 07:23:59.999999999,Fred Luddy,ITIL User,INC0000000392,Resolved,Beth Anglin,2023-12-16 09:48:00,2024-01-21 07:23:59.999999999,system,Internet connection issue,Network,2 - High,Network
+2024-01-23 02:52:00.000000000,Howard Johnson,ITIL User,INC0000000393,Closed,Howard Johnson,2023-12-18 00:28:00,2024-01-23 02:52:00.000000000,employee,Issue with VPN connectivity,Network,2 - High,Network
+2024-01-23 10:49:00.000000000,Fred Luddy,ITIL User,INC0000000394,Resolved,Luke Wilson,2023-12-18 08:25:00,2024-01-23 10:49:00.000000000,system,Database connection issue on server,Database,2 - High,Database
+2024-01-23 14:02:00.000000000,Fred Luddy,Don Goodliffe,INC0000000395,Resolved,Luke Wilson,2023-12-18 11:38:00,2024-01-23 14:02:00.000000000,employee,SQL server reporting issue,Database,3 - Moderate,Database
+2024-01-23 15:57:00.000000000,Luke Wilson,David Loo,INC0000000396,Closed,Howard Johnson,2023-12-18 13:33:00,2024-01-23 15:57:00.000000000,employee,Unable to access the intranet,Network,2 - High,Network
+2024-01-24 21:14:00.000000000,Beth Anglin,ITIL User,INC0000000397,Closed,Fred Luddy,2023-12-19 16:26:00,2024-01-24 21:14:00.000000000,system,Database connection issue,Database,2 - High,Software
+2024-01-24 22:15:00.000000000,Fred Luddy,ITIL User,INC0000000398,Closed,Fred Luddy,2023-12-19 17:27:00,2024-01-24 22:15:00.000000000,employee,Unable to access the network from office,Network,2 - High,Network
+2024-01-25 12:43:00.000000000,Beth Anglin,Bud Richman,INC0000000399,Resolved,Howard Johnson,2023-12-20 05:31:00,2024-01-25 12:43:00.000000000,system,Internet connection issue on floor 3,Network,2 - High,Network
+2024-01-26 03:20:00.000000000,Howard Johnson,ITIL User,INC0000000400,Closed,Howard Johnson,2023-12-20 20:08:00,2024-01-26 03:20:00.000000000,system,Unable to access database,Database,2 - High,Database
+2024-01-26 18:17:59.999999999,Charlie Whitherspoon,David Loo,INC0000000401,Resolved,Fred Luddy,2023-12-21 08:42:00,2024-01-26 18:17:59.999999999,system,Server not responding,Network,1 - Critical,Network
+2024-01-26 19:57:59.999999999,Beth Anglin,Don Goodliffe,INC0000000402,Closed,Howard Johnson,2023-12-21 10:22:00,2024-01-26 19:57:59.999999999,system,Connectivity issues with VPN,Network,2 - High,Hardware
+2024-01-26 22:50:59.999999999,Beth Anglin,Bud Richman,INC0000000403,Resolved,Howard Johnson,2023-12-21 13:15:00,2024-01-26 22:50:59.999999999,admin,Cannot connect to VPN,Network,2 - High,Network
+2024-01-27 02:57:59.999999999,Beth Anglin,Don Goodliffe,INC0000000404,Resolved,Charlie Whitherspoon,2023-12-21 17:22:00,2024-01-27 02:57:59.999999999,employee,Network outage in the third floor,Network,2 - High,Network
+2024-01-27 09:06:59.999999999,Beth Anglin,ITIL User,INC0000000405,Resolved,Fred Luddy,2023-12-21 23:31:00,2024-01-27 09:06:59.999999999,admin,Unable to connect to VPN,Network,2 - High,Network
+2024-01-27 19:22:00.000000000,Fred Luddy,Don Goodliffe,INC0000000406,Closed,Charlie Whitherspoon,2023-12-22 07:22:00,2024-01-27 19:22:00.000000000,system,Database server is not responding,Database,2 - High,Database
+2024-01-27 19:47:00.000000000,Howard Johnson,David Loo,INC0000000407,Resolved,Howard Johnson,2023-12-22 07:47:00,2024-01-27 19:47:00.000000000,employee,Email server is not responding,Network,2 - High,Network
+2024-01-28 02:19:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000408,Closed,Charlie Whitherspoon,2023-12-22 14:19:00,2024-01-28 02:19:00.000000000,employee,Email system failure,Network,2 - High,Software
+2024-01-28 07:42:00.000000000,Beth Anglin,ITIL User,INC0000000409,Closed,Charlie Whitherspoon,2023-12-22 19:42:00,2024-01-28 07:42:00.000000000,employee,Can't access email account,Network,2 - High,Inquiry / Help
+2024-01-29 20:39:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000410,Resolved,Fred Luddy,2023-12-24 03:51:00,2024-01-29 20:39:00.000000000,employee,Email server not responding,Network,1 - Critical,Network
+2024-01-29 22:21:00.000000000,Fred Luddy,Don Goodliffe,INC0000000411,Resolved,Beth Anglin,2023-12-24 05:33:00,2024-01-29 22:21:00.000000000,system,Email application not Working,Software,2 - High,Software
+2024-01-30 00:57:00.000000000,Beth Anglin,ITIL User,INC0000000412,Resolved,Beth Anglin,2023-12-24 08:09:00,2024-01-30 00:57:00.000000000,system,Slow network connection,Network,3 - Moderate,Network
+2024-01-30 12:35:00.000000000,Charlie Whitherspoon,David Loo,INC0000000413,Closed,Howard Johnson,2023-12-24 19:47:00,2024-01-30 12:35:00.000000000,employee,Email system is not working,Network,2 - High,Hardware
+2024-01-31 08:56:00.000000000,Howard Johnson,David Loo,INC0000000414,Resolved,Howard Johnson,2023-12-25 13:44:00,2024-01-31 08:56:00.000000000,employee,The database server is not responding,Database,2 - High,Database
+2024-01-31 13:11:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000415,Resolved,Howard Johnson,2023-12-25 17:59:00,2024-01-31 13:11:00.000000000,employee,Internet connection issues in room 401,Network,3 - Moderate,Network
+2023-12-26 06:59:00.000000000,,David Loo,INC0000000416,New,,2023-12-26 06:59:00,,employee,Unable to access company intranet,Network,2 - High,Network
+2023-12-26 20:26:00.000000000,,Don Goodliffe,INC0000000417,New,,2023-12-26 20:26:00,,employee,Email server is not responding,Network,2 - High,Network
+2023-12-31 03:31:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000418,In Progress,,2023-12-27 03:31:00,,employee,Unable to connect to the office VPN,Network,2 - High,Network
+2023-12-28 03:47:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000419,In Progress,,2023-12-27 03:47:00,,admin,Unable to connect to database server,Database,1 - Critical,Database
+2023-12-27 10:48:00.000000000,,Bud Richman,INC0000000420,New,,2023-12-27 10:48:00,,employee,Unable to access office VPN,Network,1 - Critical,Network
+2023-12-31 21:45:00.000000000,Fred Luddy,ITIL User,INC0000000421,In Progress,,2023-12-28 21:45:00,,admin,Email client crashes frequently,Software,2 - High,Software
+2023-12-29 04:13:00.000000000,,Don Goodliffe,INC0000000422,New,,2023-12-29 04:13:00,,employee,Database connection issue,Database,2 - High,Database
+2024-01-03 07:55:00.000000000,Howard Johnson,Don Goodliffe,INC0000000423,In Progress,,2023-12-30 07:55:00,,admin,Cannot connect to the VPN network,Network,2 - High,Network
+2023-12-30 07:59:00.000000000,,Bud Richman,INC0000000424,New,,2023-12-30 07:59:00,,employee,Cannot connect to company VPN,Network,2 - High,Network
+2023-12-30 15:40:00.000000000,Fred Luddy,ITIL User,INC0000000425,In Progress,,2023-12-30 15:40:00,,admin,Unable to connect to the VPN,Network,2 - High,Network
+2023-12-31 19:42:00.000000000,Fred Luddy,David Loo,INC0000000426,In Progress,,2023-12-30 19:42:00,,admin,Excel crashed unexpectedly,Software,2 - High,Software
+2023-12-30 21:17:00.000000000,,David Loo,INC0000000427,New,,2023-12-30 21:17:00,,employee,Internet connectivity issue in the marketing department,Network,2 - High,Network
+2023-12-31 14:26:00.000000000,,ITIL User,INC0000000428,New,,2023-12-31 14:26:00,,employee,Application error on login,Software,2 - High,Software
+2023-12-31 15:54:00.000000000,,Bud Richman,INC0000000429,New,,2023-12-31 15:54:00,,employee,Access issues with the database,Database,2 - High,Database
+2024-01-02 07:49:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000430,In Progress,,2024-01-01 07:49:00,,system,Unable to connect to the VPN,Network,2 - High,Network
+2024-01-04 14:53:00.000000000,Beth Anglin,ITIL User,INC0000000431,In Progress,,2024-01-01 14:53:00,,employee,Internet connectivity issue in the marketing department,Network,2 - High,Network
+2024-01-03 00:48:00.000000000,,Don Goodliffe,INC0000000432,New,,2024-01-03 00:48:00,,employee,Email connectivity issues,Network,2 - High,Network
+2024-01-04 16:28:00.000000000,Beth Anglin,Bud Richman,INC0000000433,In Progress,,2024-01-04 16:28:00,,employee,Cannot connect to the office VPN,Network,2 - High,Network
+2024-01-05 06:40:00.000000000,Fred Luddy,David Loo,INC0000000434,In Progress,,2024-01-05 06:40:00,,employee,Connectivity issues with the VPN,Network,2 - High,Network
+2024-01-06 10:52:00.000000000,,David Loo,INC0000000435,New,,2024-01-06 10:52:00,,employee,Unable to connect to the database,Database,2 - High,Database
+2024-01-06 14:59:00.000000000,,David Loo,INC0000000436,New,,2024-01-06 14:59:00,,employee,Unable to connect to Wifi,Network,2 - High,Network
+2024-01-06 17:44:00.000000000,Howard Johnson,ITIL User,INC0000000437,In Progress,,2024-01-06 17:44:00,,admin,Cannot connect to VPN,Network,2 - High,Network
+2024-01-09 19:38:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000438,In Progress,,2024-01-06 19:38:00,,admin,Unable to connect to VPN,Network,2 - High,Network
+2024-01-07 10:17:00.000000000,,ITIL User,INC0000000439,New,,2024-01-07 10:17:00,,employee,Cannot access email account,Service Desk,2 - High,Software
+2024-01-07 11:51:00.000000000,,Don Goodliffe,INC0000000440,New,,2024-01-07 11:51:00,,employee,SQL database connection issues,Database,2 - High,Database
+2024-01-08 14:27:00.000000000,Luke Wilson,David Loo,INC0000000441,In Progress,,2024-01-07 14:27:00,,employee,Unable to establish database connection,Database,1 - Critical,Database
+2024-01-07 20:30:00.000000000,,Don Goodliffe,INC0000000442,New,,2024-01-07 20:30:00,,employee,Cannot connect to database server,Database,2 - High,Database
+2024-01-07 21:50:00.000000000,,Don Goodliffe,INC0000000443,New,,2024-01-07 21:50:00,,employee,Database server not responding,Database,1 - Critical,Database
+2024-01-08 03:20:00.000000000,,Bud Richman,INC0000000444,New,,2024-01-08 03:20:00,,employee,Internet connection issue in meeting room,Network,2 - High,Network
+2024-01-12 09:27:00.000000000,Fred Luddy,David Loo,INC0000000445,In Progress,,2024-01-08 09:27:00,,system,Email server not responding,Network,1 - Critical,Network
+2024-01-09 08:45:00.000000000,,ITIL User,INC0000000446,New,,2024-01-09 08:45:00,,employee,Unable to connect to VPN,Network,2 - High,Network
+2024-01-09 11:43:00.000000000,,Don Goodliffe,INC0000000447,New,,2024-01-09 11:43:00,,employee,Unable to access database,Database,2 - High,Database
+2024-01-09 13:45:00.000000000,,David Loo,INC0000000448,New,,2024-01-09 13:45:00,,employee,Connection error on server,Network,2 - High,Network
+2024-01-10 10:04:00.000000000,,ITIL User,INC0000000449,New,,2024-01-10 10:04:00,,employee,Email server is not responding,Network,2 - High,Network
+2024-01-14 17:35:00.000000000,Fred Luddy,Bud Richman,INC0000000450,In Progress,,2024-01-10 17:35:00,,system,Email client crashing on startup,Software,3 - Moderate,Software
+2024-01-11 22:21:00.000000000,,Don Goodliffe,INC0000000451,New,,2024-01-11 22:21:00,,employee,Email client not working properly,Service Desk,2 - High,Software
+2024-01-12 09:39:00.000000000,,ITIL User,INC0000000452,New,,2024-01-12 09:39:00,,employee,Unable to connect to VPN,Network,2 - High,Network
+2024-01-16 18:14:00.000000000,Howard Johnson,ITIL User,INC0000000453,In Progress,,2024-01-13 18:14:00,,system,Database connection issue,Database,2 - High,Database
+2024-01-14 18:24:00.000000000,Fred Luddy,ITIL User,INC0000000454,In Progress,,2024-01-13 18:24:00,,system,Unable to access company's network,Network,2 - High,Network
+2024-01-19 03:04:00.000000000,Fred Luddy,Don Goodliffe,INC0000000455,In Progress,,2024-01-15 03:04:00,,system,Unable to access database on remote server,Database,2 - High,Database
+2024-01-15 05:24:00.000000000,,ITIL User,INC0000000456,New,,2024-01-15 05:24:00,,employee,Outlook not syncing with server,Service Desk,3 - Moderate,Software
+2024-01-15 07:45:00.000000000,,ITIL User,INC0000000457,New,,2024-01-15 07:45:00,,employee,Unable to connect to VPN,Network,2 - High,Network
+2024-01-18 03:51:00.000000000,Charlie Whitherspoon,Don Goodliffe,INC0000000458,In Progress,,2024-01-16 03:51:00,,system,Internet connection issue,Network,2 - High,Network
+2024-01-19 04:56:00.000000000,Luke Wilson,ITIL User,INC0000000459,In Progress,,2024-01-16 04:56:00,,system,Unable to log in to departmental database,Database,3 - Moderate,Database
+2024-01-17 05:38:00.000000000,Beth Anglin,ITIL User,INC0000000460,In Progress,,2024-01-16 05:38:00,,admin,Email server not responding,Network,2 - High,Network
+2024-01-16 20:55:00.000000000,,ITIL User,INC0000000461,New,,2024-01-16 20:55:00,,employee,Server experiencing intermittent connectivity issues,Network,2 - High,Network
+2024-01-17 20:36:00.000000000,,David Loo,INC0000000462,New,,2024-01-17 20:36:00,,employee,Cannot connect to office VPN,Network,2 - High,Network
+2024-01-19 22:01:00.000000000,Fred Luddy,Bud Richman,INC0000000463,In Progress,,2024-01-17 22:01:00,,employee,Printer issue in the Accounts department,Hardware,3 - Moderate,Hardware
+2024-01-19 01:39:00.000000000,Beth Anglin,David Loo,INC0000000464,In Progress,,2024-01-18 01:39:00,,system,Application unexpectedly closes during use,Software,2 - High,Software
+2024-01-18 04:33:00.000000000,Beth Anglin,David Loo,INC0000000465,In Progress,,2024-01-18 04:33:00,,admin,Unable to access database,Database,1 - Critical,Database
+2024-01-18 17:26:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000466,In Progress,,2024-01-18 17:26:00,,employee,Cannot connect to VPN,Network,2 - High,Network
+2024-01-18 20:06:00.000000000,,ITIL User,INC0000000467,New,,2024-01-18 20:06:00,,employee,Email client not syncing correctly,Service Desk,2 - High,Software
+2024-01-19 02:54:00.000000000,Luke Wilson,ITIL User,INC0000000468,In Progress,,2024-01-19 02:54:00,,employee,Database connection error,Database,2 - High,Database
+2024-01-19 07:17:00.000000000,,David Loo,INC0000000469,New,,2024-01-19 07:17:00,,employee,Website connectivity issue,Network,2 - High,Inquiry / Help
+2024-01-23 23:51:00.000000000,Charlie Whitherspoon,ITIL User,INC0000000470,In Progress,,2024-01-19 23:51:00,,employee,Unable to access VPN,Network,3 - Moderate,Network
+2024-01-20 08:14:00.000000000,,ITIL User,INC0000000471,New,,2024-01-20 08:14:00,,employee,Database server is not responding,Database,1 - Critical,Database
+2024-01-21 14:34:00.000000000,Fred Luddy,Don Goodliffe,INC0000000472,In Progress,,2024-01-20 14:34:00,,employee,Unable to access the organizational network,Network,2 - High,Network
+2024-01-20 17:35:00.000000000,,Bud Richman,INC0000000473,New,,2024-01-20 17:35:00,,employee,Unable to access corporate network,Network,2 - High,Network
+2024-01-20 20:37:00.000000000,,David Loo,INC0000000474,New,,2024-01-20 20:37:00,,employee,Outdated database version,Database,2 - High,Database
+2024-01-21 04:38:00.000000000,,ITIL User,INC0000000475,New,,2024-01-21 04:38:00,,employee,Email client not working properly,Software,2 - High,Software
+2024-01-25 23:56:00.000000000,Fred Luddy,Don Goodliffe,INC0000000476,In Progress,,2024-01-21 23:56:00,,employee,Database connection issues,Database,2 - High,Database
+2024-01-22 12:43:00.000000000,,Don Goodliffe,INC0000000477,New,,2024-01-22 12:43:00,,employee,Cannot login to email account,Service Desk,2 - High,Software
+2024-01-23 00:17:00.000000000,,ITIL User,INC0000000478,New,,2024-01-23 00:17:00,,employee,Internet connection is unstable,Network,2 - High,Network
+2024-01-23 03:32:00.000000000,,Don Goodliffe,INC0000000479,New,,2024-01-23 03:32:00,,employee,Database connection error,Database,2 - High,Database
+2024-01-23 08:10:00.000000000,,Don Goodliffe,INC0000000480,New,,2024-01-23 08:10:00,,employee,Cannot connect to company VPN,Network,2 - High,Network
+2024-01-27 15:47:00.000000000,Luke Wilson,ITIL User,INC0000000481,In Progress,,2024-01-23 15:47:00,,employee,Unable to connect to the wireless network,Network,2 - High,Network
+2024-01-23 17:19:00.000000000,,Bud Richman,INC0000000482,New,,2024-01-23 17:19:00,,employee,Database connection issue,Database,2 - High,Database
+2024-01-28 01:11:00.000000000,Beth Anglin,Bud Richman,INC0000000483,In Progress,,2024-01-24 01:11:00,,system,Email client is not syncing new mails,Software,2 - High,Software
+2024-01-28 02:12:00.000000000,Beth Anglin,Don Goodliffe,INC0000000484,In Progress,,2024-01-24 02:12:00,,system,Email server down,Network,1 - Critical,Network
+2024-01-24 16:02:00.000000000,,Bud Richman,INC0000000485,New,,2024-01-24 16:02:00,,employee,Email server down,Network,1 - Critical,Network
+2024-01-25 04:16:00.000000000,,Bud Richman,INC0000000486,New,,2024-01-25 04:16:00,,employee,Email server connectivity issues,Network,2 - High,Hardware
+2024-01-26 09:19:00.000000000,,David Loo,INC0000000487,New,,2024-01-26 09:19:00,,employee,Database connection issue,Database,2 - High,Database
+2024-01-29 18:18:00.000000000,Luke Wilson,David Loo,INC0000000488,In Progress,,2024-01-26 18:18:00,,admin,Email server connectivity issue,Network,2 - High,Network
+2024-01-28 03:02:00.000000000,,Bud Richman,INC0000000489,New,,2024-01-28 03:02:00,,employee,Cannot connect to VPN,Network,2 - High,Network
+2024-01-28 10:20:00.000000000,,Don Goodliffe,INC0000000490,New,,2024-01-28 10:20:00,,employee,Outage in the central server,Network,2 - High,Network
+2024-01-30 12:34:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000491,In Progress,,2024-01-28 12:34:00,,admin,Email server not responding,Network,2 - High,Network
+2024-01-28 16:06:00.000000000,Beth Anglin,Bud Richman,INC0000000492,In Progress,,2024-01-28 16:06:00,,admin,VPN not working properly,Network,2 - High,Network
+2024-01-29 02:35:00.000000000,,Don Goodliffe,INC0000000493,New,,2024-01-29 02:35:00,,employee,Unable to access company shared drive,Network,2 - High,Network
+2024-01-29 17:25:00.000000000,,ITIL User,INC0000000494,New,,2024-01-29 17:25:00,,employee,Software install request for new employee,Software,3 - Moderate,Software
+2024-01-30 00:39:00.000000000,,Don Goodliffe,INC0000000495,New,,2024-01-30 00:39:00,,employee,Browser crashes intermittently,Software,2 - High,Software
+2024-02-01 00:00:00.000000000,Charlie Whitherspoon,Bud Richman,INC0000000496,In Progress,,2024-01-30 10:47:00,,admin,Cannot connect to the WiFi network,Network,2 - High,Network
+2024-01-31 01:09:00.000000000,,David Loo,INC0000000497,New,,2024-01-31 01:09:00,,employee,Software update installation failed,Software,2 - High,Software
+2024-01-31 07:06:00.000000000,Howard Johnson,Don Goodliffe,INC0000000498,In Progress,,2024-01-31 07:06:00,,employee,Email server is not responding,Network,2 - High,Network
+2024-02-01 00:00:00.000000000,Howard Johnson,Bud Richman,INC0000000499,In Progress,,2024-01-31 18:57:00,,admin,Cannot connect to company VPN,Network,2 - High,Network

@@ -2,75 +2,95 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-92.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "To analyze and understand how expenses vary across different geographic locations, expense categories, and approval times, with the aim of improving budget allocation and workflow efficiency.",
+        "goal": "Analyze how expenses vary across geographic locations and understand the processing efficiency based on state and processing time.",
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
-        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'location', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, geographic location, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories and locations, highlighting both the timing and the approval state of each financial entry.",
+        "dataset_description": "The dataset consists of 500 entries from the ServiceNow `fm_expense_line` table. Columns include number, opened_at, state, short_description, location, processing_time, processed_date, and user. States include Processed (134), Declined (126), Pending (123), and Submitted (117). Locations include North America (108), Africa (106), South America (98), Europe (94), and Asia (94). The average processing_time is 1.7.",
         "header": "Geo-Specific Expense Analysis (Flag 92)"
     },
     "insight_list": [
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be completed due to missing 'amount' column in the dataset",
-            "insight_value": {},
+            "insight": "Processing times vary across geographic locations. Some regions show consistently faster or slower processing compared to the global average of 1.7 units.",
+            "insight_value": {"avg_processing_time": 1.7, "North_America": 108, "Africa": 106, "South_America": 98, "Europe": 94, "Asia": 94},
             "plot": {
-                "description": "A bar plot was attempted but failed due to missing 'amount' column in the dataset"
+                "plot_type": "bar",
+                "title": "Average Processing Time by Location",
+                "x_axis": {"name": "Location"},
+                "y_axis": {"name": "Average Processing Time"},
+                "description": "Bar chart showing average processing_time for each geographic location."
             },
             "question": "How do expenses vary across different geographic locations?",
-            "actionable_insight": "No actionable insight could be generated due to missing 'amount' column in the dataset",
-            "code": "# # Calculate average amount for each location\n# avg_amount_by_location = data.groupby('location')['amount'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average amount by location\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='location', y='amount', data=avg_amount_by_location, palette='viridis')\n# plt.title('Average Expense Amount by Location')\n# plt.xlabel('Location')\n# plt.ylabel('Average Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Locations with above-average processing times should be investigated for workflow bottlenecks, resource constraints, or time zone challenges. Targeted improvements in high-latency regions can bring processing times closer to best-practice levels.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-92.csv')\n\navg_processing_by_location = data.groupby('location')['processing_time'].mean().reset_index()\navg_processing_by_location.columns = ['location', 'avg_processing_time']\navg_processing_by_location = avg_processing_by_location.sort_values('avg_processing_time', ascending=False)\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='location', y='avg_processing_time', data=avg_processing_by_location, palette='viridis')\nplt.title('Average Processing Time by Location')\nplt.xlabel('Location')\nplt.ylabel('Average Processing Time')\nfor p in bar_plot.patches:\n    bar_plot.annotate(f'{p.get_height():.2f}',\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "distribution",
-            "insight": "Analysis could not be completed due to missing 'amount' column in the dataset",
-            "insight_value": {},
+            "insight": "Geographic expense distribution is relatively uniform, with North America (108) and Africa (106) having slightly more expenses than Europe and Asia (94 each).",
+            "insight_value": {"North_America": 108, "Africa": 106, "South_America": 98, "Europe": 94, "Asia": 94},
             "plot": {
-                "description": "A bar chart was attempted to show expense distribution by category but failed due to missing 'amount' column in the dataset"
+                "plot_type": "bar",
+                "title": "Number of Expenses by Location",
+                "x_axis": {"name": "Location"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing expense count for each geographic location."
             },
             "question": "How are expenses distributed across different categories?",
-            "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by category and sum the amount\n# total_expenses_by_category = data.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_category.plot(kind='bar', color='skyblue')\n# plt.title('Total Expenses by Category')\n# plt.xlabel('Category')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "The near-even geographic distribution suggests the organization has relatively consistent expense activity across regions. Budget allocations should reflect this parity rather than over-concentrating review resources in any one location.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-92.csv')\n\nlocation_counts = data['location'].value_counts().reset_index()\nlocation_counts.columns = ['location', 'count']\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='location', y='count', data=location_counts, palette='Set2')\nplt.title('Number of Expenses by Location')\nplt.xlabel('Location')\nplt.ylabel('Number of Expenses')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "The expense state distribution is notably spread across states: Processed (134, 26.8%), Declined (126, 25.2%), Pending (123, 24.6%), and Submitted (117, 23.4%), indicating significant processing inefficiency.",
+            "insight_value": {"Processed": 134, "Declined": 126, "Pending": 123, "Submitted": 117},
             "plot": {
-                "description": "A bar chart was attempted but failed due to missing 'department' column in the dataset"
+                "plot_type": "bar",
+                "title": "Expense State Distribution",
+                "x_axis": {"name": "State"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing the nearly equal distribution of expenses across all four processing states."
             },
             "question": "What are the total expenses by department?",
-            "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# # Group by department and sum the amount\n# total_expenses_by_department = data.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_department.plot(kind='bar', color='lightcoral')\n# plt.title('Total Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "A nearly equal spread across all four states is highly unusual and suggests significant processing delays. Management should investigate why so many expenses remain in Pending and Submitted states rather than progressing to Processed.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-92.csv')\n\nstate_counts = data['state'].value_counts().reset_index()\nstate_counts.columns = ['state', 'count']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='state', y='count', data=state_counts, palette='Set3')\nplt.title('Expense State Distribution')\nplt.xlabel('State')\nplt.ylabel('Number of Expenses')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "The analysis could not be completed due to a missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "Some users submit more expense reports than others, and the top users may show patterns in states or locations that warrant closer review.",
+            "insight_value": {"total_users": "multiple", "total_expenses": 500, "avg_processing_time": 1.7},
             "plot": {
-                "description": "A bar chart was attempted but failed due to the missing department column in the dataset"
+                "plot_type": "bar",
+                "title": "Top 10 Users by Number of Expense Submissions",
+                "x_axis": {"name": "User"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing the top 10 expense submitters."
             },
             "question": "What is the average expense by department?",
-            "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# # Group by department and calculate the average amount\n# average_expense_by_department = data.groupby('department')['amount'].mean().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_expense_by_department.plot(kind='bar', color='goldenrod')\n# plt.title('Average Expense by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Expense ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "High-volume submitters should have their expenses audited, particularly if they are concentrated in specific locations or show high decline rates. Targeted review of these users can improve compliance.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-92.csv')\n\nuser_counts = data['user'].value_counts().head(10).reset_index()\nuser_counts.columns = ['user', 'count']\n\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='user', y='count', data=user_counts, palette='muted')\nplt.title('Top 10 Users by Number of Expense Submissions')\nplt.xlabel('User')\nplt.ylabel('Number of Expenses')\nplt.xticks(rotation=45, ha='right')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be completed due to missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "Decline rates vary by location, revealing whether geographic factors influence expense approval outcomes.",
+            "insight_value": {"Declined": 126, "decline_rate": "25.2%", "locations": ["North America", "Africa", "South America", "Europe", "Asia"]},
             "plot": {
-                "description": "A bar chart was attempted but failed due to missing 'department' column in the dataset"
+                "plot_type": "bar",
+                "title": "Decline Rate by Location",
+                "x_axis": {"name": "Location"},
+                "y_axis": {"name": "Decline Rate (%)"},
+                "description": "Bar chart showing the percentage of declined expenses per geographic location."
             },
             "question": "How many expenses have been processed by each department?",
-            "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# # Filter for processed expenses and group by department\n# processed_expenses_by_department = data[data['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# processed_expenses_by_department.plot(kind='bar', color='dodgerblue')\n# plt.title('Number of Processed Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Processed Expenses')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Locations with disproportionately high decline rates may have different operational practices or face stricter reviewers. Standardizing expense policies and approval criteria across regions ensures equitable treatment.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ndata = pd.read_csv('csvs/flag-92.csv')\n\nlocation_state = data.groupby(['location', 'state']).size().unstack(fill_value=0)\nif 'Declined' in location_state.columns:\n    location_state['decline_rate'] = location_state['Declined'] / location_state.sum(axis=1) * 100\n    decline_by_loc = location_state['decline_rate'].reset_index()\n    decline_by_loc.columns = ['location', 'decline_rate']\n    plt.figure(figsize=(10, 6))\n    bar_plot = sns.barplot(x='location', y='decline_rate', data=decline_by_loc, palette='Reds_d')\n    plt.title('Decline Rate by Location')\n    plt.xlabel('Location')\n    plt.ylabel('Decline Rate (%)')\n    for p in bar_plot.patches:\n        bar_plot.annotate(f'{p.get_height():.1f}%',\n                          (p.get_x() + p.get_width() / 2., p.get_height()),\n                          ha='center', va='center', xytext=(0, 9), textcoords='offset points')\n    plt.tight_layout()\n    plt.show()"
         }
     ],
     "insights": [
-        "Analysis could not be completed due to missing 'amount' column in the dataset",
-        "Analysis could not be completed due to missing 'amount' column in the dataset",
-        "Analysis could not be completed due to missing 'department' column in the dataset",
-        "The analysis could not be completed due to a missing 'department' column in the dataset",
-        "Analysis could not be completed due to missing 'department' column in the dataset"
+        "Processing times vary across geographic locations, with average of 1.7 units.",
+        "Geographic expense distribution is relatively uniform across five continents.",
+        "The expense state distribution is unusually spread: Processed (26.8%), Declined (25.2%), Pending (24.6%), Submitted (23.4%).",
+        "Some users submit significantly more expense reports than others.",
+        "Decline rates vary by location, potentially revealing geographic policy enforcement differences."
     ],
-    "summary": "\n\n1. **Trend Analysis**: The analysis could not be done due to missing data.\n   \n2. **Employee Compliance Insight**: The study could not be conducted due to missing data.\n   \n3. **Departmental Insights**: The analysis could not be performed due to missing data."
+    "summary": "\n\n1. **Geographic Processing Variation**: Processing times differ by location, with some regions faster than the 1.7 average. Identifying best-practice regions enables knowledge transfer.\n\n2. **Balanced Geographic Distribution**: All five regions have between 94 and 108 expenses, indicating globally distributed expense activity.\n\n3. **Unusual State Distribution**: The nearly equal distribution across all four states (Processed: 26.8%, Declined: 25.2%, Pending: 24.6%, Submitted: 23.4%) is atypical and suggests serious processing delays.\n\n4. **User Activity Patterns**: Top users should be reviewed for patterns in locations, states, or submission frequencies that may indicate compliance issues.\n\n5. **Location-Based Decline Rates**: Geographic variability in decline rates suggests inconsistent policy enforcement, which could lead to equity concerns and process improvements."
 }

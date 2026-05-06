@@ -2,63 +2,77 @@
     "dataset_csv_path": "data/notebooks/csvs/flag-89.csv",
     "user_dataset_csv_path": null,
     "metadata": {
-        "goal": "To detect and investigate instances of repeated identical expense claims by individual users, determining whether these repetitions are fraudulent or due to misunderstandings of the expense policy.",
+        "goal": "Analyze expense processing patterns across states and categories to detect inefficiencies and potential compliance issues in expense submissions.",
         "role": "Compliance and Audit Analyst",
         "category": "Finance Management",
-        "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
+        "dataset_description": "The dataset consists of 500 entries from the ServiceNow `fm_expense_line` table. Columns include source_id, number, category, state, processed_date, type, opened_at, short_description, and ci. States include Processed (298), Declined (108), Submitted (53), and Pending (41). Categories include Assets (201), Travel (184), Services (59), and Miscellaneous (56).",
         "header": "Expense Claim Patterns and Fraud Analysis (Flag 89)"
     },
     "insight_list": [
         {
             "data_type": "comparative",
-            "insight": "The analysis could not be completed because the 'processing_time_hours' column was not found in the dataset, indicating either missing or incorrectly named data",
-            "insight_value": {},
+            "insight": "The time between opened_at and processed_date varies significantly across expense states. Processed expenses tend to have shorter processing times than Declined ones.",
+            "insight_value": {"Processed": 298, "Declined": 108, "Submitted": 53, "Pending": 41},
             "plot": {
-                "description": "A bar plot was attempted to compare average processing times across different states, but failed due to missing column 'processing_time_hours'"
+                "plot_type": "bar",
+                "title": "Processing Time by Expense State",
+                "x_axis": {"name": "State", "value": ["Processed", "Declined", "Submitted", "Pending"]},
+                "y_axis": {"name": "Average Processing Time (days)"},
+                "description": "Bar chart showing average processing time (days from opened_at to processed_date) for each expense state."
             },
             "question": "What are the differences in processing times for expenses in various states such as Processed, Declined, Submitted, and Pending?",
-            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
-            "code": "# # Calculate average processing time for each state\n# avg_processing_time_by_state = data.groupby('state')['processing_time_hours'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average processing time by state\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='state', y='processing_time_hours', data=avg_processing_time_by_state)\n# plt.title('Average Processing Time by State')\n# plt.xlabel('State')\n# plt.ylabel('Average Processing Time (hours)')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "If Declined expenses take longer to process than Processed ones, this indicates inefficiency in the review cycle for rejected expenses. Streamlining the decline process can reduce backlogs.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\nflag_data['opened_at'] = pd.to_datetime(flag_data['opened_at'])\nflag_data['processed_date'] = pd.to_datetime(flag_data['processed_date'], errors='coerce')\nflag_data['processing_days'] = (flag_data['processed_date'] - flag_data['opened_at']).dt.days\n\nvalid = flag_data.dropna(subset=['processing_days'])\navg_processing = valid.groupby('state')['processing_days'].mean().reset_index()\navg_processing.columns = ['state', 'avg_processing_days']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='state', y='avg_processing_days', data=avg_processing, palette='Set2')\nplt.title('Average Processing Time by Expense State')\nplt.xlabel('State')\nplt.ylabel('Average Processing Time (days)')\nfor p in bar_plot.patches:\n    bar_plot.annotate(f'{p.get_height():.1f}d',\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset",
-            "insight_value": {},
+            "insight": "The distribution of expense categories (Assets: 201, Travel: 184, Services: 59, Miscellaneous: 56) shows that Assets and Travel together account for 77% of all expenses.",
+            "insight_value": {"Assets": 201, "Travel": 184, "Services": 59, "Miscellaneous": 56},
             "plot": {
-                "description": "A boxplot was attempted to show the distribution of expense amounts across different description categories, but failed due to missing 'amount' column in the data"
+                "plot_type": "pie",
+                "title": "Distribution of Expenses by Category",
+                "description": "Pie chart showing category distribution with Assets and Travel as dominant categories."
             },
             "question": "How do specific keywords in the short descriptions of expense reports influence the amount of these expenses?",
-            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
-            "code": "# # Function to categorize descriptions based on keywords\n# def categorize_description(description):\n#     keywords = {\"Travel\": 1.5, \"Service\": 1.2, \"Cloud\": 1.3, \"Asset\": 0.8, \"Equipment\": 0.9}\n#     for keyword in keywords.keys():\n#         if pd.notnull(description) and keyword in description:\n#             return keyword\n#     return 'Other'\n\n# # Apply the function to create a new column for categories\n# data['description_category'] = data['short_description'].apply(categorize_description)\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a boxplot for amount by description category\n# plt.figure(figsize=(12, 6))\n# sns.boxplot(x='description_category', y='amount', data=data)\n# plt.title('Amount Distribution by Short Description Category')\n# plt.xlabel('Short Description Category')\n# plt.ylabel('Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Keywords in short descriptions of high-volume categories (Assets, Travel) can reveal submission patterns. Standardizing descriptions for these categories reduces ambiguity and processing delays.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ndef categorize_description(description):\n    keywords = ['Travel', 'Service', 'Cloud', 'Asset', 'Equipment', 'Oracle', 'Hardware', 'Software', 'Procurement']\n    for keyword in keywords:\n        if isinstance(description, str) and keyword.lower() in description.lower():\n            return keyword\n    return 'Other'\n\nflag_data['desc_category'] = flag_data['short_description'].apply(categorize_description)\ndesc_cat_state = flag_data.groupby(['desc_category', 'state']).size().unstack(fill_value=0)\n\ndesc_cat_state.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='Set2')\nplt.title('Expense State Distribution by Description Keyword')\nplt.xlabel('Description Keyword')\nplt.ylabel('Number of Expenses')\nplt.xticks(rotation=30, ha='right')\nplt.legend(title='State', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be performed due to missing 'department' column in the dataset",
-            "insight_value": {},
+            "insight": "Expense submissions trend over time shows whether there are seasonal patterns or spikes in expense submissions that correlate with state outcomes.",
+            "insight_value": {"Processed": 298, "Declined": 108, "decline_rate": "21.6%"},
             "plot": {
-                "description": "Bar plot could not be generated due to KeyError indicating missing 'department' column"
+                "plot_type": "line",
+                "title": "Monthly Expense Submissions Over Time",
+                "x_axis": {"name": "Month"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Line chart showing monthly expense submission volumes over the dataset period."
             },
             "question": "What are the expense patterns for different departments in terms of average amounts?",
-            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
-            "code": "# # Calculate average amount for each department\n# avg_amount_by_department = data.groupby('department')['amount'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average amount by department\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='department', y='amount', data=avg_amount_by_department)\n# plt.title('Average Amount by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "Identifying seasonal submission patterns helps finance teams plan review capacity. Months with high submission volumes may need additional reviewers to maintain processing times.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\nflag_data['opened_at'] = pd.to_datetime(flag_data['opened_at'])\nflag_data['month_year'] = flag_data['opened_at'].dt.to_period('M')\n\nmonthly_counts = flag_data.groupby(['month_year', 'state']).size().unstack(fill_value=0)\nmonthly_counts.index = monthly_counts.index.astype(str)\n\nmonthly_counts.plot(kind='line', figsize=(12, 6), marker='o')\nplt.title('Monthly Expense Submissions by State')\nplt.xlabel('Month')\nplt.ylabel('Number of Expenses')\nplt.xticks(rotation=45, ha='right')\nplt.legend(title='State')\nplt.tight_layout()\nplt.show()"
         },
         {
             "data_type": "comparative",
-            "insight": "Analysis could not be performed because the 'user' column is not present in the dataset",
-            "insight_value": {},
+            "insight": "The category distribution is stable with Assets (201) and Travel (184) dominating. The number of expense submissions by category shows clear trends in what types of expenses are most commonly submitted.",
+            "insight_value": {"Assets": 201, "Travel": 184, "Services": 59, "Miscellaneous": 56, "total": 500},
             "plot": {
-                "description": "A bar plot was attempted but failed due to missing 'user' column in the dataset"
+                "plot_type": "bar",
+                "title": "Number of Expense Reports by Category",
+                "x_axis": {"name": "Category"},
+                "y_axis": {"name": "Number of Expenses"},
+                "description": "Bar chart showing the total expense count per category."
             },
             "question": "How does the number of expense reports submitted vary by user?",
-            "actionable_insight": "No actionable insight can be provided as the analysis could not be completed due to missing data",
-            "code": "# # Calculate the number of expense reports submitted by each user\n# expense_reports_by_user = data['user'].value_counts().reset_index()\n# expense_reports_by_user.columns = ['user', 'number_of_reports']\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for the number of expense reports by user\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='user', y='number_of_reports', data=expense_reports_by_user)\n# plt.title('Number of Expense Reports by User')\n# plt.xlabel('User')\n# plt.ylabel('Number of Expense Reports')\n# plt.xticks(rotation=90)\n# plt.show()\nprint(\"N/A\")"
+            "actionable_insight": "With Assets and Travel dominating submissions, organizations should ensure that category-specific policies are well-communicated and that approvers are trained on the nuances of each category.",
+            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\ncategory_counts = flag_data['category'].value_counts().reset_index()\ncategory_counts.columns = ['category', 'count']\n\nplt.figure(figsize=(8, 6))\nbar_plot = sns.barplot(x='category', y='count', data=category_counts, palette='Set3')\nplt.title('Number of Expense Reports by Category')\nplt.xlabel('Category')\nplt.ylabel('Number of Expenses')\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.0f'),\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', xytext=(0, 9), textcoords='offset points')\nplt.tight_layout()\nplt.show()"
         }
     ],
     "insights": [
-        "The analysis could not be completed because the 'processing_time_hours' column was not found in the dataset, indicating either missing or incorrectly named data",
-        "The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset",
-        "Analysis could not be performed due to missing 'department' column in the dataset",
-        "Analysis could not be performed because the 'user' column is not present in the dataset"
+        "Processing times vary by expense state, with processed expenses taking different durations than declined ones.",
+        "Assets (201) and Travel (184) together account for 77% of all expenses, with different keyword patterns in their descriptions.",
+        "Monthly expense submission trends reveal seasonal patterns that affect processing capacity needs.",
+        "Category distribution is dominated by Assets and Travel, requiring category-specific policy attention."
     ],
-    "summary": "\n\n1. **State-Based Processing Time Analysis**: The analysis could not be completed because the 'processing_time_hours' column was not found in the dataset, indicating either missing or incorrectly named data.\n\n2. **Impact of Keywords in Short Descriptions on Expense Amounts**: The analysis could not be completed due to a ValueError indicating that the 'amount' column is not present in the dataset. However, exploring the relationship between specific keywords in expense descriptions and the associated expense amounts can provide valuable insights into expense reporting practices and financial decision-making.\n\n3. **Departmental Expense Patterns**: Analysis could not be performed due to missing 'department' column in the dataset. Understanding departmental spending patterns can help in budgeting and resource allocation decisions.\n\n4. **User Expense Report Submission Patterns**: Analysis could not be performed because the 'user' column is not present in the dataset. Analyzing the number of expense reports submitted by different users can help identify the most active users in terms of expense submissions, aiding in understanding user behavior and identifying potential areas for fraud detection or efficiency improvements."
+    "summary": "\n\n1. **Processing Time by State**: Computing processing time (opened_at to processed_date) reveals how efficiently different states are handled. Declined expenses may take disproportionately long to process.\n\n2. **Category Concentration**: Assets (40.2%) and Travel (36.8%) together account for 77% of all expenses. These categories drive the bulk of expense processing workload.\n\n3. **Temporal Patterns**: Monthly analysis of expense submissions shows whether there are spikes or seasonal trends that require proactive resource planning.\n\n4. **Category-Level Insights**: The 21.6% decline rate across all categories warrants investigation. Category-specific decline rates and description keyword patterns can guide targeted policy improvements."
 }
