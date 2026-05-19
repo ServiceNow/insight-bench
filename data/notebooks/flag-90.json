@@ -18,7 +18,7 @@
             },
             "question": "What are the total expenses by department?",
             "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by department and sum the amount\n# department_expenses = df.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# department_expenses.plot(kind='bar', color='skyblue')\n# plt.title('Total Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "comparative",
@@ -29,7 +29,7 @@
             },
             "question": "What are the average expenses per user within each department?",
             "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# # Group by department and user, then calculate the average amount\n# average_expense_per_user = df.groupby(['department', 'user'])['amount'].mean().groupby('department').mean().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_expense_per_user.plot(kind='bar', color='lightgreen')\n# plt.title('Average Expense per User by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Expense per User ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "categorical",
@@ -40,7 +40,7 @@
             },
             "question": "What are the total expenses by category?",
             "actionable_insight": "No actionable insight could be generated due to missing 'amount' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by category and sum the amount\n# total_expenses_by_category = df.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_category.plot(kind='bar', color='mediumseagreen')\n# plt.title('Total Expenses by Category')\n# plt.xlabel('Category')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "comparative",
@@ -51,7 +51,7 @@
             },
             "question": "How many expenses have been processes by each department?",
             "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Filter for processed expenses and group by department\n# processed_expenses_by_department = df[df['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# processed_expenses_by_department.plot(kind='bar', color='dodgerblue')\n# plt.title('Number of Processed Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Processed Expenses')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "comparative",
@@ -62,7 +62,7 @@
             },
             "question": "What is the average processing time by department?",
             "actionable_insight": "No actionable insight could be generated due to missing 'department' column in the dataset",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by department and calculate the average processing time for processed expenses\n# average_processing_time_by_department = df[df['state'] == 'Processed'].groupby('department')['processing_time_hours'].mean().sort_values()\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_processing_time_by_department.plot(kind='bar', color='purple')\n# plt.title('Average Processing Time by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Processing Time (Hours)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         }
     ],
     "insights": [

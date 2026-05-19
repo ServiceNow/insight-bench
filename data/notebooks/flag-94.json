@@ -13,9 +13,7 @@
         {
             "data_type": "descriptive",
             "insight": "The distribution of incidents shows equal occurrence across all IT categories",
-            "insight_value": {
-                "description": "Each category (Software, Network, Inquiry/Help, Hardware, Database) has exactly 100 incidents"
-            },
+            "insight_value": "Each category (Software, Network, Inquiry/Help, Hardware, Database) has exactly 100 incidents",
             "plot": {
                 "plot_type": "bar",
                 "title": "Incidents Distribution by Category",
@@ -38,10 +36,8 @@
                 "description": "Horizontal bar chart with different colors for each category, showing uniform distribution of 100 incidents across all types"
             },
             "question": "What is the distribution of incidents across all categories?",
-            "actionable_insight": {
-                "description": "The identical incident counts across categories may indicate either standardized reporting limits or require investigation to verify if this uniformity reflects actual incident patterns"
-            },
-            "code": "plot = df.groupby(\"category\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Incidents Distribution by Category')\n\n# Set x-axis label\nplt.xlabel('Category')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+            "actionable_insight": "The identical incident counts across categories may indicate either standardized reporting limits or require investigation to verify if this uniformity reflects actual incident patterns",
+            "code": "\nplot = df.groupby(\"category\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Incidents Distribution by Category')\n\n# Set x-axis label\nplt.xlabel('Category')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
         },
         {
             "data_type": "diagnostic",
@@ -144,7 +140,7 @@
             },
             "question": "What is the printer ID causing the most issues?",
             "actionable_insight": "Data quality check needed: verify that printer IDs are properly formatted in the short_description field and that the data frame contains valid entries",
-            "code": "# # Extract printer IDs from 'short_description' (assuming the printer ID is mentioned in the description)\n# df['printer_id'] = df['short_description'].str.extract('(Printer\\d+)')\n# # Count the frequency of incidents for each printer ID\n# printer_counts = df['printer_id'].value_counts()\n# df_plot = printer_counts.reset_index()\n# df_plot.columns = ['Printer ID', 'Number of Incidents']\n\n# # # Define printer IDs if not present in short description\n# # printer_ids = ['Printer123', 'Printer456', 'Printer789', 'Printer321', 'Printer654']\n\n# # # Mock number of incidents for each printer\n# # printer_counts = [225, 5, 15, 10, 20]\n\n# # # Create a DataFrame from the counts for plotting\n# # df_plot = pd.DataFrame({'Printer ID': printer_ids, 'Number of Incidents': printer_counts})\n\n# # Plot the frequency\n# plot = df_plot.plot(kind='bar', x='Printer ID', y='Number of Incidents', legend=False, color='blue')\n\n# # Get the current figure for further manipulation\n# fig = plt.gcf()\n\n# # Loop through the rectangles (i.e., bars)\n# for i in plot.patches:\n#     # Get X and Y placement of label from rectangle\n#     x_value = i.get_x() + i.get_width() / 2\n#     y_value = i.get_height()\n\n#     # Use Y value as label and format number with one decimal place\n#     label = \"{:.1f}\".format(y_value)\n\n#     # Create annotation\n#     plt.annotate(\n#         label,                      # Use `label` as label\n#         (x_value, y_value),         # Place label at end of the bar\n#         xytext=(0, 5),              # Shift text slightly above bar\n#         textcoords=\"offset points\", # Interpret `xytext` as offset in points\n#         ha='center',                # Horizontally align label \n#         va='bottom'                 # Vertically align label at bottom\n#     )\n\n# # Set plot title\n# plt.title('Incidents by Printer ID')\n\n# # Set x-axis label\n# plt.xlabel('Printer ID')\n\n# # Set y-axis label\n# plt.ylabel('Number of Incidents')\n\n# # Display the figure\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         }
     ],
     "insights": [

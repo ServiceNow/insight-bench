@@ -12,9 +12,7 @@
         {
             "data_type": "descriptive",
             "insight": "Total expenses vary significantly across departments.",
-            "insight_value": {
-                "description": "The Product Management department has the highest total expenses, followed by Customer Support, indicating that these departments might have more resource-intensive operations."
-            },
+            "insight_value": "The Product Management department has the highest total expenses, followed by Customer Support, indicating that these departments might have more resource-intensive operations.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Total Expenses by Department",
@@ -47,17 +45,13 @@
                 "description": "The bar chart highlights the departments with the highest expenses, which might indicate areas of heavy resource allocation or potential inefficiencies."
             },
             "question": "What are the total expenses by department?",
-            "actionable_insight": {
-                "description": "Departments with higher expenses should be reviewed to ensure that spending aligns with organizational goals. It's crucial to investigate whether these expenditures are justified and contribute positively to the organization's operations."
-            },
-            "code": "import matplotlib.pyplot as plt\n\n# Group by department and sum the amount\ndepartment_expenses = df.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ndepartment_expenses.plot(kind='bar', color='skyblue')\nplt.title('Total Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "Departments with higher expenses should be reviewed to ensure that spending aligns with organizational goals. It's crucial to investigate whether these expenditures are justified and contribute positively to the organization's operations.",
+            "code": "import matplotlib.pyplot as plt\n\n# Group by department and sum the amount\ndepartment_expenses = df.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ndepartment_expenses.plot(kind='bar', color='skyblue')\nplt.title('Total Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "data_type": "descriptive",
             "insight": "Customer Support has the highest average expense claims.",
-            "insight_value": {
-                "description": "Customer Support's average expense claim is approximately $76,380.74, which is significantly higher than the other departments."
-            },
+            "insight_value": "Customer Support's average expense claim is approximately $76,380.74, which is significantly higher than the other departments.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Average Expense per User by Department",
@@ -90,17 +84,13 @@
                 "description": "The bar chart highlights that Customer Support has a much higher average expense per user, which may indicate the nature of their operations or potential inefficiencies."
             },
             "question": "What is the average expense per user by department?",
-            "actionable_insight": {
-                "description": "It's advisable to review the expense claims in Customer Support to ensure they align with company policies and provide value. High average expenses should be justified by the department's activities."
-            },
-            "code": "# Group by department and user, then calculate the average amount\naverage_expense_per_user = df.groupby(['department', 'user'])['amount'].mean().groupby('department').mean().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\naverage_expense_per_user.plot(kind='bar', color='lightgreen')\nplt.title('Average Expense per User by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Expense per User ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "It's advisable to review the expense claims in Customer Support to ensure they align with company policies and provide value. High average expenses should be justified by the department's activities.",
+            "code": "# Group by department and user, then calculate the average amount\naverage_expense_per_user = df.groupby(['department', 'user'])['amount'].mean().groupby('department').mean().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\naverage_expense_per_user.plot(kind='bar', color='lightgreen')\nplt.title('Average Expense per User by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Expense per User ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "data_type": "descriptive",
             "insight": "The 'Services' category has the highest total expenses.",
-            "insight_value": {
-                "description": "The company has spent a total of $11,400,891 on services, which is the highest among all categories."
-            },
+            "insight_value": "The company has spent a total of $11,400,891 on services, which is the highest among all categories.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Total Expenses by Category",
@@ -127,17 +117,13 @@
                 "description": "The bar chart highlights that 'Services' is the category with the highest spending, indicating significant investments in service-related expenses."
             },
             "question": "What are the total expenses by category?",
-            "actionable_insight": {
-                "description": "The high spending on services should be regularly reviewed to ensure that these investments are necessary and beneficial to the company. Potential cost-saving measures could be explored in categories with high expenses."
-            },
-            "code": "import matplotlib.pyplot as plt\n\n# Group by category and sum the amount\ntotal_expenses_by_category = df.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_category.plot(kind='bar', color='mediumseagreen')\nplt.title('Total Expenses by Category')\nplt.xlabel('Category')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "The high spending on services should be regularly reviewed to ensure that these investments are necessary and beneficial to the company. Potential cost-saving measures could be explored in categories with high expenses.",
+            "code": "import matplotlib.pyplot as plt\n\n# Group by category and sum the amount\ntotal_expenses_by_category = df.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_category.plot(kind='bar', color='mediumseagreen')\nplt.title('Total Expenses by Category')\nplt.xlabel('Category')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "data_type": "descriptive",
             "insight": "Finance and HR departments have processed the highest number of expenses.",
-            "insight_value": {
-                "description": "Both the Finance and HR departments have processed 24 expenses each, indicating a high level of activity in these departments."
-            },
+            "insight_value": "Both the Finance and HR departments have processed 24 expenses each, indicating a high level of activity in these departments.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Number of Processed Expenses by Department",
@@ -170,17 +156,13 @@
                 "description": "The bar chart illustrates the number of processed expenses by department, highlighting that Finance and HR have the highest number of processed expenses."
             },
             "question": "How many expenses have been processed by each department?",
-            "actionable_insight": {
-                "description": "Departments with a high number of processed expenses should ensure that their processing workflows are efficient to handle the volume. Departments with fewer processed expenses might need to review their processes to identify any potential delays or inefficiencies."
-            },
-            "code": "import matplotlib.pyplot as plt\n\n# Filter for processed expenses and group by department\nprocessed_expenses_by_department = df[df['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\nprocessed_expenses_by_department.plot(kind='bar', color='dodgerblue')\nplt.title('Number of Processed Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Number of Processed Expenses')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "Departments with a high number of processed expenses should ensure that their processing workflows are efficient to handle the volume. Departments with fewer processed expenses might need to review their processes to identify any potential delays or inefficiencies.",
+            "code": "import matplotlib.pyplot as plt\n\n# Filter for processed expenses and group by department\nprocessed_expenses_by_department = df[df['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\nprocessed_expenses_by_department.plot(kind='bar', color='dodgerblue')\nplt.title('Number of Processed Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Number of Processed Expenses')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "data_type": "descriptive",
             "insight": "HR has the quickest average processing time for expenses.",
-            "insight_value": {
-                "description": "The HR department processes expenses in an average of 1495.49 hours, which is the fastest among all departments."
-            },
+            "insight_value": "The HR department processes expenses in an average of 1495.49 hours, which is the fastest among all departments.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Average Processing Time by Department",
@@ -213,10 +195,8 @@
                 "description": "The bar chart illustrates the average processing time for expense claims in different departments, with HR having the shortest processing time."
             },
             "question": "What is the average processing time by department?",
-            "actionable_insight": {
-                "description": "Departments with longer processing times should review their workflows to identify and address potential bottlenecks. Improving efficiency in expense processing can lead to faster financial operations and better resource management."
-            },
-            "code": "import matplotlib.pyplot as plt\n\n# Group by department and calculate the average processing time for processed expenses\naverage_processing_time_by_department = df[df['state'] == 'Processed'].groupby('department')['processing_time_hours'].mean().sort_values()\n\n# Plotting\nplt.figure(figsize=(10, 6))\naverage_processing_time_by_department.plot(kind='bar', color='purple')\nplt.title('Average Processing Time by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Processing Time (Hours)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "Departments with longer processing times should review their workflows to identify and address potential bottlenecks. Improving efficiency in expense processing can lead to faster financial operations and better resource management.",
+            "code": "import matplotlib.pyplot as plt\n\n# Group by department and calculate the average processing time for processed expenses\naverage_processing_time_by_department = df[df['state'] == 'Processed'].groupby('department')['processing_time_hours'].mean().sort_values()\n\n# Plotting\nplt.figure(figsize=(10, 6))\naverage_processing_time_by_department.plot(kind='bar', color='purple')\nplt.title('Average Processing Time by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Processing Time (Hours)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         }
     ],
     "insights": [

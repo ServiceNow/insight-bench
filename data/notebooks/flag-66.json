@@ -14,15 +14,13 @@
             "question": "How does the processing delay (in days) vary across different departments and categories?",
             "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Load and process the data\nflag_data = pd.read_csv(\"csvs/flag-66.csv\")\n\n# Convert date columns to datetime format\nflag_data[\"opened_at\"] = pd.to_datetime(flag_data[\"opened_at\"], errors=\"coerce\")\nflag_data[\"processed_date\"] = pd.to_datetime(\n    flag_data[\"processed_date\"], errors=\"coerce\"\n)\n\n# Calculate processing delay in days and remove rows with missing dates\nflag_data[\"processing_delay\"] = (\n    flag_data[\"processed_date\"] - flag_data[\"opened_at\"]\n).dt.days\nflag_data = flag_data.dropna(subset=[\"processing_delay\", \"department\", \"category\"])\n\n# Aggregate mean processing delay by department and category\ndelay_by_dept_category = (\n    flag_data.groupby([\"department\", \"category\"])[\"processing_delay\"]\n    .mean()\n    .reset_index()\n)\n\n# Plotting\nplt.figure(figsize=(14, 8))\nsns.barplot(\n    data=delay_by_dept_category,\n    x=\"processing_delay\",\n    y=\"department\",\n    hue=\"category\",\n    dodge=False,\n)\nplt.title(\"Average Processing Delay (in days) by Department and Category\")\nplt.xlabel(\"Average Processing Delay (days)\")\nplt.ylabel(\"Department\")\nplt.legend(title=\"Category\", bbox_to_anchor=(1.05, 1), loc=\"upper left\")\nplt.grid(True)\n\nplt.show()",
             "data_type": "descriptive",
-            "insight_value": {},
-            "actionable_insight": ""
+            "insight_value": "Departments such as Product Management and HR have average delays of up to 15 days in processing travel-related requests, which is significantly higher than in other departments and categories, pointing to a resource allocation or prioritization issue.",
+            "actionable_insight": "The extended processing delays in departments such as HR and Product Management, especially in Travel and Services, suggest that these areas may benefit from a review of workflow efficiency or resource allocation. Addressing these bottlenecks could streamline operations, particularly in high-delay categories, improving overall organizational efficiency."
         },
         {
             "data_type": "descriptive",
             "insight": "There is no correlation between the number of expense reports submitted and rejection rates",
-            "insight_value": {
-                "description": "Despite having a lower volume of expense submissions, the IT department has the highest rejection rate, while departments with higher submission volumes like Customer Support exhibit lower rejection rates."
-            },
+            "insight_value": "Despite having a lower volume of expense submissions, the IT department has the highest rejection rate, while departments with higher submission volumes like Customer Support exhibit lower rejection rates.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Distribution of Expense Reports by Department",
@@ -63,8 +61,8 @@
             "question": "How do expense amounts vary across different departments, and what is the distribution of these expenses?",
             "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Load the dataset\nflag_data = pd.read_csv(\"csvs/flag-66.csv\")\n\n# Drop rows with missing department or amount values\nflag_data_cleaned = flag_data.dropna(subset=[\"department\", \"amount\"])\n\n# Convert the amount column to numeric if it's not already\nflag_data_cleaned[\"amount\"] = pd.to_numeric(\n    flag_data_cleaned[\"amount\"], errors=\"coerce\"\n)\n\n# Drop rows where amount conversion failed (if any)\nflag_data_cleaned = flag_data_cleaned.dropna(subset=[\"amount\"])\n\n# Group the data by department and calculate the total and mean amounts\ndepartment_expenses = (\n    flag_data_cleaned.groupby(\"department\")[\"amount\"]\n    .agg([\"sum\", \"mean\", \"count\"])\n    .reset_index()\n)\n\n# Sort by total amount for better visualization\ndepartment_expenses_sorted = department_expenses.sort_values(by=\"sum\", ascending=False)\n\n# Plot the distribution of expense amounts for each department\nplt.figure(figsize=(14, 8))\nsns.boxplot(\n    x=\"department\",\n    y=\"amount\",\n    data=flag_data_cleaned,\n    order=department_expenses_sorted[\"department\"],\n)\nplt.xticks(rotation=45, ha=\"right\")\nplt.title(\"Distribution of Expense Amounts Across Departments\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Expense Amount\")\nplt.grid(True, axis=\"y\")\n\nplt.show()",
             "data_type": "comparative",
-            "insight_value": {},
-            "actionable_insight": ""
+            "insight_value": "Customer Support exhibits the highest overall expenses, suggesting a high volume of spending likely due to operational demands or asset provisioning, as evidenced by the sum of expenses. Sales also shows substantial total expenditure, though with fewer instances compared to Customer Support, indicating potentially larger one-time purchases or higher per-instance costs.",
+            "actionable_insight": "Given the high spending volume in Customer Support, it would be beneficial to evaluate operational spending needs closely for potential optimizations. Additionally, monitoring the large average expenses in Product Management could help identify opportunities for cost-saving in high-value procurements. A review of spending patterns in these departments could reveal ways to enhance budgeting efficiency and control expense variability."
         }
     ],
     "insights": [

@@ -31,7 +31,7 @@
                 },
                 "description": "The line graph demonstrates an increasing trend in the TTR for incidents from period 2023-07"
             },
-            "question": "What is the trend in the time to resolution (TTR) for incidents, especially during the identified anomaly periods?",
+            "question": "What is the trend in the time to resolution (TTR) for incidents across categories over the timeline?",
             "actionable_insight": "The decreasing trend in TTR for incidents during the anomaly periods indicates that the team is becoming more efficient in resolving incidents. This could be due to improved processes or better tools. It would be beneficial to analyze the changes made during these periods to identify the factors contributing to the decrease in TTR and implement them more broadly to improve overall incident resolution times.",
             "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Create a new column 'month_year' to make the plot more readable\n# df['month_year'] = df['opened_at'].dt.to_period('M')\ndf[\"ttr\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n# Convert 'ttr' column to numeric and handle errors\ndf[\"ttr\"] = pd.to_numeric(df[\"ttr\"], errors=\"coerce\")\n\n# Create a lineplot\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) Over Time for Different Categories\")\nplt.xticks(rotation=45)\nplt.show()"
         },

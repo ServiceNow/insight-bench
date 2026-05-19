@@ -12,9 +12,7 @@
         {
             "data_type": "descriptive",
             "insight": "Computers exhibit significantly longer warranty periods compared to other asset categories, which may reflect their higher cost and complexity.",
-            "insight_value": {
-                "description": "The average warranty period for Computers is markedly higher than for other asset categories, suggesting a strategic emphasis on longer warranties for more expensive and complex equipment."
-            },
+            "insight_value": "The average warranty period for Computers is markedly higher than for other asset categories, suggesting a strategic emphasis on longer warranties for more expensive and complex equipment.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Average Warranty Period by Asset Model Category",
@@ -53,9 +51,7 @@
         {
             "data_type": "descriptive",
             "insight": "Servers and Web Servers are the most expensive asset categories on average, followed by computers.",
-            "insight_value": {
-                "description": "Average costs vary significantly across model categories, with Servers and Web Servers leading in terms of investment required."
-            },
+            "insight_value": "Average costs vary significantly across model categories, with Servers and Web Servers leading in terms of investment required.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Average Asset Cost by Model Category",
@@ -94,9 +90,7 @@
         {
             "data_type": "correlative",
             "insight": "Strong positive correlation between the cost of computer assets and their warranty periods.",
-            "insight_value": {
-                "description": "More expensive computer assets tend to have longer warranty periods, suggesting that higher costs are associated with extended warranty provisions."
-            },
+            "insight_value": "More expensive computer assets tend to have longer warranty periods, suggesting that higher costs are associated with extended warranty provisions.",
             "plot": {
                 "plot_type": "scatter",
                 "title": "Correlation Between Cost of Computers and Their Warranty Periods",

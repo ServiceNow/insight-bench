@@ -14,15 +14,13 @@
             "question": "How does the cost of assets vary by department, and are there any significant outliers in asset costs within each department?",
             "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load data\nflag_data = pd.read_csv(\"csvs/flag-73.csv\")\n\n# Convert `cost` to numeric in case of any non-numeric issues, and filter for positive costs only\nflag_data[\"cost\"] = pd.to_numeric(flag_data[\"cost\"], errors=\"coerce\")\nfiltered_data = flag_data[flag_data[\"cost\"] > 0]\n\n# Plotting boxplot to show cost distribution by department\nplt.figure(figsize=(12, 6))\nfiltered_data.boxplot(\n    column=\"cost\", by=\"department\", grid=False, showfliers=True, notch=True\n)\n\n# Enhancing the plot aesthetics\nplt.title(\"Asset Cost Distribution by Department with Outliers\")\nplt.suptitle(\"\")  # Remove the default pandas title\nplt.xlabel(\"Department\")\nplt.ylabel(\"Asset Cost\")\nplt.xticks(rotation=45)  # Rotate department names for readability\n\nplt.show()",
             "data_type": "descriptive",
-            "insight_value": {},
-            "actionable_insight": ""
+            "insight_value": "HR assets are consistently higher in cost, averaging close to $4928, suggesting they may receive premium or specialized equipment. Customer Support and IT, however, have wide cost ranges with frequent outliers, likely indicating mixed asset types or a variety of equipment quality levels.",
+            "actionable_insight": "This analysis highlights the need for potential cost management, particularly within Customer Support and IT, where a broader cost range could signal inconsistent asset allocation or mixed equipment quality. HR's higher asset cost may warrant review to ensure expenditures align with actual needs, while identifying opportunities to standardize asset types or explore cost-effective options in departments with wider cost variability."
         },
         {
             "data_type": "descriptive",
             "insight": "Servers and Web Servers are the most expensive asset categories on average, followed by computers.",
-            "insight_value": {
-                "description": "Average costs vary significantly across model categories, with Servers and Web Servers leading in terms of investment required."
-            },
+            "insight_value": "Average costs vary significantly across model categories, with Servers and Web Servers leading in terms of investment required.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Average Asset Cost by Model Category",
@@ -61,9 +59,7 @@
         {
             "data_type": "correlative",
             "insight": "Strong correlation between the cost of computer assets and their warranty periods.",
-            "insight_value": {
-                "description": "More expensive computer assets tend to have shorter warranty periods, suggesting that lower costs are associated with extended warranty provisions."
-            },
+            "insight_value": "More expensive computer assets tend to have shorter warranty periods, suggesting that lower costs are associated with extended warranty provisions.",
             "plot": {
                 "plot_type": "scatter",
                 "title": "Correlation Between Cost of Computers and Their Warranty Periods",

@@ -12,9 +12,7 @@
         {
             "data_type": "descriptive",
             "insight": "Expense amounts vary significantly across different geographic locations",
-            "insight_value": {
-                "description": "Certain geographic regions have higher average expenses compared to others. For instance, North America shows an average expense of ~$70000 while Africa shows an average expense of only $20000."
-            },
+            "insight_value": "Certain geographic regions have higher average expenses compared to others. For instance, North America shows an average expense of ~$70000 while Africa shows an average expense of only $20000.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Average Expense Amount by Location",
@@ -36,17 +34,13 @@
                 "description": "The bar plot provides a clear comparison of the average expense amounts for each geographic location."
             },
             "question": "How do expenses vary across different geographic locations?",
-            "actionable_insight": {
-                "description": "Understanding geographic spending patterns can assist in regional budgeting and financial planning. Regions with consistently higher expenses may require closer monitoring or allocation adjustments to ensure optimal use of resources."
-            },
+            "actionable_insight": "Understanding geographic spending patterns can assist in regional budgeting and financial planning. Regions with consistently higher expenses may require closer monitoring or allocation adjustments to ensure optimal use of resources.",
             "code": "# Calculate average amount for each location\navg_amount_by_location = data.groupby('location')['amount'].mean().reset_index()\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for average amount by location\nplt.figure(figsize=(12, 6))\nsns.barplot(x='location', y='amount', data=avg_amount_by_location, palette='viridis')\nplt.title('Average Expense Amount by Location')\nplt.xlabel('Location')\nplt.ylabel('Average Amount')\nplt.xticks(rotation=45)\nplt.show()"
         },
         {
             "data_type": "descriptive",
             "insight": "The 'Services' category has the highest total expenses.",
-            "insight_value": {
-                "description": "The organization has spent a total of 5.8 million dollars on services, making it the highest expense category."
-            },
+            "insight_value": "The organization has spent a total of 5.8 million dollars on services, making it the highest expense category.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Total Expenses by Category",
@@ -73,17 +67,13 @@
                 "description": "The bar chart highlights that 'Services' is the category with the highest spending, indicating significant investments in tangible items."
             },
             "question": "How are expenses distributed across different categories?",
-            "actionable_insight": {
-                "description": "The high spending on services should be regularly reviewed to ensure that these investments are necessary and beneficial to the organization. Potential cost-saving measures could be explored in categories with high expenses."
-            },
-            "code": "import matplotlib.pyplot as plt\n\n# Group by category and sum the amount\ntotal_expenses_by_category = data.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_category.plot(kind='bar', color='skyblue')\nplt.title('Total Expenses by Category')\nplt.xlabel('Category')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "The high spending on services should be regularly reviewed to ensure that these investments are necessary and beneficial to the organization. Potential cost-saving measures could be explored in categories with high expenses.",
+            "code": "import matplotlib.pyplot as plt\n\n# Group by category and sum the amount\ntotal_expenses_by_category = data.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_category.plot(kind='bar', color='skyblue')\nplt.title('Total Expenses by Category')\nplt.xlabel('Category')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "data_type": "descriptive",
             "insight": "The Product management department has the highest total expenses.",
-            "insight_value": {
-                "description": "Product Management has the highest total expenses at 3.9M followed by Customer Support at 3.7M."
-            },
+            "insight_value": "Product Management has the highest total expenses at 3.9M followed by Customer Support at 3.7M.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Total Expenses by Department",
@@ -114,25 +104,21 @@
                 "description": "The bar chart highlights that Product Management has the highest expenses, indicating this department's significant financial demand."
             },
             "question": "What are the total expenses by department?",
-            "actionable_insight": {
-                "description": "Departments with the highest expenses, like Product Management and Sales, should be reviewed to ensure spending aligns with operational goals and budget constraints."
-            },
-            "code": "# Group by department and sum the amount\ntotal_expenses_by_department = data.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_department.plot(kind='bar', color='lightcoral')\nplt.title('Total Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "Departments with the highest expenses, like Product Management and Sales, should be reviewed to ensure spending aligns with operational goals and budget constraints.",
+            "code": "# Group by department and sum the amount\ntotal_expenses_by_department = data.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\ntotal_expenses_by_department.plot(kind='bar', color='lightcoral')\nplt.title('Total Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Total Expenses ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "insight": "The Customer support department has the highest average expense per claim.",
             "question": "What is the average expense by department?",
-            "code": "# Group by department and calculate the average amount\naverage_expense_by_department = data.groupby('department')['amount'].mean().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\naverage_expense_by_department.plot(kind='bar', color='goldenrod')\nplt.title('Average Expense by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Expense ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()",
+            "code": "# Group by department and calculate the average amount\naverage_expense_by_department = data.groupby('department')['amount'].mean().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\naverage_expense_by_department.plot(kind='bar', color='goldenrod')\nplt.title('Average Expense by Department')\nplt.xlabel('Department')\nplt.ylabel('Average Expense ($)')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n",
             "data_type": "descriptive",
-            "insight_value": {},
-            "actionable_insight": ""
+            "insight_value": "The customer support department's average expense claim is $52,948.3, indicating potentially more significant individual expenses in this department.",
+            "actionable_insight": "The high average expenses in the customer support department should be reviewed to ensure they are justified by the department's needs and do not reflect potential inefficiencies or over-spending."
         },
         {
             "data_type": "descriptive",
             "insight": "Customer Support has processed the most expense claims.",
-            "insight_value": {
-                "description": "Customer Support has processed ~70 expenses, the highest among all departments."
-            },
+            "insight_value": "Customer Support has processed ~70 expenses, the highest among all departments.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Number of Processed Expenses by Department",
@@ -159,10 +145,8 @@
                 "description": "The bar chart shows that Customer Support has handled the most expense claims, reflecting the operational demands of this department."
             },
             "question": "How many expenses have been processed by each department?",
-            "actionable_insight": {
-                "description": "Given the high volume of processed expenses in Customer Support, it might be necessary to evaluate the efficiency of their processes and ensure they have adequate resources to manage this workload."
-            },
-            "code": "# Filter for processed expenses and group by department\nprocessed_expenses_by_department = data[data['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\nprocessed_expenses_by_department.plot(kind='bar', color='dodgerblue')\nplt.title('Number of Processed Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Number of Processed Expenses')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()"
+            "actionable_insight": "Given the high volume of processed expenses in Customer Support, it might be necessary to evaluate the efficiency of their processes and ensure they have adequate resources to manage this workload.",
+            "code": "# Filter for processed expenses and group by department\nprocessed_expenses_by_department = data[data['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# Plotting\nplt.figure(figsize=(10, 6))\nprocessed_expenses_by_department.plot(kind='bar', color='dodgerblue')\nplt.title('Number of Processed Expenses by Department')\nplt.xlabel('Department')\nplt.ylabel('Number of Processed Expenses')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\nplt.show()\n"
         }
     ],
     "insights": [

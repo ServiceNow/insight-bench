@@ -12,9 +12,7 @@
         {
             "data_type": "descriptive",
             "insight": "Significant Variance in Expense Rejection Rates Across Departments",
-            "insight_value": {
-                "description": "The IT department exhibits a notably higher proportion of expense rejections compared to other departments with 44%, indicating potential issues with budget compliance or policy understanding."
-            },
+            "insight_value": "The IT department exhibits a notably higher proportion of expense rejections compared to other departments with 44%, indicating potential issues with budget compliance or policy understanding.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Proportion of Declined Expenses by Department",
@@ -48,14 +46,12 @@
             },
             "question": "Which departments have higher proportions of expense rejections compared to the organizational average?",
             "actionable_insight": "Given the high rejection rates in the IT department, a targeted review of expense submission procedures and training on policy compliance is recommended. This action should aim to align IT's expense management practices with organizational standards and reduce the high rate of declined expenses. Additionally, understanding the root causes of these rejections could inform broader improvements in expense processing protocols across the organization.",
-            "code": "import matplotlib.pyplot as plt\n\n# Group the data by department and state and count occurrences\ndepartment_state_counts = flag_data.groupby(['department', 'state']).size().unstack(fill_value=0)\n\n# Calculate proportions of each state within each department\ndepartment_state_proportions = department_state_counts.div(department_state_counts.sum(axis=1), axis=0)\n\n# Plot the data, focusing only on the 'Declined' state\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_state_proportions['Declined'].plot(kind='bar', color='red', ax=ax)\n\n# Add titles and labels\nax.set_title('Proportion of Declined Expenses by Department', fontsize=16)\nax.set_xlabel('Department', fontsize=14)\nax.set_ylabel('Proportion of Declined', fontsize=14)\nax.set_ylim(0, 1)  # Set y-axis limit to show proportions from 0 to 1\n\n# Show grid\nax.grid(True)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars\nfor p in ax.patches:\n    ax.annotate(f\"{p.get_height():.2f}\", (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha='center', va='center', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
+            "code": "import matplotlib.pyplot as plt\n\n# Group the data by department and state and count occurrences\ndepartment_state_counts = flag_data.groupby(['department', 'state']).size().unstack(fill_value=0)\n\n# Calculate proportions of each state within each department\ndepartment_state_proportions = department_state_counts.div(department_state_counts.sum(axis=1), axis=0)\n\n# Plot the data, focusing only on the 'Declined' state\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_state_proportions['Declined'].plot(kind='bar', color='red', ax=ax)\n\n# Add titles and labels\nax.set_title('Proportion of Declined Expenses by Department', fontsize=16)\nax.set_xlabel('Department', fontsize=14)\nax.set_ylabel('Proportion of Declined', fontsize=14)\nax.set_ylim(0, 1)  # Set y-axis limit to show proportions from 0 to 1\n\n# Show grid\nax.grid(True)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars\nfor p in ax.patches:\n    ax.annotate(f\"{p.get_height():.2f}\", (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha='center', va='center', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()\n"
         },
         {
             "data_type": "descriptive",
-            "insight": "No Correlation Between the Number of Expense Reports Submitted and Rejection Rates",
-            "insight_value": {
-                "description": "Despite having a lower volume of expense submissions, the IT department has the highest rejection rate, while departments with higher submission volumes like Customer Support exhibit lower rejection rates."
-            },
+            "insight": "Expense Report Volume Is Concentrated in Customer Support and Sales",
+            "insight_value": "Expense report submissions are highly uneven across departments: Customer Support (267) and Sales (122) account for most reports, while IT (43), Finance (22), Development (20), HR (14), and Product Management (12) contribute comparatively smaller volumes.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Distribution of Expense Reports by Department",
@@ -94,9 +90,7 @@
         {
             "data_type": "diagnostic",
             "insight": "Concentration of Declined Expenses Among Specific Users in IT Department",
-            "insight_value": {
-                "description": "Helene Iberg and Vernon Engelman each have 7 declined expense requests, significantly higher compared to other IT department members who have atleast one rejection, indicating potential issues with how expenses are submitted or understood by these individuals and the whole department."
-            },
+            "insight_value": "Helene Iberg and Vernon Engelman each have 7 declined expense requests, significantly higher compared to other IT department members who have atleast one rejection, indicating potential issues with how expenses are submitted or understood by these individuals and the whole department.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Number of Declined Expense Reports by User in IT Department",
@@ -118,7 +112,7 @@
             },
             "question": "Is there any specific user within the IT department with most declined requests, or is the trend more or less uniform across the department?",
             "actionable_insight": "To address the high number of declined requests by Helene Iberg and Vernon Engelman, it is prescriptive to conduct a detailed review of the expense reporting guidelines and training provided to the IT department. Focusing specifically on the submission errors or misunderstandings by these users could lead to improved compliance and fewer rejections. Additionally, implementing a mentoring or peer review system for expense submissions within the IT department could help in reducing errors and ensuring better adherence to the company's reimbursement policies.",
-            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'flag_data' is your DataFrame with the expense report data\n# Filter the data to include only IT department and declined expenses\nit_expenses = flag_data[(flag_data['department'] == 'IT') & (flag_data['state'] == 'Declined')]\n\n# Count occurrences of declined reports by each user in the IT department\nuser_declined_counts = it_expenses.groupby('user').size().sort_values(ascending=False)\n\n# Create a bar plot of the counts\nfig, ax = plt.subplots(figsize=(12, 8))\nuser_declined_counts.plot(kind='bar', color='crimson', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Declined Expense Reports by User in IT Department', fontsize=16)\nax.set_xlabel('User', fontsize=14)\nax.set_ylabel('Number of Declined Reports', fontsize=14)\n\n# Show grid\nax.grid(True)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Show the plot\nplt.show()"
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'flag_data' is your DataFrame with the expense report data\n# Filter the data to include only IT department and declined expenses\nit_expenses = flag_data[(flag_data['department'] == 'IT') & (flag_data['state'] == 'Declined')]\n\n# Count occurrences of declined reports by each user in the IT department\nuser_declined_counts = it_expenses.groupby('user').size().sort_values(ascending=False)\n\n# Create a bar plot of the counts\nfig, ax = plt.subplots(figsize=(12, 8))\nuser_declined_counts.plot(kind='bar', color='crimson', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Declined Expense Reports by User in IT Department', fontsize=16)\nax.set_xlabel('User', fontsize=14)\nax.set_ylabel('Number of Declined Reports', fontsize=14)\n\n# Show grid\nax.grid(True)\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Show the plot\nplt.show()\n"
         }
     ],
     "insights": [

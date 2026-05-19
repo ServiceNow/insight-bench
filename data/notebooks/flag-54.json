@@ -80,7 +80,7 @@
                 },
                 "description": "The bar chart illustrates the distribution of incident assignments among agents from 01-2023 to 01-2024."
             },
-            "question": "How do the incident assignments to Beth Anglin compare to other agents over the specific same time frame?",
+            "question": "How do the incident assignments to Beth Anglin compare to other agents over the specific same time frame or time period?",
             "actionable_insight": "The lack of a visible trend in the number of incidents assigned to each agent over time suggests that the workload distribution among agents has been relatively consistent. However, it may be beneficial to periodically review the incident assignments to ensure that the workload remains balanced and that no agent is overwhelmed with tasks.",
             "code": "# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Create a new column 'month_year' to make the plot more readable\ndf[\"month_year\"] = df[\"opened_at\"].dt.to_period(\"M\")\n\n# Create a countplot\nplt.figure(figsize=(12, 6))\nsns.countplot(data=df, x=\"month_year\", hue=\"assigned_to\")\nplt.title(\"Number of Incidents Created Over Time for each Agent\")\nplt.xticks(rotation=45)\nplt.show()"
         }

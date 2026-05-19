@@ -32,11 +32,11 @@
             },
             "question": "What is the distribution of incidents assigned to each human agent?",
             "actionable_insight": "The uneven distribution of incidents, with one agent being assigned significantly more incidents than others, suggests a potential issue with workload balancing. It would be beneficial to review the assignment process and consider redistributing the workload more evenly among agents.",
-            "code": "plot = df.groupby(\"assigned_to\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Distribution of Incidents Assigned To Each Agent')\n\n# Set x-axis label\nplt.xlabel('Agent')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+            "code": "\nplot = df.groupby(\"assigned_to\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Distribution of Incidents Assigned To Each Agent')\n\n# Set x-axis label\nplt.xlabel('Agent')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
         },
         {
             "data_type": "descriptive",
-            "insight": "There is a specific agent who is assigned significantly more incidents than others",
+            "insight": "There is a specific agent Fred Luddy who is assigned significantly more incidents than others",
             "insight_value": {
                 "agent": "Fred Luddy",
                 "incidents_assigned": 385

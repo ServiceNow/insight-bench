@@ -55,7 +55,7 @@
                 },
                 "description": "The histogram displays the distribution of incidents across different categories. Each bar represents a category and the length of the bar corresponds to the number of incidents in that category, illustrating a uniform distribution."
             },
-            "question": "What is the distribution of incidents across all categories?",
+            "question": "What is the distribution of incidents across different categories?",
             "actionable_insight": "Given the uniform distribution of incidents across categories, it is important to ensure that resources and training are equally distributed to maintain efficiency and effectiveness in handling incidents across all categories.",
             "code": "plot = df.groupby(\"category\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Incidents by Category')\n\n# Set x-axis label\nplt.xlabel('Category')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
         },

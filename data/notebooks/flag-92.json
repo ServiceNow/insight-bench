@@ -18,7 +18,7 @@
             },
             "question": "How do expenses vary across different geographic locations?",
             "actionable_insight": "No actionable insight could be generated due to missing 'amount' column in the dataset",
-            "code": "# # Calculate average amount for each location\n# avg_amount_by_location = data.groupby('location')['amount'].mean().reset_index()\n\n# # Set the style of the visualization\n# sns.set(style=\"whitegrid\")\n\n# # Create a bar plot for average amount by location\n# plt.figure(figsize=(12, 6))\n# sns.barplot(x='location', y='amount', data=avg_amount_by_location, palette='viridis')\n# plt.title('Average Expense Amount by Location')\n# plt.xlabel('Location')\n# plt.ylabel('Average Amount')\n# plt.xticks(rotation=45)\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "distribution",
@@ -29,7 +29,7 @@
             },
             "question": "How are expenses distributed across different categories?",
             "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# import matplotlib.pyplot as plt\n\n# # Group by category and sum the amount\n# total_expenses_by_category = data.groupby('category')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_category.plot(kind='bar', color='skyblue')\n# plt.title('Total Expenses by Category')\n# plt.xlabel('Category')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "comparative",
@@ -40,7 +40,7 @@
             },
             "question": "What are the total expenses by department?",
             "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# # Group by department and sum the amount\n# total_expenses_by_department = data.groupby('department')['amount'].sum().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# total_expenses_by_department.plot(kind='bar', color='lightcoral')\n# plt.title('Total Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Total Expenses ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "comparative",
@@ -51,7 +51,7 @@
             },
             "question": "What is the average expense by department?",
             "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# # Group by department and calculate the average amount\n# average_expense_by_department = data.groupby('department')['amount'].mean().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# average_expense_by_department.plot(kind='bar', color='goldenrod')\n# plt.title('Average Expense by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Average Expense ($)')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         },
         {
             "data_type": "comparative",
@@ -62,7 +62,7 @@
             },
             "question": "How many expenses have been processed by each department?",
             "actionable_insight": "No actionable insight could be generated due to missing data",
-            "code": "# # Filter for processed expenses and group by department\n# processed_expenses_by_department = data[data['state'] == 'Processed'].groupby('department').size().sort_values(ascending=False)\n\n# # Plotting\n# plt.figure(figsize=(10, 6))\n# processed_expenses_by_department.plot(kind='bar', color='dodgerblue')\n# plt.title('Number of Processed Expenses by Department')\n# plt.xlabel('Department')\n# plt.ylabel('Number of Processed Expenses')\n# plt.xticks(rotation=45, ha='right')\n# plt.tight_layout()\n# plt.show()\nprint(\"N/A\")"
+            "code": ""
         }
     ],
     "insights": [

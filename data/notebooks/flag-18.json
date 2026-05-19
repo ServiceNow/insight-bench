@@ -12,9 +12,7 @@
         {
             "data_type": "correlative",
             "insight": "Positive Correlation Between Asset Purchase Dates and Warranty Periods",
-            "insight_value": {
-                "description": "Statistically significant. Recently purchased assets exhibit increasingly longer warranty periods compared to assets purchased earlier, indicating a trend towards extending warranties over time."
-            },
+            "insight_value": "Statistically significant. Recently purchased assets exhibit increasingly longer warranty periods compared to assets purchased earlier, indicating a trend towards extending warranties over time.",
             "plot": {
                 "plot_type": "scatter",
                 "title": "Correlation Between Purchase Date of Assets and Warranty Periods",
@@ -37,9 +35,7 @@
         {
             "data_type": "predictive",
             "insight": "Linear Regression Model Predicts Warranty Periods Based on Purchase Dates",
-            "insight_value": {
-                "description": "The linear regression analysis confirms a predictable relationship between asset purchase dates and warranty periods, with a trend indicating longer warranties for more recently purchased assets."
-            },
+            "insight_value": "The linear regression analysis confirms a predictable relationship between asset purchase dates and warranty periods, with a trend indicating longer warranties for more recently purchased assets.",
             "plot": {
                 "plot_type": "regression",
                 "title": "Linear Regression of Warranty Periods Against Purchase Dates",
@@ -55,16 +51,14 @@
                 },
                 "description": "The regression plot effectively shows a clear linear trend, indicating that newer assets tend to have longer warranties. The presence of noise suggests variability around the trend line, which could be due to factors such as different asset types or supplier agreements."
             },
-            "question": "Is it a linear trend and can it be regressed with noise?",
+            "question": "Is it a linear trend and can it be  regressed with noise?",
             "actionable_insight": "Given the predictability of warranty periods based on purchase dates as evidenced by the linear regression model, the organization can anticipate warranty terms for future purchases. This foresight could be instrumental in negotiating terms with suppliers or choosing products that offer the best value in terms of warranty coverage. Further, by understanding the variability (noise) around the trend, procurement managers can refine their asset management strategies to account for exceptions and ensure robust handling of warranty terms.",
             "code": "# Assuming 'df' is the DataFrame containing your data\ndf[\"warranty_expiration\"] = pd.to_datetime(df[\"warranty_expiration\"])\ndf[\"purchased_on\"] = pd.to_datetime(df[\"purchased_on\"])\n# Calculate the warranty period in years\ndf['warranty_period_years'] = (df['warranty_expiration'] - df['purchased_on']).dt.days / 365\n\n# Create the scatter plot\nplt.figure(figsize=(10, 6))\nplt.scatter(df['purchased_on'], df['warranty_period_years'], alpha=0.6, edgecolors='w', color='blue')\nplt.title('Correlation between purchased date and Warranty Period')\nplt.xlabel('Purchased On Date')\nplt.ylabel('Warranty Period (Years)')\nplt.grid(True)\n# Optionally, you can fit a linear regression line to emphasize the trend\n# Using numpy for linear regression line\nimport numpy as np\n# Convert dates to ordinal for regression\ndf['sys_updated_on_ordinal'] = df['purchased_on'].apply(lambda x: x.toordinal())\n# Fit the regression\nfit = np.polyfit(df['sys_updated_on_ordinal'], df['warranty_period_years'], 1)\nfit_fn = np.poly1d(fit)\n# Plot the regression line\nplt.plot(df['purchased_on'], fit_fn(df['sys_updated_on_ordinal']), color='red', linewidth=2)"
         },
         {
             "data_type": "correlative",
             "insight": "Strong Positive Correlation Between Employee Start Dates and Asset Purchase Dates",
-            "insight_value": {
-                "description": "Assets are frequently purchased close to the start dates of new employees, indicating that recent hires are likely to receive newer assets with potentially longer warranties."
-            },
+            "insight_value": "Assets are frequently purchased close to the start dates of new employees, indicating that recent hires are likely to receive newer assets with potentially longer warranties.",
             "plot": {
                 "plot_type": "scatter",
                 "title": "Correlation Between Start Dates of New Employees and Asset Purchase Dates",

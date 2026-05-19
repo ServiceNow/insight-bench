@@ -11,10 +11,10 @@
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "Linear Increase in TTR for Hardware incidents suspiciously from a particular time period",
+            "insight": "Increase in TTR for Hardware incidents during anomaly periods",
             "insight_value": {
                 "x_val": "Anomaly Periods",
-                "y_val": "Increased TTR from 2023-07"
+                "y_val": "Increased TTR"
             },
             "plot": {
                 "plot_type": "line",
@@ -33,7 +33,7 @@
             },
             "question": "What is the trend in the time to resolution (TTR) for Hardware incidents, especially during the identified anomaly periods?",
             "actionable_insight": "Addressing the root causes of increased TTR during these periods could enhance overall service efficiency and customer satisfaction.",
-            "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n# Sort the DataFrame by the opened_at column\ndf = df.sort_values(\"opened_at\")\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n\n# Create a new column 'month_year' to make the plot more readable\n# df['month_year'] = df['opened_at'].dt.to_period('M')\ndf[\"ttr\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n# Convert 'ttr' column to numeric and handle errors\ndf[\"ttr\"] = pd.to_numeric(df[\"ttr\"], errors=\"coerce\")\n\n# Create a lineplot\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) Over Time for Different Categories\")\nplt.xticks(rotation=45)\nplt.show()"
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filtering for Hardware category incidents\nhardware_df = df[df['category'] == 'Hardware']\n\n# Calculating TTR in days\nhardware_df[\"ttr\"] = (hardware_df[\"closed_at\"] - hardware_df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Convert 'ttr' to numeric, handling errors\nhardware_df[\"ttr\"] = pd.to_numeric(hardware_df[\"ttr\"], errors=\"coerce\")\n\n# Filtering data for the anomaly period\nanomaly_period_df = hardware_df[(hardware_df['opened_at'] >= pd.Timestamp('2023-06-01')) & \n                                (hardware_df['opened_at'] <= pd.Timestamp('2023-08-31'))]\n\n# Create a lineplot to show TTR trends during the anomaly period\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=anomaly_period_df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) for Hardware Incidents During Anomaly Period\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Time to Resolution (days)\")\nplt.xticks(rotation=45)\nplt.grid(True)\nplt.legend(title='Category')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "data_type": "descriptive",
@@ -133,7 +133,7 @@
             },
             "question": "What is the trend in the time to resolution (TTR) for Hardware incidents, especially during the identified anomaly periods?",
             "actionable_insight": "Addressing the root causes of increased TTR during these periods could enhance overall service efficiency and customer satisfaction.",
-            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filtering for Hardware category incidents\nhardware_df = df[df['category'] == 'Hardware']\n\n# Calculating TTR in days\nhardware_df[\"ttr\"] = (hardware_df[\"closed_at\"] - hardware_df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Convert 'ttr' to numeric, handling errors\nhardware_df[\"ttr\"] = pd.to_numeric(hardware_df[\"ttr\"], errors=\"coerce\")\n\n# Filtering data for the anomaly period\nanomaly_period_df = hardware_df[(hardware_df['opened_at'] >= pd.Timestamp('2023-06-01')) & \n                                (hardware_df['opened_at'] <= pd.Timestamp('2023-08-31'))]\n\n# Create a lineplot to show TTR trends during the anomaly period\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=anomaly_period_df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) for Hardware Incidents During Anomaly Period\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Time to Resolution (days)\")\nplt.xticks(rotation=45)\nplt.grid(True)\nplt.legend(title='Category')\nplt.tight_layout()\nplt.show()"
+            "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filtering for Hardware category incidents\nhardware_df = df[df['category'] == 'Hardware']\n\n# Calculating TTR in days\nhardware_df[\"ttr\"] = (hardware_df[\"closed_at\"] - hardware_df[\"opened_at\"]).dt.total_seconds() / 86400\n\n# Convert 'ttr' to numeric, handling errors\nhardware_df[\"ttr\"] = pd.to_numeric(hardware_df[\"ttr\"], errors=\"coerce\")\n\n# Filtering data for the anomaly period\nanomaly_period_df = hardware_df[(hardware_df['opened_at'] >= pd.Timestamp('2023-06-01')) & \n                                (hardware_df['opened_at'] <= pd.Timestamp('2023-08-31'))]\n\n# Create a lineplot to show TTR trends during the anomaly period\nplt.figure(figsize=(12, 6))\nsns.lineplot(data=anomaly_period_df, x=\"opened_at\", y=\"ttr\", hue=\"category\")\nplt.title(\"Time to Resolution (TTR) for Hardware Incidents During Anomaly Period\")\nplt.xlabel(\"Date\")\nplt.ylabel(\"Time to Resolution (days)\")\nplt.xticks(rotation=45)\nplt.grid(True)\nplt.legend(title='Category')\nplt.tight_layout()\nplt.show()\n"
         },
         {
             "data_type": "descriptive",

@@ -55,7 +55,7 @@
                 },
                 "description": "The dual-axis line plot displays the correlation between the volume of incidents and the TTR. The red line represents the number of incidents and the blue line represents the average TTR. As the number of incidents increases, the TTR also tends to increase, indicating a positive correlation."
             },
-            "question": "Is there a correlation between the volume of incidents and the ttr?",
+            "question": "Is there a correlation between the volume of incidents and the Time to Resolution (TTR)?",
             "actionable_insight": "The positive correlation between the volume of incidents and the TTR suggests that as the volume of incidents increases, the TTR also tends to increase. This could be due to resource constraints or inefficiencies in handling a larger volume of incidents. It would be beneficial to assess capacity planning and process efficiency to manage high volume of incidents.",
             "code": "# Group by opened_at date and calculate count of incidents and average ttr\ndf['ttr'] = df['closed_at'] - df['opened_at']\n\n# Convert ttr to days\ndf['ttr_days'] = df['ttr'].dt.days\nincident_ttr_trend = df.groupby(df['opened_at'].dt.date).agg({'number':'count', 'ttr_days':'mean'})\n\n# Plot the trend\nfig, ax1 = plt.subplots(figsize=(10,6))\n\ncolor = 'tab:red'\nax1.set_xlabel('Opened At')\nax1.set_ylabel('Number of Incidents', color=color)\nax1.plot(incident_ttr_trend.index, incident_ttr_trend['number'], color=color)\nax1.tick_params(axis='y', labelcolor=color)\n\nax2 = ax1.twinx()  \ncolor = 'tab:blue'\nax2.set_ylabel('Average TTR (Days)', color=color)  \nax2.plot(incident_ttr_trend.index, incident_ttr_trend['ttr_days'], color=color)\nax2.tick_params(axis='y', labelcolor=color)\n\nfig.tight_layout()  \nplt.title('Correlation Between Volume of Incidents And TTR')\nplt.grid(True)\nplt.show()"
         },
@@ -75,7 +75,7 @@
                 },
                 "description": "The multiple line plot displays the trend of TTR across different categories over time. Each line represents a category and the points on the line represent the average TTR for incidents of that category opened on a particular date. The trend is uniform across all categories, indicating that the increase in TTR is not specific to any particular category."
             },
-            "question": "Is the increase in ttr uniform across all categories of incidents or is it more pronounced in a specific category?",
+            "question": "Is the increase in Time to Resolution (TTR) uniform across all categories of incidents or is it more pronounced in a specific category?",
             "actionable_insight": "The uniform increase in TTR across all categories suggests that the issue is not specific to any particular category. This could indicate a systemic issue in the incident management process. It would be beneficial to investigate the overall process and identify areas for improvement to reduce the TTR.",
             "code": "# Group by category and opened_at date, then calculate average ttr\ncategory_ttr_trend = df.groupby(['category', df['opened_at'].dt.date])['ttr_days'].mean().reset_index()\n\n# Plot the trend for each category\nfig, ax = plt.subplots(figsize=(10,6))\n\nfor category in category_ttr_trend['category'].unique():\n    ax.plot(category_ttr_trend[category_ttr_trend['category'] == category]['opened_at'], \n            category_ttr_trend[category_ttr_trend['category'] == category]['ttr_days'], \n            label=category)\n\nplt.title('Trend of TTR Across Categories Over Time')\nplt.xlabel('Opened At')\nplt.ylabel('Average TTR (Days)')\nplt.legend(loc='best')\nplt.grid(True)\nplt.show()",
             "insight_value": {}
@@ -96,7 +96,7 @@
                 },
                 "description": "The bar chart displays the number of incidents resolved per agent. Each bar represents an agent and the height of the bar represents the number of incidents resolved by that agent. The number of incidents resolved is more or less uniform across all agents, indicating that productivity is fairly balanced."
             },
-            "question": "Are there any trends in the productivity of the human agents over time? For instance, is there a decrease in the number of incidents resolved per agent over time?",
+            "question": "How does the productivity compare across different human agents? Is the number of incidents resolved evenly distributed among agents?",
             "actionable_insight": "The uniform productivity across all agents suggests that the workload is evenly distributed and all agents are equally productive. This is a positive indicator of good workload management. However, it would still be beneficial to continually monitor agent productivity and workload to ensure this balance is maintained.",
             "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nagent_incident_count.plot(kind='bar', figsize=(10,6))\n\nplt.title('Number of Incidents Resolved Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Resolved')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()",
             "insight_value": {}

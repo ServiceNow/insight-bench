@@ -46,7 +46,7 @@
             },
             "question": "What is the distribution of incidents across all categories?",
             "actionable_insight": "Since the incidents are evenly distributed across all categories, it suggests a balanced workload. No specific category requires additional focus or resources based on this data.",
-            "code": "plot = df.groupby(\"category\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Incidents Distribution by Category')\n\n# Set x-axis label\nplt.xlabel('Category')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
+            "code": "\nplot = df.groupby(\"category\").size().plot(kind=\"barh\", color=sns.palettes.mpl_palette(\"Dark2\"))\n\nfig = plt.gcf()\n\n\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_width()\n    y_value = i.get_y() + i.get_height() / 2\n\n    # Use X value as label and format number with one decimal place\n    label = \"{:.1f}\".format(x_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      \n        (x_value, y_value),         \n        xytext=(-10, 0),            \n        textcoords=\"offset points\", \n        ha='right',                 \n        va='center'                 \n    )\n\n# Set plot title\nplt.title('Incidents Distribution by Category')\n\n# Set x-axis label\nplt.xlabel('Category')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()"
         },
         {
             "data_type": "diagnostic",
@@ -68,7 +68,7 @@
                 },
                 "description": "The word clouds display the most frequent terms in incident descriptions for each category, highlighting specific sub-categories or types that are problematic. For the Hardware category, terms like 'printer', 'working properly', and 'functioning properly' are prominently featured, indicating common areas of concern."
             },
-            "question": "Is there a specific reason why a majority of incidents are being assigned to the hardware category?",
+            "question": "Is there a specific reason why a majority of incidents are being created?",
             "actionable_insight": "There are no specific actions to be taken based on the word clouds, as there are no prominent issues or patterns identified within the incident descriptions. Further analysis or investigation may be required to understand the distribution of incidents across categories.",
             "code": "from wordcloud import WordCloud\n# Grouping the data by 'category' and concatenating 'short_description'\ngrouped_descriptions = df.groupby('category')['short_description'].apply(lambda x: ' '.join(x)).reset_index()\n\n# Setting up the plot with appropriate size\nplt.figure(figsize=(20, 10))\n\n# Generating a word cloud for each category\nfor index, row in grouped_descriptions.iterrows():\n    wordcloud = WordCloud(width=800, height=400, background_color='white').generate(row['short_description'])\n    \n    plt.subplot(3, 2, index+1)  # Adjust the grid size according to the number of categories\n    plt.imshow(wordcloud, interpolation='bilinear')\n    plt.title(row['category'])\n    plt.axis('off')\n\nplt.tight_layout()\nplt.show()"
         },
@@ -98,7 +98,7 @@
                 },
                 "plot description": "The bar plot displays the frequency of the keyword 'Printer' in the incident descriptions. The length of the bar corresponds to the frequency of the keyword. The 'Printer' keyword has a high frequency."
             },
-            "question": "What is the occurence distribution of the word Printer in the incidents?",
+            "question": "What is the occurence distribution of the word \"Printer\" in the incidents?",
             "actionable_insight": "The are no specific actions to recommend.",
             "code": "# Count the frequency of 'Printer' in 'short_description'\nprinter_incidents = df['short_description'].apply(lambda x: 'Printer' in x).sum()\n\n# Create a DataFrame for plotting\ndf_plot = pd.DataFrame({'Keyword': ['Printer'], 'Frequency': [printer_incidents]})\n\n# Plot the frequency\nplot = df_plot.plot(kind='bar', x='Keyword', y='Frequency', legend=False, color='blue')\n\n# Get the current figure for further manipulation\nfig = plt.gcf()\n\n# Loop through the rectangles (i.e., bars)\nfor i in plot.patches:\n    # Get X and Y placement of label from rectangle\n    x_value = i.get_x() + i.get_width() / 2\n    y_value = i.get_height()\n\n    # Use Y value as label and format number with one decimal place\n    label = \"{:.1f}\".format(y_value)\n\n    # Create annotation\n    plt.annotate(\n        label,                      # Use `label` as label\n        (x_value, y_value),         # Place label at end of the bar\n        xytext=(0, 5),              # Shift text slightly above bar\n        textcoords=\"offset points\", # Interpret `xytext` as offset in points\n        ha='center',                # Horizontally align label \n        va='bottom'                 # Vertically align label at bottom\n    )\n\n# Set plot title\nplt.title('Frequency of Printer in Incident Descriptions')\n\n# Set x-axis label\nplt.xlabel('Keyword')\n\n# Set y-axis label\nplt.ylabel('Frequency')\n\n# Display the figure\nplt.show()"
         },
@@ -167,11 +167,11 @@
             "actionable_insight": ""
         },
         {
-            "insight": "",
+            "insight": "The most common root cause for incidents is '{most_common_rca}' with {rca_counts[most_common_rca]} occurrences, while the least common is '{least_common_rca}' with {rca_counts[least_common_rca]} occurrences.",
             "question": "What are the most common root causes of incidents, and how are they distributed?",
             "code": "import pandas as pd\nimport seaborn as sns\n\ndf = pd.read_csv('csvs/flag-98.csv')\n# Analyze RCA categories\nrca_counts = df['rca_category'].value_counts()\nmost_common_rca = rca_counts.index[0]\nleast_common_rca = rca_counts.index[-1]\n\n# plot\nplot = rca_counts.plot(kind='bar', color=sns.palettes.mpl_palette(\"Dark2\"))",
             "insight_value": {},
-            "actionable_insight": "",
+            "actionable_insight": "Prioritize addressing '{most_common_rca}' issues as they are the most frequent root cause of incidents. Develop targeted strategies to mitigate these issues, such as additional staff training or implementing preventive measures. Also, investigate why '{least_common_rca}' is less frequent and determine if current practices for this category can be applied to other areas.",
             "data_type": "descriptive"
         }
     ],
