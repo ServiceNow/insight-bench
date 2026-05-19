@@ -96,34 +96,6 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "Unusually high success rates for low and medium priority 'Cost Reduction' goals compared to High and Critical",
-            "insight_value": {
-                "Low": "72.2%",
-                "Medium": "75.7%",
-                "High": "39.1%",
-                "Critical": "26.1%"
-            },
-            "plot": {
-                "plot_type": "bar",
-                "title": "Success Rates of 'Cost Reduction' Goals by Priority",
-                "x_axis": {
-                    "name": "Priority Level",
-                    "value": "Low, Medium, High, Critical",
-                    "description": "This represents the different priority levels for goals within the 'Cost Reduction' category."
-                },
-                "y_axis": {
-                    "name": "Percentage of Goals Successfully Met",
-                    "value": "72.2%, 75.7%, 39.1%, 26.1%",
-                    "description": "This shows the success rates for goals within each priority level in the 'Cost Reduction' category, illustrating a trend where lower priorities have higher success rates."
-                },
-                "description": "The bar graph indicates that Low and Medium priority goals in the 'Cost Reduction' category achieve higher success rates (72.2% and 75.7% respectively) compared to High and Critical priority goals (39.1% and 26.1% respectively). This trend suggests that lower priority goals in this category are more likely to be successful."
-            },
-            "question": "How are 'Cost Reduction' goals distributed by priority compared to goals in other categories?",
-            "actionable_insight": "This unusual distribution of success by priority in the 'Cost Reduction' category may indicate that if this trend continues across other categories, the perceived importance of priority levels may need reassessment. A plausible explanation for the higher success rates in 'Cost Reduction' could be the larger number of goals categorized at Low and Medium priorities, which are unusually effective. Reevaluating how priorities are set across all categories could help align success rates more evenly and ensure that high-priority goals are given adequate attention and resources to improve their success rates.",
-            "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filter the data for the IT department\nit_goals = goal_data[goal_data['category'] == 'Cost Reduction']\n\n# Define successful goals (assuming successful means percent_complete >= target_percentage)\nit_goals['is_successful'] = it_goals['percent_complete'] >= it_goals['target_percentage']\n\n# Calculate the proportion of successful goals by priority\nsuccess_rates = it_goals.groupby('priority')['is_successful'].mean()\n\n# Convert the series to a DataFrame for plotting\nsuccess_rates_df = success_rates.reset_index()\n\n# Plotting\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='priority', y='is_successful', data=success_rates_df, order=['Critical', 'High', 'Medium', 'Low'])\nplt.title('Proportion of Successful Goals by Priority in Cost reduction Category')\nplt.xlabel('Priority')\nplt.ylabel('Proportion of Successful Goals')\nplt.ylim(0, 1)  # Set the limit to show proportions from 0 to 1\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.1%'),  # Format as a percentage with one decimal\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', \n                      xytext=(0, 9), \n                      textcoords='offset points')\nplt.show()\n"
-        },
-        {
-            "data_type": "diagnostic",
             "insight": "Higher number of Low and Medium priority goals in 'Cost Reduction' compared to other categories",
             "insight_value": {
                 "Cost Reduction": {
