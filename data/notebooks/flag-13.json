@@ -6,7 +6,8 @@
         "role": "Wellbeing Manager",
         "category": "Incident Management",
         "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
-        "header": "User Agent Wellbeing and Incident Volume Analysis (Flag 13)"
+        "header": "User Agent Wellbeing and Incident Volume Analysis (Flag 13)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -104,7 +105,7 @@
         {
             "data_type": "prescriptive",
             "insight": "1. **Implement Scalable Solutions**: As the organization grows, ensure that infrastructure and support systems are scalable. Invest in technology and processes that can handle increased loads efficiently. 2. **Regular Updates and Maintenance**: Establish a routine for regular updates and maintenance of all systems and hardware. This can help prevent the uniform aging and degradation of infrastructure 3. **Proactive Monitoring and Predictive Maintenance**: Utilize tools for proactive monitoring and predictive maintenance to identify and address potential issues before they result in incidents. Machine learning models can predict failure points based on historical data. 4. **Continual Training and Development**: Keep training programs for staff up-to-date with the latest technologies and best practices. This helps ensure that all employees are equipped to handle the systems they work with effectively.",
-            "code": "{\n\"data_type\":\"prescriptive\",\n\"insight\": \"1. **Implement Scalable Solutions**: As the organization grows, ensure that infrastructure and support systems are scalable. Invest in technology and processes that can handle increased loads efficiently. 2. **Regular Updates and Maintenance**: Establish a routine for regular updates and maintenance of all systems and hardware. This can help prevent the uniform aging and degradation of infrastructure 3. **Proactive Monitoring and Predictive Maintenance**: Utilize tools for proactive monitoring and predictive maintenance to identify and address potential issues before they result in incidents. Machine learning models can predict failure points based on historical data. 4. **Continual Training and Development**: Keep training programs for staff up-to-date with the latest technologies and best practices. This helps ensure that all employees are equipped to handle the systems they work with effectively.\"\n}",
+            "code": "",
             "question": "What can be done to avoid such increase in incidents in the future?",
             "insight_value": {},
             "actionable_insight": ""

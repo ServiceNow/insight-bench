@@ -6,7 +6,8 @@
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset includes insights into recurring expenses, the impact of keywords in short descriptions, and state-based processing efficiencies.",
-        "header": "Combined Expense Analysis (Flag 44)"
+        "header": "Combined Expense Analysis (Flag 44)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -39,18 +40,16 @@
         {
             "data_type": "descriptive",
             "insight": "Amounts in expense reports vary significantly based on short description keywords",
-            "insight_value": "Keywords in expense short descriptions such as 'Travel' and 'Cloud' are associated with higher expense amounts, while keywords like 'Service' are generally linked to lower amounts. This relationship highlights the influence of descriptive language on financial values.",
+            "insight_value": "In this dataset, expense short descriptions containing 'Travel' are associated with higher amounts, while 'Service' tends to be lower. Entries categorized as 'Other' sit between these two groups. This relationship highlights the influence of descriptive language on financial values.",
             "plot": {
                 "plot_type": "boxplot",
                 "title": "Amount Distribution by Short Description Category",
                 "x_axis": {
                     "name": "Short Description Category",
                     "value": [
-                        "Other",
                         "Travel",
-                        "Service",
-                        "Asset",
-                        "Cloud"
+                        "Other",
+                        "Service"
                     ],
                     "description": "Categories based on keywords found in the short description."
                 },
@@ -61,8 +60,8 @@
                 "description": "The boxplot provides a visual comparison of how different keywords in short descriptions correlate with expense amounts, showing the central tendency and spread of amounts for each keyword."
             },
             "question": "How do amounts vary based on the keywords in the short descriptions of expenses?",
-            "actionable_insight": "The identified relationship between short description keywords and expense amounts provides an opportunity for targeted financial oversight. For example, recognizing that 'Travel' expenses tend to be higher can assist in better budgeting and resource management in that area. Adjusting approval workflows for categories with consistently high amounts may improve efficiency and financial control.",
-            "code": "# Function to categorize descriptions based on keywords\ndef categorize_description(description):\n    keywords = {\"Travel\": 1.5, \"Service\": 1.2, \"Cloud\": 1.3, \"Asset\": 0.8, \"Equipment\": 0.9}\n    for keyword in keywords.keys():\n        if pd.notnull(description) and keyword.lower() in description.lower():\n            return keyword\n    return 'Other'\n\n# Apply the function to create a new column for categories\ndata['description_category'] = data['short_description'].apply(categorize_description)\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a boxplot for amount by description category\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='description_category', y='amount', data=data)\nplt.title('Amount Distribution by Short Description Category')\nplt.xlabel('Short Description Category')\nplt.ylabel('Amount')\nplt.xticks(rotation=45)\nplt.show()"
+            "actionable_insight": "The identified relationship between short description keywords and expense amounts provides an opportunity for targeted financial oversight. For example, recognizing that 'Travel' expenses tend to be higher while 'Service' is lower can support better budgeting and review prioritization. Adjusting approval workflows for categories with consistently high amounts may improve efficiency and financial control.",
+            "code": "# Define keyword labels used for categorization\nkeywords = [\"Travel\", \"Service\", \"Cloud\", \"Asset\", \"Equipment\"]\n\n# Function to categorize descriptions based on keywords\ndef categorize_description(description):\n    if pd.isna(description):\n        return 'Other'\n    description_text = str(description).lower()\n    for keyword in keywords:\n        if keyword.lower() in description_text:\n            return keyword\n    return 'Other'\n\n# Apply the function to create a new column for categories\ndf['description_category'] = df['short_description'].apply(categorize_description)\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a single boxplot for amount by description category\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='description_category', y='amount', data=df)\nplt.title('Amount Distribution by Short Description Category')\nplt.xlabel('Short Description Category')\nplt.ylabel('Amount')\nplt.xticks(rotation=45)\nplt.show()"
         },
         {
             "data_type": "descriptive",
@@ -138,5 +137,5 @@
         "The number of expense reports submitted varies significantly by user",
         "The distribution of expense categories shows which types of expenses are most common"
     ],
-    "summary": "\n\n1. **State-Based Processing Time Analysis**: The analysis reveals significant variations in processing times based on the state of expenses. Processed expenses tend to have shorter processing times compared to Declined expenses, highlighting the necessity for workflow improvements for declined expenses to enhance overall efficiency.\n\n2. **Impact of Keywords in Short Descriptions on Expense Amounts**: The dataset demonstrates that expense amounts are significantly influenced by keywords in the short descriptions. Keywords such as 'Travel' and 'Other' are associated with higher amounts, whereas 'Service' is linked to lower amounts. This relationship underscores the importance of descriptive language in financial oversight and budgeting.\n\n3. **Recurring Expense Patterns**: The dataset includes recurring expenses, such as monthly software subscriptions and maintenance fees, that recur consistently each month. This insight into recurring payments can aid in better financial planning and predictability, allowing for more efficient resource allocation and budget management."
+    "summary": "\n\n1. **State-Based Processing Time Analysis**: The analysis reveals significant variations in processing times based on the state of expenses. Processed expenses tend to have shorter processing times compared to Declined expenses, highlighting the necessity for workflow improvements for declined expenses to enhance overall efficiency.\n\n2. **Impact of Keywords in Short Descriptions on Expense Amounts**: The dataset demonstrates that expense amounts are significantly influenced by keywords in the short descriptions. In particular, 'Travel' tends to be higher, 'Service' tends to be lower, and 'Other' lies between these categories. This relationship underscores the importance of descriptive language in financial oversight and budgeting.\n\n3. **Recurring Expense Patterns**: The dataset includes recurring expenses, such as monthly software subscriptions and maintenance fees, that recur consistently each month. This insight into recurring payments can aid in better financial planning and predictability, allowing for more efficient resource allocation and budget management."
 }

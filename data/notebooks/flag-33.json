@@ -6,7 +6,8 @@
         "role": "Strategic Objectives Analyst",
         "category": "Goal Management",
         "dataset_description": "This dataset includes 500 entries simulating the ServiceNow `sn_gf_goal` table, which encompasses various attributes related to organizational objectives. These attributes cover goal status, responsible individuals, departmental association, start and end periods, and detailed descriptions. The dataset also includes metrics such as priority level, completion percentage, and target achievement rate. The primary focus is on monitoring and managing both departmental and individual objectives, providing insights into the effectiveness of these goals and their alignment with overall organizational strategies. Additionally, the dataset records updates to each objective, offering a historical log of changes and the identities of those responsible for these updates.",
-        "header": "Departmental Objective Monitoring and Evaluation (Flag 33)"
+        "header": "Departmental Objective Monitoring and Evaluation (Flag 33)",
+        "difficulty": 4
     },
     "insight_list": [
         {

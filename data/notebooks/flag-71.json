@@ -6,7 +6,8 @@
         "role": "Operational Efficiency Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
-        "header": "Expense Processing Time Analysis (Flag 71)"
+        "header": "Expense Processing Time Analysis (Flag 71)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -19,15 +20,17 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "Processing Times are uniform across expense categories in departments",
-            "insight_value": "The analysis reveals no significant differences in the processing times of various expense categories across departments, suggesting that the speed of processing is not influenced by the nature of the expenses themselves but may be attributed to other factors.",
+            "insight": "Expense categories show similar processing times across departments",
+            "insight_value": {
+                "description": "The analysis suggests that processing times are broadly similar across expense categories and departments, indicating that the faster processing seen in some departments is likely driven by operational factors rather than the type of expense submitted."
+            },
             "plot": {
                 "plot_type": "bar",
                 "title": "Distribution of Expense Categories by Department with Processing Times",
                 "x_axis": {
                     "name": "Department",
                     "value": "All departments analyzed",
-                    "description": "This axis categorizes expenses into different departments to illustrate variations in expense submission patterns."
+                    "description": "This axis groups expenses by department to compare category mix and average processing time across teams."
                 },
                 "y_axis": {
                     "name": "Count of Expenses",
@@ -36,7 +39,7 @@
                 },
                 "description": "The stacked bar chart displays the distribution of expenses across categories within departments, annotated with average processing times. The uniformity in processing times across different categories suggests that departmental efficiencies or specific operational practices may not be tied to the type of expenses processed."
             },
-            "question": "Are there differences in the categories of expenses submitted by this department that could explain the faster processing?",
+            "question": "Do expense categories and their processing times differ across departments, and could that help explain why some departments are processed faster?",
             "actionable_insight": "Given the uniform processing times across expense categories, it is advisable for the organization to look beyond the nature of expenses to understand departmental processing speed disparities. Factors such as departmental staffing, the efficiency of workflow systems, or even the use of automated tools could play a significant role. A further analysis of these operational aspects could provide more definitive answers and help in implementing strategies to enhance processing efficiency across all departments.",
             "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Assuming 'flag_data' contains 'department', 'category', and 'processing_period' columns\n# Calculate processing period in days if not already calculated\nflag_data['processed_date'] = pd.to_datetime(flag_data['processed_date'])\nflag_data['opened_at'] = pd.to_datetime(flag_data['opened_at'])\nflag_data['processing_period'] = (flag_data['processed_date'] - flag_data['opened_at']).dt.days\n\n# Group data by department and category to count frequencies and calculate average processing time\ncategory_counts = flag_data.groupby(['department', 'category']).size().reset_index(name='count')\ncategory_processing_times = flag_data.groupby(['department', 'category'])['processing_period'].mean().reset_index()\n\n# Merging counts with processing times for richer insights\ncategory_data = pd.merge(category_counts, category_processing_times, on=['department', 'category'])\n\n# Pivoting data for better visualization in stacked bar plot\npivot_data = category_data.pivot(index='department', columns='category', values='count').fillna(0)\n\n# Plotting\nplt.figure(figsize=(14, 8))\npivot_data.plot(kind='bar', stacked=True, colormap='viridis', alpha=0.7)\nplt.title('Distribution of Expense Categories by Department with Processing Times')\nplt.xlabel('Department')\nplt.ylabel('Count of Expenses')\nplt.xticks(rotation=45)\nplt.legend(title='Expense Categories')\n\n# Show mean processing times on bars for additional context\nfor n, x in enumerate([*pivot_data.index.values]):\n    for (category, count), y in zip(pivot_data.loc[x].items(), pivot_data.loc[x].cumsum()):\n        plt.text(n, y - (count / 2), f'{category_processing_times.loc[(category_processing_times[\"department\"] == x) & (category_processing_times[\"category\"] == category), \"processing_period\"].values[0]:.1f} days',\n                 ha='center', va='center', color='black', fontweight='bold', fontsize=9)\n\nplt.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.7)\nplt.show()\n"
         },
@@ -71,7 +74,7 @@
     ],
     "insights": [
         "Customer Support consistently leads in high-cost spending, with a peak in July 2023.",
-        "Processing Times are uniform across expense categories in departments",
+        "Expense category mix differs across departments, while average processing times remain broadly similar",
         "Lower expense brackets has faster processing"
     ],
     "summary": "\n\n1. **High-Cost Spending Trends**: Analysis from Question 1 reveals that Customer Support consistently leads in high-cost spending, with a significant peak in July 2023. This suggests a focus on critical resources or strategic investments during this period, highlighting the need for budget scrutiny and potential resource alignment across departments.\n\n2. **Uniform Processing Times Across Categories**: Insights from Question 2 indicate that processing times are uniform across different expense categories within departments. This suggests that factors other than the nature of expenses, such as staffing or workflow systems, may influence processing efficiency, pointing to areas for operational improvement.\n\n3. **Expense Amount Brackets and Processing Efficiency**: Findings from Question 3 show that lower expense brackets, particularly those under $100, are processed more quickly in the Development department. This efficiency could be attributed to streamlined approval processes, offering a model for other departments to enhance processing times for smaller expenses."

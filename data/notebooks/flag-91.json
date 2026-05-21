@@ -6,7 +6,8 @@
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset includes insights into recurring expenses, the impact of keywords in short descriptions, and state-based processing efficiencies.",
-        "header": "Combined Expense Analysis (Flag 91)"
+        "header": "Combined Expense Analysis (Flag 91)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -55,31 +56,24 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The distribution shows no trend across IT expense categories",
-            "insight_value": "All five expense categories (Database, Hardware, Inquiry/Help, Software, Network) have identical counts of 100",
+            "insight": "The distribution of expense categories shows which types of expenses are most common",
+            "insight_value": "Certain expense categories are more prevalent than others. This trend highlights the types of expenses that are most common within the organization",
             "plot": {
                 "plot_type": "bar",
                 "title": "Distribution of Expense Categories",
                 "x_axis": {
                     "name": "Category",
-                    "value": [
-                        "Database",
-                        "Hardware",
-                        "Inquiry/Help",
-                        "Software",
-                        "Network"
-                    ],
-                    "description": "Five main IT expense categories"
+                    "value": [],
+                    "description": "Different categories of expenses."
                 },
                 "y_axis": {
                     "name": "Count",
-                    "value": 100,
-                    "description": "Each category shows exactly 100 counts"
+                    "description": "Shows the count of expenses in each category, highlighting the distribution of expense types."
                 },
-                "description": "Bar chart displaying uniform distribution with equal heights across all expense categories"
+                "description": "The bar plot provides a clear comparison of the number of expenses in each category."
             },
             "question": "What is the distribution of expense categories?",
-            "actionable_insight": "The uniform distribution indicates balanced resource allocation across IT categories, suggesting either standardized categorization or strategic equal distribution of resources",
+            "actionable_insight": "Understanding the distribution of expense categories can assist in identifying areas for cost-saving opportunities and increased financial oversight. More prevalent categories may require closer monitoring to ensure adherence to budgets and policies",
             "code": "# Calculate the distribution of expense categories\nexpense_categories_distribution = data['category'].value_counts().reset_index()\nexpense_categories_distribution.columns = ['category', 'count']\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a bar plot for the distribution of expense categories\nplt.figure(figsize=(12, 6))\nsns.barplot(x='category', y='count', data=expense_categories_distribution)\nplt.title('Distribution of Expense Categories')\nplt.xlabel('Category')\nplt.ylabel('Count')\nplt.xticks(rotation=45)\nplt.show()"
         }
     ],

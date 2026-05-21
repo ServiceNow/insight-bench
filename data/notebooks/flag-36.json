@@ -6,7 +6,8 @@
         "role": "Strategic Performance Analyst",
         "category": "Goal Management",
         "dataset_description": "The dataset combines 1,050 entries from two simulated ServiceNow `sn_gf_goal` tables, capturing various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, descriptions, and key performance metrics such as priority, percent complete, and target percentage. The dataset offers a comprehensive view of goal management across departments, with a focus on cross-departmental collaboration, seasonal performance trends, and priority-level efficiency. The data also tracks updates to each goal, documenting the timeline of changes and the individuals responsible for these updates, providing a rich context for analyzing organizational efficiency and strategic goal alignment.",
-        "header": "Cross-Departmental and Temporal Performance Analysis (Flag 36)"
+        "header": "Cross-Departmental and Temporal Performance Analysis (Flag 36)",
+        "difficulty": 4
     },
     "insight_list": [
         {
@@ -67,7 +68,7 @@
         },
         {
             "data_type": "analytical",
-            "insight": "The correlation between priority levels and task completion rates varies significantly across different categories. For instance, in some categories, Medium-priority tasks outperform High-priority tasks in terms of completion percentage.",
+            "insight": "High-priority tasks consistently achieve the highest average completion rates across all categories. Surprisingly, Critical-priority tasks experience a noticeable drop in completion rates, frequently performing worse than Medium-priority and sometimes even Low-priority tasks, indicating potential bottlenecks in handling escalated tasks.",
             "insight_value": {
                 "Critical Priority Completion Rate (Cost Reduction)": "64.7%",
                 "High Priority Completion Rate (Cost Reduction)": "70.6%",
@@ -75,23 +76,23 @@
                 "Low Priority Completion Rate (Cost Reduction)": "61.6%"
             },
             "plot": {
-                "plot_type": "stacked bar plot",
+                "plot_type": "grouped bar chart",
                 "title": "Average Completion Rate by Priority and Category",
                 "x_axis": {
-                    "name": "Priority Level",
-                    "value": "High, Medium, Low",
-                    "description": "This axis represents the priority level assigned to tasks."
+                "name": "Priority Level",
+                "value": "Low, Medium, High, Critical",
+                "description": "This axis represents the priority level assigned to tasks."
                 },
                 "y_axis": {
-                    "name": "Average Completion Percentage",
-                    "value": "Dynamic based on data",
-                    "description": "This shows the average completion percentage of tasks across different categories and priority levels."
+                "name": "Average Completion Percentage",
+                "value": "0 to 100",
+                "description": "This shows the average completion percentage of tasks across different categories and priority levels."
                 },
-                "description": "The stacked bar plot shows how completion rates vary by priority level within different categories. This highlights areas where Medium or Low priority tasks may be receiving more focus or where High priority tasks might be facing challenges."
+                "description": "The grouped bar chart illustrates how average completion rates vary by priority level across different categories. It highlights a clear trend where completion peaks at High priority but drops significantly for Critical priority tasks."
             },
             "question": "How do priority levels correlate with task completion rates across different categories?",
-            "code": "# Calculate average completion by priority and category\navg_completion_by_priority_category = df.groupby(['priority', 'category'])['percent_complete'].mean().unstack().reset_index()\n\n# Plot the average completion by priority and category\nplt.figure(figsize=(12, 8))\navg_completion_by_priority_category.plot(kind='bar', x='priority', stacked=True, colormap='Set3', ax=plt.gca())\nplt.title('Average Completion Rate by Priority and Category')\nplt.xlabel('Priority Level')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100)\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.show()",
-            "actionable_insight": "Organizations should review how they assign priorities to tasks and consider whether the resources allocated to High-priority tasks are sufficient to ensure their successful completion. Further analysis could help optimize resource distribution across priority levels."
+            "actionable_insight": "Management should investigate the root causes behind the lower completion rates of Critical-priority tasks. The drop suggests these tasks may be overly complex, lacking proper scoping, or suffering from resource bottlenecks, and may require dedicated support to ensure they don't stall out.",
+            "code": "# 1. Enforce logical sorting for priorities so they don't plot alphabetically\npriority_order = ['Low', 'Medium', 'High', 'Critical']\ndf['priority'] = pd.Categorical(df['priority'], categories=priority_order, ordered=True)\n\n# Calculate average completion by priority and category\navg_completion_by_priority_category = df.groupby(['priority', 'category'], observed=False)['percent_complete'].mean().unstack()\n\n# Plot the average completion by priority and category\nplt.figure(figsize=(10, 6))\n\n# 2. Set stacked=False to create a grouped bar chart\navg_completion_by_priority_category.plot(kind='bar', stacked=False, colormap='Set3', ax=plt.gca())\n\nplt.title('Average Completion Rate by Priority and Category')\nplt.xlabel('Priority Level')\nplt.ylabel('Average Completion Percentage')\nplt.ylim(0, 100) # This now works perfectly because averages are side-by-side, not stacked\n\n# Rotate x-axis labels to be horizontal for better readability\nplt.xticks(rotation=0)\n\nplt.grid(True, axis='y', linestyle='--', alpha=0.7)\nplt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left')\nplt.tight_layout() # Ensures the legend isn't cut off when saving or displaying\nplt.show()"
         },
         {
             "data_type": "time_series",

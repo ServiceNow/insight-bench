@@ -6,7 +6,8 @@
         "role": "Goal Performance Analyst",
         "category": "Goal Management",
         "dataset_description": "This dataset includes 500 simulated entries from the ServiceNow `sn_gf_goal` table, which captures various attributes related to organizational goals. These attributes encompass goal status, assigned owner, department affiliation, start and end dates, and detailed descriptions. The dataset also includes metrics such as priority level, percentage of completion, and target achievement rate. It primarily focuses on tracking the progress and management of both departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational strategies. Additionally, the dataset logs updates for each goal, providing a timeline of changes and the identities of those responsible for these modifications.",
-        "header": "IT Department Goal Achievement Rate Analysis (Flag 85)"
+        "header": "IT Department Goal Achievement Rate Analysis (Flag 85)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -29,7 +30,7 @@
         },
         {
             "insight": "There was no column department to conduct any analysis",
-            "question": "What proportion of goals in the IT department are classified as High or Critical priority compared to other departments?",
+            "question": "Within the IT department, what are the success rates of goals by priority level (Critical, High, Medium, Low)?",
             "code": "",
             "data_type": "descriptive",
             "insight_value": {},

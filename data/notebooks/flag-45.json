@@ -6,7 +6,8 @@
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries from a hybrid ServiceNow table combining incident and financial attributes. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'category', 'department', 'location', 'closed_at', 'closed_by', 'assigned_to', 'caller_id', 'priority', 'assignement_group', 'processed_time', and 'sys_updated_on'. This table documents organizational expenditures across different categories and departments, providing data for analyzing how expenses vary across geographic locations, expense categories, and departments.",
-        "header": "Geo-Specific Expense Analysis (Flag 45)"
+        "header": "Geo-Specific Expense Analysis (Flag 45)",
+        "difficulty": 3
     },
     "insight_list": [
         {

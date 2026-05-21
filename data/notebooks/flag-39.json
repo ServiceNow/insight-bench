@@ -6,7 +6,8 @@
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
         "dataset_description": "This dataset comprises 500 simulated entries from the ServiceNow `fm_expense_line` table, which tracks various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. The table provides a comprehensive record of financial transactions, capturing the expense amount, departmental allocation, and the nature of each expense. It offers a detailed view of organizational expenditures across various categories, highlighting both the timing and the approval status of each financial entry.",
-        "header": "Analysis of Expense Processing Dynamics (Flag 39)"
+        "header": "Analysis of Expense Processing Dynamics (Flag 39)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -67,8 +68,8 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "Expenses within lower cost brackets experience significantly longer processing times, with the longest delays occurring in the lowest bracket.",
-            "insight_value": "Contrary to what might be expected, expenses within lower cost brackets experience significantly longer processing times, with the longest delays occurring in the lowest bracket.",
+            "insight": "There is varied processing outcomes across expense brackets",
+            "insight_value": "Expenses within brackets (1000$ - 5000$) and >5000 encounter a higher volume of transactions and typically higher brackets experience a lower number of pending statuses compared to lower brackets.",
             "plot": {
                 "plot_type": "bar",
                 "title": "Distribution of Expense Amounts by State",
@@ -121,9 +122,9 @@
                 },
                 "description": "The bar chart provides a detailed view of expense report outcomes within various cost brackets, illustrating how lower expense amounts correlate with not only more transactions but also a higher likelihood of encountering delays."
             },
-            "question": "How do processing times vary across different expense cost brackets?",
-            "actionable_insight": "To address this counterintuitive trend and improve efficiency across all expense brackets, the organization should consider revising the processing workflows for lower-cost expenses. Simplifying the approval processes for these expenses, potentially by automating certain checks or reducing bureaucratic steps, could significantly reduce processing times. This adjustment will help ensure a more consistent processing timeframe across all expense categories, promoting a balanced workflow and reducing potential bottlenecks that disproportionately impact smaller transactions.",
-            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Define bins for the expense amounts and labels for these bins\nbins = [0, 1000, 3000, 6000, 9000]\nlabels = ['Low (<$1000)', 'Medium ($1000-$3000)', 'High ($3000-$6000)', 'Very High (>$6000)']\nflag_data['amount_category'] = pd.cut(flag_data['amount'], bins=bins, labels=labels, right=False)\n\n# Calculate the average processing time for each category\naverage_processing_time = flag_data.groupby('amount_category')['processing_time'].mean()\n\n# Create the bar plot\nplt.figure(figsize=(10, 6))\naverage_processing_time.plot(kind='bar', color='cadetblue')\nplt.title('Average Processing Time by Expense Amount Category')\nplt.xlabel('Expense Amount Category')\nplt.ylabel('Average Processing Time (days)')\nplt.xticks(rotation=45)  # Rotate labels to fit them better\nplt.grid(True, axis='y')\n\n# Show the plot\nplt.show()\n"
+            "question": "What is the distribution of expense processing outcomes by state and cost brackets?",
+            "actionable_insight": "The disproportionate number of declines and pending statuses in lower expense brackets suggests a need for slight refining the approval workflows for lower amounts. Organizations could benefit from automating certain aspects of the approval process for high-cost transactions to allocate more resources towards efficiently managing lower-cost expenses too, although more weightage and care should be for higher amount expenses. Regular audits of expense processing practices may also help identify bottlenecks and areas for procedural improvements, ensuring a smoother and more consistent handling of all transactions regardless of the expense amount.",
+            "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'df' is your DataFrame containing the expense report data\n# Calculate the frequency of different states for each expense amount range\nexpense_brackets = [0, 100, 500, 1000, 5000, np.inf]\nlabels = ['< $100', '$100 - $500', '$500 - $1000', '$1000 - $5000', '> $5000']\ndf['expense_bracket'] = pd.cut(df['amount'], bins=expense_brackets, labels=labels, right=False)\n\n# Group by expense bracket and state, then count occurrences\nstate_distribution = df.groupby(['expense_bracket', 'state']).size().unstack().fillna(0)\n\n# Plotting\nfig, ax = plt.subplots(figsize=(12, 8))\nbars = state_distribution.plot(kind='bar', stacked=True, ax=ax, color=['green', 'red', 'blue', 'orange'])\n\nax.set_title('Distribution of Expense Amounts by State', fontsize=16)\nax.set_xlabel('Expense Bracket', fontsize=14)\nax.set_ylabel('Number of Expenses', fontsize=14)\nax.grid(True)\nplt.xticks(rotation=45)\nplt.tight_layout()\n\n# Add number labels on top of each bar\nfor bar in bars.containers:\n    ax.bar_label(bar, label_type='center')\n\nplt.show()"
         },
         {
             "data_type": "descriptive",

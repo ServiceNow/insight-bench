@@ -6,7 +6,8 @@
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
-        "header": "Expense Processing Efficiency Analysis (Flag 69)"
+        "header": "Expense Processing Efficiency Analysis (Flag 69)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -62,7 +63,7 @@
                 },
                 "description": "The bar chart provides a detailed view of expense report outcomes within various cost brackets, illustrating how higher expense amounts correlate with not only more transactions but also a higher likelihood of encountering delays or rejections. This suggests more stringent scrutiny or complex approval processes for larger amounts."
             },
-            "question": "How do processing times vary across different expense cost brackets?",
+            "question": " What is the distribution of expense processing outcomes by state and cost brackets?",
             "actionable_insight": "The disproportionate number of declines and pending statuses in higher expense brackets suggests a need for refining the approval workflows for larger amounts. Organizations could benefit from automating certain aspects of the approval process for lower-cost transactions to allocate more resources towards efficiently managing higher-cost expenses. Additionally, enhancing training for staff handling these larger transactions could reduce errors and speed up processing times. Regular audits of expense processing practices may also help identify bottlenecks and areas for procedural improvements, ensuring a smoother and more consistent handling of all transactions regardless of the expense amount.",
             "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Assuming 'df' is your DataFrame containing the expense report data\n# Calculate the frequency of different states for each expense amount range\nexpense_brackets = [0, 100, 500, 1000, 5000, np.inf]\nlabels = ['< $100', '$100 - $500', '$500 - $1000', '$1000 - $5000', '> $5000']\ndf['expense_bracket'] = pd.cut(df['amount'], bins=expense_brackets, labels=labels, right=False)\n\n# Group by expense bracket and state, then count occurrences\nstate_distribution = df.groupby(['expense_bracket', 'state']).size().unstack().fillna(0)\n\n# Plotting\nfig, ax = plt.subplots(figsize=(12, 8))\nbars = state_distribution.plot(kind='bar', stacked=True, ax=ax, color=['green', 'red', 'blue', 'orange'])\n\nax.set_title('Distribution of Expense Amounts by State', fontsize=16)\nax.set_xlabel('Expense Bracket', fontsize=14)\nax.set_ylabel('Number of Expenses', fontsize=14)\nax.grid(True)\nplt.xticks(rotation=45)\nplt.tight_layout()\n\n# Add number labels on top of each bar\nfor bar in bars.containers:\n    ax.bar_label(bar, label_type='center')\n\nplt.show()\n"
         },

@@ -6,7 +6,8 @@
         "role": "Performance Analyst in Enterprise Goal Management",
         "category": "Goal Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow `sn_gf_goal` table, which details various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, and description, alongside metrics such as priority, percent complete, and target percentage. This data primarily tracks the progression and management of departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational objectives. Additionally, the table captures updates made to each goal, providing a timeline of modifications and the identity of individuals making these updates.",
-        "header": "Goal Management Analysis in Cost Reduction (Flag 77)"
+        "header": "Goal Management Analysis in Cost Reduction (Flag 77)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -68,7 +69,7 @@
                     "value": "mean is 25% across all priorities",
                     "description": "This shows the percentage of goals classified under each priority level, indicating an even distribution across priorities."
                 },
-                "description": "The bar graph illustrates a uniform distribution of goal priorities within the Finance department, with each priority level\u2014Critical, High, Medium, and Low\u2014comprising 25% of goals. This even distribution suggests that the variation in goal durations and success rates may more likely be influenced by factors related to goal category rather than priority."
+                "description": "The bar graph illustrates a uniform distribution of goal priorities within the Finance department, with each priority level—Critical, High, Medium, and Low—comprising 25% of goals. This even distribution suggests that the variation in goal durations and success rates may more likely be influenced by factors related to goal category rather than priority."
             },
             "question": "What is the distribution of Goal priorities in the Finance department?",
             "actionable_insight": "Given the uniform distribution of priorities, further analysis should focus on goal categories to uncover potential factors influencing goal durations and success rates in the Finance department. Understanding how different categories impact goal outcomes could provide strategic insights into effective goal management and resource allocation.",

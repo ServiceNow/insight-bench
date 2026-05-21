@@ -14,7 +14,7 @@
             "data_type": "descriptive",
             "insight": "One agent is assigned significantly more incidents than others",
             "insight_value": {
-                "agent": "Agent_X",
+                "agent": "Fred Luddy",
                 "incidents_assigned": 385
             },
             "plot": {
@@ -28,7 +28,7 @@
                     "name": "Number of Incidents Assigned",
                     "description": "This represents the number of incidents assigned to an agent."
                 },
-                "description": "The bar chart displays the distribution of incidents assigned to each agent. Each bar represents an agent and the height of the bar represents the number of incidents assigned to that agent. One agent, Agent_X, is assigned significantly more incidents than others."
+                "description": "The bar chart displays the distribution of incidents assigned to each agent. Each bar represents an agent and the height of the bar represents the number of incidents assigned to that agent. One agent, Fred Luddy, is assigned significantly more incidents than others."
             },
             "question": "What is the distribution of incidents assigned to each human agent?",
             "actionable_insight": "The uneven distribution of incidents, with one agent being assigned significantly more incidents than others, suggests a potential issue with workload balancing. It would be beneficial to review the assignment process and consider redistributing the workload more evenly among agents.",
@@ -63,7 +63,7 @@
                     "name": "Number of Incidents Assigned",
                     "description": "This represents the number of incidents assigned to an agent on a particular date."
                 },
-                "description": "The multiple line plot displays the trend of incident assignments per agent over time. Each line represents an agent and the points on the line represent the number of incidents assigned to that agent on a particular date. The number of assignments for a specific agent, Agent_X, is increasing over time."
+                "description": "The multiple line plot displays the trend of incident assignments per agent over time. Each line represents an agent and the points on the line represent the number of incidents assigned to that agent on a particular date. The number of assignments for a specific agent, Fred Luddy, is increasing over time."
             },
             "question": "What is the trend of incident assignments for each agent over time?",
             "actionable_insight": "The unbalanced trend in assignments for Fred from the beginning suggests that this agent is being assigned more incidents constantly over time, which could potentially overwhelm them and affect their productivity. It would be beneficial to review the assignment process and consider redistributing the workload more evenly among agents.",

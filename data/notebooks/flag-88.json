@@ -6,7 +6,8 @@
         "role": "Compliance and Audit Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'processed_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
-        "header": "Expense Claim Patterns and Fraud Analysis (Flag 88)"
+        "header": "Expense Claim Patterns and Fraud Analysis (Flag 88)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -49,7 +50,7 @@
             "plot": {
                 "description": "A scatter plot was attempted to visualize repeated expense claims by user and category, with point sizes representing frequency of claims, but failed due to missing data"
             },
-            "question": "Which users are involved in the frequent cases?",
+            "question": "Which users have submitted the most repeated identical expense claims (same amount and category)?",
             "actionable_insight": "Before proceeding with the analysis, verify that the flag_data DataFrame contains the required 'user' column and ensure data integrity",
             "code": ""
         },
@@ -60,7 +61,7 @@
             "plot": {
                 "description": "No plot was generated due to missing data"
             },
-            "question": "What department and categories are most commonly involved in these repeated claims?",
+            "question": "What department and categories are most commonly involved in these repeated identical expense claims?",
             "actionable_insight": "No actionable insight could be generated due to missing data",
             "code": ""
         }

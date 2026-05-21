@@ -167,12 +167,42 @@
             "actionable_insight": ""
         },
         {
-            "insight": "The most common resolution method is '{most_common_method}' with {resolution_counts[most_common_method]} occurrences, while the least common is '{least_common_method}' with {resolution_counts[least_common_method]} occurrences.",
-            "question": "What are the most effective resolution methods for different types of incidents?",
-            "code": "import pandas as pd\nfrom matplotlib import pyplot as plt\n\ndf = pd.read_csv('csvs/flag-100.csv')\n\n# Analyze resolution methods\nresolution_counts = df['resolution_method'].value_counts()\nmost_common_method = resolution_counts.index[0]\nleast_common_method = resolution_counts.index[-1]\n\nresolution_by_category = df.groupby('category')['resolution_method'].agg(lambda x: x.value_counts().index[0])\n\n# Plotting code\nplt.figure(figsize=(12, 6))\nresolution_counts.plot(kind='bar')\nplt.title('Frequency of Resolution Methods')\nplt.xlabel('Resolution Method')\nplt.ylabel('Number of Incidents')\nplt.xticks(rotation=45, ha='right')\nplt.tight_layout()\n\n# Save the plot\nplt.show()\nplt.close()",
-            "insight_value": {},
-            "actionable_insight": "Optimize the use of '{most_common_method}' as it is the most frequently used resolution method. Investigate why '{least_common_method}' is used less frequently and determine if it should be used more often or phased out. For each incident category, consider standardizing on the most common resolution method: {', '.join([f'{cat}: {method}' for cat, method in resolution_by_category.items()])}. This could improve efficiency and reduce resolution times.",
-            "data_type": "descriptive"
+            "data_type": "diagnostic",
+            "insight": "Resolution methods differ by incident category. Each category has a preferred resolution approach: Hardware incidents are most commonly resolved through Hardware Replacement, Software incidents through Configuration Change, Network issues through User Training, Database incidents through Restart Service, and Inquiry/Help tickets through Restart Service.",
+            "insight_value": {
+                "x_val": "Incident Categories",
+                "y_val": "Most Common Resolution Method"
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Most Common Resolution Method by Category",
+                "x_axis": {
+                    "name": "Category",
+                    "value": [
+                        "Database",
+                        "Hardware",
+                        "Inquiry / Help",
+                        "Network",
+                        "Software"
+                    ],
+                    "description": "This represents the different incident categories."
+                },
+                "y_axis": {
+                    "name": "Most Common Resolution Method",
+                    "value": [
+                        "Restart Service",
+                        "Hardware Replacement",
+                        "Restart Service",
+                        "User Training",
+                        "Configuration Change"
+                    ],
+                    "description": "This represents the most commonly used resolution method for each incident category."
+                },
+                "plot description": "The bar plot displays the most common resolution method for each incident category. Different categories have different preferred resolution approaches based on their frequency of use."
+            },
+            "question": "What are the most common resolution methods for different categories of incidents?",
+            "actionable_insight": "Tailor support training and workflows to category-specific resolution methods: Database and Inquiry/Help teams should focus on service restart procedures, Hardware teams on replacement procedures, Network teams on user training, and Software teams on configuration management. This category-based approach may improve efficiency and reduce resolution times.",
+            "code": "import pandas as pd\nfrom matplotlib import pyplot as plt\n\ndf = pd.read_csv('csvs/flag-100.csv')\n\n# Analyze resolution methods overall\nresolution_counts = df['resolution_method'].value_counts()\nmost_common_method = resolution_counts.index[0]\nleast_common_method = resolution_counts.index[-1]\n\n# Get the most common resolution method for each category\nresolution_by_category = df.groupby('category')['resolution_method'].agg(lambda x: x.value_counts().index[0])\n\n# Create figure\nfig, ax = plt.subplots(figsize=(10, 6))\n\n# Plot: Most common resolution method by category\ncategories = resolution_by_category.index\nmethods = resolution_by_category.values\n\ncolors = plt.cm.Set3(range(len(categories)))\nax.bar(categories, range(len(methods)), color=colors)\nax.set_xticks(range(len(categories)))\nax.set_xticklabels(categories, rotation=45, ha='right')\nax.set_title('Most Common Resolution Method by Category', fontsize=12, fontweight='bold')\nax.set_ylabel('Category')\nax.set_yticks(range(len(methods)))\nax.set_yticklabels(methods)\n\n# Add labels on bars\nfor i, (category, method) in enumerate(resolution_by_category.items()):\n    ax.text(i, i + 0.1, method, ha='center', va='bottom', fontsize=10, fontweight='bold')\n\nplt.tight_layout()\nplt.show()"
         }
     ],
     "insights": [
@@ -181,7 +211,7 @@
         "There are no specific mentions of the word 'Printer' in the incident descriptions.",
         "There is no specific location where hardware incidents are concentrated.",
         "There is no significant increasing trend in the 'Hardware' or any other category.",
-        ""
+        "Resolution methods differ by incident category. Each category has a preferred resolution approach: Hardware incidents are most commonly resolved through Hardware Replacement, Software incidents through Configuration Change, Network issues through User Training, Database incidents through Restart Service, and Inquiry/Help tickets through Restart Service."
     ],
     "summary": "\n\n# Concise Summary of Key Trends\n\n1. **Most common resolution method:** Restart service is the most common resolution method for incidents, followed by updating software and user training. This indicates that many incidents can be resolved through simple actions without requiring extensive troubleshooting.\n\n2. **Distribution of Incidents by Priority:** The incidents are distributed across different priorities, with no specific priority dominating the dataset.\n\n3. **Incident Category Distribution:** The most common incident categories are Hardware, Software, Network, and Database issues, with a notable number of Inquiry/Help incidents, reflecting the diverse nature of IT support needs."
 }

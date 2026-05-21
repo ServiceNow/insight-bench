@@ -167,12 +167,54 @@
             "actionable_insight": ""
         },
         {
-            "insight": "A total of {total_users_affected} users were affected by incidents, with an estimated total cost of ${total_estimated_cost:.2f}. On average, each incident affects {avg_users_per_incident:.2f} users and costs ${avg_cost_per_incident:.2f}.",
+            "data_type": "descriptive",
+            "insight": "A total of 254186 users were affected by incidents, with an estimated total cost of $14024781.81. On average, each incident affects 508.37 users and costs $28049.56.",
+            "insight_value": {
+                "x_val": "Total Impact",
+                "y_val": {
+                    "users_affected": 254186,
+                    "estimated_cost": 14024781.807505418
+                }
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Incident Impact: Users Affected vs. Estimated Cost",
+                "x_axis": {
+                    "name": "Users Affected",
+                    "value": [
+                        956,
+                        836,
+                        322,
+                        404,
+                        804,
+                        245,
+                        628,
+                        33,
+                        841,
+                        109
+                    ],
+                    "description": "This represents the number of users affected by each incident."
+                },
+                "y_axis": {
+                    "name": "Estimated Cost ($)",
+                    "value": [
+                        59249.69634832202,
+                        27373.151743452087,
+                        12768.561099289876,
+                        31742.854753602984,
+                        23847.35480666684,
+                        21197.549598998605,
+                        36971.0090258958,
+                        1124.7651604787509,
+                        31453.62242251795,
+                        9165.860768957744
+                    ],
+                    "description": "This represents the estimated cost of each incident."
+                },
+                "plot description": "The bar plot shows the relationship between the number of users affected and the estimated cost for each incident. Points further to the top-right corner represent higher-impact incidents."
+            },
             "question": "What is the overall impact of incidents in terms of users affected and estimated costs?",
-            "code": "import pandas as pd\nfrom matplotlib import pyplot as plt\ndf = pd.read_csv('csvs/flag-99.csv')\n\n# Analyze impact metrics\ntotal_users_affected = df['users_affected'].sum()\ntotal_estimated_cost = df['estimated_cost'].sum()\navg_users_per_incident = df['users_affected'].mean()\navg_cost_per_incident = df['estimated_cost'].mean()\n\nhigh_impact_incidents = df[df['users_affected'] > avg_users_per_incident]\nhigh_impact_categories = high_impact_incidents['category'].value_counts()\n\n# plot the impact metrics\nfig, axes = plt.subplots(2, 2, figsize=(15, 10))\n\n# Total Users Affected\naxes[0, 0].bar(['Total Users Affected'], [total_users_affected], color='skyblue')\naxes[0, 0].set_title('Total Users Affected')\n\n# Total Estimated Cost\naxes[0, 1].bar(['Total Estimated Cost'], [total_estimated_cost], color='salmon')\naxes[0, 1].set_title('Total Estimated Cost')\n\n# Average Users per Incident\naxes[1, 0].bar(['Average Users per Incident'], [avg_users_per_incident], color='lightgreen')\naxes[1, 0].set_title('Average Users per Incident')\n\n# Average Cost per Incident\naxes[1, 1].bar(['Average Cost per Incident'], [avg_cost_per_incident], color='gold')\naxes[1, 1].set_title('Average Cost per Incident')\n\nplt.tight_layout()\nplt.show()",
-            "insight_value": {},
-            "actionable_insight": "Focus on reducing the occurrence of high-impact incidents, particularly in the {high_impact_categories.index[0]} category, which has the most incidents above average impact. Implement more robust preventive measures for these types of incidents to minimize user disruption and financial impact. Consider allocating more resources to quickly resolve high-impact incidents when they do occur.",
-            "data_type": "descriptive"
+            "actionable_insight": "Focus on reducing the occurrence of high-impact incidents, particularly in the Software category, which has the most incidents above average impact. Implement more robust preventive measures for these types of incidents to minimize user disruption and financial impact. Consider allocating more resources to quickly resolve high-impact incidents when they do occur."
         }
     ],
     "insights": [

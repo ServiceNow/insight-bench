@@ -6,14 +6,15 @@
         "role": "Asset Manager",
         "category": "Asset Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow alm_hardware table, detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The table effectively captures asset management activities, offering insights into the operational handling, allocation, and maintenance status of hardware resources across various departments within an organization.",
-        "header": "Asset Cost Analysis by Department (Flag 64)"
+        "header": "Asset Cost Analysis by Department (Flag 64)",
+        "difficulty": 3
     },
     "insight_list": [
         {
             "insight": "The Finance department has the longest average warranty duration for assets, while Development has the shortest.",
-            "question": "Is there a noticeable trend between the timing of asset purchases and the warranty expiration dates for different departments?",
+            "question": "What is the average warranty duration for assets across different departments?",
             "code": "import matplotlib.pyplot as plt\nimport pandas as pd\nimport matplotlib.dates as mdates\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-64.csv\")\n\n# Convert dates to datetime format for analysis\nflag_data[\"purchased_on\"] = pd.to_datetime(flag_data[\"purchased_on\"])\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\n\n# Calculate the warranty duration in days for each asset\nflag_data[\"warranty_duration_days\"] = (\n    flag_data[\"warranty_expiration\"] - flag_data[\"purchased_on\"]\n).dt.days\n\n# Aggregate the average warranty duration by department\nwarranty_data = (\n    flag_data.groupby(\"department\")[\"warranty_duration_days\"].mean().reset_index()\n)\n\n# Plot the average warranty duration by department\nplt.figure(figsize=(10, 6))\nplt.bar(\n    warranty_data[\"department\"],\n    warranty_data[\"warranty_duration_days\"],\n    color=\"skyblue\",\n)\nplt.title(\"Average Warranty Duration by Department\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Average Warranty Duration (Days)\")\nplt.xticks(rotation=45)\nplt.grid(axis=\"y\", linestyle=\"--\", alpha=0.7)\n\nplt.show()",
-            "data_type": "time_series",
+            "data_type": "comparative",
             "insight_value": "Assets purchased for the Finance department tend to have warranties lasting around 797 days, suggesting a possible emphasis on longer warranty periods in Finance. In contrast, the Development department averages around 704 days, which may indicate a higher turnover or faster refresh cycle for assets in that department.",
             "actionable_insight": "Departments with shorter warranty durations, like Development, may benefit from regular asset refreshes to keep up with technological advancements, while Finance could maintain longer warranties, possibly to align with their asset stability requirements. This insight encourages a tailored approach to warranty planning, potentially optimizing costs and improving resource allocation based on department-specific needs."
         },

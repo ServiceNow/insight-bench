@@ -6,7 +6,8 @@
         "role": "Procurement Analyst",
         "category": "Asset Management & User Management",
         "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `alm_hardware` table with 500 entries. The assets alm_hardware table, consists of detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'role', 'email', 'start_date', and 'department', providing insights into the user profiles managed within the ServiceNow system.",
-        "header": "Asset Warranty and Purchase Date Analysis (Flag 65)"
+        "header": "Asset Warranty and Purchase Date Analysis (Flag 65)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -15,7 +16,7 @@
             "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Load the data\nflag_data = pd.read_csv(\"csvs/flag-65.csv\")\n\n# Calculate the average asset cost per department\navg_cost_per_department = (\n    flag_data.groupby(\"department\")[\"cost\"]\n    .mean()\n    .sort_values(ascending=False)\n    .reset_index()\n)\n\n# Plot the results\nplt.figure(figsize=(10, 6))\nplt.bar(\n    avg_cost_per_department[\"department\"],\n    avg_cost_per_department[\"cost\"],\n    color=\"skyblue\",\n    edgecolor=\"black\",\n)\nplt.title(\"Average Asset Cost per Department\")\nplt.xlabel(\"Department\")\nplt.ylabel(\"Average Cost of Assets\")\nplt.xticks(rotation=45, ha=\"right\")\nplt.grid(axis=\"y\", linestyle=\"--\", alpha=0.7)\n\nplt.show()",
             "data_type": "comparative",
             "insight_value": "Product Management leads in asset spending with an average asset cost of $3,448, followed closely by Sales and Finance, which also maintain relatively high asset investments.",
-            "actionable_insight": "With Product Management, Sales, and Finance departments having higher average asset costs, this could inform resource allocation and procurement strategies to align investments with departmental needs. Regular assessments may help optimize asset spending, particularly if these departments\u2019 performance relies heavily on newer or more specialized equipment."
+            "actionable_insight": "With Product Management, Sales, and Finance departments having higher average asset costs, this could inform resource allocation and procurement strategies to align investments with departmental needs. Regular assessments may help optimize asset spending, particularly if these departments’ performance relies heavily on newer or more specialized equipment."
         },
         {
             "data_type": "predictive",
@@ -36,7 +37,7 @@
                 },
                 "description": "The regression plot effectively shows a clear linear trend, indicating that newer assets tend to have longer warranties. The presence of noise suggests variability around the trend line, which could be due to factors such as different asset types or supplier agreements."
             },
-            "question": "Is it a linear trend and can it be  regressed with noise?",
+            "question": "Is there a predictable linear trend between the purchase dates of assets and their warranty periods?",
             "actionable_insight": "Given the predictability of warranty periods based on purchase dates as evidenced by the linear regression model, the organization can anticipate warranty terms for future purchases. This foresight could be instrumental in negotiating terms with suppliers or choosing products that offer the best value in terms of warranty coverage. Further, by understanding the variability (noise) around the trend, procurement managers can refine their asset management strategies to account for exceptions and ensure robust handling of warranty terms.",
             "code": "# Assuming 'df' is the DataFrame containing your data\ndf[\"warranty_expiration\"] = pd.to_datetime(df[\"warranty_expiration\"])\ndf[\"purchased_on\"] = pd.to_datetime(df[\"purchased_on\"])\n# Calculate the warranty period in years\ndf['warranty_period_years'] = (df['warranty_expiration'] - df['purchased_on']).dt.days / 365\n\n# Create the scatter plot\nplt.figure(figsize=(10, 6))\nplt.scatter(df['purchased_on'], df['warranty_period_years'], alpha=0.6, edgecolors='w', color='blue')\nplt.title('Correlation between purchased date and Warranty Period')\nplt.xlabel('Purchased On Date')\nplt.ylabel('Warranty Period (Years)')\nplt.grid(True)\n# Optionally, you can fit a linear regression line to emphasize the trend\n# Using numpy for linear regression line\nimport numpy as np\n# Convert dates to ordinal for regression\ndf['sys_updated_on_ordinal'] = df['purchased_on'].apply(lambda x: x.toordinal())\n# Fit the regression\nfit = np.polyfit(df['sys_updated_on_ordinal'], df['warranty_period_years'], 1)\nfit_fn = np.poly1d(fit)\n# Plot the regression line\nplt.plot(df['purchased_on'], fit_fn(df['sys_updated_on_ordinal']), color='red', linewidth=2)"
         },

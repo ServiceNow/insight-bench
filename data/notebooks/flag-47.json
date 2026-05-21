@@ -202,7 +202,7 @@
             },
             "question": "What is the printer ID causing the most issues?",
             "actionable_insight": "There are no specific actions to recommend based on the distribution of incidents across printer IDs.",
-            "code": "{\n    \"data_type\":\"diagnostic\",\n    \"insight\": \"There is no mention of any specific printer IDs in the incident descriptions.\",\n    \"insight_value\":{\"x_val\": \"No Specific Printer IDs\", \"y_val\": 0},\n    \"plot\": {\n        \"plot_type\": \"bar\",\n        \"title\": \"Incidents by Printer ID\",\n        \"x_axis\": {\n            \"name\": \"Printer ID\",\n            \"value\": [\"Printer546\", \"Printer789\", \"Printer123\", \"Printer547\", \"Printer567\", \"....\"],\n            \"description\": \"This represents the different printer IDs.\"\n        },\n        \"y_axis\": {\n            \"name\": \"Number of Incidents\",\n            \"value\": [0, 0, 0, \"....\"],\n            \"description\": \"This represents the number of incidents for each printer ID.\"\n        },\n        \"plot description\": \"The bar plot displays the number of incidents caused by each printer. Each bar represents a printer ID and the length of the bar corresponds to the number of incidents caused by that printer. The printer with ID 'Printer546' has caused the most incidents.\"\n    },\n    \"question\": \"What is the printer ID causing the most issues?\",\n    \"actionable_insight\": \"There are no specific actions to recommend based on the distribution of incidents across printer IDs.\"\n}"
+            "code": ""
         }
     ],
     "insights": [

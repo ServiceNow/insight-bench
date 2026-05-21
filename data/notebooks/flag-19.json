@@ -6,7 +6,8 @@
         "role": "Financial Compliance Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow fm_expense_line table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry.",
-        "header": "Expense Management Discrepancies (Flag 19)"
+        "header": "Expense Management Discrepancies (Flag 19)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -84,7 +85,7 @@
                 "description": "The bar chart vividly illustrates the number of expense reports submitted by each department. The data highlight that the volume of submissions does not correlate with the proportion of rejections, as seen with the IT department, which submits fewer reports but faces a high rate of rejections."
             },
             "question": "What is the distribution of Expense Reports by Department?",
-            "actionable_insight": "This discrepancy in rejection rates despite lower submission volumes suggests underlying issues in IT\u2019s expense reporting process or stricter scrutiny of their reports. It would be prudent to conduct a detailed review of the IT department's submissions to understand the reasons behind the high rejection rates. Efforts should be focused on aligning IT\u2019s expense reporting practices with those departments exhibiting high compliance and low rejection rates, like Customer Support, to reduce unnecessary financial discrepancies and improve procedural compliance.",
+            "actionable_insight": "This discrepancy in rejection rates despite lower submission volumes suggests underlying issues in IT’s expense reporting process or stricter scrutiny of their reports. It would be prudent to conduct a detailed review of the IT department's submissions to understand the reasons behind the high rejection rates. Efforts should be focused on aligning IT’s expense reporting practices with those departments exhibiting high compliance and low rejection rates, like Customer Support, to reduce unnecessary financial discrepancies and improve procedural compliance.",
             "code": "import matplotlib.pyplot as plt\n\n# Count the number of expense reports per department\ndepartment_counts = flag_data['department'].value_counts()\n\n# Plot the data\nfig, ax = plt.subplots(figsize=(12, 8))\ndepartment_counts.plot(kind='bar', color='skyblue', ax=ax)\n\n# Add titles and labels\nax.set_title('Number of Expense Reports by Department', fontsize=16)\nax.set_xlabel('Department', fontsize=14)\nax.set_ylabel('Number of Expense Reports', fontsize=14)\n\n# Show grid\nax.grid(axis='y')  # Only horizontal grid lines for readability\n\n# Rotate the x-axis labels for better readability\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to not cut off labels\n\n# Adding numeric labels on top of the bars for clarity\nfor p in ax.patches:\n    ax.annotate(f\"{int(p.get_height())}\", (p.get_x() + p.get_width() / 2., p.get_height()),\n                ha='center', va='bottom', xytext=(0, 10), textcoords='offset points')\n\n# Show the plot\nplt.show()"
         },
         {

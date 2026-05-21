@@ -6,7 +6,8 @@
         "role": "Procurement Manager",
         "category": "Asset Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow alm_hardware table, detailing key attributes of hardware assets such as asset tags, display names, configuration item (CI) identifiers, serial numbers, and model categories. It includes information on asset assignment, last update timestamps, cost, departmental allocation, and warranty expiration dates. The table effectively captures asset management activities, offering insights into the operational handling, allocation, and maintenance status of hardware resources across various departments within an organization.",
-        "header": "Asset Warranty Analysis (Flag 16)"
+        "header": "Asset Warranty Analysis (Flag 16)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -85,7 +86,7 @@
             },
             "question": "What is the distribution of Average asset cost across Model Categories?",
             "actionable_insight": "Given the higher average costs associated with Servers and Web Servers, it's essential for the organization to carefully consider the lifecycle costs and benefits of these investments. Prioritizing maintenance and potentially exploring bulk purchasing agreements or extended warranties for these high-cost items could yield significant cost savings over time.",
-            "code": "import matplotlib.pyplot as plt\n\nflag_data[\"warranty_expiration\"] = pd.to_datetime(flag_data[\"warranty_expiration\"])\nflag_data[\"sys_updated_on\"] = pd.to_datetime(flag_data[\"sys_updated_on\"])\n# Calculate the warranty period in years for each asset\nflag_data['warranty_period_years'] = (flag_data['warranty_expiration'] - flag_data['sys_updated_on']).dt.days / 365\n\n# Group by model_category and calculate the average warranty period\navg_warranty_by_category = flag_data.groupby('model_category')['cost'].mean()\n\n# Plotting\na_plot = avg_warranty_by_category.plot(kind='bar', color='skyblue', figsize=(10, 6))\nfor p in a_plot.patches:\n    a_plot.annotate(format(p.get_height(), '.2f'), \n                          (p.get_x() + p.get_width() / 2., p.get_height()), \n                          ha = 'center', va = 'center', \n                          xytext = (0, 9), \n                          textcoords = 'offset points')\nplt.xlabel('Model Category')\nplt.ylabel('Average Cost ($)')\nplt.title('Average Cost by Model Category')\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels\n\n# Show the plot\nplt.show()"
+            "code": "import matplotlib.pyplot as plt\n\n# Group by model_category and calculate the average asset cost\navg_cost_by_category = flag_data.groupby('model_category')['cost'].mean().sort_values(ascending=False)\n\n# Plotting\na_plot = avg_cost_by_category.plot(kind='bar', color='skyblue', figsize=(10, 6))\nfor p in a_plot.patches:\n    a_plot.annotate(format(p.get_height(), '.2f'), \n                          (p.get_x() + p.get_width() / 2., p.get_height()), \n                          ha = 'center', va = 'center', \n                          xytext = (0, 9), \n                          textcoords = 'offset points')\nplt.xlabel('Model Category')\nplt.ylabel('Average Cost ($)')\nplt.title('Average Cost by Model Category')\nplt.xticks(rotation=45)\nplt.tight_layout()  # Adjust layout to make room for the rotated x-axis labels\n\n# Show the plot\nplt.show()"
         },
         {
             "data_type": "correlative",

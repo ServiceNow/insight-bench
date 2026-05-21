@@ -6,7 +6,8 @@
         "role": "Financial Operations Analyst",
         "category": "Finance Management",
         "dataset_description": "This dataset comprises 500 simulated entries from the ServiceNow `fm_expense_line` table, which tracks various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. The table provides a comprehensive record of financial transactions, capturing the expense amount, departmental allocation, and the nature of each expense. It offers a detailed view of organizational expenditures across various categories, highlighting both the timing and the approval status of each financial entry.",
-        "header": "Analysis of Expense Processing Dynamics (Flag 86)"
+        "header": "Analysis of Expense Processing Dynamics (Flag 86)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -38,7 +39,7 @@
         },
         {
             "insight": "There was no column amount to conduct any analysis",
-            "question": "How do processing times vary across different expense cost brackets?",
+            "question": "What is the distribution of expense processing outcomes by state and cost brackets?",
             "code": "",
             "data_type": "descriptive",
             "insight_value": {},

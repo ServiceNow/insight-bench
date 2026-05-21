@@ -6,7 +6,8 @@
         "role": "Goal Management Analyst",
         "category": "Goal Management",
         "dataset_description": "The dataset consists of 500 entries simulating ServiceNow `sn_gf_goal` table, which details various attributes related to organizational goals. These attributes include goal state, owner, department, start and end dates, and description, alongside metrics such as priority, percent complete, and target percentage. This data primarily tracks the progression and management of departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational objectives. Additionally, the table captures updates made to each goal, providing a timeline of modifications and the identity of individuals making these updates.",
-        "header": "Goal Achievement Rate Analysis in IT Department (Flag 75)"
+        "header": "Goal Achievement Rate Analysis in IT Department (Flag 75)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -41,7 +42,7 @@
                 },
                 "description": "The bar graph illustrates the success rates of meeting goals within the IT department categorized by their priority. It highlights significantly higher success rates for goals categorized under Critical and High priorities at 61.1% and 51.8% respectively, compared to much lower success rates for Medium and Low priority goals. This disparity in success rates suggests a correlation between priority level and achievement rate."
             },
-            "question": "What proportion of goals in the IT department are classified as High or Critical priority compared to other departments?",
+            "question": "Within the IT department, what are the success rates of goals by priority level (Critical, High, Medium, Low)?",
             "actionable_insight": "If this trend is consistent across other departments, it may indicate that departments with a higher proportion of Critical and High priority goals, like IT, are better at achieving their objectives. This could justify a review and potential realignment of priority settings across departments to ensure strategic goals are adequately supported and prioritized.",
             "code": "import matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Filter the data for the IT department\nit_goals = goal_data[goal_data['department'] == 'IT']\n\n# Define successful goals (assuming successful means percent_complete >= target_percentage)\nit_goals['is_successful'] = it_goals['percent_complete'] >= it_goals['target_percentage']\n\n# Calculate the proportion of successful goals by priority\nsuccess_rates = it_goals.groupby('priority')['is_successful'].mean()\n\n# Convert the series to a DataFrame for plotting\nsuccess_rates_df = success_rates.reset_index()\n\n# Plotting\nplt.figure(figsize=(10, 6))\nbar_plot = sns.barplot(x='priority', y='is_successful', data=success_rates_df, order=['Critical', 'High', 'Medium', 'Low'])\nplt.title('Proportion of Successful Goals by Priority in IT Department')\nplt.xlabel('Priority')\nplt.ylabel('Proportion of Successful Goals')\nplt.ylim(0, 1)  # Set the limit to show proportions from 0 to 1\n\n# Correctly format and annotate each bar with the proportion as a percentage\nfor p in bar_plot.patches:\n    bar_plot.annotate(format(p.get_height(), '.1%'),  # Format as a percentage with one decimal\n                      (p.get_x() + p.get_width() / 2., p.get_height()),\n                      ha='center', va='center', \n                      xytext=(0, 9), \n                      textcoords='offset points')\nplt.show()\n\n"
         },

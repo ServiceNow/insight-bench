@@ -6,7 +6,8 @@
         "role": "Compliance and Audit Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow fm_expense_line table, which records various attributes of financial expenses. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a comprehensive view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. Additionally, the dataset offers insights into the efficiency of expense processing based on different states, revealing potential areas for workflow optimization.",
-        "header": "Expense Claim Patterns and Fraud Analysis (Flag 42)"
+        "header": "Expense Claim Patterns and Fraud Analysis (Flag 42)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -61,8 +62,8 @@
                 "description": "The boxplot provides a visual comparison of how different keywords in short descriptions correlate with expense amounts, showing the central tendency and spread of amounts for each keyword."
             },
             "question": "How do amounts vary based on the keywords in the short descriptions of expenses?",
-            "actionable_insight": "The identified relationship between short description keywords and expense amounts provides an opportunity for targeted financial oversight. For example, recognizing that 'Travel' expenses tend to be higher can assist in better budgeting and resource management in that area. Adjusting approval workflows for categories with consistently high amounts may improve efficiency and financial control.",
-            "code": "# Function to categorize descriptions based on keywords\ndef categorize_description(description):\n    keywords = {\"Travel\": 1.5, \"Service\": 1.2, \"Cloud\": 1.3, \"Asset\": 0.8, \"Equipment\": 0.9}\n    for keyword in keywords.keys():\n        if pd.notnull(description) and keyword.lower() in description.lower():\n            return keyword\n    return 'Other'\n\n# Apply the function to create a new column for categories\ndata['description_category'] = data['short_description'].apply(categorize_description)\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a boxplot for amount by description category\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='description_category', y='amount', data=data)\nplt.title('Amount Distribution by Short Description Category')\nplt.xlabel('Short Description Category')\nplt.ylabel('Amount')\nplt.xticks(rotation=45)\nplt.show()"
+            "actionable_insight": "The identified relationship between short description keywords and expense amounts provides an opportunity for targeted financial oversight. For example, recognizing that 'Service' expenses tend to be higher and 'Travel' expenses tend to be lower can assist in better budgeting and resource management. Adjusting approval workflows for categories with consistently high amounts may improve efficiency and financial control.",
+            "code": "# Function to categorize descriptions based on keywords\ndef categorize_description(description):\n    keywords = [\"Travel\", \"Service\", \"Cloud\", \"Asset\", \"Equipment\"]\n    for keyword in keywords:\n        if pd.notnull(description) and keyword.lower() in description.lower():\n            return keyword\n    return 'Other'\n\n# Apply the function to create a new column for categories\ndata['description_category'] = data['short_description'].apply(categorize_description)\n\n# Set the style of the visualization\nsns.set(style=\"whitegrid\")\n\n# Create a boxplot for amount by description category\nplt.figure(figsize=(12, 6))\nsns.boxplot(x='description_category', y='amount', data=data)\nplt.title('Amount Distribution by Short Description Category')\nplt.xlabel('Short Description Category')\nplt.ylabel('Amount')\nplt.xticks(rotation=45)\nplt.show()"
         },
         {
             "data_type": "descriptive",

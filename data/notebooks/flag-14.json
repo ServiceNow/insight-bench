@@ -6,7 +6,8 @@
         "role": "Team Lead",
         "category": "User Management",
         "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `incidents` table, each with 500 entries. The `incidents` table focuses on detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like location, description, and priority. It effectively captures incident management activities with fields including 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'role', 'email', 'schedule', and 'department', providing insights into the user profiles managed within the ServiceNow system. Together, these tables are instrumental in understanding the workflow, user involvement and detailed tracking of incident resolution processes within an organization.",
-        "header": "Performance Trends in Employee Agents Management (Flag 14)"
+        "header": "Performance Trends in Employee Agents Management (Flag 14)",
+        "difficulty": 4
     },
     "insight_list": [
         {
@@ -82,14 +83,14 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The number of incidents assigned to each agent, including Fred Luddy, remains uniform over time",
+            "insight": "The number of incidents assigned to each agent shows some variation, with Fred Luddy having the fewest assignments (85.00) and Beth Anglin having the most (108.00).",
             "insight_value": {
-                "x_val": "Agents",
-                "y_val": "Uniform Distribution of Incident Assignment"
+                "x_val": "Agent",
+                "y_val": "Number of Incidents Assigned"
             },
             "plot": {
-                "plot_type": "histogram",
-                "title": "Distribution of Incident Assignments Among Agents Over Time",
+                "plot_type": "bar",
+                "title": "Number of Incidents Assigned Per Agent",
                 "x_axis": {
                     "name": "Agent",
                     "value": [
@@ -102,20 +103,20 @@
                     "description": "This represents the different agents handling incidents."
                 },
                 "y_axis": {
-                    "name": "Number of Incidents",
+                    "name": "Number of Incidents Assigned",
                     "value": [
-                        108,
-                        91,
-                        85,
-                        102,
-                        101
+                        108.0,
+                        91.0,
+                        85.0,
+                        102.0,
+                        101.0
                     ],
-                    "description": "This represents the count of incidents assigned to each agent over the analyzed time period."
+                    "description": "This represents the count of incidents assigned to each agent."
                 },
-                "description": "The histogram displays the number of incidents assigned to each agent over a specific time period. The distribution is relatively uniform across all agents, indicating that workload distribution in terms of number of incidents is even. This suggests that the increasing TTR for Fred Luddy is not due to an excessive number of assignments."
+                "description": "The bar chart displays the number of incidents assigned to each agent. The distribution shows that Fred Luddy has the lowest number of assigned incidents (85.00), while Beth Anglin has the highest (108.00). This indicates that Fred Luddy is not being assigned an excessive number of incidents compared to his peers."
             },
-            "question": "What is the pattern in the number of incidents assigned to the specific agent over time?",
-            "actionable_insight": "Since the distribution of incident assignments is uniform among all agents, the prolonged TTR for Fred Luddy is unlikely to be caused by an overload of assignments. It may be beneficial to explore other factors such as the complexity of the incidents assigned to Fred, his working methods, or potential personal or systemic issues that might be affecting his performance. Monitoring the trend in the number of open tickets for each agent over time could also provide additional insights into workload management and efficiency.",
+            "question": "What is the total distribution of incident assignments across all agents?",
+            "actionable_insight": "Since Fred Luddy has the lowest number of assigned incidents among the agents, any performance issues, such as a prolonged Time to Resolve (TTR), are unlikely to be caused by an overload of assignments. Management should explore other factors such as the complexity of the incidents assigned to him, his efficiency, or potential training needs.",
             "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nax = agent_incident_count.plot(kind='bar', figsize=(10,6))\n\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.title('Number of Incidents Assigned Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Assigned')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
         },
         {
@@ -183,7 +184,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "Continued linear increase in TTR if workload during leave periods is not balanced\nThe analysis of Fred Luddy's TTR shows a clear linear increase that coincides with his periods of leave. Without intervention, this trend is predicted to continue, leading to progressively longer resolution times for incidents assigned to him. This ongoing increase in TTR could potentially result in decreased customer satisfaction, increased stress on other team members who may need to compensate informally, and a general decline in team performance.",
+            "insight": "Continued linear increase in TTR if workload during leave periods is not balanced",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Continued escalation in resolution times"
@@ -207,5 +208,5 @@
         "Fred Luddy's increasing TTR correlates with his PTO period",
         "Continued linear increase in TTR if workload during leave periods is not balanced"
     ],
-    "summary": "\n\n1. **Trend in Resolution Time**: Analysis reveals that Fred Luddy's time to resolution (TTR) begins to increase linearly from a certain point, suggesting potential personal or systemic challenges impacting his performance.\n   \u00df\n2. **Correlation with Open Incidents**: The increase in TTR coincides with a rise in the number of open incidents assigned to Fred Luddy. \n   \n3. **Correlation with LEave Schedule**: This pattern is likely exacerbated by periods of his leave of absence, during which unresolved incidents accumulate.\n   \n4. **Strategic Workload Management**: Addressing these trends is crucial, especially during employee absences, to prevent workload imbalances and ensure consistent performance across the team. Implementing strategic workload balancing could mitigate the impact of such absences and maintain operational efficiency."
+    "summary": "\n\n1. **Trend in Resolution Time**: Analysis reveals that Fred Luddy's time to resolution (TTR) begins to increase linearly from a certain point, suggesting potential personal or systemic challenges impacting his performance.\n   ß\n2. **Correlation with Open Incidents**: The increase in TTR coincides with a rise in the number of open incidents assigned to Fred Luddy. \n   \n3. **Correlation with LEave Schedule**: This pattern is likely exacerbated by periods of his leave of absence, during which unresolved incidents accumulate.\n   \n4. **Strategic Workload Management**: Addressing these trends is crucial, especially during employee absences, to prevent workload imbalances and ensure consistent performance across the team. Implementing strategic workload balancing could mitigate the impact of such absences and maintain operational efficiency."
 }

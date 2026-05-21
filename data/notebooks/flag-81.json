@@ -6,7 +6,8 @@
         "role": "Enterprise Performance Analyst",
         "category": "Goal Management",
         "dataset_description": "This dataset includes 500 simulated entries from the ServiceNow `sn_gf_goal` table, detailing various aspects of organizational goals. Key attributes include goal status, responsible parties, associated departments, start and end dates, and detailed descriptions. The dataset also contains metrics such as priority ranking, percentage completion, and target achievement rate. It primarily focuses on tracking the progress and management of both departmental and individual goals, offering insights into the effectiveness and alignment of these goals with broader organizational strategies. Additionally, the dataset logs updates to each goal, providing a record of modifications and the identities of those making these changes.",
-        "header": "Cost Efficiency Goals Analysis (Flag 81)"
+        "header": "Cost Efficiency Goals Analysis (Flag 81)",
+        "difficulty": 4
     },
     "insight_list": [
         {

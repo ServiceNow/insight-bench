@@ -6,7 +6,8 @@
         "role": "Expense Audit Analyst",
         "category": "Finance Management",
         "dataset_description": "The dataset consists of 500 entries simulating the ServiceNow `fm_expense_line` table, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. It provides a clear view of organizational expenditures across different categories, highlighting both the timing and approval state of each financial entry. Additionally, the dataset captures patterns in expense submissions, including potential duplicate claims and their impact on financial management.",
-        "header": "Travel Expense Rejection Analysis (Flag 46)"
+        "header": "Travel Expense Rejection Analysis (Flag 46)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -77,7 +78,7 @@
         },
         {
             "data_type": "diagnostic",
-            "insight": "Certain users have submitted duplicate expense claims.",
+            "insight": "Certain users have submitted multiple duplicate expense claims.",
             "insight_value": "Users like Marianne Earman, Lacy Hyten, and Carolina Kinlaw have submitted multiple expense claims with identical amounts, categories, and descriptions, indicating potential fraud or errors in the expense submission process.",
             "plot": {
                 "plot_type": "bar",

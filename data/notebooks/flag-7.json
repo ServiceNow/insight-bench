@@ -6,7 +6,8 @@
         "role": "L2 Incident Analyst",
         "category": "Incident Management",
         "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
-        "header": "Incident Assignment and Resolution Efficiency Analysis (Flag 7)"
+        "header": "Incident Assignment and Resolution Efficiency Analysis (Flag 7)",
+        "difficulty": 3
     },
     "insight_list": [
         {
@@ -45,7 +46,7 @@
                 },
                 "description": "The bar chart visualizes the average number of incidents assigned to each agent. It shows that Beth Anglin has a higher average number of incidents compared to their peers. This raises questions about workload distribution and the factors contributing to this imbalance."
             },
-            "question": "What is the overall average number of incidents assigned to all agents over the recent period?",
+            "question": "What is the overall average number of incidents assigned to all agents?",
             "actionable_insight": "Given the higher average number of incidents assigned to Beth Anglin, it is crucial to investigate the reasons behind this distribution. Potential factors could include the types of incidents they are handling, their expertise in specific areas, or even operational needs. Understanding these factors will help in making informed decisions to ensure a balanced workload distribution and to maintain efficiency and fairness within the team.",
             "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Assuming df is already loaded and has the necessary columns\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\n\n# Group the data by 'assigned_to' and count the number of incidents for each agent\nagent_incident_counts = df.groupby('assigned_to').size()\n\n# Calculate the average number of incidents per agent\n# average_incidents_per_agent = agent_incident_counts.mean()\n\n# Create a DataFrame for plotting\nagent_average_df = pd.DataFrame({\n    'Agent': agent_incident_counts.index,\n    'Average Incidents': agent_incident_counts\n})\n\n# Plotting the average number of incidents per agent\nplt.figure(figsize=(10, 6))\nax = sns.barplot(x='Agent', y='Average Incidents', data=agent_average_df)\nplt.title('Overall Average Number of Incidents Assigned to Each Agent')\nplt.ylabel('Average Number of Incidents')\nplt.xlabel('Agent')\nplt.xticks(rotation=45)\n\n# Annotate each bar with its value\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.show()"
         },
@@ -137,13 +138,13 @@
                 },
                 "description": "The line plot illustrates the trend of resolution times for Beth Anglin throughout the analyzed period. Despite a noticeable increase in their workload, the TTR remains consistently uniform across the timeline. This indicates that Beth Anglin was able to maintain their productivity and service quality even under increased workload conditions."
             },
-            "question": "How does the resolution time (Time to Resolution (TTR)) for incidents handled by Beth Anglin over time?",
+            "question": "How does the time to resolution (TTR) for incidents handled by Beth Anglin over time?",
             "actionable_insight": "The consistent TTR achieved by Beth Anglin , even during periods of increased workload, underscores their efficiency and capability in managing incidents effectively. It is advisable to recognize their resilience and perhaps consider them for further training and leadership roles in managing workflow. Additionally, their strategies and work habits could be studied and possibly replicated across the team to enhance overall productivity and service quality.",
             "code": "# Convert opened_at and closed_at to datetime\ndf[\"opened_at\"] = pd.to_datetime(df[\"opened_at\"])\ndf[\"closed_at\"] = pd.to_datetime(df[\"closed_at\"])\n# Compute resolution time in days\ndf[\"resolution_time\"] = (df[\"closed_at\"] - df[\"opened_at\"]).dt.total_seconds() / 86400\n\nsns.lineplot(x=df[\"opened_at\"], y=df[\"resolution_time\"], hue=df[\"assigned_to\"])\nplt.xlabel(\"Creation date\")\nplt.ylabel(\"Time to resolution\")\nplt.title(\"Time to resolution by creation date\")"
         },
         {
             "data_type": "predictive",
-            "insight": "Continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed\nThe forecast model indicates a linear increase in the number of incidents assigned to Beth Anglin over time, starting from the date immediately following that other agents have not yet returned to work or for any other reasons. This trend suggests that if proactive measures are not taken to address the distribution of work during leave periods, Beth Anglin could continue to face an increasing workload. Such a scenario could lead to potential burnout, decreased job satisfaction, and reduced overall effectiveness in handling incidents.",
+            "insight": "Continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Continued escalation in assignments"
@@ -166,5 +167,5 @@
         "The resolution time (TTR) for Beth Anglin  remains uniform over the entire timeline",
         "Continued increase in assignments for Beth Anglin if the trend during leave periods is not addressed"
     ],
-    "summary": "\n\n1. **Increasing Assignments Over Time**: A particular human agent, Beth Anglin, has been observed to have a linear increase in the number of incident assignments over time. This trend highlights a potential imbalance in workload distribution.\n2. **Need for Intervention**: The observed trends indicate that without intervention, the agent\u2019s ability to manage and resolve incidents efficiently may deteriorate further. This could impact overall team performance and quality."
+    "summary": "\n\n1. **Increasing Assignments Over Time**: A particular human agent, Beth Anglin, has been observed to have a linear increase in the number of incident assignments over time. This trend highlights a potential imbalance in workload distribution.\n2. **Need for Intervention**: The observed trends indicate that without intervention, the agent’s ability to manage and resolve incidents efficiently may deteriorate further. This could impact overall team performance and quality."
 }

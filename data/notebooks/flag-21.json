@@ -4,9 +4,10 @@
     "metadata": {
         "goal": "To determine how employment duration influences expense submission errors and rejections, with the aim of enhancing policy compliance and understanding among newer employees.",
         "role": "HR Data Analyst",
-        "category": "Finance Management & User Management",
+        "category": "Finance Management and User Management",
         "dataset_description": "The dataset comprises two key tables simulating ServiceNow platform: the `sys_user` table and the `fm_expense_line`. The fm_expense_line dataset consists of 500 entries from, which records various attributes of financial expenses. Key fields include 'number', 'opened_at', 'amount', 'state', 'short_description', 'ci', 'user', 'department', 'category', 'process_date', 'source_id', and 'type'. This table documents the flow of financial transactions by detailing the amount, departmental allocation, and the nature of each expense. Provides a clear view of organizational expenditures across different categories, highlighting both the timing and the approval state of each financial entry. The `sys_user` table, on the other hand, contains user-related information, focusing on the details of employees or system users. This includes fields such as 'user_id', 'name', 'title', 'email', 'start_date', and 'department', providing insights into the user profiles managed within the ServiceNow system.",
-        "header": "Expense Rejection Trends for New Employees (Flag 21)"
+        "header": "Expense Rejection Trends for New Employees (Flag 21)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -95,5 +96,5 @@
         "Higher Expense Rejection Rates for Employees with Shorter Tenure",
         "Proportional Rejection Rates of New Hires Across Departments"
     ],
-    "summary": "\n\n1. **Trend Analysis**: This dataset investigates the correlation between the duration of employment and the rates of expense rejections among newly joined employees. The focus is to understand if less familiarity with the organization\u2019s expense policies contributes to higher rejection rates.\n   \n2. **Employee Compliance Insight**: The data illuminates how new hires adapt to expense submission guidelines and whether their inexperience results in a higher number of errors or policy non-compliance issues, compared to more tenured employees.\n   \n3. **Departmental Insights**: By analyzing the rejection rates across different departments, the study seeks to identify if certain areas are more prone to these issues or if it is a widespread phenomenon among all new hires."
+    "summary": "\n\n1. **Trend Analysis**: This dataset investigates the correlation between the duration of employment and the rates of expense rejections among newly joined employees. The focus is to understand if less familiarity with the organization’s expense policies contributes to higher rejection rates.\n   \n2. **Employee Compliance Insight**: The data illuminates how new hires adapt to expense submission guidelines and whether their inexperience results in a higher number of errors or policy non-compliance issues, compared to more tenured employees.\n   \n3. **Departmental Insights**: By analyzing the rejection rates across different departments, the study seeks to identify if certain areas are more prone to these issues or if it is a widespread phenomenon among all new hires."
 }

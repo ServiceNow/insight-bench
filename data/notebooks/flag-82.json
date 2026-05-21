@@ -6,7 +6,8 @@
         "role": "Operational Effectiveness Analyst",
         "category": "Goal Management",
         "dataset_description": "This dataset comprises 500 simulated records from the ServiceNow `sn_gf_goal` table, detailing various aspects related to organizational goals. Key attributes include goal status, assigned owner, department affiliation, start and end dates, and comprehensive descriptions. The dataset also features metrics like priority level, percentage completed, and target achievement percentage. It primarily focuses on tracking and managing both departmental and individual goals, providing insights into the effectiveness of these goals and their alignment with overarching organizational strategies. Additionally, the dataset logs updates for each goal, offering a historical view of changes and the identities of those making these updates.",
-        "header": "Focused Analysis of Goal Management Categories (Flag 82)"
+        "header": "Focused Analysis of Goal Management Categories (Flag 82)",
+        "difficulty": 2
     },
     "insight_list": [
         {
@@ -38,7 +39,7 @@
         },
         {
             "insight": "There was no column percent_complete to conduct any analysis",
-            "question": "Is this unusual trend of low and medium priority goals seen in the Cost Reduction category also observed across other categories??",
+            "question": "Is this unusual trend of low and medium priority goals seen in the Cost Reduction category also observed across other categories?",
             "code": "",
             "data_type": "diagnostic",
             "insight_value": {},

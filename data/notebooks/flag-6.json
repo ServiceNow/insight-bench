@@ -6,7 +6,8 @@
         "role": "Team Lead",
         "category": "Incident Management",
         "dataset_description": "The dataset comprises 500 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
-        "header": "Agent Performance Analysis Over Time (Flag 6)"
+        "header": "Agent Performance Analysis Over Time (Flag 6)",
+        "difficulty": 4
     },
     "insight_list": [
         {
@@ -82,14 +83,14 @@
         },
         {
             "data_type": "descriptive",
-            "insight": "The number of incidents assigned to each agent, including Fred Luddy, remains uniform over time",
+            "insight": "The number of incidents assigned varies slightly across agents, with Fred Luddy receiving the fewest assignments.",
             "insight_value": {
-                "x_val": "Agents",
-                "y_val": "Uniform Distribution of Incident Assignment"
+                "x_val": "Agent", 
+                "y_val": "Number of Incidents Assigned"
             },
             "plot": {
-                "plot_type": "histogram",
-                "title": "Distribution of Incident Assignments Among Agents Over Time",
+                "plot_type": "bar",
+                "title": "Number of Incidents Assigned Per Agent",
                 "x_axis": {
                     "name": "Agent",
                     "value": [
@@ -102,20 +103,20 @@
                     "description": "This represents the different agents handling incidents."
                 },
                 "y_axis": {
-                    "name": "Number of Incidents",
+                    "name": "Number of Incidents Assigned",
                     "value": [
-                        98,
-                        103,
-                        84,
-                        100,
-                        104
+                        98.0,
+                        103.0,
+                        84.0,
+                        100.0,
+                        104.0
                     ],
-                    "description": "This represents the count of incidents assigned to each agent over the analyzed time period."
+                    "description": "This represents the count of incidents assigned to each agent."
+                    },
+                    "description": "The bar chart displays the number of incidents assigned to each agent. Most agents have around 98 to 104 incidents assigned to them, while Fred Luddy has a noticeably lower count of 84 assignments."
                 },
-                "description": "The histogram displays the number of incidents assigned to each agent over a specific time period. The distribution is relatively uniform across all agents, indicating that workload distribution in terms of number of incidents is even. This suggests that the increasing TTR for Fred Luddy is not due to an excessive number of assignments."
-            },
-            "question": "What is the pattern in the number of incidents assigned to the specific agent over time?",
-            "actionable_insight": "Since the distribution of incident assignments is uniform among all agents, the prolonged TTR for Fred Luddy is unlikely to be caused by an overload of assignments. It may be beneficial to explore other factors such as the complexity of the incidents assigned to Fred, his working methods, or potential personal or systemic issues that might be affecting his performance. Monitoring the trend in the number of open tickets for each agent over time could also provide additional insights into workload management and efficiency.",
+            "question": "How many incidents are assigned to each agent?",
+            "actionable_insight": "Since Fred Luddy has the lowest number of incident assignments (84) compared to his peers (who range from 98 to 104), any performance issues such as prolonged Time To Resolve (TTR) are not due to an overload of overall assignments. Management should explore other factors such as the specific complexity of the incidents assigned to him, his working methods, or potential training gaps that might be affecting his performance.",
             "code": "agent_incident_count = df.groupby('assigned_to')['number'].count()\n\n# Plot the histogram\nax = agent_incident_count.plot(kind='bar', figsize=(10,6))\n\nfor p in ax.patches:\n    ax.annotate(format(p.get_height(), '.2f'), \n                (p.get_x() + p.get_width() / 2., p.get_height()), \n                ha = 'center', va = 'center', \n                xytext = (0, 9), \n                textcoords = 'offset points')\nplt.title('Number of Incidents Assigned Per Agent')\nplt.xlabel('Agent')\nplt.ylabel('Number of Incidents Assigned')\nplt.grid(True)\nplt.xticks(rotation=45)\nplt.show()"
         },
         {
@@ -151,7 +152,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "Continued linear increase in TTR if workload during leave periods is not balanced\nThe analysis of Fred Luddy's TTR shows a clear linear increase that coincides with his periods of leave. Without intervention, this trend is predicted to continue, leading to progressively longer resolution times for incidents assigned to him. This ongoing increase in TTR could potentially result in decreased customer satisfaction, increased stress on other team members who may need to compensate informally, and a general decline in team performance.",
+            "insight": "Continued linear increase in TTR if workload during leave periods is not balanced",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Continued escalation in resolution times"

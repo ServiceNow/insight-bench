@@ -165,7 +165,34 @@
             "question": "Is there a pattern or trend over time in the distribution of incidents across categories?",
             "code": "# Convert 'opened_at' to datetime\ndf['opened_at'] = pd.to_datetime(df['opened_at'])\n\n# Resample the data by month and category, and count the number of incidents\ndf_resampled = df.groupby([pd.Grouper(key='opened_at', freq='M'), 'category']).size().unstack()\n\n# Plot the resampled data\nplot = df_resampled.plot(kind='line')\n\n# Set plot title\nplt.title('Incidents Over Time by Category')\n\n# Set x-axis label\nplt.xlabel('Time')\n\n# Set y-axis label\nplt.ylabel('Number of Incidents')\n\n# Display the figure\nplt.show()",
             "actionable_insight": ""
+        },
+        {
+            "data_type": "diagnostic",
+            "insight": "The overall average user satisfaction score is 3.08 out of 5. Software category has the highest satisfaction score of 3.20, while Network has the lowest at 2.96.",
+            "insight_value": {
+                "x_val": "Average Satisfaction Score",
+                "y_val": 3.076
+            },
+            "plot": {
+                "plot_type": "bar",
+                "title": "Average User Satisfaction Score by Incident Category",
+                "x_axis": {
+                "name": "Incident Category",
+                "value": ["Software", "Inquiry / Help", "Hardware", "Database", "Network"],
+                "description": "This represents the different categories of incidents."
+                },
+                "y_axis": {
+                "name": "Average Satisfaction Score",
+                "value": [3.2, 3.16, 3.05, 3.01, 2.96],
+                "description": "This represents the average satisfaction score for each incident category."
+                },
+                "plot description": "The bar plot displays the average user satisfaction score for each incident category. Higher bars indicate better user satisfaction."
+            },
+            "question": "How does user satisfaction vary across different incident categories?",
+            "actionable_insight": "Focus on improving the handling of Network incidents, as they have the lowest satisfaction score. Consider investigating the practices used in Software incidents, which have the highest satisfaction, and apply these learnings to other categories.",
+            "code": "import pandas as pd\ndf = pd.read_csv('csvs/flag-97.csv')\navg_satisfaction = df['user_satisfaction_score'].mean()\nsatisfaction_by_category = df.groupby('category')['user_satisfaction_score'].mean().sort_values(ascending=False)\n# plot \nplot = satisfaction_by_category.plot(kind='bar', color='blue')"
         }
+        
     ],
     "insights": [
         "The incidents are equally distributed across all categories.",

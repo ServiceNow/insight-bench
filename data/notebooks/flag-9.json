@@ -6,15 +6,16 @@
         "role": "DT Asset Manager",
         "category": "Incident Management",
         "dataset_description": "The dataset comprises 600 entries simulating ServiceNow incidents table, detailing various attributes such as category, state, open and close dates, involved personnel, and incident specifics like description, and priority. It captures incident management activities with fields like 'opened_at', 'closed_at', 'assigned_to', 'short_description', and 'priority', reflecting the operational handling and urgency of issues across different locations and categories.",
-        "header": "Hardware Incident Analysis During Specific Time Windows (Flag 9)"
+        "header": "Hardware Incident Analysis During Specific Time Windows (Flag 9)",
+        "difficulty": 4
     },
     "insight_list": [
         {
             "data_type": "descriptive",
-            "insight": "Uniform trend of TTR for all category incidents, however there is a dense cluster of incidents in the Hardware category during the period 2023-08.",
+            "insight": "Uniform or no clear trend of TTR for all category incidents, however there is a dense cluster of incidents in the Hardware category during the period around 2023-08.",
             "insight_value": {
-                "x_val": "Anomaly Periods",
-                "y_val": "Increased TTR from 2023-07"
+                "x_val": "2023-08",
+                "y_val": "High density cluster (Hardware)"
             },
             "plot": {
                 "plot_type": "line",
@@ -127,7 +128,7 @@
         },
         {
             "data_type": "predictive",
-            "insight": "Continued trend of increasing hardware incidents could signify recurring hardware issues or outages\nThe predictive analysis using a linear regression model on historical hardware incident data indicates a continued linear increase in the number of such incidents over time. If this trend is not adequately addressed, it could lead to more frequent and potentially severe hardware-related disruptions in the future. This escalation could adversely affect system reliability, lead to increased downtime, and potentially result in significant operational and financial costs for the organization.",
+            "insight": "Continued trend of increasing hardware incidents could signify recurring hardware issues or outages",
             "insight_value": {
                 "trend": "Linear Increase",
                 "prediction": "Potential for more frequent and severe hardware-related disruptions"
